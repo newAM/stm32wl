@@ -1,4 +1,4 @@
-///Register `APB1ENR2` reader
+#[doc = "Register `APB1ENR2` reader"]
 pub struct R(crate::R<APB1ENR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<APB1ENR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<APB1ENR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `APB1ENR2` writer
+#[doc = "Register `APB1ENR2` writer"]
 pub struct W(crate::W<APB1ENR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<APB1ENR2_SPEC>;
@@ -34,97 +34,25 @@ impl From<crate::W<APB1ENR2_SPEC>> for W {
         W(writer)
     }
 }
-///CPU1 Low power timer 3 clocks enable
-pub type LPTIM3EN_A = LPUART1EN_A;
-///Field `LPTIM3EN` reader - CPU1 Low power timer 3 clocks enable
-pub type LPTIM3EN_R = LPUART1EN_R;
-///Field `LPTIM3EN` writer - CPU1 Low power timer 3 clocks enable
-pub struct LPTIM3EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPTIM3EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPTIM3EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(LPTIM3EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(LPTIM3EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-///CPU1 Low power timer 2 clocks enable
-pub type LPTIM2EN_A = LPUART1EN_A;
-///Field `LPTIM2EN` reader - CPU1 Low power timer 2 clocks enable
-pub type LPTIM2EN_R = LPUART1EN_R;
-///Field `LPTIM2EN` writer - CPU1 Low power timer 2 clocks enable
-pub struct LPTIM2EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPTIM2EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPTIM2EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(LPTIM2EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(LPTIM2EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///CPU1 Low power UART 1 clocks enable
-///
-///Value on reset: 0
+#[doc = "CPU1 Low power timer 3 clocks enable"]
+pub use LPUART1EN_A as LPTIM3EN_A;
+#[doc = "CPU1 Low power timer 2 clocks enable"]
+pub use LPUART1EN_A as LPTIM2EN_A;
+#[doc = "Field `LPTIM3EN` reader - CPU1 Low power timer 3 clocks enable"]
+pub use LPUART1EN_R as LPTIM3EN_R;
+#[doc = "Field `LPTIM2EN` reader - CPU1 Low power timer 2 clocks enable"]
+pub use LPUART1EN_R as LPTIM2EN_R;
+#[doc = "Field `LPTIM3EN` writer - CPU1 Low power timer 3 clocks enable"]
+pub use LPUART1EN_W as LPTIM3EN_W;
+#[doc = "Field `LPTIM2EN` writer - CPU1 Low power timer 2 clocks enable"]
+pub use LPUART1EN_W as LPTIM2EN_W;
+#[doc = "CPU1 Low power UART 1 clocks enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPUART1EN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<LPUART1EN_A> for bool {
     #[inline(always)]
@@ -132,133 +60,96 @@ impl From<LPUART1EN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LPUART1EN` reader - CPU1 Low power UART 1 clocks enable
-pub struct LPUART1EN_R(crate::FieldReader<bool, LPUART1EN_A>);
+#[doc = "Field `LPUART1EN` reader - CPU1 Low power UART 1 clocks enable"]
+pub type LPUART1EN_R = crate::BitReader<LPUART1EN_A>;
 impl LPUART1EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPUART1EN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPUART1EN_A {
         match self.bits {
-            false => LPUART1EN_A::DISABLED,
-            true => LPUART1EN_A::ENABLED,
+            false => LPUART1EN_A::Disabled,
+            true => LPUART1EN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LPUART1EN_A::DISABLED
+        *self == LPUART1EN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LPUART1EN_A::ENABLED
+        *self == LPUART1EN_A::Enabled
     }
 }
-impl core::ops::Deref for LPUART1EN_R {
-    type Target = crate::FieldReader<bool, LPUART1EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LPUART1EN` writer - CPU1 Low power UART 1 clocks enable
-pub struct LPUART1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPUART1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPUART1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `LPUART1EN` writer - CPU1 Low power UART 1 clocks enable"]
+pub type LPUART1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB1ENR2_SPEC, LPUART1EN_A, O>;
+impl<'a, const O: u8> LPUART1EN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LPUART1EN_A::DISABLED)
+        self.variant(LPUART1EN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LPUART1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(LPUART1EN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 6 - CPU1 Low power timer 3 clocks enable
+    #[doc = "Bit 6 - CPU1 Low power timer 3 clocks enable"]
     #[inline(always)]
     pub fn lptim3en(&self) -> LPTIM3EN_R {
-        LPTIM3EN_R::new(((self.bits >> 6) & 0x01) != 0)
+        LPTIM3EN_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - CPU1 Low power timer 2 clocks enable
+    #[doc = "Bit 5 - CPU1 Low power timer 2 clocks enable"]
     #[inline(always)]
     pub fn lptim2en(&self) -> LPTIM2EN_R {
-        LPTIM2EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        LPTIM2EN_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 0 - CPU1 Low power UART 1 clocks enable
+    #[doc = "Bit 0 - CPU1 Low power UART 1 clocks enable"]
     #[inline(always)]
     pub fn lpuart1en(&self) -> LPUART1EN_R {
-        LPUART1EN_R::new((self.bits & 0x01) != 0)
+        LPUART1EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 6 - CPU1 Low power timer 3 clocks enable
+    #[doc = "Bit 6 - CPU1 Low power timer 3 clocks enable"]
     #[inline(always)]
-    pub fn lptim3en(&mut self) -> LPTIM3EN_W {
-        LPTIM3EN_W { w: self }
+    pub fn lptim3en(&mut self) -> LPTIM3EN_W<6> {
+        LPTIM3EN_W::new(self)
     }
-    ///Bit 5 - CPU1 Low power timer 2 clocks enable
+    #[doc = "Bit 5 - CPU1 Low power timer 2 clocks enable"]
     #[inline(always)]
-    pub fn lptim2en(&mut self) -> LPTIM2EN_W {
-        LPTIM2EN_W { w: self }
+    pub fn lptim2en(&mut self) -> LPTIM2EN_W<5> {
+        LPTIM2EN_W::new(self)
     }
-    ///Bit 0 - CPU1 Low power UART 1 clocks enable
+    #[doc = "Bit 0 - CPU1 Low power UART 1 clocks enable"]
     #[inline(always)]
-    pub fn lpuart1en(&mut self) -> LPUART1EN_W {
-        LPUART1EN_W { w: self }
+    pub fn lpuart1en(&mut self) -> LPUART1EN_W<0> {
+        LPUART1EN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///APB1 peripheral clock enable register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [apb1enr2](index.html) module
+#[doc = "APB1 peripheral clock enable register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb1enr2](index.html) module"]
 pub struct APB1ENR2_SPEC;
 impl crate::RegisterSpec for APB1ENR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [apb1enr2::R](R) reader structure
+#[doc = "`read()` method returns [apb1enr2::R](R) reader structure"]
 impl crate::Readable for APB1ENR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [apb1enr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [apb1enr2::W](W) writer structure"]
 impl crate::Writable for APB1ENR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets APB1ENR2 to value 0
+#[doc = "`reset()` method sets APB1ENR2 to value 0"]
 impl crate::Resettable for APB1ENR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

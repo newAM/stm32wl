@@ -1,4 +1,4 @@
-///Register `WUTR` reader
+#[doc = "Register `WUTR` reader"]
 pub struct R(crate::R<WUTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<WUTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<WUTR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `WUTR` writer
+#[doc = "Register `WUTR` writer"]
 pub struct W(crate::W<WUTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<WUTR_SPEC>;
@@ -34,106 +34,58 @@ impl From<crate::W<WUTR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `WUTOCLR` reader - Wakeup auto-reload output clear value
-pub struct WUTOCLR_R(crate::FieldReader<u16, u16>);
-impl WUTOCLR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        WUTOCLR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WUTOCLR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WUTOCLR` writer - Wakeup auto-reload output clear value
-pub struct WUTOCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WUTOCLR_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
-///Field `WUT` reader - Wakeup auto-reload value bits
-pub struct WUT_R(crate::FieldReader<u16, u16>);
-impl WUT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        WUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WUT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WUT` writer - Wakeup auto-reload value bits
-pub struct WUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WUT_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+#[doc = "Field `WUTOCLR` reader - Wakeup auto-reload output clear value"]
+pub type WUTOCLR_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `WUTOCLR` writer - Wakeup auto-reload output clear value"]
+pub type WUTOCLR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUTR_SPEC, u16, u16, 16, O>;
+#[doc = "Field `WUT` reader - Wakeup auto-reload value bits"]
+pub type WUT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `WUT` writer - Wakeup auto-reload value bits"]
+pub type WUT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUTR_SPEC, u16, u16, 16, O>;
 impl R {
-    ///Bits 16:31 - Wakeup auto-reload output clear value
+    #[doc = "Bits 16:31 - Wakeup auto-reload output clear value"]
     #[inline(always)]
     pub fn wutoclr(&self) -> WUTOCLR_R {
         WUTOCLR_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
-    ///Bits 0:15 - Wakeup auto-reload value bits
+    #[doc = "Bits 0:15 - Wakeup auto-reload value bits"]
     #[inline(always)]
     pub fn wut(&self) -> WUT_R {
         WUT_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    ///Bits 16:31 - Wakeup auto-reload output clear value
+    #[doc = "Bits 16:31 - Wakeup auto-reload output clear value"]
     #[inline(always)]
-    pub fn wutoclr(&mut self) -> WUTOCLR_W {
-        WUTOCLR_W { w: self }
+    pub fn wutoclr(&mut self) -> WUTOCLR_W<16> {
+        WUTOCLR_W::new(self)
     }
-    ///Bits 0:15 - Wakeup auto-reload value bits
+    #[doc = "Bits 0:15 - Wakeup auto-reload value bits"]
     #[inline(always)]
-    pub fn wut(&mut self) -> WUT_W {
-        WUT_W { w: self }
+    pub fn wut(&mut self) -> WUT_W<0> {
+        WUT_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Wakeup timer register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [wutr](index.html) module
+#[doc = "Wakeup timer register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wutr](index.html) module"]
 pub struct WUTR_SPEC;
 impl crate::RegisterSpec for WUTR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [wutr::R](R) reader structure
+#[doc = "`read()` method returns [wutr::R](R) reader structure"]
 impl crate::Readable for WUTR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [wutr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [wutr::W](W) writer structure"]
 impl crate::Writable for WUTR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets WUTR to value 0xffff
+#[doc = "`reset()` method sets WUTR to value 0xffff"]
 impl crate::Resettable for WUTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

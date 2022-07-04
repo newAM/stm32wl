@@ -1,4 +1,4 @@
-///Register `RGSR` reader
+#[doc = "Register `RGSR` reader"]
 pub struct R(crate::R<RGSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RGSR_SPEC>;
@@ -13,27 +13,25 @@ impl From<crate::R<RGSR_SPEC>> for R {
         R(reader)
     }
 }
-///Trigger overrun event flag
-pub type OF3_A = OF0_A;
-///Field `OF3` reader - Trigger overrun event flag
-pub type OF3_R = OF0_R;
-///OF2
-pub type OF2_A = OF0_A;
-///Field `OF2` reader - OF2
-pub type OF2_R = OF0_R;
-///OF1
-pub type OF1_A = OF0_A;
-///Field `OF1` reader - OF1
-pub type OF1_R = OF0_R;
-///OF0
-///
-///Value on reset: 0
+#[doc = "Trigger overrun event flag"]
+pub use OF0_A as OF3_A;
+#[doc = "OF2"]
+pub use OF0_A as OF2_A;
+#[doc = "OF1"]
+pub use OF0_A as OF1_A;
+#[doc = "Field `OF3` reader - Trigger overrun event flag"]
+pub use OF0_R as OF3_R;
+#[doc = "Field `OF2` reader - OF2"]
+pub use OF0_R as OF2_R;
+#[doc = "Field `OF1` reader - OF1"]
+pub use OF0_R as OF1_R;
+#[doc = "OF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OF0_A {
-    ///0: No new trigger event occured on DMA request generator channel x, before the request counter underrun
-    NOTRIGGER = 0,
-    ///1: New trigger event occured on DMA request generator channel x, before the request counter underrun
-    TRIGGER = 1,
+    #[doc = "0: No new trigger event occured on DMA request generator channel x, before the request counter underrun"]
+    NoTrigger = 0,
+    #[doc = "1: New trigger event occured on DMA request generator channel x, before the request counter underrun"]
+    Trigger = 1,
 }
 impl From<OF0_A> for bool {
     #[inline(always)]
@@ -41,74 +39,60 @@ impl From<OF0_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OF0` reader - OF0
-pub struct OF0_R(crate::FieldReader<bool, OF0_A>);
+#[doc = "Field `OF0` reader - OF0"]
+pub type OF0_R = crate::BitReader<OF0_A>;
 impl OF0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OF0_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OF0_A {
         match self.bits {
-            false => OF0_A::NOTRIGGER,
-            true => OF0_A::TRIGGER,
+            false => OF0_A::NoTrigger,
+            true => OF0_A::Trigger,
         }
     }
-    ///Checks if the value of the field is `NOTRIGGER`
+    #[doc = "Checks if the value of the field is `NoTrigger`"]
     #[inline(always)]
     pub fn is_no_trigger(&self) -> bool {
-        **self == OF0_A::NOTRIGGER
+        *self == OF0_A::NoTrigger
     }
-    ///Checks if the value of the field is `TRIGGER`
+    #[doc = "Checks if the value of the field is `Trigger`"]
     #[inline(always)]
     pub fn is_trigger(&self) -> bool {
-        **self == OF0_A::TRIGGER
-    }
-}
-impl core::ops::Deref for OF0_R {
-    type Target = crate::FieldReader<bool, OF0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OF0_A::Trigger
     }
 }
 impl R {
-    ///Bit 3 - Trigger overrun event flag
+    #[doc = "Bit 3 - Trigger overrun event flag"]
     #[inline(always)]
     pub fn of3(&self) -> OF3_R {
-        OF3_R::new(((self.bits >> 3) & 0x01) != 0)
+        OF3_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - OF2
+    #[doc = "Bit 2 - OF2"]
     #[inline(always)]
     pub fn of2(&self) -> OF2_R {
-        OF2_R::new(((self.bits >> 2) & 0x01) != 0)
+        OF2_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - OF1
+    #[doc = "Bit 1 - OF1"]
     #[inline(always)]
     pub fn of1(&self) -> OF1_R {
-        OF1_R::new(((self.bits >> 1) & 0x01) != 0)
+        OF1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - OF0
+    #[doc = "Bit 0 - OF0"]
     #[inline(always)]
     pub fn of0(&self) -> OF0_R {
-        OF0_R::new((self.bits & 0x01) != 0)
+        OF0_R::new((self.bits & 1) != 0)
     }
 }
-///request generator interrupt status register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rgsr](index.html) module
+#[doc = "request generator interrupt status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rgsr](index.html) module"]
 pub struct RGSR_SPEC;
 impl crate::RegisterSpec for RGSR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rgsr::R](R) reader structure
+#[doc = "`read()` method returns [rgsr::R](R) reader structure"]
 impl crate::Readable for RGSR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets RGSR to value 0
+#[doc = "`reset()` method sets RGSR to value 0"]
 impl crate::Resettable for RGSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

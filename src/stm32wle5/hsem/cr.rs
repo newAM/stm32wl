@@ -1,4 +1,4 @@
-///Register `CR` writer
+#[doc = "Register `CR` writer"]
 pub struct W(crate::W<CR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR_SPEC>;
@@ -19,62 +19,38 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `COREID` writer - MASTERID
-pub struct COREID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COREID_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
-///Field `KEY` writer - Semaphore clear Key
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+#[doc = "Field `COREID` writer - MASTERID"]
+pub type COREID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, u8, 4, O>;
+#[doc = "Field `KEY` writer - Semaphore clear Key"]
+pub type KEY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u16, u16, 16, O>;
 impl W {
-    ///Bits 8:11 - MASTERID
+    #[doc = "Bits 8:11 - MASTERID"]
     #[inline(always)]
-    pub fn coreid(&mut self) -> COREID_W {
-        COREID_W { w: self }
+    pub fn coreid(&mut self) -> COREID_W<8> {
+        COREID_W::new(self)
     }
-    ///Bits 16:31 - Semaphore clear Key
+    #[doc = "Bits 16:31 - Semaphore clear Key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<16> {
+        KEY_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///HSEM Clear register
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr](index.html) module
+#[doc = "HSEM Clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](index.html) module"]
 pub struct CR_SPEC;
 impl crate::RegisterSpec for CR_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [cr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR to value 0
+#[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

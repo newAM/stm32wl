@@ -1,4 +1,4 @@
-///Register `TIMEOUTR` reader
+#[doc = "Register `TIMEOUTR` reader"]
 pub struct R(crate::R<TIMEOUTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TIMEOUTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TIMEOUTR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `TIMEOUTR` writer
+#[doc = "Register `TIMEOUTR` writer"]
 pub struct W(crate::W<TIMEOUTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TIMEOUTR_SPEC>;
@@ -34,41 +34,18 @@ impl From<crate::W<TIMEOUTR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `TIMEOUTA` reader - Bus timeout A
-pub struct TIMEOUTA_R(crate::FieldReader<u16, u16>);
-impl TIMEOUTA_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TIMEOUTA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMEOUTA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIMEOUTA` writer - Bus timeout A
-pub struct TIMEOUTA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUTA_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
-///Idle clock timeout detection
-///
-///Value on reset: 0
+#[doc = "Field `TIMEOUTA` reader - Bus timeout A"]
+pub type TIMEOUTA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `TIMEOUTA` writer - Bus timeout A"]
+pub type TIMEOUTA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMEOUTR_SPEC, u16, u16, 12, O>;
+#[doc = "Idle clock timeout detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIDLE_A {
-    ///0: TIMEOUTA is used to detect SCL low timeout
-    DISABLED = 0,
-    ///1: TIMEOUTA is used to detect both SCL and SDA high timeout (bus idle condition)
-    ENABLED = 1,
+    #[doc = "0: TIMEOUTA is used to detect SCL low timeout"]
+    Disabled = 0,
+    #[doc = "1: TIMEOUTA is used to detect both SCL and SDA high timeout (bus idle condition)"]
+    Enabled = 1,
 }
 impl From<TIDLE_A> for bool {
     #[inline(always)]
@@ -76,84 +53,49 @@ impl From<TIDLE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TIDLE` reader - Idle clock timeout detection
-pub struct TIDLE_R(crate::FieldReader<bool, TIDLE_A>);
+#[doc = "Field `TIDLE` reader - Idle clock timeout detection"]
+pub type TIDLE_R = crate::BitReader<TIDLE_A>;
 impl TIDLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIDLE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIDLE_A {
         match self.bits {
-            false => TIDLE_A::DISABLED,
-            true => TIDLE_A::ENABLED,
+            false => TIDLE_A::Disabled,
+            true => TIDLE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TIDLE_A::DISABLED
+        *self == TIDLE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TIDLE_A::ENABLED
+        *self == TIDLE_A::Enabled
     }
 }
-impl core::ops::Deref for TIDLE_R {
-    type Target = crate::FieldReader<bool, TIDLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIDLE` writer - Idle clock timeout detection
-pub struct TIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIDLE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIDLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///TIMEOUTA is used to detect SCL low timeout
+#[doc = "Field `TIDLE` writer - Idle clock timeout detection"]
+pub type TIDLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMEOUTR_SPEC, TIDLE_A, O>;
+impl<'a, const O: u8> TIDLE_W<'a, O> {
+    #[doc = "TIMEOUTA is used to detect SCL low timeout"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TIDLE_A::DISABLED)
+        self.variant(TIDLE_A::Disabled)
     }
-    ///TIMEOUTA is used to detect both SCL and SDA high timeout (bus idle condition)
+    #[doc = "TIMEOUTA is used to detect both SCL and SDA high timeout (bus idle condition)"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TIDLE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(TIDLE_A::Enabled)
     }
 }
-///Clock timeout enable
-///
-///Value on reset: 0
+#[doc = "Clock timeout enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMOUTEN_A {
-    ///0: SCL timeout detection is disabled
-    DISABLED = 0,
-    ///1: SCL timeout detection is enabled
-    ENABLED = 1,
+    #[doc = "0: SCL timeout detection is disabled"]
+    Disabled = 0,
+    #[doc = "1: SCL timeout detection is enabled"]
+    Enabled = 1,
 }
 impl From<TIMOUTEN_A> for bool {
     #[inline(always)]
@@ -161,110 +103,54 @@ impl From<TIMOUTEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TIMOUTEN` reader - Clock timeout enable
-pub struct TIMOUTEN_R(crate::FieldReader<bool, TIMOUTEN_A>);
+#[doc = "Field `TIMOUTEN` reader - Clock timeout enable"]
+pub type TIMOUTEN_R = crate::BitReader<TIMOUTEN_A>;
 impl TIMOUTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMOUTEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMOUTEN_A {
         match self.bits {
-            false => TIMOUTEN_A::DISABLED,
-            true => TIMOUTEN_A::ENABLED,
+            false => TIMOUTEN_A::Disabled,
+            true => TIMOUTEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TIMOUTEN_A::DISABLED
+        *self == TIMOUTEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TIMOUTEN_A::ENABLED
+        *self == TIMOUTEN_A::Enabled
     }
 }
-impl core::ops::Deref for TIMOUTEN_R {
-    type Target = crate::FieldReader<bool, TIMOUTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIMOUTEN` writer - Clock timeout enable
-pub struct TIMOUTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMOUTEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIMOUTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///SCL timeout detection is disabled
+#[doc = "Field `TIMOUTEN` writer - Clock timeout enable"]
+pub type TIMOUTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMEOUTR_SPEC, TIMOUTEN_A, O>;
+impl<'a, const O: u8> TIMOUTEN_W<'a, O> {
+    #[doc = "SCL timeout detection is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TIMOUTEN_A::DISABLED)
+        self.variant(TIMOUTEN_A::Disabled)
     }
-    ///SCL timeout detection is enabled
+    #[doc = "SCL timeout detection is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TIMOUTEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(TIMOUTEN_A::Enabled)
     }
 }
-///Field `TIMEOUTB` reader - Bus timeout B
-pub struct TIMEOUTB_R(crate::FieldReader<u16, u16>);
-impl TIMEOUTB_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TIMEOUTB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMEOUTB_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIMEOUTB` writer - Bus timeout B
-pub struct TIMEOUTB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUTB_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
-///Extended clock timeout enable
-///
-///Value on reset: 0
+#[doc = "Field `TIMEOUTB` reader - Bus timeout B"]
+pub type TIMEOUTB_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `TIMEOUTB` writer - Bus timeout B"]
+pub type TIMEOUTB_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMEOUTR_SPEC, u16, u16, 12, O>;
+#[doc = "Extended clock timeout enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEXTEN_A {
-    ///0: Extended clock timeout detection is disabled
-    DISABLED = 0,
-    ///1: Extended clock timeout detection is enabled
-    ENABLED = 1,
+    #[doc = "0: Extended clock timeout detection is disabled"]
+    Disabled = 0,
+    #[doc = "1: Extended clock timeout detection is enabled"]
+    Enabled = 1,
 }
 impl From<TEXTEN_A> for bool {
     #[inline(always)]
@@ -272,153 +158,116 @@ impl From<TEXTEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TEXTEN` reader - Extended clock timeout enable
-pub struct TEXTEN_R(crate::FieldReader<bool, TEXTEN_A>);
+#[doc = "Field `TEXTEN` reader - Extended clock timeout enable"]
+pub type TEXTEN_R = crate::BitReader<TEXTEN_A>;
 impl TEXTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TEXTEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TEXTEN_A {
         match self.bits {
-            false => TEXTEN_A::DISABLED,
-            true => TEXTEN_A::ENABLED,
+            false => TEXTEN_A::Disabled,
+            true => TEXTEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TEXTEN_A::DISABLED
+        *self == TEXTEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TEXTEN_A::ENABLED
+        *self == TEXTEN_A::Enabled
     }
 }
-impl core::ops::Deref for TEXTEN_R {
-    type Target = crate::FieldReader<bool, TEXTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TEXTEN` writer - Extended clock timeout enable
-pub struct TEXTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEXTEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TEXTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Extended clock timeout detection is disabled
+#[doc = "Field `TEXTEN` writer - Extended clock timeout enable"]
+pub type TEXTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMEOUTR_SPEC, TEXTEN_A, O>;
+impl<'a, const O: u8> TEXTEN_W<'a, O> {
+    #[doc = "Extended clock timeout detection is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TEXTEN_A::DISABLED)
+        self.variant(TEXTEN_A::Disabled)
     }
-    ///Extended clock timeout detection is enabled
+    #[doc = "Extended clock timeout detection is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TEXTEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
+        self.variant(TEXTEN_A::Enabled)
     }
 }
 impl R {
-    ///Bits 0:11 - Bus timeout A
+    #[doc = "Bits 0:11 - Bus timeout A"]
     #[inline(always)]
     pub fn timeouta(&self) -> TIMEOUTA_R {
         TIMEOUTA_R::new((self.bits & 0x0fff) as u16)
     }
-    ///Bit 12 - Idle clock timeout detection
+    #[doc = "Bit 12 - Idle clock timeout detection"]
     #[inline(always)]
     pub fn tidle(&self) -> TIDLE_R {
-        TIDLE_R::new(((self.bits >> 12) & 0x01) != 0)
+        TIDLE_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 15 - Clock timeout enable
+    #[doc = "Bit 15 - Clock timeout enable"]
     #[inline(always)]
     pub fn timouten(&self) -> TIMOUTEN_R {
-        TIMOUTEN_R::new(((self.bits >> 15) & 0x01) != 0)
+        TIMOUTEN_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 16:27 - Bus timeout B
+    #[doc = "Bits 16:27 - Bus timeout B"]
     #[inline(always)]
     pub fn timeoutb(&self) -> TIMEOUTB_R {
         TIMEOUTB_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
-    ///Bit 31 - Extended clock timeout enable
+    #[doc = "Bit 31 - Extended clock timeout enable"]
     #[inline(always)]
     pub fn texten(&self) -> TEXTEN_R {
-        TEXTEN_R::new(((self.bits >> 31) & 0x01) != 0)
+        TEXTEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    ///Bits 0:11 - Bus timeout A
+    #[doc = "Bits 0:11 - Bus timeout A"]
     #[inline(always)]
-    pub fn timeouta(&mut self) -> TIMEOUTA_W {
-        TIMEOUTA_W { w: self }
+    pub fn timeouta(&mut self) -> TIMEOUTA_W<0> {
+        TIMEOUTA_W::new(self)
     }
-    ///Bit 12 - Idle clock timeout detection
+    #[doc = "Bit 12 - Idle clock timeout detection"]
     #[inline(always)]
-    pub fn tidle(&mut self) -> TIDLE_W {
-        TIDLE_W { w: self }
+    pub fn tidle(&mut self) -> TIDLE_W<12> {
+        TIDLE_W::new(self)
     }
-    ///Bit 15 - Clock timeout enable
+    #[doc = "Bit 15 - Clock timeout enable"]
     #[inline(always)]
-    pub fn timouten(&mut self) -> TIMOUTEN_W {
-        TIMOUTEN_W { w: self }
+    pub fn timouten(&mut self) -> TIMOUTEN_W<15> {
+        TIMOUTEN_W::new(self)
     }
-    ///Bits 16:27 - Bus timeout B
+    #[doc = "Bits 16:27 - Bus timeout B"]
     #[inline(always)]
-    pub fn timeoutb(&mut self) -> TIMEOUTB_W {
-        TIMEOUTB_W { w: self }
+    pub fn timeoutb(&mut self) -> TIMEOUTB_W<16> {
+        TIMEOUTB_W::new(self)
     }
-    ///Bit 31 - Extended clock timeout enable
+    #[doc = "Bit 31 - Extended clock timeout enable"]
     #[inline(always)]
-    pub fn texten(&mut self) -> TEXTEN_W {
-        TEXTEN_W { w: self }
+    pub fn texten(&mut self) -> TEXTEN_W<31> {
+        TEXTEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Status register 1
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [timeoutr](index.html) module
+#[doc = "Status register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timeoutr](index.html) module"]
 pub struct TIMEOUTR_SPEC;
 impl crate::RegisterSpec for TIMEOUTR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [timeoutr::R](R) reader structure
+#[doc = "`read()` method returns [timeoutr::R](R) reader structure"]
 impl crate::Readable for TIMEOUTR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [timeoutr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [timeoutr::W](W) writer structure"]
 impl crate::Writable for TIMEOUTR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets TIMEOUTR to value 0
+#[doc = "`reset()` method sets TIMEOUTR to value 0"]
 impl crate::Resettable for TIMEOUTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

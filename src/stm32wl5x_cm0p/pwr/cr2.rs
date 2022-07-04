@@ -1,4 +1,4 @@
-///Register `CR2` reader
+#[doc = "Register `CR2` reader"]
 pub struct R(crate::R<CR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR2` writer
+#[doc = "Register `CR2` writer"]
 pub struct W(crate::W<CR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-///Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
-///
-///Value on reset: 0
+#[doc = "Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PVME3_A {
-    ///0: PVM3 (VDDA monitoring versus 1.62 V threshold) disable
-    DISABLED = 0,
-    ///1: PVM3 (VDDA monitoring versus 1.62 V threshold) enable
-    ENABLED = 1,
+    #[doc = "0: PVM3 (VDDA monitoring versus 1.62 V threshold) disable"]
+    Disabled = 0,
+    #[doc = "1: PVM3 (VDDA monitoring versus 1.62 V threshold) enable"]
+    Enabled = 1,
 }
 impl From<PVME3_A> for bool {
     #[inline(always)]
@@ -50,97 +48,62 @@ impl From<PVME3_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PVME3` reader - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
-pub struct PVME3_R(crate::FieldReader<bool, PVME3_A>);
+#[doc = "Field `PVME3` reader - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
+pub type PVME3_R = crate::BitReader<PVME3_A>;
 impl PVME3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PVME3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PVME3_A {
         match self.bits {
-            false => PVME3_A::DISABLED,
-            true => PVME3_A::ENABLED,
+            false => PVME3_A::Disabled,
+            true => PVME3_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PVME3_A::DISABLED
+        *self == PVME3_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PVME3_A::ENABLED
+        *self == PVME3_A::Enabled
     }
 }
-impl core::ops::Deref for PVME3_R {
-    type Target = crate::FieldReader<bool, PVME3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PVME3` writer - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
-pub struct PVME3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PVME3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PVME3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PVM3 (VDDA monitoring versus 1.62 V threshold) disable
+#[doc = "Field `PVME3` writer - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
+pub type PVME3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, PVME3_A, O>;
+impl<'a, const O: u8> PVME3_W<'a, O> {
+    #[doc = "PVM3 (VDDA monitoring versus 1.62 V threshold) disable"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PVME3_A::DISABLED)
+        self.variant(PVME3_A::Disabled)
     }
-    ///PVM3 (VDDA monitoring versus 1.62 V threshold) enable
+    #[doc = "PVM3 (VDDA monitoring versus 1.62 V threshold) enable"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PVME3_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(PVME3_A::Enabled)
     }
 }
-///Power voltage detector level selection.
-///
-///Value on reset: 0
+#[doc = "Power voltage detector level selection.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PLS_A {
-    ///0: 2.0V
-    V2_0 = 0,
-    ///1: 2.2V
-    V2_2 = 1,
-    ///2: 2.4V
-    V2_4 = 2,
-    ///3: 2.5V
-    V2_5 = 3,
-    ///4: 2.6V
-    V2_6 = 4,
-    ///5: 2.8V
-    V2_8 = 5,
-    ///6: 2.9V
-    V2_9 = 6,
-    ///7: External input analog voltage PVD_IN (compared internally to VREFINT)
-    EXTERNAL = 7,
+    #[doc = "0: 2.0V"]
+    V20 = 0,
+    #[doc = "1: 2.2V"]
+    V22 = 1,
+    #[doc = "2: 2.4V"]
+    V24 = 2,
+    #[doc = "3: 2.5V"]
+    V25 = 3,
+    #[doc = "4: 2.6V"]
+    V26 = 4,
+    #[doc = "5: 2.8V"]
+    V28 = 5,
+    #[doc = "6: 2.9V"]
+    V29 = 6,
+    #[doc = "7: External input analog voltage PVD_IN (compared internally to VREFINT)"]
+    External = 7,
 }
 impl From<PLS_A> for u8 {
     #[inline(always)]
@@ -148,141 +111,116 @@ impl From<PLS_A> for u8 {
         variant as _
     }
 }
-///Field `PLS` reader - Power voltage detector level selection.
-pub struct PLS_R(crate::FieldReader<u8, PLS_A>);
+#[doc = "Field `PLS` reader - Power voltage detector level selection."]
+pub type PLS_R = crate::FieldReader<u8, PLS_A>;
 impl PLS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLS_A {
         match self.bits {
-            0 => PLS_A::V2_0,
-            1 => PLS_A::V2_2,
-            2 => PLS_A::V2_4,
-            3 => PLS_A::V2_5,
-            4 => PLS_A::V2_6,
-            5 => PLS_A::V2_8,
-            6 => PLS_A::V2_9,
-            7 => PLS_A::EXTERNAL,
+            0 => PLS_A::V20,
+            1 => PLS_A::V22,
+            2 => PLS_A::V24,
+            3 => PLS_A::V25,
+            4 => PLS_A::V26,
+            5 => PLS_A::V28,
+            6 => PLS_A::V29,
+            7 => PLS_A::External,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `V2_0`
+    #[doc = "Checks if the value of the field is `V20`"]
     #[inline(always)]
     pub fn is_v2_0(&self) -> bool {
-        **self == PLS_A::V2_0
+        *self == PLS_A::V20
     }
-    ///Checks if the value of the field is `V2_2`
+    #[doc = "Checks if the value of the field is `V22`"]
     #[inline(always)]
     pub fn is_v2_2(&self) -> bool {
-        **self == PLS_A::V2_2
+        *self == PLS_A::V22
     }
-    ///Checks if the value of the field is `V2_4`
+    #[doc = "Checks if the value of the field is `V24`"]
     #[inline(always)]
     pub fn is_v2_4(&self) -> bool {
-        **self == PLS_A::V2_4
+        *self == PLS_A::V24
     }
-    ///Checks if the value of the field is `V2_5`
+    #[doc = "Checks if the value of the field is `V25`"]
     #[inline(always)]
     pub fn is_v2_5(&self) -> bool {
-        **self == PLS_A::V2_5
+        *self == PLS_A::V25
     }
-    ///Checks if the value of the field is `V2_6`
+    #[doc = "Checks if the value of the field is `V26`"]
     #[inline(always)]
     pub fn is_v2_6(&self) -> bool {
-        **self == PLS_A::V2_6
+        *self == PLS_A::V26
     }
-    ///Checks if the value of the field is `V2_8`
+    #[doc = "Checks if the value of the field is `V28`"]
     #[inline(always)]
     pub fn is_v2_8(&self) -> bool {
-        **self == PLS_A::V2_8
+        *self == PLS_A::V28
     }
-    ///Checks if the value of the field is `V2_9`
+    #[doc = "Checks if the value of the field is `V29`"]
     #[inline(always)]
     pub fn is_v2_9(&self) -> bool {
-        **self == PLS_A::V2_9
+        *self == PLS_A::V29
     }
-    ///Checks if the value of the field is `EXTERNAL`
+    #[doc = "Checks if the value of the field is `External`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
-        **self == PLS_A::EXTERNAL
+        *self == PLS_A::External
     }
 }
-impl core::ops::Deref for PLS_R {
-    type Target = crate::FieldReader<u8, PLS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLS` writer - Power voltage detector level selection.
-pub struct PLS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///2.0V
+#[doc = "Field `PLS` writer - Power voltage detector level selection."]
+pub type PLS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR2_SPEC, u8, PLS_A, 3, O>;
+impl<'a, const O: u8> PLS_W<'a, O> {
+    #[doc = "2.0V"]
     #[inline(always)]
     pub fn v2_0(self) -> &'a mut W {
-        self.variant(PLS_A::V2_0)
+        self.variant(PLS_A::V20)
     }
-    ///2.2V
+    #[doc = "2.2V"]
     #[inline(always)]
     pub fn v2_2(self) -> &'a mut W {
-        self.variant(PLS_A::V2_2)
+        self.variant(PLS_A::V22)
     }
-    ///2.4V
+    #[doc = "2.4V"]
     #[inline(always)]
     pub fn v2_4(self) -> &'a mut W {
-        self.variant(PLS_A::V2_4)
+        self.variant(PLS_A::V24)
     }
-    ///2.5V
+    #[doc = "2.5V"]
     #[inline(always)]
     pub fn v2_5(self) -> &'a mut W {
-        self.variant(PLS_A::V2_5)
+        self.variant(PLS_A::V25)
     }
-    ///2.6V
+    #[doc = "2.6V"]
     #[inline(always)]
     pub fn v2_6(self) -> &'a mut W {
-        self.variant(PLS_A::V2_6)
+        self.variant(PLS_A::V26)
     }
-    ///2.8V
+    #[doc = "2.8V"]
     #[inline(always)]
     pub fn v2_8(self) -> &'a mut W {
-        self.variant(PLS_A::V2_8)
+        self.variant(PLS_A::V28)
     }
-    ///2.9V
+    #[doc = "2.9V"]
     #[inline(always)]
     pub fn v2_9(self) -> &'a mut W {
-        self.variant(PLS_A::V2_9)
+        self.variant(PLS_A::V29)
     }
-    ///External input analog voltage PVD_IN (compared internally to VREFINT)
+    #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
     #[inline(always)]
     pub fn external(self) -> &'a mut W {
-        self.variant(PLS_A::EXTERNAL)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
-        self.w
+        self.variant(PLS_A::External)
     }
 }
-///Power voltage detector enable
-///
-///Value on reset: 0
+#[doc = "Power voltage detector enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PVDE_A {
-    ///0: PVD Disabled
-    DISABLED = 0,
-    ///1: PVD Enabled
-    ENABLED = 1,
+    #[doc = "0: PVD Disabled"]
+    Disabled = 0,
+    #[doc = "1: PVD Enabled"]
+    Enabled = 1,
 }
 impl From<PVDE_A> for bool {
     #[inline(always)]
@@ -290,133 +228,96 @@ impl From<PVDE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PVDE` reader - Power voltage detector enable
-pub struct PVDE_R(crate::FieldReader<bool, PVDE_A>);
+#[doc = "Field `PVDE` reader - Power voltage detector enable"]
+pub type PVDE_R = crate::BitReader<PVDE_A>;
 impl PVDE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PVDE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PVDE_A {
         match self.bits {
-            false => PVDE_A::DISABLED,
-            true => PVDE_A::ENABLED,
+            false => PVDE_A::Disabled,
+            true => PVDE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PVDE_A::DISABLED
+        *self == PVDE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PVDE_A::ENABLED
+        *self == PVDE_A::Enabled
     }
 }
-impl core::ops::Deref for PVDE_R {
-    type Target = crate::FieldReader<bool, PVDE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PVDE` writer - Power voltage detector enable
-pub struct PVDE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PVDE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PVDE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PVD Disabled
+#[doc = "Field `PVDE` writer - Power voltage detector enable"]
+pub type PVDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, PVDE_A, O>;
+impl<'a, const O: u8> PVDE_W<'a, O> {
+    #[doc = "PVD Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PVDE_A::DISABLED)
+        self.variant(PVDE_A::Disabled)
     }
-    ///PVD Enabled
+    #[doc = "PVD Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PVDE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(PVDE_A::Enabled)
     }
 }
 impl R {
-    ///Bit 6 - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
+    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
     #[inline(always)]
     pub fn pvme3(&self) -> PVME3_R {
-        PVME3_R::new(((self.bits >> 6) & 0x01) != 0)
+        PVME3_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bits 1:3 - Power voltage detector level selection.
+    #[doc = "Bits 1:3 - Power voltage detector level selection."]
     #[inline(always)]
     pub fn pls(&self) -> PLS_R {
-        PLS_R::new(((self.bits >> 1) & 0x07) as u8)
+        PLS_R::new(((self.bits >> 1) & 7) as u8)
     }
-    ///Bit 0 - Power voltage detector enable
+    #[doc = "Bit 0 - Power voltage detector enable"]
     #[inline(always)]
     pub fn pvde(&self) -> PVDE_R {
-        PVDE_R::new((self.bits & 0x01) != 0)
+        PVDE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 6 - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
+    #[doc = "Bit 6 - Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V"]
     #[inline(always)]
-    pub fn pvme3(&mut self) -> PVME3_W {
-        PVME3_W { w: self }
+    pub fn pvme3(&mut self) -> PVME3_W<6> {
+        PVME3_W::new(self)
     }
-    ///Bits 1:3 - Power voltage detector level selection.
+    #[doc = "Bits 1:3 - Power voltage detector level selection."]
     #[inline(always)]
-    pub fn pls(&mut self) -> PLS_W {
-        PLS_W { w: self }
+    pub fn pls(&mut self) -> PLS_W<1> {
+        PLS_W::new(self)
     }
-    ///Bit 0 - Power voltage detector enable
+    #[doc = "Bit 0 - Power voltage detector enable"]
     #[inline(always)]
-    pub fn pvde(&mut self) -> PVDE_W {
-        PVDE_W { w: self }
+    pub fn pvde(&mut self) -> PVDE_W<0> {
+        PVDE_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Power control register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr2](index.html) module
+#[doc = "Power control register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr2](index.html) module"]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr2::R](R) reader structure
+#[doc = "`read()` method returns [cr2::R](R) reader structure"]
 impl crate::Readable for CR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr2::W](W) writer structure"]
 impl crate::Writable for CR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR2 to value 0
+#[doc = "`reset()` method sets CR2 to value 0"]
 impl crate::Resettable for CR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

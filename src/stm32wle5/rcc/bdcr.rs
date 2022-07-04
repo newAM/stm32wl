@@ -1,4 +1,4 @@
-///Register `BDCR` reader
+#[doc = "Register `BDCR` reader"]
 pub struct R(crate::R<BDCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<BDCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<BDCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `BDCR` writer
+#[doc = "Register `BDCR` writer"]
 pub struct W(crate::W<BDCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<BDCR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<BDCR_SPEC>> for W {
         W(writer)
     }
 }
-///Low speed clock output selection
-///
-///Value on reset: 0
+#[doc = "Low speed clock output selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSCOSEL_A {
-    ///0: LSI clock selected
-    LSI = 0,
-    ///1: LSE clock selected
-    LSE = 1,
+    #[doc = "0: LSI clock selected"]
+    Lsi = 0,
+    #[doc = "1: LSE clock selected"]
+    Lse = 1,
 }
 impl From<LSCOSEL_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<LSCOSEL_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSCOSEL` reader - Low speed clock output selection
-pub struct LSCOSEL_R(crate::FieldReader<bool, LSCOSEL_A>);
+#[doc = "Field `LSCOSEL` reader - Low speed clock output selection"]
+pub type LSCOSEL_R = crate::BitReader<LSCOSEL_A>;
 impl LSCOSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSCOSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSCOSEL_A {
         match self.bits {
-            false => LSCOSEL_A::LSI,
-            true => LSCOSEL_A::LSE,
+            false => LSCOSEL_A::Lsi,
+            true => LSCOSEL_A::Lse,
         }
     }
-    ///Checks if the value of the field is `LSI`
+    #[doc = "Checks if the value of the field is `Lsi`"]
     #[inline(always)]
     pub fn is_lsi(&self) -> bool {
-        **self == LSCOSEL_A::LSI
+        *self == LSCOSEL_A::Lsi
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == LSCOSEL_A::LSE
+        *self == LSCOSEL_A::Lse
     }
 }
-impl core::ops::Deref for LSCOSEL_R {
-    type Target = crate::FieldReader<bool, LSCOSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSCOSEL` writer - Low speed clock output selection
-pub struct LSCOSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSCOSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSCOSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LSI clock selected
+#[doc = "Field `LSCOSEL` writer - Low speed clock output selection"]
+pub type LSCOSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSCOSEL_A, O>;
+impl<'a, const O: u8> LSCOSEL_W<'a, O> {
+    #[doc = "LSI clock selected"]
     #[inline(always)]
     pub fn lsi(self) -> &'a mut W {
-        self.variant(LSCOSEL_A::LSI)
+        self.variant(LSCOSEL_A::Lsi)
     }
-    ///LSE clock selected
+    #[doc = "LSE clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(LSCOSEL_A::LSE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
+        self.variant(LSCOSEL_A::Lse)
     }
 }
-///Low speed clock output enable
-///
-///Value on reset: 0
+#[doc = "Low speed clock output enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSCOEN_A {
-    ///0: LSCO disabled
-    DISABLED = 0,
-    ///1: LSCO enabled
-    ENABLED = 1,
+    #[doc = "0: LSCO disabled"]
+    Disabled = 0,
+    #[doc = "1: LSCO enabled"]
+    Enabled = 1,
 }
 impl From<LSCOEN_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<LSCOEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSCOEN` reader - Low speed clock output enable
-pub struct LSCOEN_R(crate::FieldReader<bool, LSCOEN_A>);
+#[doc = "Field `LSCOEN` reader - Low speed clock output enable"]
+pub type LSCOEN_R = crate::BitReader<LSCOEN_A>;
 impl LSCOEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSCOEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSCOEN_A {
         match self.bits {
-            false => LSCOEN_A::DISABLED,
-            true => LSCOEN_A::ENABLED,
+            false => LSCOEN_A::Disabled,
+            true => LSCOEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LSCOEN_A::DISABLED
+        *self == LSCOEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LSCOEN_A::ENABLED
+        *self == LSCOEN_A::Enabled
     }
 }
-impl core::ops::Deref for LSCOEN_R {
-    type Target = crate::FieldReader<bool, LSCOEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSCOEN` writer - Low speed clock output enable
-pub struct LSCOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSCOEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSCOEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LSCO disabled
+#[doc = "Field `LSCOEN` writer - Low speed clock output enable"]
+pub type LSCOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSCOEN_A, O>;
+impl<'a, const O: u8> LSCOEN_W<'a, O> {
+    #[doc = "LSCO disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LSCOEN_A::DISABLED)
+        self.variant(LSCOEN_A::Disabled)
     }
-    ///LSCO enabled
+    #[doc = "LSCO enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LSCOEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(LSCOEN_A::Enabled)
     }
 }
-///Backup domain software reset
-///
-///Value on reset: 0
+#[doc = "Backup domain software reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BDRST_A {
-    ///0: Reset not activated
-    NOTACTIVE = 0,
-    ///1: Entire Backup domain reset
-    RESET = 1,
+    #[doc = "0: Reset not activated"]
+    NotActive = 0,
+    #[doc = "1: Entire Backup domain reset"]
+    Reset = 1,
 }
 impl From<BDRST_A> for bool {
     #[inline(always)]
@@ -220,84 +148,49 @@ impl From<BDRST_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BDRST` reader - Backup domain software reset
-pub struct BDRST_R(crate::FieldReader<bool, BDRST_A>);
+#[doc = "Field `BDRST` reader - Backup domain software reset"]
+pub type BDRST_R = crate::BitReader<BDRST_A>;
 impl BDRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BDRST_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDRST_A {
         match self.bits {
-            false => BDRST_A::NOTACTIVE,
-            true => BDRST_A::RESET,
+            false => BDRST_A::NotActive,
+            true => BDRST_A::Reset,
         }
     }
-    ///Checks if the value of the field is `NOTACTIVE`
+    #[doc = "Checks if the value of the field is `NotActive`"]
     #[inline(always)]
     pub fn is_not_active(&self) -> bool {
-        **self == BDRST_A::NOTACTIVE
+        *self == BDRST_A::NotActive
     }
-    ///Checks if the value of the field is `RESET`
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == BDRST_A::RESET
+        *self == BDRST_A::Reset
     }
 }
-impl core::ops::Deref for BDRST_R {
-    type Target = crate::FieldReader<bool, BDRST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BDRST` writer - Backup domain software reset
-pub struct BDRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BDRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BDRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Reset not activated
+#[doc = "Field `BDRST` writer - Backup domain software reset"]
+pub type BDRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, BDRST_A, O>;
+impl<'a, const O: u8> BDRST_W<'a, O> {
+    #[doc = "Reset not activated"]
     #[inline(always)]
     pub fn not_active(self) -> &'a mut W {
-        self.variant(BDRST_A::NOTACTIVE)
+        self.variant(BDRST_A::NotActive)
     }
-    ///Entire Backup domain reset
+    #[doc = "Entire Backup domain reset"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(BDRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(BDRST_A::Reset)
     }
 }
-///RTC clock enable
-///
-///Value on reset: 0
+#[doc = "RTC clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCEN_A {
-    ///0: RTC kernel clock disabled
-    DISABLED = 0,
-    ///1: RTC kernel clock enabled
-    ENABLED = 1,
+    #[doc = "0: RTC kernel clock disabled"]
+    Disabled = 0,
+    #[doc = "1: RTC kernel clock enabled"]
+    Enabled = 1,
 }
 impl From<RTCEN_A> for bool {
     #[inline(always)]
@@ -305,84 +198,49 @@ impl From<RTCEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RTCEN` reader - RTC clock enable
-pub struct RTCEN_R(crate::FieldReader<bool, RTCEN_A>);
+#[doc = "Field `RTCEN` reader - RTC clock enable"]
+pub type RTCEN_R = crate::BitReader<RTCEN_A>;
 impl RTCEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCEN_A {
         match self.bits {
-            false => RTCEN_A::DISABLED,
-            true => RTCEN_A::ENABLED,
+            false => RTCEN_A::Disabled,
+            true => RTCEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RTCEN_A::DISABLED
+        *self == RTCEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RTCEN_A::ENABLED
+        *self == RTCEN_A::Enabled
     }
 }
-impl core::ops::Deref for RTCEN_R {
-    type Target = crate::FieldReader<bool, RTCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCEN` writer - RTC clock enable
-pub struct RTCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RTCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///RTC kernel clock disabled
+#[doc = "Field `RTCEN` writer - RTC clock enable"]
+pub type RTCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, RTCEN_A, O>;
+impl<'a, const O: u8> RTCEN_W<'a, O> {
+    #[doc = "RTC kernel clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(RTCEN_A::DISABLED)
+        self.variant(RTCEN_A::Disabled)
     }
-    ///RTC kernel clock enabled
+    #[doc = "RTC kernel clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(RTCEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(RTCEN_A::Enabled)
     }
 }
-///LSE system clock ready
-///
-///Value on reset: 0
+#[doc = "LSE system clock ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSESYSRDY_A {
-    ///0: LSE system clock not ready
-    NOTREADY = 0,
-    ///1: LSE system clock ready
-    READY = 1,
+    #[doc = "0: LSE system clock not ready"]
+    NotReady = 0,
+    #[doc = "1: LSE system clock ready"]
+    Ready = 1,
 }
 impl From<LSESYSRDY_A> for bool {
     #[inline(always)]
@@ -390,52 +248,40 @@ impl From<LSESYSRDY_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSESYSRDY` reader - LSE system clock ready
-pub struct LSESYSRDY_R(crate::FieldReader<bool, LSESYSRDY_A>);
+#[doc = "Field `LSESYSRDY` reader - LSE system clock ready"]
+pub type LSESYSRDY_R = crate::BitReader<LSESYSRDY_A>;
 impl LSESYSRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSESYSRDY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSESYSRDY_A {
         match self.bits {
-            false => LSESYSRDY_A::NOTREADY,
-            true => LSESYSRDY_A::READY,
+            false => LSESYSRDY_A::NotReady,
+            true => LSESYSRDY_A::Ready,
         }
     }
-    ///Checks if the value of the field is `NOTREADY`
+    #[doc = "Checks if the value of the field is `NotReady`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        **self == LSESYSRDY_A::NOTREADY
+        *self == LSESYSRDY_A::NotReady
     }
-    ///Checks if the value of the field is `READY`
+    #[doc = "Checks if the value of the field is `Ready`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == LSESYSRDY_A::READY
+        *self == LSESYSRDY_A::Ready
     }
 }
-impl core::ops::Deref for LSESYSRDY_R {
-    type Target = crate::FieldReader<bool, LSESYSRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///RTC clock source selection
-///
-///Value on reset: 0
+#[doc = "RTC clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RTCSEL_A {
-    ///0: No clock
-    NOCLOCK = 0,
-    ///1: LSE oscillator clock selected
-    LSE = 1,
-    ///2: LSI oscillator clock selected
-    LSI = 2,
-    ///3: HSE32 oscillator clock divided by 32 selected
-    HSE32 = 3,
+    #[doc = "0: No clock"]
+    NoClock = 0,
+    #[doc = "1: LSE oscillator clock selected"]
+    Lse = 1,
+    #[doc = "2: LSI oscillator clock selected"]
+    Lsi = 2,
+    #[doc = "3: HSE32 oscillator clock divided by 32 selected"]
+    Hse32 = 3,
 }
 impl From<RTCSEL_A> for u8 {
     #[inline(always)]
@@ -443,97 +289,72 @@ impl From<RTCSEL_A> for u8 {
         variant as _
     }
 }
-///Field `RTCSEL` reader - RTC clock source selection
-pub struct RTCSEL_R(crate::FieldReader<u8, RTCSEL_A>);
+#[doc = "Field `RTCSEL` reader - RTC clock source selection"]
+pub type RTCSEL_R = crate::FieldReader<u8, RTCSEL_A>;
 impl RTCSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RTCSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCSEL_A {
         match self.bits {
-            0 => RTCSEL_A::NOCLOCK,
-            1 => RTCSEL_A::LSE,
-            2 => RTCSEL_A::LSI,
-            3 => RTCSEL_A::HSE32,
+            0 => RTCSEL_A::NoClock,
+            1 => RTCSEL_A::Lse,
+            2 => RTCSEL_A::Lsi,
+            3 => RTCSEL_A::Hse32,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NOCLOCK`
+    #[doc = "Checks if the value of the field is `NoClock`"]
     #[inline(always)]
     pub fn is_no_clock(&self) -> bool {
-        **self == RTCSEL_A::NOCLOCK
+        *self == RTCSEL_A::NoClock
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == RTCSEL_A::LSE
+        *self == RTCSEL_A::Lse
     }
-    ///Checks if the value of the field is `LSI`
+    #[doc = "Checks if the value of the field is `Lsi`"]
     #[inline(always)]
     pub fn is_lsi(&self) -> bool {
-        **self == RTCSEL_A::LSI
+        *self == RTCSEL_A::Lsi
     }
-    ///Checks if the value of the field is `HSE32`
+    #[doc = "Checks if the value of the field is `Hse32`"]
     #[inline(always)]
     pub fn is_hse32(&self) -> bool {
-        **self == RTCSEL_A::HSE32
+        *self == RTCSEL_A::Hse32
     }
 }
-impl core::ops::Deref for RTCSEL_R {
-    type Target = crate::FieldReader<u8, RTCSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCSEL` writer - RTC clock source selection
-pub struct RTCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RTCSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///No clock
+#[doc = "Field `RTCSEL` writer - RTC clock source selection"]
+pub type RTCSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BDCR_SPEC, u8, RTCSEL_A, 2, O>;
+impl<'a, const O: u8> RTCSEL_W<'a, O> {
+    #[doc = "No clock"]
     #[inline(always)]
     pub fn no_clock(self) -> &'a mut W {
-        self.variant(RTCSEL_A::NOCLOCK)
+        self.variant(RTCSEL_A::NoClock)
     }
-    ///LSE oscillator clock selected
+    #[doc = "LSE oscillator clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(RTCSEL_A::LSE)
+        self.variant(RTCSEL_A::Lse)
     }
-    ///LSI oscillator clock selected
+    #[doc = "LSI oscillator clock selected"]
     #[inline(always)]
     pub fn lsi(self) -> &'a mut W {
-        self.variant(RTCSEL_A::LSI)
+        self.variant(RTCSEL_A::Lsi)
     }
-    ///HSE32 oscillator clock divided by 32 selected
+    #[doc = "HSE32 oscillator clock divided by 32 selected"]
     #[inline(always)]
     pub fn hse32(self) -> &'a mut W {
-        self.variant(RTCSEL_A::HSE32)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
+        self.variant(RTCSEL_A::Hse32)
     }
 }
-///LSE system clock enable
-///
-///Value on reset: 0
+#[doc = "LSE system clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSESYSEN_A {
-    ///0: LSE system clock disabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode
-    DISABLED = 0,
-    ///1: LSE system clock enabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode
-    ENABLED = 1,
+    #[doc = "0: LSE system clock disabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode"]
+    Disabled = 0,
+    #[doc = "1: LSE system clock enabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode"]
+    Enabled = 1,
 }
 impl From<LSESYSEN_A> for bool {
     #[inline(always)]
@@ -541,84 +362,49 @@ impl From<LSESYSEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSESYSEN` reader - LSE system clock enable
-pub struct LSESYSEN_R(crate::FieldReader<bool, LSESYSEN_A>);
+#[doc = "Field `LSESYSEN` reader - LSE system clock enable"]
+pub type LSESYSEN_R = crate::BitReader<LSESYSEN_A>;
 impl LSESYSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSESYSEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSESYSEN_A {
         match self.bits {
-            false => LSESYSEN_A::DISABLED,
-            true => LSESYSEN_A::ENABLED,
+            false => LSESYSEN_A::Disabled,
+            true => LSESYSEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LSESYSEN_A::DISABLED
+        *self == LSESYSEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LSESYSEN_A::ENABLED
+        *self == LSESYSEN_A::Enabled
     }
 }
-impl core::ops::Deref for LSESYSEN_R {
-    type Target = crate::FieldReader<bool, LSESYSEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSESYSEN` writer - LSE system clock enable
-pub struct LSESYSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSESYSEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSESYSEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LSE system clock disabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode
+#[doc = "Field `LSESYSEN` writer - LSE system clock enable"]
+pub type LSESYSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSESYSEN_A, O>;
+impl<'a, const O: u8> LSESYSEN_W<'a, O> {
+    #[doc = "LSE system clock disabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LSESYSEN_A::DISABLED)
+        self.variant(LSESYSEN_A::Disabled)
     }
-    ///LSE system clock enabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode
+    #[doc = "LSE system clock enabled to USARTx, LPUARTx, LPTIMx, TIMx, RNG, system LSCO, MCO, MSI PLL mode"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LSESYSEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(LSESYSEN_A::Enabled)
     }
 }
-///CSS on LSE failure Detection
-///
-///Value on reset: 0
+#[doc = "CSS on LSE failure Detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSECSSD_A {
-    ///0: No failure detected on LSE
-    NOFAILURE = 0,
-    ///1: Failure detected on LSE
-    FAILURE = 1,
+    #[doc = "0: No failure detected on LSE"]
+    NoFailure = 0,
+    #[doc = "1: Failure detected on LSE"]
+    Failure = 1,
 }
 impl From<LSECSSD_A> for bool {
     #[inline(always)]
@@ -626,47 +412,35 @@ impl From<LSECSSD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSECSSD` reader - CSS on LSE failure Detection
-pub struct LSECSSD_R(crate::FieldReader<bool, LSECSSD_A>);
+#[doc = "Field `LSECSSD` reader - CSS on LSE failure Detection"]
+pub type LSECSSD_R = crate::BitReader<LSECSSD_A>;
 impl LSECSSD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSECSSD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSECSSD_A {
         match self.bits {
-            false => LSECSSD_A::NOFAILURE,
-            true => LSECSSD_A::FAILURE,
+            false => LSECSSD_A::NoFailure,
+            true => LSECSSD_A::Failure,
         }
     }
-    ///Checks if the value of the field is `NOFAILURE`
+    #[doc = "Checks if the value of the field is `NoFailure`"]
     #[inline(always)]
     pub fn is_no_failure(&self) -> bool {
-        **self == LSECSSD_A::NOFAILURE
+        *self == LSECSSD_A::NoFailure
     }
-    ///Checks if the value of the field is `FAILURE`
+    #[doc = "Checks if the value of the field is `Failure`"]
     #[inline(always)]
     pub fn is_failure(&self) -> bool {
-        **self == LSECSSD_A::FAILURE
+        *self == LSECSSD_A::Failure
     }
 }
-impl core::ops::Deref for LSECSSD_R {
-    type Target = crate::FieldReader<bool, LSECSSD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///CSS on LSE enable
-///
-///Value on reset: 0
+#[doc = "CSS on LSE enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSECSSON_A {
-    ///0: CSS on LSE disabled
-    DISABLED = 0,
-    ///1: CSS on LSE enabled
-    ENABLED = 1,
+    #[doc = "0: CSS on LSE disabled"]
+    Disabled = 0,
+    #[doc = "1: CSS on LSE enabled"]
+    Enabled = 1,
 }
 impl From<LSECSSON_A> for bool {
     #[inline(always)]
@@ -674,89 +448,54 @@ impl From<LSECSSON_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSECSSON` reader - CSS on LSE enable
-pub struct LSECSSON_R(crate::FieldReader<bool, LSECSSON_A>);
+#[doc = "Field `LSECSSON` reader - CSS on LSE enable"]
+pub type LSECSSON_R = crate::BitReader<LSECSSON_A>;
 impl LSECSSON_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSECSSON_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSECSSON_A {
         match self.bits {
-            false => LSECSSON_A::DISABLED,
-            true => LSECSSON_A::ENABLED,
+            false => LSECSSON_A::Disabled,
+            true => LSECSSON_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LSECSSON_A::DISABLED
+        *self == LSECSSON_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LSECSSON_A::ENABLED
+        *self == LSECSSON_A::Enabled
     }
 }
-impl core::ops::Deref for LSECSSON_R {
-    type Target = crate::FieldReader<bool, LSECSSON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSECSSON` writer - CSS on LSE enable
-pub struct LSECSSON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSECSSON_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSECSSON_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///CSS on LSE disabled
+#[doc = "Field `LSECSSON` writer - CSS on LSE enable"]
+pub type LSECSSON_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSECSSON_A, O>;
+impl<'a, const O: u8> LSECSSON_W<'a, O> {
+    #[doc = "CSS on LSE disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LSECSSON_A::DISABLED)
+        self.variant(LSECSSON_A::Disabled)
     }
-    ///CSS on LSE enabled
+    #[doc = "CSS on LSE enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LSECSSON_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(LSECSSON_A::Enabled)
     }
 }
-///LSE oscillator drive capability
-///
-///Value on reset: 0
+#[doc = "LSE oscillator drive capability\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LSEDRV_A {
-    ///0: Xtal mode lower driving capability
-    LOW = 0,
-    ///1: Xtal mode medium-low driving capability
-    MEDLOW = 1,
-    ///2: Xtal mode medium-high driving capability
-    MEDHIGH = 2,
-    ///3: Xtal mode higher driving capability
-    HIGH = 3,
+    #[doc = "0: Xtal mode lower driving capability"]
+    Low = 0,
+    #[doc = "1: Xtal mode medium-low driving capability"]
+    MedLow = 1,
+    #[doc = "2: Xtal mode medium-high driving capability"]
+    MedHigh = 2,
+    #[doc = "3: Xtal mode higher driving capability"]
+    High = 3,
 }
 impl From<LSEDRV_A> for u8 {
     #[inline(always)]
@@ -764,97 +503,72 @@ impl From<LSEDRV_A> for u8 {
         variant as _
     }
 }
-///Field `LSEDRV` reader - LSE oscillator drive capability
-pub struct LSEDRV_R(crate::FieldReader<u8, LSEDRV_A>);
+#[doc = "Field `LSEDRV` reader - LSE oscillator drive capability"]
+pub type LSEDRV_R = crate::FieldReader<u8, LSEDRV_A>;
 impl LSEDRV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LSEDRV_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSEDRV_A {
         match self.bits {
-            0 => LSEDRV_A::LOW,
-            1 => LSEDRV_A::MEDLOW,
-            2 => LSEDRV_A::MEDHIGH,
-            3 => LSEDRV_A::HIGH,
+            0 => LSEDRV_A::Low,
+            1 => LSEDRV_A::MedLow,
+            2 => LSEDRV_A::MedHigh,
+            3 => LSEDRV_A::High,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `LOW`
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == LSEDRV_A::LOW
+        *self == LSEDRV_A::Low
     }
-    ///Checks if the value of the field is `MEDLOW`
+    #[doc = "Checks if the value of the field is `MedLow`"]
     #[inline(always)]
     pub fn is_med_low(&self) -> bool {
-        **self == LSEDRV_A::MEDLOW
+        *self == LSEDRV_A::MedLow
     }
-    ///Checks if the value of the field is `MEDHIGH`
+    #[doc = "Checks if the value of the field is `MedHigh`"]
     #[inline(always)]
     pub fn is_med_high(&self) -> bool {
-        **self == LSEDRV_A::MEDHIGH
+        *self == LSEDRV_A::MedHigh
     }
-    ///Checks if the value of the field is `HIGH`
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == LSEDRV_A::HIGH
+        *self == LSEDRV_A::High
     }
 }
-impl core::ops::Deref for LSEDRV_R {
-    type Target = crate::FieldReader<u8, LSEDRV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSEDRV` writer - LSE oscillator drive capability
-pub struct LSEDRV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSEDRV_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSEDRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Xtal mode lower driving capability
+#[doc = "Field `LSEDRV` writer - LSE oscillator drive capability"]
+pub type LSEDRV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BDCR_SPEC, u8, LSEDRV_A, 2, O>;
+impl<'a, const O: u8> LSEDRV_W<'a, O> {
+    #[doc = "Xtal mode lower driving capability"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(LSEDRV_A::LOW)
+        self.variant(LSEDRV_A::Low)
     }
-    ///Xtal mode medium-low driving capability
+    #[doc = "Xtal mode medium-low driving capability"]
     #[inline(always)]
     pub fn med_low(self) -> &'a mut W {
-        self.variant(LSEDRV_A::MEDLOW)
+        self.variant(LSEDRV_A::MedLow)
     }
-    ///Xtal mode medium-high driving capability
+    #[doc = "Xtal mode medium-high driving capability"]
     #[inline(always)]
     pub fn med_high(self) -> &'a mut W {
-        self.variant(LSEDRV_A::MEDHIGH)
+        self.variant(LSEDRV_A::MedHigh)
     }
-    ///Xtal mode higher driving capability
+    #[doc = "Xtal mode higher driving capability"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(LSEDRV_A::HIGH)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | ((value as u32 & 0x03) << 3);
-        self.w
+        self.variant(LSEDRV_A::High)
     }
 }
-///LSE oscillator bypass
-///
-///Value on reset: 0
+#[doc = "LSE oscillator bypass\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSEBYP_A {
-    ///0: LSE oscillator not bypassed
-    DISABLED = 0,
-    ///1: LSE oscillator bypassed
-    ENABLED = 1,
+    #[doc = "0: LSE oscillator not bypassed"]
+    Disabled = 0,
+    #[doc = "1: LSE oscillator bypassed"]
+    Enabled = 1,
 }
 impl From<LSEBYP_A> for bool {
     #[inline(always)]
@@ -862,84 +576,49 @@ impl From<LSEBYP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSEBYP` reader - LSE oscillator bypass
-pub struct LSEBYP_R(crate::FieldReader<bool, LSEBYP_A>);
+#[doc = "Field `LSEBYP` reader - LSE oscillator bypass"]
+pub type LSEBYP_R = crate::BitReader<LSEBYP_A>;
 impl LSEBYP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSEBYP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSEBYP_A {
         match self.bits {
-            false => LSEBYP_A::DISABLED,
-            true => LSEBYP_A::ENABLED,
+            false => LSEBYP_A::Disabled,
+            true => LSEBYP_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LSEBYP_A::DISABLED
+        *self == LSEBYP_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LSEBYP_A::ENABLED
+        *self == LSEBYP_A::Enabled
     }
 }
-impl core::ops::Deref for LSEBYP_R {
-    type Target = crate::FieldReader<bool, LSEBYP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSEBYP` writer - LSE oscillator bypass
-pub struct LSEBYP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSEBYP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSEBYP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LSE oscillator not bypassed
+#[doc = "Field `LSEBYP` writer - LSE oscillator bypass"]
+pub type LSEBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSEBYP_A, O>;
+impl<'a, const O: u8> LSEBYP_W<'a, O> {
+    #[doc = "LSE oscillator not bypassed"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LSEBYP_A::DISABLED)
+        self.variant(LSEBYP_A::Disabled)
     }
-    ///LSE oscillator bypassed
+    #[doc = "LSE oscillator bypassed"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LSEBYP_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(LSEBYP_A::Enabled)
     }
 }
-///LSE oscillator ready
-///
-///Value on reset: 0
+#[doc = "LSE oscillator ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSERDY_A {
-    ///0: LSE oscillator not ready
-    NOTREADY = 0,
-    ///1: LSE oscillator ready
-    READY = 1,
+    #[doc = "0: LSE oscillator not ready"]
+    NotReady = 0,
+    #[doc = "1: LSE oscillator ready"]
+    Ready = 1,
 }
 impl From<LSERDY_A> for bool {
     #[inline(always)]
@@ -947,47 +626,35 @@ impl From<LSERDY_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSERDY` reader - LSE oscillator ready
-pub struct LSERDY_R(crate::FieldReader<bool, LSERDY_A>);
+#[doc = "Field `LSERDY` reader - LSE oscillator ready"]
+pub type LSERDY_R = crate::BitReader<LSERDY_A>;
 impl LSERDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSERDY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSERDY_A {
         match self.bits {
-            false => LSERDY_A::NOTREADY,
-            true => LSERDY_A::READY,
+            false => LSERDY_A::NotReady,
+            true => LSERDY_A::Ready,
         }
     }
-    ///Checks if the value of the field is `NOTREADY`
+    #[doc = "Checks if the value of the field is `NotReady`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        **self == LSERDY_A::NOTREADY
+        *self == LSERDY_A::NotReady
     }
-    ///Checks if the value of the field is `READY`
+    #[doc = "Checks if the value of the field is `Ready`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == LSERDY_A::READY
+        *self == LSERDY_A::Ready
     }
 }
-impl core::ops::Deref for LSERDY_R {
-    type Target = crate::FieldReader<bool, LSERDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///LSE oscillator enable
-///
-///Value on reset: 0
+#[doc = "LSE oscillator enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSEON_A {
-    ///0: LSE oscillator off
-    OFF = 0,
-    ///1: LSE oscillator on
-    ON = 1,
+    #[doc = "0: LSE oscillator off"]
+    Off = 0,
+    #[doc = "1: LSE oscillator on"]
+    On = 1,
 }
 impl From<LSEON_A> for bool {
     #[inline(always)]
@@ -995,218 +662,181 @@ impl From<LSEON_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSEON` reader - LSE oscillator enable
-pub struct LSEON_R(crate::FieldReader<bool, LSEON_A>);
+#[doc = "Field `LSEON` reader - LSE oscillator enable"]
+pub type LSEON_R = crate::BitReader<LSEON_A>;
 impl LSEON_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSEON_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSEON_A {
         match self.bits {
-            false => LSEON_A::OFF,
-            true => LSEON_A::ON,
+            false => LSEON_A::Off,
+            true => LSEON_A::On,
         }
     }
-    ///Checks if the value of the field is `OFF`
+    #[doc = "Checks if the value of the field is `Off`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == LSEON_A::OFF
+        *self == LSEON_A::Off
     }
-    ///Checks if the value of the field is `ON`
+    #[doc = "Checks if the value of the field is `On`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == LSEON_A::ON
+        *self == LSEON_A::On
     }
 }
-impl core::ops::Deref for LSEON_R {
-    type Target = crate::FieldReader<bool, LSEON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LSEON` writer - LSE oscillator enable
-pub struct LSEON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSEON_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LSEON_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LSE oscillator off
+#[doc = "Field `LSEON` writer - LSE oscillator enable"]
+pub type LSEON_W<'a, const O: u8> = crate::BitWriter<'a, u32, BDCR_SPEC, LSEON_A, O>;
+impl<'a, const O: u8> LSEON_W<'a, O> {
+    #[doc = "LSE oscillator off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(LSEON_A::OFF)
+        self.variant(LSEON_A::Off)
     }
-    ///LSE oscillator on
+    #[doc = "LSE oscillator on"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(LSEON_A::ON)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(LSEON_A::On)
     }
 }
 impl R {
-    ///Bit 25 - Low speed clock output selection
+    #[doc = "Bit 25 - Low speed clock output selection"]
     #[inline(always)]
     pub fn lscosel(&self) -> LSCOSEL_R {
-        LSCOSEL_R::new(((self.bits >> 25) & 0x01) != 0)
+        LSCOSEL_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 24 - Low speed clock output enable
+    #[doc = "Bit 24 - Low speed clock output enable"]
     #[inline(always)]
     pub fn lscoen(&self) -> LSCOEN_R {
-        LSCOEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        LSCOEN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bit 16 - Backup domain software reset
+    #[doc = "Bit 16 - Backup domain software reset"]
     #[inline(always)]
     pub fn bdrst(&self) -> BDRST_R {
-        BDRST_R::new(((self.bits >> 16) & 0x01) != 0)
+        BDRST_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 15 - RTC clock enable
+    #[doc = "Bit 15 - RTC clock enable"]
     #[inline(always)]
     pub fn rtcen(&self) -> RTCEN_R {
-        RTCEN_R::new(((self.bits >> 15) & 0x01) != 0)
+        RTCEN_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 11 - LSE system clock ready
+    #[doc = "Bit 11 - LSE system clock ready"]
     #[inline(always)]
     pub fn lsesysrdy(&self) -> LSESYSRDY_R {
-        LSESYSRDY_R::new(((self.bits >> 11) & 0x01) != 0)
+        LSESYSRDY_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bits 8:9 - RTC clock source selection
+    #[doc = "Bits 8:9 - RTC clock source selection"]
     #[inline(always)]
     pub fn rtcsel(&self) -> RTCSEL_R {
-        RTCSEL_R::new(((self.bits >> 8) & 0x03) as u8)
+        RTCSEL_R::new(((self.bits >> 8) & 3) as u8)
     }
-    ///Bit 7 - LSE system clock enable
+    #[doc = "Bit 7 - LSE system clock enable"]
     #[inline(always)]
     pub fn lsesysen(&self) -> LSESYSEN_R {
-        LSESYSEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        LSESYSEN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 6 - CSS on LSE failure Detection
+    #[doc = "Bit 6 - CSS on LSE failure Detection"]
     #[inline(always)]
     pub fn lsecssd(&self) -> LSECSSD_R {
-        LSECSSD_R::new(((self.bits >> 6) & 0x01) != 0)
+        LSECSSD_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - CSS on LSE enable
+    #[doc = "Bit 5 - CSS on LSE enable"]
     #[inline(always)]
     pub fn lsecsson(&self) -> LSECSSON_R {
-        LSECSSON_R::new(((self.bits >> 5) & 0x01) != 0)
+        LSECSSON_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 3:4 - LSE oscillator drive capability
+    #[doc = "Bits 3:4 - LSE oscillator drive capability"]
     #[inline(always)]
     pub fn lsedrv(&self) -> LSEDRV_R {
-        LSEDRV_R::new(((self.bits >> 3) & 0x03) as u8)
+        LSEDRV_R::new(((self.bits >> 3) & 3) as u8)
     }
-    ///Bit 2 - LSE oscillator bypass
+    #[doc = "Bit 2 - LSE oscillator bypass"]
     #[inline(always)]
     pub fn lsebyp(&self) -> LSEBYP_R {
-        LSEBYP_R::new(((self.bits >> 2) & 0x01) != 0)
+        LSEBYP_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - LSE oscillator ready
+    #[doc = "Bit 1 - LSE oscillator ready"]
     #[inline(always)]
     pub fn lserdy(&self) -> LSERDY_R {
-        LSERDY_R::new(((self.bits >> 1) & 0x01) != 0)
+        LSERDY_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - LSE oscillator enable
+    #[doc = "Bit 0 - LSE oscillator enable"]
     #[inline(always)]
     pub fn lseon(&self) -> LSEON_R {
-        LSEON_R::new((self.bits & 0x01) != 0)
+        LSEON_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 25 - Low speed clock output selection
+    #[doc = "Bit 25 - Low speed clock output selection"]
     #[inline(always)]
-    pub fn lscosel(&mut self) -> LSCOSEL_W {
-        LSCOSEL_W { w: self }
+    pub fn lscosel(&mut self) -> LSCOSEL_W<25> {
+        LSCOSEL_W::new(self)
     }
-    ///Bit 24 - Low speed clock output enable
+    #[doc = "Bit 24 - Low speed clock output enable"]
     #[inline(always)]
-    pub fn lscoen(&mut self) -> LSCOEN_W {
-        LSCOEN_W { w: self }
+    pub fn lscoen(&mut self) -> LSCOEN_W<24> {
+        LSCOEN_W::new(self)
     }
-    ///Bit 16 - Backup domain software reset
+    #[doc = "Bit 16 - Backup domain software reset"]
     #[inline(always)]
-    pub fn bdrst(&mut self) -> BDRST_W {
-        BDRST_W { w: self }
+    pub fn bdrst(&mut self) -> BDRST_W<16> {
+        BDRST_W::new(self)
     }
-    ///Bit 15 - RTC clock enable
+    #[doc = "Bit 15 - RTC clock enable"]
     #[inline(always)]
-    pub fn rtcen(&mut self) -> RTCEN_W {
-        RTCEN_W { w: self }
+    pub fn rtcen(&mut self) -> RTCEN_W<15> {
+        RTCEN_W::new(self)
     }
-    ///Bits 8:9 - RTC clock source selection
+    #[doc = "Bits 8:9 - RTC clock source selection"]
     #[inline(always)]
-    pub fn rtcsel(&mut self) -> RTCSEL_W {
-        RTCSEL_W { w: self }
+    pub fn rtcsel(&mut self) -> RTCSEL_W<8> {
+        RTCSEL_W::new(self)
     }
-    ///Bit 7 - LSE system clock enable
+    #[doc = "Bit 7 - LSE system clock enable"]
     #[inline(always)]
-    pub fn lsesysen(&mut self) -> LSESYSEN_W {
-        LSESYSEN_W { w: self }
+    pub fn lsesysen(&mut self) -> LSESYSEN_W<7> {
+        LSESYSEN_W::new(self)
     }
-    ///Bit 5 - CSS on LSE enable
+    #[doc = "Bit 5 - CSS on LSE enable"]
     #[inline(always)]
-    pub fn lsecsson(&mut self) -> LSECSSON_W {
-        LSECSSON_W { w: self }
+    pub fn lsecsson(&mut self) -> LSECSSON_W<5> {
+        LSECSSON_W::new(self)
     }
-    ///Bits 3:4 - LSE oscillator drive capability
+    #[doc = "Bits 3:4 - LSE oscillator drive capability"]
     #[inline(always)]
-    pub fn lsedrv(&mut self) -> LSEDRV_W {
-        LSEDRV_W { w: self }
+    pub fn lsedrv(&mut self) -> LSEDRV_W<3> {
+        LSEDRV_W::new(self)
     }
-    ///Bit 2 - LSE oscillator bypass
+    #[doc = "Bit 2 - LSE oscillator bypass"]
     #[inline(always)]
-    pub fn lsebyp(&mut self) -> LSEBYP_W {
-        LSEBYP_W { w: self }
+    pub fn lsebyp(&mut self) -> LSEBYP_W<2> {
+        LSEBYP_W::new(self)
     }
-    ///Bit 0 - LSE oscillator enable
+    #[doc = "Bit 0 - LSE oscillator enable"]
     #[inline(always)]
-    pub fn lseon(&mut self) -> LSEON_W {
-        LSEON_W { w: self }
+    pub fn lseon(&mut self) -> LSEON_W<0> {
+        LSEON_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Backup domain control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [bdcr](index.html) module
+#[doc = "Backup domain control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bdcr](index.html) module"]
 pub struct BDCR_SPEC;
 impl crate::RegisterSpec for BDCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [bdcr::R](R) reader structure
+#[doc = "`read()` method returns [bdcr::R](R) reader structure"]
 impl crate::Readable for BDCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [bdcr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [bdcr::W](W) writer structure"]
 impl crate::Writable for BDCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets BDCR to value 0
+#[doc = "`reset()` method sets BDCR to value 0"]
 impl crate::Resettable for BDCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

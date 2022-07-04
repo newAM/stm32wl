@@ -1,4 +1,4 @@
-///Register `CCR1` reader
+#[doc = "Register `CCR1` reader"]
 pub struct R(crate::R<CCR1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCR1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCR1_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCR1` writer
+#[doc = "Register `CCR1` writer"]
 pub struct W(crate::W<CCR1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCR1_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CCR1_SPEC>> for W {
         W(writer)
     }
 }
-///rivileged mode
-///
-///Value on reset: 0
+#[doc = "rivileged mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRIV_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<PRIV_A> for bool {
     #[inline(always)]
@@ -50,192 +48,61 @@ impl From<PRIV_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PRIV` reader - rivileged mode
-pub struct PRIV_R(crate::FieldReader<bool, PRIV_A>);
+#[doc = "Field `PRIV` reader - rivileged mode"]
+pub type PRIV_R = crate::BitReader<PRIV_A>;
 impl PRIV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRIV_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRIV_A {
         match self.bits {
-            false => PRIV_A::DISABLED,
-            true => PRIV_A::ENABLED,
+            false => PRIV_A::Disabled,
+            true => PRIV_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PRIV_A::DISABLED
+        *self == PRIV_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PRIV_A::ENABLED
+        *self == PRIV_A::Enabled
     }
 }
-impl core::ops::Deref for PRIV_R {
-    type Target = crate::FieldReader<bool, PRIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRIV` writer - rivileged mode
-pub struct PRIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRIV_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PRIV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `PRIV` writer - rivileged mode"]
+pub type PRIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, PRIV_A, O>;
+impl<'a, const O: u8> PRIV_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PRIV_A::DISABLED)
+        self.variant(PRIV_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PRIV_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
+        self.variant(PRIV_A::Enabled)
     }
 }
-///Field `DSEC` reader - ecurity of the DMA transfer to the destination
-pub struct DSEC_R(crate::FieldReader<bool, bool>);
-impl DSEC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DSEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSEC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DSEC` writer - ecurity of the DMA transfer to the destination
-pub struct DSEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSEC_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
-///Field `SSEC` reader - ecurity of the DMA transfer from the source
-pub struct SSEC_R(crate::FieldReader<bool, bool>);
-impl SSEC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SSEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SSEC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SSEC` writer - ecurity of the DMA transfer from the source
-pub struct SSEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SSEC_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///Field `SECM` reader - ecure mode
-pub struct SECM_R(crate::FieldReader<bool, bool>);
-impl SECM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SECM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SECM` writer - ecure mode
-pub struct SECM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///memory-to-memory mode
-///
-///Value on reset: 0
+#[doc = "Field `DSEC` reader - ecurity of the DMA transfer to the destination"]
+pub type DSEC_R = crate::BitReader<bool>;
+#[doc = "Field `DSEC` writer - ecurity of the DMA transfer to the destination"]
+pub type DSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, bool, O>;
+#[doc = "Field `SSEC` reader - ecurity of the DMA transfer from the source"]
+pub type SSEC_R = crate::BitReader<bool>;
+#[doc = "Field `SSEC` writer - ecurity of the DMA transfer from the source"]
+pub type SSEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, bool, O>;
+#[doc = "Field `SECM` reader - ecure mode"]
+pub type SECM_R = crate::BitReader<bool>;
+#[doc = "Field `SECM` writer - ecure mode"]
+pub type SECM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, bool, O>;
+#[doc = "memory-to-memory mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MEM2MEM_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<MEM2MEM_A> for bool {
     #[inline(always)]
@@ -243,89 +110,54 @@ impl From<MEM2MEM_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MEM2MEM` reader - memory-to-memory mode
-pub struct MEM2MEM_R(crate::FieldReader<bool, MEM2MEM_A>);
+#[doc = "Field `MEM2MEM` reader - memory-to-memory mode"]
+pub type MEM2MEM_R = crate::BitReader<MEM2MEM_A>;
 impl MEM2MEM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MEM2MEM_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MEM2MEM_A {
         match self.bits {
-            false => MEM2MEM_A::DISABLED,
-            true => MEM2MEM_A::ENABLED,
+            false => MEM2MEM_A::Disabled,
+            true => MEM2MEM_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MEM2MEM_A::DISABLED
+        *self == MEM2MEM_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == MEM2MEM_A::ENABLED
+        *self == MEM2MEM_A::Enabled
     }
 }
-impl core::ops::Deref for MEM2MEM_R {
-    type Target = crate::FieldReader<bool, MEM2MEM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MEM2MEM` writer - memory-to-memory mode
-pub struct MEM2MEM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MEM2MEM_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MEM2MEM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `MEM2MEM` writer - memory-to-memory mode"]
+pub type MEM2MEM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, MEM2MEM_A, O>;
+impl<'a, const O: u8> MEM2MEM_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(MEM2MEM_A::DISABLED)
+        self.variant(MEM2MEM_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(MEM2MEM_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
+        self.variant(MEM2MEM_A::Enabled)
     }
 }
-///priority level
-///
-///Value on reset: 0
+#[doc = "priority level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PL_A {
-    ///0: Low
-    LOW = 0,
-    ///1: Medium
-    MEDIUM = 1,
-    ///2: High
-    HIGH = 2,
-    ///3: Very high
-    VERYHIGH = 3,
+    #[doc = "0: Low"]
+    Low = 0,
+    #[doc = "1: Medium"]
+    Medium = 1,
+    #[doc = "2: High"]
+    High = 2,
+    #[doc = "3: Very high"]
+    VeryHigh = 3,
 }
 impl From<PL_A> for u8 {
     #[inline(always)]
@@ -333,100 +165,75 @@ impl From<PL_A> for u8 {
         variant as _
     }
 }
-///Field `PL` reader - priority level
-pub struct PL_R(crate::FieldReader<u8, PL_A>);
+#[doc = "Field `PL` reader - priority level"]
+pub type PL_R = crate::FieldReader<u8, PL_A>;
 impl PL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PL_A {
         match self.bits {
-            0 => PL_A::LOW,
-            1 => PL_A::MEDIUM,
-            2 => PL_A::HIGH,
-            3 => PL_A::VERYHIGH,
+            0 => PL_A::Low,
+            1 => PL_A::Medium,
+            2 => PL_A::High,
+            3 => PL_A::VeryHigh,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `LOW`
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == PL_A::LOW
+        *self == PL_A::Low
     }
-    ///Checks if the value of the field is `MEDIUM`
+    #[doc = "Checks if the value of the field is `Medium`"]
     #[inline(always)]
     pub fn is_medium(&self) -> bool {
-        **self == PL_A::MEDIUM
+        *self == PL_A::Medium
     }
-    ///Checks if the value of the field is `HIGH`
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == PL_A::HIGH
+        *self == PL_A::High
     }
-    ///Checks if the value of the field is `VERYHIGH`
+    #[doc = "Checks if the value of the field is `VeryHigh`"]
     #[inline(always)]
     pub fn is_very_high(&self) -> bool {
-        **self == PL_A::VERYHIGH
+        *self == PL_A::VeryHigh
     }
 }
-impl core::ops::Deref for PL_R {
-    type Target = crate::FieldReader<u8, PL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PL` writer - priority level
-pub struct PL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low
+#[doc = "Field `PL` writer - priority level"]
+pub type PL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CCR1_SPEC, u8, PL_A, 2, O>;
+impl<'a, const O: u8> PL_W<'a, O> {
+    #[doc = "Low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(PL_A::LOW)
+        self.variant(PL_A::Low)
     }
-    ///Medium
+    #[doc = "Medium"]
     #[inline(always)]
     pub fn medium(self) -> &'a mut W {
-        self.variant(PL_A::MEDIUM)
+        self.variant(PL_A::Medium)
     }
-    ///High
+    #[doc = "High"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(PL_A::HIGH)
+        self.variant(PL_A::High)
     }
-    ///Very high
+    #[doc = "Very high"]
     #[inline(always)]
     pub fn very_high(self) -> &'a mut W {
-        self.variant(PL_A::VERYHIGH)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
+        self.variant(PL_A::VeryHigh)
     }
 }
-///memory size
-///
-///Value on reset: 0
+#[doc = "memory size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MSIZE_A {
-    ///0: 8 bits
-    BITS8 = 0,
-    ///1: 16 bits
-    BITS16 = 1,
-    ///2: 32 bits
-    BITS32 = 2,
+    #[doc = "0: 8 bits"]
+    Bits8 = 0,
+    #[doc = "1: 16 bits"]
+    Bits16 = 1,
+    #[doc = "2: 32 bits"]
+    Bits32 = 2,
 }
 impl From<MSIZE_A> for u8 {
     #[inline(always)]
@@ -434,89 +241,64 @@ impl From<MSIZE_A> for u8 {
         variant as _
     }
 }
-///Field `MSIZE` reader - memory size
-pub struct MSIZE_R(crate::FieldReader<u8, MSIZE_A>);
+#[doc = "Field `MSIZE` reader - memory size"]
+pub type MSIZE_R = crate::FieldReader<u8, MSIZE_A>;
 impl MSIZE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MSIZE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MSIZE_A> {
         match self.bits {
-            0 => Some(MSIZE_A::BITS8),
-            1 => Some(MSIZE_A::BITS16),
-            2 => Some(MSIZE_A::BITS32),
+            0 => Some(MSIZE_A::Bits8),
+            1 => Some(MSIZE_A::Bits16),
+            2 => Some(MSIZE_A::Bits32),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `BITS8`
+    #[doc = "Checks if the value of the field is `Bits8`"]
     #[inline(always)]
     pub fn is_bits8(&self) -> bool {
-        **self == MSIZE_A::BITS8
+        *self == MSIZE_A::Bits8
     }
-    ///Checks if the value of the field is `BITS16`
+    #[doc = "Checks if the value of the field is `Bits16`"]
     #[inline(always)]
     pub fn is_bits16(&self) -> bool {
-        **self == MSIZE_A::BITS16
+        *self == MSIZE_A::Bits16
     }
-    ///Checks if the value of the field is `BITS32`
+    #[doc = "Checks if the value of the field is `Bits32`"]
     #[inline(always)]
     pub fn is_bits32(&self) -> bool {
-        **self == MSIZE_A::BITS32
+        *self == MSIZE_A::Bits32
     }
 }
-impl core::ops::Deref for MSIZE_R {
-    type Target = crate::FieldReader<u8, MSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MSIZE` writer - memory size
-pub struct MSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSIZE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MSIZE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///8 bits
+#[doc = "Field `MSIZE` writer - memory size"]
+pub type MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCR1_SPEC, u8, MSIZE_A, 2, O>;
+impl<'a, const O: u8> MSIZE_W<'a, O> {
+    #[doc = "8 bits"]
     #[inline(always)]
     pub fn bits8(self) -> &'a mut W {
-        self.variant(MSIZE_A::BITS8)
+        self.variant(MSIZE_A::Bits8)
     }
-    ///16 bits
+    #[doc = "16 bits"]
     #[inline(always)]
     pub fn bits16(self) -> &'a mut W {
-        self.variant(MSIZE_A::BITS16)
+        self.variant(MSIZE_A::Bits16)
     }
-    ///32 bits
+    #[doc = "32 bits"]
     #[inline(always)]
     pub fn bits32(self) -> &'a mut W {
-        self.variant(MSIZE_A::BITS32)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
+        self.variant(MSIZE_A::Bits32)
     }
 }
-///peripheral size
-///
-///Value on reset: 0
+#[doc = "peripheral size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PSIZE_A {
-    ///0: 8 bits
-    BITS8 = 0,
-    ///1: 16 bits
-    BITS16 = 1,
-    ///2: 32 bits
-    BITS32 = 2,
+    #[doc = "0: 8 bits"]
+    Bits8 = 0,
+    #[doc = "1: 16 bits"]
+    Bits16 = 1,
+    #[doc = "2: 32 bits"]
+    Bits32 = 2,
 }
 impl From<PSIZE_A> for u8 {
     #[inline(always)]
@@ -524,86 +306,61 @@ impl From<PSIZE_A> for u8 {
         variant as _
     }
 }
-///Field `PSIZE` reader - peripheral size
-pub struct PSIZE_R(crate::FieldReader<u8, PSIZE_A>);
+#[doc = "Field `PSIZE` reader - peripheral size"]
+pub type PSIZE_R = crate::FieldReader<u8, PSIZE_A>;
 impl PSIZE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PSIZE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PSIZE_A> {
         match self.bits {
-            0 => Some(PSIZE_A::BITS8),
-            1 => Some(PSIZE_A::BITS16),
-            2 => Some(PSIZE_A::BITS32),
+            0 => Some(PSIZE_A::Bits8),
+            1 => Some(PSIZE_A::Bits16),
+            2 => Some(PSIZE_A::Bits32),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `BITS8`
+    #[doc = "Checks if the value of the field is `Bits8`"]
     #[inline(always)]
     pub fn is_bits8(&self) -> bool {
-        **self == PSIZE_A::BITS8
+        *self == PSIZE_A::Bits8
     }
-    ///Checks if the value of the field is `BITS16`
+    #[doc = "Checks if the value of the field is `Bits16`"]
     #[inline(always)]
     pub fn is_bits16(&self) -> bool {
-        **self == PSIZE_A::BITS16
+        *self == PSIZE_A::Bits16
     }
-    ///Checks if the value of the field is `BITS32`
+    #[doc = "Checks if the value of the field is `Bits32`"]
     #[inline(always)]
     pub fn is_bits32(&self) -> bool {
-        **self == PSIZE_A::BITS32
+        *self == PSIZE_A::Bits32
     }
 }
-impl core::ops::Deref for PSIZE_R {
-    type Target = crate::FieldReader<u8, PSIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PSIZE` writer - peripheral size
-pub struct PSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSIZE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PSIZE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///8 bits
+#[doc = "Field `PSIZE` writer - peripheral size"]
+pub type PSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCR1_SPEC, u8, PSIZE_A, 2, O>;
+impl<'a, const O: u8> PSIZE_W<'a, O> {
+    #[doc = "8 bits"]
     #[inline(always)]
     pub fn bits8(self) -> &'a mut W {
-        self.variant(PSIZE_A::BITS8)
+        self.variant(PSIZE_A::Bits8)
     }
-    ///16 bits
+    #[doc = "16 bits"]
     #[inline(always)]
     pub fn bits16(self) -> &'a mut W {
-        self.variant(PSIZE_A::BITS16)
+        self.variant(PSIZE_A::Bits16)
     }
-    ///32 bits
+    #[doc = "32 bits"]
     #[inline(always)]
     pub fn bits32(self) -> &'a mut W {
-        self.variant(PSIZE_A::BITS32)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
+        self.variant(PSIZE_A::Bits32)
     }
 }
-///memory increment mode
-///
-///Value on reset: 0
+#[doc = "memory increment mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MINC_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<MINC_A> for bool {
     #[inline(always)]
@@ -611,84 +368,49 @@ impl From<MINC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MINC` reader - memory increment mode
-pub struct MINC_R(crate::FieldReader<bool, MINC_A>);
+#[doc = "Field `MINC` reader - memory increment mode"]
+pub type MINC_R = crate::BitReader<MINC_A>;
 impl MINC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MINC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MINC_A {
         match self.bits {
-            false => MINC_A::DISABLED,
-            true => MINC_A::ENABLED,
+            false => MINC_A::Disabled,
+            true => MINC_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MINC_A::DISABLED
+        *self == MINC_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == MINC_A::ENABLED
+        *self == MINC_A::Enabled
     }
 }
-impl core::ops::Deref for MINC_R {
-    type Target = crate::FieldReader<bool, MINC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MINC` writer - memory increment mode
-pub struct MINC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MINC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MINC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `MINC` writer - memory increment mode"]
+pub type MINC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, MINC_A, O>;
+impl<'a, const O: u8> MINC_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(MINC_A::DISABLED)
+        self.variant(MINC_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(MINC_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(MINC_A::Enabled)
     }
 }
-///peripheral increment mode
-///
-///Value on reset: 0
+#[doc = "peripheral increment mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINC_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<PINC_A> for bool {
     #[inline(always)]
@@ -696,84 +418,49 @@ impl From<PINC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PINC` reader - peripheral increment mode
-pub struct PINC_R(crate::FieldReader<bool, PINC_A>);
+#[doc = "Field `PINC` reader - peripheral increment mode"]
+pub type PINC_R = crate::BitReader<PINC_A>;
 impl PINC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PINC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PINC_A {
         match self.bits {
-            false => PINC_A::DISABLED,
-            true => PINC_A::ENABLED,
+            false => PINC_A::Disabled,
+            true => PINC_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PINC_A::DISABLED
+        *self == PINC_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PINC_A::ENABLED
+        *self == PINC_A::Enabled
     }
 }
-impl core::ops::Deref for PINC_R {
-    type Target = crate::FieldReader<bool, PINC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PINC` writer - peripheral increment mode
-pub struct PINC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PINC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PINC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `PINC` writer - peripheral increment mode"]
+pub type PINC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, PINC_A, O>;
+impl<'a, const O: u8> PINC_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PINC_A::DISABLED)
+        self.variant(PINC_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PINC_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(PINC_A::Enabled)
     }
 }
-///circular mode
-///
-///Value on reset: 0
+#[doc = "circular mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CIRC_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<CIRC_A> for bool {
     #[inline(always)]
@@ -781,84 +468,49 @@ impl From<CIRC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CIRC` reader - circular mode
-pub struct CIRC_R(crate::FieldReader<bool, CIRC_A>);
+#[doc = "Field `CIRC` reader - circular mode"]
+pub type CIRC_R = crate::BitReader<CIRC_A>;
 impl CIRC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CIRC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CIRC_A {
         match self.bits {
-            false => CIRC_A::DISABLED,
-            true => CIRC_A::ENABLED,
+            false => CIRC_A::Disabled,
+            true => CIRC_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CIRC_A::DISABLED
+        *self == CIRC_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CIRC_A::ENABLED
+        *self == CIRC_A::Enabled
     }
 }
-impl core::ops::Deref for CIRC_R {
-    type Target = crate::FieldReader<bool, CIRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CIRC` writer - circular mode
-pub struct CIRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CIRC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CIRC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `CIRC` writer - circular mode"]
+pub type CIRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, CIRC_A, O>;
+impl<'a, const O: u8> CIRC_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CIRC_A::DISABLED)
+        self.variant(CIRC_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CIRC_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(CIRC_A::Enabled)
     }
 }
-///data transfer direction
-///
-///Value on reset: 0
+#[doc = "data transfer direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIR_A {
-    ///0: Read from peripheral
-    PERIPHERAL = 0,
-    ///1: Read from memory
-    MEMORY = 1,
+    #[doc = "0: Read from peripheral"]
+    Peripheral = 0,
+    #[doc = "1: Read from memory"]
+    Memory = 1,
 }
 impl From<DIR_A> for bool {
     #[inline(always)]
@@ -866,84 +518,49 @@ impl From<DIR_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DIR` reader - data transfer direction
-pub struct DIR_R(crate::FieldReader<bool, DIR_A>);
+#[doc = "Field `DIR` reader - data transfer direction"]
+pub type DIR_R = crate::BitReader<DIR_A>;
 impl DIR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIR_A {
         match self.bits {
-            false => DIR_A::PERIPHERAL,
-            true => DIR_A::MEMORY,
+            false => DIR_A::Peripheral,
+            true => DIR_A::Memory,
         }
     }
-    ///Checks if the value of the field is `PERIPHERAL`
+    #[doc = "Checks if the value of the field is `Peripheral`"]
     #[inline(always)]
     pub fn is_peripheral(&self) -> bool {
-        **self == DIR_A::PERIPHERAL
+        *self == DIR_A::Peripheral
     }
-    ///Checks if the value of the field is `MEMORY`
+    #[doc = "Checks if the value of the field is `Memory`"]
     #[inline(always)]
     pub fn is_memory(&self) -> bool {
-        **self == DIR_A::MEMORY
+        *self == DIR_A::Memory
     }
 }
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, DIR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DIR` writer - data transfer direction
-pub struct DIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIR_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DIR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Read from peripheral
+#[doc = "Field `DIR` writer - data transfer direction"]
+pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, DIR_A, O>;
+impl<'a, const O: u8> DIR_W<'a, O> {
+    #[doc = "Read from peripheral"]
     #[inline(always)]
     pub fn peripheral(self) -> &'a mut W {
-        self.variant(DIR_A::PERIPHERAL)
+        self.variant(DIR_A::Peripheral)
     }
-    ///Read from memory
+    #[doc = "Read from memory"]
     #[inline(always)]
     pub fn memory(self) -> &'a mut W {
-        self.variant(DIR_A::MEMORY)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(DIR_A::Memory)
     }
 }
-///transfer error interrupt enable
-///
-///Value on reset: 0
+#[doc = "transfer error interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEIE_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<TEIE_A> for bool {
     #[inline(always)]
@@ -951,84 +568,49 @@ impl From<TEIE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TEIE` reader - transfer error interrupt enable
-pub struct TEIE_R(crate::FieldReader<bool, TEIE_A>);
+#[doc = "Field `TEIE` reader - transfer error interrupt enable"]
+pub type TEIE_R = crate::BitReader<TEIE_A>;
 impl TEIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TEIE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TEIE_A {
         match self.bits {
-            false => TEIE_A::DISABLED,
-            true => TEIE_A::ENABLED,
+            false => TEIE_A::Disabled,
+            true => TEIE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TEIE_A::DISABLED
+        *self == TEIE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TEIE_A::ENABLED
+        *self == TEIE_A::Enabled
     }
 }
-impl core::ops::Deref for TEIE_R {
-    type Target = crate::FieldReader<bool, TEIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TEIE` writer - transfer error interrupt enable
-pub struct TEIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEIE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TEIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `TEIE` writer - transfer error interrupt enable"]
+pub type TEIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, TEIE_A, O>;
+impl<'a, const O: u8> TEIE_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TEIE_A::DISABLED)
+        self.variant(TEIE_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TEIE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(TEIE_A::Enabled)
     }
 }
-///half transfer interrupt enable
-///
-///Value on reset: 0
+#[doc = "half transfer interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HTIE_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<HTIE_A> for bool {
     #[inline(always)]
@@ -1036,84 +618,49 @@ impl From<HTIE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HTIE` reader - half transfer interrupt enable
-pub struct HTIE_R(crate::FieldReader<bool, HTIE_A>);
+#[doc = "Field `HTIE` reader - half transfer interrupt enable"]
+pub type HTIE_R = crate::BitReader<HTIE_A>;
 impl HTIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HTIE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HTIE_A {
         match self.bits {
-            false => HTIE_A::DISABLED,
-            true => HTIE_A::ENABLED,
+            false => HTIE_A::Disabled,
+            true => HTIE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HTIE_A::DISABLED
+        *self == HTIE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HTIE_A::ENABLED
+        *self == HTIE_A::Enabled
     }
 }
-impl core::ops::Deref for HTIE_R {
-    type Target = crate::FieldReader<bool, HTIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HTIE` writer - half transfer interrupt enable
-pub struct HTIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTIE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HTIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `HTIE` writer - half transfer interrupt enable"]
+pub type HTIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, HTIE_A, O>;
+impl<'a, const O: u8> HTIE_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(HTIE_A::DISABLED)
+        self.variant(HTIE_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(HTIE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(HTIE_A::Enabled)
     }
 }
-///transfer complete interrupt enable
-///
-///Value on reset: 0
+#[doc = "transfer complete interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCIE_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<TCIE_A> for bool {
     #[inline(always)]
@@ -1121,84 +668,49 @@ impl From<TCIE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TCIE` reader - transfer complete interrupt enable
-pub struct TCIE_R(crate::FieldReader<bool, TCIE_A>);
+#[doc = "Field `TCIE` reader - transfer complete interrupt enable"]
+pub type TCIE_R = crate::BitReader<TCIE_A>;
 impl TCIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TCIE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TCIE_A {
         match self.bits {
-            false => TCIE_A::DISABLED,
-            true => TCIE_A::ENABLED,
+            false => TCIE_A::Disabled,
+            true => TCIE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TCIE_A::DISABLED
+        *self == TCIE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TCIE_A::ENABLED
+        *self == TCIE_A::Enabled
     }
 }
-impl core::ops::Deref for TCIE_R {
-    type Target = crate::FieldReader<bool, TCIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TCIE` writer - transfer complete interrupt enable
-pub struct TCIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCIE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TCIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `TCIE` writer - transfer complete interrupt enable"]
+pub type TCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, TCIE_A, O>;
+impl<'a, const O: u8> TCIE_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TCIE_A::DISABLED)
+        self.variant(TCIE_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TCIE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(TCIE_A::Enabled)
     }
 }
-///channel enable
-///
-///Value on reset: 0
+#[doc = "channel enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_A {
-    ///0: Disabled
-    DISABLED = 0,
-    ///1: Enabled
-    ENABLED = 1,
+    #[doc = "0: Disabled"]
+    Disabled = 0,
+    #[doc = "1: Enabled"]
+    Enabled = 1,
 }
 impl From<EN_A> for bool {
     #[inline(always)]
@@ -1206,263 +718,226 @@ impl From<EN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EN` reader - channel enable
-pub struct EN_R(crate::FieldReader<bool, EN_A>);
+#[doc = "Field `EN` reader - channel enable"]
+pub type EN_R = crate::BitReader<EN_A>;
 impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EN_A {
         match self.bits {
-            false => EN_A::DISABLED,
-            true => EN_A::ENABLED,
+            false => EN_A::Disabled,
+            true => EN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EN_A::DISABLED
+        *self == EN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EN_A::ENABLED
+        *self == EN_A::Enabled
     }
 }
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EN` writer - channel enable
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disabled
+#[doc = "Field `EN` writer - channel enable"]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR1_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EN_A::DISABLED)
+        self.variant(EN_A::Disabled)
     }
-    ///Enabled
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(EN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 20 - rivileged mode
+    #[doc = "Bit 20 - rivileged mode"]
     #[inline(always)]
     pub fn priv_(&self) -> PRIV_R {
-        PRIV_R::new(((self.bits >> 20) & 0x01) != 0)
+        PRIV_R::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 19 - ecurity of the DMA transfer to the destination
+    #[doc = "Bit 19 - ecurity of the DMA transfer to the destination"]
     #[inline(always)]
     pub fn dsec(&self) -> DSEC_R {
-        DSEC_R::new(((self.bits >> 19) & 0x01) != 0)
+        DSEC_R::new(((self.bits >> 19) & 1) != 0)
     }
-    ///Bit 18 - ecurity of the DMA transfer from the source
+    #[doc = "Bit 18 - ecurity of the DMA transfer from the source"]
     #[inline(always)]
     pub fn ssec(&self) -> SSEC_R {
-        SSEC_R::new(((self.bits >> 18) & 0x01) != 0)
+        SSEC_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - ecure mode
+    #[doc = "Bit 17 - ecure mode"]
     #[inline(always)]
     pub fn secm(&self) -> SECM_R {
-        SECM_R::new(((self.bits >> 17) & 0x01) != 0)
+        SECM_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 14 - memory-to-memory mode
+    #[doc = "Bit 14 - memory-to-memory mode"]
     #[inline(always)]
     pub fn mem2mem(&self) -> MEM2MEM_R {
-        MEM2MEM_R::new(((self.bits >> 14) & 0x01) != 0)
+        MEM2MEM_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bits 12:13 - priority level
+    #[doc = "Bits 12:13 - priority level"]
     #[inline(always)]
     pub fn pl(&self) -> PL_R {
-        PL_R::new(((self.bits >> 12) & 0x03) as u8)
+        PL_R::new(((self.bits >> 12) & 3) as u8)
     }
-    ///Bits 10:11 - memory size
+    #[doc = "Bits 10:11 - memory size"]
     #[inline(always)]
     pub fn msize(&self) -> MSIZE_R {
-        MSIZE_R::new(((self.bits >> 10) & 0x03) as u8)
+        MSIZE_R::new(((self.bits >> 10) & 3) as u8)
     }
-    ///Bits 8:9 - peripheral size
+    #[doc = "Bits 8:9 - peripheral size"]
     #[inline(always)]
     pub fn psize(&self) -> PSIZE_R {
-        PSIZE_R::new(((self.bits >> 8) & 0x03) as u8)
+        PSIZE_R::new(((self.bits >> 8) & 3) as u8)
     }
-    ///Bit 7 - memory increment mode
+    #[doc = "Bit 7 - memory increment mode"]
     #[inline(always)]
     pub fn minc(&self) -> MINC_R {
-        MINC_R::new(((self.bits >> 7) & 0x01) != 0)
+        MINC_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 6 - peripheral increment mode
+    #[doc = "Bit 6 - peripheral increment mode"]
     #[inline(always)]
     pub fn pinc(&self) -> PINC_R {
-        PINC_R::new(((self.bits >> 6) & 0x01) != 0)
+        PINC_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - circular mode
+    #[doc = "Bit 5 - circular mode"]
     #[inline(always)]
     pub fn circ(&self) -> CIRC_R {
-        CIRC_R::new(((self.bits >> 5) & 0x01) != 0)
+        CIRC_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - data transfer direction
+    #[doc = "Bit 4 - data transfer direction"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new(((self.bits >> 4) & 0x01) != 0)
+        DIR_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - transfer error interrupt enable
+    #[doc = "Bit 3 - transfer error interrupt enable"]
     #[inline(always)]
     pub fn teie(&self) -> TEIE_R {
-        TEIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        TEIE_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - half transfer interrupt enable
+    #[doc = "Bit 2 - half transfer interrupt enable"]
     #[inline(always)]
     pub fn htie(&self) -> HTIE_R {
-        HTIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        HTIE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - transfer complete interrupt enable
+    #[doc = "Bit 1 - transfer complete interrupt enable"]
     #[inline(always)]
     pub fn tcie(&self) -> TCIE_R {
-        TCIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TCIE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - channel enable
+    #[doc = "Bit 0 - channel enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 20 - rivileged mode
+    #[doc = "Bit 20 - rivileged mode"]
     #[inline(always)]
-    pub fn priv_(&mut self) -> PRIV_W {
-        PRIV_W { w: self }
+    pub fn priv_(&mut self) -> PRIV_W<20> {
+        PRIV_W::new(self)
     }
-    ///Bit 19 - ecurity of the DMA transfer to the destination
+    #[doc = "Bit 19 - ecurity of the DMA transfer to the destination"]
     #[inline(always)]
-    pub fn dsec(&mut self) -> DSEC_W {
-        DSEC_W { w: self }
+    pub fn dsec(&mut self) -> DSEC_W<19> {
+        DSEC_W::new(self)
     }
-    ///Bit 18 - ecurity of the DMA transfer from the source
+    #[doc = "Bit 18 - ecurity of the DMA transfer from the source"]
     #[inline(always)]
-    pub fn ssec(&mut self) -> SSEC_W {
-        SSEC_W { w: self }
+    pub fn ssec(&mut self) -> SSEC_W<18> {
+        SSEC_W::new(self)
     }
-    ///Bit 17 - ecure mode
+    #[doc = "Bit 17 - ecure mode"]
     #[inline(always)]
-    pub fn secm(&mut self) -> SECM_W {
-        SECM_W { w: self }
+    pub fn secm(&mut self) -> SECM_W<17> {
+        SECM_W::new(self)
     }
-    ///Bit 14 - memory-to-memory mode
+    #[doc = "Bit 14 - memory-to-memory mode"]
     #[inline(always)]
-    pub fn mem2mem(&mut self) -> MEM2MEM_W {
-        MEM2MEM_W { w: self }
+    pub fn mem2mem(&mut self) -> MEM2MEM_W<14> {
+        MEM2MEM_W::new(self)
     }
-    ///Bits 12:13 - priority level
+    #[doc = "Bits 12:13 - priority level"]
     #[inline(always)]
-    pub fn pl(&mut self) -> PL_W {
-        PL_W { w: self }
+    pub fn pl(&mut self) -> PL_W<12> {
+        PL_W::new(self)
     }
-    ///Bits 10:11 - memory size
+    #[doc = "Bits 10:11 - memory size"]
     #[inline(always)]
-    pub fn msize(&mut self) -> MSIZE_W {
-        MSIZE_W { w: self }
+    pub fn msize(&mut self) -> MSIZE_W<10> {
+        MSIZE_W::new(self)
     }
-    ///Bits 8:9 - peripheral size
+    #[doc = "Bits 8:9 - peripheral size"]
     #[inline(always)]
-    pub fn psize(&mut self) -> PSIZE_W {
-        PSIZE_W { w: self }
+    pub fn psize(&mut self) -> PSIZE_W<8> {
+        PSIZE_W::new(self)
     }
-    ///Bit 7 - memory increment mode
+    #[doc = "Bit 7 - memory increment mode"]
     #[inline(always)]
-    pub fn minc(&mut self) -> MINC_W {
-        MINC_W { w: self }
+    pub fn minc(&mut self) -> MINC_W<7> {
+        MINC_W::new(self)
     }
-    ///Bit 6 - peripheral increment mode
+    #[doc = "Bit 6 - peripheral increment mode"]
     #[inline(always)]
-    pub fn pinc(&mut self) -> PINC_W {
-        PINC_W { w: self }
+    pub fn pinc(&mut self) -> PINC_W<6> {
+        PINC_W::new(self)
     }
-    ///Bit 5 - circular mode
+    #[doc = "Bit 5 - circular mode"]
     #[inline(always)]
-    pub fn circ(&mut self) -> CIRC_W {
-        CIRC_W { w: self }
+    pub fn circ(&mut self) -> CIRC_W<5> {
+        CIRC_W::new(self)
     }
-    ///Bit 4 - data transfer direction
+    #[doc = "Bit 4 - data transfer direction"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DIR_W {
-        DIR_W { w: self }
+    pub fn dir(&mut self) -> DIR_W<4> {
+        DIR_W::new(self)
     }
-    ///Bit 3 - transfer error interrupt enable
+    #[doc = "Bit 3 - transfer error interrupt enable"]
     #[inline(always)]
-    pub fn teie(&mut self) -> TEIE_W {
-        TEIE_W { w: self }
+    pub fn teie(&mut self) -> TEIE_W<3> {
+        TEIE_W::new(self)
     }
-    ///Bit 2 - half transfer interrupt enable
+    #[doc = "Bit 2 - half transfer interrupt enable"]
     #[inline(always)]
-    pub fn htie(&mut self) -> HTIE_W {
-        HTIE_W { w: self }
+    pub fn htie(&mut self) -> HTIE_W<2> {
+        HTIE_W::new(self)
     }
-    ///Bit 1 - transfer complete interrupt enable
+    #[doc = "Bit 1 - transfer complete interrupt enable"]
     #[inline(always)]
-    pub fn tcie(&mut self) -> TCIE_W {
-        TCIE_W { w: self }
+    pub fn tcie(&mut self) -> TCIE_W<1> {
+        TCIE_W::new(self)
     }
-    ///Bit 0 - channel enable
+    #[doc = "Bit 0 - channel enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///channel x configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccr1](index.html) module
+#[doc = "channel x configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr1](index.html) module"]
 pub struct CCR1_SPEC;
 impl crate::RegisterSpec for CCR1_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccr1::R](R) reader structure
+#[doc = "`read()` method returns [ccr1::R](R) reader structure"]
 impl crate::Readable for CCR1_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccr1::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccr1::W](W) writer structure"]
 impl crate::Writable for CCR1_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCR1 to value 0
+#[doc = "`reset()` method sets CCR1 to value 0"]
 impl crate::Resettable for CCR1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

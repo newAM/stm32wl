@@ -1,4 +1,4 @@
-///Register `AHB3RSTR` reader
+#[doc = "Register `AHB3RSTR` reader"]
 pub struct R(crate::R<AHB3RSTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AHB3RSTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AHB3RSTR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `AHB3RSTR` writer
+#[doc = "Register `AHB3RSTR` writer"]
 pub struct W(crate::W<AHB3RSTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AHB3RSTR_SPEC>;
@@ -34,220 +34,43 @@ impl From<crate::W<AHB3RSTR_SPEC>> for W {
         W(writer)
     }
 }
-///Flash interface reset
-pub type FLASHRST_A = PKARST_A;
-///Field `FLASHRST` reader - Flash interface reset
-pub type FLASHRST_R = PKARST_R;
-///Field `FLASHRST` writer - Flash interface reset
-pub struct FLASHRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASHRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: FLASHRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
-    #[inline(always)]
-    pub fn no_reset(self) -> &'a mut W {
-        self.variant(FLASHRST_A::NORESET)
-    }
-    ///Reset peripheral
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(FLASHRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
-///IPCCRST
-pub type IPCCRST_A = PKARST_A;
-///Field `IPCCRST` reader - IPCCRST
-pub type IPCCRST_R = PKARST_R;
-///Field `IPCCRST` writer - IPCCRST
-pub struct IPCCRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPCCRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: IPCCRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
-    #[inline(always)]
-    pub fn no_reset(self) -> &'a mut W {
-        self.variant(IPCCRST_A::NORESET)
-    }
-    ///Reset peripheral
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(IPCCRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
-///HSEMRST
-pub type HSEMRST_A = PKARST_A;
-///Field `HSEMRST` reader - HSEMRST
-pub type HSEMRST_R = PKARST_R;
-///Field `HSEMRST` writer - HSEMRST
-pub struct HSEMRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSEMRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HSEMRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
-    #[inline(always)]
-    pub fn no_reset(self) -> &'a mut W {
-        self.variant(HSEMRST_A::NORESET)
-    }
-    ///Reset peripheral
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(HSEMRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
-///RNGRST
-pub type RNGRST_A = PKARST_A;
-///Field `RNGRST` reader - RNGRST
-pub type RNGRST_R = PKARST_R;
-///Field `RNGRST` writer - RNGRST
-pub struct RNGRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNGRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNGRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
-    #[inline(always)]
-    pub fn no_reset(self) -> &'a mut W {
-        self.variant(RNGRST_A::NORESET)
-    }
-    ///Reset peripheral
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(RNGRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///AESRST
-pub type AESRST_A = PKARST_A;
-///Field `AESRST` reader - AESRST
-pub type AESRST_R = PKARST_R;
-///Field `AESRST` writer - AESRST
-pub struct AESRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: AESRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
-    #[inline(always)]
-    pub fn no_reset(self) -> &'a mut W {
-        self.variant(AESRST_A::NORESET)
-    }
-    ///Reset peripheral
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(AESRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///PKARST
-///
-///Value on reset: 0
+#[doc = "Flash interface reset"]
+pub use PKARST_A as FLASHRST_A;
+#[doc = "IPCCRST"]
+pub use PKARST_A as IPCCRST_A;
+#[doc = "HSEMRST"]
+pub use PKARST_A as HSEMRST_A;
+#[doc = "RNGRST"]
+pub use PKARST_A as RNGRST_A;
+#[doc = "AESRST"]
+pub use PKARST_A as AESRST_A;
+#[doc = "Field `FLASHRST` reader - Flash interface reset"]
+pub use PKARST_R as FLASHRST_R;
+#[doc = "Field `IPCCRST` reader - IPCCRST"]
+pub use PKARST_R as IPCCRST_R;
+#[doc = "Field `HSEMRST` reader - HSEMRST"]
+pub use PKARST_R as HSEMRST_R;
+#[doc = "Field `RNGRST` reader - RNGRST"]
+pub use PKARST_R as RNGRST_R;
+#[doc = "Field `AESRST` reader - AESRST"]
+pub use PKARST_R as AESRST_R;
+#[doc = "Field `FLASHRST` writer - Flash interface reset"]
+pub use PKARST_W as FLASHRST_W;
+#[doc = "Field `IPCCRST` writer - IPCCRST"]
+pub use PKARST_W as IPCCRST_W;
+#[doc = "Field `HSEMRST` writer - HSEMRST"]
+pub use PKARST_W as HSEMRST_W;
+#[doc = "Field `RNGRST` writer - RNGRST"]
+pub use PKARST_W as RNGRST_W;
+#[doc = "Field `AESRST` writer - AESRST"]
+pub use PKARST_W as AESRST_W;
+#[doc = "PKARST\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PKARST_A {
-    ///0: No effect
-    NORESET = 0,
-    ///1: Reset peripheral
-    RESET = 1,
+    #[doc = "0: No effect"]
+    NoReset = 0,
+    #[doc = "1: Reset peripheral"]
+    Reset = 1,
 }
 impl From<PKARST_A> for bool {
     #[inline(always)]
@@ -255,163 +78,126 @@ impl From<PKARST_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PKARST` reader - PKARST
-pub struct PKARST_R(crate::FieldReader<bool, PKARST_A>);
+#[doc = "Field `PKARST` reader - PKARST"]
+pub type PKARST_R = crate::BitReader<PKARST_A>;
 impl PKARST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PKARST_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PKARST_A {
         match self.bits {
-            false => PKARST_A::NORESET,
-            true => PKARST_A::RESET,
+            false => PKARST_A::NoReset,
+            true => PKARST_A::Reset,
         }
     }
-    ///Checks if the value of the field is `NORESET`
+    #[doc = "Checks if the value of the field is `NoReset`"]
     #[inline(always)]
     pub fn is_no_reset(&self) -> bool {
-        **self == PKARST_A::NORESET
+        *self == PKARST_A::NoReset
     }
-    ///Checks if the value of the field is `RESET`
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == PKARST_A::RESET
+        *self == PKARST_A::Reset
     }
 }
-impl core::ops::Deref for PKARST_R {
-    type Target = crate::FieldReader<bool, PKARST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PKARST` writer - PKARST
-pub struct PKARST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKARST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PKARST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect
+#[doc = "Field `PKARST` writer - PKARST"]
+pub type PKARST_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB3RSTR_SPEC, PKARST_A, O>;
+impl<'a, const O: u8> PKARST_W<'a, O> {
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn no_reset(self) -> &'a mut W {
-        self.variant(PKARST_A::NORESET)
+        self.variant(PKARST_A::NoReset)
     }
-    ///Reset peripheral
+    #[doc = "Reset peripheral"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(PKARST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(PKARST_A::Reset)
     }
 }
 impl R {
-    ///Bit 25 - Flash interface reset
+    #[doc = "Bit 25 - Flash interface reset"]
     #[inline(always)]
     pub fn flashrst(&self) -> FLASHRST_R {
-        FLASHRST_R::new(((self.bits >> 25) & 0x01) != 0)
+        FLASHRST_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 20 - IPCCRST
+    #[doc = "Bit 20 - IPCCRST"]
     #[inline(always)]
     pub fn ipccrst(&self) -> IPCCRST_R {
-        IPCCRST_R::new(((self.bits >> 20) & 0x01) != 0)
+        IPCCRST_R::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 19 - HSEMRST
+    #[doc = "Bit 19 - HSEMRST"]
     #[inline(always)]
     pub fn hsemrst(&self) -> HSEMRST_R {
-        HSEMRST_R::new(((self.bits >> 19) & 0x01) != 0)
+        HSEMRST_R::new(((self.bits >> 19) & 1) != 0)
     }
-    ///Bit 18 - RNGRST
+    #[doc = "Bit 18 - RNGRST"]
     #[inline(always)]
     pub fn rngrst(&self) -> RNGRST_R {
-        RNGRST_R::new(((self.bits >> 18) & 0x01) != 0)
+        RNGRST_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - AESRST
+    #[doc = "Bit 17 - AESRST"]
     #[inline(always)]
     pub fn aesrst(&self) -> AESRST_R {
-        AESRST_R::new(((self.bits >> 17) & 0x01) != 0)
+        AESRST_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 16 - PKARST
+    #[doc = "Bit 16 - PKARST"]
     #[inline(always)]
     pub fn pkarst(&self) -> PKARST_R {
-        PKARST_R::new(((self.bits >> 16) & 0x01) != 0)
+        PKARST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 25 - Flash interface reset
+    #[doc = "Bit 25 - Flash interface reset"]
     #[inline(always)]
-    pub fn flashrst(&mut self) -> FLASHRST_W {
-        FLASHRST_W { w: self }
+    pub fn flashrst(&mut self) -> FLASHRST_W<25> {
+        FLASHRST_W::new(self)
     }
-    ///Bit 20 - IPCCRST
+    #[doc = "Bit 20 - IPCCRST"]
     #[inline(always)]
-    pub fn ipccrst(&mut self) -> IPCCRST_W {
-        IPCCRST_W { w: self }
+    pub fn ipccrst(&mut self) -> IPCCRST_W<20> {
+        IPCCRST_W::new(self)
     }
-    ///Bit 19 - HSEMRST
+    #[doc = "Bit 19 - HSEMRST"]
     #[inline(always)]
-    pub fn hsemrst(&mut self) -> HSEMRST_W {
-        HSEMRST_W { w: self }
+    pub fn hsemrst(&mut self) -> HSEMRST_W<19> {
+        HSEMRST_W::new(self)
     }
-    ///Bit 18 - RNGRST
+    #[doc = "Bit 18 - RNGRST"]
     #[inline(always)]
-    pub fn rngrst(&mut self) -> RNGRST_W {
-        RNGRST_W { w: self }
+    pub fn rngrst(&mut self) -> RNGRST_W<18> {
+        RNGRST_W::new(self)
     }
-    ///Bit 17 - AESRST
+    #[doc = "Bit 17 - AESRST"]
     #[inline(always)]
-    pub fn aesrst(&mut self) -> AESRST_W {
-        AESRST_W { w: self }
+    pub fn aesrst(&mut self) -> AESRST_W<17> {
+        AESRST_W::new(self)
     }
-    ///Bit 16 - PKARST
+    #[doc = "Bit 16 - PKARST"]
     #[inline(always)]
-    pub fn pkarst(&mut self) -> PKARST_W {
-        PKARST_W { w: self }
+    pub fn pkarst(&mut self) -> PKARST_W<16> {
+        PKARST_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///AHB3 peripheral reset register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ahb3rstr](index.html) module
+#[doc = "AHB3 peripheral reset register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahb3rstr](index.html) module"]
 pub struct AHB3RSTR_SPEC;
 impl crate::RegisterSpec for AHB3RSTR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ahb3rstr::R](R) reader structure
+#[doc = "`read()` method returns [ahb3rstr::R](R) reader structure"]
 impl crate::Readable for AHB3RSTR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ahb3rstr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ahb3rstr::W](W) writer structure"]
 impl crate::Writable for AHB3RSTR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets AHB3RSTR to value 0
+#[doc = "`reset()` method sets AHB3RSTR to value 0"]
 impl crate::Resettable for AHB3RSTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `PUCRA` reader
+#[doc = "Register `PUCRA` reader"]
 pub struct R(crate::R<PUCRA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PUCRA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PUCRA_SPEC>> for R {
         R(reader)
     }
 }
-///Register `PUCRA` writer
+#[doc = "Register `PUCRA` writer"]
 pub struct W(crate::W<PUCRA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PUCRA_SPEC>;
@@ -34,241 +34,49 @@ impl From<crate::W<PUCRA_SPEC>> for W {
         W(writer)
     }
 }
-///Port PA15 pull-up
-pub type PU15_A = PU10_A;
-///Field `PU15` reader - Port PA15 pull-up
-pub type PU15_R = PU10_R;
-///Field `PU15` writer - Port PA15 pull-up
-pub struct PU15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU15_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU15_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU15_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU15_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
-///PU14
-pub type PU14_A = PU10_A;
-///Field `PU14` reader - PU14
-pub type PU14_R = PU10_R;
-///Field `PU14` writer - PU14
-pub struct PU14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU14_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU14_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU14_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU14_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
-///Port PA\[y\]
-///pull-up bit y (y=0 to 13)
-pub type PU13_A = PU10_A;
-///Field `PU13` reader - Port PA\[y\]
-///pull-up bit y (y=0 to 13)
-pub type PU13_R = PU10_R;
-///Field `PU13` writer - Port PA\[y\]
-///pull-up bit y (y=0 to 13)
-pub struct PU13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU13_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU13_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU13_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU13_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
-///PU12
-pub type PU12_A = PU10_A;
-///Field `PU12` reader - PU12
-pub type PU12_R = PU10_R;
-///Field `PU12` writer - PU12
-pub struct PU12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU12_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU12_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU12_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU12_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///PU11
-pub type PU11_A = PU10_A;
-///Field `PU11` reader - PU11
-pub type PU11_R = PU10_R;
-///Field `PU11` writer - PU11
-pub struct PU11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU11_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU11_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU11_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU11_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///PU10
-///
-///Value on reset: 0
+#[doc = "Port PA15 pull-up"]
+pub use PU10_A as PU15_A;
+#[doc = "PU14"]
+pub use PU10_A as PU14_A;
+#[doc = "Port PA\\[y\\]
+pull-up bit y (y=0 to 13)"]
+pub use PU10_A as PU13_A;
+#[doc = "PU12"]
+pub use PU10_A as PU12_A;
+#[doc = "PU11"]
+pub use PU10_A as PU11_A;
+#[doc = "Field `PU15` reader - Port PA15 pull-up"]
+pub use PU10_R as PU15_R;
+#[doc = "Field `PU14` reader - PU14"]
+pub use PU10_R as PU14_R;
+#[doc = "Field `PU13` reader - Port PA\\[y\\]
+pull-up bit y (y=0 to 13)"]
+pub use PU10_R as PU13_R;
+#[doc = "Field `PU12` reader - PU12"]
+pub use PU10_R as PU12_R;
+#[doc = "Field `PU11` reader - PU11"]
+pub use PU10_R as PU11_R;
+#[doc = "Field `PU15` writer - Port PA15 pull-up"]
+pub use PU10_W as PU15_W;
+#[doc = "Field `PU14` writer - PU14"]
+pub use PU10_W as PU14_W;
+#[doc = "Field `PU13` writer - Port PA\\[y\\]
+pull-up bit y (y=0 to 13)"]
+pub use PU10_W as PU13_W;
+#[doc = "Field `PU12` writer - PU12"]
+pub use PU10_W as PU12_W;
+#[doc = "Field `PU11` writer - PU11"]
+pub use PU10_W as PU11_W;
+#[doc = "PU10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PU10_A {
-    ///0: Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    DISABLED = 0,
-    ///1: Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    ENABLED = 1,
+    #[doc = "0: Disable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3)"]
+    Disabled = 0,
+    #[doc = "1: Enable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\\[y\\]
+bit is also set"]
+    Enabled = 1,
 }
 impl From<PU10_A> for bool {
     #[inline(always)]
@@ -276,486 +84,109 @@ impl From<PU10_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PU10` reader - PU10
-pub struct PU10_R(crate::FieldReader<bool, PU10_A>);
+#[doc = "Field `PU10` reader - PU10"]
+pub type PU10_R = crate::BitReader<PU10_A>;
 impl PU10_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PU10_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PU10_A {
         match self.bits {
-            false => PU10_A::DISABLED,
-            true => PU10_A::ENABLED,
+            false => PU10_A::Disabled,
+            true => PU10_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PU10_A::DISABLED
+        *self == PU10_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PU10_A::ENABLED
+        *self == PU10_A::Enabled
     }
 }
-impl core::ops::Deref for PU10_R {
-    type Target = crate::FieldReader<bool, PU10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PU10` writer - PU10
-pub struct PU10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU10_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU10_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
+#[doc = "Field `PU10` writer - PU10"]
+pub type PU10_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUCRA_SPEC, PU10_A, O>;
+impl<'a, const O: u8> PU10_W<'a, O> {
+    #[doc = "Disable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3)"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PU10_A::DISABLED)
+        self.variant(PU10_A::Disabled)
     }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
+    #[doc = "Enable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\\[y\\]
+bit is also set"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PU10_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(PU10_A::Enabled)
     }
 }
-///PU9
-pub type PU9_A = PU0_A;
-///Field `PU9` reader - PU9
-pub type PU9_R = PU0_R;
-///Field `PU9` writer - PU9
-pub struct PU9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU9_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU9_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU9_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU9_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
-///PU8
-pub type PU8_A = PU0_A;
-///Field `PU8` reader - PU8
-pub type PU8_R = PU0_R;
-///Field `PU8` writer - PU8
-pub struct PU8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU8_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU8_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU8_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU8_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
-///PU7
-pub type PU7_A = PU0_A;
-///Field `PU7` reader - PU7
-pub type PU7_R = PU0_R;
-///Field `PU7` writer - PU7
-pub struct PU7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU7_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU7_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU7_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-///PU6
-pub type PU6_A = PU0_A;
-///Field `PU6` reader - PU6
-pub type PU6_R = PU0_R;
-///Field `PU6` writer - PU6
-pub struct PU6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU6_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU6_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU6_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-///PU5
-pub type PU5_A = PU0_A;
-///Field `PU5` reader - PU5
-pub type PU5_R = PU0_R;
-///Field `PU5` writer - PU5
-pub struct PU5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU5_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU5_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU5_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///PU4
-pub type PU4_A = PU0_A;
-///Field `PU4` reader - PU4
-pub type PU4_R = PU0_R;
-///Field `PU4` writer - PU4
-pub struct PU4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU4_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU4_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU4_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
-///PU3
-pub type PU3_A = PU0_A;
-///Field `PU3` reader - PU3
-pub type PU3_R = PU0_R;
-///Field `PU3` writer - PU3
-pub struct PU3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU3_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU3_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///PU2
-pub type PU2_A = PU0_A;
-///Field `PU2` reader - PU2
-pub type PU2_R = PU0_R;
-///Field `PU2` writer - PU2
-pub struct PU2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU2_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU2_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///PU1
-pub type PU1_A = PU0_A;
-///Field `PU1` reader - PU1
-pub type PU1_R = PU0_R;
-///Field `PU1` writer - PU1
-pub struct PU1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PU1_A::DISABLED)
-    }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PU1_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///PU0
-///
-///Value on reset: 0
+#[doc = "PU9"]
+pub use PU0_A as PU9_A;
+#[doc = "PU8"]
+pub use PU0_A as PU8_A;
+#[doc = "PU7"]
+pub use PU0_A as PU7_A;
+#[doc = "PU6"]
+pub use PU0_A as PU6_A;
+#[doc = "PU5"]
+pub use PU0_A as PU5_A;
+#[doc = "PU4"]
+pub use PU0_A as PU4_A;
+#[doc = "PU3"]
+pub use PU0_A as PU3_A;
+#[doc = "PU2"]
+pub use PU0_A as PU2_A;
+#[doc = "PU1"]
+pub use PU0_A as PU1_A;
+#[doc = "Field `PU9` reader - PU9"]
+pub use PU0_R as PU9_R;
+#[doc = "Field `PU8` reader - PU8"]
+pub use PU0_R as PU8_R;
+#[doc = "Field `PU7` reader - PU7"]
+pub use PU0_R as PU7_R;
+#[doc = "Field `PU6` reader - PU6"]
+pub use PU0_R as PU6_R;
+#[doc = "Field `PU5` reader - PU5"]
+pub use PU0_R as PU5_R;
+#[doc = "Field `PU4` reader - PU4"]
+pub use PU0_R as PU4_R;
+#[doc = "Field `PU3` reader - PU3"]
+pub use PU0_R as PU3_R;
+#[doc = "Field `PU2` reader - PU2"]
+pub use PU0_R as PU2_R;
+#[doc = "Field `PU1` reader - PU1"]
+pub use PU0_R as PU1_R;
+#[doc = "Field `PU9` writer - PU9"]
+pub use PU0_W as PU9_W;
+#[doc = "Field `PU8` writer - PU8"]
+pub use PU0_W as PU8_W;
+#[doc = "Field `PU7` writer - PU7"]
+pub use PU0_W as PU7_W;
+#[doc = "Field `PU6` writer - PU6"]
+pub use PU0_W as PU6_W;
+#[doc = "Field `PU5` writer - PU5"]
+pub use PU0_W as PU5_W;
+#[doc = "Field `PU4` writer - PU4"]
+pub use PU0_W as PU4_W;
+#[doc = "Field `PU3` writer - PU3"]
+pub use PU0_W as PU3_W;
+#[doc = "Field `PU2` writer - PU2"]
+pub use PU0_W as PU2_W;
+#[doc = "Field `PU1` writer - PU1"]
+pub use PU0_W as PU1_W;
+#[doc = "PU0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PU0_A {
-    ///0: Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
-    DISABLED = 0,
-    ///1: Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
-    ENABLED = 1,
+    #[doc = "0: Disable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3)"]
+    Disabled = 0,
+    #[doc = "1: Enable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\\[y\\]
+bit is also set"]
+    Enabled = 1,
 }
 impl From<PU0_A> for bool {
     #[inline(always)]
@@ -763,268 +194,231 @@ impl From<PU0_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PU0` reader - PU0
-pub struct PU0_R(crate::FieldReader<bool, PU0_A>);
+#[doc = "Field `PU0` reader - PU0"]
+pub type PU0_R = crate::BitReader<PU0_A>;
 impl PU0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PU0_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PU0_A {
         match self.bits {
-            false => PU0_A::DISABLED,
-            true => PU0_A::ENABLED,
+            false => PU0_A::Disabled,
+            true => PU0_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PU0_A::DISABLED
+        *self == PU0_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PU0_A::ENABLED
+        *self == PU0_A::Enabled
     }
 }
-impl core::ops::Deref for PU0_R {
-    type Target = crate::FieldReader<bool, PU0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PU0` writer - PU0
-pub struct PU0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PU0_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PU0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Disable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3)
+#[doc = "Field `PU0` writer - PU0"]
+pub type PU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PUCRA_SPEC, PU0_A, O>;
+impl<'a, const O: u8> PU0_W<'a, O> {
+    #[doc = "Disable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3)"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PU0_A::DISABLED)
+        self.variant(PU0_A::Disabled)
     }
-    ///Enable pull-up on PA\[y\]
-    ///when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\[y\]
-    ///bit is also set
+    #[doc = "Enable pull-up on PA\\[y\\]
+when both APC bits are set in PWR control register 3 (PWR_CR3). The pull-up is not activated if the corresponding PA\\[y\\]
+bit is also set"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PU0_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(PU0_A::Enabled)
     }
 }
 impl R {
-    ///Bit 15 - Port PA15 pull-up
+    #[doc = "Bit 15 - Port PA15 pull-up"]
     #[inline(always)]
     pub fn pu15(&self) -> PU15_R {
-        PU15_R::new(((self.bits >> 15) & 0x01) != 0)
+        PU15_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 14 - PU14
+    #[doc = "Bit 14 - PU14"]
     #[inline(always)]
     pub fn pu14(&self) -> PU14_R {
-        PU14_R::new(((self.bits >> 14) & 0x01) != 0)
+        PU14_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 13 - Port PA\[y\]
-    ///pull-up bit y (y=0 to 13)
+    #[doc = "Bit 13 - Port PA\\[y\\]
+pull-up bit y (y=0 to 13)"]
     #[inline(always)]
     pub fn pu13(&self) -> PU13_R {
-        PU13_R::new(((self.bits >> 13) & 0x01) != 0)
+        PU13_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 12 - PU12
+    #[doc = "Bit 12 - PU12"]
     #[inline(always)]
     pub fn pu12(&self) -> PU12_R {
-        PU12_R::new(((self.bits >> 12) & 0x01) != 0)
+        PU12_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - PU11
+    #[doc = "Bit 11 - PU11"]
     #[inline(always)]
     pub fn pu11(&self) -> PU11_R {
-        PU11_R::new(((self.bits >> 11) & 0x01) != 0)
+        PU11_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - PU10
+    #[doc = "Bit 10 - PU10"]
     #[inline(always)]
     pub fn pu10(&self) -> PU10_R {
-        PU10_R::new(((self.bits >> 10) & 0x01) != 0)
+        PU10_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 9 - PU9
+    #[doc = "Bit 9 - PU9"]
     #[inline(always)]
     pub fn pu9(&self) -> PU9_R {
-        PU9_R::new(((self.bits >> 9) & 0x01) != 0)
+        PU9_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - PU8
+    #[doc = "Bit 8 - PU8"]
     #[inline(always)]
     pub fn pu8(&self) -> PU8_R {
-        PU8_R::new(((self.bits >> 8) & 0x01) != 0)
+        PU8_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 7 - PU7
+    #[doc = "Bit 7 - PU7"]
     #[inline(always)]
     pub fn pu7(&self) -> PU7_R {
-        PU7_R::new(((self.bits >> 7) & 0x01) != 0)
+        PU7_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 6 - PU6
+    #[doc = "Bit 6 - PU6"]
     #[inline(always)]
     pub fn pu6(&self) -> PU6_R {
-        PU6_R::new(((self.bits >> 6) & 0x01) != 0)
+        PU6_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - PU5
+    #[doc = "Bit 5 - PU5"]
     #[inline(always)]
     pub fn pu5(&self) -> PU5_R {
-        PU5_R::new(((self.bits >> 5) & 0x01) != 0)
+        PU5_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - PU4
+    #[doc = "Bit 4 - PU4"]
     #[inline(always)]
     pub fn pu4(&self) -> PU4_R {
-        PU4_R::new(((self.bits >> 4) & 0x01) != 0)
+        PU4_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - PU3
+    #[doc = "Bit 3 - PU3"]
     #[inline(always)]
     pub fn pu3(&self) -> PU3_R {
-        PU3_R::new(((self.bits >> 3) & 0x01) != 0)
+        PU3_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - PU2
+    #[doc = "Bit 2 - PU2"]
     #[inline(always)]
     pub fn pu2(&self) -> PU2_R {
-        PU2_R::new(((self.bits >> 2) & 0x01) != 0)
+        PU2_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - PU1
+    #[doc = "Bit 1 - PU1"]
     #[inline(always)]
     pub fn pu1(&self) -> PU1_R {
-        PU1_R::new(((self.bits >> 1) & 0x01) != 0)
+        PU1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - PU0
+    #[doc = "Bit 0 - PU0"]
     #[inline(always)]
     pub fn pu0(&self) -> PU0_R {
-        PU0_R::new((self.bits & 0x01) != 0)
+        PU0_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 15 - Port PA15 pull-up
+    #[doc = "Bit 15 - Port PA15 pull-up"]
     #[inline(always)]
-    pub fn pu15(&mut self) -> PU15_W {
-        PU15_W { w: self }
+    pub fn pu15(&mut self) -> PU15_W<15> {
+        PU15_W::new(self)
     }
-    ///Bit 14 - PU14
+    #[doc = "Bit 14 - PU14"]
     #[inline(always)]
-    pub fn pu14(&mut self) -> PU14_W {
-        PU14_W { w: self }
+    pub fn pu14(&mut self) -> PU14_W<14> {
+        PU14_W::new(self)
     }
-    ///Bit 13 - Port PA\[y\]
-    ///pull-up bit y (y=0 to 13)
+    #[doc = "Bit 13 - Port PA\\[y\\]
+pull-up bit y (y=0 to 13)"]
     #[inline(always)]
-    pub fn pu13(&mut self) -> PU13_W {
-        PU13_W { w: self }
+    pub fn pu13(&mut self) -> PU13_W<13> {
+        PU13_W::new(self)
     }
-    ///Bit 12 - PU12
+    #[doc = "Bit 12 - PU12"]
     #[inline(always)]
-    pub fn pu12(&mut self) -> PU12_W {
-        PU12_W { w: self }
+    pub fn pu12(&mut self) -> PU12_W<12> {
+        PU12_W::new(self)
     }
-    ///Bit 11 - PU11
+    #[doc = "Bit 11 - PU11"]
     #[inline(always)]
-    pub fn pu11(&mut self) -> PU11_W {
-        PU11_W { w: self }
+    pub fn pu11(&mut self) -> PU11_W<11> {
+        PU11_W::new(self)
     }
-    ///Bit 10 - PU10
+    #[doc = "Bit 10 - PU10"]
     #[inline(always)]
-    pub fn pu10(&mut self) -> PU10_W {
-        PU10_W { w: self }
+    pub fn pu10(&mut self) -> PU10_W<10> {
+        PU10_W::new(self)
     }
-    ///Bit 9 - PU9
+    #[doc = "Bit 9 - PU9"]
     #[inline(always)]
-    pub fn pu9(&mut self) -> PU9_W {
-        PU9_W { w: self }
+    pub fn pu9(&mut self) -> PU9_W<9> {
+        PU9_W::new(self)
     }
-    ///Bit 8 - PU8
+    #[doc = "Bit 8 - PU8"]
     #[inline(always)]
-    pub fn pu8(&mut self) -> PU8_W {
-        PU8_W { w: self }
+    pub fn pu8(&mut self) -> PU8_W<8> {
+        PU8_W::new(self)
     }
-    ///Bit 7 - PU7
+    #[doc = "Bit 7 - PU7"]
     #[inline(always)]
-    pub fn pu7(&mut self) -> PU7_W {
-        PU7_W { w: self }
+    pub fn pu7(&mut self) -> PU7_W<7> {
+        PU7_W::new(self)
     }
-    ///Bit 6 - PU6
+    #[doc = "Bit 6 - PU6"]
     #[inline(always)]
-    pub fn pu6(&mut self) -> PU6_W {
-        PU6_W { w: self }
+    pub fn pu6(&mut self) -> PU6_W<6> {
+        PU6_W::new(self)
     }
-    ///Bit 5 - PU5
+    #[doc = "Bit 5 - PU5"]
     #[inline(always)]
-    pub fn pu5(&mut self) -> PU5_W {
-        PU5_W { w: self }
+    pub fn pu5(&mut self) -> PU5_W<5> {
+        PU5_W::new(self)
     }
-    ///Bit 4 - PU4
+    #[doc = "Bit 4 - PU4"]
     #[inline(always)]
-    pub fn pu4(&mut self) -> PU4_W {
-        PU4_W { w: self }
+    pub fn pu4(&mut self) -> PU4_W<4> {
+        PU4_W::new(self)
     }
-    ///Bit 3 - PU3
+    #[doc = "Bit 3 - PU3"]
     #[inline(always)]
-    pub fn pu3(&mut self) -> PU3_W {
-        PU3_W { w: self }
+    pub fn pu3(&mut self) -> PU3_W<3> {
+        PU3_W::new(self)
     }
-    ///Bit 2 - PU2
+    #[doc = "Bit 2 - PU2"]
     #[inline(always)]
-    pub fn pu2(&mut self) -> PU2_W {
-        PU2_W { w: self }
+    pub fn pu2(&mut self) -> PU2_W<2> {
+        PU2_W::new(self)
     }
-    ///Bit 1 - PU1
+    #[doc = "Bit 1 - PU1"]
     #[inline(always)]
-    pub fn pu1(&mut self) -> PU1_W {
-        PU1_W { w: self }
+    pub fn pu1(&mut self) -> PU1_W<1> {
+        PU1_W::new(self)
     }
-    ///Bit 0 - PU0
+    #[doc = "Bit 0 - PU0"]
     #[inline(always)]
-    pub fn pu0(&mut self) -> PU0_W {
-        PU0_W { w: self }
+    pub fn pu0(&mut self) -> PU0_W<0> {
+        PU0_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Power Port A pull-up control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [pucra](index.html) module
+#[doc = "Power Port A pull-up control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pucra](index.html) module"]
 pub struct PUCRA_SPEC;
 impl crate::RegisterSpec for PUCRA_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [pucra::R](R) reader structure
+#[doc = "`read()` method returns [pucra::R](R) reader structure"]
 impl crate::Readable for PUCRA_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [pucra::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [pucra::W](W) writer structure"]
 impl crate::Writable for PUCRA_SPEC {
     type Writer = W;
 }
-///`reset()` method sets PUCRA to value 0
+#[doc = "`reset()` method sets PUCRA to value 0"]
 impl crate::Resettable for PUCRA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

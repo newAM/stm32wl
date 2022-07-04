@@ -1,4 +1,4 @@
-///Register `CIFR` reader
+#[doc = "Register `CIFR` reader"]
 pub struct R(crate::R<CIFR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIFR_SPEC>;
@@ -13,15 +13,13 @@ impl From<crate::R<CIFR_SPEC>> for R {
         R(reader)
     }
 }
-///LSE Clock security system interrupt flag
-///
-///Value on reset: 0
+#[doc = "LSE Clock security system interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSECSSF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<LSECSSF_A> for bool {
     #[inline(always)]
@@ -29,47 +27,35 @@ impl From<LSECSSF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSECSSF` reader - LSE Clock security system interrupt flag
-pub struct LSECSSF_R(crate::FieldReader<bool, LSECSSF_A>);
+#[doc = "Field `LSECSSF` reader - LSE Clock security system interrupt flag"]
+pub type LSECSSF_R = crate::BitReader<LSECSSF_A>;
 impl LSECSSF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSECSSF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSECSSF_A {
         match self.bits {
-            false => LSECSSF_A::NOTINTERRUPTED,
-            true => LSECSSF_A::INTERRUPTED,
+            false => LSECSSF_A::NotInterrupted,
+            true => LSECSSF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == LSECSSF_A::NOTINTERRUPTED
+        *self == LSECSSF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == LSECSSF_A::INTERRUPTED
+        *self == LSECSSF_A::Interrupted
     }
 }
-impl core::ops::Deref for LSECSSF_R {
-    type Target = crate::FieldReader<bool, LSECSSF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///HSE32 Clock security system interrupt flag
-///
-///Value on reset: 0
+#[doc = "HSE32 Clock security system interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSSF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<CSSF_A> for bool {
     #[inline(always)]
@@ -77,47 +63,35 @@ impl From<CSSF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CSSF` reader - HSE32 Clock security system interrupt flag
-pub struct CSSF_R(crate::FieldReader<bool, CSSF_A>);
+#[doc = "Field `CSSF` reader - HSE32 Clock security system interrupt flag"]
+pub type CSSF_R = crate::BitReader<CSSF_A>;
 impl CSSF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSSF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSSF_A {
         match self.bits {
-            false => CSSF_A::NOTINTERRUPTED,
-            true => CSSF_A::INTERRUPTED,
+            false => CSSF_A::NotInterrupted,
+            true => CSSF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == CSSF_A::NOTINTERRUPTED
+        *self == CSSF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == CSSF_A::INTERRUPTED
+        *self == CSSF_A::Interrupted
     }
 }
-impl core::ops::Deref for CSSF_R {
-    type Target = crate::FieldReader<bool, CSSF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///PLL ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "PLL ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLRDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<PLLRDYF_A> for bool {
     #[inline(always)]
@@ -125,47 +99,35 @@ impl From<PLLRDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PLLRDYF` reader - PLL ready interrupt flag
-pub struct PLLRDYF_R(crate::FieldReader<bool, PLLRDYF_A>);
+#[doc = "Field `PLLRDYF` reader - PLL ready interrupt flag"]
+pub type PLLRDYF_R = crate::BitReader<PLLRDYF_A>;
 impl PLLRDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PLLRDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLRDYF_A {
         match self.bits {
-            false => PLLRDYF_A::NOTINTERRUPTED,
-            true => PLLRDYF_A::INTERRUPTED,
+            false => PLLRDYF_A::NotInterrupted,
+            true => PLLRDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == PLLRDYF_A::NOTINTERRUPTED
+        *self == PLLRDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == PLLRDYF_A::INTERRUPTED
+        *self == PLLRDYF_A::Interrupted
     }
 }
-impl core::ops::Deref for PLLRDYF_R {
-    type Target = crate::FieldReader<bool, PLLRDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///HSE32 ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "HSE32 ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSERDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<HSERDYF_A> for bool {
     #[inline(always)]
@@ -173,47 +135,35 @@ impl From<HSERDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HSERDYF` reader - HSE32 ready interrupt flag
-pub struct HSERDYF_R(crate::FieldReader<bool, HSERDYF_A>);
+#[doc = "Field `HSERDYF` reader - HSE32 ready interrupt flag"]
+pub type HSERDYF_R = crate::BitReader<HSERDYF_A>;
 impl HSERDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HSERDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HSERDYF_A {
         match self.bits {
-            false => HSERDYF_A::NOTINTERRUPTED,
-            true => HSERDYF_A::INTERRUPTED,
+            false => HSERDYF_A::NotInterrupted,
+            true => HSERDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == HSERDYF_A::NOTINTERRUPTED
+        *self == HSERDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == HSERDYF_A::INTERRUPTED
+        *self == HSERDYF_A::Interrupted
     }
 }
-impl core::ops::Deref for HSERDYF_R {
-    type Target = crate::FieldReader<bool, HSERDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///HSI16 ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "HSI16 ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSIRDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<HSIRDYF_A> for bool {
     #[inline(always)]
@@ -221,47 +171,35 @@ impl From<HSIRDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HSIRDYF` reader - HSI16 ready interrupt flag
-pub struct HSIRDYF_R(crate::FieldReader<bool, HSIRDYF_A>);
+#[doc = "Field `HSIRDYF` reader - HSI16 ready interrupt flag"]
+pub type HSIRDYF_R = crate::BitReader<HSIRDYF_A>;
 impl HSIRDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HSIRDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HSIRDYF_A {
         match self.bits {
-            false => HSIRDYF_A::NOTINTERRUPTED,
-            true => HSIRDYF_A::INTERRUPTED,
+            false => HSIRDYF_A::NotInterrupted,
+            true => HSIRDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == HSIRDYF_A::NOTINTERRUPTED
+        *self == HSIRDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == HSIRDYF_A::INTERRUPTED
+        *self == HSIRDYF_A::Interrupted
     }
 }
-impl core::ops::Deref for HSIRDYF_R {
-    type Target = crate::FieldReader<bool, HSIRDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///MSI ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "MSI ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSIRDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<MSIRDYF_A> for bool {
     #[inline(always)]
@@ -269,47 +207,35 @@ impl From<MSIRDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MSIRDYF` reader - MSI ready interrupt flag
-pub struct MSIRDYF_R(crate::FieldReader<bool, MSIRDYF_A>);
+#[doc = "Field `MSIRDYF` reader - MSI ready interrupt flag"]
+pub type MSIRDYF_R = crate::BitReader<MSIRDYF_A>;
 impl MSIRDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MSIRDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSIRDYF_A {
         match self.bits {
-            false => MSIRDYF_A::NOTINTERRUPTED,
-            true => MSIRDYF_A::INTERRUPTED,
+            false => MSIRDYF_A::NotInterrupted,
+            true => MSIRDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == MSIRDYF_A::NOTINTERRUPTED
+        *self == MSIRDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == MSIRDYF_A::INTERRUPTED
+        *self == MSIRDYF_A::Interrupted
     }
 }
-impl core::ops::Deref for MSIRDYF_R {
-    type Target = crate::FieldReader<bool, MSIRDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///LSE ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "LSE ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSERDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<LSERDYF_A> for bool {
     #[inline(always)]
@@ -317,47 +243,35 @@ impl From<LSERDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSERDYF` reader - LSE ready interrupt flag
-pub struct LSERDYF_R(crate::FieldReader<bool, LSERDYF_A>);
+#[doc = "Field `LSERDYF` reader - LSE ready interrupt flag"]
+pub type LSERDYF_R = crate::BitReader<LSERDYF_A>;
 impl LSERDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSERDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSERDYF_A {
         match self.bits {
-            false => LSERDYF_A::NOTINTERRUPTED,
-            true => LSERDYF_A::INTERRUPTED,
+            false => LSERDYF_A::NotInterrupted,
+            true => LSERDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == LSERDYF_A::NOTINTERRUPTED
+        *self == LSERDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == LSERDYF_A::INTERRUPTED
+        *self == LSERDYF_A::Interrupted
     }
 }
-impl core::ops::Deref for LSERDYF_R {
-    type Target = crate::FieldReader<bool, LSERDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///LSI ready interrupt flag
-///
-///Value on reset: 0
+#[doc = "LSI ready interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSIRDYF_A {
-    ///0: Not interrupted
-    NOTINTERRUPTED = 0,
-    ///1: Interrupted
-    INTERRUPTED = 1,
+    #[doc = "0: Not interrupted"]
+    NotInterrupted = 0,
+    #[doc = "1: Interrupted"]
+    Interrupted = 1,
 }
 impl From<LSIRDYF_A> for bool {
     #[inline(always)]
@@ -365,94 +279,80 @@ impl From<LSIRDYF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `LSIRDYF` reader - LSI ready interrupt flag
-pub struct LSIRDYF_R(crate::FieldReader<bool, LSIRDYF_A>);
+#[doc = "Field `LSIRDYF` reader - LSI ready interrupt flag"]
+pub type LSIRDYF_R = crate::BitReader<LSIRDYF_A>;
 impl LSIRDYF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSIRDYF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSIRDYF_A {
         match self.bits {
-            false => LSIRDYF_A::NOTINTERRUPTED,
-            true => LSIRDYF_A::INTERRUPTED,
+            false => LSIRDYF_A::NotInterrupted,
+            true => LSIRDYF_A::Interrupted,
         }
     }
-    ///Checks if the value of the field is `NOTINTERRUPTED`
+    #[doc = "Checks if the value of the field is `NotInterrupted`"]
     #[inline(always)]
     pub fn is_not_interrupted(&self) -> bool {
-        **self == LSIRDYF_A::NOTINTERRUPTED
+        *self == LSIRDYF_A::NotInterrupted
     }
-    ///Checks if the value of the field is `INTERRUPTED`
+    #[doc = "Checks if the value of the field is `Interrupted`"]
     #[inline(always)]
     pub fn is_interrupted(&self) -> bool {
-        **self == LSIRDYF_A::INTERRUPTED
-    }
-}
-impl core::ops::Deref for LSIRDYF_R {
-    type Target = crate::FieldReader<bool, LSIRDYF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LSIRDYF_A::Interrupted
     }
 }
 impl R {
-    ///Bit 9 - LSE Clock security system interrupt flag
+    #[doc = "Bit 9 - LSE Clock security system interrupt flag"]
     #[inline(always)]
     pub fn lsecssf(&self) -> LSECSSF_R {
-        LSECSSF_R::new(((self.bits >> 9) & 0x01) != 0)
+        LSECSSF_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - HSE32 Clock security system interrupt flag
+    #[doc = "Bit 8 - HSE32 Clock security system interrupt flag"]
     #[inline(always)]
     pub fn cssf(&self) -> CSSF_R {
-        CSSF_R::new(((self.bits >> 8) & 0x01) != 0)
+        CSSF_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 5 - PLL ready interrupt flag
+    #[doc = "Bit 5 - PLL ready interrupt flag"]
     #[inline(always)]
     pub fn pllrdyf(&self) -> PLLRDYF_R {
-        PLLRDYF_R::new(((self.bits >> 5) & 0x01) != 0)
+        PLLRDYF_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - HSE32 ready interrupt flag
+    #[doc = "Bit 4 - HSE32 ready interrupt flag"]
     #[inline(always)]
     pub fn hserdyf(&self) -> HSERDYF_R {
-        HSERDYF_R::new(((self.bits >> 4) & 0x01) != 0)
+        HSERDYF_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - HSI16 ready interrupt flag
+    #[doc = "Bit 3 - HSI16 ready interrupt flag"]
     #[inline(always)]
     pub fn hsirdyf(&self) -> HSIRDYF_R {
-        HSIRDYF_R::new(((self.bits >> 3) & 0x01) != 0)
+        HSIRDYF_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - MSI ready interrupt flag
+    #[doc = "Bit 2 - MSI ready interrupt flag"]
     #[inline(always)]
     pub fn msirdyf(&self) -> MSIRDYF_R {
-        MSIRDYF_R::new(((self.bits >> 2) & 0x01) != 0)
+        MSIRDYF_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - LSE ready interrupt flag
+    #[doc = "Bit 1 - LSE ready interrupt flag"]
     #[inline(always)]
     pub fn lserdyf(&self) -> LSERDYF_R {
-        LSERDYF_R::new(((self.bits >> 1) & 0x01) != 0)
+        LSERDYF_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - LSI ready interrupt flag
+    #[doc = "Bit 0 - LSI ready interrupt flag"]
     #[inline(always)]
     pub fn lsirdyf(&self) -> LSIRDYF_R {
-        LSIRDYF_R::new((self.bits & 0x01) != 0)
+        LSIRDYF_R::new((self.bits & 1) != 0)
     }
 }
-///Clock interrupt flag register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cifr](index.html) module
+#[doc = "Clock interrupt flag register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cifr](index.html) module"]
 pub struct CIFR_SPEC;
 impl crate::RegisterSpec for CIFR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cifr::R](R) reader structure
+#[doc = "`read()` method returns [cifr::R](R) reader structure"]
 impl crate::Readable for CIFR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets CIFR to value 0
+#[doc = "`reset()` method sets CIFR to value 0"]
 impl crate::Resettable for CIFR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `CR2` reader
+#[doc = "Register `CR2` reader"]
 pub struct R(crate::R<CR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR2` writer
+#[doc = "Register `CR2` writer"]
 pub struct W(crate::W<CR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-///TAMP1NOER
-///
-///Value on reset: 0
+#[doc = "TAMP1NOER\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1NOER_A {
-    ///0: Tamper x event erases the backup registers
-    ERASE = 0,
-    ///1: Tamper x event does not erase the backup registers
-    NOTERASE = 1,
+    #[doc = "0: Tamper x event erases the backup registers"]
+    Erase = 0,
+    #[doc = "1: Tamper x event does not erase the backup registers"]
+    NotErase = 1,
 }
 impl From<TAMP1NOER_A> for bool {
     #[inline(always)]
@@ -50,166 +48,61 @@ impl From<TAMP1NOER_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TAMP1NOER` reader - TAMP1NOER
-pub struct TAMP1NOER_R(crate::FieldReader<bool, TAMP1NOER_A>);
+#[doc = "Field `TAMP1NOER` reader - TAMP1NOER"]
+pub type TAMP1NOER_R = crate::BitReader<TAMP1NOER_A>;
 impl TAMP1NOER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAMP1NOER_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAMP1NOER_A {
         match self.bits {
-            false => TAMP1NOER_A::ERASE,
-            true => TAMP1NOER_A::NOTERASE,
+            false => TAMP1NOER_A::Erase,
+            true => TAMP1NOER_A::NotErase,
         }
     }
-    ///Checks if the value of the field is `ERASE`
+    #[doc = "Checks if the value of the field is `Erase`"]
     #[inline(always)]
     pub fn is_erase(&self) -> bool {
-        **self == TAMP1NOER_A::ERASE
+        *self == TAMP1NOER_A::Erase
     }
-    ///Checks if the value of the field is `NOTERASE`
+    #[doc = "Checks if the value of the field is `NotErase`"]
     #[inline(always)]
     pub fn is_not_erase(&self) -> bool {
-        **self == TAMP1NOER_A::NOTERASE
+        *self == TAMP1NOER_A::NotErase
     }
 }
-impl core::ops::Deref for TAMP1NOER_R {
-    type Target = crate::FieldReader<bool, TAMP1NOER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TAMP1NOER` writer - TAMP1NOER
-pub struct TAMP1NOER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP1NOER_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP1NOER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event erases the backup registers
+#[doc = "Field `TAMP1NOER` writer - TAMP1NOER"]
+pub type TAMP1NOER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, TAMP1NOER_A, O>;
+impl<'a, const O: u8> TAMP1NOER_W<'a, O> {
+    #[doc = "Tamper x event erases the backup registers"]
     #[inline(always)]
     pub fn erase(self) -> &'a mut W {
-        self.variant(TAMP1NOER_A::ERASE)
+        self.variant(TAMP1NOER_A::Erase)
     }
-    ///Tamper x event does not erase the backup registers
+    #[doc = "Tamper x event does not erase the backup registers"]
     #[inline(always)]
     pub fn not_erase(self) -> &'a mut W {
-        self.variant(TAMP1NOER_A::NOTERASE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(TAMP1NOER_A::NotErase)
     }
 }
-///TAMP2NOER
-pub type TAMP2NOER_A = TAMP1NOER_A;
-///Field `TAMP2NOER` reader - TAMP2NOER
-pub type TAMP2NOER_R = TAMP1NOER_R;
-///Field `TAMP2NOER` writer - TAMP2NOER
-pub struct TAMP2NOER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP2NOER_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP2NOER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event erases the backup registers
-    #[inline(always)]
-    pub fn erase(self) -> &'a mut W {
-        self.variant(TAMP2NOER_A::ERASE)
-    }
-    ///Tamper x event does not erase the backup registers
-    #[inline(always)]
-    pub fn not_erase(self) -> &'a mut W {
-        self.variant(TAMP2NOER_A::NOTERASE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///TAMP3NOER
-pub type TAMP3NOER_A = TAMP1NOER_A;
-///Field `TAMP3NOER` reader - TAMP3NOER
-pub type TAMP3NOER_R = TAMP1NOER_R;
-///Field `TAMP3NOER` writer - TAMP3NOER
-pub struct TAMP3NOER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP3NOER_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP3NOER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event erases the backup registers
-    #[inline(always)]
-    pub fn erase(self) -> &'a mut W {
-        self.variant(TAMP3NOER_A::ERASE)
-    }
-    ///Tamper x event does not erase the backup registers
-    #[inline(always)]
-    pub fn not_erase(self) -> &'a mut W {
-        self.variant(TAMP3NOER_A::NOTERASE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///TAMP1MSK
-///
-///Value on reset: 0
+#[doc = "TAMP2NOER"]
+pub use TAMP1NOER_A as TAMP2NOER_A;
+#[doc = "TAMP3NOER"]
+pub use TAMP1NOER_A as TAMP3NOER_A;
+#[doc = "Field `TAMP2NOER` reader - TAMP2NOER"]
+pub use TAMP1NOER_R as TAMP2NOER_R;
+#[doc = "Field `TAMP3NOER` reader - TAMP3NOER"]
+pub use TAMP1NOER_R as TAMP3NOER_R;
+#[doc = "Field `TAMP2NOER` writer - TAMP2NOER"]
+pub use TAMP1NOER_W as TAMP2NOER_W;
+#[doc = "Field `TAMP3NOER` writer - TAMP3NOER"]
+pub use TAMP1NOER_W as TAMP3NOER_W;
+#[doc = "TAMP1MSK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1MSK_A {
-    ///0: Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection
-    RESETBYSOFTWARE = 0,
-    ///1: Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set
-    RESETBYHARDWARE = 1,
+    #[doc = "0: Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection"]
+    ResetBySoftware = 0,
+    #[doc = "1: Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set"]
+    ResetByHardware = 1,
 }
 impl From<TAMP1MSK_A> for bool {
     #[inline(always)]
@@ -217,164 +110,59 @@ impl From<TAMP1MSK_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TAMP1MSK` reader - TAMP1MSK
-pub struct TAMP1MSK_R(crate::FieldReader<bool, TAMP1MSK_A>);
+#[doc = "Field `TAMP1MSK` reader - TAMP1MSK"]
+pub type TAMP1MSK_R = crate::BitReader<TAMP1MSK_A>;
 impl TAMP1MSK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAMP1MSK_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAMP1MSK_A {
         match self.bits {
-            false => TAMP1MSK_A::RESETBYSOFTWARE,
-            true => TAMP1MSK_A::RESETBYHARDWARE,
+            false => TAMP1MSK_A::ResetBySoftware,
+            true => TAMP1MSK_A::ResetByHardware,
         }
     }
-    ///Checks if the value of the field is `RESETBYSOFTWARE`
+    #[doc = "Checks if the value of the field is `ResetBySoftware`"]
     #[inline(always)]
     pub fn is_reset_by_software(&self) -> bool {
-        **self == TAMP1MSK_A::RESETBYSOFTWARE
+        *self == TAMP1MSK_A::ResetBySoftware
     }
-    ///Checks if the value of the field is `RESETBYHARDWARE`
+    #[doc = "Checks if the value of the field is `ResetByHardware`"]
     #[inline(always)]
     pub fn is_reset_by_hardware(&self) -> bool {
-        **self == TAMP1MSK_A::RESETBYHARDWARE
+        *self == TAMP1MSK_A::ResetByHardware
     }
 }
-impl core::ops::Deref for TAMP1MSK_R {
-    type Target = crate::FieldReader<bool, TAMP1MSK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TAMP1MSK` writer - TAMP1MSK
-pub struct TAMP1MSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP1MSK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP1MSK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection
+#[doc = "Field `TAMP1MSK` writer - TAMP1MSK"]
+pub type TAMP1MSK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, TAMP1MSK_A, O>;
+impl<'a, const O: u8> TAMP1MSK_W<'a, O> {
+    #[doc = "Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection"]
     #[inline(always)]
     pub fn reset_by_software(self) -> &'a mut W {
-        self.variant(TAMP1MSK_A::RESETBYSOFTWARE)
+        self.variant(TAMP1MSK_A::ResetBySoftware)
     }
-    ///Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set
+    #[doc = "Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set"]
     #[inline(always)]
     pub fn reset_by_hardware(self) -> &'a mut W {
-        self.variant(TAMP1MSK_A::RESETBYHARDWARE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(TAMP1MSK_A::ResetByHardware)
     }
 }
-///TAMP2MSK
-pub type TAMP2MSK_A = TAMP1MSK_A;
-///Field `TAMP2MSK` reader - TAMP2MSK
-pub type TAMP2MSK_R = TAMP1MSK_R;
-///Field `TAMP2MSK` writer - TAMP2MSK
-pub struct TAMP2MSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP2MSK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP2MSK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection
-    #[inline(always)]
-    pub fn reset_by_software(self) -> &'a mut W {
-        self.variant(TAMP2MSK_A::RESETBYSOFTWARE)
-    }
-    ///Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set
-    #[inline(always)]
-    pub fn reset_by_hardware(self) -> &'a mut W {
-        self.variant(TAMP2MSK_A::RESETBYHARDWARE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///TAMP3MSK
-pub type TAMP3MSK_A = TAMP1MSK_A;
-///Field `TAMP3MSK` reader - TAMP3MSK
-pub type TAMP3MSK_R = TAMP1MSK_R;
-///Field `TAMP3MSK` writer - TAMP3MSK
-pub struct TAMP3MSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP3MSK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP3MSK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection
-    #[inline(always)]
-    pub fn reset_by_software(self) -> &'a mut W {
-        self.variant(TAMP3MSK_A::RESETBYSOFTWARE)
-    }
-    ///Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set
-    #[inline(always)]
-    pub fn reset_by_hardware(self) -> &'a mut W {
-        self.variant(TAMP3MSK_A::RESETBYHARDWARE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///Backup registerserase
-///
-///Value on reset: 0
+#[doc = "TAMP2MSK"]
+pub use TAMP1MSK_A as TAMP2MSK_A;
+#[doc = "TAMP3MSK"]
+pub use TAMP1MSK_A as TAMP3MSK_A;
+#[doc = "Field `TAMP2MSK` reader - TAMP2MSK"]
+pub use TAMP1MSK_R as TAMP2MSK_R;
+#[doc = "Field `TAMP3MSK` reader - TAMP3MSK"]
+pub use TAMP1MSK_R as TAMP3MSK_R;
+#[doc = "Field `TAMP2MSK` writer - TAMP2MSK"]
+pub use TAMP1MSK_W as TAMP2MSK_W;
+#[doc = "Field `TAMP3MSK` writer - TAMP3MSK"]
+pub use TAMP1MSK_W as TAMP3MSK_W;
+#[doc = "Backup registerserase\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BKERASE_A {
-    ///1: Reset backup registers
-    RESET = 1,
+    #[doc = "1: Reset backup registers"]
+    Reset = 1,
 }
 impl From<BKERASE_A> for bool {
     #[inline(always)]
@@ -382,74 +170,39 @@ impl From<BKERASE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BKERASE` reader - Backup registerserase
-pub struct BKERASE_R(crate::FieldReader<bool, BKERASE_A>);
+#[doc = "Field `BKERASE` reader - Backup registerserase"]
+pub type BKERASE_R = crate::BitReader<BKERASE_A>;
 impl BKERASE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BKERASE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BKERASE_A> {
         match self.bits {
-            true => Some(BKERASE_A::RESET),
+            true => Some(BKERASE_A::Reset),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `RESET`
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == BKERASE_A::RESET
+        *self == BKERASE_A::Reset
     }
 }
-impl core::ops::Deref for BKERASE_R {
-    type Target = crate::FieldReader<bool, BKERASE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BKERASE` writer - Backup registerserase
-pub struct BKERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BKERASE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BKERASE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Reset backup registers
+#[doc = "Field `BKERASE` writer - Backup registerserase"]
+pub type BKERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, BKERASE_A, O>;
+impl<'a, const O: u8> BKERASE_W<'a, O> {
+    #[doc = "Reset backup registers"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(BKERASE_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
+        self.variant(BKERASE_A::Reset)
     }
 }
-///TAMP1TRG
-///
-///Value on reset: 0
+#[doc = "TAMP1TRG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1TRG_A {
-    ///0: If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event
-    FILTEREDLOWORUNFILTEREDHIGH = 0,
-    ///1: If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event
-    FILTEREDHIGHORUNFILTEREDLOW = 1,
+    #[doc = "0: If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event"]
+    FilteredLowOrUnfilteredHigh = 0,
+    #[doc = "1: If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event"]
+    FilteredHighOrUnfilteredLow = 1,
 }
 impl From<TAMP1TRG_A> for bool {
     #[inline(always)]
@@ -457,285 +210,178 @@ impl From<TAMP1TRG_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TAMP1TRG` reader - TAMP1TRG
-pub struct TAMP1TRG_R(crate::FieldReader<bool, TAMP1TRG_A>);
+#[doc = "Field `TAMP1TRG` reader - TAMP1TRG"]
+pub type TAMP1TRG_R = crate::BitReader<TAMP1TRG_A>;
 impl TAMP1TRG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAMP1TRG_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAMP1TRG_A {
         match self.bits {
-            false => TAMP1TRG_A::FILTEREDLOWORUNFILTEREDHIGH,
-            true => TAMP1TRG_A::FILTEREDHIGHORUNFILTEREDLOW,
+            false => TAMP1TRG_A::FilteredLowOrUnfilteredHigh,
+            true => TAMP1TRG_A::FilteredHighOrUnfilteredLow,
         }
     }
-    ///Checks if the value of the field is `FILTEREDLOWORUNFILTEREDHIGH`
+    #[doc = "Checks if the value of the field is `FilteredLowOrUnfilteredHigh`"]
     #[inline(always)]
     pub fn is_filtered_low_or_unfiltered_high(&self) -> bool {
-        **self == TAMP1TRG_A::FILTEREDLOWORUNFILTEREDHIGH
+        *self == TAMP1TRG_A::FilteredLowOrUnfilteredHigh
     }
-    ///Checks if the value of the field is `FILTEREDHIGHORUNFILTEREDLOW`
+    #[doc = "Checks if the value of the field is `FilteredHighOrUnfilteredLow`"]
     #[inline(always)]
     pub fn is_filtered_high_or_unfiltered_low(&self) -> bool {
-        **self == TAMP1TRG_A::FILTEREDHIGHORUNFILTEREDLOW
+        *self == TAMP1TRG_A::FilteredHighOrUnfilteredLow
     }
 }
-impl core::ops::Deref for TAMP1TRG_R {
-    type Target = crate::FieldReader<bool, TAMP1TRG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TAMP1TRG` writer - TAMP1TRG
-pub struct TAMP1TRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP1TRG_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP1TRG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event
+#[doc = "Field `TAMP1TRG` writer - TAMP1TRG"]
+pub type TAMP1TRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, TAMP1TRG_A, O>;
+impl<'a, const O: u8> TAMP1TRG_W<'a, O> {
+    #[doc = "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event"]
     #[inline(always)]
     pub fn filtered_low_or_unfiltered_high(self) -> &'a mut W {
-        self.variant(TAMP1TRG_A::FILTEREDLOWORUNFILTEREDHIGH)
+        self.variant(TAMP1TRG_A::FilteredLowOrUnfilteredHigh)
     }
-    ///If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event
+    #[doc = "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event"]
     #[inline(always)]
     pub fn filtered_high_or_unfiltered_low(self) -> &'a mut W {
-        self.variant(TAMP1TRG_A::FILTEREDHIGHORUNFILTEREDLOW)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(TAMP1TRG_A::FilteredHighOrUnfilteredLow)
     }
 }
-///TAMP2TRG
-pub type TAMP2TRG_A = TAMP1TRG_A;
-///Field `TAMP2TRG` reader - TAMP2TRG
-pub type TAMP2TRG_R = TAMP1TRG_R;
-///Field `TAMP2TRG` writer - TAMP2TRG
-pub struct TAMP2TRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP2TRG_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP2TRG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event
-    #[inline(always)]
-    pub fn filtered_low_or_unfiltered_high(self) -> &'a mut W {
-        self.variant(TAMP2TRG_A::FILTEREDLOWORUNFILTEREDHIGH)
-    }
-    ///If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event
-    #[inline(always)]
-    pub fn filtered_high_or_unfiltered_low(self) -> &'a mut W {
-        self.variant(TAMP2TRG_A::FILTEREDHIGHORUNFILTEREDLOW)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
-///TAMP3TRG
-pub type TAMP3TRG_A = TAMP1TRG_A;
-///Field `TAMP3TRG` reader - TAMP3TRG
-pub type TAMP3TRG_R = TAMP1TRG_R;
-///Field `TAMP3TRG` writer - TAMP3TRG
-pub struct TAMP3TRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAMP3TRG_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TAMP3TRG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event
-    #[inline(always)]
-    pub fn filtered_low_or_unfiltered_high(self) -> &'a mut W {
-        self.variant(TAMP3TRG_A::FILTEREDLOWORUNFILTEREDHIGH)
-    }
-    ///If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event
-    #[inline(always)]
-    pub fn filtered_high_or_unfiltered_low(self) -> &'a mut W {
-        self.variant(TAMP3TRG_A::FILTEREDHIGHORUNFILTEREDLOW)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+#[doc = "TAMP2TRG"]
+pub use TAMP1TRG_A as TAMP2TRG_A;
+#[doc = "TAMP3TRG"]
+pub use TAMP1TRG_A as TAMP3TRG_A;
+#[doc = "Field `TAMP2TRG` reader - TAMP2TRG"]
+pub use TAMP1TRG_R as TAMP2TRG_R;
+#[doc = "Field `TAMP3TRG` reader - TAMP3TRG"]
+pub use TAMP1TRG_R as TAMP3TRG_R;
+#[doc = "Field `TAMP2TRG` writer - TAMP2TRG"]
+pub use TAMP1TRG_W as TAMP2TRG_W;
+#[doc = "Field `TAMP3TRG` writer - TAMP3TRG"]
+pub use TAMP1TRG_W as TAMP3TRG_W;
 impl R {
-    ///Bit 0 - TAMP1NOER
+    #[doc = "Bit 0 - TAMP1NOER"]
     #[inline(always)]
     pub fn tamp1noer(&self) -> TAMP1NOER_R {
-        TAMP1NOER_R::new((self.bits & 0x01) != 0)
+        TAMP1NOER_R::new((self.bits & 1) != 0)
     }
-    ///Bit 1 - TAMP2NOER
+    #[doc = "Bit 1 - TAMP2NOER"]
     #[inline(always)]
     pub fn tamp2noer(&self) -> TAMP2NOER_R {
-        TAMP2NOER_R::new(((self.bits >> 1) & 0x01) != 0)
+        TAMP2NOER_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2 - TAMP3NOER
+    #[doc = "Bit 2 - TAMP3NOER"]
     #[inline(always)]
     pub fn tamp3noer(&self) -> TAMP3NOER_R {
-        TAMP3NOER_R::new(((self.bits >> 2) & 0x01) != 0)
+        TAMP3NOER_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 16 - TAMP1MSK
+    #[doc = "Bit 16 - TAMP1MSK"]
     #[inline(always)]
     pub fn tamp1msk(&self) -> TAMP1MSK_R {
-        TAMP1MSK_R::new(((self.bits >> 16) & 0x01) != 0)
+        TAMP1MSK_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 17 - TAMP2MSK
+    #[doc = "Bit 17 - TAMP2MSK"]
     #[inline(always)]
     pub fn tamp2msk(&self) -> TAMP2MSK_R {
-        TAMP2MSK_R::new(((self.bits >> 17) & 0x01) != 0)
+        TAMP2MSK_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 18 - TAMP3MSK
+    #[doc = "Bit 18 - TAMP3MSK"]
     #[inline(always)]
     pub fn tamp3msk(&self) -> TAMP3MSK_R {
-        TAMP3MSK_R::new(((self.bits >> 18) & 0x01) != 0)
+        TAMP3MSK_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 23 - Backup registerserase
+    #[doc = "Bit 23 - Backup registerserase"]
     #[inline(always)]
     pub fn bkerase(&self) -> BKERASE_R {
-        BKERASE_R::new(((self.bits >> 23) & 0x01) != 0)
+        BKERASE_R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 24 - TAMP1TRG
+    #[doc = "Bit 24 - TAMP1TRG"]
     #[inline(always)]
     pub fn tamp1trg(&self) -> TAMP1TRG_R {
-        TAMP1TRG_R::new(((self.bits >> 24) & 0x01) != 0)
+        TAMP1TRG_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bit 25 - TAMP2TRG
+    #[doc = "Bit 25 - TAMP2TRG"]
     #[inline(always)]
     pub fn tamp2trg(&self) -> TAMP2TRG_R {
-        TAMP2TRG_R::new(((self.bits >> 25) & 0x01) != 0)
+        TAMP2TRG_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 26 - TAMP3TRG
+    #[doc = "Bit 26 - TAMP3TRG"]
     #[inline(always)]
     pub fn tamp3trg(&self) -> TAMP3TRG_R {
-        TAMP3TRG_R::new(((self.bits >> 26) & 0x01) != 0)
+        TAMP3TRG_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - TAMP1NOER
+    #[doc = "Bit 0 - TAMP1NOER"]
     #[inline(always)]
-    pub fn tamp1noer(&mut self) -> TAMP1NOER_W {
-        TAMP1NOER_W { w: self }
+    pub fn tamp1noer(&mut self) -> TAMP1NOER_W<0> {
+        TAMP1NOER_W::new(self)
     }
-    ///Bit 1 - TAMP2NOER
+    #[doc = "Bit 1 - TAMP2NOER"]
     #[inline(always)]
-    pub fn tamp2noer(&mut self) -> TAMP2NOER_W {
-        TAMP2NOER_W { w: self }
+    pub fn tamp2noer(&mut self) -> TAMP2NOER_W<1> {
+        TAMP2NOER_W::new(self)
     }
-    ///Bit 2 - TAMP3NOER
+    #[doc = "Bit 2 - TAMP3NOER"]
     #[inline(always)]
-    pub fn tamp3noer(&mut self) -> TAMP3NOER_W {
-        TAMP3NOER_W { w: self }
+    pub fn tamp3noer(&mut self) -> TAMP3NOER_W<2> {
+        TAMP3NOER_W::new(self)
     }
-    ///Bit 16 - TAMP1MSK
+    #[doc = "Bit 16 - TAMP1MSK"]
     #[inline(always)]
-    pub fn tamp1msk(&mut self) -> TAMP1MSK_W {
-        TAMP1MSK_W { w: self }
+    pub fn tamp1msk(&mut self) -> TAMP1MSK_W<16> {
+        TAMP1MSK_W::new(self)
     }
-    ///Bit 17 - TAMP2MSK
+    #[doc = "Bit 17 - TAMP2MSK"]
     #[inline(always)]
-    pub fn tamp2msk(&mut self) -> TAMP2MSK_W {
-        TAMP2MSK_W { w: self }
+    pub fn tamp2msk(&mut self) -> TAMP2MSK_W<17> {
+        TAMP2MSK_W::new(self)
     }
-    ///Bit 18 - TAMP3MSK
+    #[doc = "Bit 18 - TAMP3MSK"]
     #[inline(always)]
-    pub fn tamp3msk(&mut self) -> TAMP3MSK_W {
-        TAMP3MSK_W { w: self }
+    pub fn tamp3msk(&mut self) -> TAMP3MSK_W<18> {
+        TAMP3MSK_W::new(self)
     }
-    ///Bit 23 - Backup registerserase
+    #[doc = "Bit 23 - Backup registerserase"]
     #[inline(always)]
-    pub fn bkerase(&mut self) -> BKERASE_W {
-        BKERASE_W { w: self }
+    pub fn bkerase(&mut self) -> BKERASE_W<23> {
+        BKERASE_W::new(self)
     }
-    ///Bit 24 - TAMP1TRG
+    #[doc = "Bit 24 - TAMP1TRG"]
     #[inline(always)]
-    pub fn tamp1trg(&mut self) -> TAMP1TRG_W {
-        TAMP1TRG_W { w: self }
+    pub fn tamp1trg(&mut self) -> TAMP1TRG_W<24> {
+        TAMP1TRG_W::new(self)
     }
-    ///Bit 25 - TAMP2TRG
+    #[doc = "Bit 25 - TAMP2TRG"]
     #[inline(always)]
-    pub fn tamp2trg(&mut self) -> TAMP2TRG_W {
-        TAMP2TRG_W { w: self }
+    pub fn tamp2trg(&mut self) -> TAMP2TRG_W<25> {
+        TAMP2TRG_W::new(self)
     }
-    ///Bit 26 - TAMP3TRG
+    #[doc = "Bit 26 - TAMP3TRG"]
     #[inline(always)]
-    pub fn tamp3trg(&mut self) -> TAMP3TRG_W {
-        TAMP3TRG_W { w: self }
+    pub fn tamp3trg(&mut self) -> TAMP3TRG_W<26> {
+        TAMP3TRG_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///control register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr2](index.html) module
+#[doc = "control register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr2](index.html) module"]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr2::R](R) reader structure
+#[doc = "`read()` method returns [cr2::R](R) reader structure"]
 impl crate::Readable for CR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr2::W](W) writer structure"]
 impl crate::Writable for CR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR2 to value 0
+#[doc = "`reset()` method sets CR2 to value 0"]
 impl crate::Resettable for CR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

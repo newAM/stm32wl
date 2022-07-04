@@ -1,4 +1,4 @@
-///Register `CCER` reader
+#[doc = "Register `CCER` reader"]
 pub struct R(crate::R<CCER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCER_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCER` writer
+#[doc = "Register `CCER` writer"]
 pub struct W(crate::W<CCER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCER_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CCER_SPEC>> for W {
         W(writer)
     }
 }
-///Capture/Compare 1 complementary output polarity
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 complementary output polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1NP_A {
-    ///0: OCxN active high
-    ACTIVEHIGH = 0,
-    ///1: OCxN active low
-    ACTIVELOW = 1,
+    #[doc = "0: OCxN active high"]
+    ActiveHigh = 0,
+    #[doc = "1: OCxN active low"]
+    ActiveLow = 1,
 }
 impl From<CC1NP_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<CC1NP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1NP` reader - Capture/Compare 1 complementary output polarity
-pub struct CC1NP_R(crate::FieldReader<bool, CC1NP_A>);
+#[doc = "Field `CC1NP` reader - Capture/Compare 1 complementary output polarity"]
+pub type CC1NP_R = crate::BitReader<CC1NP_A>;
 impl CC1NP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1NP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1NP_A {
         match self.bits {
-            false => CC1NP_A::ACTIVEHIGH,
-            true => CC1NP_A::ACTIVELOW,
+            false => CC1NP_A::ActiveHigh,
+            true => CC1NP_A::ActiveLow,
         }
     }
-    ///Checks if the value of the field is `ACTIVEHIGH`
+    #[doc = "Checks if the value of the field is `ActiveHigh`"]
     #[inline(always)]
     pub fn is_active_high(&self) -> bool {
-        **self == CC1NP_A::ACTIVEHIGH
+        *self == CC1NP_A::ActiveHigh
     }
-    ///Checks if the value of the field is `ACTIVELOW`
+    #[doc = "Checks if the value of the field is `ActiveLow`"]
     #[inline(always)]
     pub fn is_active_low(&self) -> bool {
-        **self == CC1NP_A::ACTIVELOW
+        *self == CC1NP_A::ActiveLow
     }
 }
-impl core::ops::Deref for CC1NP_R {
-    type Target = crate::FieldReader<bool, CC1NP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1NP` writer - Capture/Compare 1 complementary output polarity
-pub struct CC1NP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1NP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1NP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///OCxN active high
+#[doc = "Field `CC1NP` writer - Capture/Compare 1 complementary output polarity"]
+pub type CC1NP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCER_SPEC, CC1NP_A, O>;
+impl<'a, const O: u8> CC1NP_W<'a, O> {
+    #[doc = "OCxN active high"]
     #[inline(always)]
     pub fn active_high(self) -> &'a mut W {
-        self.variant(CC1NP_A::ACTIVEHIGH)
+        self.variant(CC1NP_A::ActiveHigh)
     }
-    ///OCxN active low
+    #[doc = "OCxN active low"]
     #[inline(always)]
     pub fn active_low(self) -> &'a mut W {
-        self.variant(CC1NP_A::ACTIVELOW)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(CC1NP_A::ActiveLow)
     }
 }
-///Capture/Compare 1 complementary output enable
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 complementary output enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1NE_A {
-    ///0: Complementary output disabled
-    DISABLED = 0,
-    ///1: Complementary output enabled
-    ENABLED = 1,
+    #[doc = "0: Complementary output disabled"]
+    Disabled = 0,
+    #[doc = "1: Complementary output enabled"]
+    Enabled = 1,
 }
 impl From<CC1NE_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<CC1NE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1NE` reader - Capture/Compare 1 complementary output enable
-pub struct CC1NE_R(crate::FieldReader<bool, CC1NE_A>);
+#[doc = "Field `CC1NE` reader - Capture/Compare 1 complementary output enable"]
+pub type CC1NE_R = crate::BitReader<CC1NE_A>;
 impl CC1NE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1NE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1NE_A {
         match self.bits {
-            false => CC1NE_A::DISABLED,
-            true => CC1NE_A::ENABLED,
+            false => CC1NE_A::Disabled,
+            true => CC1NE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CC1NE_A::DISABLED
+        *self == CC1NE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CC1NE_A::ENABLED
+        *self == CC1NE_A::Enabled
     }
 }
-impl core::ops::Deref for CC1NE_R {
-    type Target = crate::FieldReader<bool, CC1NE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1NE` writer - Capture/Compare 1 complementary output enable
-pub struct CC1NE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1NE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1NE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Complementary output disabled
+#[doc = "Field `CC1NE` writer - Capture/Compare 1 complementary output enable"]
+pub type CC1NE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCER_SPEC, CC1NE_A, O>;
+impl<'a, const O: u8> CC1NE_W<'a, O> {
+    #[doc = "Complementary output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CC1NE_A::DISABLED)
+        self.variant(CC1NE_A::Disabled)
     }
-    ///Complementary output enabled
+    #[doc = "Complementary output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CC1NE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(CC1NE_A::Enabled)
     }
 }
-///Capture/Compare 1 output polarity
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 output polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1P_A {
-    ///0: Noninverted/rising edge
-    RISINGEDGE = 0,
-    ///1: Inverted/falling edge
-    FALLINGEDGE = 1,
+    #[doc = "0: Noninverted/rising edge"]
+    RisingEdge = 0,
+    #[doc = "1: Inverted/falling edge"]
+    FallingEdge = 1,
 }
 impl From<CC1P_A> for bool {
     #[inline(always)]
@@ -220,84 +148,49 @@ impl From<CC1P_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1P` reader - Capture/Compare 1 output polarity
-pub struct CC1P_R(crate::FieldReader<bool, CC1P_A>);
+#[doc = "Field `CC1P` reader - Capture/Compare 1 output polarity"]
+pub type CC1P_R = crate::BitReader<CC1P_A>;
 impl CC1P_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1P_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1P_A {
         match self.bits {
-            false => CC1P_A::RISINGEDGE,
-            true => CC1P_A::FALLINGEDGE,
+            false => CC1P_A::RisingEdge,
+            true => CC1P_A::FallingEdge,
         }
     }
-    ///Checks if the value of the field is `RISINGEDGE`
+    #[doc = "Checks if the value of the field is `RisingEdge`"]
     #[inline(always)]
     pub fn is_rising_edge(&self) -> bool {
-        **self == CC1P_A::RISINGEDGE
+        *self == CC1P_A::RisingEdge
     }
-    ///Checks if the value of the field is `FALLINGEDGE`
+    #[doc = "Checks if the value of the field is `FallingEdge`"]
     #[inline(always)]
     pub fn is_falling_edge(&self) -> bool {
-        **self == CC1P_A::FALLINGEDGE
+        *self == CC1P_A::FallingEdge
     }
 }
-impl core::ops::Deref for CC1P_R {
-    type Target = crate::FieldReader<bool, CC1P_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1P` writer - Capture/Compare 1 output polarity
-pub struct CC1P_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1P_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1P_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Noninverted/rising edge
+#[doc = "Field `CC1P` writer - Capture/Compare 1 output polarity"]
+pub type CC1P_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCER_SPEC, CC1P_A, O>;
+impl<'a, const O: u8> CC1P_W<'a, O> {
+    #[doc = "Noninverted/rising edge"]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
-        self.variant(CC1P_A::RISINGEDGE)
+        self.variant(CC1P_A::RisingEdge)
     }
-    ///Inverted/falling edge
+    #[doc = "Inverted/falling edge"]
     #[inline(always)]
     pub fn falling_edge(self) -> &'a mut W {
-        self.variant(CC1P_A::FALLINGEDGE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(CC1P_A::FallingEdge)
     }
 }
-///Capture/Compare 1 output enable
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 output enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1E_A {
-    ///0: Capture disabled
-    DISABLED = 0,
-    ///1: Capture enabled
-    ENABLED = 1,
+    #[doc = "0: Capture disabled"]
+    Disabled = 0,
+    #[doc = "1: Capture enabled"]
+    Enabled = 1,
 }
 impl From<CC1E_A> for bool {
     #[inline(always)]
@@ -305,143 +198,106 @@ impl From<CC1E_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1E` reader - Capture/Compare 1 output enable
-pub struct CC1E_R(crate::FieldReader<bool, CC1E_A>);
+#[doc = "Field `CC1E` reader - Capture/Compare 1 output enable"]
+pub type CC1E_R = crate::BitReader<CC1E_A>;
 impl CC1E_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1E_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1E_A {
         match self.bits {
-            false => CC1E_A::DISABLED,
-            true => CC1E_A::ENABLED,
+            false => CC1E_A::Disabled,
+            true => CC1E_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CC1E_A::DISABLED
+        *self == CC1E_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CC1E_A::ENABLED
+        *self == CC1E_A::Enabled
     }
 }
-impl core::ops::Deref for CC1E_R {
-    type Target = crate::FieldReader<bool, CC1E_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1E` writer - Capture/Compare 1 output enable
-pub struct CC1E_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1E_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1E_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Capture disabled
+#[doc = "Field `CC1E` writer - Capture/Compare 1 output enable"]
+pub type CC1E_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCER_SPEC, CC1E_A, O>;
+impl<'a, const O: u8> CC1E_W<'a, O> {
+    #[doc = "Capture disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CC1E_A::DISABLED)
+        self.variant(CC1E_A::Disabled)
     }
-    ///Capture enabled
+    #[doc = "Capture enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CC1E_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(CC1E_A::Enabled)
     }
 }
 impl R {
-    ///Bit 3 - Capture/Compare 1 complementary output polarity
+    #[doc = "Bit 3 - Capture/Compare 1 complementary output polarity"]
     #[inline(always)]
     pub fn cc1np(&self) -> CC1NP_R {
-        CC1NP_R::new(((self.bits >> 3) & 0x01) != 0)
+        CC1NP_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Capture/Compare 1 complementary output enable
+    #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
     #[inline(always)]
     pub fn cc1ne(&self) -> CC1NE_R {
-        CC1NE_R::new(((self.bits >> 2) & 0x01) != 0)
+        CC1NE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Capture/Compare 1 output polarity
+    #[doc = "Bit 1 - Capture/Compare 1 output polarity"]
     #[inline(always)]
     pub fn cc1p(&self) -> CC1P_R {
-        CC1P_R::new(((self.bits >> 1) & 0x01) != 0)
+        CC1P_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Capture/Compare 1 output enable
+    #[doc = "Bit 0 - Capture/Compare 1 output enable"]
     #[inline(always)]
     pub fn cc1e(&self) -> CC1E_R {
-        CC1E_R::new((self.bits & 0x01) != 0)
+        CC1E_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 3 - Capture/Compare 1 complementary output polarity
+    #[doc = "Bit 3 - Capture/Compare 1 complementary output polarity"]
     #[inline(always)]
-    pub fn cc1np(&mut self) -> CC1NP_W {
-        CC1NP_W { w: self }
+    pub fn cc1np(&mut self) -> CC1NP_W<3> {
+        CC1NP_W::new(self)
     }
-    ///Bit 2 - Capture/Compare 1 complementary output enable
+    #[doc = "Bit 2 - Capture/Compare 1 complementary output enable"]
     #[inline(always)]
-    pub fn cc1ne(&mut self) -> CC1NE_W {
-        CC1NE_W { w: self }
+    pub fn cc1ne(&mut self) -> CC1NE_W<2> {
+        CC1NE_W::new(self)
     }
-    ///Bit 1 - Capture/Compare 1 output polarity
+    #[doc = "Bit 1 - Capture/Compare 1 output polarity"]
     #[inline(always)]
-    pub fn cc1p(&mut self) -> CC1P_W {
-        CC1P_W { w: self }
+    pub fn cc1p(&mut self) -> CC1P_W<1> {
+        CC1P_W::new(self)
     }
-    ///Bit 0 - Capture/Compare 1 output enable
+    #[doc = "Bit 0 - Capture/Compare 1 output enable"]
     #[inline(always)]
-    pub fn cc1e(&mut self) -> CC1E_W {
-        CC1E_W { w: self }
+    pub fn cc1e(&mut self) -> CC1E_W<0> {
+        CC1E_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TIM16/TIM17 capture/compare enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccer](index.html) module
+#[doc = "TIM16/TIM17 capture/compare enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccer](index.html) module"]
 pub struct CCER_SPEC;
 impl crate::RegisterSpec for CCER_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccer::R](R) reader structure
+#[doc = "`read()` method returns [ccer::R](R) reader structure"]
 impl crate::Readable for CCER_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccer::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccer::W](W) writer structure"]
 impl crate::Writable for CCER_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCER to value 0
+#[doc = "`reset()` method sets CCER to value 0"]
 impl crate::Resettable for CCER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

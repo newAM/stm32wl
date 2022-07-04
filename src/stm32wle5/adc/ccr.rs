@@ -1,4 +1,4 @@
-///Register `CCR` reader
+#[doc = "Register `CCR` reader"]
 pub struct R(crate::R<CCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCR` writer
+#[doc = "Register `CCR` writer"]
 pub struct W(crate::W<CCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CCR_SPEC>> for W {
         W(writer)
     }
 }
-///VREFEN
-///
-///Value on reset: 0
+#[doc = "VREFEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VREFEN_A {
-    ///0: VREFINT disabled
-    DISABLED = 0,
-    ///1: VREFINT enabled
-    ENABLED = 1,
+    #[doc = "0: VREFINT disabled"]
+    Disabled = 0,
+    #[doc = "1: VREFINT enabled"]
+    Enabled = 1,
 }
 impl From<VREFEN_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<VREFEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `VREFEN` reader - VREFEN
-pub struct VREFEN_R(crate::FieldReader<bool, VREFEN_A>);
+#[doc = "Field `VREFEN` reader - VREFEN"]
+pub type VREFEN_R = crate::BitReader<VREFEN_A>;
 impl VREFEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VREFEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VREFEN_A {
         match self.bits {
-            false => VREFEN_A::DISABLED,
-            true => VREFEN_A::ENABLED,
+            false => VREFEN_A::Disabled,
+            true => VREFEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == VREFEN_A::DISABLED
+        *self == VREFEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == VREFEN_A::ENABLED
+        *self == VREFEN_A::Enabled
     }
 }
-impl core::ops::Deref for VREFEN_R {
-    type Target = crate::FieldReader<bool, VREFEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `VREFEN` writer - VREFEN
-pub struct VREFEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VREFEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: VREFEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///VREFINT disabled
+#[doc = "Field `VREFEN` writer - VREFEN"]
+pub type VREFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VREFEN_A, O>;
+impl<'a, const O: u8> VREFEN_W<'a, O> {
+    #[doc = "VREFINT disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(VREFEN_A::DISABLED)
+        self.variant(VREFEN_A::Disabled)
     }
-    ///VREFINT enabled
+    #[doc = "VREFINT enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(VREFEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
+        self.variant(VREFEN_A::Enabled)
     }
 }
-///TSEN
-///
-///Value on reset: 0
+#[doc = "TSEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSEN_A {
-    ///0: Temperature sensor disabled
-    DISABLED = 0,
-    ///1: Temperature sensor enabled
-    ENABLED = 1,
+    #[doc = "0: Temperature sensor disabled"]
+    Disabled = 0,
+    #[doc = "1: Temperature sensor enabled"]
+    Enabled = 1,
 }
 impl From<TSEN_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<TSEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TSEN` reader - TSEN
-pub struct TSEN_R(crate::FieldReader<bool, TSEN_A>);
+#[doc = "Field `TSEN` reader - TSEN"]
+pub type TSEN_R = crate::BitReader<TSEN_A>;
 impl TSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TSEN_A {
         match self.bits {
-            false => TSEN_A::DISABLED,
-            true => TSEN_A::ENABLED,
+            false => TSEN_A::Disabled,
+            true => TSEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TSEN_A::DISABLED
+        *self == TSEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TSEN_A::ENABLED
+        *self == TSEN_A::Enabled
     }
 }
-impl core::ops::Deref for TSEN_R {
-    type Target = crate::FieldReader<bool, TSEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TSEN` writer - TSEN
-pub struct TSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TSEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Temperature sensor disabled
+#[doc = "Field `TSEN` writer - TSEN"]
+pub type TSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, TSEN_A, O>;
+impl<'a, const O: u8> TSEN_W<'a, O> {
+    #[doc = "Temperature sensor disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TSEN_A::DISABLED)
+        self.variant(TSEN_A::Disabled)
     }
-    ///Temperature sensor enabled
+    #[doc = "Temperature sensor enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TSEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
+        self.variant(TSEN_A::Enabled)
     }
 }
-///VBATEN
-///
-///Value on reset: 0
+#[doc = "VBATEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBATEN_A {
-    ///0: VBAT channel disabled
-    DISABLED = 0,
-    ///1: VBAT channel enabled
-    ENABLED = 1,
+    #[doc = "0: VBAT channel disabled"]
+    Disabled = 0,
+    #[doc = "1: VBAT channel enabled"]
+    Enabled = 1,
 }
 impl From<VBATEN_A> for bool {
     #[inline(always)]
@@ -220,105 +148,70 @@ impl From<VBATEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `VBATEN` reader - VBATEN
-pub struct VBATEN_R(crate::FieldReader<bool, VBATEN_A>);
+#[doc = "Field `VBATEN` reader - VBATEN"]
+pub type VBATEN_R = crate::BitReader<VBATEN_A>;
 impl VBATEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VBATEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VBATEN_A {
         match self.bits {
-            false => VBATEN_A::DISABLED,
-            true => VBATEN_A::ENABLED,
+            false => VBATEN_A::Disabled,
+            true => VBATEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == VBATEN_A::DISABLED
+        *self == VBATEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == VBATEN_A::ENABLED
+        *self == VBATEN_A::Enabled
     }
 }
-impl core::ops::Deref for VBATEN_R {
-    type Target = crate::FieldReader<bool, VBATEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `VBATEN` writer - VBATEN
-pub struct VBATEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VBATEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: VBATEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///VBAT channel disabled
+#[doc = "Field `VBATEN` writer - VBATEN"]
+pub type VBATEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VBATEN_A, O>;
+impl<'a, const O: u8> VBATEN_W<'a, O> {
+    #[doc = "VBAT channel disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(VBATEN_A::DISABLED)
+        self.variant(VBATEN_A::Disabled)
     }
-    ///VBAT channel enabled
+    #[doc = "VBAT channel enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(VBATEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(VBATEN_A::Enabled)
     }
 }
-///PRESC0
-///
-///Value on reset: 0
+#[doc = "PRESC0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PRESC_A {
-    ///0: Input ADC clock not divided
-    DIV1 = 0,
-    ///1: Input ADC clock divided by 2
-    DIV2 = 1,
-    ///2: Input ADC clock divided by 4
-    DIV4 = 2,
-    ///3: Input ADC clock divided by 6
-    DIV6 = 3,
-    ///4: Input ADC clock divided by 8
-    DIV8 = 4,
-    ///5: Input ADC clock divided by 10
-    DIV10 = 5,
-    ///6: Input ADC clock divided by 12
-    DIV12 = 6,
-    ///7: Input ADC clock divided by 16
-    DIV16 = 7,
-    ///8: Input ADC clock divided by 32
-    DIV32 = 8,
-    ///9: Input ADC clock divided by 64
-    DIV64 = 9,
-    ///10: Input ADC clock divided by 128
-    DIV128 = 10,
-    ///11: Input ADC clock divided by 256
-    DIV256 = 11,
+    #[doc = "0: Input ADC clock not divided"]
+    Div1 = 0,
+    #[doc = "1: Input ADC clock divided by 2"]
+    Div2 = 1,
+    #[doc = "2: Input ADC clock divided by 4"]
+    Div4 = 2,
+    #[doc = "3: Input ADC clock divided by 6"]
+    Div6 = 3,
+    #[doc = "4: Input ADC clock divided by 8"]
+    Div8 = 4,
+    #[doc = "5: Input ADC clock divided by 10"]
+    Div10 = 5,
+    #[doc = "6: Input ADC clock divided by 12"]
+    Div12 = 6,
+    #[doc = "7: Input ADC clock divided by 16"]
+    Div16 = 7,
+    #[doc = "8: Input ADC clock divided by 32"]
+    Div32 = 8,
+    #[doc = "9: Input ADC clock divided by 64"]
+    Div64 = 9,
+    #[doc = "10: Input ADC clock divided by 128"]
+    Div128 = 10,
+    #[doc = "11: Input ADC clock divided by 256"]
+    Div256 = 11,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
@@ -326,244 +219,217 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-///Field `PRESC` reader - PRESC0
-pub struct PRESC_R(crate::FieldReader<u8, PRESC_A>);
+#[doc = "Field `PRESC` reader - PRESC0"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRESC_A> {
         match self.bits {
-            0 => Some(PRESC_A::DIV1),
-            1 => Some(PRESC_A::DIV2),
-            2 => Some(PRESC_A::DIV4),
-            3 => Some(PRESC_A::DIV6),
-            4 => Some(PRESC_A::DIV8),
-            5 => Some(PRESC_A::DIV10),
-            6 => Some(PRESC_A::DIV12),
-            7 => Some(PRESC_A::DIV16),
-            8 => Some(PRESC_A::DIV32),
-            9 => Some(PRESC_A::DIV64),
-            10 => Some(PRESC_A::DIV128),
-            11 => Some(PRESC_A::DIV256),
+            0 => Some(PRESC_A::Div1),
+            1 => Some(PRESC_A::Div2),
+            2 => Some(PRESC_A::Div4),
+            3 => Some(PRESC_A::Div6),
+            4 => Some(PRESC_A::Div8),
+            5 => Some(PRESC_A::Div10),
+            6 => Some(PRESC_A::Div12),
+            7 => Some(PRESC_A::Div16),
+            8 => Some(PRESC_A::Div32),
+            9 => Some(PRESC_A::Div64),
+            10 => Some(PRESC_A::Div128),
+            11 => Some(PRESC_A::Div256),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == PRESC_A::DIV1
+        *self == PRESC_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PRESC_A::DIV2
+        *self == PRESC_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PRESC_A::DIV4
+        *self == PRESC_A::Div4
     }
-    ///Checks if the value of the field is `DIV6`
+    #[doc = "Checks if the value of the field is `Div6`"]
     #[inline(always)]
     pub fn is_div6(&self) -> bool {
-        **self == PRESC_A::DIV6
+        *self == PRESC_A::Div6
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PRESC_A::DIV8
+        *self == PRESC_A::Div8
     }
-    ///Checks if the value of the field is `DIV10`
+    #[doc = "Checks if the value of the field is `Div10`"]
     #[inline(always)]
     pub fn is_div10(&self) -> bool {
-        **self == PRESC_A::DIV10
+        *self == PRESC_A::Div10
     }
-    ///Checks if the value of the field is `DIV12`
+    #[doc = "Checks if the value of the field is `Div12`"]
     #[inline(always)]
     pub fn is_div12(&self) -> bool {
-        **self == PRESC_A::DIV12
+        *self == PRESC_A::Div12
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == PRESC_A::DIV16
+        *self == PRESC_A::Div16
     }
-    ///Checks if the value of the field is `DIV32`
+    #[doc = "Checks if the value of the field is `Div32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == PRESC_A::DIV32
+        *self == PRESC_A::Div32
     }
-    ///Checks if the value of the field is `DIV64`
+    #[doc = "Checks if the value of the field is `Div64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        **self == PRESC_A::DIV64
+        *self == PRESC_A::Div64
     }
-    ///Checks if the value of the field is `DIV128`
+    #[doc = "Checks if the value of the field is `Div128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        **self == PRESC_A::DIV128
+        *self == PRESC_A::Div128
     }
-    ///Checks if the value of the field is `DIV256`
+    #[doc = "Checks if the value of the field is `Div256`"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        **self == PRESC_A::DIV256
+        *self == PRESC_A::Div256
     }
 }
-impl core::ops::Deref for PRESC_R {
-    type Target = crate::FieldReader<u8, PRESC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRESC` writer - PRESC0
-pub struct PRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Input ADC clock not divided
+#[doc = "Field `PRESC` writer - PRESC0"]
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCR_SPEC, u8, PRESC_A, 4, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
+    #[doc = "Input ADC clock not divided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV1)
+        self.variant(PRESC_A::Div1)
     }
-    ///Input ADC clock divided by 2
+    #[doc = "Input ADC clock divided by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV2)
+        self.variant(PRESC_A::Div2)
     }
-    ///Input ADC clock divided by 4
+    #[doc = "Input ADC clock divided by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV4)
+        self.variant(PRESC_A::Div4)
     }
-    ///Input ADC clock divided by 6
+    #[doc = "Input ADC clock divided by 6"]
     #[inline(always)]
     pub fn div6(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV6)
+        self.variant(PRESC_A::Div6)
     }
-    ///Input ADC clock divided by 8
+    #[doc = "Input ADC clock divided by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV8)
+        self.variant(PRESC_A::Div8)
     }
-    ///Input ADC clock divided by 10
+    #[doc = "Input ADC clock divided by 10"]
     #[inline(always)]
     pub fn div10(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV10)
+        self.variant(PRESC_A::Div10)
     }
-    ///Input ADC clock divided by 12
+    #[doc = "Input ADC clock divided by 12"]
     #[inline(always)]
     pub fn div12(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV12)
+        self.variant(PRESC_A::Div12)
     }
-    ///Input ADC clock divided by 16
+    #[doc = "Input ADC clock divided by 16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV16)
+        self.variant(PRESC_A::Div16)
     }
-    ///Input ADC clock divided by 32
+    #[doc = "Input ADC clock divided by 32"]
     #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV32)
+        self.variant(PRESC_A::Div32)
     }
-    ///Input ADC clock divided by 64
+    #[doc = "Input ADC clock divided by 64"]
     #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV64)
+        self.variant(PRESC_A::Div64)
     }
-    ///Input ADC clock divided by 128
+    #[doc = "Input ADC clock divided by 128"]
     #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV128)
+        self.variant(PRESC_A::Div128)
     }
-    ///Input ADC clock divided by 256
+    #[doc = "Input ADC clock divided by 256"]
     #[inline(always)]
     pub fn div256(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV256)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 18)) | ((value as u32 & 0x0f) << 18);
-        self.w
+        self.variant(PRESC_A::Div256)
     }
 }
 impl R {
-    ///Bit 22 - VREFEN
+    #[doc = "Bit 22 - VREFEN"]
     #[inline(always)]
     pub fn vrefen(&self) -> VREFEN_R {
-        VREFEN_R::new(((self.bits >> 22) & 0x01) != 0)
+        VREFEN_R::new(((self.bits >> 22) & 1) != 0)
     }
-    ///Bit 23 - TSEN
+    #[doc = "Bit 23 - TSEN"]
     #[inline(always)]
     pub fn tsen(&self) -> TSEN_R {
-        TSEN_R::new(((self.bits >> 23) & 0x01) != 0)
+        TSEN_R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 24 - VBATEN
+    #[doc = "Bit 24 - VBATEN"]
     #[inline(always)]
     pub fn vbaten(&self) -> VBATEN_R {
-        VBATEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        VBATEN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bits 18:21 - PRESC0
+    #[doc = "Bits 18:21 - PRESC0"]
     #[inline(always)]
     pub fn presc(&self) -> PRESC_R {
         PRESC_R::new(((self.bits >> 18) & 0x0f) as u8)
     }
 }
 impl W {
-    ///Bit 22 - VREFEN
+    #[doc = "Bit 22 - VREFEN"]
     #[inline(always)]
-    pub fn vrefen(&mut self) -> VREFEN_W {
-        VREFEN_W { w: self }
+    pub fn vrefen(&mut self) -> VREFEN_W<22> {
+        VREFEN_W::new(self)
     }
-    ///Bit 23 - TSEN
+    #[doc = "Bit 23 - TSEN"]
     #[inline(always)]
-    pub fn tsen(&mut self) -> TSEN_W {
-        TSEN_W { w: self }
+    pub fn tsen(&mut self) -> TSEN_W<23> {
+        TSEN_W::new(self)
     }
-    ///Bit 24 - VBATEN
+    #[doc = "Bit 24 - VBATEN"]
     #[inline(always)]
-    pub fn vbaten(&mut self) -> VBATEN_W {
-        VBATEN_W { w: self }
+    pub fn vbaten(&mut self) -> VBATEN_W<24> {
+        VBATEN_W::new(self)
     }
-    ///Bits 18:21 - PRESC0
+    #[doc = "Bits 18:21 - PRESC0"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
-        PRESC_W { w: self }
+    pub fn presc(&mut self) -> PRESC_W<18> {
+        PRESC_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///ADC common configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccr](index.html) module
+#[doc = "ADC common configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr](index.html) module"]
 pub struct CCR_SPEC;
 impl crate::RegisterSpec for CCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccr::R](R) reader structure
+#[doc = "`read()` method returns [ccr::R](R) reader structure"]
 impl crate::Readable for CCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccr::W](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCR to value 0
+#[doc = "`reset()` method sets CCR to value 0"]
 impl crate::Resettable for CCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

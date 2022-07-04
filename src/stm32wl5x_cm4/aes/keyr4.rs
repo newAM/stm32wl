@@ -1,4 +1,4 @@
-///Register `KEYR4` writer
+#[doc = "Register `KEYR4` writer"]
 pub struct W(crate::W<KEYR4_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<KEYR4_SPEC>;
@@ -19,45 +19,31 @@ impl From<crate::W<KEYR4_SPEC>> for W {
         W(writer)
     }
 }
-///Field `KEY` writer - AES key register (MSB key \[159:128\])
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+#[doc = "Field `KEY` writer - AES key register (MSB key \\[159:128\\])"]
+pub type KEY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, KEYR4_SPEC, u32, u32, 32, O>;
 impl W {
-    ///Bits 0:31 - AES key register (MSB key \[159:128\])
+    #[doc = "Bits 0:31 - AES key register (MSB key \\[159:128\\])"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<0> {
+        KEY_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+    pub fn bits(&mut self, bits: u32) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }
-///key register 4
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [keyr4](index.html) module
+#[doc = "key register 4\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [keyr4](index.html) module"]
 pub struct KEYR4_SPEC;
 impl crate::RegisterSpec for KEYR4_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [keyr4::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [keyr4::W](W) writer structure"]
 impl crate::Writable for KEYR4_SPEC {
     type Writer = W;
 }
-///`reset()` method sets KEYR4 to value 0
+#[doc = "`reset()` method sets KEYR4 to value 0"]
 impl crate::Resettable for KEYR4_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

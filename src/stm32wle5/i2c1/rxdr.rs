@@ -1,4 +1,4 @@
-///Register `RXDR` reader
+#[doc = "Register `RXDR` reader"]
 pub struct R(crate::R<RXDR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RXDR_SPEC>;
@@ -13,41 +13,25 @@ impl From<crate::R<RXDR_SPEC>> for R {
         R(reader)
     }
 }
-///Field `RXDATA` reader - 8-bit receive data
-pub struct RXDATA_R(crate::FieldReader<u8, u8>);
-impl RXDATA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RXDATA` reader - 8-bit receive data"]
+pub type RXDATA_R = crate::FieldReader<u8, u8>;
 impl R {
-    ///Bits 0:7 - 8-bit receive data
+    #[doc = "Bits 0:7 - 8-bit receive data"]
     #[inline(always)]
     pub fn rxdata(&self) -> RXDATA_R {
         RXDATA_R::new((self.bits & 0xff) as u8)
     }
 }
-///Receive data register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rxdr](index.html) module
+#[doc = "Receive data register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdr](index.html) module"]
 pub struct RXDR_SPEC;
 impl crate::RegisterSpec for RXDR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rxdr::R](R) reader structure
+#[doc = "`read()` method returns [rxdr::R](R) reader structure"]
 impl crate::Readable for RXDR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets RXDR to value 0
+#[doc = "`reset()` method sets RXDR to value 0"]
 impl crate::Resettable for RXDR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

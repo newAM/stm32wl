@@ -1,4 +1,4 @@
-///Register `CR2` reader
+#[doc = "Register `CR2` reader"]
 pub struct R(crate::R<CR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR2` writer
+#[doc = "Register `CR2` writer"]
 pub struct W(crate::W<CR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-///Packet error checking byte
-///
-///Value on reset: 0
+#[doc = "Packet error checking byte\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PECBYTE_A {
-    ///0: No PEC transfer
-    NOPEC = 0,
-    ///1: PEC transmission/reception is requested
-    PEC = 1,
+    #[doc = "0: No PEC transfer"]
+    NoPec = 0,
+    #[doc = "1: PEC transmission/reception is requested"]
+    Pec = 1,
 }
 impl From<PECBYTE_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<PECBYTE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PECBYTE` reader - Packet error checking byte
-pub struct PECBYTE_R(crate::FieldReader<bool, PECBYTE_A>);
+#[doc = "Field `PECBYTE` reader - Packet error checking byte"]
+pub type PECBYTE_R = crate::BitReader<PECBYTE_A>;
 impl PECBYTE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PECBYTE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PECBYTE_A {
         match self.bits {
-            false => PECBYTE_A::NOPEC,
-            true => PECBYTE_A::PEC,
+            false => PECBYTE_A::NoPec,
+            true => PECBYTE_A::Pec,
         }
     }
-    ///Checks if the value of the field is `NOPEC`
+    #[doc = "Checks if the value of the field is `NoPec`"]
     #[inline(always)]
     pub fn is_no_pec(&self) -> bool {
-        **self == PECBYTE_A::NOPEC
+        *self == PECBYTE_A::NoPec
     }
-    ///Checks if the value of the field is `PEC`
+    #[doc = "Checks if the value of the field is `Pec`"]
     #[inline(always)]
     pub fn is_pec(&self) -> bool {
-        **self == PECBYTE_A::PEC
+        *self == PECBYTE_A::Pec
     }
 }
-impl core::ops::Deref for PECBYTE_R {
-    type Target = crate::FieldReader<bool, PECBYTE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PECBYTE` writer - Packet error checking byte
-pub struct PECBYTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECBYTE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PECBYTE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No PEC transfer
+#[doc = "Field `PECBYTE` writer - Packet error checking byte"]
+pub type PECBYTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, PECBYTE_A, O>;
+impl<'a, const O: u8> PECBYTE_W<'a, O> {
+    #[doc = "No PEC transfer"]
     #[inline(always)]
     pub fn no_pec(self) -> &'a mut W {
-        self.variant(PECBYTE_A::NOPEC)
+        self.variant(PECBYTE_A::NoPec)
     }
-    ///PEC transmission/reception is requested
+    #[doc = "PEC transmission/reception is requested"]
     #[inline(always)]
     pub fn pec(self) -> &'a mut W {
-        self.variant(PECBYTE_A::PEC)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
+        self.variant(PECBYTE_A::Pec)
     }
 }
-///Automatic end mode (master mode)
-///
-///Value on reset: 0
+#[doc = "Automatic end mode (master mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOEND_A {
-    ///0: Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low
-    SOFTWARE = 0,
-    ///1: Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred
-    AUTOMATIC = 1,
+    #[doc = "0: Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low"]
+    Software = 0,
+    #[doc = "1: Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred"]
+    Automatic = 1,
 }
 impl From<AUTOEND_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<AUTOEND_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `AUTOEND` reader - Automatic end mode (master mode)
-pub struct AUTOEND_R(crate::FieldReader<bool, AUTOEND_A>);
+#[doc = "Field `AUTOEND` reader - Automatic end mode (master mode)"]
+pub type AUTOEND_R = crate::BitReader<AUTOEND_A>;
 impl AUTOEND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTOEND_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AUTOEND_A {
         match self.bits {
-            false => AUTOEND_A::SOFTWARE,
-            true => AUTOEND_A::AUTOMATIC,
+            false => AUTOEND_A::Software,
+            true => AUTOEND_A::Automatic,
         }
     }
-    ///Checks if the value of the field is `SOFTWARE`
+    #[doc = "Checks if the value of the field is `Software`"]
     #[inline(always)]
     pub fn is_software(&self) -> bool {
-        **self == AUTOEND_A::SOFTWARE
+        *self == AUTOEND_A::Software
     }
-    ///Checks if the value of the field is `AUTOMATIC`
+    #[doc = "Checks if the value of the field is `Automatic`"]
     #[inline(always)]
     pub fn is_automatic(&self) -> bool {
-        **self == AUTOEND_A::AUTOMATIC
+        *self == AUTOEND_A::Automatic
     }
 }
-impl core::ops::Deref for AUTOEND_R {
-    type Target = crate::FieldReader<bool, AUTOEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `AUTOEND` writer - Automatic end mode (master mode)
-pub struct AUTOEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTOEND_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: AUTOEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low
+#[doc = "Field `AUTOEND` writer - Automatic end mode (master mode)"]
+pub type AUTOEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, AUTOEND_A, O>;
+impl<'a, const O: u8> AUTOEND_W<'a, O> {
+    #[doc = "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low"]
     #[inline(always)]
     pub fn software(self) -> &'a mut W {
-        self.variant(AUTOEND_A::SOFTWARE)
+        self.variant(AUTOEND_A::Software)
     }
-    ///Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred
+    #[doc = "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred"]
     #[inline(always)]
     pub fn automatic(self) -> &'a mut W {
-        self.variant(AUTOEND_A::AUTOMATIC)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
+        self.variant(AUTOEND_A::Automatic)
     }
 }
-///NBYTES reload mode
-///
-///Value on reset: 0
+#[doc = "NBYTES reload mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RELOAD_A {
-    ///0: The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)
-    COMPLETED = 0,
-    ///1: The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)
-    NOTCOMPLETED = 1,
+    #[doc = "0: The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)"]
+    Completed = 0,
+    #[doc = "1: The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)"]
+    NotCompleted = 1,
 }
 impl From<RELOAD_A> for bool {
     #[inline(always)]
@@ -220,110 +148,53 @@ impl From<RELOAD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RELOAD` reader - NBYTES reload mode
-pub struct RELOAD_R(crate::FieldReader<bool, RELOAD_A>);
+#[doc = "Field `RELOAD` reader - NBYTES reload mode"]
+pub type RELOAD_R = crate::BitReader<RELOAD_A>;
 impl RELOAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RELOAD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RELOAD_A {
         match self.bits {
-            false => RELOAD_A::COMPLETED,
-            true => RELOAD_A::NOTCOMPLETED,
+            false => RELOAD_A::Completed,
+            true => RELOAD_A::NotCompleted,
         }
     }
-    ///Checks if the value of the field is `COMPLETED`
+    #[doc = "Checks if the value of the field is `Completed`"]
     #[inline(always)]
     pub fn is_completed(&self) -> bool {
-        **self == RELOAD_A::COMPLETED
+        *self == RELOAD_A::Completed
     }
-    ///Checks if the value of the field is `NOTCOMPLETED`
+    #[doc = "Checks if the value of the field is `NotCompleted`"]
     #[inline(always)]
     pub fn is_not_completed(&self) -> bool {
-        **self == RELOAD_A::NOTCOMPLETED
+        *self == RELOAD_A::NotCompleted
     }
 }
-impl core::ops::Deref for RELOAD_R {
-    type Target = crate::FieldReader<bool, RELOAD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RELOAD` writer - NBYTES reload mode
-pub struct RELOAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RELOAD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RELOAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)
+#[doc = "Field `RELOAD` writer - NBYTES reload mode"]
+pub type RELOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, RELOAD_A, O>;
+impl<'a, const O: u8> RELOAD_W<'a, O> {
+    #[doc = "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)"]
     #[inline(always)]
     pub fn completed(self) -> &'a mut W {
-        self.variant(RELOAD_A::COMPLETED)
+        self.variant(RELOAD_A::Completed)
     }
-    ///The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)
+    #[doc = "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)"]
     #[inline(always)]
     pub fn not_completed(self) -> &'a mut W {
-        self.variant(RELOAD_A::NOTCOMPLETED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(RELOAD_A::NotCompleted)
     }
 }
-///Field `NBYTES` reader - Number of bytes
-pub struct NBYTES_R(crate::FieldReader<u8, u8>);
-impl NBYTES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NBYTES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBYTES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `NBYTES` writer - Number of bytes
-pub struct NBYTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBYTES_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
-///NACK generation (slave mode)
-///
-///Value on reset: 0
+#[doc = "Field `NBYTES` reader - Number of bytes"]
+pub type NBYTES_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `NBYTES` writer - Number of bytes"]
+pub type NBYTES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR2_SPEC, u8, u8, 8, O>;
+#[doc = "NACK generation (slave mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NACK_A {
-    ///0: an ACK is sent after current received byte
-    ACK = 0,
-    ///1: a NACK is sent after current received byte
-    NACK = 1,
+    #[doc = "0: an ACK is sent after current received byte"]
+    Ack = 0,
+    #[doc = "1: a NACK is sent after current received byte"]
+    Nack = 1,
 }
 impl From<NACK_A> for bool {
     #[inline(always)]
@@ -331,84 +202,49 @@ impl From<NACK_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `NACK` reader - NACK generation (slave mode)
-pub struct NACK_R(crate::FieldReader<bool, NACK_A>);
+#[doc = "Field `NACK` reader - NACK generation (slave mode)"]
+pub type NACK_R = crate::BitReader<NACK_A>;
 impl NACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NACK_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NACK_A {
         match self.bits {
-            false => NACK_A::ACK,
-            true => NACK_A::NACK,
+            false => NACK_A::Ack,
+            true => NACK_A::Nack,
         }
     }
-    ///Checks if the value of the field is `ACK`
+    #[doc = "Checks if the value of the field is `Ack`"]
     #[inline(always)]
     pub fn is_ack(&self) -> bool {
-        **self == NACK_A::ACK
+        *self == NACK_A::Ack
     }
-    ///Checks if the value of the field is `NACK`
+    #[doc = "Checks if the value of the field is `Nack`"]
     #[inline(always)]
     pub fn is_nack(&self) -> bool {
-        **self == NACK_A::NACK
+        *self == NACK_A::Nack
     }
 }
-impl core::ops::Deref for NACK_R {
-    type Target = crate::FieldReader<bool, NACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `NACK` writer - NACK generation (slave mode)
-pub struct NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NACK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: NACK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///an ACK is sent after current received byte
+#[doc = "Field `NACK` writer - NACK generation (slave mode)"]
+pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, NACK_A, O>;
+impl<'a, const O: u8> NACK_W<'a, O> {
+    #[doc = "an ACK is sent after current received byte"]
     #[inline(always)]
     pub fn ack(self) -> &'a mut W {
-        self.variant(NACK_A::ACK)
+        self.variant(NACK_A::Ack)
     }
-    ///a NACK is sent after current received byte
+    #[doc = "a NACK is sent after current received byte"]
     #[inline(always)]
     pub fn nack(self) -> &'a mut W {
-        self.variant(NACK_A::NACK)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(NACK_A::Nack)
     }
 }
-///Stop generation (master mode)
-///
-///Value on reset: 0
+#[doc = "Stop generation (master mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOP_A {
-    ///0: No Stop generation
-    NOSTOP = 0,
-    ///1: Stop generation after current byte transfer
-    STOP = 1,
+    #[doc = "0: No Stop generation"]
+    NoStop = 0,
+    #[doc = "1: Stop generation after current byte transfer"]
+    Stop = 1,
 }
 impl From<STOP_A> for bool {
     #[inline(always)]
@@ -416,84 +252,49 @@ impl From<STOP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `STOP` reader - Stop generation (master mode)
-pub struct STOP_R(crate::FieldReader<bool, STOP_A>);
+#[doc = "Field `STOP` reader - Stop generation (master mode)"]
+pub type STOP_R = crate::BitReader<STOP_A>;
 impl STOP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STOP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOP_A {
         match self.bits {
-            false => STOP_A::NOSTOP,
-            true => STOP_A::STOP,
+            false => STOP_A::NoStop,
+            true => STOP_A::Stop,
         }
     }
-    ///Checks if the value of the field is `NOSTOP`
+    #[doc = "Checks if the value of the field is `NoStop`"]
     #[inline(always)]
     pub fn is_no_stop(&self) -> bool {
-        **self == STOP_A::NOSTOP
+        *self == STOP_A::NoStop
     }
-    ///Checks if the value of the field is `STOP`
+    #[doc = "Checks if the value of the field is `Stop`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == STOP_A::STOP
+        *self == STOP_A::Stop
     }
 }
-impl core::ops::Deref for STOP_R {
-    type Target = crate::FieldReader<bool, STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `STOP` writer - Stop generation (master mode)
-pub struct STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No Stop generation
+#[doc = "Field `STOP` writer - Stop generation (master mode)"]
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, STOP_A, O>;
+impl<'a, const O: u8> STOP_W<'a, O> {
+    #[doc = "No Stop generation"]
     #[inline(always)]
     pub fn no_stop(self) -> &'a mut W {
-        self.variant(STOP_A::NOSTOP)
+        self.variant(STOP_A::NoStop)
     }
-    ///Stop generation after current byte transfer
+    #[doc = "Stop generation after current byte transfer"]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
-        self.variant(STOP_A::STOP)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
+        self.variant(STOP_A::Stop)
     }
 }
-///Start generation
-///
-///Value on reset: 0
+#[doc = "Start generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum START_A {
-    ///0: No Start generation
-    NOSTART = 0,
-    ///1: Restart/Start generation
-    START = 1,
+    #[doc = "0: No Start generation"]
+    NoStart = 0,
+    #[doc = "1: Restart/Start generation"]
+    Start = 1,
 }
 impl From<START_A> for bool {
     #[inline(always)]
@@ -501,84 +302,49 @@ impl From<START_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `START` reader - Start generation
-pub struct START_R(crate::FieldReader<bool, START_A>);
+#[doc = "Field `START` reader - Start generation"]
+pub type START_R = crate::BitReader<START_A>;
 impl START_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        START_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> START_A {
         match self.bits {
-            false => START_A::NOSTART,
-            true => START_A::START,
+            false => START_A::NoStart,
+            true => START_A::Start,
         }
     }
-    ///Checks if the value of the field is `NOSTART`
+    #[doc = "Checks if the value of the field is `NoStart`"]
     #[inline(always)]
     pub fn is_no_start(&self) -> bool {
-        **self == START_A::NOSTART
+        *self == START_A::NoStart
     }
-    ///Checks if the value of the field is `START`
+    #[doc = "Checks if the value of the field is `Start`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        **self == START_A::START
+        *self == START_A::Start
     }
 }
-impl core::ops::Deref for START_R {
-    type Target = crate::FieldReader<bool, START_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `START` writer - Start generation
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: START_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No Start generation
+#[doc = "Field `START` writer - Start generation"]
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, START_A, O>;
+impl<'a, const O: u8> START_W<'a, O> {
+    #[doc = "No Start generation"]
     #[inline(always)]
     pub fn no_start(self) -> &'a mut W {
-        self.variant(START_A::NOSTART)
+        self.variant(START_A::NoStart)
     }
-    ///Restart/Start generation
+    #[doc = "Restart/Start generation"]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
-        self.variant(START_A::START)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
+        self.variant(START_A::Start)
     }
 }
-///10-bit address header only read direction (master receiver mode)
-///
-///Value on reset: 0
+#[doc = "10-bit address header only read direction (master receiver mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HEAD10R_A {
-    ///0: The master sends the complete 10 bit slave address read sequence
-    COMPLETE = 0,
-    ///1: The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction
-    PARTIAL = 1,
+    #[doc = "0: The master sends the complete 10 bit slave address read sequence"]
+    Complete = 0,
+    #[doc = "1: The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction"]
+    Partial = 1,
 }
 impl From<HEAD10R_A> for bool {
     #[inline(always)]
@@ -586,84 +352,49 @@ impl From<HEAD10R_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HEAD10R` reader - 10-bit address header only read direction (master receiver mode)
-pub struct HEAD10R_R(crate::FieldReader<bool, HEAD10R_A>);
+#[doc = "Field `HEAD10R` reader - 10-bit address header only read direction (master receiver mode)"]
+pub type HEAD10R_R = crate::BitReader<HEAD10R_A>;
 impl HEAD10R_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HEAD10R_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HEAD10R_A {
         match self.bits {
-            false => HEAD10R_A::COMPLETE,
-            true => HEAD10R_A::PARTIAL,
+            false => HEAD10R_A::Complete,
+            true => HEAD10R_A::Partial,
         }
     }
-    ///Checks if the value of the field is `COMPLETE`
+    #[doc = "Checks if the value of the field is `Complete`"]
     #[inline(always)]
     pub fn is_complete(&self) -> bool {
-        **self == HEAD10R_A::COMPLETE
+        *self == HEAD10R_A::Complete
     }
-    ///Checks if the value of the field is `PARTIAL`
+    #[doc = "Checks if the value of the field is `Partial`"]
     #[inline(always)]
     pub fn is_partial(&self) -> bool {
-        **self == HEAD10R_A::PARTIAL
+        *self == HEAD10R_A::Partial
     }
 }
-impl core::ops::Deref for HEAD10R_R {
-    type Target = crate::FieldReader<bool, HEAD10R_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HEAD10R` writer - 10-bit address header only read direction (master receiver mode)
-pub struct HEAD10R_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HEAD10R_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HEAD10R_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The master sends the complete 10 bit slave address read sequence
+#[doc = "Field `HEAD10R` writer - 10-bit address header only read direction (master receiver mode)"]
+pub type HEAD10R_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, HEAD10R_A, O>;
+impl<'a, const O: u8> HEAD10R_W<'a, O> {
+    #[doc = "The master sends the complete 10 bit slave address read sequence"]
     #[inline(always)]
     pub fn complete(self) -> &'a mut W {
-        self.variant(HEAD10R_A::COMPLETE)
+        self.variant(HEAD10R_A::Complete)
     }
-    ///The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction
+    #[doc = "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction"]
     #[inline(always)]
     pub fn partial(self) -> &'a mut W {
-        self.variant(HEAD10R_A::PARTIAL)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(HEAD10R_A::Partial)
     }
 }
-///10-bit addressing mode (master mode)
-///
-///Value on reset: 0
+#[doc = "10-bit addressing mode (master mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADD10_A {
-    ///0: The master operates in 7-bit addressing mode
-    BIT7 = 0,
-    ///1: The master operates in 10-bit addressing mode
-    BIT10 = 1,
+    #[doc = "0: The master operates in 7-bit addressing mode"]
+    Bit7 = 0,
+    #[doc = "1: The master operates in 10-bit addressing mode"]
+    Bit10 = 1,
 }
 impl From<ADD10_A> for bool {
     #[inline(always)]
@@ -671,84 +402,49 @@ impl From<ADD10_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ADD10` reader - 10-bit addressing mode (master mode)
-pub struct ADD10_R(crate::FieldReader<bool, ADD10_A>);
+#[doc = "Field `ADD10` reader - 10-bit addressing mode (master mode)"]
+pub type ADD10_R = crate::BitReader<ADD10_A>;
 impl ADD10_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADD10_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADD10_A {
         match self.bits {
-            false => ADD10_A::BIT7,
-            true => ADD10_A::BIT10,
+            false => ADD10_A::Bit7,
+            true => ADD10_A::Bit10,
         }
     }
-    ///Checks if the value of the field is `BIT7`
+    #[doc = "Checks if the value of the field is `Bit7`"]
     #[inline(always)]
     pub fn is_bit7(&self) -> bool {
-        **self == ADD10_A::BIT7
+        *self == ADD10_A::Bit7
     }
-    ///Checks if the value of the field is `BIT10`
+    #[doc = "Checks if the value of the field is `Bit10`"]
     #[inline(always)]
     pub fn is_bit10(&self) -> bool {
-        **self == ADD10_A::BIT10
+        *self == ADD10_A::Bit10
     }
 }
-impl core::ops::Deref for ADD10_R {
-    type Target = crate::FieldReader<bool, ADD10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ADD10` writer - 10-bit addressing mode (master mode)
-pub struct ADD10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADD10_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ADD10_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The master operates in 7-bit addressing mode
+#[doc = "Field `ADD10` writer - 10-bit addressing mode (master mode)"]
+pub type ADD10_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, ADD10_A, O>;
+impl<'a, const O: u8> ADD10_W<'a, O> {
+    #[doc = "The master operates in 7-bit addressing mode"]
     #[inline(always)]
     pub fn bit7(self) -> &'a mut W {
-        self.variant(ADD10_A::BIT7)
+        self.variant(ADD10_A::Bit7)
     }
-    ///The master operates in 10-bit addressing mode
+    #[doc = "The master operates in 10-bit addressing mode"]
     #[inline(always)]
     pub fn bit10(self) -> &'a mut W {
-        self.variant(ADD10_A::BIT10)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
+        self.variant(ADD10_A::Bit10)
     }
 }
-///Transfer direction (master mode)
-///
-///Value on reset: 0
+#[doc = "Transfer direction (master mode)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RD_WRN_A {
-    ///0: Master requests a write transfer
-    WRITE = 0,
-    ///1: Master requests a read transfer
-    READ = 1,
+    #[doc = "0: Master requests a write transfer"]
+    Write = 0,
+    #[doc = "1: Master requests a read transfer"]
+    Read = 1,
 }
 impl From<RD_WRN_A> for bool {
     #[inline(always)]
@@ -756,239 +452,180 @@ impl From<RD_WRN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RD_WRN` reader - Transfer direction (master mode)
-pub struct RD_WRN_R(crate::FieldReader<bool, RD_WRN_A>);
+#[doc = "Field `RD_WRN` reader - Transfer direction (master mode)"]
+pub type RD_WRN_R = crate::BitReader<RD_WRN_A>;
 impl RD_WRN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RD_WRN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RD_WRN_A {
         match self.bits {
-            false => RD_WRN_A::WRITE,
-            true => RD_WRN_A::READ,
+            false => RD_WRN_A::Write,
+            true => RD_WRN_A::Read,
         }
     }
-    ///Checks if the value of the field is `WRITE`
+    #[doc = "Checks if the value of the field is `Write`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        **self == RD_WRN_A::WRITE
+        *self == RD_WRN_A::Write
     }
-    ///Checks if the value of the field is `READ`
+    #[doc = "Checks if the value of the field is `Read`"]
     #[inline(always)]
     pub fn is_read(&self) -> bool {
-        **self == RD_WRN_A::READ
+        *self == RD_WRN_A::Read
     }
 }
-impl core::ops::Deref for RD_WRN_R {
-    type Target = crate::FieldReader<bool, RD_WRN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RD_WRN` writer - Transfer direction (master mode)
-pub struct RD_WRN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RD_WRN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RD_WRN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Master requests a write transfer
+#[doc = "Field `RD_WRN` writer - Transfer direction (master mode)"]
+pub type RD_WRN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, RD_WRN_A, O>;
+impl<'a, const O: u8> RD_WRN_W<'a, O> {
+    #[doc = "Master requests a write transfer"]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
-        self.variant(RD_WRN_A::WRITE)
+        self.variant(RD_WRN_A::Write)
     }
-    ///Master requests a read transfer
+    #[doc = "Master requests a read transfer"]
     #[inline(always)]
     pub fn read(self) -> &'a mut W {
-        self.variant(RD_WRN_A::READ)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(RD_WRN_A::Read)
     }
 }
-///Field `SADD` reader - Slave address bit (master mode)
-pub struct SADD_R(crate::FieldReader<u16, u16>);
-impl SADD_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SADD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SADD` writer - Slave address bit (master mode)
-pub struct SADD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADD_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+#[doc = "Field `SADD` reader - Slave address bit (master mode)"]
+pub type SADD_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `SADD` writer - Slave address bit (master mode)"]
+pub type SADD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR2_SPEC, u16, u16, 10, O>;
 impl R {
-    ///Bit 26 - Packet error checking byte
+    #[doc = "Bit 26 - Packet error checking byte"]
     #[inline(always)]
     pub fn pecbyte(&self) -> PECBYTE_R {
-        PECBYTE_R::new(((self.bits >> 26) & 0x01) != 0)
+        PECBYTE_R::new(((self.bits >> 26) & 1) != 0)
     }
-    ///Bit 25 - Automatic end mode (master mode)
+    #[doc = "Bit 25 - Automatic end mode (master mode)"]
     #[inline(always)]
     pub fn autoend(&self) -> AUTOEND_R {
-        AUTOEND_R::new(((self.bits >> 25) & 0x01) != 0)
+        AUTOEND_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 24 - NBYTES reload mode
+    #[doc = "Bit 24 - NBYTES reload mode"]
     #[inline(always)]
     pub fn reload(&self) -> RELOAD_R {
-        RELOAD_R::new(((self.bits >> 24) & 0x01) != 0)
+        RELOAD_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bits 16:23 - Number of bytes
+    #[doc = "Bits 16:23 - Number of bytes"]
     #[inline(always)]
     pub fn nbytes(&self) -> NBYTES_R {
         NBYTES_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    ///Bit 15 - NACK generation (slave mode)
+    #[doc = "Bit 15 - NACK generation (slave mode)"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
-        NACK_R::new(((self.bits >> 15) & 0x01) != 0)
+        NACK_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 14 - Stop generation (master mode)
+    #[doc = "Bit 14 - Stop generation (master mode)"]
     #[inline(always)]
     pub fn stop(&self) -> STOP_R {
-        STOP_R::new(((self.bits >> 14) & 0x01) != 0)
+        STOP_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 13 - Start generation
+    #[doc = "Bit 13 - Start generation"]
     #[inline(always)]
     pub fn start(&self) -> START_R {
-        START_R::new(((self.bits >> 13) & 0x01) != 0)
+        START_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 12 - 10-bit address header only read direction (master receiver mode)
+    #[doc = "Bit 12 - 10-bit address header only read direction (master receiver mode)"]
     #[inline(always)]
     pub fn head10r(&self) -> HEAD10R_R {
-        HEAD10R_R::new(((self.bits >> 12) & 0x01) != 0)
+        HEAD10R_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - 10-bit addressing mode (master mode)
+    #[doc = "Bit 11 - 10-bit addressing mode (master mode)"]
     #[inline(always)]
     pub fn add10(&self) -> ADD10_R {
-        ADD10_R::new(((self.bits >> 11) & 0x01) != 0)
+        ADD10_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - Transfer direction (master mode)
+    #[doc = "Bit 10 - Transfer direction (master mode)"]
     #[inline(always)]
     pub fn rd_wrn(&self) -> RD_WRN_R {
-        RD_WRN_R::new(((self.bits >> 10) & 0x01) != 0)
+        RD_WRN_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bits 0:9 - Slave address bit (master mode)
+    #[doc = "Bits 0:9 - Slave address bit (master mode)"]
     #[inline(always)]
     pub fn sadd(&self) -> SADD_R {
         SADD_R::new((self.bits & 0x03ff) as u16)
     }
 }
 impl W {
-    ///Bit 26 - Packet error checking byte
+    #[doc = "Bit 26 - Packet error checking byte"]
     #[inline(always)]
-    pub fn pecbyte(&mut self) -> PECBYTE_W {
-        PECBYTE_W { w: self }
+    pub fn pecbyte(&mut self) -> PECBYTE_W<26> {
+        PECBYTE_W::new(self)
     }
-    ///Bit 25 - Automatic end mode (master mode)
+    #[doc = "Bit 25 - Automatic end mode (master mode)"]
     #[inline(always)]
-    pub fn autoend(&mut self) -> AUTOEND_W {
-        AUTOEND_W { w: self }
+    pub fn autoend(&mut self) -> AUTOEND_W<25> {
+        AUTOEND_W::new(self)
     }
-    ///Bit 24 - NBYTES reload mode
+    #[doc = "Bit 24 - NBYTES reload mode"]
     #[inline(always)]
-    pub fn reload(&mut self) -> RELOAD_W {
-        RELOAD_W { w: self }
+    pub fn reload(&mut self) -> RELOAD_W<24> {
+        RELOAD_W::new(self)
     }
-    ///Bits 16:23 - Number of bytes
+    #[doc = "Bits 16:23 - Number of bytes"]
     #[inline(always)]
-    pub fn nbytes(&mut self) -> NBYTES_W {
-        NBYTES_W { w: self }
+    pub fn nbytes(&mut self) -> NBYTES_W<16> {
+        NBYTES_W::new(self)
     }
-    ///Bit 15 - NACK generation (slave mode)
+    #[doc = "Bit 15 - NACK generation (slave mode)"]
     #[inline(always)]
-    pub fn nack(&mut self) -> NACK_W {
-        NACK_W { w: self }
+    pub fn nack(&mut self) -> NACK_W<15> {
+        NACK_W::new(self)
     }
-    ///Bit 14 - Stop generation (master mode)
+    #[doc = "Bit 14 - Stop generation (master mode)"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
-        STOP_W { w: self }
+    pub fn stop(&mut self) -> STOP_W<14> {
+        STOP_W::new(self)
     }
-    ///Bit 13 - Start generation
+    #[doc = "Bit 13 - Start generation"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<13> {
+        START_W::new(self)
     }
-    ///Bit 12 - 10-bit address header only read direction (master receiver mode)
+    #[doc = "Bit 12 - 10-bit address header only read direction (master receiver mode)"]
     #[inline(always)]
-    pub fn head10r(&mut self) -> HEAD10R_W {
-        HEAD10R_W { w: self }
+    pub fn head10r(&mut self) -> HEAD10R_W<12> {
+        HEAD10R_W::new(self)
     }
-    ///Bit 11 - 10-bit addressing mode (master mode)
+    #[doc = "Bit 11 - 10-bit addressing mode (master mode)"]
     #[inline(always)]
-    pub fn add10(&mut self) -> ADD10_W {
-        ADD10_W { w: self }
+    pub fn add10(&mut self) -> ADD10_W<11> {
+        ADD10_W::new(self)
     }
-    ///Bit 10 - Transfer direction (master mode)
+    #[doc = "Bit 10 - Transfer direction (master mode)"]
     #[inline(always)]
-    pub fn rd_wrn(&mut self) -> RD_WRN_W {
-        RD_WRN_W { w: self }
+    pub fn rd_wrn(&mut self) -> RD_WRN_W<10> {
+        RD_WRN_W::new(self)
     }
-    ///Bits 0:9 - Slave address bit (master mode)
+    #[doc = "Bits 0:9 - Slave address bit (master mode)"]
     #[inline(always)]
-    pub fn sadd(&mut self) -> SADD_W {
-        SADD_W { w: self }
+    pub fn sadd(&mut self) -> SADD_W<0> {
+        SADD_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Control register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr2](index.html) module
+#[doc = "Control register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr2](index.html) module"]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr2::R](R) reader structure
+#[doc = "`read()` method returns [cr2::R](R) reader structure"]
 impl crate::Readable for CR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr2::W](W) writer structure"]
 impl crate::Writable for CR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR2 to value 0
+#[doc = "`reset()` method sets CR2 to value 0"]
 impl crate::Resettable for CR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

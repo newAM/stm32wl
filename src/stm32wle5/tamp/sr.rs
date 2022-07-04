@@ -1,4 +1,4 @@
-///Register `SR` reader
+#[doc = "Register `SR` reader"]
 pub struct R(crate::R<SR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SR_SPEC>;
@@ -13,15 +13,13 @@ impl From<crate::R<SR_SPEC>> for R {
         R(reader)
     }
 }
-///TAMP1F
-///
-///Value on reset: 0
+#[doc = "TAMP1F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1F_A {
-    ///0: No tamper detected
-    IDLE = 0,
-    ///1: Tamper detected
-    TAMPER = 1,
+    #[doc = "0: No tamper detected"]
+    Idle = 0,
+    #[doc = "1: Tamper detected"]
+    Tamper = 1,
 }
 impl From<TAMP1F_A> for bool {
     #[inline(always)]
@@ -29,55 +27,43 @@ impl From<TAMP1F_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TAMP1F` reader - TAMP1F
-pub struct TAMP1F_R(crate::FieldReader<bool, TAMP1F_A>);
+#[doc = "Field `TAMP1F` reader - TAMP1F"]
+pub type TAMP1F_R = crate::BitReader<TAMP1F_A>;
 impl TAMP1F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAMP1F_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAMP1F_A {
         match self.bits {
-            false => TAMP1F_A::IDLE,
-            true => TAMP1F_A::TAMPER,
+            false => TAMP1F_A::Idle,
+            true => TAMP1F_A::Tamper,
         }
     }
-    ///Checks if the value of the field is `IDLE`
+    #[doc = "Checks if the value of the field is `Idle`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == TAMP1F_A::IDLE
+        *self == TAMP1F_A::Idle
     }
-    ///Checks if the value of the field is `TAMPER`
+    #[doc = "Checks if the value of the field is `Tamper`"]
     #[inline(always)]
     pub fn is_tamper(&self) -> bool {
-        **self == TAMP1F_A::TAMPER
+        *self == TAMP1F_A::Tamper
     }
 }
-impl core::ops::Deref for TAMP1F_R {
-    type Target = crate::FieldReader<bool, TAMP1F_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///TAMP2F
-pub type TAMP2F_A = TAMP1F_A;
-///Field `TAMP2F` reader - TAMP2F
-pub type TAMP2F_R = TAMP1F_R;
-///TAMP3F
-pub type TAMP3F_A = TAMP1F_A;
-///Field `TAMP3F` reader - TAMP3F
-pub type TAMP3F_R = TAMP1F_R;
-///ITAMP3F
-///
-///Value on reset: 0
+#[doc = "TAMP2F"]
+pub use TAMP1F_A as TAMP2F_A;
+#[doc = "TAMP3F"]
+pub use TAMP1F_A as TAMP3F_A;
+#[doc = "Field `TAMP2F` reader - TAMP2F"]
+pub use TAMP1F_R as TAMP2F_R;
+#[doc = "Field `TAMP3F` reader - TAMP3F"]
+pub use TAMP1F_R as TAMP3F_R;
+#[doc = "ITAMP3F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITAMP3F_A {
-    ///0: No tamper detected
-    IDLE = 0,
-    ///1: Internal tamper detected
-    TAMPER = 1,
+    #[doc = "0: No tamper detected"]
+    Idle = 0,
+    #[doc = "1: Internal tamper detected"]
+    Tamper = 1,
 }
 impl From<ITAMP3F_A> for bool {
     #[inline(always)]
@@ -85,101 +71,87 @@ impl From<ITAMP3F_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ITAMP3F` reader - ITAMP3F
-pub struct ITAMP3F_R(crate::FieldReader<bool, ITAMP3F_A>);
+#[doc = "Field `ITAMP3F` reader - ITAMP3F"]
+pub type ITAMP3F_R = crate::BitReader<ITAMP3F_A>;
 impl ITAMP3F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ITAMP3F_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ITAMP3F_A {
         match self.bits {
-            false => ITAMP3F_A::IDLE,
-            true => ITAMP3F_A::TAMPER,
+            false => ITAMP3F_A::Idle,
+            true => ITAMP3F_A::Tamper,
         }
     }
-    ///Checks if the value of the field is `IDLE`
+    #[doc = "Checks if the value of the field is `Idle`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == ITAMP3F_A::IDLE
+        *self == ITAMP3F_A::Idle
     }
-    ///Checks if the value of the field is `TAMPER`
+    #[doc = "Checks if the value of the field is `Tamper`"]
     #[inline(always)]
     pub fn is_tamper(&self) -> bool {
-        **self == ITAMP3F_A::TAMPER
+        *self == ITAMP3F_A::Tamper
     }
 }
-impl core::ops::Deref for ITAMP3F_R {
-    type Target = crate::FieldReader<bool, ITAMP3F_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///ITAMP5F
-pub type ITAMP5F_A = ITAMP3F_A;
-///Field `ITAMP5F` reader - ITAMP5F
-pub type ITAMP5F_R = ITAMP3F_R;
-///ITAMP6F
-pub type ITAMP6F_A = ITAMP3F_A;
-///Field `ITAMP6F` reader - ITAMP6F
-pub type ITAMP6F_R = ITAMP3F_R;
-///ITAMP8F
-pub type ITAMP8F_A = ITAMP3F_A;
-///Field `ITAMP8F` reader - ITAMP8F
-pub type ITAMP8F_R = ITAMP3F_R;
+#[doc = "ITAMP5F"]
+pub use ITAMP3F_A as ITAMP5F_A;
+#[doc = "ITAMP6F"]
+pub use ITAMP3F_A as ITAMP6F_A;
+#[doc = "ITAMP8F"]
+pub use ITAMP3F_A as ITAMP8F_A;
+#[doc = "Field `ITAMP5F` reader - ITAMP5F"]
+pub use ITAMP3F_R as ITAMP5F_R;
+#[doc = "Field `ITAMP6F` reader - ITAMP6F"]
+pub use ITAMP3F_R as ITAMP6F_R;
+#[doc = "Field `ITAMP8F` reader - ITAMP8F"]
+pub use ITAMP3F_R as ITAMP8F_R;
 impl R {
-    ///Bit 0 - TAMP1F
+    #[doc = "Bit 0 - TAMP1F"]
     #[inline(always)]
     pub fn tamp1f(&self) -> TAMP1F_R {
-        TAMP1F_R::new((self.bits & 0x01) != 0)
+        TAMP1F_R::new((self.bits & 1) != 0)
     }
-    ///Bit 1 - TAMP2F
+    #[doc = "Bit 1 - TAMP2F"]
     #[inline(always)]
     pub fn tamp2f(&self) -> TAMP2F_R {
-        TAMP2F_R::new(((self.bits >> 1) & 0x01) != 0)
+        TAMP2F_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2 - TAMP3F
+    #[doc = "Bit 2 - TAMP3F"]
     #[inline(always)]
     pub fn tamp3f(&self) -> TAMP3F_R {
-        TAMP3F_R::new(((self.bits >> 2) & 0x01) != 0)
+        TAMP3F_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 18 - ITAMP3F
+    #[doc = "Bit 18 - ITAMP3F"]
     #[inline(always)]
     pub fn itamp3f(&self) -> ITAMP3F_R {
-        ITAMP3F_R::new(((self.bits >> 18) & 0x01) != 0)
+        ITAMP3F_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 20 - ITAMP5F
+    #[doc = "Bit 20 - ITAMP5F"]
     #[inline(always)]
     pub fn itamp5f(&self) -> ITAMP5F_R {
-        ITAMP5F_R::new(((self.bits >> 20) & 0x01) != 0)
+        ITAMP5F_R::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 21 - ITAMP6F
+    #[doc = "Bit 21 - ITAMP6F"]
     #[inline(always)]
     pub fn itamp6f(&self) -> ITAMP6F_R {
-        ITAMP6F_R::new(((self.bits >> 21) & 0x01) != 0)
+        ITAMP6F_R::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bit 23 - ITAMP8F
+    #[doc = "Bit 23 - ITAMP8F"]
     #[inline(always)]
     pub fn itamp8f(&self) -> ITAMP8F_R {
-        ITAMP8F_R::new(((self.bits >> 23) & 0x01) != 0)
+        ITAMP8F_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-///TAMP status register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [sr](index.html) module
+#[doc = "TAMP status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [sr::R](R) reader structure
+#[doc = "`read()` method returns [sr::R](R) reader structure"]
 impl crate::Readable for SR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets SR to value 0
+#[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

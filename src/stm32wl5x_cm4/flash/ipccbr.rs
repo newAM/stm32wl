@@ -1,4 +1,4 @@
-///Register `IPCCBR` reader
+#[doc = "Register `IPCCBR` reader"]
 pub struct R(crate::R<IPCCBR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IPCCBR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IPCCBR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `IPCCBR` writer
+#[doc = "Register `IPCCBR` writer"]
 pub struct W(crate::W<IPCCBR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IPCCBR_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<IPCCBR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `IPCCDBA` reader - IPCCDBA
-pub struct IPCCDBA_R(crate::FieldReader<u16, u16>);
-impl IPCCDBA_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        IPCCDBA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IPCCDBA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `IPCCDBA` writer - IPCCDBA
-pub struct IPCCDBA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPCCDBA_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+#[doc = "Field `IPCCDBA` reader - IPCCDBA"]
+pub type IPCCDBA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `IPCCDBA` writer - IPCCDBA"]
+pub type IPCCDBA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, IPCCBR_SPEC, u16, u16, 14, O>;
 impl R {
-    ///Bits 0:13 - IPCCDBA
+    #[doc = "Bits 0:13 - IPCCDBA"]
     #[inline(always)]
     pub fn ipccdba(&self) -> IPCCDBA_R {
         IPCCDBA_R::new((self.bits & 0x3fff) as u16)
     }
 }
 impl W {
-    ///Bits 0:13 - IPCCDBA
+    #[doc = "Bits 0:13 - IPCCDBA"]
     #[inline(always)]
-    pub fn ipccdba(&mut self) -> IPCCDBA_W {
-        IPCCDBA_W { w: self }
+    pub fn ipccdba(&mut self) -> IPCCDBA_W<0> {
+        IPCCDBA_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Flash IPCC data buffer address register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ipccbr](index.html) module
+#[doc = "Flash IPCC data buffer address register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ipccbr](index.html) module"]
 pub struct IPCCBR_SPEC;
 impl crate::RegisterSpec for IPCCBR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ipccbr::R](R) reader structure
+#[doc = "`read()` method returns [ipccbr::R](R) reader structure"]
 impl crate::Readable for IPCCBR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ipccbr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ipccbr::W](W) writer structure"]
 impl crate::Writable for IPCCBR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets IPCCBR to value 0xffff_ffff
+#[doc = "`reset()` method sets IPCCBR to value 0xffff_ffff"]
 impl crate::Resettable for IPCCBR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `CR` reader
+#[doc = "Register `CR` reader"]
 pub struct R(crate::R<CR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR` writer
+#[doc = "Register `CR` writer"]
 pub struct W(crate::W<CR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
-///True random number generator enable
-///
-///Value on reset: 0
+#[doc = "True random number generator enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RNGEN_A {
-    ///0: Random number generator is disabled
-    DISABLED = 0,
-    ///1: Random number generator is enabled
-    ENABLED = 1,
+    #[doc = "0: Random number generator is disabled"]
+    Disabled = 0,
+    #[doc = "1: Random number generator is enabled"]
+    Enabled = 1,
 }
 impl From<RNGEN_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<RNGEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RNGEN` reader - True random number generator enable
-pub struct RNGEN_R(crate::FieldReader<bool, RNGEN_A>);
+#[doc = "Field `RNGEN` reader - True random number generator enable"]
+pub type RNGEN_R = crate::BitReader<RNGEN_A>;
 impl RNGEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RNGEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RNGEN_A {
         match self.bits {
-            false => RNGEN_A::DISABLED,
-            true => RNGEN_A::ENABLED,
+            false => RNGEN_A::Disabled,
+            true => RNGEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RNGEN_A::DISABLED
+        *self == RNGEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RNGEN_A::ENABLED
+        *self == RNGEN_A::Enabled
     }
 }
-impl core::ops::Deref for RNGEN_R {
-    type Target = crate::FieldReader<bool, RNGEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNGEN` writer - True random number generator enable
-pub struct RNGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNGEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNGEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Random number generator is disabled
+#[doc = "Field `RNGEN` writer - True random number generator enable"]
+pub type RNGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, RNGEN_A, O>;
+impl<'a, const O: u8> RNGEN_W<'a, O> {
+    #[doc = "Random number generator is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(RNGEN_A::DISABLED)
+        self.variant(RNGEN_A::Disabled)
     }
-    ///Random number generator is enabled
+    #[doc = "Random number generator is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(RNGEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(RNGEN_A::Enabled)
     }
 }
-///Interrupt Enable
-///
-///Value on reset: 0
+#[doc = "Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IE_A {
-    ///0: RNG interrupt is disabled
-    DISABLED = 0,
-    ///1: RNG interrupt is enabled
-    ENABLED = 1,
+    #[doc = "0: RNG interrupt is disabled"]
+    Disabled = 0,
+    #[doc = "1: RNG interrupt is enabled"]
+    Enabled = 1,
 }
 impl From<IE_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<IE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `IE` reader - Interrupt Enable
-pub struct IE_R(crate::FieldReader<bool, IE_A>);
+#[doc = "Field `IE` reader - Interrupt Enable"]
+pub type IE_R = crate::BitReader<IE_A>;
 impl IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IE_A {
         match self.bits {
-            false => IE_A::DISABLED,
-            true => IE_A::ENABLED,
+            false => IE_A::Disabled,
+            true => IE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == IE_A::DISABLED
+        *self == IE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == IE_A::ENABLED
+        *self == IE_A::Enabled
     }
 }
-impl core::ops::Deref for IE_R {
-    type Target = crate::FieldReader<bool, IE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `IE` writer - Interrupt Enable
-pub struct IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: IE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///RNG interrupt is disabled
+#[doc = "Field `IE` writer - Interrupt Enable"]
+pub type IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, IE_A, O>;
+impl<'a, const O: u8> IE_W<'a, O> {
+    #[doc = "RNG interrupt is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(IE_A::DISABLED)
+        self.variant(IE_A::Disabled)
     }
-    ///RNG interrupt is enabled
+    #[doc = "RNG interrupt is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(IE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(IE_A::Enabled)
     }
 }
-///Interrupt Enable
-///
-///Value on reset: 0
+#[doc = "Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CED_A {
-    ///0: Clock error detection is enabled
-    ENABLED = 0,
-    ///1: Clock error detection is disabled
-    DISABLED = 1,
+    #[doc = "0: Clock error detection is enabled"]
+    Enabled = 0,
+    #[doc = "1: Clock error detection is disabled"]
+    Disabled = 1,
 }
 impl From<CED_A> for bool {
     #[inline(always)]
@@ -220,85 +148,50 @@ impl From<CED_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CED` reader - Interrupt Enable
-pub struct CED_R(crate::FieldReader<bool, CED_A>);
+#[doc = "Field `CED` reader - Interrupt Enable"]
+pub type CED_R = crate::BitReader<CED_A>;
 impl CED_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CED_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CED_A {
         match self.bits {
-            false => CED_A::ENABLED,
-            true => CED_A::DISABLED,
+            false => CED_A::Enabled,
+            true => CED_A::Disabled,
         }
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CED_A::ENABLED
+        *self == CED_A::Enabled
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CED_A::DISABLED
+        *self == CED_A::Disabled
     }
 }
-impl core::ops::Deref for CED_R {
-    type Target = crate::FieldReader<bool, CED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CED` writer - Interrupt Enable
-pub struct CED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CED_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock error detection is enabled
+#[doc = "Field `CED` writer - Interrupt Enable"]
+pub type CED_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, CED_A, O>;
+impl<'a, const O: u8> CED_W<'a, O> {
+    #[doc = "Clock error detection is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CED_A::ENABLED)
+        self.variant(CED_A::Enabled)
     }
-    ///Clock error detection is disabled
+    #[doc = "Clock error detection is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CED_A::DISABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(CED_A::Disabled)
     }
 }
-///RNG_CONFIG3
-///
-///Value on reset: 0
+#[doc = "RNG_CONFIG3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RNG_CONFIG3_A {
-    ///13: Recommended value for config A (NIST certifiable)
-    CONFIGA = 13,
-    ///0: Recommended value for config B (not NIST certifiable)
-    CONFIGB = 0,
+    #[doc = "0: Recommended value for config B (not NIST certifiable)"]
+    ConfigB = 0,
+    #[doc = "13: Recommended value for config A (NIST certifiable)"]
+    ConfigA = 13,
 }
 impl From<RNG_CONFIG3_A> for u8 {
     #[inline(always)]
@@ -306,75 +199,51 @@ impl From<RNG_CONFIG3_A> for u8 {
         variant as _
     }
 }
-///Field `RNG_CONFIG3` reader - RNG_CONFIG3
-pub struct RNG_CONFIG3_R(crate::FieldReader<u8, RNG_CONFIG3_A>);
+#[doc = "Field `RNG_CONFIG3` reader - RNG_CONFIG3"]
+pub type RNG_CONFIG3_R = crate::FieldReader<u8, RNG_CONFIG3_A>;
 impl RNG_CONFIG3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RNG_CONFIG3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RNG_CONFIG3_A> {
         match self.bits {
-            13 => Some(RNG_CONFIG3_A::CONFIGA),
-            0 => Some(RNG_CONFIG3_A::CONFIGB),
+            0 => Some(RNG_CONFIG3_A::ConfigB),
+            13 => Some(RNG_CONFIG3_A::ConfigA),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `CONFIGA`
-    #[inline(always)]
-    pub fn is_config_a(&self) -> bool {
-        **self == RNG_CONFIG3_A::CONFIGA
-    }
-    ///Checks if the value of the field is `CONFIGB`
+    #[doc = "Checks if the value of the field is `ConfigB`"]
     #[inline(always)]
     pub fn is_config_b(&self) -> bool {
-        **self == RNG_CONFIG3_A::CONFIGB
+        *self == RNG_CONFIG3_A::ConfigB
+    }
+    #[doc = "Checks if the value of the field is `ConfigA`"]
+    #[inline(always)]
+    pub fn is_config_a(&self) -> bool {
+        *self == RNG_CONFIG3_A::ConfigA
     }
 }
-impl core::ops::Deref for RNG_CONFIG3_R {
-    type Target = crate::FieldReader<u8, RNG_CONFIG3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNG_CONFIG3` writer - RNG_CONFIG3
-pub struct RNG_CONFIG3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNG_CONFIG3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNG_CONFIG3_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Recommended value for config A (NIST certifiable)
-    #[inline(always)]
-    pub fn config_a(self) -> &'a mut W {
-        self.variant(RNG_CONFIG3_A::CONFIGA)
-    }
-    ///Recommended value for config B (not NIST certifiable)
+#[doc = "Field `RNG_CONFIG3` writer - RNG_CONFIG3"]
+pub type RNG_CONFIG3_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CR_SPEC, u8, RNG_CONFIG3_A, 4, O>;
+impl<'a, const O: u8> RNG_CONFIG3_W<'a, O> {
+    #[doc = "Recommended value for config B (not NIST certifiable)"]
     #[inline(always)]
     pub fn config_b(self) -> &'a mut W {
-        self.variant(RNG_CONFIG3_A::CONFIGB)
+        self.variant(RNG_CONFIG3_A::ConfigB)
     }
-    ///Writes raw bits to the field
+    #[doc = "Recommended value for config A (NIST certifiable)"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
+    pub fn config_a(self) -> &'a mut W {
+        self.variant(RNG_CONFIG3_A::ConfigA)
     }
 }
-///NISTC
-///
-///Value on reset: 0
+#[doc = "NISTC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NISTC_A {
-    ///0: Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used
-    DEFAULT = 0,
-    ///1: Custom values for NIST compliant RNG
-    CUSTOM = 1,
+    #[doc = "0: Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used"]
+    Default = 0,
+    #[doc = "1: Custom values for NIST compliant RNG"]
+    Custom = 1,
 }
 impl From<NISTC_A> for bool {
     #[inline(always)]
@@ -382,83 +251,48 @@ impl From<NISTC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `NISTC` reader - NISTC
-pub struct NISTC_R(crate::FieldReader<bool, NISTC_A>);
+#[doc = "Field `NISTC` reader - NISTC"]
+pub type NISTC_R = crate::BitReader<NISTC_A>;
 impl NISTC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NISTC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NISTC_A {
         match self.bits {
-            false => NISTC_A::DEFAULT,
-            true => NISTC_A::CUSTOM,
+            false => NISTC_A::Default,
+            true => NISTC_A::Custom,
         }
     }
-    ///Checks if the value of the field is `DEFAULT`
+    #[doc = "Checks if the value of the field is `Default`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == NISTC_A::DEFAULT
+        *self == NISTC_A::Default
     }
-    ///Checks if the value of the field is `CUSTOM`
+    #[doc = "Checks if the value of the field is `Custom`"]
     #[inline(always)]
     pub fn is_custom(&self) -> bool {
-        **self == NISTC_A::CUSTOM
+        *self == NISTC_A::Custom
     }
 }
-impl core::ops::Deref for NISTC_R {
-    type Target = crate::FieldReader<bool, NISTC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `NISTC` writer - NISTC
-pub struct NISTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NISTC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: NISTC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used
+#[doc = "Field `NISTC` writer - NISTC"]
+pub type NISTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, NISTC_A, O>;
+impl<'a, const O: u8> NISTC_W<'a, O> {
+    #[doc = "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used"]
     #[inline(always)]
     pub fn default(self) -> &'a mut W {
-        self.variant(NISTC_A::DEFAULT)
+        self.variant(NISTC_A::Default)
     }
-    ///Custom values for NIST compliant RNG
+    #[doc = "Custom values for NIST compliant RNG"]
     #[inline(always)]
     pub fn custom(self) -> &'a mut W {
-        self.variant(NISTC_A::CUSTOM)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(NISTC_A::Custom)
     }
 }
-///RNG_CONFIG2
-///
-///Value on reset: 0
+#[doc = "RNG_CONFIG2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RNG_CONFIG2_A {
-    ///0: Recommended value for config A and B
-    CONFIGA_B = 0,
+    #[doc = "0: Recommended value for config A and B"]
+    ConfigAB = 0,
 }
 impl From<RNG_CONFIG2_A> for u8 {
     #[inline(always)]
@@ -466,93 +300,69 @@ impl From<RNG_CONFIG2_A> for u8 {
         variant as _
     }
 }
-///Field `RNG_CONFIG2` reader - RNG_CONFIG2
-pub struct RNG_CONFIG2_R(crate::FieldReader<u8, RNG_CONFIG2_A>);
+#[doc = "Field `RNG_CONFIG2` reader - RNG_CONFIG2"]
+pub type RNG_CONFIG2_R = crate::FieldReader<u8, RNG_CONFIG2_A>;
 impl RNG_CONFIG2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RNG_CONFIG2_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RNG_CONFIG2_A> {
         match self.bits {
-            0 => Some(RNG_CONFIG2_A::CONFIGA_B),
+            0 => Some(RNG_CONFIG2_A::ConfigAB),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `CONFIGA_B`
+    #[doc = "Checks if the value of the field is `ConfigAB`"]
     #[inline(always)]
     pub fn is_config_a_b(&self) -> bool {
-        **self == RNG_CONFIG2_A::CONFIGA_B
+        *self == RNG_CONFIG2_A::ConfigAB
     }
 }
-impl core::ops::Deref for RNG_CONFIG2_R {
-    type Target = crate::FieldReader<u8, RNG_CONFIG2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNG_CONFIG2` writer - RNG_CONFIG2
-pub struct RNG_CONFIG2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNG_CONFIG2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNG_CONFIG2_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Recommended value for config A and B
+#[doc = "Field `RNG_CONFIG2` writer - RNG_CONFIG2"]
+pub type RNG_CONFIG2_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CR_SPEC, u8, RNG_CONFIG2_A, 3, O>;
+impl<'a, const O: u8> RNG_CONFIG2_W<'a, O> {
+    #[doc = "Recommended value for config A and B"]
     #[inline(always)]
     pub fn config_a_b(self) -> &'a mut W {
-        self.variant(RNG_CONFIG2_A::CONFIGA_B)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 13)) | ((value as u32 & 0x07) << 13);
-        self.w
+        self.variant(RNG_CONFIG2_A::ConfigAB)
     }
 }
-///CLKDIV
-///
-///Value on reset: 0
+#[doc = "CLKDIV\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CLKDIV_A {
-    ///0: Internal RNG clock after divider is similar to incoming RNG clock
-    NODIV = 0,
-    ///1: Divide RNG clock by 2^1
-    DIV_2_1 = 1,
-    ///2: Divide RNG clock by 2^2
-    DIV_2_2 = 2,
-    ///3: Divide RNG clock by 2^3
-    DIV_2_3 = 3,
-    ///4: Divide RNG clock by 2^4
-    DIV_2_4 = 4,
-    ///5: Divide RNG clock by 2^5
-    DIV_2_5 = 5,
-    ///6: Divide RNG clock by 2^6
-    DIV_2_6 = 6,
-    ///7: Divide RNG clock by 2^7
-    DIV_2_7 = 7,
-    ///8: Divide RNG clock by 2^8
-    DIV_2_8 = 8,
-    ///9: Divide RNG clock by 2^9
-    DIV_2_9 = 9,
-    ///10: Divide RNG clock by 2^10
-    DIV_2_10 = 10,
-    ///11: Divide RNG clock by 2^11
-    DIV_2_11 = 11,
-    ///12: Divide RNG clock by 2^12
-    DIV_2_12 = 12,
-    ///13: Divide RNG clock by 2^13
-    DIV_2_13 = 13,
-    ///14: Divide RNG clock by 2^14
-    DIV_2_14 = 14,
-    ///15: Divide RNG clock by 2^15
-    DIV_2_15 = 15,
+    #[doc = "0: Internal RNG clock after divider is similar to incoming RNG clock"]
+    NoDiv = 0,
+    #[doc = "1: Divide RNG clock by 2^1"]
+    Div21 = 1,
+    #[doc = "2: Divide RNG clock by 2^2"]
+    Div22 = 2,
+    #[doc = "3: Divide RNG clock by 2^3"]
+    Div23 = 3,
+    #[doc = "4: Divide RNG clock by 2^4"]
+    Div24 = 4,
+    #[doc = "5: Divide RNG clock by 2^5"]
+    Div25 = 5,
+    #[doc = "6: Divide RNG clock by 2^6"]
+    Div26 = 6,
+    #[doc = "7: Divide RNG clock by 2^7"]
+    Div27 = 7,
+    #[doc = "8: Divide RNG clock by 2^8"]
+    Div28 = 8,
+    #[doc = "9: Divide RNG clock by 2^9"]
+    Div29 = 9,
+    #[doc = "10: Divide RNG clock by 2^10"]
+    Div210 = 10,
+    #[doc = "11: Divide RNG clock by 2^11"]
+    Div211 = 11,
+    #[doc = "12: Divide RNG clock by 2^12"]
+    Div212 = 12,
+    #[doc = "13: Divide RNG clock by 2^13"]
+    Div213 = 13,
+    #[doc = "14: Divide RNG clock by 2^14"]
+    Div214 = 14,
+    #[doc = "15: Divide RNG clock by 2^15"]
+    Div215 = 15,
 }
 impl From<CLKDIV_A> for u8 {
     #[inline(always)]
@@ -560,230 +370,205 @@ impl From<CLKDIV_A> for u8 {
         variant as _
     }
 }
-///Field `CLKDIV` reader - CLKDIV
-pub struct CLKDIV_R(crate::FieldReader<u8, CLKDIV_A>);
+#[doc = "Field `CLKDIV` reader - CLKDIV"]
+pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 impl CLKDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKDIV_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLKDIV_A {
         match self.bits {
-            0 => CLKDIV_A::NODIV,
-            1 => CLKDIV_A::DIV_2_1,
-            2 => CLKDIV_A::DIV_2_2,
-            3 => CLKDIV_A::DIV_2_3,
-            4 => CLKDIV_A::DIV_2_4,
-            5 => CLKDIV_A::DIV_2_5,
-            6 => CLKDIV_A::DIV_2_6,
-            7 => CLKDIV_A::DIV_2_7,
-            8 => CLKDIV_A::DIV_2_8,
-            9 => CLKDIV_A::DIV_2_9,
-            10 => CLKDIV_A::DIV_2_10,
-            11 => CLKDIV_A::DIV_2_11,
-            12 => CLKDIV_A::DIV_2_12,
-            13 => CLKDIV_A::DIV_2_13,
-            14 => CLKDIV_A::DIV_2_14,
-            15 => CLKDIV_A::DIV_2_15,
+            0 => CLKDIV_A::NoDiv,
+            1 => CLKDIV_A::Div21,
+            2 => CLKDIV_A::Div22,
+            3 => CLKDIV_A::Div23,
+            4 => CLKDIV_A::Div24,
+            5 => CLKDIV_A::Div25,
+            6 => CLKDIV_A::Div26,
+            7 => CLKDIV_A::Div27,
+            8 => CLKDIV_A::Div28,
+            9 => CLKDIV_A::Div29,
+            10 => CLKDIV_A::Div210,
+            11 => CLKDIV_A::Div211,
+            12 => CLKDIV_A::Div212,
+            13 => CLKDIV_A::Div213,
+            14 => CLKDIV_A::Div214,
+            15 => CLKDIV_A::Div215,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NODIV`
+    #[doc = "Checks if the value of the field is `NoDiv`"]
     #[inline(always)]
     pub fn is_no_div(&self) -> bool {
-        **self == CLKDIV_A::NODIV
+        *self == CLKDIV_A::NoDiv
     }
-    ///Checks if the value of the field is `DIV_2_1`
+    #[doc = "Checks if the value of the field is `Div21`"]
     #[inline(always)]
     pub fn is_div_2_1(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_1
+        *self == CLKDIV_A::Div21
     }
-    ///Checks if the value of the field is `DIV_2_2`
+    #[doc = "Checks if the value of the field is `Div22`"]
     #[inline(always)]
     pub fn is_div_2_2(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_2
+        *self == CLKDIV_A::Div22
     }
-    ///Checks if the value of the field is `DIV_2_3`
+    #[doc = "Checks if the value of the field is `Div23`"]
     #[inline(always)]
     pub fn is_div_2_3(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_3
+        *self == CLKDIV_A::Div23
     }
-    ///Checks if the value of the field is `DIV_2_4`
+    #[doc = "Checks if the value of the field is `Div24`"]
     #[inline(always)]
     pub fn is_div_2_4(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_4
+        *self == CLKDIV_A::Div24
     }
-    ///Checks if the value of the field is `DIV_2_5`
+    #[doc = "Checks if the value of the field is `Div25`"]
     #[inline(always)]
     pub fn is_div_2_5(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_5
+        *self == CLKDIV_A::Div25
     }
-    ///Checks if the value of the field is `DIV_2_6`
+    #[doc = "Checks if the value of the field is `Div26`"]
     #[inline(always)]
     pub fn is_div_2_6(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_6
+        *self == CLKDIV_A::Div26
     }
-    ///Checks if the value of the field is `DIV_2_7`
+    #[doc = "Checks if the value of the field is `Div27`"]
     #[inline(always)]
     pub fn is_div_2_7(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_7
+        *self == CLKDIV_A::Div27
     }
-    ///Checks if the value of the field is `DIV_2_8`
+    #[doc = "Checks if the value of the field is `Div28`"]
     #[inline(always)]
     pub fn is_div_2_8(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_8
+        *self == CLKDIV_A::Div28
     }
-    ///Checks if the value of the field is `DIV_2_9`
+    #[doc = "Checks if the value of the field is `Div29`"]
     #[inline(always)]
     pub fn is_div_2_9(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_9
+        *self == CLKDIV_A::Div29
     }
-    ///Checks if the value of the field is `DIV_2_10`
+    #[doc = "Checks if the value of the field is `Div210`"]
     #[inline(always)]
     pub fn is_div_2_10(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_10
+        *self == CLKDIV_A::Div210
     }
-    ///Checks if the value of the field is `DIV_2_11`
+    #[doc = "Checks if the value of the field is `Div211`"]
     #[inline(always)]
     pub fn is_div_2_11(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_11
+        *self == CLKDIV_A::Div211
     }
-    ///Checks if the value of the field is `DIV_2_12`
+    #[doc = "Checks if the value of the field is `Div212`"]
     #[inline(always)]
     pub fn is_div_2_12(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_12
+        *self == CLKDIV_A::Div212
     }
-    ///Checks if the value of the field is `DIV_2_13`
+    #[doc = "Checks if the value of the field is `Div213`"]
     #[inline(always)]
     pub fn is_div_2_13(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_13
+        *self == CLKDIV_A::Div213
     }
-    ///Checks if the value of the field is `DIV_2_14`
+    #[doc = "Checks if the value of the field is `Div214`"]
     #[inline(always)]
     pub fn is_div_2_14(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_14
+        *self == CLKDIV_A::Div214
     }
-    ///Checks if the value of the field is `DIV_2_15`
+    #[doc = "Checks if the value of the field is `Div215`"]
     #[inline(always)]
     pub fn is_div_2_15(&self) -> bool {
-        **self == CLKDIV_A::DIV_2_15
+        *self == CLKDIV_A::Div215
     }
 }
-impl core::ops::Deref for CLKDIV_R {
-    type Target = crate::FieldReader<u8, CLKDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CLKDIV` writer - CLKDIV
-pub struct CLKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKDIV_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CLKDIV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Internal RNG clock after divider is similar to incoming RNG clock
+#[doc = "Field `CLKDIV` writer - CLKDIV"]
+pub type CLKDIV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, CLKDIV_A, 4, O>;
+impl<'a, const O: u8> CLKDIV_W<'a, O> {
+    #[doc = "Internal RNG clock after divider is similar to incoming RNG clock"]
     #[inline(always)]
     pub fn no_div(self) -> &'a mut W {
-        self.variant(CLKDIV_A::NODIV)
+        self.variant(CLKDIV_A::NoDiv)
     }
-    ///Divide RNG clock by 2^1
+    #[doc = "Divide RNG clock by 2^1"]
     #[inline(always)]
     pub fn div_2_1(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_1)
+        self.variant(CLKDIV_A::Div21)
     }
-    ///Divide RNG clock by 2^2
+    #[doc = "Divide RNG clock by 2^2"]
     #[inline(always)]
     pub fn div_2_2(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_2)
+        self.variant(CLKDIV_A::Div22)
     }
-    ///Divide RNG clock by 2^3
+    #[doc = "Divide RNG clock by 2^3"]
     #[inline(always)]
     pub fn div_2_3(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_3)
+        self.variant(CLKDIV_A::Div23)
     }
-    ///Divide RNG clock by 2^4
+    #[doc = "Divide RNG clock by 2^4"]
     #[inline(always)]
     pub fn div_2_4(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_4)
+        self.variant(CLKDIV_A::Div24)
     }
-    ///Divide RNG clock by 2^5
+    #[doc = "Divide RNG clock by 2^5"]
     #[inline(always)]
     pub fn div_2_5(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_5)
+        self.variant(CLKDIV_A::Div25)
     }
-    ///Divide RNG clock by 2^6
+    #[doc = "Divide RNG clock by 2^6"]
     #[inline(always)]
     pub fn div_2_6(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_6)
+        self.variant(CLKDIV_A::Div26)
     }
-    ///Divide RNG clock by 2^7
+    #[doc = "Divide RNG clock by 2^7"]
     #[inline(always)]
     pub fn div_2_7(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_7)
+        self.variant(CLKDIV_A::Div27)
     }
-    ///Divide RNG clock by 2^8
+    #[doc = "Divide RNG clock by 2^8"]
     #[inline(always)]
     pub fn div_2_8(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_8)
+        self.variant(CLKDIV_A::Div28)
     }
-    ///Divide RNG clock by 2^9
+    #[doc = "Divide RNG clock by 2^9"]
     #[inline(always)]
     pub fn div_2_9(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_9)
+        self.variant(CLKDIV_A::Div29)
     }
-    ///Divide RNG clock by 2^10
+    #[doc = "Divide RNG clock by 2^10"]
     #[inline(always)]
     pub fn div_2_10(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_10)
+        self.variant(CLKDIV_A::Div210)
     }
-    ///Divide RNG clock by 2^11
+    #[doc = "Divide RNG clock by 2^11"]
     #[inline(always)]
     pub fn div_2_11(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_11)
+        self.variant(CLKDIV_A::Div211)
     }
-    ///Divide RNG clock by 2^12
+    #[doc = "Divide RNG clock by 2^12"]
     #[inline(always)]
     pub fn div_2_12(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_12)
+        self.variant(CLKDIV_A::Div212)
     }
-    ///Divide RNG clock by 2^13
+    #[doc = "Divide RNG clock by 2^13"]
     #[inline(always)]
     pub fn div_2_13(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_13)
+        self.variant(CLKDIV_A::Div213)
     }
-    ///Divide RNG clock by 2^14
+    #[doc = "Divide RNG clock by 2^14"]
     #[inline(always)]
     pub fn div_2_14(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_14)
+        self.variant(CLKDIV_A::Div214)
     }
-    ///Divide RNG clock by 2^15
+    #[doc = "Divide RNG clock by 2^15"]
     #[inline(always)]
     pub fn div_2_15(self) -> &'a mut W {
-        self.variant(CLKDIV_A::DIV_2_15)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
+        self.variant(CLKDIV_A::Div215)
     }
 }
-///RNG_CONFIG1
-///
-///Value on reset: 8
+#[doc = "RNG_CONFIG1\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RNG_CONFIG1_A {
-    ///15: Recommended value for config A (NIST certifiable)
-    CONFIGA = 15,
-    ///24: Recommended value for config B (not NIST certifiable)
-    CONFIGB = 24,
+    #[doc = "15: Recommended value for config A (NIST certifiable)"]
+    ConfigA = 15,
+    #[doc = "24: Recommended value for config B (not NIST certifiable)"]
+    ConfigB = 24,
 }
 impl From<RNG_CONFIG1_A> for u8 {
     #[inline(always)]
@@ -791,113 +576,57 @@ impl From<RNG_CONFIG1_A> for u8 {
         variant as _
     }
 }
-///Field `RNG_CONFIG1` reader - RNG_CONFIG1
-pub struct RNG_CONFIG1_R(crate::FieldReader<u8, RNG_CONFIG1_A>);
+#[doc = "Field `RNG_CONFIG1` reader - RNG_CONFIG1"]
+pub type RNG_CONFIG1_R = crate::FieldReader<u8, RNG_CONFIG1_A>;
 impl RNG_CONFIG1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RNG_CONFIG1_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RNG_CONFIG1_A> {
         match self.bits {
-            15 => Some(RNG_CONFIG1_A::CONFIGA),
-            24 => Some(RNG_CONFIG1_A::CONFIGB),
+            15 => Some(RNG_CONFIG1_A::ConfigA),
+            24 => Some(RNG_CONFIG1_A::ConfigB),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `CONFIGA`
+    #[doc = "Checks if the value of the field is `ConfigA`"]
     #[inline(always)]
     pub fn is_config_a(&self) -> bool {
-        **self == RNG_CONFIG1_A::CONFIGA
+        *self == RNG_CONFIG1_A::ConfigA
     }
-    ///Checks if the value of the field is `CONFIGB`
+    #[doc = "Checks if the value of the field is `ConfigB`"]
     #[inline(always)]
     pub fn is_config_b(&self) -> bool {
-        **self == RNG_CONFIG1_A::CONFIGB
+        *self == RNG_CONFIG1_A::ConfigB
     }
 }
-impl core::ops::Deref for RNG_CONFIG1_R {
-    type Target = crate::FieldReader<u8, RNG_CONFIG1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNG_CONFIG1` writer - RNG_CONFIG1
-pub struct RNG_CONFIG1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNG_CONFIG1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNG_CONFIG1_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Recommended value for config A (NIST certifiable)
+#[doc = "Field `RNG_CONFIG1` writer - RNG_CONFIG1"]
+pub type RNG_CONFIG1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CR_SPEC, u8, RNG_CONFIG1_A, 6, O>;
+impl<'a, const O: u8> RNG_CONFIG1_W<'a, O> {
+    #[doc = "Recommended value for config A (NIST certifiable)"]
     #[inline(always)]
     pub fn config_a(self) -> &'a mut W {
-        self.variant(RNG_CONFIG1_A::CONFIGA)
+        self.variant(RNG_CONFIG1_A::ConfigA)
     }
-    ///Recommended value for config B (not NIST certifiable)
+    #[doc = "Recommended value for config B (not NIST certifiable)"]
     #[inline(always)]
     pub fn config_b(self) -> &'a mut W {
-        self.variant(RNG_CONFIG1_A::CONFIGB)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 20)) | ((value as u32 & 0x3f) << 20);
-        self.w
+        self.variant(RNG_CONFIG1_A::ConfigB)
     }
 }
-///Field `CONDRST` reader - Conditioning soft reset
-pub struct CONDRST_R(crate::FieldReader<bool, bool>);
-impl CONDRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CONDRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONDRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CONDRST` writer - Conditioning soft reset
-pub struct CONDRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONDRST_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
-///CONFIGLOCK
-///
-///Value on reset: 0
+#[doc = "Field `CONDRST` reader - Conditioning soft reset"]
+pub type CONDRST_R = crate::BitReader<bool>;
+#[doc = "Field `CONDRST` writer - Conditioning soft reset"]
+pub type CONDRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
+#[doc = "CONFIGLOCK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONFIGLOCK_A {
-    ///0: Writes to the RNG_CR configuration bits \[29:4\]
-    ///are allowed
-    ENABLED = 0,
-    ///1: Writes to the RNG_CR configuration bits \[29:4\]
-    ///are ignored until the next RNG reset
-    DISABLED = 1,
+    #[doc = "0: Writes to the RNG_CR configuration bits \\[29:4\\]
+are allowed"]
+    Enabled = 0,
+    #[doc = "1: Writes to the RNG_CR configuration bits \\[29:4\\]
+are ignored until the next RNG reset"]
+    Disabled = 1,
 }
 impl From<CONFIGLOCK_A> for bool {
     #[inline(always)]
@@ -905,205 +634,168 @@ impl From<CONFIGLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CONFIGLOCK` reader - CONFIGLOCK
-pub struct CONFIGLOCK_R(crate::FieldReader<bool, CONFIGLOCK_A>);
+#[doc = "Field `CONFIGLOCK` reader - CONFIGLOCK"]
+pub type CONFIGLOCK_R = crate::BitReader<CONFIGLOCK_A>;
 impl CONFIGLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CONFIGLOCK_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CONFIGLOCK_A {
         match self.bits {
-            false => CONFIGLOCK_A::ENABLED,
-            true => CONFIGLOCK_A::DISABLED,
+            false => CONFIGLOCK_A::Enabled,
+            true => CONFIGLOCK_A::Disabled,
         }
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CONFIGLOCK_A::ENABLED
+        *self == CONFIGLOCK_A::Enabled
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CONFIGLOCK_A::DISABLED
+        *self == CONFIGLOCK_A::Disabled
     }
 }
-impl core::ops::Deref for CONFIGLOCK_R {
-    type Target = crate::FieldReader<bool, CONFIGLOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CONFIGLOCK` writer - CONFIGLOCK
-pub struct CONFIGLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONFIGLOCK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CONFIGLOCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Writes to the RNG_CR configuration bits \[29:4\]
-    ///are allowed
+#[doc = "Field `CONFIGLOCK` writer - CONFIGLOCK"]
+pub type CONFIGLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, CONFIGLOCK_A, O>;
+impl<'a, const O: u8> CONFIGLOCK_W<'a, O> {
+    #[doc = "Writes to the RNG_CR configuration bits \\[29:4\\]
+are allowed"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CONFIGLOCK_A::ENABLED)
+        self.variant(CONFIGLOCK_A::Enabled)
     }
-    ///Writes to the RNG_CR configuration bits \[29:4\]
-    ///are ignored until the next RNG reset
+    #[doc = "Writes to the RNG_CR configuration bits \\[29:4\\]
+are ignored until the next RNG reset"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CONFIGLOCK_A::DISABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
+        self.variant(CONFIGLOCK_A::Disabled)
     }
 }
 impl R {
-    ///Bit 2 - True random number generator enable
+    #[doc = "Bit 2 - True random number generator enable"]
     #[inline(always)]
     pub fn rngen(&self) -> RNGEN_R {
-        RNGEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        RNGEN_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 3 - Interrupt Enable
+    #[doc = "Bit 3 - Interrupt Enable"]
     #[inline(always)]
     pub fn ie(&self) -> IE_R {
-        IE_R::new(((self.bits >> 3) & 0x01) != 0)
+        IE_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 5 - Interrupt Enable
+    #[doc = "Bit 5 - Interrupt Enable"]
     #[inline(always)]
     pub fn ced(&self) -> CED_R {
-        CED_R::new(((self.bits >> 5) & 0x01) != 0)
+        CED_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bits 8:11 - RNG_CONFIG3
+    #[doc = "Bits 8:11 - RNG_CONFIG3"]
     #[inline(always)]
     pub fn rng_config3(&self) -> RNG_CONFIG3_R {
         RNG_CONFIG3_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    ///Bit 12 - NISTC
+    #[doc = "Bit 12 - NISTC"]
     #[inline(always)]
     pub fn nistc(&self) -> NISTC_R {
-        NISTC_R::new(((self.bits >> 12) & 0x01) != 0)
+        NISTC_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bits 13:15 - RNG_CONFIG2
+    #[doc = "Bits 13:15 - RNG_CONFIG2"]
     #[inline(always)]
     pub fn rng_config2(&self) -> RNG_CONFIG2_R {
-        RNG_CONFIG2_R::new(((self.bits >> 13) & 0x07) as u8)
+        RNG_CONFIG2_R::new(((self.bits >> 13) & 7) as u8)
     }
-    ///Bits 16:19 - CLKDIV
+    #[doc = "Bits 16:19 - CLKDIV"]
     #[inline(always)]
     pub fn clkdiv(&self) -> CLKDIV_R {
         CLKDIV_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    ///Bits 20:25 - RNG_CONFIG1
+    #[doc = "Bits 20:25 - RNG_CONFIG1"]
     #[inline(always)]
     pub fn rng_config1(&self) -> RNG_CONFIG1_R {
         RNG_CONFIG1_R::new(((self.bits >> 20) & 0x3f) as u8)
     }
-    ///Bit 30 - Conditioning soft reset
+    #[doc = "Bit 30 - Conditioning soft reset"]
     #[inline(always)]
     pub fn condrst(&self) -> CONDRST_R {
-        CONDRST_R::new(((self.bits >> 30) & 0x01) != 0)
+        CONDRST_R::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 31 - CONFIGLOCK
+    #[doc = "Bit 31 - CONFIGLOCK"]
     #[inline(always)]
     pub fn configlock(&self) -> CONFIGLOCK_R {
-        CONFIGLOCK_R::new(((self.bits >> 31) & 0x01) != 0)
+        CONFIGLOCK_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 2 - True random number generator enable
+    #[doc = "Bit 2 - True random number generator enable"]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RNGEN_W {
-        RNGEN_W { w: self }
+    pub fn rngen(&mut self) -> RNGEN_W<2> {
+        RNGEN_W::new(self)
     }
-    ///Bit 3 - Interrupt Enable
+    #[doc = "Bit 3 - Interrupt Enable"]
     #[inline(always)]
-    pub fn ie(&mut self) -> IE_W {
-        IE_W { w: self }
+    pub fn ie(&mut self) -> IE_W<3> {
+        IE_W::new(self)
     }
-    ///Bit 5 - Interrupt Enable
+    #[doc = "Bit 5 - Interrupt Enable"]
     #[inline(always)]
-    pub fn ced(&mut self) -> CED_W {
-        CED_W { w: self }
+    pub fn ced(&mut self) -> CED_W<5> {
+        CED_W::new(self)
     }
-    ///Bits 8:11 - RNG_CONFIG3
+    #[doc = "Bits 8:11 - RNG_CONFIG3"]
     #[inline(always)]
-    pub fn rng_config3(&mut self) -> RNG_CONFIG3_W {
-        RNG_CONFIG3_W { w: self }
+    pub fn rng_config3(&mut self) -> RNG_CONFIG3_W<8> {
+        RNG_CONFIG3_W::new(self)
     }
-    ///Bit 12 - NISTC
+    #[doc = "Bit 12 - NISTC"]
     #[inline(always)]
-    pub fn nistc(&mut self) -> NISTC_W {
-        NISTC_W { w: self }
+    pub fn nistc(&mut self) -> NISTC_W<12> {
+        NISTC_W::new(self)
     }
-    ///Bits 13:15 - RNG_CONFIG2
+    #[doc = "Bits 13:15 - RNG_CONFIG2"]
     #[inline(always)]
-    pub fn rng_config2(&mut self) -> RNG_CONFIG2_W {
-        RNG_CONFIG2_W { w: self }
+    pub fn rng_config2(&mut self) -> RNG_CONFIG2_W<13> {
+        RNG_CONFIG2_W::new(self)
     }
-    ///Bits 16:19 - CLKDIV
+    #[doc = "Bits 16:19 - CLKDIV"]
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> CLKDIV_W {
-        CLKDIV_W { w: self }
+    pub fn clkdiv(&mut self) -> CLKDIV_W<16> {
+        CLKDIV_W::new(self)
     }
-    ///Bits 20:25 - RNG_CONFIG1
+    #[doc = "Bits 20:25 - RNG_CONFIG1"]
     #[inline(always)]
-    pub fn rng_config1(&mut self) -> RNG_CONFIG1_W {
-        RNG_CONFIG1_W { w: self }
+    pub fn rng_config1(&mut self) -> RNG_CONFIG1_W<20> {
+        RNG_CONFIG1_W::new(self)
     }
-    ///Bit 30 - Conditioning soft reset
+    #[doc = "Bit 30 - Conditioning soft reset"]
     #[inline(always)]
-    pub fn condrst(&mut self) -> CONDRST_W {
-        CONDRST_W { w: self }
+    pub fn condrst(&mut self) -> CONDRST_W<30> {
+        CONDRST_W::new(self)
     }
-    ///Bit 31 - CONFIGLOCK
+    #[doc = "Bit 31 - CONFIGLOCK"]
     #[inline(always)]
-    pub fn configlock(&mut self) -> CONFIGLOCK_W {
-        CONFIGLOCK_W { w: self }
+    pub fn configlock(&mut self) -> CONFIGLOCK_W<31> {
+        CONFIGLOCK_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr](index.html) module
+#[doc = "control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](index.html) module"]
 pub struct CR_SPEC;
 impl crate::RegisterSpec for CR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr::R](R) reader structure
+#[doc = "`read()` method returns [cr::R](R) reader structure"]
 impl crate::Readable for CR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR to value 0x0080_0000
+#[doc = "`reset()` method sets CR to value 0x0080_0000"]
 impl crate::Resettable for CR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

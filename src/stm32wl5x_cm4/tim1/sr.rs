@@ -1,4 +1,4 @@
-///Register `SR` reader
+#[doc = "Register `SR` reader"]
 pub struct R(crate::R<SR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SR` writer
+#[doc = "Register `SR` writer"]
 pub struct W(crate::W<SR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SR_SPEC>;
@@ -34,91 +34,29 @@ impl From<crate::W<SR_SPEC>> for W {
         W(writer)
     }
 }
-///Compare 6 interrupt flag
-pub type CC6IF_A = CC1IF_A;
-///Field `CC6IF` reader - Compare 6 interrupt flag
-pub type CC6IF_R = CC1IF_R;
-///Compare 6 interrupt flag
-pub type CC6IF_AW = CC1IF_AW;
-///Field `CC6IF` writer - Compare 6 interrupt flag
-pub struct CC6IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC6IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC6IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC6IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///Compare 5 interrupt flag
-pub type CC5IF_A = CC1IF_A;
-///Field `CC5IF` reader - Compare 5 interrupt flag
-pub type CC5IF_R = CC1IF_R;
-///Compare 5 interrupt flag
-pub type CC5IF_AW = CC1IF_AW;
-///Field `CC5IF` writer - Compare 5 interrupt flag
-pub struct CC5IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC5IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC5IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC5IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
-///System Break interrupt flag
-///
-///Value on reset: 0
+#[doc = "Compare 6 interrupt flag"]
+pub use CC1IF_A as CC6IF_A;
+#[doc = "Compare 5 interrupt flag"]
+pub use CC1IF_A as CC5IF_A;
+#[doc = "Compare 6 interrupt flag"]
+pub use CC1IF_AW as CC6IF_AW;
+#[doc = "Compare 5 interrupt flag"]
+pub use CC1IF_AW as CC5IF_AW;
+#[doc = "Field `CC6IF` reader - Compare 6 interrupt flag"]
+pub use CC1IF_R as CC6IF_R;
+#[doc = "Field `CC5IF` reader - Compare 5 interrupt flag"]
+pub use CC1IF_R as CC5IF_R;
+#[doc = "Field `CC6IF` writer - Compare 6 interrupt flag"]
+pub use CC1IF_W as CC6IF_W;
+#[doc = "Field `CC5IF` writer - Compare 5 interrupt flag"]
+pub use CC1IF_W as CC5IF_W;
+#[doc = "System Break interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBIF_A {
-    ///0: No break event occurred
-    NOTRIGGER = 0,
-    ///1: An active level has been detected on the system break input. An interrupt is generated if BIE=1 in the TIMx_DIER register
-    TRIGGER = 1,
+    #[doc = "0: No break event occurred"]
+    NoTrigger = 0,
+    #[doc = "1: An active level has been detected on the system break input. An interrupt is generated if BIE=1 in the TIMx_DIER register"]
+    Trigger = 1,
 }
 impl From<SBIF_A> for bool {
     #[inline(always)]
@@ -126,45 +64,33 @@ impl From<SBIF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SBIF` reader - System Break interrupt flag
-pub struct SBIF_R(crate::FieldReader<bool, SBIF_A>);
+#[doc = "Field `SBIF` reader - System Break interrupt flag"]
+pub type SBIF_R = crate::BitReader<SBIF_A>;
 impl SBIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SBIF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SBIF_A {
         match self.bits {
-            false => SBIF_A::NOTRIGGER,
-            true => SBIF_A::TRIGGER,
+            false => SBIF_A::NoTrigger,
+            true => SBIF_A::Trigger,
         }
     }
-    ///Checks if the value of the field is `NOTRIGGER`
+    #[doc = "Checks if the value of the field is `NoTrigger`"]
     #[inline(always)]
     pub fn is_no_trigger(&self) -> bool {
-        **self == SBIF_A::NOTRIGGER
+        *self == SBIF_A::NoTrigger
     }
-    ///Checks if the value of the field is `TRIGGER`
+    #[doc = "Checks if the value of the field is `Trigger`"]
     #[inline(always)]
     pub fn is_trigger(&self) -> bool {
-        **self == SBIF_A::TRIGGER
+        *self == SBIF_A::Trigger
     }
 }
-impl core::ops::Deref for SBIF_R {
-    type Target = crate::FieldReader<bool, SBIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///System Break interrupt flag
-///
-///Value on reset: 0
+#[doc = "System Break interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBIF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<SBIF_AW> for bool {
     #[inline(always)]
@@ -172,161 +98,46 @@ impl From<SBIF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `SBIF` writer - System Break interrupt flag
-pub struct SBIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SBIF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SBIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `SBIF` writer - System Break interrupt flag"]
+pub type SBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, SBIF_AW, O>;
+impl<'a, const O: u8> SBIF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(SBIF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
+        self.variant(SBIF_AW::Clear)
     }
 }
-///Capture/Compare 4 overcapture flag
-pub type CC4OF_A = CC1OF_A;
-///Field `CC4OF` reader - Capture/Compare 4 overcapture flag
-pub type CC4OF_R = CC1OF_R;
-///Capture/Compare 4 overcapture flag
-pub type CC4OF_AW = CC1OF_AW;
-///Field `CC4OF` writer - Capture/Compare 4 overcapture flag
-pub struct CC4OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC4OF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC4OF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC4OF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///Capture/Compare 3 overcapture flag
-pub type CC3OF_A = CC1OF_A;
-///Field `CC3OF` reader - Capture/Compare 3 overcapture flag
-pub type CC3OF_R = CC1OF_R;
-///Capture/Compare 3 overcapture flag
-pub type CC3OF_AW = CC1OF_AW;
-///Field `CC3OF` writer - Capture/Compare 3 overcapture flag
-pub struct CC3OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC3OF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC3OF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC3OF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///Capture/Compare 2 overcapture flag
-pub type CC2OF_A = CC1OF_A;
-///Field `CC2OF` reader - Capture/Compare 2 overcapture flag
-pub type CC2OF_R = CC1OF_R;
-///Capture/Compare 2 overcapture flag
-pub type CC2OF_AW = CC1OF_AW;
-///Field `CC2OF` writer - Capture/Compare 2 overcapture flag
-pub struct CC2OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC2OF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC2OF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC2OF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
-///Capture/Compare 1 overcapture flag
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 4 overcapture flag"]
+pub use CC1OF_A as CC4OF_A;
+#[doc = "Capture/Compare 3 overcapture flag"]
+pub use CC1OF_A as CC3OF_A;
+#[doc = "Capture/Compare 2 overcapture flag"]
+pub use CC1OF_A as CC2OF_A;
+#[doc = "Capture/Compare 4 overcapture flag"]
+pub use CC1OF_AW as CC4OF_AW;
+#[doc = "Capture/Compare 3 overcapture flag"]
+pub use CC1OF_AW as CC3OF_AW;
+#[doc = "Capture/Compare 2 overcapture flag"]
+pub use CC1OF_AW as CC2OF_AW;
+#[doc = "Field `CC4OF` reader - Capture/Compare 4 overcapture flag"]
+pub use CC1OF_R as CC4OF_R;
+#[doc = "Field `CC3OF` reader - Capture/Compare 3 overcapture flag"]
+pub use CC1OF_R as CC3OF_R;
+#[doc = "Field `CC2OF` reader - Capture/Compare 2 overcapture flag"]
+pub use CC1OF_R as CC2OF_R;
+#[doc = "Field `CC4OF` writer - Capture/Compare 4 overcapture flag"]
+pub use CC1OF_W as CC4OF_W;
+#[doc = "Field `CC3OF` writer - Capture/Compare 3 overcapture flag"]
+pub use CC1OF_W as CC3OF_W;
+#[doc = "Field `CC2OF` writer - Capture/Compare 2 overcapture flag"]
+pub use CC1OF_W as CC2OF_W;
+#[doc = "Capture/Compare 1 overcapture flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1OF_A {
-    ///0: No overcapture has been detected
-    NOOVERCAPTURE = 0,
-    ///1: The counter value has been captured in TIMx_CCRx register while CCxIF flag was already set
-    OVERCAPTURE = 1,
+    #[doc = "0: No overcapture has been detected"]
+    NoOvercapture = 0,
+    #[doc = "1: The counter value has been captured in TIMx_CCRx register while CCxIF flag was already set"]
+    Overcapture = 1,
 }
 impl From<CC1OF_A> for bool {
     #[inline(always)]
@@ -334,45 +145,33 @@ impl From<CC1OF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1OF` reader - Capture/Compare 1 overcapture flag
-pub struct CC1OF_R(crate::FieldReader<bool, CC1OF_A>);
+#[doc = "Field `CC1OF` reader - Capture/Compare 1 overcapture flag"]
+pub type CC1OF_R = crate::BitReader<CC1OF_A>;
 impl CC1OF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1OF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1OF_A {
         match self.bits {
-            false => CC1OF_A::NOOVERCAPTURE,
-            true => CC1OF_A::OVERCAPTURE,
+            false => CC1OF_A::NoOvercapture,
+            true => CC1OF_A::Overcapture,
         }
     }
-    ///Checks if the value of the field is `NOOVERCAPTURE`
+    #[doc = "Checks if the value of the field is `NoOvercapture`"]
     #[inline(always)]
     pub fn is_no_overcapture(&self) -> bool {
-        **self == CC1OF_A::NOOVERCAPTURE
+        *self == CC1OF_A::NoOvercapture
     }
-    ///Checks if the value of the field is `OVERCAPTURE`
+    #[doc = "Checks if the value of the field is `Overcapture`"]
     #[inline(always)]
     pub fn is_overcapture(&self) -> bool {
-        **self == CC1OF_A::OVERCAPTURE
+        *self == CC1OF_A::Overcapture
     }
 }
-impl core::ops::Deref for CC1OF_R {
-    type Target = crate::FieldReader<bool, CC1OF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Capture/Compare 1 overcapture flag
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 overcapture flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1OF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<CC1OF_AW> for bool {
     #[inline(always)]
@@ -380,47 +179,22 @@ impl From<CC1OF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1OF` writer - Capture/Compare 1 overcapture flag
-pub struct CC1OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1OF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1OF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `CC1OF` writer - Capture/Compare 1 overcapture flag"]
+pub type CC1OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, CC1OF_AW, O>;
+impl<'a, const O: u8> CC1OF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CC1OF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(CC1OF_AW::Clear)
     }
 }
-///Break 2 interrupt flag
-///
-///Value on reset: 0
+#[doc = "Break 2 interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum B2IF_A {
-    ///0: No break event occurred
-    NOTRIGGER = 0,
-    ///1: An active level has been detected on the break 2 input. An interrupt is generated if BIE=1 in the TIMx_DIER register
-    TRIGGER = 1,
+    #[doc = "0: No break event occurred"]
+    NoTrigger = 0,
+    #[doc = "1: An active level has been detected on the break 2 input. An interrupt is generated if BIE=1 in the TIMx_DIER register"]
+    Trigger = 1,
 }
 impl From<B2IF_A> for bool {
     #[inline(always)]
@@ -428,45 +202,33 @@ impl From<B2IF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `B2IF` reader - Break 2 interrupt flag
-pub struct B2IF_R(crate::FieldReader<bool, B2IF_A>);
+#[doc = "Field `B2IF` reader - Break 2 interrupt flag"]
+pub type B2IF_R = crate::BitReader<B2IF_A>;
 impl B2IF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        B2IF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> B2IF_A {
         match self.bits {
-            false => B2IF_A::NOTRIGGER,
-            true => B2IF_A::TRIGGER,
+            false => B2IF_A::NoTrigger,
+            true => B2IF_A::Trigger,
         }
     }
-    ///Checks if the value of the field is `NOTRIGGER`
+    #[doc = "Checks if the value of the field is `NoTrigger`"]
     #[inline(always)]
     pub fn is_no_trigger(&self) -> bool {
-        **self == B2IF_A::NOTRIGGER
+        *self == B2IF_A::NoTrigger
     }
-    ///Checks if the value of the field is `TRIGGER`
+    #[doc = "Checks if the value of the field is `Trigger`"]
     #[inline(always)]
     pub fn is_trigger(&self) -> bool {
-        **self == B2IF_A::TRIGGER
+        *self == B2IF_A::Trigger
     }
 }
-impl core::ops::Deref for B2IF_R {
-    type Target = crate::FieldReader<bool, B2IF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Break 2 interrupt flag
-///
-///Value on reset: 0
+#[doc = "Break 2 interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum B2IF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<B2IF_AW> for bool {
     #[inline(always)]
@@ -474,47 +236,22 @@ impl From<B2IF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `B2IF` writer - Break 2 interrupt flag
-pub struct B2IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> B2IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: B2IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `B2IF` writer - Break 2 interrupt flag"]
+pub type B2IF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, B2IF_AW, O>;
+impl<'a, const O: u8> B2IF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(B2IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(B2IF_AW::Clear)
     }
 }
-///Break interrupt flag
-///
-///Value on reset: 0
+#[doc = "Break interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIF_A {
-    ///0: No break event occurred
-    NOTRIGGER = 0,
-    ///1: An active level has been detected on the break input. An interrupt is generated if BIE=1 in the TIMx_DIER register
-    TRIGGER = 1,
+    #[doc = "0: No break event occurred"]
+    NoTrigger = 0,
+    #[doc = "1: An active level has been detected on the break input. An interrupt is generated if BIE=1 in the TIMx_DIER register"]
+    Trigger = 1,
 }
 impl From<BIF_A> for bool {
     #[inline(always)]
@@ -522,45 +259,33 @@ impl From<BIF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BIF` reader - Break interrupt flag
-pub struct BIF_R(crate::FieldReader<bool, BIF_A>);
+#[doc = "Field `BIF` reader - Break interrupt flag"]
+pub type BIF_R = crate::BitReader<BIF_A>;
 impl BIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BIF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BIF_A {
         match self.bits {
-            false => BIF_A::NOTRIGGER,
-            true => BIF_A::TRIGGER,
+            false => BIF_A::NoTrigger,
+            true => BIF_A::Trigger,
         }
     }
-    ///Checks if the value of the field is `NOTRIGGER`
+    #[doc = "Checks if the value of the field is `NoTrigger`"]
     #[inline(always)]
     pub fn is_no_trigger(&self) -> bool {
-        **self == BIF_A::NOTRIGGER
+        *self == BIF_A::NoTrigger
     }
-    ///Checks if the value of the field is `TRIGGER`
+    #[doc = "Checks if the value of the field is `Trigger`"]
     #[inline(always)]
     pub fn is_trigger(&self) -> bool {
-        **self == BIF_A::TRIGGER
+        *self == BIF_A::Trigger
     }
 }
-impl core::ops::Deref for BIF_R {
-    type Target = crate::FieldReader<bool, BIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Break interrupt flag
-///
-///Value on reset: 0
+#[doc = "Break interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BIF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<BIF_AW> for bool {
     #[inline(always)]
@@ -568,47 +293,22 @@ impl From<BIF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `BIF` writer - Break interrupt flag
-pub struct BIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `BIF` writer - Break interrupt flag"]
+pub type BIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, BIF_AW, O>;
+impl<'a, const O: u8> BIF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(BIF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(BIF_AW::Clear)
     }
 }
-///Trigger interrupt flag
-///
-///Value on reset: 0
+#[doc = "Trigger interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF_A {
-    ///0: No trigger event occurred
-    NOTRIGGER = 0,
-    ///1: Trigger interrupt pending
-    TRIGGER = 1,
+    #[doc = "0: No trigger event occurred"]
+    NoTrigger = 0,
+    #[doc = "1: Trigger interrupt pending"]
+    Trigger = 1,
 }
 impl From<TIF_A> for bool {
     #[inline(always)]
@@ -616,45 +316,33 @@ impl From<TIF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TIF` reader - Trigger interrupt flag
-pub struct TIF_R(crate::FieldReader<bool, TIF_A>);
+#[doc = "Field `TIF` reader - Trigger interrupt flag"]
+pub type TIF_R = crate::BitReader<TIF_A>;
 impl TIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIF_A {
         match self.bits {
-            false => TIF_A::NOTRIGGER,
-            true => TIF_A::TRIGGER,
+            false => TIF_A::NoTrigger,
+            true => TIF_A::Trigger,
         }
     }
-    ///Checks if the value of the field is `NOTRIGGER`
+    #[doc = "Checks if the value of the field is `NoTrigger`"]
     #[inline(always)]
     pub fn is_no_trigger(&self) -> bool {
-        **self == TIF_A::NOTRIGGER
+        *self == TIF_A::NoTrigger
     }
-    ///Checks if the value of the field is `TRIGGER`
+    #[doc = "Checks if the value of the field is `Trigger`"]
     #[inline(always)]
     pub fn is_trigger(&self) -> bool {
-        **self == TIF_A::TRIGGER
+        *self == TIF_A::Trigger
     }
 }
-impl core::ops::Deref for TIF_R {
-    type Target = crate::FieldReader<bool, TIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Trigger interrupt flag
-///
-///Value on reset: 0
+#[doc = "Trigger interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<TIF_AW> for bool {
     #[inline(always)]
@@ -662,197 +350,50 @@ impl From<TIF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `TIF` writer - Trigger interrupt flag
-pub struct TIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `TIF` writer - Trigger interrupt flag"]
+pub type TIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, TIF_AW, O>;
+impl<'a, const O: u8> TIF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TIF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(TIF_AW::Clear)
     }
 }
-///Field `COMIF` reader - COM interrupt flag
-pub struct COMIF_R(crate::FieldReader<bool, bool>);
-impl COMIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMIF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMIF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `COMIF` writer - COM interrupt flag
-pub struct COMIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMIF_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///Capture/Compare 4 interrupt flag
-pub type CC4IF_A = CC1IF_A;
-///Field `CC4IF` reader - Capture/Compare 4 interrupt flag
-pub type CC4IF_R = CC1IF_R;
-///Capture/Compare 4 interrupt flag
-pub type CC4IF_AW = CC1IF_AW;
-///Field `CC4IF` writer - Capture/Compare 4 interrupt flag
-pub struct CC4IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC4IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC4IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC4IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
-///Capture/Compare 3 interrupt flag
-pub type CC3IF_A = CC1IF_A;
-///Field `CC3IF` reader - Capture/Compare 3 interrupt flag
-pub type CC3IF_R = CC1IF_R;
-///Capture/Compare 3 interrupt flag
-pub type CC3IF_AW = CC1IF_AW;
-///Field `CC3IF` writer - Capture/Compare 3 interrupt flag
-pub struct CC3IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC3IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC3IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC3IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///Capture/Compare 2 interrupt flag
-pub type CC2IF_A = CC1IF_A;
-///Field `CC2IF` reader - Capture/Compare 2 interrupt flag
-pub type CC2IF_R = CC1IF_R;
-///Capture/Compare 2 interrupt flag
-pub type CC2IF_AW = CC1IF_AW;
-///Field `CC2IF` writer - Capture/Compare 2 interrupt flag
-pub struct CC2IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC2IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC2IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CC2IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///Capture/Compare 1 interrupt flag
-///
-///Value on reset: 0
+#[doc = "Field `COMIF` reader - COM interrupt flag"]
+pub type COMIF_R = crate::BitReader<bool>;
+#[doc = "Field `COMIF` writer - COM interrupt flag"]
+pub type COMIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, bool, O>;
+#[doc = "Capture/Compare 4 interrupt flag"]
+pub use CC1IF_A as CC4IF_A;
+#[doc = "Capture/Compare 3 interrupt flag"]
+pub use CC1IF_A as CC3IF_A;
+#[doc = "Capture/Compare 2 interrupt flag"]
+pub use CC1IF_A as CC2IF_A;
+#[doc = "Capture/Compare 4 interrupt flag"]
+pub use CC1IF_AW as CC4IF_AW;
+#[doc = "Capture/Compare 3 interrupt flag"]
+pub use CC1IF_AW as CC3IF_AW;
+#[doc = "Capture/Compare 2 interrupt flag"]
+pub use CC1IF_AW as CC2IF_AW;
+#[doc = "Field `CC4IF` reader - Capture/Compare 4 interrupt flag"]
+pub use CC1IF_R as CC4IF_R;
+#[doc = "Field `CC3IF` reader - Capture/Compare 3 interrupt flag"]
+pub use CC1IF_R as CC3IF_R;
+#[doc = "Field `CC2IF` reader - Capture/Compare 2 interrupt flag"]
+pub use CC1IF_R as CC2IF_R;
+#[doc = "Field `CC4IF` writer - Capture/Compare 4 interrupt flag"]
+pub use CC1IF_W as CC4IF_W;
+#[doc = "Field `CC3IF` writer - Capture/Compare 3 interrupt flag"]
+pub use CC1IF_W as CC3IF_W;
+#[doc = "Field `CC2IF` writer - Capture/Compare 2 interrupt flag"]
+pub use CC1IF_W as CC2IF_W;
+#[doc = "Capture/Compare 1 interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1IF_A {
-    ///0: No campture/compare has been detected
-    NOMATCH = 0,
-    ///1: If CC1 is an output: The content of the counter TIMx_CNT matches the content of the TIMx_CCR1 register. If CC1 is an input: The counter value has been captured in TIMx_CCR1 register
-    MATCH = 1,
+    #[doc = "0: No campture/compare has been detected"]
+    NoMatch = 0,
+    #[doc = "1: If CC1 is an output: The content of the counter TIMx_CNT matches the content of the TIMx_CCR1 register. If CC1 is an input: The counter value has been captured in TIMx_CCR1 register"]
+    Match = 1,
 }
 impl From<CC1IF_A> for bool {
     #[inline(always)]
@@ -860,45 +401,33 @@ impl From<CC1IF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1IF` reader - Capture/Compare 1 interrupt flag
-pub struct CC1IF_R(crate::FieldReader<bool, CC1IF_A>);
+#[doc = "Field `CC1IF` reader - Capture/Compare 1 interrupt flag"]
+pub type CC1IF_R = crate::BitReader<CC1IF_A>;
 impl CC1IF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1IF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CC1IF_A {
         match self.bits {
-            false => CC1IF_A::NOMATCH,
-            true => CC1IF_A::MATCH,
+            false => CC1IF_A::NoMatch,
+            true => CC1IF_A::Match,
         }
     }
-    ///Checks if the value of the field is `NOMATCH`
+    #[doc = "Checks if the value of the field is `NoMatch`"]
     #[inline(always)]
     pub fn is_no_match(&self) -> bool {
-        **self == CC1IF_A::NOMATCH
+        *self == CC1IF_A::NoMatch
     }
-    ///Checks if the value of the field is `MATCH`
+    #[doc = "Checks if the value of the field is `Match`"]
     #[inline(always)]
     pub fn is_match(&self) -> bool {
-        **self == CC1IF_A::MATCH
+        *self == CC1IF_A::Match
     }
 }
-impl core::ops::Deref for CC1IF_R {
-    type Target = crate::FieldReader<bool, CC1IF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Capture/Compare 1 interrupt flag
-///
-///Value on reset: 0
+#[doc = "Capture/Compare 1 interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CC1IF_AW {
-    ///0: Clear flag
-    CLEAR = 0,
+    #[doc = "0: Clear flag"]
+    Clear = 0,
 }
 impl From<CC1IF_AW> for bool {
     #[inline(always)]
@@ -906,47 +435,22 @@ impl From<CC1IF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CC1IF` writer - Capture/Compare 1 interrupt flag
-pub struct CC1IF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1IF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1IF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear flag
+#[doc = "Field `CC1IF` writer - Capture/Compare 1 interrupt flag"]
+pub type CC1IF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, CC1IF_AW, O>;
+impl<'a, const O: u8> CC1IF_W<'a, O> {
+    #[doc = "Clear flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CC1IF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(CC1IF_AW::Clear)
     }
 }
-///Update interrupt flag
-///
-///Value on reset: 0
+#[doc = "Update interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIF_A {
-    ///0: No update occurred
-    CLEAR = 0,
-    ///1: Update interrupt pending.
-    UPDATEPENDING = 1,
+    #[doc = "0: No update occurred"]
+    Clear = 0,
+    #[doc = "1: Update interrupt pending."]
+    UpdatePending = 1,
 }
 impl From<UIF_A> for bool {
     #[inline(always)]
@@ -954,263 +458,226 @@ impl From<UIF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `UIF` reader - Update interrupt flag
-pub struct UIF_R(crate::FieldReader<bool, UIF_A>);
+#[doc = "Field `UIF` reader - Update interrupt flag"]
+pub type UIF_R = crate::BitReader<UIF_A>;
 impl UIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UIF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UIF_A {
         match self.bits {
-            false => UIF_A::CLEAR,
-            true => UIF_A::UPDATEPENDING,
+            false => UIF_A::Clear,
+            true => UIF_A::UpdatePending,
         }
     }
-    ///Checks if the value of the field is `CLEAR`
+    #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == UIF_A::CLEAR
+        *self == UIF_A::Clear
     }
-    ///Checks if the value of the field is `UPDATEPENDING`
+    #[doc = "Checks if the value of the field is `UpdatePending`"]
     #[inline(always)]
     pub fn is_update_pending(&self) -> bool {
-        **self == UIF_A::UPDATEPENDING
+        *self == UIF_A::UpdatePending
     }
 }
-impl core::ops::Deref for UIF_R {
-    type Target = crate::FieldReader<bool, UIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `UIF` writer - Update interrupt flag
-pub struct UIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UIF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: UIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No update occurred
+#[doc = "Field `UIF` writer - Update interrupt flag"]
+pub type UIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, UIF_A, O>;
+impl<'a, const O: u8> UIF_W<'a, O> {
+    #[doc = "No update occurred"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(UIF_A::CLEAR)
+        self.variant(UIF_A::Clear)
     }
-    ///Update interrupt pending.
+    #[doc = "Update interrupt pending."]
     #[inline(always)]
     pub fn update_pending(self) -> &'a mut W {
-        self.variant(UIF_A::UPDATEPENDING)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(UIF_A::UpdatePending)
     }
 }
 impl R {
-    ///Bit 17 - Compare 6 interrupt flag
+    #[doc = "Bit 17 - Compare 6 interrupt flag"]
     #[inline(always)]
     pub fn cc6if(&self) -> CC6IF_R {
-        CC6IF_R::new(((self.bits >> 17) & 0x01) != 0)
+        CC6IF_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 16 - Compare 5 interrupt flag
+    #[doc = "Bit 16 - Compare 5 interrupt flag"]
     #[inline(always)]
     pub fn cc5if(&self) -> CC5IF_R {
-        CC5IF_R::new(((self.bits >> 16) & 0x01) != 0)
+        CC5IF_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 13 - System Break interrupt flag
+    #[doc = "Bit 13 - System Break interrupt flag"]
     #[inline(always)]
     pub fn sbif(&self) -> SBIF_R {
-        SBIF_R::new(((self.bits >> 13) & 0x01) != 0)
+        SBIF_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 12 - Capture/Compare 4 overcapture flag
+    #[doc = "Bit 12 - Capture/Compare 4 overcapture flag"]
     #[inline(always)]
     pub fn cc4of(&self) -> CC4OF_R {
-        CC4OF_R::new(((self.bits >> 12) & 0x01) != 0)
+        CC4OF_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - Capture/Compare 3 overcapture flag
+    #[doc = "Bit 11 - Capture/Compare 3 overcapture flag"]
     #[inline(always)]
     pub fn cc3of(&self) -> CC3OF_R {
-        CC3OF_R::new(((self.bits >> 11) & 0x01) != 0)
+        CC3OF_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - Capture/Compare 2 overcapture flag
+    #[doc = "Bit 10 - Capture/Compare 2 overcapture flag"]
     #[inline(always)]
     pub fn cc2of(&self) -> CC2OF_R {
-        CC2OF_R::new(((self.bits >> 10) & 0x01) != 0)
+        CC2OF_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 9 - Capture/Compare 1 overcapture flag
+    #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
     #[inline(always)]
     pub fn cc1of(&self) -> CC1OF_R {
-        CC1OF_R::new(((self.bits >> 9) & 0x01) != 0)
+        CC1OF_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - Break 2 interrupt flag
+    #[doc = "Bit 8 - Break 2 interrupt flag"]
     #[inline(always)]
     pub fn b2if(&self) -> B2IF_R {
-        B2IF_R::new(((self.bits >> 8) & 0x01) != 0)
+        B2IF_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 7 - Break interrupt flag
+    #[doc = "Bit 7 - Break interrupt flag"]
     #[inline(always)]
     pub fn bif(&self) -> BIF_R {
-        BIF_R::new(((self.bits >> 7) & 0x01) != 0)
+        BIF_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 6 - Trigger interrupt flag
+    #[doc = "Bit 6 - Trigger interrupt flag"]
     #[inline(always)]
     pub fn tif(&self) -> TIF_R {
-        TIF_R::new(((self.bits >> 6) & 0x01) != 0)
+        TIF_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - COM interrupt flag
+    #[doc = "Bit 5 - COM interrupt flag"]
     #[inline(always)]
     pub fn comif(&self) -> COMIF_R {
-        COMIF_R::new(((self.bits >> 5) & 0x01) != 0)
+        COMIF_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - Capture/Compare 4 interrupt flag
+    #[doc = "Bit 4 - Capture/Compare 4 interrupt flag"]
     #[inline(always)]
     pub fn cc4if(&self) -> CC4IF_R {
-        CC4IF_R::new(((self.bits >> 4) & 0x01) != 0)
+        CC4IF_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - Capture/Compare 3 interrupt flag
+    #[doc = "Bit 3 - Capture/Compare 3 interrupt flag"]
     #[inline(always)]
     pub fn cc3if(&self) -> CC3IF_R {
-        CC3IF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CC3IF_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Capture/Compare 2 interrupt flag
+    #[doc = "Bit 2 - Capture/Compare 2 interrupt flag"]
     #[inline(always)]
     pub fn cc2if(&self) -> CC2IF_R {
-        CC2IF_R::new(((self.bits >> 2) & 0x01) != 0)
+        CC2IF_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Capture/Compare 1 interrupt flag
+    #[doc = "Bit 1 - Capture/Compare 1 interrupt flag"]
     #[inline(always)]
     pub fn cc1if(&self) -> CC1IF_R {
-        CC1IF_R::new(((self.bits >> 1) & 0x01) != 0)
+        CC1IF_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Update interrupt flag
+    #[doc = "Bit 0 - Update interrupt flag"]
     #[inline(always)]
     pub fn uif(&self) -> UIF_R {
-        UIF_R::new((self.bits & 0x01) != 0)
+        UIF_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 17 - Compare 6 interrupt flag
+    #[doc = "Bit 17 - Compare 6 interrupt flag"]
     #[inline(always)]
-    pub fn cc6if(&mut self) -> CC6IF_W {
-        CC6IF_W { w: self }
+    pub fn cc6if(&mut self) -> CC6IF_W<17> {
+        CC6IF_W::new(self)
     }
-    ///Bit 16 - Compare 5 interrupt flag
+    #[doc = "Bit 16 - Compare 5 interrupt flag"]
     #[inline(always)]
-    pub fn cc5if(&mut self) -> CC5IF_W {
-        CC5IF_W { w: self }
+    pub fn cc5if(&mut self) -> CC5IF_W<16> {
+        CC5IF_W::new(self)
     }
-    ///Bit 13 - System Break interrupt flag
+    #[doc = "Bit 13 - System Break interrupt flag"]
     #[inline(always)]
-    pub fn sbif(&mut self) -> SBIF_W {
-        SBIF_W { w: self }
+    pub fn sbif(&mut self) -> SBIF_W<13> {
+        SBIF_W::new(self)
     }
-    ///Bit 12 - Capture/Compare 4 overcapture flag
+    #[doc = "Bit 12 - Capture/Compare 4 overcapture flag"]
     #[inline(always)]
-    pub fn cc4of(&mut self) -> CC4OF_W {
-        CC4OF_W { w: self }
+    pub fn cc4of(&mut self) -> CC4OF_W<12> {
+        CC4OF_W::new(self)
     }
-    ///Bit 11 - Capture/Compare 3 overcapture flag
+    #[doc = "Bit 11 - Capture/Compare 3 overcapture flag"]
     #[inline(always)]
-    pub fn cc3of(&mut self) -> CC3OF_W {
-        CC3OF_W { w: self }
+    pub fn cc3of(&mut self) -> CC3OF_W<11> {
+        CC3OF_W::new(self)
     }
-    ///Bit 10 - Capture/Compare 2 overcapture flag
+    #[doc = "Bit 10 - Capture/Compare 2 overcapture flag"]
     #[inline(always)]
-    pub fn cc2of(&mut self) -> CC2OF_W {
-        CC2OF_W { w: self }
+    pub fn cc2of(&mut self) -> CC2OF_W<10> {
+        CC2OF_W::new(self)
     }
-    ///Bit 9 - Capture/Compare 1 overcapture flag
+    #[doc = "Bit 9 - Capture/Compare 1 overcapture flag"]
     #[inline(always)]
-    pub fn cc1of(&mut self) -> CC1OF_W {
-        CC1OF_W { w: self }
+    pub fn cc1of(&mut self) -> CC1OF_W<9> {
+        CC1OF_W::new(self)
     }
-    ///Bit 8 - Break 2 interrupt flag
+    #[doc = "Bit 8 - Break 2 interrupt flag"]
     #[inline(always)]
-    pub fn b2if(&mut self) -> B2IF_W {
-        B2IF_W { w: self }
+    pub fn b2if(&mut self) -> B2IF_W<8> {
+        B2IF_W::new(self)
     }
-    ///Bit 7 - Break interrupt flag
+    #[doc = "Bit 7 - Break interrupt flag"]
     #[inline(always)]
-    pub fn bif(&mut self) -> BIF_W {
-        BIF_W { w: self }
+    pub fn bif(&mut self) -> BIF_W<7> {
+        BIF_W::new(self)
     }
-    ///Bit 6 - Trigger interrupt flag
+    #[doc = "Bit 6 - Trigger interrupt flag"]
     #[inline(always)]
-    pub fn tif(&mut self) -> TIF_W {
-        TIF_W { w: self }
+    pub fn tif(&mut self) -> TIF_W<6> {
+        TIF_W::new(self)
     }
-    ///Bit 5 - COM interrupt flag
+    #[doc = "Bit 5 - COM interrupt flag"]
     #[inline(always)]
-    pub fn comif(&mut self) -> COMIF_W {
-        COMIF_W { w: self }
+    pub fn comif(&mut self) -> COMIF_W<5> {
+        COMIF_W::new(self)
     }
-    ///Bit 4 - Capture/Compare 4 interrupt flag
+    #[doc = "Bit 4 - Capture/Compare 4 interrupt flag"]
     #[inline(always)]
-    pub fn cc4if(&mut self) -> CC4IF_W {
-        CC4IF_W { w: self }
+    pub fn cc4if(&mut self) -> CC4IF_W<4> {
+        CC4IF_W::new(self)
     }
-    ///Bit 3 - Capture/Compare 3 interrupt flag
+    #[doc = "Bit 3 - Capture/Compare 3 interrupt flag"]
     #[inline(always)]
-    pub fn cc3if(&mut self) -> CC3IF_W {
-        CC3IF_W { w: self }
+    pub fn cc3if(&mut self) -> CC3IF_W<3> {
+        CC3IF_W::new(self)
     }
-    ///Bit 2 - Capture/Compare 2 interrupt flag
+    #[doc = "Bit 2 - Capture/Compare 2 interrupt flag"]
     #[inline(always)]
-    pub fn cc2if(&mut self) -> CC2IF_W {
-        CC2IF_W { w: self }
+    pub fn cc2if(&mut self) -> CC2IF_W<2> {
+        CC2IF_W::new(self)
     }
-    ///Bit 1 - Capture/Compare 1 interrupt flag
+    #[doc = "Bit 1 - Capture/Compare 1 interrupt flag"]
     #[inline(always)]
-    pub fn cc1if(&mut self) -> CC1IF_W {
-        CC1IF_W { w: self }
+    pub fn cc1if(&mut self) -> CC1IF_W<1> {
+        CC1IF_W::new(self)
     }
-    ///Bit 0 - Update interrupt flag
+    #[doc = "Bit 0 - Update interrupt flag"]
     #[inline(always)]
-    pub fn uif(&mut self) -> UIF_W {
-        UIF_W { w: self }
+    pub fn uif(&mut self) -> UIF_W<0> {
+        UIF_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///status register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [sr](index.html) module
+#[doc = "status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [sr::R](R) reader structure
+#[doc = "`read()` method returns [sr::R](R) reader structure"]
 impl crate::Readable for SR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [sr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [sr::W](W) writer structure"]
 impl crate::Writable for SR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SR to value 0
+#[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

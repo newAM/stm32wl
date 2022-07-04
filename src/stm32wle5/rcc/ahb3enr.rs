@@ -1,4 +1,4 @@
-///Register `AHB3ENR` reader
+#[doc = "Register `AHB3ENR` reader"]
 pub struct R(crate::R<AHB3ENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AHB3ENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AHB3ENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `AHB3ENR` writer
+#[doc = "Register `AHB3ENR` writer"]
 pub struct W(crate::W<AHB3ENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AHB3ENR_SPEC>;
@@ -34,179 +34,37 @@ impl From<crate::W<AHB3ENR_SPEC>> for W {
         W(writer)
     }
 }
-///CPU1 Flash interface clock enable
-pub type FLASHEN_A = PKAEN_A;
-///Field `FLASHEN` reader - CPU1 Flash interface clock enable
-pub type FLASHEN_R = PKAEN_R;
-///Field `FLASHEN` writer - CPU1 Flash interface clock enable
-pub struct FLASHEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASHEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: FLASHEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(FLASHEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(FLASHEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
-///HSEMEN
-pub type HSEMEN_A = PKAEN_A;
-///Field `HSEMEN` reader - HSEMEN
-pub type HSEMEN_R = PKAEN_R;
-///Field `HSEMEN` writer - HSEMEN
-pub struct HSEMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSEMEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HSEMEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(HSEMEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(HSEMEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
-///RNGEN
-pub type RNGEN_A = PKAEN_A;
-///Field `RNGEN` reader - RNGEN
-pub type RNGEN_R = PKAEN_R;
-///Field `RNGEN` writer - RNGEN
-pub struct RNGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNGEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNGEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RNGEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RNGEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///AESEN
-pub type AESEN_A = PKAEN_A;
-///Field `AESEN` reader - AESEN
-pub type AESEN_R = PKAEN_R;
-///Field `AESEN` writer - AESEN
-pub struct AESEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: AESEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(AESEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(AESEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///PKAEN
-///
-///Value on reset: 0
+#[doc = "CPU1 Flash interface clock enable"]
+pub use PKAEN_A as FLASHEN_A;
+#[doc = "HSEMEN"]
+pub use PKAEN_A as HSEMEN_A;
+#[doc = "RNGEN"]
+pub use PKAEN_A as RNGEN_A;
+#[doc = "AESEN"]
+pub use PKAEN_A as AESEN_A;
+#[doc = "Field `FLASHEN` reader - CPU1 Flash interface clock enable"]
+pub use PKAEN_R as FLASHEN_R;
+#[doc = "Field `HSEMEN` reader - HSEMEN"]
+pub use PKAEN_R as HSEMEN_R;
+#[doc = "Field `RNGEN` reader - RNGEN"]
+pub use PKAEN_R as RNGEN_R;
+#[doc = "Field `AESEN` reader - AESEN"]
+pub use PKAEN_R as AESEN_R;
+#[doc = "Field `FLASHEN` writer - CPU1 Flash interface clock enable"]
+pub use PKAEN_W as FLASHEN_W;
+#[doc = "Field `HSEMEN` writer - HSEMEN"]
+pub use PKAEN_W as HSEMEN_W;
+#[doc = "Field `RNGEN` writer - RNGEN"]
+pub use PKAEN_W as RNGEN_W;
+#[doc = "Field `AESEN` writer - AESEN"]
+pub use PKAEN_W as AESEN_W;
+#[doc = "PKAEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PKAEN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<PKAEN_A> for bool {
     #[inline(always)]
@@ -214,153 +72,116 @@ impl From<PKAEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PKAEN` reader - PKAEN
-pub struct PKAEN_R(crate::FieldReader<bool, PKAEN_A>);
+#[doc = "Field `PKAEN` reader - PKAEN"]
+pub type PKAEN_R = crate::BitReader<PKAEN_A>;
 impl PKAEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PKAEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PKAEN_A {
         match self.bits {
-            false => PKAEN_A::DISABLED,
-            true => PKAEN_A::ENABLED,
+            false => PKAEN_A::Disabled,
+            true => PKAEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PKAEN_A::DISABLED
+        *self == PKAEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PKAEN_A::ENABLED
+        *self == PKAEN_A::Enabled
     }
 }
-impl core::ops::Deref for PKAEN_R {
-    type Target = crate::FieldReader<bool, PKAEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PKAEN` writer - PKAEN
-pub struct PKAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKAEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PKAEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `PKAEN` writer - PKAEN"]
+pub type PKAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB3ENR_SPEC, PKAEN_A, O>;
+impl<'a, const O: u8> PKAEN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PKAEN_A::DISABLED)
+        self.variant(PKAEN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PKAEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(PKAEN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 25 - CPU1 Flash interface clock enable
+    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
     #[inline(always)]
     pub fn flashen(&self) -> FLASHEN_R {
-        FLASHEN_R::new(((self.bits >> 25) & 0x01) != 0)
+        FLASHEN_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 19 - HSEMEN
+    #[doc = "Bit 19 - HSEMEN"]
     #[inline(always)]
     pub fn hsemen(&self) -> HSEMEN_R {
-        HSEMEN_R::new(((self.bits >> 19) & 0x01) != 0)
+        HSEMEN_R::new(((self.bits >> 19) & 1) != 0)
     }
-    ///Bit 18 - RNGEN
+    #[doc = "Bit 18 - RNGEN"]
     #[inline(always)]
     pub fn rngen(&self) -> RNGEN_R {
-        RNGEN_R::new(((self.bits >> 18) & 0x01) != 0)
+        RNGEN_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - AESEN
+    #[doc = "Bit 17 - AESEN"]
     #[inline(always)]
     pub fn aesen(&self) -> AESEN_R {
-        AESEN_R::new(((self.bits >> 17) & 0x01) != 0)
+        AESEN_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 16 - PKAEN
+    #[doc = "Bit 16 - PKAEN"]
     #[inline(always)]
     pub fn pkaen(&self) -> PKAEN_R {
-        PKAEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        PKAEN_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 25 - CPU1 Flash interface clock enable
+    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
     #[inline(always)]
-    pub fn flashen(&mut self) -> FLASHEN_W {
-        FLASHEN_W { w: self }
+    pub fn flashen(&mut self) -> FLASHEN_W<25> {
+        FLASHEN_W::new(self)
     }
-    ///Bit 19 - HSEMEN
+    #[doc = "Bit 19 - HSEMEN"]
     #[inline(always)]
-    pub fn hsemen(&mut self) -> HSEMEN_W {
-        HSEMEN_W { w: self }
+    pub fn hsemen(&mut self) -> HSEMEN_W<19> {
+        HSEMEN_W::new(self)
     }
-    ///Bit 18 - RNGEN
+    #[doc = "Bit 18 - RNGEN"]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RNGEN_W {
-        RNGEN_W { w: self }
+    pub fn rngen(&mut self) -> RNGEN_W<18> {
+        RNGEN_W::new(self)
     }
-    ///Bit 17 - AESEN
+    #[doc = "Bit 17 - AESEN"]
     #[inline(always)]
-    pub fn aesen(&mut self) -> AESEN_W {
-        AESEN_W { w: self }
+    pub fn aesen(&mut self) -> AESEN_W<17> {
+        AESEN_W::new(self)
     }
-    ///Bit 16 - PKAEN
+    #[doc = "Bit 16 - PKAEN"]
     #[inline(always)]
-    pub fn pkaen(&mut self) -> PKAEN_W {
-        PKAEN_W { w: self }
+    pub fn pkaen(&mut self) -> PKAEN_W<16> {
+        PKAEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///AHB3 peripheral clock enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ahb3enr](index.html) module
+#[doc = "AHB3 peripheral clock enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahb3enr](index.html) module"]
 pub struct AHB3ENR_SPEC;
 impl crate::RegisterSpec for AHB3ENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ahb3enr::R](R) reader structure
+#[doc = "`read()` method returns [ahb3enr::R](R) reader structure"]
 impl crate::Readable for AHB3ENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ahb3enr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ahb3enr::W](W) writer structure"]
 impl crate::Writable for AHB3ENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets AHB3ENR to value 0x0208_0000
+#[doc = "`reset()` method sets AHB3ENR to value 0x0208_0000"]
 impl crate::Resettable for AHB3ENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

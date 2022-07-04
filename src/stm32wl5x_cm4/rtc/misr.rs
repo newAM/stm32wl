@@ -1,4 +1,4 @@
-///Register `MISR` reader
+#[doc = "Register `MISR` reader"]
 pub struct R(crate::R<MISR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MISR_SPEC>;
@@ -13,13 +13,11 @@ impl From<crate::R<MISR_SPEC>> for R {
         R(reader)
     }
 }
-///SSR underflow masked flag
-///
-///Value on reset: 0
+#[doc = "SSR underflow masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSRUMF_A {
-    ///1: This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1
-    UNDERFLOW = 1,
+    #[doc = "1: This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
+    Underflow = 1,
 }
 impl From<SSRUMF_A> for bool {
     #[inline(always)]
@@ -27,40 +25,28 @@ impl From<SSRUMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SSRUMF` reader - SSR underflow masked flag
-pub struct SSRUMF_R(crate::FieldReader<bool, SSRUMF_A>);
+#[doc = "Field `SSRUMF` reader - SSR underflow masked flag"]
+pub type SSRUMF_R = crate::BitReader<SSRUMF_A>;
 impl SSRUMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SSRUMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SSRUMF_A> {
         match self.bits {
-            true => Some(SSRUMF_A::UNDERFLOW),
+            true => Some(SSRUMF_A::Underflow),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `UNDERFLOW`
+    #[doc = "Checks if the value of the field is `Underflow`"]
     #[inline(always)]
     pub fn is_underflow(&self) -> bool {
-        **self == SSRUMF_A::UNDERFLOW
+        *self == SSRUMF_A::Underflow
     }
 }
-impl core::ops::Deref for SSRUMF_R {
-    type Target = crate::FieldReader<bool, SSRUMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Internal timestamp masked flag
-///
-///Value on reset: 0
+#[doc = "Internal timestamp masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITSMF_A {
-    ///1: This flag is set by hardware when a timestamp on the internal event occurs
-    TIMESTAMPEVENT = 1,
+    #[doc = "1: This flag is set by hardware when a timestamp on the internal event occurs"]
+    TimestampEvent = 1,
 }
 impl From<ITSMF_A> for bool {
     #[inline(always)]
@@ -68,40 +54,28 @@ impl From<ITSMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ITSMF` reader - Internal timestamp masked flag
-pub struct ITSMF_R(crate::FieldReader<bool, ITSMF_A>);
+#[doc = "Field `ITSMF` reader - Internal timestamp masked flag"]
+pub type ITSMF_R = crate::BitReader<ITSMF_A>;
 impl ITSMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ITSMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ITSMF_A> {
         match self.bits {
-            true => Some(ITSMF_A::TIMESTAMPEVENT),
+            true => Some(ITSMF_A::TimestampEvent),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `TIMESTAMPEVENT`
+    #[doc = "Checks if the value of the field is `TimestampEvent`"]
     #[inline(always)]
     pub fn is_timestamp_event(&self) -> bool {
-        **self == ITSMF_A::TIMESTAMPEVENT
+        *self == ITSMF_A::TimestampEvent
     }
 }
-impl core::ops::Deref for ITSMF_R {
-    type Target = crate::FieldReader<bool, ITSMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Timestamp overflow masked flag
-///
-///Value on reset: 0
+#[doc = "Timestamp overflow masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSOVMF_A {
-    ///1: This flag is set by hardware when a time-stamp event occurs while TSF is already set
-    OVERFLOW = 1,
+    #[doc = "1: This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
+    Overflow = 1,
 }
 impl From<TSOVMF_A> for bool {
     #[inline(always)]
@@ -109,40 +83,28 @@ impl From<TSOVMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TSOVMF` reader - Timestamp overflow masked flag
-pub struct TSOVMF_R(crate::FieldReader<bool, TSOVMF_A>);
+#[doc = "Field `TSOVMF` reader - Timestamp overflow masked flag"]
+pub type TSOVMF_R = crate::BitReader<TSOVMF_A>;
 impl TSOVMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSOVMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TSOVMF_A> {
         match self.bits {
-            true => Some(TSOVMF_A::OVERFLOW),
+            true => Some(TSOVMF_A::Overflow),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `OVERFLOW`
+    #[doc = "Checks if the value of the field is `Overflow`"]
     #[inline(always)]
     pub fn is_overflow(&self) -> bool {
-        **self == TSOVMF_A::OVERFLOW
+        *self == TSOVMF_A::Overflow
     }
 }
-impl core::ops::Deref for TSOVMF_R {
-    type Target = crate::FieldReader<bool, TSOVMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Timestamp masked flag
-///
-///Value on reset: 0
+#[doc = "Timestamp masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSMF_A {
-    ///1: This flag is set by hardware when a time-stamp event occurs
-    TIMESTAMPEVENT = 1,
+    #[doc = "1: This flag is set by hardware when a time-stamp event occurs"]
+    TimestampEvent = 1,
 }
 impl From<TSMF_A> for bool {
     #[inline(always)]
@@ -150,40 +112,28 @@ impl From<TSMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TSMF` reader - Timestamp masked flag
-pub struct TSMF_R(crate::FieldReader<bool, TSMF_A>);
+#[doc = "Field `TSMF` reader - Timestamp masked flag"]
+pub type TSMF_R = crate::BitReader<TSMF_A>;
 impl TSMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TSMF_A> {
         match self.bits {
-            true => Some(TSMF_A::TIMESTAMPEVENT),
+            true => Some(TSMF_A::TimestampEvent),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `TIMESTAMPEVENT`
+    #[doc = "Checks if the value of the field is `TimestampEvent`"]
     #[inline(always)]
     pub fn is_timestamp_event(&self) -> bool {
-        **self == TSMF_A::TIMESTAMPEVENT
+        *self == TSMF_A::TimestampEvent
     }
 }
-impl core::ops::Deref for TSMF_R {
-    type Target = crate::FieldReader<bool, TSMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Wakeup timer masked flag
-///
-///Value on reset: 0
+#[doc = "Wakeup timer masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUTMF_A {
-    ///1: This flag is set by hardware when the wakeup auto-reload counter reaches 0
-    ZERO = 1,
+    #[doc = "1: This flag is set by hardware when the wakeup auto-reload counter reaches 0"]
+    Zero = 1,
 }
 impl From<WUTMF_A> for bool {
     #[inline(always)]
@@ -191,40 +141,28 @@ impl From<WUTMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `WUTMF` reader - Wakeup timer masked flag
-pub struct WUTMF_R(crate::FieldReader<bool, WUTMF_A>);
+#[doc = "Field `WUTMF` reader - Wakeup timer masked flag"]
+pub type WUTMF_R = crate::BitReader<WUTMF_A>;
 impl WUTMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WUTMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WUTMF_A> {
         match self.bits {
-            true => Some(WUTMF_A::ZERO),
+            true => Some(WUTMF_A::Zero),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `ZERO`
+    #[doc = "Checks if the value of the field is `Zero`"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        **self == WUTMF_A::ZERO
+        *self == WUTMF_A::Zero
     }
 }
-impl core::ops::Deref for WUTMF_R {
-    type Target = crate::FieldReader<bool, WUTMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Alarm B masked flag
-///
-///Value on reset: 0
+#[doc = "Alarm B masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALRBMF_A {
-    ///1: This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm B register (RTC_ALRMBR)
-    MATCH = 1,
+    #[doc = "1: This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm B register (RTC_ALRMBR)"]
+    Match = 1,
 }
 impl From<ALRBMF_A> for bool {
     #[inline(always)]
@@ -232,40 +170,28 @@ impl From<ALRBMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ALRBMF` reader - Alarm B masked flag
-pub struct ALRBMF_R(crate::FieldReader<bool, ALRBMF_A>);
+#[doc = "Field `ALRBMF` reader - Alarm B masked flag"]
+pub type ALRBMF_R = crate::BitReader<ALRBMF_A>;
 impl ALRBMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALRBMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ALRBMF_A> {
         match self.bits {
-            true => Some(ALRBMF_A::MATCH),
+            true => Some(ALRBMF_A::Match),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `MATCH`
+    #[doc = "Checks if the value of the field is `Match`"]
     #[inline(always)]
     pub fn is_match(&self) -> bool {
-        **self == ALRBMF_A::MATCH
+        *self == ALRBMF_A::Match
     }
 }
-impl core::ops::Deref for ALRBMF_R {
-    type Target = crate::FieldReader<bool, ALRBMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Alarm A masked flag
-///
-///Value on reset: 0
+#[doc = "Alarm A masked flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALRAMF_A {
-    ///1: This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)
-    MATCH = 1,
+    #[doc = "1: This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
+    Match = 1,
 }
 impl From<ALRAMF_A> for bool {
     #[inline(always)]
@@ -273,84 +199,70 @@ impl From<ALRAMF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ALRAMF` reader - Alarm A masked flag
-pub struct ALRAMF_R(crate::FieldReader<bool, ALRAMF_A>);
+#[doc = "Field `ALRAMF` reader - Alarm A masked flag"]
+pub type ALRAMF_R = crate::BitReader<ALRAMF_A>;
 impl ALRAMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALRAMF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ALRAMF_A> {
         match self.bits {
-            true => Some(ALRAMF_A::MATCH),
+            true => Some(ALRAMF_A::Match),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `MATCH`
+    #[doc = "Checks if the value of the field is `Match`"]
     #[inline(always)]
     pub fn is_match(&self) -> bool {
-        **self == ALRAMF_A::MATCH
-    }
-}
-impl core::ops::Deref for ALRAMF_R {
-    type Target = crate::FieldReader<bool, ALRAMF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALRAMF_A::Match
     }
 }
 impl R {
-    ///Bit 6 - SSR underflow masked flag
+    #[doc = "Bit 6 - SSR underflow masked flag"]
     #[inline(always)]
     pub fn ssrumf(&self) -> SSRUMF_R {
-        SSRUMF_R::new(((self.bits >> 6) & 0x01) != 0)
+        SSRUMF_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - Internal timestamp masked flag
+    #[doc = "Bit 5 - Internal timestamp masked flag"]
     #[inline(always)]
     pub fn itsmf(&self) -> ITSMF_R {
-        ITSMF_R::new(((self.bits >> 5) & 0x01) != 0)
+        ITSMF_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - Timestamp overflow masked flag
+    #[doc = "Bit 4 - Timestamp overflow masked flag"]
     #[inline(always)]
     pub fn tsovmf(&self) -> TSOVMF_R {
-        TSOVMF_R::new(((self.bits >> 4) & 0x01) != 0)
+        TSOVMF_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - Timestamp masked flag
+    #[doc = "Bit 3 - Timestamp masked flag"]
     #[inline(always)]
     pub fn tsmf(&self) -> TSMF_R {
-        TSMF_R::new(((self.bits >> 3) & 0x01) != 0)
+        TSMF_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Wakeup timer masked flag
+    #[doc = "Bit 2 - Wakeup timer masked flag"]
     #[inline(always)]
     pub fn wutmf(&self) -> WUTMF_R {
-        WUTMF_R::new(((self.bits >> 2) & 0x01) != 0)
+        WUTMF_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Alarm B masked flag
+    #[doc = "Bit 1 - Alarm B masked flag"]
     #[inline(always)]
     pub fn alrbmf(&self) -> ALRBMF_R {
-        ALRBMF_R::new(((self.bits >> 1) & 0x01) != 0)
+        ALRBMF_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Alarm A masked flag
+    #[doc = "Bit 0 - Alarm A masked flag"]
     #[inline(always)]
     pub fn alramf(&self) -> ALRAMF_R {
-        ALRAMF_R::new((self.bits & 0x01) != 0)
+        ALRAMF_R::new((self.bits & 1) != 0)
     }
 }
-///Masked interrupt status register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [misr](index.html) module
+#[doc = "Masked interrupt status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [misr](index.html) module"]
 pub struct MISR_SPEC;
 impl crate::RegisterSpec for MISR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [misr::R](R) reader structure
+#[doc = "`read()` method returns [misr::R](R) reader structure"]
 impl crate::Readable for MISR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets MISR to value 0
+#[doc = "`reset()` method sets MISR to value 0"]
 impl crate::Resettable for MISR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

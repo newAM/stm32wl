@@ -1,4 +1,4 @@
-///Register `SUSP4R` reader
+#[doc = "Register `SUSP4R` reader"]
 pub struct R(crate::R<SUSP4R_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SUSP4R_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SUSP4R_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SUSP4R` writer
+#[doc = "Register `SUSP4R` writer"]
 pub struct W(crate::W<SUSP4R_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SUSP4R_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<SUSP4R_SPEC>> for W {
         W(writer)
     }
 }
-///Field `SUSP` reader - AES suspend register 4
-pub struct SUSP_R(crate::FieldReader<u32, u32>);
-impl SUSP_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SUSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUSP_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SUSP` writer - AES suspend register 4
-pub struct SUSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUSP_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+#[doc = "Field `SUSP` reader - AES suspend register 4"]
+pub type SUSP_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `SUSP` writer - AES suspend register 4"]
+pub type SUSP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SUSP4R_SPEC, u32, u32, 32, O>;
 impl R {
-    ///Bits 0:31 - AES suspend register 4
+    #[doc = "Bits 0:31 - AES suspend register 4"]
     #[inline(always)]
     pub fn susp(&self) -> SUSP_R {
-        SUSP_R::new((self.bits & 0xffff_ffff) as u32)
+        SUSP_R::new(self.bits)
     }
 }
 impl W {
-    ///Bits 0:31 - AES suspend register 4
+    #[doc = "Bits 0:31 - AES suspend register 4"]
     #[inline(always)]
-    pub fn susp(&mut self) -> SUSP_W {
-        SUSP_W { w: self }
+    pub fn susp(&mut self) -> SUSP_W<0> {
+        SUSP_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+    pub fn bits(&mut self, bits: u32) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }
-///AES suspend register 4
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [susp4r](index.html) module
+#[doc = "AES suspend register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [susp4r](index.html) module"]
 pub struct SUSP4R_SPEC;
 impl crate::RegisterSpec for SUSP4R_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [susp4r::R](R) reader structure
+#[doc = "`read()` method returns [susp4r::R](R) reader structure"]
 impl crate::Readable for SUSP4R_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [susp4r::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [susp4r::W](W) writer structure"]
 impl crate::Writable for SUSP4R_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SUSP4R to value 0
+#[doc = "`reset()` method sets SUSP4R to value 0"]
 impl crate::Resettable for SUSP4R_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

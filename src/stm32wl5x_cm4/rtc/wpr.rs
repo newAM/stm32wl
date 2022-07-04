@@ -1,4 +1,4 @@
-///Register `WPR` writer
+#[doc = "Register `WPR` writer"]
 pub struct W(crate::W<WPR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<WPR_SPEC>;
@@ -19,18 +19,16 @@ impl From<crate::W<WPR_SPEC>> for W {
         W(writer)
     }
 }
-///Write protection key
-///
-///Value on reset: 0
+#[doc = "Write protection key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum KEY_AW {
-    ///202: Key 1
-    DEACTIVATE1 = 202,
-    ///83: Key 2
-    DEACTIVATE2 = 83,
-    ///0: Activate write protection (any value that is not the keys)
-    ACTIVATE = 0,
+    #[doc = "0: Activate write protection (any value that is not the keys)"]
+    Activate = 0,
+    #[doc = "83: Key 2"]
+    Deactivate2 = 83,
+    #[doc = "202: Key 1"]
+    Deactivate1 = 202,
 }
 impl From<KEY_AW> for u8 {
     #[inline(always)]
@@ -38,65 +36,48 @@ impl From<KEY_AW> for u8 {
         variant as _
     }
 }
-///Field `KEY` writer - Write protection key
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: KEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Key 1
-    #[inline(always)]
-    pub fn deactivate1(self) -> &'a mut W {
-        self.variant(KEY_AW::DEACTIVATE1)
-    }
-    ///Key 2
-    #[inline(always)]
-    pub fn deactivate2(self) -> &'a mut W {
-        self.variant(KEY_AW::DEACTIVATE2)
-    }
-    ///Activate write protection (any value that is not the keys)
+#[doc = "Field `KEY` writer - Write protection key"]
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WPR_SPEC, u8, KEY_AW, 8, O>;
+impl<'a, const O: u8> KEY_W<'a, O> {
+    #[doc = "Activate write protection (any value that is not the keys)"]
     #[inline(always)]
     pub fn activate(self) -> &'a mut W {
-        self.variant(KEY_AW::ACTIVATE)
+        self.variant(KEY_AW::Activate)
     }
-    ///Writes raw bits to the field
+    #[doc = "Key 2"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
+    pub fn deactivate2(self) -> &'a mut W {
+        self.variant(KEY_AW::Deactivate2)
+    }
+    #[doc = "Key 1"]
+    #[inline(always)]
+    pub fn deactivate1(self) -> &'a mut W {
+        self.variant(KEY_AW::Deactivate1)
     }
 }
 impl W {
-    ///Bits 0:7 - Write protection key
+    #[doc = "Bits 0:7 - Write protection key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    pub fn key(&mut self) -> KEY_W<0> {
+        KEY_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Write protection register
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [wpr](index.html) module
+#[doc = "Write protection register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpr](index.html) module"]
 pub struct WPR_SPEC;
 impl crate::RegisterSpec for WPR_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [wpr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [wpr::W](W) writer structure"]
 impl crate::Writable for WPR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets WPR to value 0
+#[doc = "`reset()` method sets WPR to value 0"]
 impl crate::Resettable for WPR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

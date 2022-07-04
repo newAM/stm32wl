@@ -1,4 +1,4 @@
-///Register `CCR` reader
+#[doc = "Register `CCR` reader"]
 pub struct R(crate::R<CCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCR` writer
+#[doc = "Register `CCR` writer"]
 pub struct W(crate::W<CCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCR_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<CCR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `TRIM` reader - Trimming code
-pub struct TRIM_R(crate::FieldReader<u8, u8>);
-impl TRIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TRIM` writer - Trimming code
-pub struct TRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIM_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+#[doc = "Field `TRIM` reader - Trimming code"]
+pub type TRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TRIM` writer - Trimming code"]
+pub type TRIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CCR_SPEC, u8, u8, 6, O>;
 impl R {
-    ///Bits 0:5 - Trimming code
+    #[doc = "Bits 0:5 - Trimming code"]
     #[inline(always)]
     pub fn trim(&self) -> TRIM_R {
         TRIM_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    ///Bits 0:5 - Trimming code
+    #[doc = "Bits 0:5 - Trimming code"]
     #[inline(always)]
-    pub fn trim(&mut self) -> TRIM_W {
-        TRIM_W { w: self }
+    pub fn trim(&mut self) -> TRIM_W<0> {
+        TRIM_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///calibration control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccr](index.html) module
+#[doc = "calibration control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr](index.html) module"]
 pub struct CCR_SPEC;
 impl crate::RegisterSpec for CCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccr::R](R) reader structure
+#[doc = "`read()` method returns [ccr::R](R) reader structure"]
 impl crate::Readable for CCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccr::W](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCR to value 0
+#[doc = "`reset()` method sets CCR to value 0"]
 impl crate::Resettable for CCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

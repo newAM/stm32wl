@@ -1,4 +1,4 @@
-///Register `WRP1AR` reader
+#[doc = "Register `WRP1AR` reader"]
 pub struct R(crate::R<WRP1AR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<WRP1AR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<WRP1AR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `WRP1AR` writer
+#[doc = "Register `WRP1AR` writer"]
 pub struct W(crate::W<WRP1AR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<WRP1AR_SPEC>;
@@ -34,106 +34,58 @@ impl From<crate::W<WRP1AR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `WRP1A_STRT` reader - Bank 1 WRP first area start offset
-pub struct WRP1A_STRT_R(crate::FieldReader<u8, u8>);
-impl WRP1A_STRT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WRP1A_STRT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRP1A_STRT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WRP1A_STRT` writer - Bank 1 WRP first area start offset
-pub struct WRP1A_STRT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRP1A_STRT_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
-///Field `WRP1A_END` reader - Bank 1 WRP first area A end offset
-pub struct WRP1A_END_R(crate::FieldReader<u8, u8>);
-impl WRP1A_END_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WRP1A_END_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRP1A_END_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WRP1A_END` writer - Bank 1 WRP first area A end offset
-pub struct WRP1A_END_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRP1A_END_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+#[doc = "Field `WRP1A_STRT` reader - Bank 1 WRP first area start offset"]
+pub type WRP1A_STRT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WRP1A_STRT` writer - Bank 1 WRP first area start offset"]
+pub type WRP1A_STRT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WRP1AR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `WRP1A_END` reader - Bank 1 WRP first area A end offset"]
+pub type WRP1A_END_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WRP1A_END` writer - Bank 1 WRP first area A end offset"]
+pub type WRP1A_END_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WRP1AR_SPEC, u8, u8, 7, O>;
 impl R {
-    ///Bits 0:6 - Bank 1 WRP first area start offset
+    #[doc = "Bits 0:6 - Bank 1 WRP first area start offset"]
     #[inline(always)]
     pub fn wrp1a_strt(&self) -> WRP1A_STRT_R {
         WRP1A_STRT_R::new((self.bits & 0x7f) as u8)
     }
-    ///Bits 16:22 - Bank 1 WRP first area A end offset
+    #[doc = "Bits 16:22 - Bank 1 WRP first area A end offset"]
     #[inline(always)]
     pub fn wrp1a_end(&self) -> WRP1A_END_R {
         WRP1A_END_R::new(((self.bits >> 16) & 0x7f) as u8)
     }
 }
 impl W {
-    ///Bits 0:6 - Bank 1 WRP first area start offset
+    #[doc = "Bits 0:6 - Bank 1 WRP first area start offset"]
     #[inline(always)]
-    pub fn wrp1a_strt(&mut self) -> WRP1A_STRT_W {
-        WRP1A_STRT_W { w: self }
+    pub fn wrp1a_strt(&mut self) -> WRP1A_STRT_W<0> {
+        WRP1A_STRT_W::new(self)
     }
-    ///Bits 16:22 - Bank 1 WRP first area A end offset
+    #[doc = "Bits 16:22 - Bank 1 WRP first area A end offset"]
     #[inline(always)]
-    pub fn wrp1a_end(&mut self) -> WRP1A_END_W {
-        WRP1A_END_W { w: self }
+    pub fn wrp1a_end(&mut self) -> WRP1A_END_W<16> {
+        WRP1A_END_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Flash WRP area A address register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [wrp1ar](index.html) module
+#[doc = "Flash WRP area A address register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wrp1ar](index.html) module"]
 pub struct WRP1AR_SPEC;
 impl crate::RegisterSpec for WRP1AR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [wrp1ar::R](R) reader structure
+#[doc = "`read()` method returns [wrp1ar::R](R) reader structure"]
 impl crate::Readable for WRP1AR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [wrp1ar::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [wrp1ar::W](W) writer structure"]
 impl crate::Writable for WRP1AR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets WRP1AR to value 0xff80_ffff
+#[doc = "`reset()` method sets WRP1AR to value 0xff80_ffff"]
 impl crate::Resettable for WRP1AR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

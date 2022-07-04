@@ -1,4 +1,4 @@
-///Register `ODR` reader
+#[doc = "Register `ODR` reader"]
 pub struct R(crate::R<ODR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ODR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ODR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `ODR` writer
+#[doc = "Register `ODR` writer"]
 pub struct W(crate::W<ODR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ODR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<ODR_SPEC>> for W {
         W(writer)
     }
 }
-///Port output data (y = 0..15)
-///
-///Value on reset: 0
+#[doc = "Port output data (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODR3_A {
-    ///1: Set output to logic high
-    HIGH = 1,
-    ///0: Set output to logic low
-    LOW = 0,
+    #[doc = "0: Set output to logic low"]
+    Low = 0,
+    #[doc = "1: Set output to logic high"]
+    High = 1,
 }
 impl From<ODR3_A> for bool {
     #[inline(always)]
@@ -50,113 +48,76 @@ impl From<ODR3_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ODR3` reader - Port output data (y = 0..15)
-pub struct ODR3_R(crate::FieldReader<bool, ODR3_A>);
+#[doc = "Field `ODR3` reader - Port output data (y = 0..15)"]
+pub type ODR3_R = crate::BitReader<ODR3_A>;
 impl ODR3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ODR3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ODR3_A {
         match self.bits {
-            true => ODR3_A::HIGH,
-            false => ODR3_A::LOW,
+            false => ODR3_A::Low,
+            true => ODR3_A::High,
         }
     }
-    ///Checks if the value of the field is `HIGH`
-    #[inline(always)]
-    pub fn is_high(&self) -> bool {
-        **self == ODR3_A::HIGH
-    }
-    ///Checks if the value of the field is `LOW`
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == ODR3_A::LOW
+        *self == ODR3_A::Low
+    }
+    #[doc = "Checks if the value of the field is `High`"]
+    #[inline(always)]
+    pub fn is_high(&self) -> bool {
+        *self == ODR3_A::High
     }
 }
-impl core::ops::Deref for ODR3_R {
-    type Target = crate::FieldReader<bool, ODR3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ODR3` writer - Port output data (y = 0..15)
-pub struct ODR3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ODR3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ODR3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Set output to logic high
-    #[inline(always)]
-    pub fn high(self) -> &'a mut W {
-        self.variant(ODR3_A::HIGH)
-    }
-    ///Set output to logic low
+#[doc = "Field `ODR3` writer - Port output data (y = 0..15)"]
+pub type ODR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, ODR_SPEC, ODR3_A, O>;
+impl<'a, const O: u8> ODR3_W<'a, O> {
+    #[doc = "Set output to logic low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(ODR3_A::LOW)
+        self.variant(ODR3_A::Low)
     }
-    ///Sets the field bit
+    #[doc = "Set output to logic high"]
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+    pub fn high(self) -> &'a mut W {
+        self.variant(ODR3_A::High)
     }
 }
 impl R {
-    ///Bit 3 - Port output data (y = 0..15)
+    #[doc = "Bit 3 - Port output data (y = 0..15)"]
     #[inline(always)]
     pub fn odr3(&self) -> ODR3_R {
-        ODR3_R::new(((self.bits >> 3) & 0x01) != 0)
+        ODR3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 3 - Port output data (y = 0..15)
+    #[doc = "Bit 3 - Port output data (y = 0..15)"]
     #[inline(always)]
-    pub fn odr3(&mut self) -> ODR3_W {
-        ODR3_W { w: self }
+    pub fn odr3(&mut self) -> ODR3_W<3> {
+        ODR3_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///GPIO port output data register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [odr](index.html) module
+#[doc = "GPIO port output data register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [odr](index.html) module"]
 pub struct ODR_SPEC;
 impl crate::RegisterSpec for ODR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [odr::R](R) reader structure
+#[doc = "`read()` method returns [odr::R](R) reader structure"]
 impl crate::Readable for ODR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [odr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [odr::W](W) writer structure"]
 impl crate::Writable for ODR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets ODR to value 0
+#[doc = "`reset()` method sets ODR to value 0"]
 impl crate::Resettable for ODR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

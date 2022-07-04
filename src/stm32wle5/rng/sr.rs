@@ -1,4 +1,4 @@
-///Register `SR` reader
+#[doc = "Register `SR` reader"]
 pub struct R(crate::R<SR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SR` writer
+#[doc = "Register `SR` writer"]
 pub struct W(crate::W<SR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<SR_SPEC>> for W {
         W(writer)
     }
 }
-///Seed error interrupt status
-///
-///Value on reset: 0
+#[doc = "Seed error interrupt status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEIS_A {
-    ///0: No faulty sequence detected
-    NOFAULT = 0,
-    ///1: At least one faulty sequence has been detected
-    FAULT = 1,
+    #[doc = "0: No faulty sequence detected"]
+    NoFault = 0,
+    #[doc = "1: At least one faulty sequence has been detected"]
+    Fault = 1,
 }
 impl From<SEIS_A> for bool {
     #[inline(always)]
@@ -50,125 +48,99 @@ impl From<SEIS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SEIS` reader - Seed error interrupt status
-pub struct SEIS_R(crate::FieldReader<bool, SEIS_A>);
+#[doc = "Field `SEIS` reader - Seed error interrupt status"]
+pub type SEIS_R = crate::BitReader<SEIS_A>;
 impl SEIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SEIS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEIS_A {
         match self.bits {
-            false => SEIS_A::NOFAULT,
-            true => SEIS_A::FAULT,
+            false => SEIS_A::NoFault,
+            true => SEIS_A::Fault,
         }
     }
-    ///Checks if the value of the field is `NOFAULT`
+    #[doc = "Checks if the value of the field is `NoFault`"]
     #[inline(always)]
     pub fn is_no_fault(&self) -> bool {
-        **self == SEIS_A::NOFAULT
+        *self == SEIS_A::NoFault
     }
-    ///Checks if the value of the field is `FAULT`
+    #[doc = "Checks if the value of the field is `Fault`"]
     #[inline(always)]
     pub fn is_fault(&self) -> bool {
-        **self == SEIS_A::FAULT
+        *self == SEIS_A::Fault
     }
 }
-impl core::ops::Deref for SEIS_R {
-    type Target = crate::FieldReader<bool, SEIS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SEIS` writer - Seed error interrupt status
-pub struct SEIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEIS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SEIS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No faulty sequence detected
+#[doc = "Field `SEIS` writer - Seed error interrupt status"]
+pub type SEIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, SEIS_A, O>;
+impl<'a, const O: u8> SEIS_W<'a, O> {
+    #[doc = "No faulty sequence detected"]
     #[inline(always)]
     pub fn no_fault(self) -> &'a mut W {
-        self.variant(SEIS_A::NOFAULT)
+        self.variant(SEIS_A::NoFault)
     }
-    ///At least one faulty sequence has been detected
+    #[doc = "At least one faulty sequence has been detected"]
     #[inline(always)]
     pub fn fault(self) -> &'a mut W {
-        self.variant(SEIS_A::FAULT)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(SEIS_A::Fault)
     }
 }
-///Clock error interrupt status
-pub type CEIS_A = CECS_A;
-///Field `CEIS` reader - Clock error interrupt status
-pub type CEIS_R = CECS_R;
-///Field `CEIS` writer - Clock error interrupt status
-pub struct CEIS_W<'a> {
-    w: &'a mut W,
+#[doc = "Clock error interrupt status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEIS_A {
+    #[doc = "0: The RNG clock is correct (fRNGCLK> fHCLK/32)"]
+    Correct = 0,
+    #[doc = "1: The RNG clock before internal divider has been detected too slow (fRNGCLK< fHCLK/32)"]
+    Slow = 1,
 }
-impl<'a> CEIS_W<'a> {
-    ///Writes `variant` to the field
+impl From<CEIS_A> for bool {
     #[inline(always)]
-    pub fn variant(self, variant: CEIS_A) -> &'a mut W {
-        self.bit(variant.into())
+    fn from(variant: CEIS_A) -> Self {
+        variant as u8 != 0
     }
-    ///The RNG clock is correct (fRNGCLK> fHCLK/32)
+}
+#[doc = "Field `CEIS` reader - Clock error interrupt status"]
+pub type CEIS_R = crate::BitReader<CEIS_A>;
+impl CEIS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEIS_A {
+        match self.bits {
+            false => CEIS_A::Correct,
+            true => CEIS_A::Slow,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Correct`"]
+    #[inline(always)]
+    pub fn is_correct(&self) -> bool {
+        *self == CEIS_A::Correct
+    }
+    #[doc = "Checks if the value of the field is `Slow`"]
+    #[inline(always)]
+    pub fn is_slow(&self) -> bool {
+        *self == CEIS_A::Slow
+    }
+}
+#[doc = "Field `CEIS` writer - Clock error interrupt status"]
+pub type CEIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, CEIS_A, O>;
+impl<'a, const O: u8> CEIS_W<'a, O> {
+    #[doc = "The RNG clock is correct (fRNGCLK> fHCLK/32)"]
     #[inline(always)]
     pub fn correct(self) -> &'a mut W {
-        self.variant(CEIS_A::CORRECT)
+        self.variant(CEIS_A::Correct)
     }
-    ///The RNG clock before internal divider has been detected too slow (fRNGCLK< fHCLK/32)
+    #[doc = "The RNG clock before internal divider has been detected too slow (fRNGCLK< fHCLK/32)"]
     #[inline(always)]
     pub fn slow(self) -> &'a mut W {
-        self.variant(CEIS_A::SLOW)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(CEIS_A::Slow)
     }
 }
-///Seed error current status
-///
-///Value on reset: 0
+#[doc = "Seed error current status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SECS_A {
-    ///0: No faulty sequence has currently been detected. If the SEIS bit is set, this means that a faulty sequence was detected and the situation has been recovered
-    NOFAULT = 0,
-    ///1: At least one faulty sequence has been detected - see ref manual for details
-    FAULT = 1,
+    #[doc = "0: No faulty sequence has currently been detected. If the SEIS bit is set, this means that a faulty sequence was detected and the situation has been recovered"]
+    NoFault = 0,
+    #[doc = "1: At least one faulty sequence has been detected - see ref manual for details"]
+    Fault = 1,
 }
 impl From<SECS_A> for bool {
     #[inline(always)]
@@ -176,47 +148,35 @@ impl From<SECS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SECS` reader - Seed error current status
-pub struct SECS_R(crate::FieldReader<bool, SECS_A>);
+#[doc = "Field `SECS` reader - Seed error current status"]
+pub type SECS_R = crate::BitReader<SECS_A>;
 impl SECS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SECS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SECS_A {
         match self.bits {
-            false => SECS_A::NOFAULT,
-            true => SECS_A::FAULT,
+            false => SECS_A::NoFault,
+            true => SECS_A::Fault,
         }
     }
-    ///Checks if the value of the field is `NOFAULT`
+    #[doc = "Checks if the value of the field is `NoFault`"]
     #[inline(always)]
     pub fn is_no_fault(&self) -> bool {
-        **self == SECS_A::NOFAULT
+        *self == SECS_A::NoFault
     }
-    ///Checks if the value of the field is `FAULT`
+    #[doc = "Checks if the value of the field is `Fault`"]
     #[inline(always)]
     pub fn is_fault(&self) -> bool {
-        **self == SECS_A::FAULT
+        *self == SECS_A::Fault
     }
 }
-impl core::ops::Deref for SECS_R {
-    type Target = crate::FieldReader<bool, SECS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Clock error current status
-///
-///Value on reset: 0
+#[doc = "Clock error current status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CECS_A {
-    ///0: The RNG clock is correct (fRNGCLK> fHCLK/32)
-    CORRECT = 0,
-    ///1: The RNG clock before internal divider has been detected too slow (fRNGCLK< fHCLK/32)
-    SLOW = 1,
+    #[doc = "0: The RNG clock is correct (fRNGCLK> fHCLK/32)"]
+    Correct = 0,
+    #[doc = "1: The RNG clock before internal divider has been detected too slow (fRNGCLK< fHCLK/32)"]
+    Slow = 1,
 }
 impl From<CECS_A> for bool {
     #[inline(always)]
@@ -224,47 +184,35 @@ impl From<CECS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CECS` reader - Clock error current status
-pub struct CECS_R(crate::FieldReader<bool, CECS_A>);
+#[doc = "Field `CECS` reader - Clock error current status"]
+pub type CECS_R = crate::BitReader<CECS_A>;
 impl CECS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CECS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CECS_A {
         match self.bits {
-            false => CECS_A::CORRECT,
-            true => CECS_A::SLOW,
+            false => CECS_A::Correct,
+            true => CECS_A::Slow,
         }
     }
-    ///Checks if the value of the field is `CORRECT`
+    #[doc = "Checks if the value of the field is `Correct`"]
     #[inline(always)]
     pub fn is_correct(&self) -> bool {
-        **self == CECS_A::CORRECT
+        *self == CECS_A::Correct
     }
-    ///Checks if the value of the field is `SLOW`
+    #[doc = "Checks if the value of the field is `Slow`"]
     #[inline(always)]
     pub fn is_slow(&self) -> bool {
-        **self == CECS_A::SLOW
+        *self == CECS_A::Slow
     }
 }
-impl core::ops::Deref for CECS_R {
-    type Target = crate::FieldReader<bool, CECS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Data Ready
-///
-///Value on reset: 0
+#[doc = "Data Ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRDY_A {
-    ///0: The RNG_DR register is not yet valid, no random data is available
-    INVALID = 0,
-    ///1: The RNG_DR register contains valid random data
-    VALID = 1,
+    #[doc = "0: The RNG_DR register is not yet valid, no random data is available"]
+    Invalid = 0,
+    #[doc = "1: The RNG_DR register contains valid random data"]
+    Valid = 1,
 }
 impl From<DRDY_A> for bool {
     #[inline(always)]
@@ -272,101 +220,87 @@ impl From<DRDY_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DRDY` reader - Data Ready
-pub struct DRDY_R(crate::FieldReader<bool, DRDY_A>);
+#[doc = "Field `DRDY` reader - Data Ready"]
+pub type DRDY_R = crate::BitReader<DRDY_A>;
 impl DRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DRDY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DRDY_A {
         match self.bits {
-            false => DRDY_A::INVALID,
-            true => DRDY_A::VALID,
+            false => DRDY_A::Invalid,
+            true => DRDY_A::Valid,
         }
     }
-    ///Checks if the value of the field is `INVALID`
+    #[doc = "Checks if the value of the field is `Invalid`"]
     #[inline(always)]
     pub fn is_invalid(&self) -> bool {
-        **self == DRDY_A::INVALID
+        *self == DRDY_A::Invalid
     }
-    ///Checks if the value of the field is `VALID`
+    #[doc = "Checks if the value of the field is `Valid`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        **self == DRDY_A::VALID
-    }
-}
-impl core::ops::Deref for DRDY_R {
-    type Target = crate::FieldReader<bool, DRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRDY_A::Valid
     }
 }
 impl R {
-    ///Bit 6 - Seed error interrupt status
+    #[doc = "Bit 6 - Seed error interrupt status"]
     #[inline(always)]
     pub fn seis(&self) -> SEIS_R {
-        SEIS_R::new(((self.bits >> 6) & 0x01) != 0)
+        SEIS_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - Clock error interrupt status
+    #[doc = "Bit 5 - Clock error interrupt status"]
     #[inline(always)]
     pub fn ceis(&self) -> CEIS_R {
-        CEIS_R::new(((self.bits >> 5) & 0x01) != 0)
+        CEIS_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 2 - Seed error current status
+    #[doc = "Bit 2 - Seed error current status"]
     #[inline(always)]
     pub fn secs(&self) -> SECS_R {
-        SECS_R::new(((self.bits >> 2) & 0x01) != 0)
+        SECS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Clock error current status
+    #[doc = "Bit 1 - Clock error current status"]
     #[inline(always)]
     pub fn cecs(&self) -> CECS_R {
-        CECS_R::new(((self.bits >> 1) & 0x01) != 0)
+        CECS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Data Ready
+    #[doc = "Bit 0 - Data Ready"]
     #[inline(always)]
     pub fn drdy(&self) -> DRDY_R {
-        DRDY_R::new((self.bits & 0x01) != 0)
+        DRDY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 6 - Seed error interrupt status
+    #[doc = "Bit 6 - Seed error interrupt status"]
     #[inline(always)]
-    pub fn seis(&mut self) -> SEIS_W {
-        SEIS_W { w: self }
+    pub fn seis(&mut self) -> SEIS_W<6> {
+        SEIS_W::new(self)
     }
-    ///Bit 5 - Clock error interrupt status
+    #[doc = "Bit 5 - Clock error interrupt status"]
     #[inline(always)]
-    pub fn ceis(&mut self) -> CEIS_W {
-        CEIS_W { w: self }
+    pub fn ceis(&mut self) -> CEIS_W<5> {
+        CEIS_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///status register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [sr](index.html) module
+#[doc = "status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [sr::R](R) reader structure
+#[doc = "`read()` method returns [sr::R](R) reader structure"]
 impl crate::Readable for SR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [sr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [sr::W](W) writer structure"]
 impl crate::Writable for SR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SR to value 0
+#[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `OSPEEDR` reader
+#[doc = "Register `OSPEEDR` reader"]
 pub struct R(crate::R<OSPEEDR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<OSPEEDR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<OSPEEDR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `OSPEEDR` writer
+#[doc = "Register `OSPEEDR` writer"]
 pub struct W(crate::W<OSPEEDR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OSPEEDR_SPEC>;
@@ -34,389 +34,72 @@ impl From<crate::W<OSPEEDR_SPEC>> for W {
         W(writer)
     }
 }
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR15_A = OSPEEDR0_A;
-///Field `OSPEEDR15` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR15_R = OSPEEDR0_R;
-///Field `OSPEEDR15` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR15_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR15_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR15_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR15_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR15_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR15_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR14_A = OSPEEDR0_A;
-///Field `OSPEEDR14` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR14_R = OSPEEDR0_R;
-///Field `OSPEEDR14` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR14_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR14_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR14_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR14_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR14_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR14_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR13_A = OSPEEDR0_A;
-///Field `OSPEEDR13` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR13_R = OSPEEDR0_R;
-///Field `OSPEEDR13` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR13_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR13_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR13_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR13_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR13_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR13_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR6_A = OSPEEDR0_A;
-///Field `OSPEEDR6` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR6_R = OSPEEDR0_R;
-///Field `OSPEEDR6` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR6_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR6_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR6_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR6_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR6_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR6_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR5_A = OSPEEDR0_A;
-///Field `OSPEEDR5` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR5_R = OSPEEDR0_R;
-///Field `OSPEEDR5` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR5_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR5_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR5_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR5_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR5_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR5_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR4_A = OSPEEDR0_A;
-///Field `OSPEEDR4` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR4_R = OSPEEDR0_R;
-///Field `OSPEEDR4` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR4_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR4_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR4_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR4_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR4_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR4_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR3_A = OSPEEDR0_A;
-///Field `OSPEEDR3` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR3_R = OSPEEDR0_R;
-///Field `OSPEEDR3` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR3_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR3_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR3_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR3_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR3_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR2_A = OSPEEDR0_A;
-///Field `OSPEEDR2` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR2_R = OSPEEDR0_R;
-///Field `OSPEEDR2` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR2_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR2_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR2_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR2_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR2_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-pub type OSPEEDR1_A = OSPEEDR0_A;
-///Field `OSPEEDR1` reader - Port x configuration bits (y = 0..15)
-pub type OSPEEDR1_R = OSPEEDR0_R;
-///Field `OSPEEDR1` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR1_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
-    #[inline(always)]
-    pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR1_A::LOWSPEED)
-    }
-    ///Medium speed
-    #[inline(always)]
-    pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR1_A::MEDIUMSPEED)
-    }
-    ///High speed
-    #[inline(always)]
-    pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR1_A::HIGHSPEED)
-    }
-    ///Very high speed
-    #[inline(always)]
-    pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR1_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
-///Port x configuration bits (y = 0..15)
-///
-///Value on reset: 0
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR15_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR14_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR13_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR6_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR5_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR4_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR3_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR2_A;
+#[doc = "Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_A as OSPEEDR1_A;
+#[doc = "Field `OSPEEDR15` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR15_R;
+#[doc = "Field `OSPEEDR14` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR14_R;
+#[doc = "Field `OSPEEDR13` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR13_R;
+#[doc = "Field `OSPEEDR6` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR6_R;
+#[doc = "Field `OSPEEDR5` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR5_R;
+#[doc = "Field `OSPEEDR4` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR4_R;
+#[doc = "Field `OSPEEDR3` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR3_R;
+#[doc = "Field `OSPEEDR2` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR2_R;
+#[doc = "Field `OSPEEDR1` reader - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_R as OSPEEDR1_R;
+#[doc = "Field `OSPEEDR15` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR15_W;
+#[doc = "Field `OSPEEDR14` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR14_W;
+#[doc = "Field `OSPEEDR13` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR13_W;
+#[doc = "Field `OSPEEDR6` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR6_W;
+#[doc = "Field `OSPEEDR5` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR5_W;
+#[doc = "Field `OSPEEDR4` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR4_W;
+#[doc = "Field `OSPEEDR3` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR3_W;
+#[doc = "Field `OSPEEDR2` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR2_W;
+#[doc = "Field `OSPEEDR1` writer - Port x configuration bits (y = 0..15)"]
+pub use OSPEEDR0_W as OSPEEDR1_W;
+#[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum OSPEEDR0_A {
-    ///0: Low speed
-    LOWSPEED = 0,
-    ///1: Medium speed
-    MEDIUMSPEED = 1,
-    ///2: High speed
-    HIGHSPEED = 2,
-    ///3: Very high speed
-    VERYHIGHSPEED = 3,
+    #[doc = "0: Low speed"]
+    LowSpeed = 0,
+    #[doc = "1: Medium speed"]
+    MediumSpeed = 1,
+    #[doc = "2: High speed"]
+    HighSpeed = 2,
+    #[doc = "3: Very high speed"]
+    VeryHighSpeed = 3,
 }
 impl From<OSPEEDR0_A> for u8 {
     #[inline(always)]
@@ -424,216 +107,190 @@ impl From<OSPEEDR0_A> for u8 {
         variant as _
     }
 }
-///Field `OSPEEDR0` reader - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR0_R(crate::FieldReader<u8, OSPEEDR0_A>);
+#[doc = "Field `OSPEEDR0` reader - Port x configuration bits (y = 0..15)"]
+pub type OSPEEDR0_R = crate::FieldReader<u8, OSPEEDR0_A>;
 impl OSPEEDR0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        OSPEEDR0_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OSPEEDR0_A {
         match self.bits {
-            0 => OSPEEDR0_A::LOWSPEED,
-            1 => OSPEEDR0_A::MEDIUMSPEED,
-            2 => OSPEEDR0_A::HIGHSPEED,
-            3 => OSPEEDR0_A::VERYHIGHSPEED,
+            0 => OSPEEDR0_A::LowSpeed,
+            1 => OSPEEDR0_A::MediumSpeed,
+            2 => OSPEEDR0_A::HighSpeed,
+            3 => OSPEEDR0_A::VeryHighSpeed,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `LOWSPEED`
+    #[doc = "Checks if the value of the field is `LowSpeed`"]
     #[inline(always)]
     pub fn is_low_speed(&self) -> bool {
-        **self == OSPEEDR0_A::LOWSPEED
+        *self == OSPEEDR0_A::LowSpeed
     }
-    ///Checks if the value of the field is `MEDIUMSPEED`
+    #[doc = "Checks if the value of the field is `MediumSpeed`"]
     #[inline(always)]
     pub fn is_medium_speed(&self) -> bool {
-        **self == OSPEEDR0_A::MEDIUMSPEED
+        *self == OSPEEDR0_A::MediumSpeed
     }
-    ///Checks if the value of the field is `HIGHSPEED`
+    #[doc = "Checks if the value of the field is `HighSpeed`"]
     #[inline(always)]
     pub fn is_high_speed(&self) -> bool {
-        **self == OSPEEDR0_A::HIGHSPEED
+        *self == OSPEEDR0_A::HighSpeed
     }
-    ///Checks if the value of the field is `VERYHIGHSPEED`
+    #[doc = "Checks if the value of the field is `VeryHighSpeed`"]
     #[inline(always)]
     pub fn is_very_high_speed(&self) -> bool {
-        **self == OSPEEDR0_A::VERYHIGHSPEED
+        *self == OSPEEDR0_A::VeryHighSpeed
     }
 }
-impl core::ops::Deref for OSPEEDR0_R {
-    type Target = crate::FieldReader<u8, OSPEEDR0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OSPEEDR0` writer - Port x configuration bits (y = 0..15)
-pub struct OSPEEDR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSPEEDR0_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OSPEEDR0_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Low speed
+#[doc = "Field `OSPEEDR0` writer - Port x configuration bits (y = 0..15)"]
+pub type OSPEEDR0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, OSPEEDR_SPEC, u8, OSPEEDR0_A, 2, O>;
+impl<'a, const O: u8> OSPEEDR0_W<'a, O> {
+    #[doc = "Low speed"]
     #[inline(always)]
     pub fn low_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR0_A::LOWSPEED)
+        self.variant(OSPEEDR0_A::LowSpeed)
     }
-    ///Medium speed
+    #[doc = "Medium speed"]
     #[inline(always)]
     pub fn medium_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR0_A::MEDIUMSPEED)
+        self.variant(OSPEEDR0_A::MediumSpeed)
     }
-    ///High speed
+    #[doc = "High speed"]
     #[inline(always)]
     pub fn high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR0_A::HIGHSPEED)
+        self.variant(OSPEEDR0_A::HighSpeed)
     }
-    ///Very high speed
+    #[doc = "Very high speed"]
     #[inline(always)]
     pub fn very_high_speed(self) -> &'a mut W {
-        self.variant(OSPEEDR0_A::VERYHIGHSPEED)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(OSPEEDR0_A::VeryHighSpeed)
     }
 }
 impl R {
-    ///Bits 30:31 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr15(&self) -> OSPEEDR15_R {
-        OSPEEDR15_R::new(((self.bits >> 30) & 0x03) as u8)
+        OSPEEDR15_R::new(((self.bits >> 30) & 3) as u8)
     }
-    ///Bits 28:29 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr14(&self) -> OSPEEDR14_R {
-        OSPEEDR14_R::new(((self.bits >> 28) & 0x03) as u8)
+        OSPEEDR14_R::new(((self.bits >> 28) & 3) as u8)
     }
-    ///Bits 26:27 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr13(&self) -> OSPEEDR13_R {
-        OSPEEDR13_R::new(((self.bits >> 26) & 0x03) as u8)
+        OSPEEDR13_R::new(((self.bits >> 26) & 3) as u8)
     }
-    ///Bits 12:13 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr6(&self) -> OSPEEDR6_R {
-        OSPEEDR6_R::new(((self.bits >> 12) & 0x03) as u8)
+        OSPEEDR6_R::new(((self.bits >> 12) & 3) as u8)
     }
-    ///Bits 10:11 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr5(&self) -> OSPEEDR5_R {
-        OSPEEDR5_R::new(((self.bits >> 10) & 0x03) as u8)
+        OSPEEDR5_R::new(((self.bits >> 10) & 3) as u8)
     }
-    ///Bits 8:9 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr4(&self) -> OSPEEDR4_R {
-        OSPEEDR4_R::new(((self.bits >> 8) & 0x03) as u8)
+        OSPEEDR4_R::new(((self.bits >> 8) & 3) as u8)
     }
-    ///Bits 6:7 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr3(&self) -> OSPEEDR3_R {
-        OSPEEDR3_R::new(((self.bits >> 6) & 0x03) as u8)
+        OSPEEDR3_R::new(((self.bits >> 6) & 3) as u8)
     }
-    ///Bits 4:5 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr2(&self) -> OSPEEDR2_R {
-        OSPEEDR2_R::new(((self.bits >> 4) & 0x03) as u8)
+        OSPEEDR2_R::new(((self.bits >> 4) & 3) as u8)
     }
-    ///Bits 2:3 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr1(&self) -> OSPEEDR1_R {
-        OSPEEDR1_R::new(((self.bits >> 2) & 0x03) as u8)
+        OSPEEDR1_R::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bits 0:1 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ospeedr0(&self) -> OSPEEDR0_R {
-        OSPEEDR0_R::new((self.bits & 0x03) as u8)
+        OSPEEDR0_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    ///Bits 30:31 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr15(&mut self) -> OSPEEDR15_W {
-        OSPEEDR15_W { w: self }
+    pub fn ospeedr15(&mut self) -> OSPEEDR15_W<30> {
+        OSPEEDR15_W::new(self)
     }
-    ///Bits 28:29 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr14(&mut self) -> OSPEEDR14_W {
-        OSPEEDR14_W { w: self }
+    pub fn ospeedr14(&mut self) -> OSPEEDR14_W<28> {
+        OSPEEDR14_W::new(self)
     }
-    ///Bits 26:27 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr13(&mut self) -> OSPEEDR13_W {
-        OSPEEDR13_W { w: self }
+    pub fn ospeedr13(&mut self) -> OSPEEDR13_W<26> {
+        OSPEEDR13_W::new(self)
     }
-    ///Bits 12:13 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr6(&mut self) -> OSPEEDR6_W {
-        OSPEEDR6_W { w: self }
+    pub fn ospeedr6(&mut self) -> OSPEEDR6_W<12> {
+        OSPEEDR6_W::new(self)
     }
-    ///Bits 10:11 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr5(&mut self) -> OSPEEDR5_W {
-        OSPEEDR5_W { w: self }
+    pub fn ospeedr5(&mut self) -> OSPEEDR5_W<10> {
+        OSPEEDR5_W::new(self)
     }
-    ///Bits 8:9 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr4(&mut self) -> OSPEEDR4_W {
-        OSPEEDR4_W { w: self }
+    pub fn ospeedr4(&mut self) -> OSPEEDR4_W<8> {
+        OSPEEDR4_W::new(self)
     }
-    ///Bits 6:7 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr3(&mut self) -> OSPEEDR3_W {
-        OSPEEDR3_W { w: self }
+    pub fn ospeedr3(&mut self) -> OSPEEDR3_W<6> {
+        OSPEEDR3_W::new(self)
     }
-    ///Bits 4:5 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr2(&mut self) -> OSPEEDR2_W {
-        OSPEEDR2_W { w: self }
+    pub fn ospeedr2(&mut self) -> OSPEEDR2_W<4> {
+        OSPEEDR2_W::new(self)
     }
-    ///Bits 2:3 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr1(&mut self) -> OSPEEDR1_W {
-        OSPEEDR1_W { w: self }
+    pub fn ospeedr1(&mut self) -> OSPEEDR1_W<2> {
+        OSPEEDR1_W::new(self)
     }
-    ///Bits 0:1 - Port x configuration bits (y = 0..15)
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ospeedr0(&mut self) -> OSPEEDR0_W {
-        OSPEEDR0_W { w: self }
+    pub fn ospeedr0(&mut self) -> OSPEEDR0_W<0> {
+        OSPEEDR0_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///GPIO port output speed register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ospeedr](index.html) module
+#[doc = "GPIO port output speed register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ospeedr](index.html) module"]
 pub struct OSPEEDR_SPEC;
 impl crate::RegisterSpec for OSPEEDR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ospeedr::R](R) reader structure
+#[doc = "`read()` method returns [ospeedr::R](R) reader structure"]
 impl crate::Readable for OSPEEDR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ospeedr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ospeedr::W](W) writer structure"]
 impl crate::Writable for OSPEEDR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets OSPEEDR to value 0
+#[doc = "`reset()` method sets OSPEEDR to value 0"]
 impl crate::Resettable for OSPEEDR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

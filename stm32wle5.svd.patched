@@ -23392,7 +23392,7 @@ Copyright (c) 2020 STMicroelectronics.
       <peripheral>
          <name>TIM1</name>
          <description>Advanced-control timers</description>
-         <groupName>AdavanceTIM</groupName>
+         <groupName>TIM</groupName>
          <baseAddress>0x40012C00</baseAddress>
          <addressBlock>
             <offset>0x0</offset>
@@ -25087,7 +25087,7 @@ Copyright (c) 2020 STMicroelectronics.
       <peripheral>
          <name>TIM2</name>
          <description>General-purpose-timers</description>
-         <groupName>GPTIM</groupName>
+         <groupName>TIM</groupName>
          <baseAddress>0x40000000</baseAddress>
          <addressBlock>
             <offset>0x0</offset>
@@ -26109,7 +26109,7 @@ Copyright (c) 2020 STMicroelectronics.
       <peripheral>
          <name>TIM16</name>
          <description>General-purpose timers</description>
-         <groupName>GPTIM</groupName>
+         <groupName>TIM</groupName>
          <baseAddress>0x40014400</baseAddress>
          <addressBlock>
             <offset>0x0</offset>
@@ -26802,7 +26802,7 @@ Copyright (c) 2020 STMicroelectronics.
       <peripheral>
          <name>TIM17</name>
          <description>General-purpose timers</description>
-         <groupName>GPTIM</groupName>
+         <groupName>TIM</groupName>
          <baseAddress>0x40014800</baseAddress>
          <addressBlock>
             <offset>0x0</offset>

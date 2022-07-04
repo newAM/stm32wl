@@ -1,4 +1,4 @@
-///Register `CR2` reader
+#[doc = "Register `CR2` reader"]
 pub struct R(crate::R<CR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR2` writer
+#[doc = "Register `CR2` writer"]
 pub struct W(crate::W<CR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-///OIS1N
-///
-///Value on reset: 0
+#[doc = "OIS1N\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1N_A {
-    ///0: OC1N=0 after a dead-time when MOE=0
-    LOW = 0,
-    ///1: OC1N=1 after a dead-time when MOE=0
-    HIGH = 1,
+    #[doc = "0: OC1N=0 after a dead-time when MOE=0"]
+    Low = 0,
+    #[doc = "1: OC1N=1 after a dead-time when MOE=0"]
+    High = 1,
 }
 impl From<OIS1N_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<OIS1N_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OIS1N` reader - OIS1N
-pub struct OIS1N_R(crate::FieldReader<bool, OIS1N_A>);
+#[doc = "Field `OIS1N` reader - OIS1N"]
+pub type OIS1N_R = crate::BitReader<OIS1N_A>;
 impl OIS1N_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OIS1N_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OIS1N_A {
         match self.bits {
-            false => OIS1N_A::LOW,
-            true => OIS1N_A::HIGH,
+            false => OIS1N_A::Low,
+            true => OIS1N_A::High,
         }
     }
-    ///Checks if the value of the field is `LOW`
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == OIS1N_A::LOW
+        *self == OIS1N_A::Low
     }
-    ///Checks if the value of the field is `HIGH`
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == OIS1N_A::HIGH
+        *self == OIS1N_A::High
     }
 }
-impl core::ops::Deref for OIS1N_R {
-    type Target = crate::FieldReader<bool, OIS1N_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OIS1N` writer - OIS1N
-pub struct OIS1N_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OIS1N_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OIS1N_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///OC1N=0 after a dead-time when MOE=0
+#[doc = "Field `OIS1N` writer - OIS1N"]
+pub type OIS1N_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, OIS1N_A, O>;
+impl<'a, const O: u8> OIS1N_W<'a, O> {
+    #[doc = "OC1N=0 after a dead-time when MOE=0"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(OIS1N_A::LOW)
+        self.variant(OIS1N_A::Low)
     }
-    ///OC1N=1 after a dead-time when MOE=0
+    #[doc = "OC1N=1 after a dead-time when MOE=0"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(OIS1N_A::HIGH)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(OIS1N_A::High)
     }
 }
-///OIS1
-///
-///Value on reset: 0
+#[doc = "OIS1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIS1_A {
-    ///0: OC1=0 (after a dead-time if OC1N is implemented) when MOE=0
-    LOW = 0,
-    ///1: OC1=1 (after a dead-time if OC1N is implemented) when MOE=0
-    HIGH = 1,
+    #[doc = "0: OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"]
+    Low = 0,
+    #[doc = "1: OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"]
+    High = 1,
 }
 impl From<OIS1_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<OIS1_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OIS1` reader - OIS1
-pub struct OIS1_R(crate::FieldReader<bool, OIS1_A>);
+#[doc = "Field `OIS1` reader - OIS1"]
+pub type OIS1_R = crate::BitReader<OIS1_A>;
 impl OIS1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OIS1_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OIS1_A {
         match self.bits {
-            false => OIS1_A::LOW,
-            true => OIS1_A::HIGH,
+            false => OIS1_A::Low,
+            true => OIS1_A::High,
         }
     }
-    ///Checks if the value of the field is `LOW`
+    #[doc = "Checks if the value of the field is `Low`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == OIS1_A::LOW
+        *self == OIS1_A::Low
     }
-    ///Checks if the value of the field is `HIGH`
+    #[doc = "Checks if the value of the field is `High`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == OIS1_A::HIGH
+        *self == OIS1_A::High
     }
 }
-impl core::ops::Deref for OIS1_R {
-    type Target = crate::FieldReader<bool, OIS1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OIS1` writer - OIS1
-pub struct OIS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OIS1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OIS1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///OC1=0 (after a dead-time if OC1N is implemented) when MOE=0
+#[doc = "Field `OIS1` writer - OIS1"]
+pub type OIS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, OIS1_A, O>;
+impl<'a, const O: u8> OIS1_W<'a, O> {
+    #[doc = "OC1=0 (after a dead-time if OC1N is implemented) when MOE=0"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(OIS1_A::LOW)
+        self.variant(OIS1_A::Low)
     }
-    ///OC1=1 (after a dead-time if OC1N is implemented) when MOE=0
+    #[doc = "OC1=1 (after a dead-time if OC1N is implemented) when MOE=0"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(OIS1_A::HIGH)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(OIS1_A::High)
     }
 }
-///CCDS
-///
-///Value on reset: 0
+#[doc = "CCDS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCDS_A {
-    ///0: CCx DMA request sent when CCx event occurs
-    ONCOMPARE = 0,
-    ///1: CCx DMA request sent when update event occurs
-    ONUPDATE = 1,
+    #[doc = "0: CCx DMA request sent when CCx event occurs"]
+    OnCompare = 0,
+    #[doc = "1: CCx DMA request sent when update event occurs"]
+    OnUpdate = 1,
 }
 impl From<CCDS_A> for bool {
     #[inline(always)]
@@ -220,84 +148,49 @@ impl From<CCDS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CCDS` reader - CCDS
-pub struct CCDS_R(crate::FieldReader<bool, CCDS_A>);
+#[doc = "Field `CCDS` reader - CCDS"]
+pub type CCDS_R = crate::BitReader<CCDS_A>;
 impl CCDS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCDS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCDS_A {
         match self.bits {
-            false => CCDS_A::ONCOMPARE,
-            true => CCDS_A::ONUPDATE,
+            false => CCDS_A::OnCompare,
+            true => CCDS_A::OnUpdate,
         }
     }
-    ///Checks if the value of the field is `ONCOMPARE`
+    #[doc = "Checks if the value of the field is `OnCompare`"]
     #[inline(always)]
     pub fn is_on_compare(&self) -> bool {
-        **self == CCDS_A::ONCOMPARE
+        *self == CCDS_A::OnCompare
     }
-    ///Checks if the value of the field is `ONUPDATE`
+    #[doc = "Checks if the value of the field is `OnUpdate`"]
     #[inline(always)]
     pub fn is_on_update(&self) -> bool {
-        **self == CCDS_A::ONUPDATE
+        *self == CCDS_A::OnUpdate
     }
 }
-impl core::ops::Deref for CCDS_R {
-    type Target = crate::FieldReader<bool, CCDS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CCDS` writer - CCDS
-pub struct CCDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCDS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CCDS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///CCx DMA request sent when CCx event occurs
+#[doc = "Field `CCDS` writer - CCDS"]
+pub type CCDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, CCDS_A, O>;
+impl<'a, const O: u8> CCDS_W<'a, O> {
+    #[doc = "CCx DMA request sent when CCx event occurs"]
     #[inline(always)]
     pub fn on_compare(self) -> &'a mut W {
-        self.variant(CCDS_A::ONCOMPARE)
+        self.variant(CCDS_A::OnCompare)
     }
-    ///CCx DMA request sent when update event occurs
+    #[doc = "CCx DMA request sent when update event occurs"]
     #[inline(always)]
     pub fn on_update(self) -> &'a mut W {
-        self.variant(CCDS_A::ONUPDATE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(CCDS_A::OnUpdate)
     }
 }
-///CCUS
-///
-///Value on reset: 0
+#[doc = "CCUS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCUS_A {
-    ///0: Capture/compare are updated only by setting the COMG bit
-    DEFAULT = 0,
-    ///1: Capture/compare are updated by setting the COMG bit or when an rising edge occurs on TRGI
-    WITHRISINGEDGE = 1,
+    #[doc = "0: Capture/compare are updated only by setting the COMG bit"]
+    Default = 0,
+    #[doc = "1: Capture/compare are updated by setting the COMG bit or when an rising edge occurs on TRGI"]
+    WithRisingEdge = 1,
 }
 impl From<CCUS_A> for bool {
     #[inline(always)]
@@ -305,84 +198,49 @@ impl From<CCUS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CCUS` reader - CCUS
-pub struct CCUS_R(crate::FieldReader<bool, CCUS_A>);
+#[doc = "Field `CCUS` reader - CCUS"]
+pub type CCUS_R = crate::BitReader<CCUS_A>;
 impl CCUS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCUS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCUS_A {
         match self.bits {
-            false => CCUS_A::DEFAULT,
-            true => CCUS_A::WITHRISINGEDGE,
+            false => CCUS_A::Default,
+            true => CCUS_A::WithRisingEdge,
         }
     }
-    ///Checks if the value of the field is `DEFAULT`
+    #[doc = "Checks if the value of the field is `Default`"]
     #[inline(always)]
     pub fn is_default(&self) -> bool {
-        **self == CCUS_A::DEFAULT
+        *self == CCUS_A::Default
     }
-    ///Checks if the value of the field is `WITHRISINGEDGE`
+    #[doc = "Checks if the value of the field is `WithRisingEdge`"]
     #[inline(always)]
     pub fn is_with_rising_edge(&self) -> bool {
-        **self == CCUS_A::WITHRISINGEDGE
+        *self == CCUS_A::WithRisingEdge
     }
 }
-impl core::ops::Deref for CCUS_R {
-    type Target = crate::FieldReader<bool, CCUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CCUS` writer - CCUS
-pub struct CCUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCUS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CCUS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Capture/compare are updated only by setting the COMG bit
+#[doc = "Field `CCUS` writer - CCUS"]
+pub type CCUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, CCUS_A, O>;
+impl<'a, const O: u8> CCUS_W<'a, O> {
+    #[doc = "Capture/compare are updated only by setting the COMG bit"]
     #[inline(always)]
     pub fn default(self) -> &'a mut W {
-        self.variant(CCUS_A::DEFAULT)
+        self.variant(CCUS_A::Default)
     }
-    ///Capture/compare are updated by setting the COMG bit or when an rising edge occurs on TRGI
+    #[doc = "Capture/compare are updated by setting the COMG bit or when an rising edge occurs on TRGI"]
     #[inline(always)]
     pub fn with_rising_edge(self) -> &'a mut W {
-        self.variant(CCUS_A::WITHRISINGEDGE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(CCUS_A::WithRisingEdge)
     }
 }
-///CCPC
-///
-///Value on reset: 0
+#[doc = "CCPC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCPC_A {
-    ///0: CCxE, CCxNE and OCxM bits are not preloaded
-    NOTPRELOADED = 0,
-    ///1: CCxE, CCxNE and OCxM bits are preloaded
-    PRELOADED = 1,
+    #[doc = "0: CCxE, CCxNE and OCxM bits are not preloaded"]
+    NotPreloaded = 0,
+    #[doc = "1: CCxE, CCxNE and OCxM bits are preloaded"]
+    Preloaded = 1,
 }
 impl From<CCPC_A> for bool {
     #[inline(always)]
@@ -390,153 +248,116 @@ impl From<CCPC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CCPC` reader - CCPC
-pub struct CCPC_R(crate::FieldReader<bool, CCPC_A>);
+#[doc = "Field `CCPC` reader - CCPC"]
+pub type CCPC_R = crate::BitReader<CCPC_A>;
 impl CCPC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCPC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCPC_A {
         match self.bits {
-            false => CCPC_A::NOTPRELOADED,
-            true => CCPC_A::PRELOADED,
+            false => CCPC_A::NotPreloaded,
+            true => CCPC_A::Preloaded,
         }
     }
-    ///Checks if the value of the field is `NOTPRELOADED`
+    #[doc = "Checks if the value of the field is `NotPreloaded`"]
     #[inline(always)]
     pub fn is_not_preloaded(&self) -> bool {
-        **self == CCPC_A::NOTPRELOADED
+        *self == CCPC_A::NotPreloaded
     }
-    ///Checks if the value of the field is `PRELOADED`
+    #[doc = "Checks if the value of the field is `Preloaded`"]
     #[inline(always)]
     pub fn is_preloaded(&self) -> bool {
-        **self == CCPC_A::PRELOADED
+        *self == CCPC_A::Preloaded
     }
 }
-impl core::ops::Deref for CCPC_R {
-    type Target = crate::FieldReader<bool, CCPC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CCPC` writer - CCPC
-pub struct CCPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCPC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CCPC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///CCxE, CCxNE and OCxM bits are not preloaded
+#[doc = "Field `CCPC` writer - CCPC"]
+pub type CCPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, CCPC_A, O>;
+impl<'a, const O: u8> CCPC_W<'a, O> {
+    #[doc = "CCxE, CCxNE and OCxM bits are not preloaded"]
     #[inline(always)]
     pub fn not_preloaded(self) -> &'a mut W {
-        self.variant(CCPC_A::NOTPRELOADED)
+        self.variant(CCPC_A::NotPreloaded)
     }
-    ///CCxE, CCxNE and OCxM bits are preloaded
+    #[doc = "CCxE, CCxNE and OCxM bits are preloaded"]
     #[inline(always)]
     pub fn preloaded(self) -> &'a mut W {
-        self.variant(CCPC_A::PRELOADED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(CCPC_A::Preloaded)
     }
 }
 impl R {
-    ///Bit 9 - OIS1N
+    #[doc = "Bit 9 - OIS1N"]
     #[inline(always)]
     pub fn ois1n(&self) -> OIS1N_R {
-        OIS1N_R::new(((self.bits >> 9) & 0x01) != 0)
+        OIS1N_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - OIS1
+    #[doc = "Bit 8 - OIS1"]
     #[inline(always)]
     pub fn ois1(&self) -> OIS1_R {
-        OIS1_R::new(((self.bits >> 8) & 0x01) != 0)
+        OIS1_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 3 - CCDS
+    #[doc = "Bit 3 - CCDS"]
     #[inline(always)]
     pub fn ccds(&self) -> CCDS_R {
-        CCDS_R::new(((self.bits >> 3) & 0x01) != 0)
+        CCDS_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - CCUS
+    #[doc = "Bit 2 - CCUS"]
     #[inline(always)]
     pub fn ccus(&self) -> CCUS_R {
-        CCUS_R::new(((self.bits >> 2) & 0x01) != 0)
+        CCUS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 0 - CCPC
+    #[doc = "Bit 0 - CCPC"]
     #[inline(always)]
     pub fn ccpc(&self) -> CCPC_R {
-        CCPC_R::new((self.bits & 0x01) != 0)
+        CCPC_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 9 - OIS1N
+    #[doc = "Bit 9 - OIS1N"]
     #[inline(always)]
-    pub fn ois1n(&mut self) -> OIS1N_W {
-        OIS1N_W { w: self }
+    pub fn ois1n(&mut self) -> OIS1N_W<9> {
+        OIS1N_W::new(self)
     }
-    ///Bit 8 - OIS1
+    #[doc = "Bit 8 - OIS1"]
     #[inline(always)]
-    pub fn ois1(&mut self) -> OIS1_W {
-        OIS1_W { w: self }
+    pub fn ois1(&mut self) -> OIS1_W<8> {
+        OIS1_W::new(self)
     }
-    ///Bit 3 - CCDS
+    #[doc = "Bit 3 - CCDS"]
     #[inline(always)]
-    pub fn ccds(&mut self) -> CCDS_W {
-        CCDS_W { w: self }
+    pub fn ccds(&mut self) -> CCDS_W<3> {
+        CCDS_W::new(self)
     }
-    ///Bit 2 - CCUS
+    #[doc = "Bit 2 - CCUS"]
     #[inline(always)]
-    pub fn ccus(&mut self) -> CCUS_W {
-        CCUS_W { w: self }
+    pub fn ccus(&mut self) -> CCUS_W<2> {
+        CCUS_W::new(self)
     }
-    ///Bit 0 - CCPC
+    #[doc = "Bit 0 - CCPC"]
     #[inline(always)]
-    pub fn ccpc(&mut self) -> CCPC_W {
-        CCPC_W { w: self }
+    pub fn ccpc(&mut self) -> CCPC_W<0> {
+        CCPC_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TIM16/TIM17 control register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr2](index.html) module
+#[doc = "TIM16/TIM17 control register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr2](index.html) module"]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr2::R](R) reader structure
+#[doc = "`read()` method returns [cr2::R](R) reader structure"]
 impl crate::Readable for CR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr2::W](W) writer structure"]
 impl crate::Writable for CR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR2 to value 0
+#[doc = "`reset()` method sets CR2 to value 0"]
 impl crate::Resettable for CR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

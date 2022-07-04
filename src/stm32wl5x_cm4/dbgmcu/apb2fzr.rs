@@ -1,4 +1,4 @@
-///Register `APB2FZR` reader
+#[doc = "Register `APB2FZR` reader"]
 pub struct R(crate::R<APB2FZR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<APB2FZR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<APB2FZR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `APB2FZR` writer
+#[doc = "Register `APB2FZR` writer"]
 pub struct W(crate::W<APB2FZR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<APB2FZR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<APB2FZR_SPEC>> for W {
         W(writer)
     }
 }
-///DBG_TIM1_STOP
-///
-///Value on reset: 0
+#[doc = "DBG_TIM1_STOP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_TIM1_STOP_A {
-    ///0: The counter clock of TIMx is fed even if the core is halted
-    CONTINUE = 0,
-    ///1: The counter clock of TIMx is stopped when the core is halted
-    STOP = 1,
+    #[doc = "0: The counter clock of TIMx is fed even if the core is halted"]
+    Continue = 0,
+    #[doc = "1: The counter clock of TIMx is stopped when the core is halted"]
+    Stop = 1,
 }
 impl From<DBG_TIM1_STOP_A> for bool {
     #[inline(always)]
@@ -50,215 +48,109 @@ impl From<DBG_TIM1_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DBG_TIM1_STOP` reader - DBG_TIM1_STOP
-pub struct DBG_TIM1_STOP_R(crate::FieldReader<bool, DBG_TIM1_STOP_A>);
+#[doc = "Field `DBG_TIM1_STOP` reader - DBG_TIM1_STOP"]
+pub type DBG_TIM1_STOP_R = crate::BitReader<DBG_TIM1_STOP_A>;
 impl DBG_TIM1_STOP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DBG_TIM1_STOP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBG_TIM1_STOP_A {
         match self.bits {
-            false => DBG_TIM1_STOP_A::CONTINUE,
-            true => DBG_TIM1_STOP_A::STOP,
+            false => DBG_TIM1_STOP_A::Continue,
+            true => DBG_TIM1_STOP_A::Stop,
         }
     }
-    ///Checks if the value of the field is `CONTINUE`
+    #[doc = "Checks if the value of the field is `Continue`"]
     #[inline(always)]
     pub fn is_continue(&self) -> bool {
-        **self == DBG_TIM1_STOP_A::CONTINUE
+        *self == DBG_TIM1_STOP_A::Continue
     }
-    ///Checks if the value of the field is `STOP`
+    #[doc = "Checks if the value of the field is `Stop`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == DBG_TIM1_STOP_A::STOP
+        *self == DBG_TIM1_STOP_A::Stop
     }
 }
-impl core::ops::Deref for DBG_TIM1_STOP_R {
-    type Target = crate::FieldReader<bool, DBG_TIM1_STOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DBG_TIM1_STOP` writer - DBG_TIM1_STOP
-pub struct DBG_TIM1_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBG_TIM1_STOP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DBG_TIM1_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The counter clock of TIMx is fed even if the core is halted
+#[doc = "Field `DBG_TIM1_STOP` writer - DBG_TIM1_STOP"]
+pub type DBG_TIM1_STOP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APB2FZR_SPEC, DBG_TIM1_STOP_A, O>;
+impl<'a, const O: u8> DBG_TIM1_STOP_W<'a, O> {
+    #[doc = "The counter clock of TIMx is fed even if the core is halted"]
     #[inline(always)]
     pub fn continue_(self) -> &'a mut W {
-        self.variant(DBG_TIM1_STOP_A::CONTINUE)
+        self.variant(DBG_TIM1_STOP_A::Continue)
     }
-    ///The counter clock of TIMx is stopped when the core is halted
+    #[doc = "The counter clock of TIMx is stopped when the core is halted"]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
-        self.variant(DBG_TIM1_STOP_A::STOP)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
+        self.variant(DBG_TIM1_STOP_A::Stop)
     }
 }
-///DBG_TIM16_STOP
-pub type DBG_TIM16_STOP_A = DBG_TIM1_STOP_A;
-///Field `DBG_TIM16_STOP` reader - DBG_TIM16_STOP
-pub type DBG_TIM16_STOP_R = DBG_TIM1_STOP_R;
-///Field `DBG_TIM16_STOP` writer - DBG_TIM16_STOP
-pub struct DBG_TIM16_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBG_TIM16_STOP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DBG_TIM16_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The counter clock of TIMx is fed even if the core is halted
-    #[inline(always)]
-    pub fn continue_(self) -> &'a mut W {
-        self.variant(DBG_TIM16_STOP_A::CONTINUE)
-    }
-    ///The counter clock of TIMx is stopped when the core is halted
-    #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
-        self.variant(DBG_TIM16_STOP_A::STOP)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///DBG_TIM17_STOP
-pub type DBG_TIM17_STOP_A = DBG_TIM1_STOP_A;
-///Field `DBG_TIM17_STOP` reader - DBG_TIM17_STOP
-pub type DBG_TIM17_STOP_R = DBG_TIM1_STOP_R;
-///Field `DBG_TIM17_STOP` writer - DBG_TIM17_STOP
-pub struct DBG_TIM17_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBG_TIM17_STOP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DBG_TIM17_STOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The counter clock of TIMx is fed even if the core is halted
-    #[inline(always)]
-    pub fn continue_(self) -> &'a mut W {
-        self.variant(DBG_TIM17_STOP_A::CONTINUE)
-    }
-    ///The counter clock of TIMx is stopped when the core is halted
-    #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
-        self.variant(DBG_TIM17_STOP_A::STOP)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+#[doc = "DBG_TIM16_STOP"]
+pub use DBG_TIM1_STOP_A as DBG_TIM16_STOP_A;
+#[doc = "DBG_TIM17_STOP"]
+pub use DBG_TIM1_STOP_A as DBG_TIM17_STOP_A;
+#[doc = "Field `DBG_TIM16_STOP` reader - DBG_TIM16_STOP"]
+pub use DBG_TIM1_STOP_R as DBG_TIM16_STOP_R;
+#[doc = "Field `DBG_TIM17_STOP` reader - DBG_TIM17_STOP"]
+pub use DBG_TIM1_STOP_R as DBG_TIM17_STOP_R;
+#[doc = "Field `DBG_TIM16_STOP` writer - DBG_TIM16_STOP"]
+pub use DBG_TIM1_STOP_W as DBG_TIM16_STOP_W;
+#[doc = "Field `DBG_TIM17_STOP` writer - DBG_TIM17_STOP"]
+pub use DBG_TIM1_STOP_W as DBG_TIM17_STOP_W;
 impl R {
-    ///Bit 11 - DBG_TIM1_STOP
+    #[doc = "Bit 11 - DBG_TIM1_STOP"]
     #[inline(always)]
     pub fn dbg_tim1_stop(&self) -> DBG_TIM1_STOP_R {
-        DBG_TIM1_STOP_R::new(((self.bits >> 11) & 0x01) != 0)
+        DBG_TIM1_STOP_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 17 - DBG_TIM16_STOP
+    #[doc = "Bit 17 - DBG_TIM16_STOP"]
     #[inline(always)]
     pub fn dbg_tim16_stop(&self) -> DBG_TIM16_STOP_R {
-        DBG_TIM16_STOP_R::new(((self.bits >> 17) & 0x01) != 0)
+        DBG_TIM16_STOP_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 18 - DBG_TIM17_STOP
+    #[doc = "Bit 18 - DBG_TIM17_STOP"]
     #[inline(always)]
     pub fn dbg_tim17_stop(&self) -> DBG_TIM17_STOP_R {
-        DBG_TIM17_STOP_R::new(((self.bits >> 18) & 0x01) != 0)
+        DBG_TIM17_STOP_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 11 - DBG_TIM1_STOP
+    #[doc = "Bit 11 - DBG_TIM1_STOP"]
     #[inline(always)]
-    pub fn dbg_tim1_stop(&mut self) -> DBG_TIM1_STOP_W {
-        DBG_TIM1_STOP_W { w: self }
+    pub fn dbg_tim1_stop(&mut self) -> DBG_TIM1_STOP_W<11> {
+        DBG_TIM1_STOP_W::new(self)
     }
-    ///Bit 17 - DBG_TIM16_STOP
+    #[doc = "Bit 17 - DBG_TIM16_STOP"]
     #[inline(always)]
-    pub fn dbg_tim16_stop(&mut self) -> DBG_TIM16_STOP_W {
-        DBG_TIM16_STOP_W { w: self }
+    pub fn dbg_tim16_stop(&mut self) -> DBG_TIM16_STOP_W<17> {
+        DBG_TIM16_STOP_W::new(self)
     }
-    ///Bit 18 - DBG_TIM17_STOP
+    #[doc = "Bit 18 - DBG_TIM17_STOP"]
     #[inline(always)]
-    pub fn dbg_tim17_stop(&mut self) -> DBG_TIM17_STOP_W {
-        DBG_TIM17_STOP_W { w: self }
+    pub fn dbg_tim17_stop(&mut self) -> DBG_TIM17_STOP_W<18> {
+        DBG_TIM17_STOP_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///DBGMCU CPU1 APB2 Peripheral Freeze Register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [apb2fzr](index.html) module
+#[doc = "DBGMCU CPU1 APB2 Peripheral Freeze Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb2fzr](index.html) module"]
 pub struct APB2FZR_SPEC;
 impl crate::RegisterSpec for APB2FZR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [apb2fzr::R](R) reader structure
+#[doc = "`read()` method returns [apb2fzr::R](R) reader structure"]
 impl crate::Readable for APB2FZR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [apb2fzr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [apb2fzr::W](W) writer structure"]
 impl crate::Writable for APB2FZR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets APB2FZR to value 0
+#[doc = "`reset()` method sets APB2FZR to value 0"]
 impl crate::Resettable for APB2FZR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

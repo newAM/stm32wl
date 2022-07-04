@@ -1,120 +1,120 @@
-///Register block
+#[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    ///0x00 - ADC interrupt and status register
-    pub adc_isr: crate::Reg<adc_isr::ADC_ISR_SPEC>,
-    ///0x04 - ADC interrupt enable register
-    pub adc_ier: crate::Reg<adc_ier::ADC_IER_SPEC>,
-    ///0x08 - ADC control register
-    pub adc_cr: crate::Reg<adc_cr::ADC_CR_SPEC>,
-    ///0x0c - ADC configuration register 1
-    pub adc_cfgr1: crate::Reg<adc_cfgr1::ADC_CFGR1_SPEC>,
-    ///0x10 - ADC configuration register 2
-    pub adc_cfgr2: crate::Reg<adc_cfgr2::ADC_CFGR2_SPEC>,
-    ///0x14 - ADC sampling time register
-    pub adc_smpr: crate::Reg<adc_smpr::ADC_SMPR_SPEC>,
+    #[doc = "0x00 - ADC interrupt and status register"]
+    pub isr: crate::Reg<isr::ISR_SPEC>,
+    #[doc = "0x04 - ADC interrupt enable register"]
+    pub ier: crate::Reg<ier::IER_SPEC>,
+    #[doc = "0x08 - ADC control register"]
+    pub cr: crate::Reg<cr::CR_SPEC>,
+    #[doc = "0x0c - ADC configuration register 1"]
+    pub cfgr1: crate::Reg<cfgr1::CFGR1_SPEC>,
+    #[doc = "0x10 - ADC configuration register 2"]
+    pub cfgr2: crate::Reg<cfgr2::CFGR2_SPEC>,
+    #[doc = "0x14 - ADC sampling time register"]
+    pub smpr: crate::Reg<smpr::SMPR_SPEC>,
     _reserved6: [u8; 0x08],
-    ///0x20 - ADC watchdog threshold register
-    pub adc_awd1tr: crate::Reg<adc_awd1tr::ADC_AWD1TR_SPEC>,
-    ///0x24 - ADC watchdog threshold register
-    pub adc_awd2tr: crate::Reg<adc_awd2tr::ADC_AWD2TR_SPEC>,
-    _reserved_8_adc_chselr: [u8; 0x04],
-    ///0x2c - ADC watchdog threshold register
-    pub adc_awd3tr: crate::Reg<adc_awd3tr::ADC_AWD3TR_SPEC>,
+    #[doc = "0x20 - ADC watchdog threshold register"]
+    pub awd1tr: crate::Reg<awd1tr::AWD1TR_SPEC>,
+    #[doc = "0x24 - ADC watchdog threshold register"]
+    pub awd2tr: crate::Reg<awd2tr::AWD2TR_SPEC>,
+    _reserved_8_chselr0: [u8; 0x04],
+    #[doc = "0x2c - ADC watchdog threshold register"]
+    pub awd3tr: crate::Reg<awd3tr::AWD3TR_SPEC>,
     _reserved10: [u8; 0x10],
-    ///0x40 - ADC data register
-    pub adc_dr: crate::Reg<adc_dr::ADC_DR_SPEC>,
+    #[doc = "0x40 - ADC data register"]
+    pub dr: crate::Reg<dr::DR_SPEC>,
     _reserved11: [u8; 0x5c],
-    ///0xa0 - ADC Analog Watchdog 2 Configuration register
-    pub adc_awd2cr: crate::Reg<adc_awd2cr::ADC_AWD2CR_SPEC>,
-    ///0xa4 - ADC Analog Watchdog 3 Configuration register
-    pub adc_awd3cr: crate::Reg<adc_awd3cr::ADC_AWD3CR_SPEC>,
+    #[doc = "0xa0 - ADC Analog Watchdog 2 Configuration register"]
+    pub awd2cr: crate::Reg<awd2cr::AWD2CR_SPEC>,
+    #[doc = "0xa4 - ADC Analog Watchdog 3 Configuration register"]
+    pub awd3cr: crate::Reg<awd3cr::AWD3CR_SPEC>,
     _reserved13: [u8; 0x0c],
-    ///0xb4 - ADC Calibration factor
-    pub adc_calfact: crate::Reg<adc_calfact::ADC_CALFACT_SPEC>,
+    #[doc = "0xb4 - ADC Calibration factor"]
+    pub calfact: crate::Reg<calfact::CALFACT_SPEC>,
     _reserved14: [u8; 0x0250],
-    ///0x308 - ADC common configuration register
-    pub adc_ccr: crate::Reg<adc_ccr::ADC_CCR_SPEC>,
+    #[doc = "0x308 - ADC common configuration register"]
+    pub ccr: crate::Reg<ccr::CCR_SPEC>,
 }
 impl RegisterBlock {
-    ///0x28 - channel selection register
+    #[doc = "0x28 - channel selection register"]
     #[inline(always)]
-    pub fn adc_chselr1(&self) -> &crate::Reg<adc_chselr1::ADC_CHSELR1_SPEC> {
+    pub fn chselr1(&self) -> &crate::Reg<chselr1::CHSELR1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(40usize)
-                as *const crate::Reg<adc_chselr1::ADC_CHSELR1_SPEC>)
+                as *const crate::Reg<chselr1::CHSELR1_SPEC>)
         }
     }
-    ///0x28 - channel selection register
+    #[doc = "0x28 - channel selection register"]
     #[inline(always)]
-    pub fn adc_chselr0(&self) -> &crate::Reg<adc_chselr0::ADC_CHSELR0_SPEC> {
+    pub fn chselr0(&self) -> &crate::Reg<chselr0::CHSELR0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(40usize)
-                as *const crate::Reg<adc_chselr0::ADC_CHSELR0_SPEC>)
+                as *const crate::Reg<chselr0::CHSELR0_SPEC>)
         }
     }
 }
-///ADC_ISR register accessor: an alias for `Reg<ADC_ISR_SPEC>`
-pub type ADC_ISR = crate::Reg<adc_isr::ADC_ISR_SPEC>;
-///ADC interrupt and status register
-pub mod adc_isr;
-///ADC_IER register accessor: an alias for `Reg<ADC_IER_SPEC>`
-pub type ADC_IER = crate::Reg<adc_ier::ADC_IER_SPEC>;
-///ADC interrupt enable register
-pub mod adc_ier;
-///ADC_CR register accessor: an alias for `Reg<ADC_CR_SPEC>`
-pub type ADC_CR = crate::Reg<adc_cr::ADC_CR_SPEC>;
-///ADC control register
-pub mod adc_cr;
-///ADC_CFGR1 register accessor: an alias for `Reg<ADC_CFGR1_SPEC>`
-pub type ADC_CFGR1 = crate::Reg<adc_cfgr1::ADC_CFGR1_SPEC>;
-///ADC configuration register 1
-pub mod adc_cfgr1;
-///ADC_CFGR2 register accessor: an alias for `Reg<ADC_CFGR2_SPEC>`
-pub type ADC_CFGR2 = crate::Reg<adc_cfgr2::ADC_CFGR2_SPEC>;
-///ADC configuration register 2
-pub mod adc_cfgr2;
-///ADC_SMPR register accessor: an alias for `Reg<ADC_SMPR_SPEC>`
-pub type ADC_SMPR = crate::Reg<adc_smpr::ADC_SMPR_SPEC>;
-///ADC sampling time register
-pub mod adc_smpr;
-///ADC_AWD1TR register accessor: an alias for `Reg<ADC_AWD1TR_SPEC>`
-pub type ADC_AWD1TR = crate::Reg<adc_awd1tr::ADC_AWD1TR_SPEC>;
-///ADC watchdog threshold register
-pub mod adc_awd1tr;
-///ADC_AWD2TR register accessor: an alias for `Reg<ADC_AWD2TR_SPEC>`
-pub type ADC_AWD2TR = crate::Reg<adc_awd2tr::ADC_AWD2TR_SPEC>;
-///ADC watchdog threshold register
-pub mod adc_awd2tr;
-///ADC_CHSELR0 register accessor: an alias for `Reg<ADC_CHSELR0_SPEC>`
-pub type ADC_CHSELR0 = crate::Reg<adc_chselr0::ADC_CHSELR0_SPEC>;
-///channel selection register
-pub mod adc_chselr0;
-///ADC_CHSELR1 register accessor: an alias for `Reg<ADC_CHSELR1_SPEC>`
-pub type ADC_CHSELR1 = crate::Reg<adc_chselr1::ADC_CHSELR1_SPEC>;
-///channel selection register
-pub mod adc_chselr1;
-///ADC_AWD3TR register accessor: an alias for `Reg<ADC_AWD3TR_SPEC>`
-pub type ADC_AWD3TR = crate::Reg<adc_awd3tr::ADC_AWD3TR_SPEC>;
-///ADC watchdog threshold register
-pub mod adc_awd3tr;
-///ADC_DR register accessor: an alias for `Reg<ADC_DR_SPEC>`
-pub type ADC_DR = crate::Reg<adc_dr::ADC_DR_SPEC>;
-///ADC data register
-pub mod adc_dr;
-///ADC_AWD2CR register accessor: an alias for `Reg<ADC_AWD2CR_SPEC>`
-pub type ADC_AWD2CR = crate::Reg<adc_awd2cr::ADC_AWD2CR_SPEC>;
-///ADC Analog Watchdog 2 Configuration register
-pub mod adc_awd2cr;
-///ADC_AWD3CR register accessor: an alias for `Reg<ADC_AWD3CR_SPEC>`
-pub type ADC_AWD3CR = crate::Reg<adc_awd3cr::ADC_AWD3CR_SPEC>;
-///ADC Analog Watchdog 3 Configuration register
-pub mod adc_awd3cr;
-///ADC_CALFACT register accessor: an alias for `Reg<ADC_CALFACT_SPEC>`
-pub type ADC_CALFACT = crate::Reg<adc_calfact::ADC_CALFACT_SPEC>;
-///ADC Calibration factor
-pub mod adc_calfact;
-///ADC_CCR register accessor: an alias for `Reg<ADC_CCR_SPEC>`
-pub type ADC_CCR = crate::Reg<adc_ccr::ADC_CCR_SPEC>;
-///ADC common configuration register
-pub mod adc_ccr;
+#[doc = "ISR register accessor: an alias for `Reg<ISR_SPEC>`"]
+pub type ISR = crate::Reg<isr::ISR_SPEC>;
+#[doc = "ADC interrupt and status register"]
+pub mod isr;
+#[doc = "IER register accessor: an alias for `Reg<IER_SPEC>`"]
+pub type IER = crate::Reg<ier::IER_SPEC>;
+#[doc = "ADC interrupt enable register"]
+pub mod ier;
+#[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
+pub type CR = crate::Reg<cr::CR_SPEC>;
+#[doc = "ADC control register"]
+pub mod cr;
+#[doc = "CFGR1 register accessor: an alias for `Reg<CFGR1_SPEC>`"]
+pub type CFGR1 = crate::Reg<cfgr1::CFGR1_SPEC>;
+#[doc = "ADC configuration register 1"]
+pub mod cfgr1;
+#[doc = "CFGR2 register accessor: an alias for `Reg<CFGR2_SPEC>`"]
+pub type CFGR2 = crate::Reg<cfgr2::CFGR2_SPEC>;
+#[doc = "ADC configuration register 2"]
+pub mod cfgr2;
+#[doc = "SMPR register accessor: an alias for `Reg<SMPR_SPEC>`"]
+pub type SMPR = crate::Reg<smpr::SMPR_SPEC>;
+#[doc = "ADC sampling time register"]
+pub mod smpr;
+#[doc = "AWD1TR register accessor: an alias for `Reg<AWD1TR_SPEC>`"]
+pub type AWD1TR = crate::Reg<awd1tr::AWD1TR_SPEC>;
+#[doc = "ADC watchdog threshold register"]
+pub mod awd1tr;
+#[doc = "AWD2TR register accessor: an alias for `Reg<AWD2TR_SPEC>`"]
+pub type AWD2TR = crate::Reg<awd2tr::AWD2TR_SPEC>;
+#[doc = "ADC watchdog threshold register"]
+pub mod awd2tr;
+#[doc = "CHSELR0 register accessor: an alias for `Reg<CHSELR0_SPEC>`"]
+pub type CHSELR0 = crate::Reg<chselr0::CHSELR0_SPEC>;
+#[doc = "channel selection register"]
+pub mod chselr0;
+#[doc = "CHSELR1 register accessor: an alias for `Reg<CHSELR1_SPEC>`"]
+pub type CHSELR1 = crate::Reg<chselr1::CHSELR1_SPEC>;
+#[doc = "channel selection register"]
+pub mod chselr1;
+#[doc = "AWD3TR register accessor: an alias for `Reg<AWD3TR_SPEC>`"]
+pub type AWD3TR = crate::Reg<awd3tr::AWD3TR_SPEC>;
+#[doc = "ADC watchdog threshold register"]
+pub mod awd3tr;
+#[doc = "DR register accessor: an alias for `Reg<DR_SPEC>`"]
+pub type DR = crate::Reg<dr::DR_SPEC>;
+#[doc = "ADC data register"]
+pub mod dr;
+#[doc = "AWD2CR register accessor: an alias for `Reg<AWD2CR_SPEC>`"]
+pub type AWD2CR = crate::Reg<awd2cr::AWD2CR_SPEC>;
+#[doc = "ADC Analog Watchdog 2 Configuration register"]
+pub mod awd2cr;
+#[doc = "AWD3CR register accessor: an alias for `Reg<AWD3CR_SPEC>`"]
+pub type AWD3CR = crate::Reg<awd3cr::AWD3CR_SPEC>;
+#[doc = "ADC Analog Watchdog 3 Configuration register"]
+pub mod awd3cr;
+#[doc = "CALFACT register accessor: an alias for `Reg<CALFACT_SPEC>`"]
+pub type CALFACT = crate::Reg<calfact::CALFACT_SPEC>;
+#[doc = "ADC Calibration factor"]
+pub mod calfact;
+#[doc = "CCR register accessor: an alias for `Reg<CCR_SPEC>`"]
+pub type CCR = crate::Reg<ccr::CCR_SPEC>;
+#[doc = "ADC common configuration register"]
+pub mod ccr;

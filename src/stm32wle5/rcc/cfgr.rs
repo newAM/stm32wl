@@ -1,4 +1,4 @@
-///Register `CFGR` reader
+#[doc = "Register `CFGR` reader"]
 pub struct R(crate::R<CFGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CFGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CFGR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CFGR` writer
+#[doc = "Register `CFGR` writer"]
 pub struct W(crate::W<CFGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CFGR_SPEC>;
@@ -34,22 +34,20 @@ impl From<crate::W<CFGR_SPEC>> for W {
         W(writer)
     }
 }
-///Microcontroller clock output prescaler
-///
-///Value on reset: 0
+#[doc = "Microcontroller clock output prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MCOPRE_A {
-    ///0: No division
-    DIV1 = 0,
-    ///1: Division by 2
-    DIV2 = 1,
-    ///2: Division by 4
-    DIV4 = 2,
-    ///3: Division by 8
-    DIV8 = 3,
-    ///4: Division by 16
-    DIV16 = 4,
+    #[doc = "0: No division"]
+    Div1 = 0,
+    #[doc = "1: Division by 2"]
+    Div2 = 1,
+    #[doc = "2: Division by 4"]
+    Div4 = 2,
+    #[doc = "3: Division by 8"]
+    Div8 = 3,
+    #[doc = "4: Division by 16"]
+    Div16 = 4,
 }
 impl From<MCOPRE_A> for u8 {
     #[inline(always)]
@@ -57,125 +55,100 @@ impl From<MCOPRE_A> for u8 {
         variant as _
     }
 }
-///Field `MCOPRE` reader - Microcontroller clock output prescaler
-pub struct MCOPRE_R(crate::FieldReader<u8, MCOPRE_A>);
+#[doc = "Field `MCOPRE` reader - Microcontroller clock output prescaler"]
+pub type MCOPRE_R = crate::FieldReader<u8, MCOPRE_A>;
 impl MCOPRE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MCOPRE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MCOPRE_A> {
         match self.bits {
-            0 => Some(MCOPRE_A::DIV1),
-            1 => Some(MCOPRE_A::DIV2),
-            2 => Some(MCOPRE_A::DIV4),
-            3 => Some(MCOPRE_A::DIV8),
-            4 => Some(MCOPRE_A::DIV16),
+            0 => Some(MCOPRE_A::Div1),
+            1 => Some(MCOPRE_A::Div2),
+            2 => Some(MCOPRE_A::Div4),
+            3 => Some(MCOPRE_A::Div8),
+            4 => Some(MCOPRE_A::Div16),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == MCOPRE_A::DIV1
+        *self == MCOPRE_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == MCOPRE_A::DIV2
+        *self == MCOPRE_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == MCOPRE_A::DIV4
+        *self == MCOPRE_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == MCOPRE_A::DIV8
+        *self == MCOPRE_A::Div8
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == MCOPRE_A::DIV16
+        *self == MCOPRE_A::Div16
     }
 }
-impl core::ops::Deref for MCOPRE_R {
-    type Target = crate::FieldReader<u8, MCOPRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MCOPRE` writer - Microcontroller clock output prescaler
-pub struct MCOPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCOPRE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MCOPRE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///No division
+#[doc = "Field `MCOPRE` writer - Microcontroller clock output prescaler"]
+pub type MCOPRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, MCOPRE_A, 3, O>;
+impl<'a, const O: u8> MCOPRE_W<'a, O> {
+    #[doc = "No division"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(MCOPRE_A::DIV1)
+        self.variant(MCOPRE_A::Div1)
     }
-    ///Division by 2
+    #[doc = "Division by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(MCOPRE_A::DIV2)
+        self.variant(MCOPRE_A::Div2)
     }
-    ///Division by 4
+    #[doc = "Division by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(MCOPRE_A::DIV4)
+        self.variant(MCOPRE_A::Div4)
     }
-    ///Division by 8
+    #[doc = "Division by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(MCOPRE_A::DIV8)
+        self.variant(MCOPRE_A::Div8)
     }
-    ///Division by 16
+    #[doc = "Division by 16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(MCOPRE_A::DIV16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
+        self.variant(MCOPRE_A::Div16)
     }
 }
-///Microcontroller clock output
-///
-///Value on reset: 0
+#[doc = "Microcontroller clock output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MCOSEL_A {
-    ///0: No clock
-    NOCLOCK = 0,
-    ///1: SYSCLK clock selected
-    SYSCLK = 1,
-    ///2: MSI oscillator clock selected
-    MSI = 2,
-    ///3: HSI16 oscillator clock selected
-    HSI16 = 3,
-    ///4: HSE32 oscillator clock selected
-    HSE32 = 4,
-    ///5: Main PLLRCLK clock selected
-    PLLR = 5,
-    ///6: LSI oscillator clock selected
-    LSI = 6,
-    ///8: LSE oscillator clock selected
-    LSE = 8,
-    ///13: Main PLLPCLK clock selected
-    PLLP = 13,
-    ///14: Main PLLQCLK clock selected
-    PLLQ = 14,
+    #[doc = "0: No clock"]
+    NoClock = 0,
+    #[doc = "1: SYSCLK clock selected"]
+    Sysclk = 1,
+    #[doc = "2: MSI oscillator clock selected"]
+    Msi = 2,
+    #[doc = "3: HSI16 oscillator clock selected"]
+    Hsi16 = 3,
+    #[doc = "4: HSE32 oscillator clock selected"]
+    Hse32 = 4,
+    #[doc = "5: Main PLLRCLK clock selected"]
+    Pllr = 5,
+    #[doc = "6: LSI oscillator clock selected"]
+    Lsi = 6,
+    #[doc = "8: LSE oscillator clock selected"]
+    Lse = 8,
+    #[doc = "13: Main PLLPCLK clock selected"]
+    Pllp = 13,
+    #[doc = "14: Main PLLQCLK clock selected"]
+    Pllq = 14,
 }
 impl From<MCOSEL_A> for u8 {
     #[inline(always)]
@@ -183,163 +156,138 @@ impl From<MCOSEL_A> for u8 {
         variant as _
     }
 }
-///Field `MCOSEL` reader - Microcontroller clock output
-pub struct MCOSEL_R(crate::FieldReader<u8, MCOSEL_A>);
+#[doc = "Field `MCOSEL` reader - Microcontroller clock output"]
+pub type MCOSEL_R = crate::FieldReader<u8, MCOSEL_A>;
 impl MCOSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MCOSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MCOSEL_A> {
         match self.bits {
-            0 => Some(MCOSEL_A::NOCLOCK),
-            1 => Some(MCOSEL_A::SYSCLK),
-            2 => Some(MCOSEL_A::MSI),
-            3 => Some(MCOSEL_A::HSI16),
-            4 => Some(MCOSEL_A::HSE32),
-            5 => Some(MCOSEL_A::PLLR),
-            6 => Some(MCOSEL_A::LSI),
-            8 => Some(MCOSEL_A::LSE),
-            13 => Some(MCOSEL_A::PLLP),
-            14 => Some(MCOSEL_A::PLLQ),
+            0 => Some(MCOSEL_A::NoClock),
+            1 => Some(MCOSEL_A::Sysclk),
+            2 => Some(MCOSEL_A::Msi),
+            3 => Some(MCOSEL_A::Hsi16),
+            4 => Some(MCOSEL_A::Hse32),
+            5 => Some(MCOSEL_A::Pllr),
+            6 => Some(MCOSEL_A::Lsi),
+            8 => Some(MCOSEL_A::Lse),
+            13 => Some(MCOSEL_A::Pllp),
+            14 => Some(MCOSEL_A::Pllq),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `NOCLOCK`
+    #[doc = "Checks if the value of the field is `NoClock`"]
     #[inline(always)]
     pub fn is_no_clock(&self) -> bool {
-        **self == MCOSEL_A::NOCLOCK
+        *self == MCOSEL_A::NoClock
     }
-    ///Checks if the value of the field is `SYSCLK`
+    #[doc = "Checks if the value of the field is `Sysclk`"]
     #[inline(always)]
     pub fn is_sysclk(&self) -> bool {
-        **self == MCOSEL_A::SYSCLK
+        *self == MCOSEL_A::Sysclk
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == MCOSEL_A::MSI
+        *self == MCOSEL_A::Msi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == MCOSEL_A::HSI16
+        *self == MCOSEL_A::Hsi16
     }
-    ///Checks if the value of the field is `HSE32`
+    #[doc = "Checks if the value of the field is `Hse32`"]
     #[inline(always)]
     pub fn is_hse32(&self) -> bool {
-        **self == MCOSEL_A::HSE32
+        *self == MCOSEL_A::Hse32
     }
-    ///Checks if the value of the field is `PLLR`
+    #[doc = "Checks if the value of the field is `Pllr`"]
     #[inline(always)]
     pub fn is_pllr(&self) -> bool {
-        **self == MCOSEL_A::PLLR
+        *self == MCOSEL_A::Pllr
     }
-    ///Checks if the value of the field is `LSI`
+    #[doc = "Checks if the value of the field is `Lsi`"]
     #[inline(always)]
     pub fn is_lsi(&self) -> bool {
-        **self == MCOSEL_A::LSI
+        *self == MCOSEL_A::Lsi
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == MCOSEL_A::LSE
+        *self == MCOSEL_A::Lse
     }
-    ///Checks if the value of the field is `PLLP`
+    #[doc = "Checks if the value of the field is `Pllp`"]
     #[inline(always)]
     pub fn is_pllp(&self) -> bool {
-        **self == MCOSEL_A::PLLP
+        *self == MCOSEL_A::Pllp
     }
-    ///Checks if the value of the field is `PLLQ`
+    #[doc = "Checks if the value of the field is `Pllq`"]
     #[inline(always)]
     pub fn is_pllq(&self) -> bool {
-        **self == MCOSEL_A::PLLQ
+        *self == MCOSEL_A::Pllq
     }
 }
-impl core::ops::Deref for MCOSEL_R {
-    type Target = crate::FieldReader<u8, MCOSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MCOSEL` writer - Microcontroller clock output
-pub struct MCOSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCOSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MCOSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///No clock
+#[doc = "Field `MCOSEL` writer - Microcontroller clock output"]
+pub type MCOSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, MCOSEL_A, 4, O>;
+impl<'a, const O: u8> MCOSEL_W<'a, O> {
+    #[doc = "No clock"]
     #[inline(always)]
     pub fn no_clock(self) -> &'a mut W {
-        self.variant(MCOSEL_A::NOCLOCK)
+        self.variant(MCOSEL_A::NoClock)
     }
-    ///SYSCLK clock selected
+    #[doc = "SYSCLK clock selected"]
     #[inline(always)]
     pub fn sysclk(self) -> &'a mut W {
-        self.variant(MCOSEL_A::SYSCLK)
+        self.variant(MCOSEL_A::Sysclk)
     }
-    ///MSI oscillator clock selected
+    #[doc = "MSI oscillator clock selected"]
     #[inline(always)]
     pub fn msi(self) -> &'a mut W {
-        self.variant(MCOSEL_A::MSI)
+        self.variant(MCOSEL_A::Msi)
     }
-    ///HSI16 oscillator clock selected
+    #[doc = "HSI16 oscillator clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(MCOSEL_A::HSI16)
+        self.variant(MCOSEL_A::Hsi16)
     }
-    ///HSE32 oscillator clock selected
+    #[doc = "HSE32 oscillator clock selected"]
     #[inline(always)]
     pub fn hse32(self) -> &'a mut W {
-        self.variant(MCOSEL_A::HSE32)
+        self.variant(MCOSEL_A::Hse32)
     }
-    ///Main PLLRCLK clock selected
+    #[doc = "Main PLLRCLK clock selected"]
     #[inline(always)]
     pub fn pllr(self) -> &'a mut W {
-        self.variant(MCOSEL_A::PLLR)
+        self.variant(MCOSEL_A::Pllr)
     }
-    ///LSI oscillator clock selected
+    #[doc = "LSI oscillator clock selected"]
     #[inline(always)]
     pub fn lsi(self) -> &'a mut W {
-        self.variant(MCOSEL_A::LSI)
+        self.variant(MCOSEL_A::Lsi)
     }
-    ///LSE oscillator clock selected
+    #[doc = "LSE oscillator clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(MCOSEL_A::LSE)
+        self.variant(MCOSEL_A::Lse)
     }
-    ///Main PLLPCLK clock selected
+    #[doc = "Main PLLPCLK clock selected"]
     #[inline(always)]
     pub fn pllp(self) -> &'a mut W {
-        self.variant(MCOSEL_A::PLLP)
+        self.variant(MCOSEL_A::Pllp)
     }
-    ///Main PLLQCLK clock selected
+    #[doc = "Main PLLQCLK clock selected"]
     #[inline(always)]
     pub fn pllq(self) -> &'a mut W {
-        self.variant(MCOSEL_A::PLLQ)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
+        self.variant(MCOSEL_A::Pllq)
     }
 }
-///PCLK2 prescaler flag (APB2)
-///
-///Value on reset: 1
+#[doc = "PCLK2 prescaler flag (APB2)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPRE2F_A {
-    ///0: PCLK2 prescaler value not yet applied
-    NOTAPPLIED = 0,
-    ///1: PCLK2 prescaler value applied
-    APPLIED = 1,
+    #[doc = "0: PCLK2 prescaler value not yet applied"]
+    NotApplied = 0,
+    #[doc = "1: PCLK2 prescaler value applied"]
+    Applied = 1,
 }
 impl From<PPRE2F_A> for bool {
     #[inline(always)]
@@ -347,47 +295,35 @@ impl From<PPRE2F_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PPRE2F` reader - PCLK2 prescaler flag (APB2)
-pub struct PPRE2F_R(crate::FieldReader<bool, PPRE2F_A>);
+#[doc = "Field `PPRE2F` reader - PCLK2 prescaler flag (APB2)"]
+pub type PPRE2F_R = crate::BitReader<PPRE2F_A>;
 impl PPRE2F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PPRE2F_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPRE2F_A {
         match self.bits {
-            false => PPRE2F_A::NOTAPPLIED,
-            true => PPRE2F_A::APPLIED,
+            false => PPRE2F_A::NotApplied,
+            true => PPRE2F_A::Applied,
         }
     }
-    ///Checks if the value of the field is `NOTAPPLIED`
+    #[doc = "Checks if the value of the field is `NotApplied`"]
     #[inline(always)]
     pub fn is_not_applied(&self) -> bool {
-        **self == PPRE2F_A::NOTAPPLIED
+        *self == PPRE2F_A::NotApplied
     }
-    ///Checks if the value of the field is `APPLIED`
+    #[doc = "Checks if the value of the field is `Applied`"]
     #[inline(always)]
     pub fn is_applied(&self) -> bool {
-        **self == PPRE2F_A::APPLIED
+        *self == PPRE2F_A::Applied
     }
 }
-impl core::ops::Deref for PPRE2F_R {
-    type Target = crate::FieldReader<bool, PPRE2F_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///PCLK1 prescaler flag (APB1)
-///
-///Value on reset: 1
+#[doc = "PCLK1 prescaler flag (APB1)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPRE1F_A {
-    ///0: PCLK1 prescaler value not yet applied
-    NOTAPPLIED = 0,
-    ///1: PCLK1 prescaler value applied
-    APPLIED = 1,
+    #[doc = "0: PCLK1 prescaler value not yet applied"]
+    NotApplied = 0,
+    #[doc = "1: PCLK1 prescaler value applied"]
+    Applied = 1,
 }
 impl From<PPRE1F_A> for bool {
     #[inline(always)]
@@ -395,47 +331,35 @@ impl From<PPRE1F_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PPRE1F` reader - PCLK1 prescaler flag (APB1)
-pub struct PPRE1F_R(crate::FieldReader<bool, PPRE1F_A>);
+#[doc = "Field `PPRE1F` reader - PCLK1 prescaler flag (APB1)"]
+pub type PPRE1F_R = crate::BitReader<PPRE1F_A>;
 impl PPRE1F_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PPRE1F_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPRE1F_A {
         match self.bits {
-            false => PPRE1F_A::NOTAPPLIED,
-            true => PPRE1F_A::APPLIED,
+            false => PPRE1F_A::NotApplied,
+            true => PPRE1F_A::Applied,
         }
     }
-    ///Checks if the value of the field is `NOTAPPLIED`
+    #[doc = "Checks if the value of the field is `NotApplied`"]
     #[inline(always)]
     pub fn is_not_applied(&self) -> bool {
-        **self == PPRE1F_A::NOTAPPLIED
+        *self == PPRE1F_A::NotApplied
     }
-    ///Checks if the value of the field is `APPLIED`
+    #[doc = "Checks if the value of the field is `Applied`"]
     #[inline(always)]
     pub fn is_applied(&self) -> bool {
-        **self == PPRE1F_A::APPLIED
+        *self == PPRE1F_A::Applied
     }
 }
-impl core::ops::Deref for PPRE1F_R {
-    type Target = crate::FieldReader<bool, PPRE1F_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)
-///
-///Value on reset: 1
+#[doc = "HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HPREF_A {
-    ///0: HCLK1 prescaler value not yet applied
-    NOTAPPLIED = 0,
-    ///1: HCLK1 prescaler value applied
-    APPLIED = 1,
+    #[doc = "0: HCLK1 prescaler value not yet applied"]
+    NotApplied = 0,
+    #[doc = "1: HCLK1 prescaler value applied"]
+    Applied = 1,
 }
 impl From<HPREF_A> for bool {
     #[inline(always)]
@@ -443,47 +367,35 @@ impl From<HPREF_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HPREF` reader - HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)
-pub struct HPREF_R(crate::FieldReader<bool, HPREF_A>);
+#[doc = "Field `HPREF` reader - HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)"]
+pub type HPREF_R = crate::BitReader<HPREF_A>;
 impl HPREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HPREF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HPREF_A {
         match self.bits {
-            false => HPREF_A::NOTAPPLIED,
-            true => HPREF_A::APPLIED,
+            false => HPREF_A::NotApplied,
+            true => HPREF_A::Applied,
         }
     }
-    ///Checks if the value of the field is `NOTAPPLIED`
+    #[doc = "Checks if the value of the field is `NotApplied`"]
     #[inline(always)]
     pub fn is_not_applied(&self) -> bool {
-        **self == HPREF_A::NOTAPPLIED
+        *self == HPREF_A::NotApplied
     }
-    ///Checks if the value of the field is `APPLIED`
+    #[doc = "Checks if the value of the field is `Applied`"]
     #[inline(always)]
     pub fn is_applied(&self) -> bool {
-        **self == HPREF_A::APPLIED
+        *self == HPREF_A::Applied
     }
 }
-impl core::ops::Deref for HPREF_R {
-    type Target = crate::FieldReader<bool, HPREF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Wakeup from Stop and CSS backup clock selection
-///
-///Value on reset: 0
+#[doc = "Wakeup from Stop and CSS backup clock selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPWUCK_A {
-    ///0: MSI oscillator selected as wakeup from stop clock and CSS backup clock
-    MSI = 0,
-    ///1: HSI16 oscillator selected as wakeup from stop clock and CSS backup clock
-    HSI16 = 1,
+    #[doc = "0: MSI oscillator selected as wakeup from stop clock and CSS backup clock"]
+    Msi = 0,
+    #[doc = "1: HSI16 oscillator selected as wakeup from stop clock and CSS backup clock"]
+    Hsi16 = 1,
 }
 impl From<STOPWUCK_A> for bool {
     #[inline(always)]
@@ -491,91 +403,56 @@ impl From<STOPWUCK_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `STOPWUCK` reader - Wakeup from Stop and CSS backup clock selection
-pub struct STOPWUCK_R(crate::FieldReader<bool, STOPWUCK_A>);
+#[doc = "Field `STOPWUCK` reader - Wakeup from Stop and CSS backup clock selection"]
+pub type STOPWUCK_R = crate::BitReader<STOPWUCK_A>;
 impl STOPWUCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STOPWUCK_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOPWUCK_A {
         match self.bits {
-            false => STOPWUCK_A::MSI,
-            true => STOPWUCK_A::HSI16,
+            false => STOPWUCK_A::Msi,
+            true => STOPWUCK_A::Hsi16,
         }
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == STOPWUCK_A::MSI
+        *self == STOPWUCK_A::Msi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == STOPWUCK_A::HSI16
+        *self == STOPWUCK_A::Hsi16
     }
 }
-impl core::ops::Deref for STOPWUCK_R {
-    type Target = crate::FieldReader<bool, STOPWUCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `STOPWUCK` writer - Wakeup from Stop and CSS backup clock selection
-pub struct STOPWUCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPWUCK_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: STOPWUCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///MSI oscillator selected as wakeup from stop clock and CSS backup clock
+#[doc = "Field `STOPWUCK` writer - Wakeup from Stop and CSS backup clock selection"]
+pub type STOPWUCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, STOPWUCK_A, O>;
+impl<'a, const O: u8> STOPWUCK_W<'a, O> {
+    #[doc = "MSI oscillator selected as wakeup from stop clock and CSS backup clock"]
     #[inline(always)]
     pub fn msi(self) -> &'a mut W {
-        self.variant(STOPWUCK_A::MSI)
+        self.variant(STOPWUCK_A::Msi)
     }
-    ///HSI16 oscillator selected as wakeup from stop clock and CSS backup clock
+    #[doc = "HSI16 oscillator selected as wakeup from stop clock and CSS backup clock"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(STOPWUCK_A::HSI16)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(STOPWUCK_A::Hsi16)
     }
 }
-///PCLK2 high-speed prescaler (APB2)
-///
-///Value on reset: 0
+#[doc = "PCLK2 high-speed prescaler (APB2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PPRE2_A {
-    ///0: HCLK not divided
-    DIV1 = 0,
-    ///4: HCLK divided by 2
-    DIV2 = 4,
-    ///5: HCLK divided by 4
-    DIV4 = 5,
-    ///6: HCLK divided by 8
-    DIV8 = 6,
-    ///7: HCLK divided by 16
-    DIV16 = 7,
+    #[doc = "0: HCLK not divided"]
+    Div1 = 0,
+    #[doc = "4: HCLK divided by 2"]
+    Div2 = 4,
+    #[doc = "5: HCLK divided by 4"]
+    Div4 = 5,
+    #[doc = "6: HCLK divided by 8"]
+    Div8 = 6,
+    #[doc = "7: HCLK divided by 16"]
+    Div16 = 7,
 }
 impl From<PPRE2_A> for u8 {
     #[inline(always)]
@@ -583,115 +460,90 @@ impl From<PPRE2_A> for u8 {
         variant as _
     }
 }
-///Field `PPRE2` reader - PCLK2 high-speed prescaler (APB2)
-pub struct PPRE2_R(crate::FieldReader<u8, PPRE2_A>);
+#[doc = "Field `PPRE2` reader - PCLK2 high-speed prescaler (APB2)"]
+pub type PPRE2_R = crate::FieldReader<u8, PPRE2_A>;
 impl PPRE2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PPRE2_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PPRE2_A> {
         match self.bits {
-            0 => Some(PPRE2_A::DIV1),
-            4 => Some(PPRE2_A::DIV2),
-            5 => Some(PPRE2_A::DIV4),
-            6 => Some(PPRE2_A::DIV8),
-            7 => Some(PPRE2_A::DIV16),
+            0 => Some(PPRE2_A::Div1),
+            4 => Some(PPRE2_A::Div2),
+            5 => Some(PPRE2_A::Div4),
+            6 => Some(PPRE2_A::Div8),
+            7 => Some(PPRE2_A::Div16),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == PPRE2_A::DIV1
+        *self == PPRE2_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PPRE2_A::DIV2
+        *self == PPRE2_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PPRE2_A::DIV4
+        *self == PPRE2_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PPRE2_A::DIV8
+        *self == PPRE2_A::Div8
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == PPRE2_A::DIV16
+        *self == PPRE2_A::Div16
     }
 }
-impl core::ops::Deref for PPRE2_R {
-    type Target = crate::FieldReader<u8, PPRE2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PPRE2` writer - PCLK2 high-speed prescaler (APB2)
-pub struct PPRE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PPRE2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PPRE2_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///HCLK not divided
+#[doc = "Field `PPRE2` writer - PCLK2 high-speed prescaler (APB2)"]
+pub type PPRE2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, PPRE2_A, 3, O>;
+impl<'a, const O: u8> PPRE2_W<'a, O> {
+    #[doc = "HCLK not divided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PPRE2_A::DIV1)
+        self.variant(PPRE2_A::Div1)
     }
-    ///HCLK divided by 2
+    #[doc = "HCLK divided by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PPRE2_A::DIV2)
+        self.variant(PPRE2_A::Div2)
     }
-    ///HCLK divided by 4
+    #[doc = "HCLK divided by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PPRE2_A::DIV4)
+        self.variant(PPRE2_A::Div4)
     }
-    ///HCLK divided by 8
+    #[doc = "HCLK divided by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PPRE2_A::DIV8)
+        self.variant(PPRE2_A::Div8)
     }
-    ///HCLK divided by 16
+    #[doc = "HCLK divided by 16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PPRE2_A::DIV16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 11)) | ((value as u32 & 0x07) << 11);
-        self.w
+        self.variant(PPRE2_A::Div16)
     }
 }
-///PCLK1 low-speed prescaler (APB1)
-///
-///Value on reset: 0
+#[doc = "PCLK1 low-speed prescaler (APB1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PPRE1_A {
-    ///0: HCLK not divided
-    DIV1 = 0,
-    ///4: HCLK divided by 2
-    DIV2 = 4,
-    ///5: HCLK divided by 4
-    DIV4 = 5,
-    ///6: HCLK divided by 8
-    DIV8 = 6,
-    ///7: HCLK divided by 16
-    DIV16 = 7,
+    #[doc = "0: HCLK not divided"]
+    Div1 = 0,
+    #[doc = "4: HCLK divided by 2"]
+    Div2 = 4,
+    #[doc = "5: HCLK divided by 4"]
+    Div4 = 5,
+    #[doc = "6: HCLK divided by 8"]
+    Div8 = 6,
+    #[doc = "7: HCLK divided by 16"]
+    Div16 = 7,
 }
 impl From<PPRE1_A> for u8 {
     #[inline(always)]
@@ -699,133 +551,108 @@ impl From<PPRE1_A> for u8 {
         variant as _
     }
 }
-///Field `PPRE1` reader - PCLK1 low-speed prescaler (APB1)
-pub struct PPRE1_R(crate::FieldReader<u8, PPRE1_A>);
+#[doc = "Field `PPRE1` reader - PCLK1 low-speed prescaler (APB1)"]
+pub type PPRE1_R = crate::FieldReader<u8, PPRE1_A>;
 impl PPRE1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PPRE1_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PPRE1_A> {
         match self.bits {
-            0 => Some(PPRE1_A::DIV1),
-            4 => Some(PPRE1_A::DIV2),
-            5 => Some(PPRE1_A::DIV4),
-            6 => Some(PPRE1_A::DIV8),
-            7 => Some(PPRE1_A::DIV16),
+            0 => Some(PPRE1_A::Div1),
+            4 => Some(PPRE1_A::Div2),
+            5 => Some(PPRE1_A::Div4),
+            6 => Some(PPRE1_A::Div8),
+            7 => Some(PPRE1_A::Div16),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == PPRE1_A::DIV1
+        *self == PPRE1_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PPRE1_A::DIV2
+        *self == PPRE1_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PPRE1_A::DIV4
+        *self == PPRE1_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PPRE1_A::DIV8
+        *self == PPRE1_A::Div8
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == PPRE1_A::DIV16
+        *self == PPRE1_A::Div16
     }
 }
-impl core::ops::Deref for PPRE1_R {
-    type Target = crate::FieldReader<u8, PPRE1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PPRE1` writer - PCLK1 low-speed prescaler (APB1)
-pub struct PPRE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PPRE1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PPRE1_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///HCLK not divided
+#[doc = "Field `PPRE1` writer - PCLK1 low-speed prescaler (APB1)"]
+pub type PPRE1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, PPRE1_A, 3, O>;
+impl<'a, const O: u8> PPRE1_W<'a, O> {
+    #[doc = "HCLK not divided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PPRE1_A::DIV1)
+        self.variant(PPRE1_A::Div1)
     }
-    ///HCLK divided by 2
+    #[doc = "HCLK divided by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PPRE1_A::DIV2)
+        self.variant(PPRE1_A::Div2)
     }
-    ///HCLK divided by 4
+    #[doc = "HCLK divided by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PPRE1_A::DIV4)
+        self.variant(PPRE1_A::Div4)
     }
-    ///HCLK divided by 8
+    #[doc = "HCLK divided by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PPRE1_A::DIV8)
+        self.variant(PPRE1_A::Div8)
     }
-    ///HCLK divided by 16
+    #[doc = "HCLK divided by 16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PPRE1_A::DIV16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
+        self.variant(PPRE1_A::Div16)
     }
 }
-///HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)
-///
-///Value on reset: 0
+#[doc = "HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum HPRE_A {
-    ///0: SYSCLK not divided
-    DIV1 = 0,
-    ///1: SYSCLK divided by 3
-    DIV3 = 1,
-    ///2: SYSCLK divided by 5
-    DIV5 = 2,
-    ///5: SYSCLK divided by 6
-    DIV6 = 5,
-    ///6: SYSCLK divided by 10
-    DIV10 = 6,
-    ///7: SYSCLK divided by 32
-    DIV32 = 7,
-    ///8: SYSCLK divided by 2
-    DIV2 = 8,
-    ///9: SYSCLK divided by 4
-    DIV4 = 9,
-    ///10: SYSCLK divided by 8
-    DIV8 = 10,
-    ///11: SYSCLK divided by 16
-    DIV16 = 11,
-    ///12: SYSCLK divided by 64
-    DIV64 = 12,
-    ///13: SYSCLK divided by 128
-    DIV128 = 13,
-    ///14: SYSCLK divided by 128
-    DIV256 = 14,
-    ///15: SYSCLK divided by 512
-    DIV512 = 15,
+    #[doc = "0: SYSCLK not divided"]
+    Div1 = 0,
+    #[doc = "1: SYSCLK divided by 3"]
+    Div3 = 1,
+    #[doc = "2: SYSCLK divided by 5"]
+    Div5 = 2,
+    #[doc = "5: SYSCLK divided by 6"]
+    Div6 = 5,
+    #[doc = "6: SYSCLK divided by 10"]
+    Div10 = 6,
+    #[doc = "7: SYSCLK divided by 32"]
+    Div32 = 7,
+    #[doc = "8: SYSCLK divided by 2"]
+    Div2 = 8,
+    #[doc = "9: SYSCLK divided by 4"]
+    Div4 = 9,
+    #[doc = "10: SYSCLK divided by 8"]
+    Div8 = 10,
+    #[doc = "11: SYSCLK divided by 16"]
+    Div16 = 11,
+    #[doc = "12: SYSCLK divided by 64"]
+    Div64 = 12,
+    #[doc = "13: SYSCLK divided by 128"]
+    Div128 = 13,
+    #[doc = "14: SYSCLK divided by 128"]
+    Div256 = 14,
+    #[doc = "15: SYSCLK divided by 512"]
+    Div512 = 15,
 }
 impl From<HPRE_A> for u8 {
     #[inline(always)]
@@ -833,212 +660,187 @@ impl From<HPRE_A> for u8 {
         variant as _
     }
 }
-///Field `HPRE` reader - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)
-pub struct HPRE_R(crate::FieldReader<u8, HPRE_A>);
+#[doc = "Field `HPRE` reader - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
+pub type HPRE_R = crate::FieldReader<u8, HPRE_A>;
 impl HPRE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HPRE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HPRE_A> {
         match self.bits {
-            0 => Some(HPRE_A::DIV1),
-            1 => Some(HPRE_A::DIV3),
-            2 => Some(HPRE_A::DIV5),
-            5 => Some(HPRE_A::DIV6),
-            6 => Some(HPRE_A::DIV10),
-            7 => Some(HPRE_A::DIV32),
-            8 => Some(HPRE_A::DIV2),
-            9 => Some(HPRE_A::DIV4),
-            10 => Some(HPRE_A::DIV8),
-            11 => Some(HPRE_A::DIV16),
-            12 => Some(HPRE_A::DIV64),
-            13 => Some(HPRE_A::DIV128),
-            14 => Some(HPRE_A::DIV256),
-            15 => Some(HPRE_A::DIV512),
+            0 => Some(HPRE_A::Div1),
+            1 => Some(HPRE_A::Div3),
+            2 => Some(HPRE_A::Div5),
+            5 => Some(HPRE_A::Div6),
+            6 => Some(HPRE_A::Div10),
+            7 => Some(HPRE_A::Div32),
+            8 => Some(HPRE_A::Div2),
+            9 => Some(HPRE_A::Div4),
+            10 => Some(HPRE_A::Div8),
+            11 => Some(HPRE_A::Div16),
+            12 => Some(HPRE_A::Div64),
+            13 => Some(HPRE_A::Div128),
+            14 => Some(HPRE_A::Div256),
+            15 => Some(HPRE_A::Div512),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == HPRE_A::DIV1
+        *self == HPRE_A::Div1
     }
-    ///Checks if the value of the field is `DIV3`
+    #[doc = "Checks if the value of the field is `Div3`"]
     #[inline(always)]
     pub fn is_div3(&self) -> bool {
-        **self == HPRE_A::DIV3
+        *self == HPRE_A::Div3
     }
-    ///Checks if the value of the field is `DIV5`
+    #[doc = "Checks if the value of the field is `Div5`"]
     #[inline(always)]
     pub fn is_div5(&self) -> bool {
-        **self == HPRE_A::DIV5
+        *self == HPRE_A::Div5
     }
-    ///Checks if the value of the field is `DIV6`
+    #[doc = "Checks if the value of the field is `Div6`"]
     #[inline(always)]
     pub fn is_div6(&self) -> bool {
-        **self == HPRE_A::DIV6
+        *self == HPRE_A::Div6
     }
-    ///Checks if the value of the field is `DIV10`
+    #[doc = "Checks if the value of the field is `Div10`"]
     #[inline(always)]
     pub fn is_div10(&self) -> bool {
-        **self == HPRE_A::DIV10
+        *self == HPRE_A::Div10
     }
-    ///Checks if the value of the field is `DIV32`
+    #[doc = "Checks if the value of the field is `Div32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == HPRE_A::DIV32
+        *self == HPRE_A::Div32
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == HPRE_A::DIV2
+        *self == HPRE_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == HPRE_A::DIV4
+        *self == HPRE_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == HPRE_A::DIV8
+        *self == HPRE_A::Div8
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == HPRE_A::DIV16
+        *self == HPRE_A::Div16
     }
-    ///Checks if the value of the field is `DIV64`
+    #[doc = "Checks if the value of the field is `Div64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        **self == HPRE_A::DIV64
+        *self == HPRE_A::Div64
     }
-    ///Checks if the value of the field is `DIV128`
+    #[doc = "Checks if the value of the field is `Div128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        **self == HPRE_A::DIV128
+        *self == HPRE_A::Div128
     }
-    ///Checks if the value of the field is `DIV256`
+    #[doc = "Checks if the value of the field is `Div256`"]
     #[inline(always)]
     pub fn is_div256(&self) -> bool {
-        **self == HPRE_A::DIV256
+        *self == HPRE_A::Div256
     }
-    ///Checks if the value of the field is `DIV512`
+    #[doc = "Checks if the value of the field is `Div512`"]
     #[inline(always)]
     pub fn is_div512(&self) -> bool {
-        **self == HPRE_A::DIV512
+        *self == HPRE_A::Div512
     }
 }
-impl core::ops::Deref for HPRE_R {
-    type Target = crate::FieldReader<u8, HPRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HPRE` writer - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)
-pub struct HPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HPRE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HPRE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///SYSCLK not divided
+#[doc = "Field `HPRE` writer - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
+pub type HPRE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, HPRE_A, 4, O>;
+impl<'a, const O: u8> HPRE_W<'a, O> {
+    #[doc = "SYSCLK not divided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV1)
+        self.variant(HPRE_A::Div1)
     }
-    ///SYSCLK divided by 3
+    #[doc = "SYSCLK divided by 3"]
     #[inline(always)]
     pub fn div3(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV3)
+        self.variant(HPRE_A::Div3)
     }
-    ///SYSCLK divided by 5
+    #[doc = "SYSCLK divided by 5"]
     #[inline(always)]
     pub fn div5(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV5)
+        self.variant(HPRE_A::Div5)
     }
-    ///SYSCLK divided by 6
+    #[doc = "SYSCLK divided by 6"]
     #[inline(always)]
     pub fn div6(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV6)
+        self.variant(HPRE_A::Div6)
     }
-    ///SYSCLK divided by 10
+    #[doc = "SYSCLK divided by 10"]
     #[inline(always)]
     pub fn div10(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV10)
+        self.variant(HPRE_A::Div10)
     }
-    ///SYSCLK divided by 32
+    #[doc = "SYSCLK divided by 32"]
     #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV32)
+        self.variant(HPRE_A::Div32)
     }
-    ///SYSCLK divided by 2
+    #[doc = "SYSCLK divided by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV2)
+        self.variant(HPRE_A::Div2)
     }
-    ///SYSCLK divided by 4
+    #[doc = "SYSCLK divided by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV4)
+        self.variant(HPRE_A::Div4)
     }
-    ///SYSCLK divided by 8
+    #[doc = "SYSCLK divided by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV8)
+        self.variant(HPRE_A::Div8)
     }
-    ///SYSCLK divided by 16
+    #[doc = "SYSCLK divided by 16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV16)
+        self.variant(HPRE_A::Div16)
     }
-    ///SYSCLK divided by 64
+    #[doc = "SYSCLK divided by 64"]
     #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV64)
+        self.variant(HPRE_A::Div64)
     }
-    ///SYSCLK divided by 128
+    #[doc = "SYSCLK divided by 128"]
     #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV128)
+        self.variant(HPRE_A::Div128)
     }
-    ///SYSCLK divided by 128
+    #[doc = "SYSCLK divided by 128"]
     #[inline(always)]
     pub fn div256(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV256)
+        self.variant(HPRE_A::Div256)
     }
-    ///SYSCLK divided by 512
+    #[doc = "SYSCLK divided by 512"]
     #[inline(always)]
     pub fn div512(self) -> &'a mut W {
-        self.variant(HPRE_A::DIV512)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
+        self.variant(HPRE_A::Div512)
     }
 }
-///System clock switch status
-///
-///Value on reset: 0
+#[doc = "System clock switch status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SWS_A {
-    ///0: MSI oscillator used as system clock
-    MSI = 0,
-    ///1: HSI16 oscillator used as system clock
-    HSI16 = 1,
-    ///2: HSE32 oscillator used as system clock
-    HSE32 = 2,
-    ///3: PLLRCLK used as system clock
-    PLLR = 3,
+    #[doc = "0: MSI oscillator used as system clock"]
+    Msi = 0,
+    #[doc = "1: HSI16 oscillator used as system clock"]
+    Hsi16 = 1,
+    #[doc = "2: HSE32 oscillator used as system clock"]
+    Hse32 = 2,
+    #[doc = "3: PLLRCLK used as system clock"]
+    Pllr = 3,
 }
 impl From<SWS_A> for u8 {
     #[inline(always)]
@@ -1046,65 +848,53 @@ impl From<SWS_A> for u8 {
         variant as _
     }
 }
-///Field `SWS` reader - System clock switch status
-pub struct SWS_R(crate::FieldReader<u8, SWS_A>);
+#[doc = "Field `SWS` reader - System clock switch status"]
+pub type SWS_R = crate::FieldReader<u8, SWS_A>;
 impl SWS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SWS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SWS_A {
         match self.bits {
-            0 => SWS_A::MSI,
-            1 => SWS_A::HSI16,
-            2 => SWS_A::HSE32,
-            3 => SWS_A::PLLR,
+            0 => SWS_A::Msi,
+            1 => SWS_A::Hsi16,
+            2 => SWS_A::Hse32,
+            3 => SWS_A::Pllr,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == SWS_A::MSI
+        *self == SWS_A::Msi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == SWS_A::HSI16
+        *self == SWS_A::Hsi16
     }
-    ///Checks if the value of the field is `HSE32`
+    #[doc = "Checks if the value of the field is `Hse32`"]
     #[inline(always)]
     pub fn is_hse32(&self) -> bool {
-        **self == SWS_A::HSE32
+        *self == SWS_A::Hse32
     }
-    ///Checks if the value of the field is `PLLR`
+    #[doc = "Checks if the value of the field is `Pllr`"]
     #[inline(always)]
     pub fn is_pllr(&self) -> bool {
-        **self == SWS_A::PLLR
+        *self == SWS_A::Pllr
     }
 }
-impl core::ops::Deref for SWS_R {
-    type Target = crate::FieldReader<u8, SWS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///System clock switch
-///
-///Value on reset: 0
+#[doc = "System clock switch\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SW_A {
-    ///0: MSI oscillator used as system clock
-    MSI = 0,
-    ///1: HSI16 oscillator used as system clock
-    HSI16 = 1,
-    ///2: HSE32 oscillator used as system clock
-    HSE32 = 2,
-    ///3: PLLRCLK used as system clock
-    PLLR = 3,
+    #[doc = "0: MSI oscillator used as system clock"]
+    Msi = 0,
+    #[doc = "1: HSI16 oscillator used as system clock"]
+    Hsi16 = 1,
+    #[doc = "2: HSE32 oscillator used as system clock"]
+    Hse32 = 2,
+    #[doc = "3: PLLRCLK used as system clock"]
+    Pllr = 3,
 }
 impl From<SW_A> for u8 {
     #[inline(always)]
@@ -1112,206 +902,179 @@ impl From<SW_A> for u8 {
         variant as _
     }
 }
-///Field `SW` reader - System clock switch
-pub struct SW_R(crate::FieldReader<u8, SW_A>);
+#[doc = "Field `SW` reader - System clock switch"]
+pub type SW_R = crate::FieldReader<u8, SW_A>;
 impl SW_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SW_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SW_A {
         match self.bits {
-            0 => SW_A::MSI,
-            1 => SW_A::HSI16,
-            2 => SW_A::HSE32,
-            3 => SW_A::PLLR,
+            0 => SW_A::Msi,
+            1 => SW_A::Hsi16,
+            2 => SW_A::Hse32,
+            3 => SW_A::Pllr,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == SW_A::MSI
+        *self == SW_A::Msi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == SW_A::HSI16
+        *self == SW_A::Hsi16
     }
-    ///Checks if the value of the field is `HSE32`
+    #[doc = "Checks if the value of the field is `Hse32`"]
     #[inline(always)]
     pub fn is_hse32(&self) -> bool {
-        **self == SW_A::HSE32
+        *self == SW_A::Hse32
     }
-    ///Checks if the value of the field is `PLLR`
+    #[doc = "Checks if the value of the field is `Pllr`"]
     #[inline(always)]
     pub fn is_pllr(&self) -> bool {
-        **self == SW_A::PLLR
+        *self == SW_A::Pllr
     }
 }
-impl core::ops::Deref for SW_R {
-    type Target = crate::FieldReader<u8, SW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SW` writer - System clock switch
-pub struct SW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SW_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///MSI oscillator used as system clock
+#[doc = "Field `SW` writer - System clock switch"]
+pub type SW_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, SW_A, 2, O>;
+impl<'a, const O: u8> SW_W<'a, O> {
+    #[doc = "MSI oscillator used as system clock"]
     #[inline(always)]
     pub fn msi(self) -> &'a mut W {
-        self.variant(SW_A::MSI)
+        self.variant(SW_A::Msi)
     }
-    ///HSI16 oscillator used as system clock
+    #[doc = "HSI16 oscillator used as system clock"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(SW_A::HSI16)
+        self.variant(SW_A::Hsi16)
     }
-    ///HSE32 oscillator used as system clock
+    #[doc = "HSE32 oscillator used as system clock"]
     #[inline(always)]
     pub fn hse32(self) -> &'a mut W {
-        self.variant(SW_A::HSE32)
+        self.variant(SW_A::Hse32)
     }
-    ///PLLRCLK used as system clock
+    #[doc = "PLLRCLK used as system clock"]
     #[inline(always)]
     pub fn pllr(self) -> &'a mut W {
-        self.variant(SW_A::PLLR)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(SW_A::Pllr)
     }
 }
 impl R {
-    ///Bits 28:30 - Microcontroller clock output prescaler
+    #[doc = "Bits 28:30 - Microcontroller clock output prescaler"]
     #[inline(always)]
     pub fn mcopre(&self) -> MCOPRE_R {
-        MCOPRE_R::new(((self.bits >> 28) & 0x07) as u8)
+        MCOPRE_R::new(((self.bits >> 28) & 7) as u8)
     }
-    ///Bits 24:27 - Microcontroller clock output
+    #[doc = "Bits 24:27 - Microcontroller clock output"]
     #[inline(always)]
     pub fn mcosel(&self) -> MCOSEL_R {
         MCOSEL_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    ///Bit 18 - PCLK2 prescaler flag (APB2)
+    #[doc = "Bit 18 - PCLK2 prescaler flag (APB2)"]
     #[inline(always)]
     pub fn ppre2f(&self) -> PPRE2F_R {
-        PPRE2F_R::new(((self.bits >> 18) & 0x01) != 0)
+        PPRE2F_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - PCLK1 prescaler flag (APB1)
+    #[doc = "Bit 17 - PCLK1 prescaler flag (APB1)"]
     #[inline(always)]
     pub fn ppre1f(&self) -> PPRE1F_R {
-        PPRE1F_R::new(((self.bits >> 17) & 0x01) != 0)
+        PPRE1F_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 16 - HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)
+    #[doc = "Bit 16 - HCLK1 prescaler flag (CPU1, AHB1, AHB2, and SRAM1)"]
     #[inline(always)]
     pub fn hpref(&self) -> HPREF_R {
-        HPREF_R::new(((self.bits >> 16) & 0x01) != 0)
+        HPREF_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 15 - Wakeup from Stop and CSS backup clock selection
+    #[doc = "Bit 15 - Wakeup from Stop and CSS backup clock selection"]
     #[inline(always)]
     pub fn stopwuck(&self) -> STOPWUCK_R {
-        STOPWUCK_R::new(((self.bits >> 15) & 0x01) != 0)
+        STOPWUCK_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bits 11:13 - PCLK2 high-speed prescaler (APB2)
+    #[doc = "Bits 11:13 - PCLK2 high-speed prescaler (APB2)"]
     #[inline(always)]
     pub fn ppre2(&self) -> PPRE2_R {
-        PPRE2_R::new(((self.bits >> 11) & 0x07) as u8)
+        PPRE2_R::new(((self.bits >> 11) & 7) as u8)
     }
-    ///Bits 8:10 - PCLK1 low-speed prescaler (APB1)
+    #[doc = "Bits 8:10 - PCLK1 low-speed prescaler (APB1)"]
     #[inline(always)]
     pub fn ppre1(&self) -> PPRE1_R {
-        PPRE1_R::new(((self.bits >> 8) & 0x07) as u8)
+        PPRE1_R::new(((self.bits >> 8) & 7) as u8)
     }
-    ///Bits 4:7 - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)
+    #[doc = "Bits 4:7 - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
     #[inline(always)]
     pub fn hpre(&self) -> HPRE_R {
         HPRE_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    ///Bits 2:3 - System clock switch status
+    #[doc = "Bits 2:3 - System clock switch status"]
     #[inline(always)]
     pub fn sws(&self) -> SWS_R {
-        SWS_R::new(((self.bits >> 2) & 0x03) as u8)
+        SWS_R::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bits 0:1 - System clock switch
+    #[doc = "Bits 0:1 - System clock switch"]
     #[inline(always)]
     pub fn sw(&self) -> SW_R {
-        SW_R::new((self.bits & 0x03) as u8)
+        SW_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    ///Bits 28:30 - Microcontroller clock output prescaler
+    #[doc = "Bits 28:30 - Microcontroller clock output prescaler"]
     #[inline(always)]
-    pub fn mcopre(&mut self) -> MCOPRE_W {
-        MCOPRE_W { w: self }
+    pub fn mcopre(&mut self) -> MCOPRE_W<28> {
+        MCOPRE_W::new(self)
     }
-    ///Bits 24:27 - Microcontroller clock output
+    #[doc = "Bits 24:27 - Microcontroller clock output"]
     #[inline(always)]
-    pub fn mcosel(&mut self) -> MCOSEL_W {
-        MCOSEL_W { w: self }
+    pub fn mcosel(&mut self) -> MCOSEL_W<24> {
+        MCOSEL_W::new(self)
     }
-    ///Bit 15 - Wakeup from Stop and CSS backup clock selection
+    #[doc = "Bit 15 - Wakeup from Stop and CSS backup clock selection"]
     #[inline(always)]
-    pub fn stopwuck(&mut self) -> STOPWUCK_W {
-        STOPWUCK_W { w: self }
+    pub fn stopwuck(&mut self) -> STOPWUCK_W<15> {
+        STOPWUCK_W::new(self)
     }
-    ///Bits 11:13 - PCLK2 high-speed prescaler (APB2)
+    #[doc = "Bits 11:13 - PCLK2 high-speed prescaler (APB2)"]
     #[inline(always)]
-    pub fn ppre2(&mut self) -> PPRE2_W {
-        PPRE2_W { w: self }
+    pub fn ppre2(&mut self) -> PPRE2_W<11> {
+        PPRE2_W::new(self)
     }
-    ///Bits 8:10 - PCLK1 low-speed prescaler (APB1)
+    #[doc = "Bits 8:10 - PCLK1 low-speed prescaler (APB1)"]
     #[inline(always)]
-    pub fn ppre1(&mut self) -> PPRE1_W {
-        PPRE1_W { w: self }
+    pub fn ppre1(&mut self) -> PPRE1_W<8> {
+        PPRE1_W::new(self)
     }
-    ///Bits 4:7 - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)
+    #[doc = "Bits 4:7 - HCLK1 prescaler (CPU1, AHB1, AHB2, and SRAM1.)"]
     #[inline(always)]
-    pub fn hpre(&mut self) -> HPRE_W {
-        HPRE_W { w: self }
+    pub fn hpre(&mut self) -> HPRE_W<4> {
+        HPRE_W::new(self)
     }
-    ///Bits 0:1 - System clock switch
+    #[doc = "Bits 0:1 - System clock switch"]
     #[inline(always)]
-    pub fn sw(&mut self) -> SW_W {
-        SW_W { w: self }
+    pub fn sw(&mut self) -> SW_W<0> {
+        SW_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Clock configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cfgr](index.html) module
+#[doc = "Clock configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cfgr](index.html) module"]
 pub struct CFGR_SPEC;
 impl crate::RegisterSpec for CFGR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cfgr::R](R) reader structure
+#[doc = "`read()` method returns [cfgr::R](R) reader structure"]
 impl crate::Readable for CFGR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cfgr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cfgr::W](W) writer structure"]
 impl crate::Writable for CFGR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CFGR to value 0x0007_0000
+#[doc = "`reset()` method sets CFGR to value 0x0007_0000"]
 impl crate::Resettable for CFGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

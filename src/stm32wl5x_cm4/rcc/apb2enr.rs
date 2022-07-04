@@ -1,4 +1,4 @@
-///Register `APB2ENR` reader
+#[doc = "Register `APB2ENR` reader"]
 pub struct R(crate::R<APB2ENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<APB2ENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<APB2ENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `APB2ENR` writer
+#[doc = "Register `APB2ENR` writer"]
 pub struct W(crate::W<APB2ENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<APB2ENR_SPEC>;
@@ -34,220 +34,43 @@ impl From<crate::W<APB2ENR_SPEC>> for W {
         W(writer)
     }
 }
-///CPU1 TIM17 timer clock enable
-pub type TIM17EN_A = ADCEN_A;
-///Field `TIM17EN` reader - CPU1 TIM17 timer clock enable
-pub type TIM17EN_R = ADCEN_R;
-///Field `TIM17EN` writer - CPU1 TIM17 timer clock enable
-pub struct TIM17EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM17EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIM17EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TIM17EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TIM17EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///CPU1 TIM16 timer clock enable
-pub type TIM16EN_A = ADCEN_A;
-///Field `TIM16EN` reader - CPU1 TIM16 timer clock enable
-pub type TIM16EN_R = ADCEN_R;
-///Field `TIM16EN` writer - CPU1 TIM16 timer clock enable
-pub struct TIM16EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM16EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIM16EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TIM16EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TIM16EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///CPU1 USART1clocks enable
-pub type USART1EN_A = ADCEN_A;
-///Field `USART1EN` reader - CPU1 USART1clocks enable
-pub type USART1EN_R = ADCEN_R;
-///Field `USART1EN` writer - CPU1 USART1clocks enable
-pub struct USART1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USART1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: USART1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(USART1EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(USART1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
-///CPU1 SPI1 clock enable
-pub type SPI1EN_A = ADCEN_A;
-///Field `SPI1EN` reader - CPU1 SPI1 clock enable
-pub type SPI1EN_R = ADCEN_R;
-///Field `SPI1EN` writer - CPU1 SPI1 clock enable
-pub struct SPI1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPI1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SPI1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SPI1EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SPI1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///CPU1 TIM1 timer clock enable
-pub type TIM1EN_A = ADCEN_A;
-///Field `TIM1EN` reader - CPU1 TIM1 timer clock enable
-pub type TIM1EN_R = ADCEN_R;
-///Field `TIM1EN` writer - CPU1 TIM1 timer clock enable
-pub struct TIM1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIM1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TIM1EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TIM1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///CPU1 ADC clocks enable
-///
-///Value on reset: 0
+#[doc = "CPU1 TIM17 timer clock enable"]
+pub use ADCEN_A as TIM17EN_A;
+#[doc = "CPU1 TIM16 timer clock enable"]
+pub use ADCEN_A as TIM16EN_A;
+#[doc = "CPU1 USART1clocks enable"]
+pub use ADCEN_A as USART1EN_A;
+#[doc = "CPU1 SPI1 clock enable"]
+pub use ADCEN_A as SPI1EN_A;
+#[doc = "CPU1 TIM1 timer clock enable"]
+pub use ADCEN_A as TIM1EN_A;
+#[doc = "Field `TIM17EN` reader - CPU1 TIM17 timer clock enable"]
+pub use ADCEN_R as TIM17EN_R;
+#[doc = "Field `TIM16EN` reader - CPU1 TIM16 timer clock enable"]
+pub use ADCEN_R as TIM16EN_R;
+#[doc = "Field `USART1EN` reader - CPU1 USART1clocks enable"]
+pub use ADCEN_R as USART1EN_R;
+#[doc = "Field `SPI1EN` reader - CPU1 SPI1 clock enable"]
+pub use ADCEN_R as SPI1EN_R;
+#[doc = "Field `TIM1EN` reader - CPU1 TIM1 timer clock enable"]
+pub use ADCEN_R as TIM1EN_R;
+#[doc = "Field `TIM17EN` writer - CPU1 TIM17 timer clock enable"]
+pub use ADCEN_W as TIM17EN_W;
+#[doc = "Field `TIM16EN` writer - CPU1 TIM16 timer clock enable"]
+pub use ADCEN_W as TIM16EN_W;
+#[doc = "Field `USART1EN` writer - CPU1 USART1clocks enable"]
+pub use ADCEN_W as USART1EN_W;
+#[doc = "Field `SPI1EN` writer - CPU1 SPI1 clock enable"]
+pub use ADCEN_W as SPI1EN_W;
+#[doc = "Field `TIM1EN` writer - CPU1 TIM1 timer clock enable"]
+pub use ADCEN_W as TIM1EN_W;
+#[doc = "CPU1 ADC clocks enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCEN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<ADCEN_A> for bool {
     #[inline(always)]
@@ -255,163 +78,126 @@ impl From<ADCEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ADCEN` reader - CPU1 ADC clocks enable
-pub struct ADCEN_R(crate::FieldReader<bool, ADCEN_A>);
+#[doc = "Field `ADCEN` reader - CPU1 ADC clocks enable"]
+pub type ADCEN_R = crate::BitReader<ADCEN_A>;
 impl ADCEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADCEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCEN_A {
         match self.bits {
-            false => ADCEN_A::DISABLED,
-            true => ADCEN_A::ENABLED,
+            false => ADCEN_A::Disabled,
+            true => ADCEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ADCEN_A::DISABLED
+        *self == ADCEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ADCEN_A::ENABLED
+        *self == ADCEN_A::Enabled
     }
 }
-impl core::ops::Deref for ADCEN_R {
-    type Target = crate::FieldReader<bool, ADCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ADCEN` writer - CPU1 ADC clocks enable
-pub struct ADCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ADCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `ADCEN` writer - CPU1 ADC clocks enable"]
+pub type ADCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2ENR_SPEC, ADCEN_A, O>;
+impl<'a, const O: u8> ADCEN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADCEN_A::DISABLED)
+        self.variant(ADCEN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADCEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(ADCEN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 18 - CPU1 TIM17 timer clock enable
+    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
     #[inline(always)]
     pub fn tim17en(&self) -> TIM17EN_R {
-        TIM17EN_R::new(((self.bits >> 18) & 0x01) != 0)
+        TIM17EN_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - CPU1 TIM16 timer clock enable
+    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
     #[inline(always)]
     pub fn tim16en(&self) -> TIM16EN_R {
-        TIM16EN_R::new(((self.bits >> 17) & 0x01) != 0)
+        TIM16EN_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 14 - CPU1 USART1clocks enable
+    #[doc = "Bit 14 - CPU1 USART1clocks enable"]
     #[inline(always)]
     pub fn usart1en(&self) -> USART1EN_R {
-        USART1EN_R::new(((self.bits >> 14) & 0x01) != 0)
+        USART1EN_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 12 - CPU1 SPI1 clock enable
+    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
     #[inline(always)]
     pub fn spi1en(&self) -> SPI1EN_R {
-        SPI1EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        SPI1EN_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - CPU1 TIM1 timer clock enable
+    #[doc = "Bit 11 - CPU1 TIM1 timer clock enable"]
     #[inline(always)]
     pub fn tim1en(&self) -> TIM1EN_R {
-        TIM1EN_R::new(((self.bits >> 11) & 0x01) != 0)
+        TIM1EN_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 9 - CPU1 ADC clocks enable
+    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
     #[inline(always)]
     pub fn adcen(&self) -> ADCEN_R {
-        ADCEN_R::new(((self.bits >> 9) & 0x01) != 0)
+        ADCEN_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 18 - CPU1 TIM17 timer clock enable
+    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
     #[inline(always)]
-    pub fn tim17en(&mut self) -> TIM17EN_W {
-        TIM17EN_W { w: self }
+    pub fn tim17en(&mut self) -> TIM17EN_W<18> {
+        TIM17EN_W::new(self)
     }
-    ///Bit 17 - CPU1 TIM16 timer clock enable
+    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
     #[inline(always)]
-    pub fn tim16en(&mut self) -> TIM16EN_W {
-        TIM16EN_W { w: self }
+    pub fn tim16en(&mut self) -> TIM16EN_W<17> {
+        TIM16EN_W::new(self)
     }
-    ///Bit 14 - CPU1 USART1clocks enable
+    #[doc = "Bit 14 - CPU1 USART1clocks enable"]
     #[inline(always)]
-    pub fn usart1en(&mut self) -> USART1EN_W {
-        USART1EN_W { w: self }
+    pub fn usart1en(&mut self) -> USART1EN_W<14> {
+        USART1EN_W::new(self)
     }
-    ///Bit 12 - CPU1 SPI1 clock enable
+    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
     #[inline(always)]
-    pub fn spi1en(&mut self) -> SPI1EN_W {
-        SPI1EN_W { w: self }
+    pub fn spi1en(&mut self) -> SPI1EN_W<12> {
+        SPI1EN_W::new(self)
     }
-    ///Bit 11 - CPU1 TIM1 timer clock enable
+    #[doc = "Bit 11 - CPU1 TIM1 timer clock enable"]
     #[inline(always)]
-    pub fn tim1en(&mut self) -> TIM1EN_W {
-        TIM1EN_W { w: self }
+    pub fn tim1en(&mut self) -> TIM1EN_W<11> {
+        TIM1EN_W::new(self)
     }
-    ///Bit 9 - CPU1 ADC clocks enable
+    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
     #[inline(always)]
-    pub fn adcen(&mut self) -> ADCEN_W {
-        ADCEN_W { w: self }
+    pub fn adcen(&mut self) -> ADCEN_W<9> {
+        ADCEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///APB2 peripheral clock enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [apb2enr](index.html) module
+#[doc = "APB2 peripheral clock enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb2enr](index.html) module"]
 pub struct APB2ENR_SPEC;
 impl crate::RegisterSpec for APB2ENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [apb2enr::R](R) reader structure
+#[doc = "`read()` method returns [apb2enr::R](R) reader structure"]
 impl crate::Readable for APB2ENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [apb2enr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [apb2enr::W](W) writer structure"]
 impl crate::Writable for APB2ENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets APB2ENR to value 0
+#[doc = "`reset()` method sets APB2ENR to value 0"]
 impl crate::Resettable for APB2ENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

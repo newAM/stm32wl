@@ -1,4 +1,4 @@
-///Register `SHRR` reader
+#[doc = "Register `SHRR` reader"]
 pub struct R(crate::R<SHRR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SHRR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SHRR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SHRR` writer
+#[doc = "Register `SHRR` writer"]
 pub struct W(crate::W<SHRR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SHRR_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<SHRR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `TREFRESH1` reader - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)
-pub struct TREFRESH1_R(crate::FieldReader<u8, u8>);
-impl TREFRESH1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TREFRESH1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TREFRESH1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TREFRESH1` writer - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)
-pub struct TREFRESH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TREFRESH1_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+#[doc = "Field `TREFRESH1` reader - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)"]
+pub type TREFRESH1_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TREFRESH1` writer - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)"]
+pub type TREFRESH1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SHRR_SPEC, u8, u8, 8, O>;
 impl R {
-    ///Bits 0:7 - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)
+    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)"]
     #[inline(always)]
     pub fn trefresh1(&self) -> TREFRESH1_R {
         TREFRESH1_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    ///Bits 0:7 - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)
+    #[doc = "Bits 0:7 - DAC Channel 1 refresh Time (only valid in Sample and Hold mode)"]
     #[inline(always)]
-    pub fn trefresh1(&mut self) -> TREFRESH1_W {
-        TREFRESH1_W { w: self }
+    pub fn trefresh1(&mut self) -> TREFRESH1_W<0> {
+        TREFRESH1_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Sample and Hold refresh time register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [shrr](index.html) module
+#[doc = "Sample and Hold refresh time register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [shrr](index.html) module"]
 pub struct SHRR_SPEC;
 impl crate::RegisterSpec for SHRR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [shrr::R](R) reader structure
+#[doc = "`read()` method returns [shrr::R](R) reader structure"]
 impl crate::Readable for SHRR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [shrr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [shrr::W](W) writer structure"]
 impl crate::Writable for SHRR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SHRR to value 0x0001_0001
+#[doc = "`reset()` method sets SHRR to value 0x0001_0001"]
 impl crate::Resettable for SHRR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

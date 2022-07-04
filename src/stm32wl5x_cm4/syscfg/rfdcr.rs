@@ -1,4 +1,4 @@
-///Register `RFDCR` reader
+#[doc = "Register `RFDCR` reader"]
 pub struct R(crate::R<RFDCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RFDCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RFDCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `RFDCR` writer
+#[doc = "Register `RFDCR` writer"]
 pub struct W(crate::W<RFDCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RFDCR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<RFDCR_SPEC>> for W {
         W(writer)
     }
 }
-///radio debug test bus selection
-///
-///Value on reset: 0
+#[doc = "radio debug test bus selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFTBSEL_A {
-    ///0: Digital test bus selected on RF_ADTB\[3:0\]
-    DIGITAL = 0,
-    ///1: Analog test bus selected on RF_ADTB\[3:0\]
-    ANALOG = 1,
+    #[doc = "0: Digital test bus selected on RF_ADTB\\[3:0\\]"]
+    Digital = 0,
+    #[doc = "1: Analog test bus selected on RF_ADTB\\[3:0\\]"]
+    Analog = 1,
 }
 impl From<RFTBSEL_A> for bool {
     #[inline(always)]
@@ -50,113 +48,76 @@ impl From<RFTBSEL_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RFTBSEL` reader - radio debug test bus selection
-pub struct RFTBSEL_R(crate::FieldReader<bool, RFTBSEL_A>);
+#[doc = "Field `RFTBSEL` reader - radio debug test bus selection"]
+pub type RFTBSEL_R = crate::BitReader<RFTBSEL_A>;
 impl RFTBSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RFTBSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RFTBSEL_A {
         match self.bits {
-            false => RFTBSEL_A::DIGITAL,
-            true => RFTBSEL_A::ANALOG,
+            false => RFTBSEL_A::Digital,
+            true => RFTBSEL_A::Analog,
         }
     }
-    ///Checks if the value of the field is `DIGITAL`
+    #[doc = "Checks if the value of the field is `Digital`"]
     #[inline(always)]
     pub fn is_digital(&self) -> bool {
-        **self == RFTBSEL_A::DIGITAL
+        *self == RFTBSEL_A::Digital
     }
-    ///Checks if the value of the field is `ANALOG`
+    #[doc = "Checks if the value of the field is `Analog`"]
     #[inline(always)]
     pub fn is_analog(&self) -> bool {
-        **self == RFTBSEL_A::ANALOG
+        *self == RFTBSEL_A::Analog
     }
 }
-impl core::ops::Deref for RFTBSEL_R {
-    type Target = crate::FieldReader<bool, RFTBSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RFTBSEL` writer - radio debug test bus selection
-pub struct RFTBSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFTBSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RFTBSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Digital test bus selected on RF_ADTB\[3:0\]
+#[doc = "Field `RFTBSEL` writer - radio debug test bus selection"]
+pub type RFTBSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RFDCR_SPEC, RFTBSEL_A, O>;
+impl<'a, const O: u8> RFTBSEL_W<'a, O> {
+    #[doc = "Digital test bus selected on RF_ADTB\\[3:0\\]"]
     #[inline(always)]
     pub fn digital(self) -> &'a mut W {
-        self.variant(RFTBSEL_A::DIGITAL)
+        self.variant(RFTBSEL_A::Digital)
     }
-    ///Analog test bus selected on RF_ADTB\[3:0\]
+    #[doc = "Analog test bus selected on RF_ADTB\\[3:0\\]"]
     #[inline(always)]
     pub fn analog(self) -> &'a mut W {
-        self.variant(RFTBSEL_A::ANALOG)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(RFTBSEL_A::Analog)
     }
 }
 impl R {
-    ///Bit 0 - radio debug test bus selection
+    #[doc = "Bit 0 - radio debug test bus selection"]
     #[inline(always)]
     pub fn rftbsel(&self) -> RFTBSEL_R {
-        RFTBSEL_R::new((self.bits & 0x01) != 0)
+        RFTBSEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - radio debug test bus selection
+    #[doc = "Bit 0 - radio debug test bus selection"]
     #[inline(always)]
-    pub fn rftbsel(&mut self) -> RFTBSEL_W {
-        RFTBSEL_W { w: self }
+    pub fn rftbsel(&mut self) -> RFTBSEL_W<0> {
+        RFTBSEL_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///radio debug control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rfdcr](index.html) module
+#[doc = "radio debug control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rfdcr](index.html) module"]
 pub struct RFDCR_SPEC;
 impl crate::RegisterSpec for RFDCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rfdcr::R](R) reader structure
+#[doc = "`read()` method returns [rfdcr::R](R) reader structure"]
 impl crate::Readable for RFDCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [rfdcr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [rfdcr::W](W) writer structure"]
 impl crate::Writable for RFDCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets RFDCR to value 0
+#[doc = "`reset()` method sets RFDCR to value 0"]
 impl crate::Resettable for RFDCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

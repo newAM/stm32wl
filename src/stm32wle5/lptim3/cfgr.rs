@@ -1,4 +1,4 @@
-///Register `CFGR` reader
+#[doc = "Register `CFGR` reader"]
 pub struct R(crate::R<CFGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CFGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CFGR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CFGR` writer
+#[doc = "Register `CFGR` writer"]
 pub struct W(crate::W<CFGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CFGR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CFGR_SPEC>> for W {
         W(writer)
     }
 }
-///ENC
-///
-///Value on reset: 0
+#[doc = "ENC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENC_A {
-    ///0: Encoder mode disabled
-    DISABLED = 0,
-    ///1: Encoder mode enabled
-    ENABLED = 1,
+    #[doc = "0: Encoder mode disabled"]
+    Disabled = 0,
+    #[doc = "1: Encoder mode enabled"]
+    Enabled = 1,
 }
 impl From<ENC_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<ENC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ENC` reader - ENC
-pub struct ENC_R(crate::FieldReader<bool, ENC_A>);
+#[doc = "Field `ENC` reader - ENC"]
+pub type ENC_R = crate::BitReader<ENC_A>;
 impl ENC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENC_A {
         match self.bits {
-            false => ENC_A::DISABLED,
-            true => ENC_A::ENABLED,
+            false => ENC_A::Disabled,
+            true => ENC_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENC_A::DISABLED
+        *self == ENC_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENC_A::ENABLED
+        *self == ENC_A::Enabled
     }
 }
-impl core::ops::Deref for ENC_R {
-    type Target = crate::FieldReader<bool, ENC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ENC` writer - ENC
-pub struct ENC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ENC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Encoder mode disabled
+#[doc = "Field `ENC` writer - ENC"]
+pub type ENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, ENC_A, O>;
+impl<'a, const O: u8> ENC_W<'a, O> {
+    #[doc = "Encoder mode disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ENC_A::DISABLED)
+        self.variant(ENC_A::Disabled)
     }
-    ///Encoder mode enabled
+    #[doc = "Encoder mode enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ENC_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(ENC_A::Enabled)
     }
 }
-///COUNTMODE
-///
-///Value on reset: 0
+#[doc = "COUNTMODE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COUNTMODE_A {
-    ///0: The counter is incremented following each internal clock pulse
-    INTERNAL = 0,
-    ///1: The counter is incremented following each valid clock pulse on the LPTIM external Input1
-    EXTERNAL = 1,
+    #[doc = "0: The counter is incremented following each internal clock pulse"]
+    Internal = 0,
+    #[doc = "1: The counter is incremented following each valid clock pulse on the LPTIM external Input1"]
+    External = 1,
 }
 impl From<COUNTMODE_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<COUNTMODE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `COUNTMODE` reader - COUNTMODE
-pub struct COUNTMODE_R(crate::FieldReader<bool, COUNTMODE_A>);
+#[doc = "Field `COUNTMODE` reader - COUNTMODE"]
+pub type COUNTMODE_R = crate::BitReader<COUNTMODE_A>;
 impl COUNTMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COUNTMODE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COUNTMODE_A {
         match self.bits {
-            false => COUNTMODE_A::INTERNAL,
-            true => COUNTMODE_A::EXTERNAL,
+            false => COUNTMODE_A::Internal,
+            true => COUNTMODE_A::External,
         }
     }
-    ///Checks if the value of the field is `INTERNAL`
+    #[doc = "Checks if the value of the field is `Internal`"]
     #[inline(always)]
     pub fn is_internal(&self) -> bool {
-        **self == COUNTMODE_A::INTERNAL
+        *self == COUNTMODE_A::Internal
     }
-    ///Checks if the value of the field is `EXTERNAL`
+    #[doc = "Checks if the value of the field is `External`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
-        **self == COUNTMODE_A::EXTERNAL
+        *self == COUNTMODE_A::External
     }
 }
-impl core::ops::Deref for COUNTMODE_R {
-    type Target = crate::FieldReader<bool, COUNTMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `COUNTMODE` writer - COUNTMODE
-pub struct COUNTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COUNTMODE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: COUNTMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The counter is incremented following each internal clock pulse
+#[doc = "Field `COUNTMODE` writer - COUNTMODE"]
+pub type COUNTMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, COUNTMODE_A, O>;
+impl<'a, const O: u8> COUNTMODE_W<'a, O> {
+    #[doc = "The counter is incremented following each internal clock pulse"]
     #[inline(always)]
     pub fn internal(self) -> &'a mut W {
-        self.variant(COUNTMODE_A::INTERNAL)
+        self.variant(COUNTMODE_A::Internal)
     }
-    ///The counter is incremented following each valid clock pulse on the LPTIM external Input1
+    #[doc = "The counter is incremented following each valid clock pulse on the LPTIM external Input1"]
     #[inline(always)]
     pub fn external(self) -> &'a mut W {
-        self.variant(COUNTMODE_A::EXTERNAL)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
+        self.variant(COUNTMODE_A::External)
     }
 }
-///PRELOAD
-///
-///Value on reset: 0
+#[doc = "PRELOAD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRELOAD_A {
-    ///0: Registers are updated after each APB bus write access
-    IMMEDIATE = 0,
-    ///1: Registers are updated at the end of the current LPTIM period
-    ENDOFPERIOD = 1,
+    #[doc = "0: Registers are updated after each APB bus write access"]
+    Immediate = 0,
+    #[doc = "1: Registers are updated at the end of the current LPTIM period"]
+    EndOfPeriod = 1,
 }
 impl From<PRELOAD_A> for bool {
     #[inline(always)]
@@ -220,84 +148,49 @@ impl From<PRELOAD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PRELOAD` reader - PRELOAD
-pub struct PRELOAD_R(crate::FieldReader<bool, PRELOAD_A>);
+#[doc = "Field `PRELOAD` reader - PRELOAD"]
+pub type PRELOAD_R = crate::BitReader<PRELOAD_A>;
 impl PRELOAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRELOAD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRELOAD_A {
         match self.bits {
-            false => PRELOAD_A::IMMEDIATE,
-            true => PRELOAD_A::ENDOFPERIOD,
+            false => PRELOAD_A::Immediate,
+            true => PRELOAD_A::EndOfPeriod,
         }
     }
-    ///Checks if the value of the field is `IMMEDIATE`
+    #[doc = "Checks if the value of the field is `Immediate`"]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
-        **self == PRELOAD_A::IMMEDIATE
+        *self == PRELOAD_A::Immediate
     }
-    ///Checks if the value of the field is `ENDOFPERIOD`
+    #[doc = "Checks if the value of the field is `EndOfPeriod`"]
     #[inline(always)]
     pub fn is_end_of_period(&self) -> bool {
-        **self == PRELOAD_A::ENDOFPERIOD
+        *self == PRELOAD_A::EndOfPeriod
     }
 }
-impl core::ops::Deref for PRELOAD_R {
-    type Target = crate::FieldReader<bool, PRELOAD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRELOAD` writer - PRELOAD
-pub struct PRELOAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRELOAD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PRELOAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Registers are updated after each APB bus write access
+#[doc = "Field `PRELOAD` writer - PRELOAD"]
+pub type PRELOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, PRELOAD_A, O>;
+impl<'a, const O: u8> PRELOAD_W<'a, O> {
+    #[doc = "Registers are updated after each APB bus write access"]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
-        self.variant(PRELOAD_A::IMMEDIATE)
+        self.variant(PRELOAD_A::Immediate)
     }
-    ///Registers are updated at the end of the current LPTIM period
+    #[doc = "Registers are updated at the end of the current LPTIM period"]
     #[inline(always)]
     pub fn end_of_period(self) -> &'a mut W {
-        self.variant(PRELOAD_A::ENDOFPERIOD)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
+        self.variant(PRELOAD_A::EndOfPeriod)
     }
 }
-///WAVPOL
-///
-///Value on reset: 0
+#[doc = "WAVPOL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAVPOL_A {
-    ///0: The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers
-    POSITIVE = 0,
-    ///1: The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers
-    NEGATIVE = 1,
+    #[doc = "0: The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers"]
+    Positive = 0,
+    #[doc = "1: The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers"]
+    Negative = 1,
 }
 impl From<WAVPOL_A> for bool {
     #[inline(always)]
@@ -305,84 +198,49 @@ impl From<WAVPOL_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `WAVPOL` reader - WAVPOL
-pub struct WAVPOL_R(crate::FieldReader<bool, WAVPOL_A>);
+#[doc = "Field `WAVPOL` reader - WAVPOL"]
+pub type WAVPOL_R = crate::BitReader<WAVPOL_A>;
 impl WAVPOL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAVPOL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAVPOL_A {
         match self.bits {
-            false => WAVPOL_A::POSITIVE,
-            true => WAVPOL_A::NEGATIVE,
+            false => WAVPOL_A::Positive,
+            true => WAVPOL_A::Negative,
         }
     }
-    ///Checks if the value of the field is `POSITIVE`
+    #[doc = "Checks if the value of the field is `Positive`"]
     #[inline(always)]
     pub fn is_positive(&self) -> bool {
-        **self == WAVPOL_A::POSITIVE
+        *self == WAVPOL_A::Positive
     }
-    ///Checks if the value of the field is `NEGATIVE`
+    #[doc = "Checks if the value of the field is `Negative`"]
     #[inline(always)]
     pub fn is_negative(&self) -> bool {
-        **self == WAVPOL_A::NEGATIVE
+        *self == WAVPOL_A::Negative
     }
 }
-impl core::ops::Deref for WAVPOL_R {
-    type Target = crate::FieldReader<bool, WAVPOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WAVPOL` writer - WAVPOL
-pub struct WAVPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAVPOL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: WAVPOL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers
+#[doc = "Field `WAVPOL` writer - WAVPOL"]
+pub type WAVPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, WAVPOL_A, O>;
+impl<'a, const O: u8> WAVPOL_W<'a, O> {
+    #[doc = "The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers"]
     #[inline(always)]
     pub fn positive(self) -> &'a mut W {
-        self.variant(WAVPOL_A::POSITIVE)
+        self.variant(WAVPOL_A::Positive)
     }
-    ///The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers
+    #[doc = "The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers"]
     #[inline(always)]
     pub fn negative(self) -> &'a mut W {
-        self.variant(WAVPOL_A::NEGATIVE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
+        self.variant(WAVPOL_A::Negative)
     }
 }
-///WAVE
-///
-///Value on reset: 0
+#[doc = "WAVE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAVE_A {
-    ///0: Deactivate Set-once mode, PWM / One Pulse waveform (depending on OPMODE bit)
-    INACTIVE = 0,
-    ///1: Activate the Set-once mode
-    ACTIVE = 1,
+    #[doc = "0: Deactivate Set-once mode, PWM / One Pulse waveform (depending on OPMODE bit)"]
+    Inactive = 0,
+    #[doc = "1: Activate the Set-once mode"]
+    Active = 1,
 }
 impl From<WAVE_A> for bool {
     #[inline(always)]
@@ -390,84 +248,49 @@ impl From<WAVE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `WAVE` reader - WAVE
-pub struct WAVE_R(crate::FieldReader<bool, WAVE_A>);
+#[doc = "Field `WAVE` reader - WAVE"]
+pub type WAVE_R = crate::BitReader<WAVE_A>;
 impl WAVE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAVE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAVE_A {
         match self.bits {
-            false => WAVE_A::INACTIVE,
-            true => WAVE_A::ACTIVE,
+            false => WAVE_A::Inactive,
+            true => WAVE_A::Active,
         }
     }
-    ///Checks if the value of the field is `INACTIVE`
+    #[doc = "Checks if the value of the field is `Inactive`"]
     #[inline(always)]
     pub fn is_inactive(&self) -> bool {
-        **self == WAVE_A::INACTIVE
+        *self == WAVE_A::Inactive
     }
-    ///Checks if the value of the field is `ACTIVE`
+    #[doc = "Checks if the value of the field is `Active`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == WAVE_A::ACTIVE
+        *self == WAVE_A::Active
     }
 }
-impl core::ops::Deref for WAVE_R {
-    type Target = crate::FieldReader<bool, WAVE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `WAVE` writer - WAVE
-pub struct WAVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAVE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: WAVE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Deactivate Set-once mode, PWM / One Pulse waveform (depending on OPMODE bit)
+#[doc = "Field `WAVE` writer - WAVE"]
+pub type WAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, WAVE_A, O>;
+impl<'a, const O: u8> WAVE_W<'a, O> {
+    #[doc = "Deactivate Set-once mode, PWM / One Pulse waveform (depending on OPMODE bit)"]
     #[inline(always)]
     pub fn inactive(self) -> &'a mut W {
-        self.variant(WAVE_A::INACTIVE)
+        self.variant(WAVE_A::Inactive)
     }
-    ///Activate the Set-once mode
+    #[doc = "Activate the Set-once mode"]
     #[inline(always)]
     pub fn active(self) -> &'a mut W {
-        self.variant(WAVE_A::ACTIVE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
+        self.variant(WAVE_A::Active)
     }
 }
-///TIMOUT
-///
-///Value on reset: 0
+#[doc = "TIMOUT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMOUT_A {
-    ///0: A trigger event arriving when the timer is already started will be ignored
-    DISABLED = 0,
-    ///1: A trigger event arriving when the timer is already started will reset and restart the counter
-    ENABLED = 1,
+    #[doc = "0: A trigger event arriving when the timer is already started will be ignored"]
+    Disabled = 0,
+    #[doc = "1: A trigger event arriving when the timer is already started will reset and restart the counter"]
+    Enabled = 1,
 }
 impl From<TIMOUT_A> for bool {
     #[inline(always)]
@@ -475,89 +298,54 @@ impl From<TIMOUT_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TIMOUT` reader - TIMOUT
-pub struct TIMOUT_R(crate::FieldReader<bool, TIMOUT_A>);
+#[doc = "Field `TIMOUT` reader - TIMOUT"]
+pub type TIMOUT_R = crate::BitReader<TIMOUT_A>;
 impl TIMOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMOUT_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMOUT_A {
         match self.bits {
-            false => TIMOUT_A::DISABLED,
-            true => TIMOUT_A::ENABLED,
+            false => TIMOUT_A::Disabled,
+            true => TIMOUT_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TIMOUT_A::DISABLED
+        *self == TIMOUT_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TIMOUT_A::ENABLED
+        *self == TIMOUT_A::Enabled
     }
 }
-impl core::ops::Deref for TIMOUT_R {
-    type Target = crate::FieldReader<bool, TIMOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIMOUT` writer - TIMOUT
-pub struct TIMOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMOUT_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TIMOUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///A trigger event arriving when the timer is already started will be ignored
+#[doc = "Field `TIMOUT` writer - TIMOUT"]
+pub type TIMOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, TIMOUT_A, O>;
+impl<'a, const O: u8> TIMOUT_W<'a, O> {
+    #[doc = "A trigger event arriving when the timer is already started will be ignored"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TIMOUT_A::DISABLED)
+        self.variant(TIMOUT_A::Disabled)
     }
-    ///A trigger event arriving when the timer is already started will reset and restart the counter
+    #[doc = "A trigger event arriving when the timer is already started will reset and restart the counter"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TIMOUT_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
+        self.variant(TIMOUT_A::Enabled)
     }
 }
-///TRIGEN
-///
-///Value on reset: 0
+#[doc = "TRIGEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TRIGEN_A {
-    ///0: Software trigger (counting start is initiated by software)
-    SW = 0,
-    ///1: Rising edge is the active edge
-    RISINGEDGE = 1,
-    ///2: Falling edge is the active edge
-    FALLINGEDGE = 2,
-    ///3: Both edges are active edges
-    BOTHEDGES = 3,
+    #[doc = "0: Software trigger (counting start is initiated by software)"]
+    Sw = 0,
+    #[doc = "1: Rising edge is the active edge"]
+    RisingEdge = 1,
+    #[doc = "2: Falling edge is the active edge"]
+    FallingEdge = 2,
+    #[doc = "3: Both edges are active edges"]
+    BothEdges = 3,
 }
 impl From<TRIGEN_A> for u8 {
     #[inline(always)]
@@ -565,110 +353,85 @@ impl From<TRIGEN_A> for u8 {
         variant as _
     }
 }
-///Field `TRIGEN` reader - TRIGEN
-pub struct TRIGEN_R(crate::FieldReader<u8, TRIGEN_A>);
+#[doc = "Field `TRIGEN` reader - TRIGEN"]
+pub type TRIGEN_R = crate::FieldReader<u8, TRIGEN_A>;
 impl TRIGEN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRIGEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGEN_A {
         match self.bits {
-            0 => TRIGEN_A::SW,
-            1 => TRIGEN_A::RISINGEDGE,
-            2 => TRIGEN_A::FALLINGEDGE,
-            3 => TRIGEN_A::BOTHEDGES,
+            0 => TRIGEN_A::Sw,
+            1 => TRIGEN_A::RisingEdge,
+            2 => TRIGEN_A::FallingEdge,
+            3 => TRIGEN_A::BothEdges,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `SW`
+    #[doc = "Checks if the value of the field is `Sw`"]
     #[inline(always)]
     pub fn is_sw(&self) -> bool {
-        **self == TRIGEN_A::SW
+        *self == TRIGEN_A::Sw
     }
-    ///Checks if the value of the field is `RISINGEDGE`
+    #[doc = "Checks if the value of the field is `RisingEdge`"]
     #[inline(always)]
     pub fn is_rising_edge(&self) -> bool {
-        **self == TRIGEN_A::RISINGEDGE
+        *self == TRIGEN_A::RisingEdge
     }
-    ///Checks if the value of the field is `FALLINGEDGE`
+    #[doc = "Checks if the value of the field is `FallingEdge`"]
     #[inline(always)]
     pub fn is_falling_edge(&self) -> bool {
-        **self == TRIGEN_A::FALLINGEDGE
+        *self == TRIGEN_A::FallingEdge
     }
-    ///Checks if the value of the field is `BOTHEDGES`
+    #[doc = "Checks if the value of the field is `BothEdges`"]
     #[inline(always)]
     pub fn is_both_edges(&self) -> bool {
-        **self == TRIGEN_A::BOTHEDGES
+        *self == TRIGEN_A::BothEdges
     }
 }
-impl core::ops::Deref for TRIGEN_R {
-    type Target = crate::FieldReader<u8, TRIGEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TRIGEN` writer - TRIGEN
-pub struct TRIGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGEN_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Software trigger (counting start is initiated by software)
+#[doc = "Field `TRIGEN` writer - TRIGEN"]
+pub type TRIGEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, TRIGEN_A, 2, O>;
+impl<'a, const O: u8> TRIGEN_W<'a, O> {
+    #[doc = "Software trigger (counting start is initiated by software)"]
     #[inline(always)]
     pub fn sw(self) -> &'a mut W {
-        self.variant(TRIGEN_A::SW)
+        self.variant(TRIGEN_A::Sw)
     }
-    ///Rising edge is the active edge
+    #[doc = "Rising edge is the active edge"]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
-        self.variant(TRIGEN_A::RISINGEDGE)
+        self.variant(TRIGEN_A::RisingEdge)
     }
-    ///Falling edge is the active edge
+    #[doc = "Falling edge is the active edge"]
     #[inline(always)]
     pub fn falling_edge(self) -> &'a mut W {
-        self.variant(TRIGEN_A::FALLINGEDGE)
+        self.variant(TRIGEN_A::FallingEdge)
     }
-    ///Both edges are active edges
+    #[doc = "Both edges are active edges"]
     #[inline(always)]
     pub fn both_edges(self) -> &'a mut W {
-        self.variant(TRIGEN_A::BOTHEDGES)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 17)) | ((value as u32 & 0x03) << 17);
-        self.w
+        self.variant(TRIGEN_A::BothEdges)
     }
 }
-///TRIGSEL
-///
-///Value on reset: 0
+#[doc = "TRIGSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TRIGSEL_A {
-    ///0: lptim_ext_trig0
-    TRIG0 = 0,
-    ///1: lptim_ext_trig1
-    TRIG1 = 1,
-    ///2: lptim_ext_trig2
-    TRIG2 = 2,
-    ///3: lptim_ext_trig3
-    TRIG3 = 3,
-    ///4: lptim_ext_trig4
-    TRIG4 = 4,
-    ///5: lptim_ext_trig5
-    TRIG5 = 5,
-    ///6: lptim_ext_trig6
-    TRIG6 = 6,
-    ///7: lptim_ext_trig7
-    TRIG7 = 7,
+    #[doc = "0: lptim_ext_trig0"]
+    Trig0 = 0,
+    #[doc = "1: lptim_ext_trig1"]
+    Trig1 = 1,
+    #[doc = "2: lptim_ext_trig2"]
+    Trig2 = 2,
+    #[doc = "3: lptim_ext_trig3"]
+    Trig3 = 3,
+    #[doc = "4: lptim_ext_trig4"]
+    Trig4 = 4,
+    #[doc = "5: lptim_ext_trig5"]
+    Trig5 = 5,
+    #[doc = "6: lptim_ext_trig6"]
+    Trig6 = 6,
+    #[doc = "7: lptim_ext_trig7"]
+    Trig7 = 7,
 }
 impl From<TRIGSEL_A> for u8 {
     #[inline(always)]
@@ -676,154 +439,130 @@ impl From<TRIGSEL_A> for u8 {
         variant as _
     }
 }
-///Field `TRIGSEL` reader - TRIGSEL
-pub struct TRIGSEL_R(crate::FieldReader<u8, TRIGSEL_A>);
+#[doc = "Field `TRIGSEL` reader - TRIGSEL"]
+pub type TRIGSEL_R = crate::FieldReader<u8, TRIGSEL_A>;
 impl TRIGSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRIGSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIGSEL_A {
         match self.bits {
-            0 => TRIGSEL_A::TRIG0,
-            1 => TRIGSEL_A::TRIG1,
-            2 => TRIGSEL_A::TRIG2,
-            3 => TRIGSEL_A::TRIG3,
-            4 => TRIGSEL_A::TRIG4,
-            5 => TRIGSEL_A::TRIG5,
-            6 => TRIGSEL_A::TRIG6,
-            7 => TRIGSEL_A::TRIG7,
+            0 => TRIGSEL_A::Trig0,
+            1 => TRIGSEL_A::Trig1,
+            2 => TRIGSEL_A::Trig2,
+            3 => TRIGSEL_A::Trig3,
+            4 => TRIGSEL_A::Trig4,
+            5 => TRIGSEL_A::Trig5,
+            6 => TRIGSEL_A::Trig6,
+            7 => TRIGSEL_A::Trig7,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `TRIG0`
+    #[doc = "Checks if the value of the field is `Trig0`"]
     #[inline(always)]
     pub fn is_trig0(&self) -> bool {
-        **self == TRIGSEL_A::TRIG0
+        *self == TRIGSEL_A::Trig0
     }
-    ///Checks if the value of the field is `TRIG1`
+    #[doc = "Checks if the value of the field is `Trig1`"]
     #[inline(always)]
     pub fn is_trig1(&self) -> bool {
-        **self == TRIGSEL_A::TRIG1
+        *self == TRIGSEL_A::Trig1
     }
-    ///Checks if the value of the field is `TRIG2`
+    #[doc = "Checks if the value of the field is `Trig2`"]
     #[inline(always)]
     pub fn is_trig2(&self) -> bool {
-        **self == TRIGSEL_A::TRIG2
+        *self == TRIGSEL_A::Trig2
     }
-    ///Checks if the value of the field is `TRIG3`
+    #[doc = "Checks if the value of the field is `Trig3`"]
     #[inline(always)]
     pub fn is_trig3(&self) -> bool {
-        **self == TRIGSEL_A::TRIG3
+        *self == TRIGSEL_A::Trig3
     }
-    ///Checks if the value of the field is `TRIG4`
+    #[doc = "Checks if the value of the field is `Trig4`"]
     #[inline(always)]
     pub fn is_trig4(&self) -> bool {
-        **self == TRIGSEL_A::TRIG4
+        *self == TRIGSEL_A::Trig4
     }
-    ///Checks if the value of the field is `TRIG5`
+    #[doc = "Checks if the value of the field is `Trig5`"]
     #[inline(always)]
     pub fn is_trig5(&self) -> bool {
-        **self == TRIGSEL_A::TRIG5
+        *self == TRIGSEL_A::Trig5
     }
-    ///Checks if the value of the field is `TRIG6`
+    #[doc = "Checks if the value of the field is `Trig6`"]
     #[inline(always)]
     pub fn is_trig6(&self) -> bool {
-        **self == TRIGSEL_A::TRIG6
+        *self == TRIGSEL_A::Trig6
     }
-    ///Checks if the value of the field is `TRIG7`
+    #[doc = "Checks if the value of the field is `Trig7`"]
     #[inline(always)]
     pub fn is_trig7(&self) -> bool {
-        **self == TRIGSEL_A::TRIG7
+        *self == TRIGSEL_A::Trig7
     }
 }
-impl core::ops::Deref for TRIGSEL_R {
-    type Target = crate::FieldReader<u8, TRIGSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TRIGSEL` writer - TRIGSEL
-pub struct TRIGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIGSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TRIGSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///lptim_ext_trig0
+#[doc = "Field `TRIGSEL` writer - TRIGSEL"]
+pub type TRIGSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, TRIGSEL_A, 3, O>;
+impl<'a, const O: u8> TRIGSEL_W<'a, O> {
+    #[doc = "lptim_ext_trig0"]
     #[inline(always)]
     pub fn trig0(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG0)
+        self.variant(TRIGSEL_A::Trig0)
     }
-    ///lptim_ext_trig1
+    #[doc = "lptim_ext_trig1"]
     #[inline(always)]
     pub fn trig1(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG1)
+        self.variant(TRIGSEL_A::Trig1)
     }
-    ///lptim_ext_trig2
+    #[doc = "lptim_ext_trig2"]
     #[inline(always)]
     pub fn trig2(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG2)
+        self.variant(TRIGSEL_A::Trig2)
     }
-    ///lptim_ext_trig3
+    #[doc = "lptim_ext_trig3"]
     #[inline(always)]
     pub fn trig3(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG3)
+        self.variant(TRIGSEL_A::Trig3)
     }
-    ///lptim_ext_trig4
+    #[doc = "lptim_ext_trig4"]
     #[inline(always)]
     pub fn trig4(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG4)
+        self.variant(TRIGSEL_A::Trig4)
     }
-    ///lptim_ext_trig5
+    #[doc = "lptim_ext_trig5"]
     #[inline(always)]
     pub fn trig5(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG5)
+        self.variant(TRIGSEL_A::Trig5)
     }
-    ///lptim_ext_trig6
+    #[doc = "lptim_ext_trig6"]
     #[inline(always)]
     pub fn trig6(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG6)
+        self.variant(TRIGSEL_A::Trig6)
     }
-    ///lptim_ext_trig7
+    #[doc = "lptim_ext_trig7"]
     #[inline(always)]
     pub fn trig7(self) -> &'a mut W {
-        self.variant(TRIGSEL_A::TRIG7)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 13)) | ((value as u32 & 0x07) << 13);
-        self.w
+        self.variant(TRIGSEL_A::Trig7)
     }
 }
-///PRESC
-///
-///Value on reset: 0
+#[doc = "PRESC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PRESC_A {
-    ///0: /1
-    DIV1 = 0,
-    ///1: /2
-    DIV2 = 1,
-    ///2: /4
-    DIV4 = 2,
-    ///3: /8
-    DIV8 = 3,
-    ///4: /16
-    DIV16 = 4,
-    ///5: /32
-    DIV32 = 5,
-    ///6: /64
-    DIV64 = 6,
-    ///7: /128
-    DIV128 = 7,
+    #[doc = "0: /1"]
+    Div1 = 0,
+    #[doc = "1: /2"]
+    Div2 = 1,
+    #[doc = "2: /4"]
+    Div4 = 2,
+    #[doc = "3: /8"]
+    Div8 = 3,
+    #[doc = "4: /16"]
+    Div16 = 4,
+    #[doc = "5: /32"]
+    Div32 = 5,
+    #[doc = "6: /64"]
+    Div64 = 6,
+    #[doc = "7: /128"]
+    Div128 = 7,
 }
 impl From<PRESC_A> for u8 {
     #[inline(always)]
@@ -831,138 +570,121 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-///Field `PRESC` reader - PRESC
-pub struct PRESC_R(crate::FieldReader<u8, PRESC_A>);
+#[doc = "Field `PRESC` reader - PRESC"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRESC_A {
         match self.bits {
-            0 => PRESC_A::DIV1,
-            1 => PRESC_A::DIV2,
-            2 => PRESC_A::DIV4,
-            3 => PRESC_A::DIV8,
-            4 => PRESC_A::DIV16,
-            5 => PRESC_A::DIV32,
-            6 => PRESC_A::DIV64,
-            7 => PRESC_A::DIV128,
+            0 => PRESC_A::Div1,
+            1 => PRESC_A::Div2,
+            2 => PRESC_A::Div4,
+            3 => PRESC_A::Div8,
+            4 => PRESC_A::Div16,
+            5 => PRESC_A::Div32,
+            6 => PRESC_A::Div64,
+            7 => PRESC_A::Div128,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == PRESC_A::DIV1
+        *self == PRESC_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PRESC_A::DIV2
+        *self == PRESC_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PRESC_A::DIV4
+        *self == PRESC_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PRESC_A::DIV8
+        *self == PRESC_A::Div8
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == PRESC_A::DIV16
+        *self == PRESC_A::Div16
     }
-    ///Checks if the value of the field is `DIV32`
+    #[doc = "Checks if the value of the field is `Div32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == PRESC_A::DIV32
+        *self == PRESC_A::Div32
     }
-    ///Checks if the value of the field is `DIV64`
+    #[doc = "Checks if the value of the field is `Div64`"]
     #[inline(always)]
     pub fn is_div64(&self) -> bool {
-        **self == PRESC_A::DIV64
+        *self == PRESC_A::Div64
     }
-    ///Checks if the value of the field is `DIV128`
+    #[doc = "Checks if the value of the field is `Div128`"]
     #[inline(always)]
     pub fn is_div128(&self) -> bool {
-        **self == PRESC_A::DIV128
+        *self == PRESC_A::Div128
     }
 }
-impl core::ops::Deref for PRESC_R {
-    type Target = crate::FieldReader<u8, PRESC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRESC` writer - PRESC
-pub struct PRESC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PRESC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+#[doc = "Field `PRESC` writer - PRESC"]
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, PRESC_A, 3, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
+    #[doc = "/1"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV1)
+        self.variant(PRESC_A::Div1)
     }
+    #[doc = "/2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV2)
+        self.variant(PRESC_A::Div2)
     }
+    #[doc = "/4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV4)
+        self.variant(PRESC_A::Div4)
     }
+    #[doc = "/8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV8)
+        self.variant(PRESC_A::Div8)
     }
+    #[doc = "/16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV16)
+        self.variant(PRESC_A::Div16)
     }
+    #[doc = "/32"]
     #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV32)
+        self.variant(PRESC_A::Div32)
     }
+    #[doc = "/64"]
     #[inline(always)]
     pub fn div64(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV64)
+        self.variant(PRESC_A::Div64)
     }
+    #[doc = "/128"]
     #[inline(always)]
     pub fn div128(self) -> &'a mut W {
-        self.variant(PRESC_A::DIV128)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 9)) | ((value as u32 & 0x07) << 9);
-        self.w
+        self.variant(PRESC_A::Div128)
     }
 }
-///TRGFLT
-///
-///Value on reset: 0
+#[doc = "TRGFLT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TRGFLT_A {
-    ///0: Any trigger active level change is considered as a valid trigger
-    IMMEDIATE = 0,
-    ///1: Trigger active level change must be stable for at least 2 clock periods before it is considered as valid trigger
-    CLOCKS2 = 1,
-    ///2: Trigger active level change must be stable for at least 4 clock periods before it is considered as valid trigger
-    CLOCKS4 = 2,
-    ///3: Trigger active level change must be stable for at least 8 clock periods before it is considered as valid trigger
-    CLOCKS8 = 3,
+    #[doc = "0: Any trigger active level change is considered as a valid trigger"]
+    Immediate = 0,
+    #[doc = "1: Trigger active level change must be stable for at least 2 clock periods before it is considered as valid trigger"]
+    Clocks2 = 1,
+    #[doc = "2: Trigger active level change must be stable for at least 4 clock periods before it is considered as valid trigger"]
+    Clocks4 = 2,
+    #[doc = "3: Trigger active level change must be stable for at least 8 clock periods before it is considered as valid trigger"]
+    Clocks8 = 3,
 }
 impl From<TRGFLT_A> for u8 {
     #[inline(always)]
@@ -970,102 +692,77 @@ impl From<TRGFLT_A> for u8 {
         variant as _
     }
 }
-///Field `TRGFLT` reader - TRGFLT
-pub struct TRGFLT_R(crate::FieldReader<u8, TRGFLT_A>);
+#[doc = "Field `TRGFLT` reader - TRGFLT"]
+pub type TRGFLT_R = crate::FieldReader<u8, TRGFLT_A>;
 impl TRGFLT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRGFLT_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRGFLT_A {
         match self.bits {
-            0 => TRGFLT_A::IMMEDIATE,
-            1 => TRGFLT_A::CLOCKS2,
-            2 => TRGFLT_A::CLOCKS4,
-            3 => TRGFLT_A::CLOCKS8,
+            0 => TRGFLT_A::Immediate,
+            1 => TRGFLT_A::Clocks2,
+            2 => TRGFLT_A::Clocks4,
+            3 => TRGFLT_A::Clocks8,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `IMMEDIATE`
+    #[doc = "Checks if the value of the field is `Immediate`"]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
-        **self == TRGFLT_A::IMMEDIATE
+        *self == TRGFLT_A::Immediate
     }
-    ///Checks if the value of the field is `CLOCKS2`
+    #[doc = "Checks if the value of the field is `Clocks2`"]
     #[inline(always)]
     pub fn is_clocks2(&self) -> bool {
-        **self == TRGFLT_A::CLOCKS2
+        *self == TRGFLT_A::Clocks2
     }
-    ///Checks if the value of the field is `CLOCKS4`
+    #[doc = "Checks if the value of the field is `Clocks4`"]
     #[inline(always)]
     pub fn is_clocks4(&self) -> bool {
-        **self == TRGFLT_A::CLOCKS4
+        *self == TRGFLT_A::Clocks4
     }
-    ///Checks if the value of the field is `CLOCKS8`
+    #[doc = "Checks if the value of the field is `Clocks8`"]
     #[inline(always)]
     pub fn is_clocks8(&self) -> bool {
-        **self == TRGFLT_A::CLOCKS8
+        *self == TRGFLT_A::Clocks8
     }
 }
-impl core::ops::Deref for TRGFLT_R {
-    type Target = crate::FieldReader<u8, TRGFLT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TRGFLT` writer - TRGFLT
-pub struct TRGFLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRGFLT_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TRGFLT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Any trigger active level change is considered as a valid trigger
+#[doc = "Field `TRGFLT` writer - TRGFLT"]
+pub type TRGFLT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, TRGFLT_A, 2, O>;
+impl<'a, const O: u8> TRGFLT_W<'a, O> {
+    #[doc = "Any trigger active level change is considered as a valid trigger"]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
-        self.variant(TRGFLT_A::IMMEDIATE)
+        self.variant(TRGFLT_A::Immediate)
     }
-    ///Trigger active level change must be stable for at least 2 clock periods before it is considered as valid trigger
+    #[doc = "Trigger active level change must be stable for at least 2 clock periods before it is considered as valid trigger"]
     #[inline(always)]
     pub fn clocks2(self) -> &'a mut W {
-        self.variant(TRGFLT_A::CLOCKS2)
+        self.variant(TRGFLT_A::Clocks2)
     }
-    ///Trigger active level change must be stable for at least 4 clock periods before it is considered as valid trigger
+    #[doc = "Trigger active level change must be stable for at least 4 clock periods before it is considered as valid trigger"]
     #[inline(always)]
     pub fn clocks4(self) -> &'a mut W {
-        self.variant(TRGFLT_A::CLOCKS4)
+        self.variant(TRGFLT_A::Clocks4)
     }
-    ///Trigger active level change must be stable for at least 8 clock periods before it is considered as valid trigger
+    #[doc = "Trigger active level change must be stable for at least 8 clock periods before it is considered as valid trigger"]
     #[inline(always)]
     pub fn clocks8(self) -> &'a mut W {
-        self.variant(TRGFLT_A::CLOCKS8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
+        self.variant(TRGFLT_A::Clocks8)
     }
 }
-///CKFLT
-///
-///Value on reset: 0
+#[doc = "CKFLT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CKFLT_A {
-    ///0: Any external clock signal level change is considered as a valid transition
-    IMMEDIATE = 0,
-    ///1: External clock signal level change must be stable for at least 2 clock periods before it is considered as valid transition
-    CLOCKS2 = 1,
-    ///2: External clock signal level change must be stable for at least 4 clock periods before it is considered as valid transition
-    CLOCKS4 = 2,
-    ///3: External clock signal level change must be stable for at least 8 clock periods before it is considered as valid transition
-    CLOCKS8 = 3,
+    #[doc = "0: Any external clock signal level change is considered as a valid transition"]
+    Immediate = 0,
+    #[doc = "1: External clock signal level change must be stable for at least 2 clock periods before it is considered as valid transition"]
+    Clocks2 = 1,
+    #[doc = "2: External clock signal level change must be stable for at least 4 clock periods before it is considered as valid transition"]
+    Clocks4 = 2,
+    #[doc = "3: External clock signal level change must be stable for at least 8 clock periods before it is considered as valid transition"]
+    Clocks8 = 3,
 }
 impl From<CKFLT_A> for u8 {
     #[inline(always)]
@@ -1073,100 +770,75 @@ impl From<CKFLT_A> for u8 {
         variant as _
     }
 }
-///Field `CKFLT` reader - CKFLT
-pub struct CKFLT_R(crate::FieldReader<u8, CKFLT_A>);
+#[doc = "Field `CKFLT` reader - CKFLT"]
+pub type CKFLT_R = crate::FieldReader<u8, CKFLT_A>;
 impl CKFLT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CKFLT_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CKFLT_A {
         match self.bits {
-            0 => CKFLT_A::IMMEDIATE,
-            1 => CKFLT_A::CLOCKS2,
-            2 => CKFLT_A::CLOCKS4,
-            3 => CKFLT_A::CLOCKS8,
+            0 => CKFLT_A::Immediate,
+            1 => CKFLT_A::Clocks2,
+            2 => CKFLT_A::Clocks4,
+            3 => CKFLT_A::Clocks8,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `IMMEDIATE`
+    #[doc = "Checks if the value of the field is `Immediate`"]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
-        **self == CKFLT_A::IMMEDIATE
+        *self == CKFLT_A::Immediate
     }
-    ///Checks if the value of the field is `CLOCKS2`
+    #[doc = "Checks if the value of the field is `Clocks2`"]
     #[inline(always)]
     pub fn is_clocks2(&self) -> bool {
-        **self == CKFLT_A::CLOCKS2
+        *self == CKFLT_A::Clocks2
     }
-    ///Checks if the value of the field is `CLOCKS4`
+    #[doc = "Checks if the value of the field is `Clocks4`"]
     #[inline(always)]
     pub fn is_clocks4(&self) -> bool {
-        **self == CKFLT_A::CLOCKS4
+        *self == CKFLT_A::Clocks4
     }
-    ///Checks if the value of the field is `CLOCKS8`
+    #[doc = "Checks if the value of the field is `Clocks8`"]
     #[inline(always)]
     pub fn is_clocks8(&self) -> bool {
-        **self == CKFLT_A::CLOCKS8
+        *self == CKFLT_A::Clocks8
     }
 }
-impl core::ops::Deref for CKFLT_R {
-    type Target = crate::FieldReader<u8, CKFLT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CKFLT` writer - CKFLT
-pub struct CKFLT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKFLT_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CKFLT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Any external clock signal level change is considered as a valid transition
+#[doc = "Field `CKFLT` writer - CKFLT"]
+pub type CKFLT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFGR_SPEC, u8, CKFLT_A, 2, O>;
+impl<'a, const O: u8> CKFLT_W<'a, O> {
+    #[doc = "Any external clock signal level change is considered as a valid transition"]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
-        self.variant(CKFLT_A::IMMEDIATE)
+        self.variant(CKFLT_A::Immediate)
     }
-    ///External clock signal level change must be stable for at least 2 clock periods before it is considered as valid transition
+    #[doc = "External clock signal level change must be stable for at least 2 clock periods before it is considered as valid transition"]
     #[inline(always)]
     pub fn clocks2(self) -> &'a mut W {
-        self.variant(CKFLT_A::CLOCKS2)
+        self.variant(CKFLT_A::Clocks2)
     }
-    ///External clock signal level change must be stable for at least 4 clock periods before it is considered as valid transition
+    #[doc = "External clock signal level change must be stable for at least 4 clock periods before it is considered as valid transition"]
     #[inline(always)]
     pub fn clocks4(self) -> &'a mut W {
-        self.variant(CKFLT_A::CLOCKS4)
+        self.variant(CKFLT_A::Clocks4)
     }
-    ///External clock signal level change must be stable for at least 8 clock periods before it is considered as valid transition
+    #[doc = "External clock signal level change must be stable for at least 8 clock periods before it is considered as valid transition"]
     #[inline(always)]
     pub fn clocks8(self) -> &'a mut W {
-        self.variant(CKFLT_A::CLOCKS8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | ((value as u32 & 0x03) << 3);
-        self.w
+        self.variant(CKFLT_A::Clocks8)
     }
 }
-///CKPOL
-///
-///Value on reset: 0
+#[doc = "CKPOL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CKPOL_A {
-    ///0: The rising edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 1 is active.
-    RISINGEDGE = 0,
-    ///1: The falling edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 2 is active.
-    FALLINGEDGE = 1,
-    ///2: Both edges are active edge. If LPTIM is in encoder mode: Encoder sub-mode 3 is active.
-    BOTHEDGES = 2,
+    #[doc = "0: The rising edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 1 is active."]
+    RisingEdge = 0,
+    #[doc = "1: The falling edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 2 is active."]
+    FallingEdge = 1,
+    #[doc = "2: Both edges are active edge. If LPTIM is in encoder mode: Encoder sub-mode 3 is active."]
+    BothEdges = 2,
 }
 impl From<CKPOL_A> for u8 {
     #[inline(always)]
@@ -1174,86 +846,61 @@ impl From<CKPOL_A> for u8 {
         variant as _
     }
 }
-///Field `CKPOL` reader - CKPOL
-pub struct CKPOL_R(crate::FieldReader<u8, CKPOL_A>);
+#[doc = "Field `CKPOL` reader - CKPOL"]
+pub type CKPOL_R = crate::FieldReader<u8, CKPOL_A>;
 impl CKPOL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CKPOL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CKPOL_A> {
         match self.bits {
-            0 => Some(CKPOL_A::RISINGEDGE),
-            1 => Some(CKPOL_A::FALLINGEDGE),
-            2 => Some(CKPOL_A::BOTHEDGES),
+            0 => Some(CKPOL_A::RisingEdge),
+            1 => Some(CKPOL_A::FallingEdge),
+            2 => Some(CKPOL_A::BothEdges),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `RISINGEDGE`
+    #[doc = "Checks if the value of the field is `RisingEdge`"]
     #[inline(always)]
     pub fn is_rising_edge(&self) -> bool {
-        **self == CKPOL_A::RISINGEDGE
+        *self == CKPOL_A::RisingEdge
     }
-    ///Checks if the value of the field is `FALLINGEDGE`
+    #[doc = "Checks if the value of the field is `FallingEdge`"]
     #[inline(always)]
     pub fn is_falling_edge(&self) -> bool {
-        **self == CKPOL_A::FALLINGEDGE
+        *self == CKPOL_A::FallingEdge
     }
-    ///Checks if the value of the field is `BOTHEDGES`
+    #[doc = "Checks if the value of the field is `BothEdges`"]
     #[inline(always)]
     pub fn is_both_edges(&self) -> bool {
-        **self == CKPOL_A::BOTHEDGES
+        *self == CKPOL_A::BothEdges
     }
 }
-impl core::ops::Deref for CKPOL_R {
-    type Target = crate::FieldReader<u8, CKPOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CKPOL` writer - CKPOL
-pub struct CKPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKPOL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CKPOL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///The rising edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 1 is active.
+#[doc = "Field `CKPOL` writer - CKPOL"]
+pub type CKPOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGR_SPEC, u8, CKPOL_A, 2, O>;
+impl<'a, const O: u8> CKPOL_W<'a, O> {
+    #[doc = "The rising edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 1 is active."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
-        self.variant(CKPOL_A::RISINGEDGE)
+        self.variant(CKPOL_A::RisingEdge)
     }
-    ///The falling edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 2 is active.
+    #[doc = "The falling edge is the active edge used for counting. If LPTIM is in encoder mode: Encoder sub-mode 2 is active."]
     #[inline(always)]
     pub fn falling_edge(self) -> &'a mut W {
-        self.variant(CKPOL_A::FALLINGEDGE)
+        self.variant(CKPOL_A::FallingEdge)
     }
-    ///Both edges are active edge. If LPTIM is in encoder mode: Encoder sub-mode 3 is active.
+    #[doc = "Both edges are active edge. If LPTIM is in encoder mode: Encoder sub-mode 3 is active."]
     #[inline(always)]
     pub fn both_edges(self) -> &'a mut W {
-        self.variant(CKPOL_A::BOTHEDGES)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
+        self.variant(CKPOL_A::BothEdges)
     }
 }
-///CKSEL
-///
-///Value on reset: 0
+#[doc = "CKSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CKSEL_A {
-    ///0: LPTIM is clocked by internal clock source (APB clock or any of the embedded oscillators)
-    INTERNAL = 0,
-    ///1: LPTIM is clocked by an external clock source through the LPTIM external Input1
-    EXTERNAL = 1,
+    #[doc = "0: LPTIM is clocked by internal clock source (APB clock or any of the embedded oscillators)"]
+    Internal = 0,
+    #[doc = "1: LPTIM is clocked by an external clock source through the LPTIM external Input1"]
+    External = 1,
 }
 impl From<CKSEL_A> for bool {
     #[inline(always)]
@@ -1261,233 +908,196 @@ impl From<CKSEL_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `CKSEL` reader - CKSEL
-pub struct CKSEL_R(crate::FieldReader<bool, CKSEL_A>);
+#[doc = "Field `CKSEL` reader - CKSEL"]
+pub type CKSEL_R = crate::BitReader<CKSEL_A>;
 impl CKSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CKSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CKSEL_A {
         match self.bits {
-            false => CKSEL_A::INTERNAL,
-            true => CKSEL_A::EXTERNAL,
+            false => CKSEL_A::Internal,
+            true => CKSEL_A::External,
         }
     }
-    ///Checks if the value of the field is `INTERNAL`
+    #[doc = "Checks if the value of the field is `Internal`"]
     #[inline(always)]
     pub fn is_internal(&self) -> bool {
-        **self == CKSEL_A::INTERNAL
+        *self == CKSEL_A::Internal
     }
-    ///Checks if the value of the field is `EXTERNAL`
+    #[doc = "Checks if the value of the field is `External`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
-        **self == CKSEL_A::EXTERNAL
+        *self == CKSEL_A::External
     }
 }
-impl core::ops::Deref for CKSEL_R {
-    type Target = crate::FieldReader<bool, CKSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CKSEL` writer - CKSEL
-pub struct CKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CKSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///LPTIM is clocked by internal clock source (APB clock or any of the embedded oscillators)
+#[doc = "Field `CKSEL` writer - CKSEL"]
+pub type CKSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGR_SPEC, CKSEL_A, O>;
+impl<'a, const O: u8> CKSEL_W<'a, O> {
+    #[doc = "LPTIM is clocked by internal clock source (APB clock or any of the embedded oscillators)"]
     #[inline(always)]
     pub fn internal(self) -> &'a mut W {
-        self.variant(CKSEL_A::INTERNAL)
+        self.variant(CKSEL_A::Internal)
     }
-    ///LPTIM is clocked by an external clock source through the LPTIM external Input1
+    #[doc = "LPTIM is clocked by an external clock source through the LPTIM external Input1"]
     #[inline(always)]
     pub fn external(self) -> &'a mut W {
-        self.variant(CKSEL_A::EXTERNAL)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(CKSEL_A::External)
     }
 }
 impl R {
-    ///Bit 24 - ENC
+    #[doc = "Bit 24 - ENC"]
     #[inline(always)]
     pub fn enc(&self) -> ENC_R {
-        ENC_R::new(((self.bits >> 24) & 0x01) != 0)
+        ENC_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bit 23 - COUNTMODE
+    #[doc = "Bit 23 - COUNTMODE"]
     #[inline(always)]
     pub fn countmode(&self) -> COUNTMODE_R {
-        COUNTMODE_R::new(((self.bits >> 23) & 0x01) != 0)
+        COUNTMODE_R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 22 - PRELOAD
+    #[doc = "Bit 22 - PRELOAD"]
     #[inline(always)]
     pub fn preload(&self) -> PRELOAD_R {
-        PRELOAD_R::new(((self.bits >> 22) & 0x01) != 0)
+        PRELOAD_R::new(((self.bits >> 22) & 1) != 0)
     }
-    ///Bit 21 - WAVPOL
+    #[doc = "Bit 21 - WAVPOL"]
     #[inline(always)]
     pub fn wavpol(&self) -> WAVPOL_R {
-        WAVPOL_R::new(((self.bits >> 21) & 0x01) != 0)
+        WAVPOL_R::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bit 20 - WAVE
+    #[doc = "Bit 20 - WAVE"]
     #[inline(always)]
     pub fn wave(&self) -> WAVE_R {
-        WAVE_R::new(((self.bits >> 20) & 0x01) != 0)
+        WAVE_R::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 19 - TIMOUT
+    #[doc = "Bit 19 - TIMOUT"]
     #[inline(always)]
     pub fn timout(&self) -> TIMOUT_R {
-        TIMOUT_R::new(((self.bits >> 19) & 0x01) != 0)
+        TIMOUT_R::new(((self.bits >> 19) & 1) != 0)
     }
-    ///Bits 17:18 - TRIGEN
+    #[doc = "Bits 17:18 - TRIGEN"]
     #[inline(always)]
     pub fn trigen(&self) -> TRIGEN_R {
-        TRIGEN_R::new(((self.bits >> 17) & 0x03) as u8)
+        TRIGEN_R::new(((self.bits >> 17) & 3) as u8)
     }
-    ///Bits 13:15 - TRIGSEL
+    #[doc = "Bits 13:15 - TRIGSEL"]
     #[inline(always)]
     pub fn trigsel(&self) -> TRIGSEL_R {
-        TRIGSEL_R::new(((self.bits >> 13) & 0x07) as u8)
+        TRIGSEL_R::new(((self.bits >> 13) & 7) as u8)
     }
-    ///Bits 9:11 - PRESC
+    #[doc = "Bits 9:11 - PRESC"]
     #[inline(always)]
     pub fn presc(&self) -> PRESC_R {
-        PRESC_R::new(((self.bits >> 9) & 0x07) as u8)
+        PRESC_R::new(((self.bits >> 9) & 7) as u8)
     }
-    ///Bits 6:7 - TRGFLT
+    #[doc = "Bits 6:7 - TRGFLT"]
     #[inline(always)]
     pub fn trgflt(&self) -> TRGFLT_R {
-        TRGFLT_R::new(((self.bits >> 6) & 0x03) as u8)
+        TRGFLT_R::new(((self.bits >> 6) & 3) as u8)
     }
-    ///Bits 3:4 - CKFLT
+    #[doc = "Bits 3:4 - CKFLT"]
     #[inline(always)]
     pub fn ckflt(&self) -> CKFLT_R {
-        CKFLT_R::new(((self.bits >> 3) & 0x03) as u8)
+        CKFLT_R::new(((self.bits >> 3) & 3) as u8)
     }
-    ///Bits 1:2 - CKPOL
+    #[doc = "Bits 1:2 - CKPOL"]
     #[inline(always)]
     pub fn ckpol(&self) -> CKPOL_R {
-        CKPOL_R::new(((self.bits >> 1) & 0x03) as u8)
+        CKPOL_R::new(((self.bits >> 1) & 3) as u8)
     }
-    ///Bit 0 - CKSEL
+    #[doc = "Bit 0 - CKSEL"]
     #[inline(always)]
     pub fn cksel(&self) -> CKSEL_R {
-        CKSEL_R::new((self.bits & 0x01) != 0)
+        CKSEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 24 - ENC
+    #[doc = "Bit 24 - ENC"]
     #[inline(always)]
-    pub fn enc(&mut self) -> ENC_W {
-        ENC_W { w: self }
+    pub fn enc(&mut self) -> ENC_W<24> {
+        ENC_W::new(self)
     }
-    ///Bit 23 - COUNTMODE
+    #[doc = "Bit 23 - COUNTMODE"]
     #[inline(always)]
-    pub fn countmode(&mut self) -> COUNTMODE_W {
-        COUNTMODE_W { w: self }
+    pub fn countmode(&mut self) -> COUNTMODE_W<23> {
+        COUNTMODE_W::new(self)
     }
-    ///Bit 22 - PRELOAD
+    #[doc = "Bit 22 - PRELOAD"]
     #[inline(always)]
-    pub fn preload(&mut self) -> PRELOAD_W {
-        PRELOAD_W { w: self }
+    pub fn preload(&mut self) -> PRELOAD_W<22> {
+        PRELOAD_W::new(self)
     }
-    ///Bit 21 - WAVPOL
+    #[doc = "Bit 21 - WAVPOL"]
     #[inline(always)]
-    pub fn wavpol(&mut self) -> WAVPOL_W {
-        WAVPOL_W { w: self }
+    pub fn wavpol(&mut self) -> WAVPOL_W<21> {
+        WAVPOL_W::new(self)
     }
-    ///Bit 20 - WAVE
+    #[doc = "Bit 20 - WAVE"]
     #[inline(always)]
-    pub fn wave(&mut self) -> WAVE_W {
-        WAVE_W { w: self }
+    pub fn wave(&mut self) -> WAVE_W<20> {
+        WAVE_W::new(self)
     }
-    ///Bit 19 - TIMOUT
+    #[doc = "Bit 19 - TIMOUT"]
     #[inline(always)]
-    pub fn timout(&mut self) -> TIMOUT_W {
-        TIMOUT_W { w: self }
+    pub fn timout(&mut self) -> TIMOUT_W<19> {
+        TIMOUT_W::new(self)
     }
-    ///Bits 17:18 - TRIGEN
+    #[doc = "Bits 17:18 - TRIGEN"]
     #[inline(always)]
-    pub fn trigen(&mut self) -> TRIGEN_W {
-        TRIGEN_W { w: self }
+    pub fn trigen(&mut self) -> TRIGEN_W<17> {
+        TRIGEN_W::new(self)
     }
-    ///Bits 13:15 - TRIGSEL
+    #[doc = "Bits 13:15 - TRIGSEL"]
     #[inline(always)]
-    pub fn trigsel(&mut self) -> TRIGSEL_W {
-        TRIGSEL_W { w: self }
+    pub fn trigsel(&mut self) -> TRIGSEL_W<13> {
+        TRIGSEL_W::new(self)
     }
-    ///Bits 9:11 - PRESC
+    #[doc = "Bits 9:11 - PRESC"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
-        PRESC_W { w: self }
+    pub fn presc(&mut self) -> PRESC_W<9> {
+        PRESC_W::new(self)
     }
-    ///Bits 6:7 - TRGFLT
+    #[doc = "Bits 6:7 - TRGFLT"]
     #[inline(always)]
-    pub fn trgflt(&mut self) -> TRGFLT_W {
-        TRGFLT_W { w: self }
+    pub fn trgflt(&mut self) -> TRGFLT_W<6> {
+        TRGFLT_W::new(self)
     }
-    ///Bits 3:4 - CKFLT
+    #[doc = "Bits 3:4 - CKFLT"]
     #[inline(always)]
-    pub fn ckflt(&mut self) -> CKFLT_W {
-        CKFLT_W { w: self }
+    pub fn ckflt(&mut self) -> CKFLT_W<3> {
+        CKFLT_W::new(self)
     }
-    ///Bits 1:2 - CKPOL
+    #[doc = "Bits 1:2 - CKPOL"]
     #[inline(always)]
-    pub fn ckpol(&mut self) -> CKPOL_W {
-        CKPOL_W { w: self }
+    pub fn ckpol(&mut self) -> CKPOL_W<1> {
+        CKPOL_W::new(self)
     }
-    ///Bit 0 - CKSEL
+    #[doc = "Bit 0 - CKSEL"]
     #[inline(always)]
-    pub fn cksel(&mut self) -> CKSEL_W {
-        CKSEL_W { w: self }
+    pub fn cksel(&mut self) -> CKSEL_W<0> {
+        CKSEL_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cfgr](index.html) module
+#[doc = "configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cfgr](index.html) module"]
 pub struct CFGR_SPEC;
 impl crate::RegisterSpec for CFGR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cfgr::R](R) reader structure
+#[doc = "`read()` method returns [cfgr::R](R) reader structure"]
 impl crate::Readable for CFGR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cfgr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cfgr::W](W) writer structure"]
 impl crate::Writable for CFGR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CFGR to value 0
+#[doc = "`reset()` method sets CFGR to value 0"]
 impl crate::Resettable for CFGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `SMCR` reader
+#[doc = "Register `SMCR` reader"]
 pub struct R(crate::R<SMCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SMCR` writer
+#[doc = "Register `SMCR` writer"]
 pub struct W(crate::W<SMCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMCR_SPEC>;
@@ -34,16 +34,14 @@ impl From<crate::W<SMCR_SPEC>> for W {
         W(writer)
     }
 }
-///Slave mode selection - bit 3
-///
-///Value on reset: 0
+#[doc = "Slave mode selection - bit 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMS_3_A {
-    ///0: Slave mode disabled (see SMS\[0:2\])
-    DISABLED = 0,
-    ///1: SMS\[0:2\]
-    ///must be 0b000 (DisabledOrCombined). Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter
-    COMBINEDRESETTRIGGER = 1,
+    #[doc = "0: Slave mode disabled (see SMS\\[0:2\\])"]
+    Disabled = 0,
+    #[doc = "1: SMS\\[0:2\\]
+must be 0b000 (DisabledOrCombined). Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter"]
+    CombinedResetTrigger = 1,
 }
 impl From<SMS_3_A> for bool {
     #[inline(always)]
@@ -51,85 +49,50 @@ impl From<SMS_3_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SMS_3` reader - Slave mode selection - bit 3
-pub struct SMS_3_R(crate::FieldReader<bool, SMS_3_A>);
+#[doc = "Field `SMS_3` reader - Slave mode selection - bit 3"]
+pub type SMS_3_R = crate::BitReader<SMS_3_A>;
 impl SMS_3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMS_3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMS_3_A {
         match self.bits {
-            false => SMS_3_A::DISABLED,
-            true => SMS_3_A::COMBINEDRESETTRIGGER,
+            false => SMS_3_A::Disabled,
+            true => SMS_3_A::CombinedResetTrigger,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SMS_3_A::DISABLED
+        *self == SMS_3_A::Disabled
     }
-    ///Checks if the value of the field is `COMBINEDRESETTRIGGER`
+    #[doc = "Checks if the value of the field is `CombinedResetTrigger`"]
     #[inline(always)]
     pub fn is_combined_reset_trigger(&self) -> bool {
-        **self == SMS_3_A::COMBINEDRESETTRIGGER
+        *self == SMS_3_A::CombinedResetTrigger
     }
 }
-impl core::ops::Deref for SMS_3_R {
-    type Target = crate::FieldReader<bool, SMS_3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SMS_3` writer - Slave mode selection - bit 3
-pub struct SMS_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMS_3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SMS_3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Slave mode disabled (see SMS\[0:2\])
+#[doc = "Field `SMS_3` writer - Slave mode selection - bit 3"]
+pub type SMS_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMCR_SPEC, SMS_3_A, O>;
+impl<'a, const O: u8> SMS_3_W<'a, O> {
+    #[doc = "Slave mode disabled (see SMS\\[0:2\\])"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SMS_3_A::DISABLED)
+        self.variant(SMS_3_A::Disabled)
     }
-    ///SMS\[0:2\]
-    ///must be 0b000 (DisabledOrCombined). Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter
+    #[doc = "SMS\\[0:2\\]
+must be 0b000 (DisabledOrCombined). Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter"]
     #[inline(always)]
     pub fn combined_reset_trigger(self) -> &'a mut W {
-        self.variant(SMS_3_A::COMBINEDRESETTRIGGER)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(SMS_3_A::CombinedResetTrigger)
     }
 }
-///External trigger polarity
-///
-///Value on reset: 0
+#[doc = "External trigger polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETP_A {
-    ///0: ETR is noninverted, active at high level or rising edge
-    NOTINVERTED = 0,
-    ///1: ETR is inverted, active at low level or falling edge
-    INVERTED = 1,
+    #[doc = "0: ETR is noninverted, active at high level or rising edge"]
+    NotInverted = 0,
+    #[doc = "1: ETR is inverted, active at low level or falling edge"]
+    Inverted = 1,
 }
 impl From<ETP_A> for bool {
     #[inline(always)]
@@ -137,84 +100,49 @@ impl From<ETP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ETP` reader - External trigger polarity
-pub struct ETP_R(crate::FieldReader<bool, ETP_A>);
+#[doc = "Field `ETP` reader - External trigger polarity"]
+pub type ETP_R = crate::BitReader<ETP_A>;
 impl ETP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ETP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ETP_A {
         match self.bits {
-            false => ETP_A::NOTINVERTED,
-            true => ETP_A::INVERTED,
+            false => ETP_A::NotInverted,
+            true => ETP_A::Inverted,
         }
     }
-    ///Checks if the value of the field is `NOTINVERTED`
+    #[doc = "Checks if the value of the field is `NotInverted`"]
     #[inline(always)]
     pub fn is_not_inverted(&self) -> bool {
-        **self == ETP_A::NOTINVERTED
+        *self == ETP_A::NotInverted
     }
-    ///Checks if the value of the field is `INVERTED`
+    #[doc = "Checks if the value of the field is `Inverted`"]
     #[inline(always)]
     pub fn is_inverted(&self) -> bool {
-        **self == ETP_A::INVERTED
+        *self == ETP_A::Inverted
     }
 }
-impl core::ops::Deref for ETP_R {
-    type Target = crate::FieldReader<bool, ETP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ETP` writer - External trigger polarity
-pub struct ETP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ETP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///ETR is noninverted, active at high level or rising edge
+#[doc = "Field `ETP` writer - External trigger polarity"]
+pub type ETP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMCR_SPEC, ETP_A, O>;
+impl<'a, const O: u8> ETP_W<'a, O> {
+    #[doc = "ETR is noninverted, active at high level or rising edge"]
     #[inline(always)]
     pub fn not_inverted(self) -> &'a mut W {
-        self.variant(ETP_A::NOTINVERTED)
+        self.variant(ETP_A::NotInverted)
     }
-    ///ETR is inverted, active at low level or falling edge
+    #[doc = "ETR is inverted, active at low level or falling edge"]
     #[inline(always)]
     pub fn inverted(self) -> &'a mut W {
-        self.variant(ETP_A::INVERTED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(ETP_A::Inverted)
     }
 }
-///External clock enable
-///
-///Value on reset: 0
+#[doc = "External clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECE_A {
-    ///0: External clock mode 2 disabled
-    DISABLED = 0,
-    ///1: External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal
-    ENABLED = 1,
+    #[doc = "0: External clock mode 2 disabled"]
+    Disabled = 0,
+    #[doc = "1: External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal"]
+    Enabled = 1,
 }
 impl From<ECE_A> for bool {
     #[inline(always)]
@@ -222,89 +150,54 @@ impl From<ECE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ECE` reader - External clock enable
-pub struct ECE_R(crate::FieldReader<bool, ECE_A>);
+#[doc = "Field `ECE` reader - External clock enable"]
+pub type ECE_R = crate::BitReader<ECE_A>;
 impl ECE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ECE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECE_A {
         match self.bits {
-            false => ECE_A::DISABLED,
-            true => ECE_A::ENABLED,
+            false => ECE_A::Disabled,
+            true => ECE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ECE_A::DISABLED
+        *self == ECE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ECE_A::ENABLED
+        *self == ECE_A::Enabled
     }
 }
-impl core::ops::Deref for ECE_R {
-    type Target = crate::FieldReader<bool, ECE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ECE` writer - External clock enable
-pub struct ECE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ECE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///External clock mode 2 disabled
+#[doc = "Field `ECE` writer - External clock enable"]
+pub type ECE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMCR_SPEC, ECE_A, O>;
+impl<'a, const O: u8> ECE_W<'a, O> {
+    #[doc = "External clock mode 2 disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ECE_A::DISABLED)
+        self.variant(ECE_A::Disabled)
     }
-    ///External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal
+    #[doc = "External clock mode 2 enabled. The counter is clocked by any active edge on the ETRF signal"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ECE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
+        self.variant(ECE_A::Enabled)
     }
 }
-///External trigger prescaler
-///
-///Value on reset: 0
+#[doc = "External trigger prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum ETPS_A {
-    ///0: Prescaler OFF
-    DIV1 = 0,
-    ///1: ETRP frequency divided by 2
-    DIV2 = 1,
-    ///2: ETRP frequency divided by 4
-    DIV4 = 2,
-    ///3: ETRP frequency divided by 8
-    DIV8 = 3,
+    #[doc = "0: Prescaler OFF"]
+    Div1 = 0,
+    #[doc = "1: ETRP frequency divided by 2"]
+    Div2 = 1,
+    #[doc = "2: ETRP frequency divided by 4"]
+    Div4 = 2,
+    #[doc = "3: ETRP frequency divided by 8"]
+    Div8 = 3,
 }
 impl From<ETPS_A> for u8 {
     #[inline(always)]
@@ -312,126 +205,101 @@ impl From<ETPS_A> for u8 {
         variant as _
     }
 }
-///Field `ETPS` reader - External trigger prescaler
-pub struct ETPS_R(crate::FieldReader<u8, ETPS_A>);
+#[doc = "Field `ETPS` reader - External trigger prescaler"]
+pub type ETPS_R = crate::FieldReader<u8, ETPS_A>;
 impl ETPS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ETPS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ETPS_A {
         match self.bits {
-            0 => ETPS_A::DIV1,
-            1 => ETPS_A::DIV2,
-            2 => ETPS_A::DIV4,
-            3 => ETPS_A::DIV8,
+            0 => ETPS_A::Div1,
+            1 => ETPS_A::Div2,
+            2 => ETPS_A::Div4,
+            3 => ETPS_A::Div8,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == ETPS_A::DIV1
+        *self == ETPS_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == ETPS_A::DIV2
+        *self == ETPS_A::Div2
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == ETPS_A::DIV4
+        *self == ETPS_A::Div4
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == ETPS_A::DIV8
+        *self == ETPS_A::Div8
     }
 }
-impl core::ops::Deref for ETPS_R {
-    type Target = crate::FieldReader<u8, ETPS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ETPS` writer - External trigger prescaler
-pub struct ETPS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETPS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ETPS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Prescaler OFF
+#[doc = "Field `ETPS` writer - External trigger prescaler"]
+pub type ETPS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SMCR_SPEC, u8, ETPS_A, 2, O>;
+impl<'a, const O: u8> ETPS_W<'a, O> {
+    #[doc = "Prescaler OFF"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(ETPS_A::DIV1)
+        self.variant(ETPS_A::Div1)
     }
-    ///ETRP frequency divided by 2
+    #[doc = "ETRP frequency divided by 2"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(ETPS_A::DIV2)
+        self.variant(ETPS_A::Div2)
     }
-    ///ETRP frequency divided by 4
+    #[doc = "ETRP frequency divided by 4"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(ETPS_A::DIV4)
+        self.variant(ETPS_A::Div4)
     }
-    ///ETRP frequency divided by 8
+    #[doc = "ETRP frequency divided by 8"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(ETPS_A::DIV8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
+        self.variant(ETPS_A::Div8)
     }
 }
-///External trigger filter
-///
-///Value on reset: 0
+#[doc = "External trigger filter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum ETF_A {
-    ///0: No filter, sampling is done at fDTS
-    NOFILTER = 0,
-    ///1: fSAMPLING=fCK_INT, N=2
-    FCK_INT_N2 = 1,
-    ///2: fSAMPLING=fCK_INT, N=4
-    FCK_INT_N4 = 2,
-    ///3: fSAMPLING=fCK_INT, N=8
-    FCK_INT_N8 = 3,
-    ///4: fSAMPLING=fDTS/2, N=6
-    FDTS_DIV2_N6 = 4,
-    ///5: fSAMPLING=fDTS/2, N=8
-    FDTS_DIV2_N8 = 5,
-    ///6: fSAMPLING=fDTS/4, N=6
-    FDTS_DIV4_N6 = 6,
-    ///7: fSAMPLING=fDTS/4, N=8
-    FDTS_DIV4_N8 = 7,
-    ///8: fSAMPLING=fDTS/8, N=6
-    FDTS_DIV8_N6 = 8,
-    ///9: fSAMPLING=fDTS/8, N=8
-    FDTS_DIV8_N8 = 9,
-    ///10: fSAMPLING=fDTS/16, N=5
-    FDTS_DIV16_N5 = 10,
-    ///11: fSAMPLING=fDTS/16, N=6
-    FDTS_DIV16_N6 = 11,
-    ///12: fSAMPLING=fDTS/16, N=8
-    FDTS_DIV16_N8 = 12,
-    ///13: fSAMPLING=fDTS/32, N=5
-    FDTS_DIV32_N5 = 13,
-    ///14: fSAMPLING=fDTS/32, N=6
-    FDTS_DIV32_N6 = 14,
-    ///15: fSAMPLING=fDTS/32, N=8
-    FDTS_DIV32_N8 = 15,
+    #[doc = "0: No filter, sampling is done at fDTS"]
+    NoFilter = 0,
+    #[doc = "1: fSAMPLING=fCK_INT, N=2"]
+    FckIntN2 = 1,
+    #[doc = "2: fSAMPLING=fCK_INT, N=4"]
+    FckIntN4 = 2,
+    #[doc = "3: fSAMPLING=fCK_INT, N=8"]
+    FckIntN8 = 3,
+    #[doc = "4: fSAMPLING=fDTS/2, N=6"]
+    FdtsDiv2N6 = 4,
+    #[doc = "5: fSAMPLING=fDTS/2, N=8"]
+    FdtsDiv2N8 = 5,
+    #[doc = "6: fSAMPLING=fDTS/4, N=6"]
+    FdtsDiv4N6 = 6,
+    #[doc = "7: fSAMPLING=fDTS/4, N=8"]
+    FdtsDiv4N8 = 7,
+    #[doc = "8: fSAMPLING=fDTS/8, N=6"]
+    FdtsDiv8N6 = 8,
+    #[doc = "9: fSAMPLING=fDTS/8, N=8"]
+    FdtsDiv8N8 = 9,
+    #[doc = "10: fSAMPLING=fDTS/16, N=5"]
+    FdtsDiv16N5 = 10,
+    #[doc = "11: fSAMPLING=fDTS/16, N=6"]
+    FdtsDiv16N6 = 11,
+    #[doc = "12: fSAMPLING=fDTS/16, N=8"]
+    FdtsDiv16N8 = 12,
+    #[doc = "13: fSAMPLING=fDTS/32, N=5"]
+    FdtsDiv32N5 = 13,
+    #[doc = "14: fSAMPLING=fDTS/32, N=6"]
+    FdtsDiv32N6 = 14,
+    #[doc = "15: fSAMPLING=fDTS/32, N=8"]
+    FdtsDiv32N8 = 15,
 }
 impl From<ETF_A> for u8 {
     #[inline(always)]
@@ -439,229 +307,204 @@ impl From<ETF_A> for u8 {
         variant as _
     }
 }
-///Field `ETF` reader - External trigger filter
-pub struct ETF_R(crate::FieldReader<u8, ETF_A>);
+#[doc = "Field `ETF` reader - External trigger filter"]
+pub type ETF_R = crate::FieldReader<u8, ETF_A>;
 impl ETF_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ETF_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ETF_A {
         match self.bits {
-            0 => ETF_A::NOFILTER,
-            1 => ETF_A::FCK_INT_N2,
-            2 => ETF_A::FCK_INT_N4,
-            3 => ETF_A::FCK_INT_N8,
-            4 => ETF_A::FDTS_DIV2_N6,
-            5 => ETF_A::FDTS_DIV2_N8,
-            6 => ETF_A::FDTS_DIV4_N6,
-            7 => ETF_A::FDTS_DIV4_N8,
-            8 => ETF_A::FDTS_DIV8_N6,
-            9 => ETF_A::FDTS_DIV8_N8,
-            10 => ETF_A::FDTS_DIV16_N5,
-            11 => ETF_A::FDTS_DIV16_N6,
-            12 => ETF_A::FDTS_DIV16_N8,
-            13 => ETF_A::FDTS_DIV32_N5,
-            14 => ETF_A::FDTS_DIV32_N6,
-            15 => ETF_A::FDTS_DIV32_N8,
+            0 => ETF_A::NoFilter,
+            1 => ETF_A::FckIntN2,
+            2 => ETF_A::FckIntN4,
+            3 => ETF_A::FckIntN8,
+            4 => ETF_A::FdtsDiv2N6,
+            5 => ETF_A::FdtsDiv2N8,
+            6 => ETF_A::FdtsDiv4N6,
+            7 => ETF_A::FdtsDiv4N8,
+            8 => ETF_A::FdtsDiv8N6,
+            9 => ETF_A::FdtsDiv8N8,
+            10 => ETF_A::FdtsDiv16N5,
+            11 => ETF_A::FdtsDiv16N6,
+            12 => ETF_A::FdtsDiv16N8,
+            13 => ETF_A::FdtsDiv32N5,
+            14 => ETF_A::FdtsDiv32N6,
+            15 => ETF_A::FdtsDiv32N8,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NOFILTER`
+    #[doc = "Checks if the value of the field is `NoFilter`"]
     #[inline(always)]
     pub fn is_no_filter(&self) -> bool {
-        **self == ETF_A::NOFILTER
+        *self == ETF_A::NoFilter
     }
-    ///Checks if the value of the field is `FCK_INT_N2`
+    #[doc = "Checks if the value of the field is `FckIntN2`"]
     #[inline(always)]
     pub fn is_fck_int_n2(&self) -> bool {
-        **self == ETF_A::FCK_INT_N2
+        *self == ETF_A::FckIntN2
     }
-    ///Checks if the value of the field is `FCK_INT_N4`
+    #[doc = "Checks if the value of the field is `FckIntN4`"]
     #[inline(always)]
     pub fn is_fck_int_n4(&self) -> bool {
-        **self == ETF_A::FCK_INT_N4
+        *self == ETF_A::FckIntN4
     }
-    ///Checks if the value of the field is `FCK_INT_N8`
+    #[doc = "Checks if the value of the field is `FckIntN8`"]
     #[inline(always)]
     pub fn is_fck_int_n8(&self) -> bool {
-        **self == ETF_A::FCK_INT_N8
+        *self == ETF_A::FckIntN8
     }
-    ///Checks if the value of the field is `FDTS_DIV2_N6`
+    #[doc = "Checks if the value of the field is `FdtsDiv2N6`"]
     #[inline(always)]
     pub fn is_fdts_div2_n6(&self) -> bool {
-        **self == ETF_A::FDTS_DIV2_N6
+        *self == ETF_A::FdtsDiv2N6
     }
-    ///Checks if the value of the field is `FDTS_DIV2_N8`
+    #[doc = "Checks if the value of the field is `FdtsDiv2N8`"]
     #[inline(always)]
     pub fn is_fdts_div2_n8(&self) -> bool {
-        **self == ETF_A::FDTS_DIV2_N8
+        *self == ETF_A::FdtsDiv2N8
     }
-    ///Checks if the value of the field is `FDTS_DIV4_N6`
+    #[doc = "Checks if the value of the field is `FdtsDiv4N6`"]
     #[inline(always)]
     pub fn is_fdts_div4_n6(&self) -> bool {
-        **self == ETF_A::FDTS_DIV4_N6
+        *self == ETF_A::FdtsDiv4N6
     }
-    ///Checks if the value of the field is `FDTS_DIV4_N8`
+    #[doc = "Checks if the value of the field is `FdtsDiv4N8`"]
     #[inline(always)]
     pub fn is_fdts_div4_n8(&self) -> bool {
-        **self == ETF_A::FDTS_DIV4_N8
+        *self == ETF_A::FdtsDiv4N8
     }
-    ///Checks if the value of the field is `FDTS_DIV8_N6`
+    #[doc = "Checks if the value of the field is `FdtsDiv8N6`"]
     #[inline(always)]
     pub fn is_fdts_div8_n6(&self) -> bool {
-        **self == ETF_A::FDTS_DIV8_N6
+        *self == ETF_A::FdtsDiv8N6
     }
-    ///Checks if the value of the field is `FDTS_DIV8_N8`
+    #[doc = "Checks if the value of the field is `FdtsDiv8N8`"]
     #[inline(always)]
     pub fn is_fdts_div8_n8(&self) -> bool {
-        **self == ETF_A::FDTS_DIV8_N8
+        *self == ETF_A::FdtsDiv8N8
     }
-    ///Checks if the value of the field is `FDTS_DIV16_N5`
+    #[doc = "Checks if the value of the field is `FdtsDiv16N5`"]
     #[inline(always)]
     pub fn is_fdts_div16_n5(&self) -> bool {
-        **self == ETF_A::FDTS_DIV16_N5
+        *self == ETF_A::FdtsDiv16N5
     }
-    ///Checks if the value of the field is `FDTS_DIV16_N6`
+    #[doc = "Checks if the value of the field is `FdtsDiv16N6`"]
     #[inline(always)]
     pub fn is_fdts_div16_n6(&self) -> bool {
-        **self == ETF_A::FDTS_DIV16_N6
+        *self == ETF_A::FdtsDiv16N6
     }
-    ///Checks if the value of the field is `FDTS_DIV16_N8`
+    #[doc = "Checks if the value of the field is `FdtsDiv16N8`"]
     #[inline(always)]
     pub fn is_fdts_div16_n8(&self) -> bool {
-        **self == ETF_A::FDTS_DIV16_N8
+        *self == ETF_A::FdtsDiv16N8
     }
-    ///Checks if the value of the field is `FDTS_DIV32_N5`
+    #[doc = "Checks if the value of the field is `FdtsDiv32N5`"]
     #[inline(always)]
     pub fn is_fdts_div32_n5(&self) -> bool {
-        **self == ETF_A::FDTS_DIV32_N5
+        *self == ETF_A::FdtsDiv32N5
     }
-    ///Checks if the value of the field is `FDTS_DIV32_N6`
+    #[doc = "Checks if the value of the field is `FdtsDiv32N6`"]
     #[inline(always)]
     pub fn is_fdts_div32_n6(&self) -> bool {
-        **self == ETF_A::FDTS_DIV32_N6
+        *self == ETF_A::FdtsDiv32N6
     }
-    ///Checks if the value of the field is `FDTS_DIV32_N8`
+    #[doc = "Checks if the value of the field is `FdtsDiv32N8`"]
     #[inline(always)]
     pub fn is_fdts_div32_n8(&self) -> bool {
-        **self == ETF_A::FDTS_DIV32_N8
+        *self == ETF_A::FdtsDiv32N8
     }
 }
-impl core::ops::Deref for ETF_R {
-    type Target = crate::FieldReader<u8, ETF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ETF` writer - External trigger filter
-pub struct ETF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ETF_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///No filter, sampling is done at fDTS
+#[doc = "Field `ETF` writer - External trigger filter"]
+pub type ETF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SMCR_SPEC, u8, ETF_A, 4, O>;
+impl<'a, const O: u8> ETF_W<'a, O> {
+    #[doc = "No filter, sampling is done at fDTS"]
     #[inline(always)]
     pub fn no_filter(self) -> &'a mut W {
-        self.variant(ETF_A::NOFILTER)
+        self.variant(ETF_A::NoFilter)
     }
-    ///fSAMPLING=fCK_INT, N=2
+    #[doc = "fSAMPLING=fCK_INT, N=2"]
     #[inline(always)]
     pub fn fck_int_n2(self) -> &'a mut W {
-        self.variant(ETF_A::FCK_INT_N2)
+        self.variant(ETF_A::FckIntN2)
     }
-    ///fSAMPLING=fCK_INT, N=4
+    #[doc = "fSAMPLING=fCK_INT, N=4"]
     #[inline(always)]
     pub fn fck_int_n4(self) -> &'a mut W {
-        self.variant(ETF_A::FCK_INT_N4)
+        self.variant(ETF_A::FckIntN4)
     }
-    ///fSAMPLING=fCK_INT, N=8
+    #[doc = "fSAMPLING=fCK_INT, N=8"]
     #[inline(always)]
     pub fn fck_int_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FCK_INT_N8)
+        self.variant(ETF_A::FckIntN8)
     }
-    ///fSAMPLING=fDTS/2, N=6
+    #[doc = "fSAMPLING=fDTS/2, N=6"]
     #[inline(always)]
     pub fn fdts_div2_n6(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV2_N6)
+        self.variant(ETF_A::FdtsDiv2N6)
     }
-    ///fSAMPLING=fDTS/2, N=8
+    #[doc = "fSAMPLING=fDTS/2, N=8"]
     #[inline(always)]
     pub fn fdts_div2_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV2_N8)
+        self.variant(ETF_A::FdtsDiv2N8)
     }
-    ///fSAMPLING=fDTS/4, N=6
+    #[doc = "fSAMPLING=fDTS/4, N=6"]
     #[inline(always)]
     pub fn fdts_div4_n6(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV4_N6)
+        self.variant(ETF_A::FdtsDiv4N6)
     }
-    ///fSAMPLING=fDTS/4, N=8
+    #[doc = "fSAMPLING=fDTS/4, N=8"]
     #[inline(always)]
     pub fn fdts_div4_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV4_N8)
+        self.variant(ETF_A::FdtsDiv4N8)
     }
-    ///fSAMPLING=fDTS/8, N=6
+    #[doc = "fSAMPLING=fDTS/8, N=6"]
     #[inline(always)]
     pub fn fdts_div8_n6(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV8_N6)
+        self.variant(ETF_A::FdtsDiv8N6)
     }
-    ///fSAMPLING=fDTS/8, N=8
+    #[doc = "fSAMPLING=fDTS/8, N=8"]
     #[inline(always)]
     pub fn fdts_div8_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV8_N8)
+        self.variant(ETF_A::FdtsDiv8N8)
     }
-    ///fSAMPLING=fDTS/16, N=5
+    #[doc = "fSAMPLING=fDTS/16, N=5"]
     #[inline(always)]
     pub fn fdts_div16_n5(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV16_N5)
+        self.variant(ETF_A::FdtsDiv16N5)
     }
-    ///fSAMPLING=fDTS/16, N=6
+    #[doc = "fSAMPLING=fDTS/16, N=6"]
     #[inline(always)]
     pub fn fdts_div16_n6(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV16_N6)
+        self.variant(ETF_A::FdtsDiv16N6)
     }
-    ///fSAMPLING=fDTS/16, N=8
+    #[doc = "fSAMPLING=fDTS/16, N=8"]
     #[inline(always)]
     pub fn fdts_div16_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV16_N8)
+        self.variant(ETF_A::FdtsDiv16N8)
     }
-    ///fSAMPLING=fDTS/32, N=5
+    #[doc = "fSAMPLING=fDTS/32, N=5"]
     #[inline(always)]
     pub fn fdts_div32_n5(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV32_N5)
+        self.variant(ETF_A::FdtsDiv32N5)
     }
-    ///fSAMPLING=fDTS/32, N=6
+    #[doc = "fSAMPLING=fDTS/32, N=6"]
     #[inline(always)]
     pub fn fdts_div32_n6(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV32_N6)
+        self.variant(ETF_A::FdtsDiv32N6)
     }
-    ///fSAMPLING=fDTS/32, N=8
+    #[doc = "fSAMPLING=fDTS/32, N=8"]
     #[inline(always)]
     pub fn fdts_div32_n8(self) -> &'a mut W {
-        self.variant(ETF_A::FDTS_DIV32_N8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
+        self.variant(ETF_A::FdtsDiv32N8)
     }
 }
-///Master/Slave mode
-///
-///Value on reset: 0
+#[doc = "Master/Slave mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSM_A {
-    ///0: No action
-    NOSYNC = 0,
-    ///1: The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event
-    SYNC = 1,
+    #[doc = "0: No action"]
+    NoSync = 0,
+    #[doc = "1: The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event"]
+    Sync = 1,
 }
 impl From<MSM_A> for bool {
     #[inline(always)]
@@ -669,95 +512,60 @@ impl From<MSM_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MSM` reader - Master/Slave mode
-pub struct MSM_R(crate::FieldReader<bool, MSM_A>);
+#[doc = "Field `MSM` reader - Master/Slave mode"]
+pub type MSM_R = crate::BitReader<MSM_A>;
 impl MSM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MSM_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSM_A {
         match self.bits {
-            false => MSM_A::NOSYNC,
-            true => MSM_A::SYNC,
+            false => MSM_A::NoSync,
+            true => MSM_A::Sync,
         }
     }
-    ///Checks if the value of the field is `NOSYNC`
+    #[doc = "Checks if the value of the field is `NoSync`"]
     #[inline(always)]
     pub fn is_no_sync(&self) -> bool {
-        **self == MSM_A::NOSYNC
+        *self == MSM_A::NoSync
     }
-    ///Checks if the value of the field is `SYNC`
+    #[doc = "Checks if the value of the field is `Sync`"]
     #[inline(always)]
     pub fn is_sync(&self) -> bool {
-        **self == MSM_A::SYNC
+        *self == MSM_A::Sync
     }
 }
-impl core::ops::Deref for MSM_R {
-    type Target = crate::FieldReader<bool, MSM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MSM` writer - Master/Slave mode
-pub struct MSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSM_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MSM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No action
+#[doc = "Field `MSM` writer - Master/Slave mode"]
+pub type MSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMCR_SPEC, MSM_A, O>;
+impl<'a, const O: u8> MSM_W<'a, O> {
+    #[doc = "No action"]
     #[inline(always)]
     pub fn no_sync(self) -> &'a mut W {
-        self.variant(MSM_A::NOSYNC)
+        self.variant(MSM_A::NoSync)
     }
-    ///The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event
+    #[doc = "The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event"]
     #[inline(always)]
     pub fn sync(self) -> &'a mut W {
-        self.variant(MSM_A::SYNC)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(MSM_A::Sync)
     }
 }
-///Trigger selection
-///
-///Value on reset: 0
+#[doc = "Trigger selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TS_A {
-    ///0: Internal Trigger 0 (ITR0)
-    ITR0 = 0,
-    ///1: Internal Trigger 1 (ITR1)
-    ITR1 = 1,
-    ///2: Internal Trigger 2 (ITR2)
-    ITR2 = 2,
-    ///4: TI1 Edge Detector (TI1F_ED)
-    TI1F_ED = 4,
-    ///5: Filtered Timer Input 1 (TI1FP1)
-    TI1FP1 = 5,
-    ///6: Filtered Timer Input 2 (TI2FP2)
-    TI2FP2 = 6,
-    ///7: External Trigger input (ETRF)
-    ETRF = 7,
+    #[doc = "0: Internal Trigger 0 (ITR0)"]
+    Itr0 = 0,
+    #[doc = "1: Internal Trigger 1 (ITR1)"]
+    Itr1 = 1,
+    #[doc = "2: Internal Trigger 2 (ITR2)"]
+    Itr2 = 2,
+    #[doc = "4: TI1 Edge Detector (TI1F_ED)"]
+    Ti1fEd = 4,
+    #[doc = "5: Filtered Timer Input 1 (TI1FP1)"]
+    Ti1fp1 = 5,
+    #[doc = "6: Filtered Timer Input 2 (TI2FP2)"]
+    Ti2fp2 = 6,
+    #[doc = "7: External Trigger input (ETRF)"]
+    Etrf = 7,
 }
 impl From<TS_A> for u8 {
     #[inline(always)]
@@ -765,179 +573,122 @@ impl From<TS_A> for u8 {
         variant as _
     }
 }
-///Field `TS` reader - Trigger selection
-pub struct TS_R(crate::FieldReader<u8, TS_A>);
+#[doc = "Field `TS` reader - Trigger selection"]
+pub type TS_R = crate::FieldReader<u8, TS_A>;
 impl TS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TS_A> {
         match self.bits {
-            0 => Some(TS_A::ITR0),
-            1 => Some(TS_A::ITR1),
-            2 => Some(TS_A::ITR2),
-            4 => Some(TS_A::TI1F_ED),
-            5 => Some(TS_A::TI1FP1),
-            6 => Some(TS_A::TI2FP2),
-            7 => Some(TS_A::ETRF),
+            0 => Some(TS_A::Itr0),
+            1 => Some(TS_A::Itr1),
+            2 => Some(TS_A::Itr2),
+            4 => Some(TS_A::Ti1fEd),
+            5 => Some(TS_A::Ti1fp1),
+            6 => Some(TS_A::Ti2fp2),
+            7 => Some(TS_A::Etrf),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `ITR0`
+    #[doc = "Checks if the value of the field is `Itr0`"]
     #[inline(always)]
     pub fn is_itr0(&self) -> bool {
-        **self == TS_A::ITR0
+        *self == TS_A::Itr0
     }
-    ///Checks if the value of the field is `ITR1`
+    #[doc = "Checks if the value of the field is `Itr1`"]
     #[inline(always)]
     pub fn is_itr1(&self) -> bool {
-        **self == TS_A::ITR1
+        *self == TS_A::Itr1
     }
-    ///Checks if the value of the field is `ITR2`
+    #[doc = "Checks if the value of the field is `Itr2`"]
     #[inline(always)]
     pub fn is_itr2(&self) -> bool {
-        **self == TS_A::ITR2
+        *self == TS_A::Itr2
     }
-    ///Checks if the value of the field is `TI1F_ED`
+    #[doc = "Checks if the value of the field is `Ti1fEd`"]
     #[inline(always)]
     pub fn is_ti1f_ed(&self) -> bool {
-        **self == TS_A::TI1F_ED
+        *self == TS_A::Ti1fEd
     }
-    ///Checks if the value of the field is `TI1FP1`
+    #[doc = "Checks if the value of the field is `Ti1fp1`"]
     #[inline(always)]
     pub fn is_ti1fp1(&self) -> bool {
-        **self == TS_A::TI1FP1
+        *self == TS_A::Ti1fp1
     }
-    ///Checks if the value of the field is `TI2FP2`
+    #[doc = "Checks if the value of the field is `Ti2fp2`"]
     #[inline(always)]
     pub fn is_ti2fp2(&self) -> bool {
-        **self == TS_A::TI2FP2
+        *self == TS_A::Ti2fp2
     }
-    ///Checks if the value of the field is `ETRF`
+    #[doc = "Checks if the value of the field is `Etrf`"]
     #[inline(always)]
     pub fn is_etrf(&self) -> bool {
-        **self == TS_A::ETRF
+        *self == TS_A::Etrf
     }
 }
-impl core::ops::Deref for TS_R {
-    type Target = crate::FieldReader<u8, TS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TS` writer - Trigger selection
-pub struct TS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Internal Trigger 0 (ITR0)
+#[doc = "Field `TS` writer - Trigger selection"]
+pub type TS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMCR_SPEC, u8, TS_A, 3, O>;
+impl<'a, const O: u8> TS_W<'a, O> {
+    #[doc = "Internal Trigger 0 (ITR0)"]
     #[inline(always)]
     pub fn itr0(self) -> &'a mut W {
-        self.variant(TS_A::ITR0)
+        self.variant(TS_A::Itr0)
     }
-    ///Internal Trigger 1 (ITR1)
+    #[doc = "Internal Trigger 1 (ITR1)"]
     #[inline(always)]
     pub fn itr1(self) -> &'a mut W {
-        self.variant(TS_A::ITR1)
+        self.variant(TS_A::Itr1)
     }
-    ///Internal Trigger 2 (ITR2)
+    #[doc = "Internal Trigger 2 (ITR2)"]
     #[inline(always)]
     pub fn itr2(self) -> &'a mut W {
-        self.variant(TS_A::ITR2)
+        self.variant(TS_A::Itr2)
     }
-    ///TI1 Edge Detector (TI1F_ED)
+    #[doc = "TI1 Edge Detector (TI1F_ED)"]
     #[inline(always)]
     pub fn ti1f_ed(self) -> &'a mut W {
-        self.variant(TS_A::TI1F_ED)
+        self.variant(TS_A::Ti1fEd)
     }
-    ///Filtered Timer Input 1 (TI1FP1)
+    #[doc = "Filtered Timer Input 1 (TI1FP1)"]
     #[inline(always)]
     pub fn ti1fp1(self) -> &'a mut W {
-        self.variant(TS_A::TI1FP1)
+        self.variant(TS_A::Ti1fp1)
     }
-    ///Filtered Timer Input 2 (TI2FP2)
+    #[doc = "Filtered Timer Input 2 (TI2FP2)"]
     #[inline(always)]
     pub fn ti2fp2(self) -> &'a mut W {
-        self.variant(TS_A::TI2FP2)
+        self.variant(TS_A::Ti2fp2)
     }
-    ///External Trigger input (ETRF)
+    #[doc = "External Trigger input (ETRF)"]
     #[inline(always)]
     pub fn etrf(self) -> &'a mut W {
-        self.variant(TS_A::ETRF)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
+        self.variant(TS_A::Etrf)
     }
 }
-///Field `OCCS` reader - OCREF clear selection
-pub struct OCCS_R(crate::FieldReader<bool, bool>);
-impl OCCS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OCCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OCCS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OCCS` writer - OCREF clear selection
-pub struct OCCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OCCS_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///Slave mode selection
-///
-///Value on reset: 0
+#[doc = "Field `OCCS` reader - OCREF clear selection"]
+pub type OCCS_R = crate::BitReader<bool>;
+#[doc = "Field `OCCS` writer - OCREF clear selection"]
+pub type OCCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMCR_SPEC, bool, O>;
+#[doc = "Slave mode selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SMS_A {
-    ///0: Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock. If SMS\[3\]=1 then Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter
-    DISABLEDORCOMBINED = 0,
-    ///1: Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level
-    ENCODERMODE1 = 1,
-    ///2: Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level
-    ENCODERMODE2 = 2,
-    ///3: Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input
-    ENCODERMODE3 = 3,
-    ///4: Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers
-    RESETMODE = 4,
-    ///5: Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled
-    GATEDMODE = 5,
-    ///6: Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled
-    TRIGGERMODE = 6,
-    ///7: External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter
-    EXTCLOCKMODE = 7,
+    #[doc = "0: Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock. If SMS\\[3\\]=1 then Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter"]
+    DisabledOrCombined = 0,
+    #[doc = "1: Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level"]
+    EncoderMode1 = 1,
+    #[doc = "2: Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level"]
+    EncoderMode2 = 2,
+    #[doc = "3: Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input"]
+    EncoderMode3 = 3,
+    #[doc = "4: Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers"]
+    ResetMode = 4,
+    #[doc = "5: Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled"]
+    GatedMode = 5,
+    #[doc = "6: Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled"]
+    TriggerMode = 6,
+    #[doc = "7: External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter"]
+    ExtClockMode = 7,
 }
 impl From<SMS_A> for u8 {
     #[inline(always)]
@@ -945,250 +696,223 @@ impl From<SMS_A> for u8 {
         variant as _
     }
 }
-///Field `SMS` reader - Slave mode selection
-pub struct SMS_R(crate::FieldReader<u8, SMS_A>);
+#[doc = "Field `SMS` reader - Slave mode selection"]
+pub type SMS_R = crate::FieldReader<u8, SMS_A>;
 impl SMS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SMS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMS_A {
         match self.bits {
-            0 => SMS_A::DISABLEDORCOMBINED,
-            1 => SMS_A::ENCODERMODE1,
-            2 => SMS_A::ENCODERMODE2,
-            3 => SMS_A::ENCODERMODE3,
-            4 => SMS_A::RESETMODE,
-            5 => SMS_A::GATEDMODE,
-            6 => SMS_A::TRIGGERMODE,
-            7 => SMS_A::EXTCLOCKMODE,
+            0 => SMS_A::DisabledOrCombined,
+            1 => SMS_A::EncoderMode1,
+            2 => SMS_A::EncoderMode2,
+            3 => SMS_A::EncoderMode3,
+            4 => SMS_A::ResetMode,
+            5 => SMS_A::GatedMode,
+            6 => SMS_A::TriggerMode,
+            7 => SMS_A::ExtClockMode,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `DISABLEDORCOMBINED`
+    #[doc = "Checks if the value of the field is `DisabledOrCombined`"]
     #[inline(always)]
     pub fn is_disabled_or_combined(&self) -> bool {
-        **self == SMS_A::DISABLEDORCOMBINED
+        *self == SMS_A::DisabledOrCombined
     }
-    ///Checks if the value of the field is `ENCODERMODE1`
+    #[doc = "Checks if the value of the field is `EncoderMode1`"]
     #[inline(always)]
     pub fn is_encoder_mode1(&self) -> bool {
-        **self == SMS_A::ENCODERMODE1
+        *self == SMS_A::EncoderMode1
     }
-    ///Checks if the value of the field is `ENCODERMODE2`
+    #[doc = "Checks if the value of the field is `EncoderMode2`"]
     #[inline(always)]
     pub fn is_encoder_mode2(&self) -> bool {
-        **self == SMS_A::ENCODERMODE2
+        *self == SMS_A::EncoderMode2
     }
-    ///Checks if the value of the field is `ENCODERMODE3`
+    #[doc = "Checks if the value of the field is `EncoderMode3`"]
     #[inline(always)]
     pub fn is_encoder_mode3(&self) -> bool {
-        **self == SMS_A::ENCODERMODE3
+        *self == SMS_A::EncoderMode3
     }
-    ///Checks if the value of the field is `RESETMODE`
+    #[doc = "Checks if the value of the field is `ResetMode`"]
     #[inline(always)]
     pub fn is_reset_mode(&self) -> bool {
-        **self == SMS_A::RESETMODE
+        *self == SMS_A::ResetMode
     }
-    ///Checks if the value of the field is `GATEDMODE`
+    #[doc = "Checks if the value of the field is `GatedMode`"]
     #[inline(always)]
     pub fn is_gated_mode(&self) -> bool {
-        **self == SMS_A::GATEDMODE
+        *self == SMS_A::GatedMode
     }
-    ///Checks if the value of the field is `TRIGGERMODE`
+    #[doc = "Checks if the value of the field is `TriggerMode`"]
     #[inline(always)]
     pub fn is_trigger_mode(&self) -> bool {
-        **self == SMS_A::TRIGGERMODE
+        *self == SMS_A::TriggerMode
     }
-    ///Checks if the value of the field is `EXTCLOCKMODE`
+    #[doc = "Checks if the value of the field is `ExtClockMode`"]
     #[inline(always)]
     pub fn is_ext_clock_mode(&self) -> bool {
-        **self == SMS_A::EXTCLOCKMODE
+        *self == SMS_A::ExtClockMode
     }
 }
-impl core::ops::Deref for SMS_R {
-    type Target = crate::FieldReader<u8, SMS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SMS` writer - Slave mode selection
-pub struct SMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SMS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock. If SMS\[3\]=1 then Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter
+#[doc = "Field `SMS` writer - Slave mode selection"]
+pub type SMS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SMCR_SPEC, u8, SMS_A, 3, O>;
+impl<'a, const O: u8> SMS_W<'a, O> {
+    #[doc = "Slave mode disabled - if CEN = ‘1 then the prescaler is clocked directly by the internal clock. If SMS\\[3\\]=1 then Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter"]
     #[inline(always)]
     pub fn disabled_or_combined(self) -> &'a mut W {
-        self.variant(SMS_A::DISABLEDORCOMBINED)
+        self.variant(SMS_A::DisabledOrCombined)
     }
-    ///Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level
+    #[doc = "Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level"]
     #[inline(always)]
     pub fn encoder_mode1(self) -> &'a mut W {
-        self.variant(SMS_A::ENCODERMODE1)
+        self.variant(SMS_A::EncoderMode1)
     }
-    ///Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level
+    #[doc = "Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level"]
     #[inline(always)]
     pub fn encoder_mode2(self) -> &'a mut W {
-        self.variant(SMS_A::ENCODERMODE2)
+        self.variant(SMS_A::EncoderMode2)
     }
-    ///Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input
+    #[doc = "Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input"]
     #[inline(always)]
     pub fn encoder_mode3(self) -> &'a mut W {
-        self.variant(SMS_A::ENCODERMODE3)
+        self.variant(SMS_A::EncoderMode3)
     }
-    ///Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers
+    #[doc = "Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers"]
     #[inline(always)]
     pub fn reset_mode(self) -> &'a mut W {
-        self.variant(SMS_A::RESETMODE)
+        self.variant(SMS_A::ResetMode)
     }
-    ///Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled
+    #[doc = "Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled"]
     #[inline(always)]
     pub fn gated_mode(self) -> &'a mut W {
-        self.variant(SMS_A::GATEDMODE)
+        self.variant(SMS_A::GatedMode)
     }
-    ///Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled
+    #[doc = "Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled"]
     #[inline(always)]
     pub fn trigger_mode(self) -> &'a mut W {
-        self.variant(SMS_A::TRIGGERMODE)
+        self.variant(SMS_A::TriggerMode)
     }
-    ///External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter
+    #[doc = "External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter"]
     #[inline(always)]
     pub fn ext_clock_mode(self) -> &'a mut W {
-        self.variant(SMS_A::EXTCLOCKMODE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(SMS_A::ExtClockMode)
     }
 }
 impl R {
-    ///Bit 16 - Slave mode selection - bit 3
+    #[doc = "Bit 16 - Slave mode selection - bit 3"]
     #[inline(always)]
     pub fn sms_3(&self) -> SMS_3_R {
-        SMS_3_R::new(((self.bits >> 16) & 0x01) != 0)
+        SMS_3_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 15 - External trigger polarity
+    #[doc = "Bit 15 - External trigger polarity"]
     #[inline(always)]
     pub fn etp(&self) -> ETP_R {
-        ETP_R::new(((self.bits >> 15) & 0x01) != 0)
+        ETP_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 14 - External clock enable
+    #[doc = "Bit 14 - External clock enable"]
     #[inline(always)]
     pub fn ece(&self) -> ECE_R {
-        ECE_R::new(((self.bits >> 14) & 0x01) != 0)
+        ECE_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bits 12:13 - External trigger prescaler
+    #[doc = "Bits 12:13 - External trigger prescaler"]
     #[inline(always)]
     pub fn etps(&self) -> ETPS_R {
-        ETPS_R::new(((self.bits >> 12) & 0x03) as u8)
+        ETPS_R::new(((self.bits >> 12) & 3) as u8)
     }
-    ///Bits 8:11 - External trigger filter
+    #[doc = "Bits 8:11 - External trigger filter"]
     #[inline(always)]
     pub fn etf(&self) -> ETF_R {
         ETF_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    ///Bit 7 - Master/Slave mode
+    #[doc = "Bit 7 - Master/Slave mode"]
     #[inline(always)]
     pub fn msm(&self) -> MSM_R {
-        MSM_R::new(((self.bits >> 7) & 0x01) != 0)
+        MSM_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bits 4:6 - Trigger selection
+    #[doc = "Bits 4:6 - Trigger selection"]
     #[inline(always)]
     pub fn ts(&self) -> TS_R {
-        TS_R::new(((self.bits >> 4) & 0x07) as u8)
+        TS_R::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bit 3 - OCREF clear selection
+    #[doc = "Bit 3 - OCREF clear selection"]
     #[inline(always)]
     pub fn occs(&self) -> OCCS_R {
-        OCCS_R::new(((self.bits >> 3) & 0x01) != 0)
+        OCCS_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bits 0:2 - Slave mode selection
+    #[doc = "Bits 0:2 - Slave mode selection"]
     #[inline(always)]
     pub fn sms(&self) -> SMS_R {
-        SMS_R::new((self.bits & 0x07) as u8)
+        SMS_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
-    ///Bit 16 - Slave mode selection - bit 3
+    #[doc = "Bit 16 - Slave mode selection - bit 3"]
     #[inline(always)]
-    pub fn sms_3(&mut self) -> SMS_3_W {
-        SMS_3_W { w: self }
+    pub fn sms_3(&mut self) -> SMS_3_W<16> {
+        SMS_3_W::new(self)
     }
-    ///Bit 15 - External trigger polarity
+    #[doc = "Bit 15 - External trigger polarity"]
     #[inline(always)]
-    pub fn etp(&mut self) -> ETP_W {
-        ETP_W { w: self }
+    pub fn etp(&mut self) -> ETP_W<15> {
+        ETP_W::new(self)
     }
-    ///Bit 14 - External clock enable
+    #[doc = "Bit 14 - External clock enable"]
     #[inline(always)]
-    pub fn ece(&mut self) -> ECE_W {
-        ECE_W { w: self }
+    pub fn ece(&mut self) -> ECE_W<14> {
+        ECE_W::new(self)
     }
-    ///Bits 12:13 - External trigger prescaler
+    #[doc = "Bits 12:13 - External trigger prescaler"]
     #[inline(always)]
-    pub fn etps(&mut self) -> ETPS_W {
-        ETPS_W { w: self }
+    pub fn etps(&mut self) -> ETPS_W<12> {
+        ETPS_W::new(self)
     }
-    ///Bits 8:11 - External trigger filter
+    #[doc = "Bits 8:11 - External trigger filter"]
     #[inline(always)]
-    pub fn etf(&mut self) -> ETF_W {
-        ETF_W { w: self }
+    pub fn etf(&mut self) -> ETF_W<8> {
+        ETF_W::new(self)
     }
-    ///Bit 7 - Master/Slave mode
+    #[doc = "Bit 7 - Master/Slave mode"]
     #[inline(always)]
-    pub fn msm(&mut self) -> MSM_W {
-        MSM_W { w: self }
+    pub fn msm(&mut self) -> MSM_W<7> {
+        MSM_W::new(self)
     }
-    ///Bits 4:6 - Trigger selection
+    #[doc = "Bits 4:6 - Trigger selection"]
     #[inline(always)]
-    pub fn ts(&mut self) -> TS_W {
-        TS_W { w: self }
+    pub fn ts(&mut self) -> TS_W<4> {
+        TS_W::new(self)
     }
-    ///Bit 3 - OCREF clear selection
+    #[doc = "Bit 3 - OCREF clear selection"]
     #[inline(always)]
-    pub fn occs(&mut self) -> OCCS_W {
-        OCCS_W { w: self }
+    pub fn occs(&mut self) -> OCCS_W<3> {
+        OCCS_W::new(self)
     }
-    ///Bits 0:2 - Slave mode selection
+    #[doc = "Bits 0:2 - Slave mode selection"]
     #[inline(always)]
-    pub fn sms(&mut self) -> SMS_W {
-        SMS_W { w: self }
+    pub fn sms(&mut self) -> SMS_W<0> {
+        SMS_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///slave mode control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [smcr](index.html) module
+#[doc = "slave mode control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smcr](index.html) module"]
 pub struct SMCR_SPEC;
 impl crate::RegisterSpec for SMCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [smcr::R](R) reader structure
+#[doc = "`read()` method returns [smcr::R](R) reader structure"]
 impl crate::Readable for SMCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [smcr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [smcr::W](W) writer structure"]
 impl crate::Writable for SMCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SMCR to value 0
+#[doc = "`reset()` method sets SMCR to value 0"]
 impl crate::Resettable for SMCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

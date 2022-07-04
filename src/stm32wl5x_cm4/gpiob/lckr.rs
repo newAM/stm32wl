@@ -1,4 +1,4 @@
-///Register `LCKR` reader
+#[doc = "Register `LCKR` reader"]
 pub struct R(crate::R<LCKR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LCKR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LCKR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `LCKR` writer
+#[doc = "Register `LCKR` writer"]
 pub struct W(crate::W<LCKR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LCKR_SPEC>;
@@ -34,816 +34,390 @@ impl From<crate::W<LCKR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `LCKK` reader - Port x lock bit y (y= 0..15)
-pub struct LCKK_R(crate::FieldReader<bool, bool>);
+#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCKK_A {
+    #[doc = "0: Port configuration lock key not active"]
+    NotActive = 0,
+    #[doc = "1: Port configuration lock key active"]
+    Active = 1,
+}
+impl From<LCKK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LCKK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LCKK` reader - Port x lock bit y (y= 0..15)"]
+pub type LCKK_R = crate::BitReader<LCKK_A>;
 impl LCKK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCKK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCKK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCKK` writer - Port x lock bit y (y= 0..15)
-pub struct LCKK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCKK_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
-///Field `LCK15` reader - Port x lock bit y (y= 0..15)
-pub struct LCK15_R(crate::FieldReader<bool, bool>);
-impl LCK15_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK15_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK15_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK15` writer - Port x lock bit y (y= 0..15)
-pub struct LCK15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK15_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
-///Field `LCK14` reader - Port x lock bit y (y= 0..15)
-pub struct LCK14_R(crate::FieldReader<bool, bool>);
-impl LCK14_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK14_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK14_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK14` writer - Port x lock bit y (y= 0..15)
-pub struct LCK14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK14_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
-///Field `LCK13` reader - Port x lock bit y (y= 0..15)
-pub struct LCK13_R(crate::FieldReader<bool, bool>);
-impl LCK13_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK13_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK13_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK13` writer - Port x lock bit y (y= 0..15)
-pub struct LCK13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK13_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
-///Field `LCK12` reader - Port x lock bit y (y= 0..15)
-pub struct LCK12_R(crate::FieldReader<bool, bool>);
-impl LCK12_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK12_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK12` writer - Port x lock bit y (y= 0..15)
-pub struct LCK12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK12_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///Field `LCK11` reader - Port x lock bit y (y= 0..15)
-pub struct LCK11_R(crate::FieldReader<bool, bool>);
-impl LCK11_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK11_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK11_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK11` writer - Port x lock bit y (y= 0..15)
-pub struct LCK11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK11_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///Field `LCK10` reader - Port x lock bit y (y= 0..15)
-pub struct LCK10_R(crate::FieldReader<bool, bool>);
-impl LCK10_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK10_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK10_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK10` writer - Port x lock bit y (y= 0..15)
-pub struct LCK10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK10_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
-///Field `LCK9` reader - Port x lock bit y (y= 0..15)
-pub struct LCK9_R(crate::FieldReader<bool, bool>);
-impl LCK9_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK9_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK9_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK9` writer - Port x lock bit y (y= 0..15)
-pub struct LCK9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK9_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
-///Field `LCK8` reader - Port x lock bit y (y= 0..15)
-pub struct LCK8_R(crate::FieldReader<bool, bool>);
-impl LCK8_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK8_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK8` writer - Port x lock bit y (y= 0..15)
-pub struct LCK8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK8_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
-///Field `LCK7` reader - Port x lock bit y (y= 0..15)
-pub struct LCK7_R(crate::FieldReader<bool, bool>);
-impl LCK7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK7` writer - Port x lock bit y (y= 0..15)
-pub struct LCK7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK7_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-///Field `LCK6` reader - Port x lock bit y (y= 0..15)
-pub struct LCK6_R(crate::FieldReader<bool, bool>);
-impl LCK6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK6` writer - Port x lock bit y (y= 0..15)
-pub struct LCK6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK6_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-///Field `LCK5` reader - Port x lock bit y (y= 0..15)
-pub struct LCK5_R(crate::FieldReader<bool, bool>);
-impl LCK5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK5` writer - Port x lock bit y (y= 0..15)
-pub struct LCK5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK5_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///Field `LCK4` reader - Port x lock bit y (y= 0..15)
-pub struct LCK4_R(crate::FieldReader<bool, bool>);
-impl LCK4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK4` writer - Port x lock bit y (y= 0..15)
-pub struct LCK4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK4_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
-///Field `LCK3` reader - Port x lock bit y (y= 0..15)
-pub struct LCK3_R(crate::FieldReader<bool, bool>);
-impl LCK3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK3` writer - Port x lock bit y (y= 0..15)
-pub struct LCK3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK3_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///Field `LCK2` reader - Port x lock bit y (y= 0..15)
-pub struct LCK2_R(crate::FieldReader<bool, bool>);
-impl LCK2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK2` writer - Port x lock bit y (y= 0..15)
-pub struct LCK2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK2_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///Field `LCK1` reader - Port x lock bit y (y= 0..15)
-pub struct LCK1_R(crate::FieldReader<bool, bool>);
-impl LCK1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LCK1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LCK1` writer - Port x lock bit y (y= 0..15)
-pub struct LCK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK1_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///Field `LCK0` reader - Port x lock bit y (y= 0..15)
-pub struct LCK0_R(crate::FieldReader<bool, bool>);
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCKK_A {
+        match self.bits {
+            false => LCKK_A::NotActive,
+            true => LCKK_A::Active,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotActive`"]
+    #[inline(always)]
+    pub fn is_not_active(&self) -> bool {
+        *self == LCKK_A::NotActive
+    }
+    #[doc = "Checks if the value of the field is `Active`"]
+    #[inline(always)]
+    pub fn is_active(&self) -> bool {
+        *self == LCKK_A::Active
+    }
+}
+#[doc = "Field `LCKK` writer - Port x lock bit y (y= 0..15)"]
+pub type LCKK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCKK_A, O>;
+impl<'a, const O: u8> LCKK_W<'a, O> {
+    #[doc = "Port configuration lock key not active"]
+    #[inline(always)]
+    pub fn not_active(self) -> &'a mut W {
+        self.variant(LCKK_A::NotActive)
+    }
+    #[doc = "Port configuration lock key active"]
+    #[inline(always)]
+    pub fn active(self) -> &'a mut W {
+        self.variant(LCKK_A::Active)
+    }
+}
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK15_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK14_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK13_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK12_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK11_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK10_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK9_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK8_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK7_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK6_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK5_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK4_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK3_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK2_A;
+#[doc = "Port x lock bit y (y= 0..15)"]
+pub use LCK0_A as LCK1_A;
+#[doc = "Field `LCK15` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK15_R;
+#[doc = "Field `LCK14` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK14_R;
+#[doc = "Field `LCK13` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK13_R;
+#[doc = "Field `LCK12` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK12_R;
+#[doc = "Field `LCK11` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK11_R;
+#[doc = "Field `LCK10` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK10_R;
+#[doc = "Field `LCK9` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK9_R;
+#[doc = "Field `LCK8` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK8_R;
+#[doc = "Field `LCK7` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK7_R;
+#[doc = "Field `LCK6` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK6_R;
+#[doc = "Field `LCK5` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK5_R;
+#[doc = "Field `LCK4` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK4_R;
+#[doc = "Field `LCK3` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK3_R;
+#[doc = "Field `LCK2` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK2_R;
+#[doc = "Field `LCK1` reader - Port x lock bit y (y= 0..15)"]
+pub use LCK0_R as LCK1_R;
+#[doc = "Field `LCK15` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK15_W;
+#[doc = "Field `LCK14` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK14_W;
+#[doc = "Field `LCK13` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK13_W;
+#[doc = "Field `LCK12` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK12_W;
+#[doc = "Field `LCK11` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK11_W;
+#[doc = "Field `LCK10` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK10_W;
+#[doc = "Field `LCK9` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK9_W;
+#[doc = "Field `LCK8` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK8_W;
+#[doc = "Field `LCK7` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK7_W;
+#[doc = "Field `LCK6` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK6_W;
+#[doc = "Field `LCK5` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK5_W;
+#[doc = "Field `LCK4` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK4_W;
+#[doc = "Field `LCK3` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK3_W;
+#[doc = "Field `LCK2` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK2_W;
+#[doc = "Field `LCK1` writer - Port x lock bit y (y= 0..15)"]
+pub use LCK0_W as LCK1_W;
+#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCK0_A {
+    #[doc = "0: Port configuration not locked"]
+    Unlocked = 0,
+    #[doc = "1: Port configuration locked"]
+    Locked = 1,
+}
+impl From<LCK0_A> for bool {
+    #[inline(always)]
+    fn from(variant: LCK0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LCK0` reader - Port x lock bit y (y= 0..15)"]
+pub type LCK0_R = crate::BitReader<LCK0_A>;
 impl LCK0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK0_R(crate::FieldReader::new(bits))
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCK0_A {
+        match self.bits {
+            false => LCK0_A::Unlocked,
+            true => LCK0_A::Locked,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Unlocked`"]
+    #[inline(always)]
+    pub fn is_unlocked(&self) -> bool {
+        *self == LCK0_A::Unlocked
+    }
+    #[doc = "Checks if the value of the field is `Locked`"]
+    #[inline(always)]
+    pub fn is_locked(&self) -> bool {
+        *self == LCK0_A::Locked
     }
 }
-impl core::ops::Deref for LCK0_R {
-    type Target = crate::FieldReader<bool, bool>;
+#[doc = "Field `LCK0` writer - Port x lock bit y (y= 0..15)"]
+pub type LCK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCK0_A, O>;
+impl<'a, const O: u8> LCK0_W<'a, O> {
+    #[doc = "Port configuration not locked"]
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    pub fn unlocked(self) -> &'a mut W {
+        self.variant(LCK0_A::Unlocked)
     }
-}
-///Field `LCK0` writer - Port x lock bit y (y= 0..15)
-pub struct LCK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK0_W<'a> {
-    ///Sets the field bit
+    #[doc = "Port configuration locked"]
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+    pub fn locked(self) -> &'a mut W {
+        self.variant(LCK0_A::Locked)
     }
 }
 impl R {
-    ///Bit 16 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lckk(&self) -> LCKK_R {
-        LCKK_R::new(((self.bits >> 16) & 0x01) != 0)
+        LCKK_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 15 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 15 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck15(&self) -> LCK15_R {
-        LCK15_R::new(((self.bits >> 15) & 0x01) != 0)
+        LCK15_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 14 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 14 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck14(&self) -> LCK14_R {
-        LCK14_R::new(((self.bits >> 14) & 0x01) != 0)
+        LCK14_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 13 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 13 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck13(&self) -> LCK13_R {
-        LCK13_R::new(((self.bits >> 13) & 0x01) != 0)
+        LCK13_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 12 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 12 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck12(&self) -> LCK12_R {
-        LCK12_R::new(((self.bits >> 12) & 0x01) != 0)
+        LCK12_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 11 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck11(&self) -> LCK11_R {
-        LCK11_R::new(((self.bits >> 11) & 0x01) != 0)
+        LCK11_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 10 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck10(&self) -> LCK10_R {
-        LCK10_R::new(((self.bits >> 10) & 0x01) != 0)
+        LCK10_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 9 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 9 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck9(&self) -> LCK9_R {
-        LCK9_R::new(((self.bits >> 9) & 0x01) != 0)
+        LCK9_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 8 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck8(&self) -> LCK8_R {
-        LCK8_R::new(((self.bits >> 8) & 0x01) != 0)
+        LCK8_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 7 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 7 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck7(&self) -> LCK7_R {
-        LCK7_R::new(((self.bits >> 7) & 0x01) != 0)
+        LCK7_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 6 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 6 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck6(&self) -> LCK6_R {
-        LCK6_R::new(((self.bits >> 6) & 0x01) != 0)
+        LCK6_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 5 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 5 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck5(&self) -> LCK5_R {
-        LCK5_R::new(((self.bits >> 5) & 0x01) != 0)
+        LCK5_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 4 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 4 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck4(&self) -> LCK4_R {
-        LCK4_R::new(((self.bits >> 4) & 0x01) != 0)
+        LCK4_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck3(&self) -> LCK3_R {
-        LCK3_R::new(((self.bits >> 3) & 0x01) != 0)
+        LCK3_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 2 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck2(&self) -> LCK2_R {
-        LCK2_R::new(((self.bits >> 2) & 0x01) != 0)
+        LCK2_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 1 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck1(&self) -> LCK1_R {
-        LCK1_R::new(((self.bits >> 1) & 0x01) != 0)
+        LCK1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 0 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck0(&self) -> LCK0_R {
-        LCK0_R::new((self.bits & 0x01) != 0)
+        LCK0_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 16 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lckk(&mut self) -> LCKK_W {
-        LCKK_W { w: self }
+    pub fn lckk(&mut self) -> LCKK_W<16> {
+        LCKK_W::new(self)
     }
-    ///Bit 15 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 15 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck15(&mut self) -> LCK15_W {
-        LCK15_W { w: self }
+    pub fn lck15(&mut self) -> LCK15_W<15> {
+        LCK15_W::new(self)
     }
-    ///Bit 14 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 14 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck14(&mut self) -> LCK14_W {
-        LCK14_W { w: self }
+    pub fn lck14(&mut self) -> LCK14_W<14> {
+        LCK14_W::new(self)
     }
-    ///Bit 13 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 13 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck13(&mut self) -> LCK13_W {
-        LCK13_W { w: self }
+    pub fn lck13(&mut self) -> LCK13_W<13> {
+        LCK13_W::new(self)
     }
-    ///Bit 12 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 12 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck12(&mut self) -> LCK12_W {
-        LCK12_W { w: self }
+    pub fn lck12(&mut self) -> LCK12_W<12> {
+        LCK12_W::new(self)
     }
-    ///Bit 11 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 11 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck11(&mut self) -> LCK11_W {
-        LCK11_W { w: self }
+    pub fn lck11(&mut self) -> LCK11_W<11> {
+        LCK11_W::new(self)
     }
-    ///Bit 10 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 10 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck10(&mut self) -> LCK10_W {
-        LCK10_W { w: self }
+    pub fn lck10(&mut self) -> LCK10_W<10> {
+        LCK10_W::new(self)
     }
-    ///Bit 9 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 9 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck9(&mut self) -> LCK9_W {
-        LCK9_W { w: self }
+    pub fn lck9(&mut self) -> LCK9_W<9> {
+        LCK9_W::new(self)
     }
-    ///Bit 8 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 8 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck8(&mut self) -> LCK8_W {
-        LCK8_W { w: self }
+    pub fn lck8(&mut self) -> LCK8_W<8> {
+        LCK8_W::new(self)
     }
-    ///Bit 7 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 7 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck7(&mut self) -> LCK7_W {
-        LCK7_W { w: self }
+    pub fn lck7(&mut self) -> LCK7_W<7> {
+        LCK7_W::new(self)
     }
-    ///Bit 6 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 6 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck6(&mut self) -> LCK6_W {
-        LCK6_W { w: self }
+    pub fn lck6(&mut self) -> LCK6_W<6> {
+        LCK6_W::new(self)
     }
-    ///Bit 5 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 5 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck5(&mut self) -> LCK5_W {
-        LCK5_W { w: self }
+    pub fn lck5(&mut self) -> LCK5_W<5> {
+        LCK5_W::new(self)
     }
-    ///Bit 4 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 4 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck4(&mut self) -> LCK4_W {
-        LCK4_W { w: self }
+    pub fn lck4(&mut self) -> LCK4_W<4> {
+        LCK4_W::new(self)
     }
-    ///Bit 3 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck3(&mut self) -> LCK3_W {
-        LCK3_W { w: self }
+    pub fn lck3(&mut self) -> LCK3_W<3> {
+        LCK3_W::new(self)
     }
-    ///Bit 2 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 2 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck2(&mut self) -> LCK2_W {
-        LCK2_W { w: self }
+    pub fn lck2(&mut self) -> LCK2_W<2> {
+        LCK2_W::new(self)
     }
-    ///Bit 1 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 1 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck1(&mut self) -> LCK1_W {
-        LCK1_W { w: self }
+    pub fn lck1(&mut self) -> LCK1_W<1> {
+        LCK1_W::new(self)
     }
-    ///Bit 0 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 0 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck0(&mut self) -> LCK0_W {
-        LCK0_W { w: self }
+    pub fn lck0(&mut self) -> LCK0_W<0> {
+        LCK0_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///GPIO port configuration lock register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [lckr](index.html) module
+#[doc = "GPIO port configuration lock register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lckr](index.html) module"]
 pub struct LCKR_SPEC;
 impl crate::RegisterSpec for LCKR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [lckr::R](R) reader structure
+#[doc = "`read()` method returns [lckr::R](R) reader structure"]
 impl crate::Readable for LCKR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [lckr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [lckr::W](W) writer structure"]
 impl crate::Writable for LCKR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets LCKR to value 0
+#[doc = "`reset()` method sets LCKR to value 0"]
 impl crate::Resettable for LCKR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `CNT` reader
+#[doc = "Register `CNT` reader"]
 pub struct R(crate::R<CNT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CNT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CNT_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CNT` writer
+#[doc = "Register `CNT` writer"]
 pub struct W(crate::W<CNT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CNT_SPEC>;
@@ -34,89 +34,51 @@ impl From<crate::W<CNT_SPEC>> for W {
         W(writer)
     }
 }
-///Field `UIFCPY` reader - UIF copy
-pub struct UIFCPY_R(crate::FieldReader<bool, bool>);
-impl UIFCPY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UIFCPY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UIFCPY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CNT` reader - CNT
-pub struct CNT_R(crate::FieldReader<u16, u16>);
-impl CNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CNT` writer - CNT
-pub struct CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNT_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+#[doc = "Field `UIFCPY` reader - UIF copy"]
+pub type UIFCPY_R = crate::BitReader<bool>;
+#[doc = "Field `CNT` reader - CNT"]
+pub type CNT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CNT` writer - CNT"]
+pub type CNT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CNT_SPEC, u16, u16, 16, O>;
 impl R {
-    ///Bit 31 - UIF copy
+    #[doc = "Bit 31 - UIF copy"]
     #[inline(always)]
     pub fn uifcpy(&self) -> UIFCPY_R {
-        UIFCPY_R::new(((self.bits >> 31) & 0x01) != 0)
+        UIFCPY_R::new(((self.bits >> 31) & 1) != 0)
     }
-    ///Bits 0:15 - CNT
+    #[doc = "Bits 0:15 - CNT"]
     #[inline(always)]
     pub fn cnt(&self) -> CNT_R {
         CNT_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    ///Bits 0:15 - CNT
+    #[doc = "Bits 0:15 - CNT"]
     #[inline(always)]
-    pub fn cnt(&mut self) -> CNT_W {
-        CNT_W { w: self }
+    pub fn cnt(&mut self) -> CNT_W<0> {
+        CNT_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///counter
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cnt](index.html) module
+#[doc = "counter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cnt](index.html) module"]
 pub struct CNT_SPEC;
 impl crate::RegisterSpec for CNT_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cnt::R](R) reader structure
+#[doc = "`read()` method returns [cnt::R](R) reader structure"]
 impl crate::Readable for CNT_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cnt::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cnt::W](W) writer structure"]
 impl crate::Writable for CNT_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CNT to value 0
+#[doc = "`reset()` method sets CNT to value 0"]
 impl crate::Resettable for CNT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

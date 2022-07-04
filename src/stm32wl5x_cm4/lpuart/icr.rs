@@ -1,4 +1,4 @@
-///Register `ICR` writer
+#[doc = "Register `ICR` writer"]
 pub struct W(crate::W<ICR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ICR_SPEC>;
@@ -19,13 +19,11 @@ impl From<crate::W<ICR_SPEC>> for W {
         W(writer)
     }
 }
-///Wakeup from Stop mode clear flag
-///
-///Value on reset: 0
+#[doc = "Wakeup from Stop mode clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUCF_AW {
-    ///1: Clears the WUF flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the WUF flag in the ISR register"]
+    Clear = 1,
 }
 impl From<WUCF_AW> for bool {
     #[inline(always)]
@@ -33,45 +31,20 @@ impl From<WUCF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `WUCF` writer - Wakeup from Stop mode clear flag
-pub struct WUCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WUCF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: WUCF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the WUF flag in the ISR register
+#[doc = "Field `WUCF` writer - Wakeup from Stop mode clear flag"]
+pub type WUCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, WUCF_AW, O>;
+impl<'a, const O: u8> WUCF_W<'a, O> {
+    #[doc = "Clears the WUF flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(WUCF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
+        self.variant(WUCF_AW::Clear)
     }
 }
-///Character match clear flag
-///
-///Value on reset: 0
+#[doc = "Character match clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMCF_AW {
-    ///1: Clears the CMF flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the CMF flag in the ISR register"]
+    Clear = 1,
 }
 impl From<CMCF_AW> for bool {
     #[inline(always)]
@@ -79,45 +52,20 @@ impl From<CMCF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CMCF` writer - Character match clear flag
-pub struct CMCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMCF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CMCF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the CMF flag in the ISR register
+#[doc = "Field `CMCF` writer - Character match clear flag"]
+pub type CMCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, CMCF_AW, O>;
+impl<'a, const O: u8> CMCF_W<'a, O> {
+    #[doc = "Clears the CMF flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CMCF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
+        self.variant(CMCF_AW::Clear)
     }
 }
-///CTS clear flag
-///
-///Value on reset: 0
+#[doc = "CTS clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSCF_AW {
-    ///1: Clears the CTSIF flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the CTSIF flag in the ISR register"]
+    Clear = 1,
 }
 impl From<CTSCF_AW> for bool {
     #[inline(always)]
@@ -125,45 +73,20 @@ impl From<CTSCF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CTSCF` writer - CTS clear flag
-pub struct CTSCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTSCF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CTSCF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the CTSIF flag in the ISR register
+#[doc = "Field `CTSCF` writer - CTS clear flag"]
+pub type CTSCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, CTSCF_AW, O>;
+impl<'a, const O: u8> CTSCF_W<'a, O> {
+    #[doc = "Clears the CTSIF flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CTSCF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(CTSCF_AW::Clear)
     }
 }
-///Transmission complete clear flag
-///
-///Value on reset: 0
+#[doc = "Transmission complete clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCCF_AW {
-    ///1: Clears the TC flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the TC flag in the ISR register"]
+    Clear = 1,
 }
 impl From<TCCF_AW> for bool {
     #[inline(always)]
@@ -171,45 +94,20 @@ impl From<TCCF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `TCCF` writer - Transmission complete clear flag
-pub struct TCCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCCF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TCCF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the TC flag in the ISR register
+#[doc = "Field `TCCF` writer - Transmission complete clear flag"]
+pub type TCCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, TCCF_AW, O>;
+impl<'a, const O: u8> TCCF_W<'a, O> {
+    #[doc = "Clears the TC flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TCCF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(TCCF_AW::Clear)
     }
 }
-///Idle line detected clear flag
-///
-///Value on reset: 0
+#[doc = "Idle line detected clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLECF_AW {
-    ///1: Clears the IDLE flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the IDLE flag in the ISR register"]
+    Clear = 1,
 }
 impl From<IDLECF_AW> for bool {
     #[inline(always)]
@@ -217,45 +115,20 @@ impl From<IDLECF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `IDLECF` writer - Idle line detected clear flag
-pub struct IDLECF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IDLECF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: IDLECF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the IDLE flag in the ISR register
+#[doc = "Field `IDLECF` writer - Idle line detected clear flag"]
+pub type IDLECF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, IDLECF_AW, O>;
+impl<'a, const O: u8> IDLECF_W<'a, O> {
+    #[doc = "Clears the IDLE flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(IDLECF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(IDLECF_AW::Clear)
     }
 }
-///Overrun error clear flag
-///
-///Value on reset: 0
+#[doc = "Overrun error clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ORECF_AW {
-    ///1: Clears the ORE flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the ORE flag in the ISR register"]
+    Clear = 1,
 }
 impl From<ORECF_AW> for bool {
     #[inline(always)]
@@ -263,45 +136,20 @@ impl From<ORECF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `ORECF` writer - Overrun error clear flag
-pub struct ORECF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ORECF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ORECF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the ORE flag in the ISR register
+#[doc = "Field `ORECF` writer - Overrun error clear flag"]
+pub type ORECF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, ORECF_AW, O>;
+impl<'a, const O: u8> ORECF_W<'a, O> {
+    #[doc = "Clears the ORE flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ORECF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(ORECF_AW::Clear)
     }
 }
-///Noise detected clear flag
-///
-///Value on reset: 0
+#[doc = "Noise detected clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCF_AW {
-    ///1: Clears the NF flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the NF flag in the ISR register"]
+    Clear = 1,
 }
 impl From<NCF_AW> for bool {
     #[inline(always)]
@@ -309,45 +157,20 @@ impl From<NCF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `NCF` writer - Noise detected clear flag
-pub struct NCF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NCF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: NCF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the NF flag in the ISR register
+#[doc = "Field `NCF` writer - Noise detected clear flag"]
+pub type NCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, NCF_AW, O>;
+impl<'a, const O: u8> NCF_W<'a, O> {
+    #[doc = "Clears the NF flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(NCF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(NCF_AW::Clear)
     }
 }
-///Framing error clear flag
-///
-///Value on reset: 0
+#[doc = "Framing error clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FECF_AW {
-    ///1: Clears the FE flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the FE flag in the ISR register"]
+    Clear = 1,
 }
 impl From<FECF_AW> for bool {
     #[inline(always)]
@@ -355,45 +178,20 @@ impl From<FECF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `FECF` writer - Framing error clear flag
-pub struct FECF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FECF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: FECF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the FE flag in the ISR register
+#[doc = "Field `FECF` writer - Framing error clear flag"]
+pub type FECF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, FECF_AW, O>;
+impl<'a, const O: u8> FECF_W<'a, O> {
+    #[doc = "Clears the FE flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(FECF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(FECF_AW::Clear)
     }
 }
-///Parity error clear flag
-///
-///Value on reset: 0
+#[doc = "Parity error clear flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PECF_AW {
-    ///1: Clears the PE flag in the ISR register
-    CLEAR = 1,
+    #[doc = "1: Clears the PE flag in the ISR register"]
+    Clear = 1,
 }
 impl From<PECF_AW> for bool {
     #[inline(always)]
@@ -401,105 +199,78 @@ impl From<PECF_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `PECF` writer - Parity error clear flag
-pub struct PECF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECF_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PECF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clears the PE flag in the ISR register
+#[doc = "Field `PECF` writer - Parity error clear flag"]
+pub type PECF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, PECF_AW, O>;
+impl<'a, const O: u8> PECF_W<'a, O> {
+    #[doc = "Clears the PE flag in the ISR register"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PECF_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(PECF_AW::Clear)
     }
 }
 impl W {
-    ///Bit 20 - Wakeup from Stop mode clear flag
+    #[doc = "Bit 20 - Wakeup from Stop mode clear flag"]
     #[inline(always)]
-    pub fn wucf(&mut self) -> WUCF_W {
-        WUCF_W { w: self }
+    pub fn wucf(&mut self) -> WUCF_W<20> {
+        WUCF_W::new(self)
     }
-    ///Bit 17 - Character match clear flag
+    #[doc = "Bit 17 - Character match clear flag"]
     #[inline(always)]
-    pub fn cmcf(&mut self) -> CMCF_W {
-        CMCF_W { w: self }
+    pub fn cmcf(&mut self) -> CMCF_W<17> {
+        CMCF_W::new(self)
     }
-    ///Bit 9 - CTS clear flag
+    #[doc = "Bit 9 - CTS clear flag"]
     #[inline(always)]
-    pub fn ctscf(&mut self) -> CTSCF_W {
-        CTSCF_W { w: self }
+    pub fn ctscf(&mut self) -> CTSCF_W<9> {
+        CTSCF_W::new(self)
     }
-    ///Bit 6 - Transmission complete clear flag
+    #[doc = "Bit 6 - Transmission complete clear flag"]
     #[inline(always)]
-    pub fn tccf(&mut self) -> TCCF_W {
-        TCCF_W { w: self }
+    pub fn tccf(&mut self) -> TCCF_W<6> {
+        TCCF_W::new(self)
     }
-    ///Bit 4 - Idle line detected clear flag
+    #[doc = "Bit 4 - Idle line detected clear flag"]
     #[inline(always)]
-    pub fn idlecf(&mut self) -> IDLECF_W {
-        IDLECF_W { w: self }
+    pub fn idlecf(&mut self) -> IDLECF_W<4> {
+        IDLECF_W::new(self)
     }
-    ///Bit 3 - Overrun error clear flag
+    #[doc = "Bit 3 - Overrun error clear flag"]
     #[inline(always)]
-    pub fn orecf(&mut self) -> ORECF_W {
-        ORECF_W { w: self }
+    pub fn orecf(&mut self) -> ORECF_W<3> {
+        ORECF_W::new(self)
     }
-    ///Bit 2 - Noise detected clear flag
+    #[doc = "Bit 2 - Noise detected clear flag"]
     #[inline(always)]
-    pub fn ncf(&mut self) -> NCF_W {
-        NCF_W { w: self }
+    pub fn ncf(&mut self) -> NCF_W<2> {
+        NCF_W::new(self)
     }
-    ///Bit 1 - Framing error clear flag
+    #[doc = "Bit 1 - Framing error clear flag"]
     #[inline(always)]
-    pub fn fecf(&mut self) -> FECF_W {
-        FECF_W { w: self }
+    pub fn fecf(&mut self) -> FECF_W<1> {
+        FECF_W::new(self)
     }
-    ///Bit 0 - Parity error clear flag
+    #[doc = "Bit 0 - Parity error clear flag"]
     #[inline(always)]
-    pub fn pecf(&mut self) -> PECF_W {
-        PECF_W { w: self }
+    pub fn pecf(&mut self) -> PECF_W<0> {
+        PECF_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Interrupt flag clear register
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [icr](index.html) module
+#[doc = "Interrupt flag clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icr](index.html) module"]
 pub struct ICR_SPEC;
 impl crate::RegisterSpec for ICR_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [icr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
 impl crate::Writable for ICR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets ICR to value 0
+#[doc = "`reset()` method sets ICR to value 0"]
 impl crate::Resettable for ICR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `AHB1ENR` reader
+#[doc = "Register `AHB1ENR` reader"]
 pub struct R(crate::R<AHB1ENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AHB1ENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AHB1ENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `AHB1ENR` writer
+#[doc = "Register `AHB1ENR` writer"]
 pub struct W(crate::W<AHB1ENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AHB1ENR_SPEC>;
@@ -34,138 +34,31 @@ impl From<crate::W<AHB1ENR_SPEC>> for W {
         W(writer)
     }
 }
-///CPU1 CRC clock enable
-pub type CRCEN_A = DMA1EN_A;
-///Field `CRCEN` reader - CPU1 CRC clock enable
-pub type CRCEN_R = DMA1EN_R;
-///Field `CRCEN` writer - CPU1 CRC clock enable
-pub struct CRCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CRCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CRCEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(CRCEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///CPU1 DMAMUX1 clock enable
-pub type DMAMUX1EN_A = DMA1EN_A;
-///Field `DMAMUX1EN` reader - CPU1 DMAMUX1 clock enable
-pub type DMAMUX1EN_R = DMA1EN_R;
-///Field `DMAMUX1EN` writer - CPU1 DMAMUX1 clock enable
-pub struct DMAMUX1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAMUX1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DMAMUX1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DMAMUX1EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(DMAMUX1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///CPU1 DMA2 clock enable
-pub type DMA2EN_A = DMA1EN_A;
-///Field `DMA2EN` reader - CPU1 DMA2 clock enable
-pub type DMA2EN_R = DMA1EN_R;
-///Field `DMA2EN` writer - CPU1 DMA2 clock enable
-pub struct DMA2EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA2EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DMA2EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(DMA2EN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(DMA2EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///CPU1 DMA1 clock enable
-///
-///Value on reset: 0
+#[doc = "CPU1 CRC clock enable"]
+pub use DMA1EN_A as CRCEN_A;
+#[doc = "CPU1 DMAMUX1 clock enable"]
+pub use DMA1EN_A as DMAMUX1EN_A;
+#[doc = "CPU1 DMA2 clock enable"]
+pub use DMA1EN_A as DMA2EN_A;
+#[doc = "Field `CRCEN` reader - CPU1 CRC clock enable"]
+pub use DMA1EN_R as CRCEN_R;
+#[doc = "Field `DMAMUX1EN` reader - CPU1 DMAMUX1 clock enable"]
+pub use DMA1EN_R as DMAMUX1EN_R;
+#[doc = "Field `DMA2EN` reader - CPU1 DMA2 clock enable"]
+pub use DMA1EN_R as DMA2EN_R;
+#[doc = "Field `CRCEN` writer - CPU1 CRC clock enable"]
+pub use DMA1EN_W as CRCEN_W;
+#[doc = "Field `DMAMUX1EN` writer - CPU1 DMAMUX1 clock enable"]
+pub use DMA1EN_W as DMAMUX1EN_W;
+#[doc = "Field `DMA2EN` writer - CPU1 DMA2 clock enable"]
+pub use DMA1EN_W as DMA2EN_W;
+#[doc = "CPU1 DMA1 clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1EN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<DMA1EN_A> for bool {
     #[inline(always)]
@@ -173,143 +66,106 @@ impl From<DMA1EN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DMA1EN` reader - CPU1 DMA1 clock enable
-pub struct DMA1EN_R(crate::FieldReader<bool, DMA1EN_A>);
+#[doc = "Field `DMA1EN` reader - CPU1 DMA1 clock enable"]
+pub type DMA1EN_R = crate::BitReader<DMA1EN_A>;
 impl DMA1EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA1EN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA1EN_A {
         match self.bits {
-            false => DMA1EN_A::DISABLED,
-            true => DMA1EN_A::ENABLED,
+            false => DMA1EN_A::Disabled,
+            true => DMA1EN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DMA1EN_A::DISABLED
+        *self == DMA1EN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DMA1EN_A::ENABLED
+        *self == DMA1EN_A::Enabled
     }
 }
-impl core::ops::Deref for DMA1EN_R {
-    type Target = crate::FieldReader<bool, DMA1EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DMA1EN` writer - CPU1 DMA1 clock enable
-pub struct DMA1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA1EN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DMA1EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `DMA1EN` writer - CPU1 DMA1 clock enable"]
+pub type DMA1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB1ENR_SPEC, DMA1EN_A, O>;
+impl<'a, const O: u8> DMA1EN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(DMA1EN_A::DISABLED)
+        self.variant(DMA1EN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(DMA1EN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(DMA1EN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 12 - CPU1 CRC clock enable
+    #[doc = "Bit 12 - CPU1 CRC clock enable"]
     #[inline(always)]
     pub fn crcen(&self) -> CRCEN_R {
-        CRCEN_R::new(((self.bits >> 12) & 0x01) != 0)
+        CRCEN_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 2 - CPU1 DMAMUX1 clock enable
+    #[doc = "Bit 2 - CPU1 DMAMUX1 clock enable"]
     #[inline(always)]
     pub fn dmamux1en(&self) -> DMAMUX1EN_R {
-        DMAMUX1EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        DMAMUX1EN_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - CPU1 DMA2 clock enable
+    #[doc = "Bit 1 - CPU1 DMA2 clock enable"]
     #[inline(always)]
     pub fn dma2en(&self) -> DMA2EN_R {
-        DMA2EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DMA2EN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - CPU1 DMA1 clock enable
+    #[doc = "Bit 0 - CPU1 DMA1 clock enable"]
     #[inline(always)]
     pub fn dma1en(&self) -> DMA1EN_R {
-        DMA1EN_R::new((self.bits & 0x01) != 0)
+        DMA1EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 12 - CPU1 CRC clock enable
+    #[doc = "Bit 12 - CPU1 CRC clock enable"]
     #[inline(always)]
-    pub fn crcen(&mut self) -> CRCEN_W {
-        CRCEN_W { w: self }
+    pub fn crcen(&mut self) -> CRCEN_W<12> {
+        CRCEN_W::new(self)
     }
-    ///Bit 2 - CPU1 DMAMUX1 clock enable
+    #[doc = "Bit 2 - CPU1 DMAMUX1 clock enable"]
     #[inline(always)]
-    pub fn dmamux1en(&mut self) -> DMAMUX1EN_W {
-        DMAMUX1EN_W { w: self }
+    pub fn dmamux1en(&mut self) -> DMAMUX1EN_W<2> {
+        DMAMUX1EN_W::new(self)
     }
-    ///Bit 1 - CPU1 DMA2 clock enable
+    #[doc = "Bit 1 - CPU1 DMA2 clock enable"]
     #[inline(always)]
-    pub fn dma2en(&mut self) -> DMA2EN_W {
-        DMA2EN_W { w: self }
+    pub fn dma2en(&mut self) -> DMA2EN_W<1> {
+        DMA2EN_W::new(self)
     }
-    ///Bit 0 - CPU1 DMA1 clock enable
+    #[doc = "Bit 0 - CPU1 DMA1 clock enable"]
     #[inline(always)]
-    pub fn dma1en(&mut self) -> DMA1EN_W {
-        DMA1EN_W { w: self }
+    pub fn dma1en(&mut self) -> DMA1EN_W<0> {
+        DMA1EN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///AHB1 peripheral clock enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ahb1enr](index.html) module
+#[doc = "AHB1 peripheral clock enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahb1enr](index.html) module"]
 pub struct AHB1ENR_SPEC;
 impl crate::RegisterSpec for AHB1ENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ahb1enr::R](R) reader structure
+#[doc = "`read()` method returns [ahb1enr::R](R) reader structure"]
 impl crate::Readable for AHB1ENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ahb1enr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ahb1enr::W](W) writer structure"]
 impl crate::Writable for AHB1ENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets AHB1ENR to value 0
+#[doc = "`reset()` method sets AHB1ENR to value 0"]
 impl crate::Resettable for AHB1ENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

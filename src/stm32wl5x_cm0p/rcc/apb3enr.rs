@@ -1,4 +1,4 @@
-///Register `APB3ENR` reader
+#[doc = "Register `APB3ENR` reader"]
 pub struct R(crate::R<APB3ENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<APB3ENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<APB3ENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `APB3ENR` writer
+#[doc = "Register `APB3ENR` writer"]
 pub struct W(crate::W<APB3ENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<APB3ENR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<APB3ENR_SPEC>> for W {
         W(writer)
     }
 }
-///sub-GHz radio SPI clock enable
-///
-///Value on reset: 0
+#[doc = "sub-GHz radio SPI clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUBGHZSPIEN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<SUBGHZSPIEN_A> for bool {
     #[inline(always)]
@@ -50,113 +48,76 @@ impl From<SUBGHZSPIEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SUBGHZSPIEN` reader - sub-GHz radio SPI clock enable
-pub struct SUBGHZSPIEN_R(crate::FieldReader<bool, SUBGHZSPIEN_A>);
+#[doc = "Field `SUBGHZSPIEN` reader - sub-GHz radio SPI clock enable"]
+pub type SUBGHZSPIEN_R = crate::BitReader<SUBGHZSPIEN_A>;
 impl SUBGHZSPIEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SUBGHZSPIEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUBGHZSPIEN_A {
         match self.bits {
-            false => SUBGHZSPIEN_A::DISABLED,
-            true => SUBGHZSPIEN_A::ENABLED,
+            false => SUBGHZSPIEN_A::Disabled,
+            true => SUBGHZSPIEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SUBGHZSPIEN_A::DISABLED
+        *self == SUBGHZSPIEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SUBGHZSPIEN_A::ENABLED
+        *self == SUBGHZSPIEN_A::Enabled
     }
 }
-impl core::ops::Deref for SUBGHZSPIEN_R {
-    type Target = crate::FieldReader<bool, SUBGHZSPIEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SUBGHZSPIEN` writer - sub-GHz radio SPI clock enable
-pub struct SUBGHZSPIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUBGHZSPIEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SUBGHZSPIEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `SUBGHZSPIEN` writer - sub-GHz radio SPI clock enable"]
+pub type SUBGHZSPIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB3ENR_SPEC, SUBGHZSPIEN_A, O>;
+impl<'a, const O: u8> SUBGHZSPIEN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SUBGHZSPIEN_A::DISABLED)
+        self.variant(SUBGHZSPIEN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(SUBGHZSPIEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(SUBGHZSPIEN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 0 - sub-GHz radio SPI clock enable
+    #[doc = "Bit 0 - sub-GHz radio SPI clock enable"]
     #[inline(always)]
     pub fn subghzspien(&self) -> SUBGHZSPIEN_R {
-        SUBGHZSPIEN_R::new((self.bits & 0x01) != 0)
+        SUBGHZSPIEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - sub-GHz radio SPI clock enable
+    #[doc = "Bit 0 - sub-GHz radio SPI clock enable"]
     #[inline(always)]
-    pub fn subghzspien(&mut self) -> SUBGHZSPIEN_W {
-        SUBGHZSPIEN_W { w: self }
+    pub fn subghzspien(&mut self) -> SUBGHZSPIEN_W<0> {
+        SUBGHZSPIEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///APB3 peripheral clock enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [apb3enr](index.html) module
+#[doc = "APB3 peripheral clock enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb3enr](index.html) module"]
 pub struct APB3ENR_SPEC;
 impl crate::RegisterSpec for APB3ENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [apb3enr::R](R) reader structure
+#[doc = "`read()` method returns [apb3enr::R](R) reader structure"]
 impl crate::Readable for APB3ENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [apb3enr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [apb3enr::W](W) writer structure"]
 impl crate::Writable for APB3ENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets APB3ENR to value 0
+#[doc = "`reset()` method sets APB3ENR to value 0"]
 impl crate::Resettable for APB3ENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

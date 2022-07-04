@@ -1,4 +1,4 @@
-///Register `ICSCR` reader
+#[doc = "Register `ICSCR` reader"]
 pub struct R(crate::R<ICSCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ICSCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ICSCR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `ICSCR` writer
+#[doc = "Register `ICSCR` writer"]
 pub struct W(crate::W<ICSCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ICSCR_SPEC>;
@@ -34,144 +34,72 @@ impl From<crate::W<ICSCR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `HSITRIM` reader - HSI16 clock trimming
-pub struct HSITRIM_R(crate::FieldReader<u8, u8>);
-impl HSITRIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HSITRIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSITRIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HSITRIM` writer - HSI16 clock trimming
-pub struct HSITRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSITRIM_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 24)) | ((value as u32 & 0x7f) << 24);
-        self.w
-    }
-}
-///Field `HSICAL` reader - HSI16 clock calibration
-pub struct HSICAL_R(crate::FieldReader<u8, u8>);
-impl HSICAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HSICAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSICAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MSITRIM` reader - MSI clock trimming
-pub struct MSITRIM_R(crate::FieldReader<u8, u8>);
-impl MSITRIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MSITRIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MSITRIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MSITRIM` writer - MSI clock trimming
-pub struct MSITRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSITRIM_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
-///Field `MSICAL` reader - MSI clock calibration
-pub struct MSICAL_R(crate::FieldReader<u8, u8>);
-impl MSICAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MSICAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MSICAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `HSITRIM` reader - HSI16 clock trimming"]
+pub type HSITRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HSITRIM` writer - HSI16 clock trimming"]
+pub type HSITRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICSCR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `HSICAL` reader - HSI16 clock calibration"]
+pub type HSICAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MSITRIM` reader - MSI clock trimming"]
+pub type MSITRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MSITRIM` writer - MSI clock trimming"]
+pub type MSITRIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ICSCR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `MSICAL` reader - MSI clock calibration"]
+pub type MSICAL_R = crate::FieldReader<u8, u8>;
 impl R {
-    ///Bits 24:30 - HSI16 clock trimming
+    #[doc = "Bits 24:30 - HSI16 clock trimming"]
     #[inline(always)]
     pub fn hsitrim(&self) -> HSITRIM_R {
         HSITRIM_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
-    ///Bits 16:23 - HSI16 clock calibration
+    #[doc = "Bits 16:23 - HSI16 clock calibration"]
     #[inline(always)]
     pub fn hsical(&self) -> HSICAL_R {
         HSICAL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    ///Bits 8:15 - MSI clock trimming
+    #[doc = "Bits 8:15 - MSI clock trimming"]
     #[inline(always)]
     pub fn msitrim(&self) -> MSITRIM_R {
         MSITRIM_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    ///Bits 0:7 - MSI clock calibration
+    #[doc = "Bits 0:7 - MSI clock calibration"]
     #[inline(always)]
     pub fn msical(&self) -> MSICAL_R {
         MSICAL_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
-    ///Bits 24:30 - HSI16 clock trimming
+    #[doc = "Bits 24:30 - HSI16 clock trimming"]
     #[inline(always)]
-    pub fn hsitrim(&mut self) -> HSITRIM_W {
-        HSITRIM_W { w: self }
+    pub fn hsitrim(&mut self) -> HSITRIM_W<24> {
+        HSITRIM_W::new(self)
     }
-    ///Bits 8:15 - MSI clock trimming
+    #[doc = "Bits 8:15 - MSI clock trimming"]
     #[inline(always)]
-    pub fn msitrim(&mut self) -> MSITRIM_W {
-        MSITRIM_W { w: self }
+    pub fn msitrim(&mut self) -> MSITRIM_W<8> {
+        MSITRIM_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Internal clock sources calibration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [icscr](index.html) module
+#[doc = "Internal clock sources calibration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icscr](index.html) module"]
 pub struct ICSCR_SPEC;
 impl crate::RegisterSpec for ICSCR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [icscr::R](R) reader structure
+#[doc = "`read()` method returns [icscr::R](R) reader structure"]
 impl crate::Readable for ICSCR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [icscr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [icscr::W](W) writer structure"]
 impl crate::Writable for ICSCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets ICSCR to value 0x4000_0000
+#[doc = "`reset()` method sets ICSCR to value 0x4000_0000"]
 impl crate::Resettable for ICSCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

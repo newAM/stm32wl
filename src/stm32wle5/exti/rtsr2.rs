@@ -1,4 +1,4 @@
-///Register `RTSR2` reader
+#[doc = "Register `RTSR2` reader"]
 pub struct R(crate::R<RTSR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RTSR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RTSR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `RTSR2` writer
+#[doc = "Register `RTSR2` writer"]
 pub struct W(crate::W<RTSR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RTSR2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<RTSR2_SPEC>> for W {
         W(writer)
     }
 }
-///Rising trigger event configuration bit of Configurable Event input
-///
-///Value on reset: 0
+#[doc = "Rising trigger event configuration bit of Configurable Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RT34_A {
-    ///0: Rising edge trigger is disabled
-    DISABLED = 0,
-    ///1: Rising edge trigger is enabled
-    ENABLED = 1,
+    #[doc = "0: Rising edge trigger is disabled"]
+    Disabled = 0,
+    #[doc = "1: Rising edge trigger is enabled"]
+    Enabled = 1,
 }
 impl From<RT34_A> for bool {
     #[inline(always)]
@@ -50,164 +48,92 @@ impl From<RT34_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RT34` reader - Rising trigger event configuration bit of Configurable Event input
-pub struct RT34_R(crate::FieldReader<bool, RT34_A>);
+#[doc = "Field `RT34` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub type RT34_R = crate::BitReader<RT34_A>;
 impl RT34_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RT34_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RT34_A {
         match self.bits {
-            false => RT34_A::DISABLED,
-            true => RT34_A::ENABLED,
+            false => RT34_A::Disabled,
+            true => RT34_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RT34_A::DISABLED
+        *self == RT34_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RT34_A::ENABLED
+        *self == RT34_A::Enabled
     }
 }
-impl core::ops::Deref for RT34_R {
-    type Target = crate::FieldReader<bool, RT34_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RT34` writer - Rising trigger event configuration bit of Configurable Event input
-pub struct RT34_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT34_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RT34_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Rising edge trigger is disabled
+#[doc = "Field `RT34` writer - Rising trigger event configuration bit of Configurable Event input"]
+pub type RT34_W<'a, const O: u8> = crate::BitWriter<'a, u32, RTSR2_SPEC, RT34_A, O>;
+impl<'a, const O: u8> RT34_W<'a, O> {
+    #[doc = "Rising edge trigger is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(RT34_A::DISABLED)
+        self.variant(RT34_A::Disabled)
     }
-    ///Rising edge trigger is enabled
+    #[doc = "Rising edge trigger is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(RT34_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(RT34_A::Enabled)
     }
 }
-///Rising trigger event configuration bit of Configurable Event input
-pub type RT45_A = RT34_A;
-///Field `RT45` reader - Rising trigger event configuration bit of Configurable Event input
-pub type RT45_R = RT34_R;
-///Field `RT45` writer - Rising trigger event configuration bit of Configurable Event input
-pub struct RT45_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT45_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RT45_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Rising edge trigger is disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RT45_A::DISABLED)
-    }
-    ///Rising edge trigger is enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RT45_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+#[doc = "Rising trigger event configuration bit of Configurable Event input"]
+pub use RT34_A as RT45_A;
+#[doc = "Field `RT45` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT34_R as RT45_R;
+#[doc = "Field `RT45` writer - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT34_W as RT45_W;
 impl R {
-    ///Bit 2 - Rising trigger event configuration bit of Configurable Event input
+    #[doc = "Bit 2 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn rt34(&self) -> RT34_R {
-        RT34_R::new(((self.bits >> 2) & 0x01) != 0)
+        RT34_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 13 - Rising trigger event configuration bit of Configurable Event input
+    #[doc = "Bit 13 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn rt45(&self) -> RT45_R {
-        RT45_R::new(((self.bits >> 13) & 0x01) != 0)
+        RT45_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 2 - Rising trigger event configuration bit of Configurable Event input
+    #[doc = "Bit 2 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn rt34(&mut self) -> RT34_W {
-        RT34_W { w: self }
+    pub fn rt34(&mut self) -> RT34_W<2> {
+        RT34_W::new(self)
     }
-    ///Bit 13 - Rising trigger event configuration bit of Configurable Event input
+    #[doc = "Bit 13 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn rt45(&mut self) -> RT45_W {
-        RT45_W { w: self }
+    pub fn rt45(&mut self) -> RT45_W<13> {
+        RT45_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///rising trigger selection register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rtsr2](index.html) module
+#[doc = "rising trigger selection register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtsr2](index.html) module"]
 pub struct RTSR2_SPEC;
 impl crate::RegisterSpec for RTSR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rtsr2::R](R) reader structure
+#[doc = "`read()` method returns [rtsr2::R](R) reader structure"]
 impl crate::Readable for RTSR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [rtsr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [rtsr2::W](W) writer structure"]
 impl crate::Writable for RTSR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets RTSR2 to value 0
+#[doc = "`reset()` method sets RTSR2 to value 0"]
 impl crate::Resettable for RTSR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

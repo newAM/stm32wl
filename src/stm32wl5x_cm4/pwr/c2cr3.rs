@@ -1,4 +1,4 @@
-///Register `C2CR3` reader
+#[doc = "Register `C2CR3` reader"]
 pub struct R(crate::R<C2CR3_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<C2CR3_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<C2CR3_SPEC>> for R {
         R(reader)
     }
 }
-///Register `C2CR3` writer
+#[doc = "Register `C2CR3` writer"]
 pub struct W(crate::W<C2CR3_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<C2CR3_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<C2CR3_SPEC>> for W {
         W(writer)
     }
 }
-///Enable internal wakeup line for CPU2
-///
-///Value on reset: 1
+#[doc = "Enable internal wakeup line for CPU2\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EIWUL_A {
-    ///0: Internal wakeup line interrupt to CPU2 disabled
-    DISABLED = 0,
-    ///1: Internal wakeup line interrupt to CPU2 enabled
-    ENABLED = 1,
+    #[doc = "0: Internal wakeup line interrupt to CPU2 disabled"]
+    Disabled = 0,
+    #[doc = "1: Internal wakeup line interrupt to CPU2 enabled"]
+    Enabled = 1,
 }
 impl From<EIWUL_A> for bool {
     #[inline(always)]
@@ -50,86 +48,51 @@ impl From<EIWUL_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EIWUL` reader - Enable internal wakeup line for CPU2
-pub struct EIWUL_R(crate::FieldReader<bool, EIWUL_A>);
+#[doc = "Field `EIWUL` reader - Enable internal wakeup line for CPU2"]
+pub type EIWUL_R = crate::BitReader<EIWUL_A>;
 impl EIWUL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EIWUL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EIWUL_A {
         match self.bits {
-            false => EIWUL_A::DISABLED,
-            true => EIWUL_A::ENABLED,
+            false => EIWUL_A::Disabled,
+            true => EIWUL_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EIWUL_A::DISABLED
+        *self == EIWUL_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EIWUL_A::ENABLED
+        *self == EIWUL_A::Enabled
     }
 }
-impl core::ops::Deref for EIWUL_R {
-    type Target = crate::FieldReader<bool, EIWUL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EIWUL` writer - Enable internal wakeup line for CPU2
-pub struct EIWUL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EIWUL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EIWUL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Internal wakeup line interrupt to CPU2 disabled
+#[doc = "Field `EIWUL` writer - Enable internal wakeup line for CPU2"]
+pub type EIWUL_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EIWUL_A, O>;
+impl<'a, const O: u8> EIWUL_W<'a, O> {
+    #[doc = "Internal wakeup line interrupt to CPU2 disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EIWUL_A::DISABLED)
+        self.variant(EIWUL_A::Disabled)
     }
-    ///Internal wakeup line interrupt to CPU2 enabled
+    #[doc = "Internal wakeup line interrupt to CPU2 enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EIWUL_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(EIWUL_A::Enabled)
     }
 }
-///akeup for CPU2
-///
-///Value on reset: 0
+#[doc = "akeup for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWRFIRQ_A {
-    ///0: Radio IRQ\[2:0\]
-    ///is disabled and does not trigger a wakeup from Standby event to CPU2.
-    DISABLED = 0,
-    ///1: Radio IRQ\[2:0\]
-    ///is enabled and triggers a wakeup from Standby event to CPU2.
-    ENABLED = 1,
+    #[doc = "0: Radio IRQ\\[2:0\\]
+is disabled and does not trigger a wakeup from Standby event to CPU2."]
+    Disabled = 0,
+    #[doc = "1: Radio IRQ\\[2:0\\]
+is enabled and triggers a wakeup from Standby event to CPU2."]
+    Enabled = 1,
 }
 impl From<EWRFIRQ_A> for bool {
     #[inline(always)]
@@ -137,86 +100,51 @@ impl From<EWRFIRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWRFIRQ` reader - akeup for CPU2
-pub struct EWRFIRQ_R(crate::FieldReader<bool, EWRFIRQ_A>);
+#[doc = "Field `EWRFIRQ` reader - akeup for CPU2"]
+pub type EWRFIRQ_R = crate::BitReader<EWRFIRQ_A>;
 impl EWRFIRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWRFIRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWRFIRQ_A {
         match self.bits {
-            false => EWRFIRQ_A::DISABLED,
-            true => EWRFIRQ_A::ENABLED,
+            false => EWRFIRQ_A::Disabled,
+            true => EWRFIRQ_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWRFIRQ_A::DISABLED
+        *self == EWRFIRQ_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWRFIRQ_A::ENABLED
+        *self == EWRFIRQ_A::Enabled
     }
 }
-impl core::ops::Deref for EWRFIRQ_R {
-    type Target = crate::FieldReader<bool, EWRFIRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWRFIRQ` writer - akeup for CPU2
-pub struct EWRFIRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWRFIRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWRFIRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Radio IRQ\[2:0\]
-    ///is disabled and does not trigger a wakeup from Standby event to CPU2.
+#[doc = "Field `EWRFIRQ` writer - akeup for CPU2"]
+pub type EWRFIRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWRFIRQ_A, O>;
+impl<'a, const O: u8> EWRFIRQ_W<'a, O> {
+    #[doc = "Radio IRQ\\[2:0\\]
+is disabled and does not trigger a wakeup from Standby event to CPU2."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWRFIRQ_A::DISABLED)
+        self.variant(EWRFIRQ_A::Disabled)
     }
-    ///Radio IRQ\[2:0\]
-    ///is enabled and triggers a wakeup from Standby event to CPU2.
+    #[doc = "Radio IRQ\\[2:0\\]
+is enabled and triggers a wakeup from Standby event to CPU2."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWRFIRQ_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
+        self.variant(EWRFIRQ_A::Enabled)
     }
 }
-///EWRFBUSY
-///
-///Value on reset: 0
+#[doc = "EWRFBUSY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWRFBUSY_A {
-    ///0: Radio Busy is disabled and does not trigger a wakeup from Standby event to CPU2 when a rising or a falling edge occurs
-    DISABLED = 0,
-    ///1: Radio Busy is enabled and triggers a wakeup from Standby event to CPU2 when a rising or a falling edge occurs. The active edge is configured via the WRFBUSYP bit in PWR_CR4
-    ENABLED = 1,
+    #[doc = "0: Radio Busy is disabled and does not trigger a wakeup from Standby event to CPU2 when a rising or a falling edge occurs"]
+    Disabled = 0,
+    #[doc = "1: Radio Busy is enabled and triggers a wakeup from Standby event to CPU2 when a rising or a falling edge occurs. The active edge is configured via the WRFBUSYP bit in PWR_CR4"]
+    Enabled = 1,
 }
 impl From<EWRFBUSY_A> for bool {
     #[inline(always)]
@@ -224,84 +152,49 @@ impl From<EWRFBUSY_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWRFBUSY` reader - EWRFBUSY
-pub struct EWRFBUSY_R(crate::FieldReader<bool, EWRFBUSY_A>);
+#[doc = "Field `EWRFBUSY` reader - EWRFBUSY"]
+pub type EWRFBUSY_R = crate::BitReader<EWRFBUSY_A>;
 impl EWRFBUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWRFBUSY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWRFBUSY_A {
         match self.bits {
-            false => EWRFBUSY_A::DISABLED,
-            true => EWRFBUSY_A::ENABLED,
+            false => EWRFBUSY_A::Disabled,
+            true => EWRFBUSY_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWRFBUSY_A::DISABLED
+        *self == EWRFBUSY_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWRFBUSY_A::ENABLED
+        *self == EWRFBUSY_A::Enabled
     }
 }
-impl core::ops::Deref for EWRFBUSY_R {
-    type Target = crate::FieldReader<bool, EWRFBUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWRFBUSY` writer - EWRFBUSY
-pub struct EWRFBUSY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWRFBUSY_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWRFBUSY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Radio Busy is disabled and does not trigger a wakeup from Standby event to CPU2 when a rising or a falling edge occurs
+#[doc = "Field `EWRFBUSY` writer - EWRFBUSY"]
+pub type EWRFBUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWRFBUSY_A, O>;
+impl<'a, const O: u8> EWRFBUSY_W<'a, O> {
+    #[doc = "Radio Busy is disabled and does not trigger a wakeup from Standby event to CPU2 when a rising or a falling edge occurs"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWRFBUSY_A::DISABLED)
+        self.variant(EWRFBUSY_A::Disabled)
     }
-    ///Radio Busy is enabled and triggers a wakeup from Standby event to CPU2 when a rising or a falling edge occurs. The active edge is configured via the WRFBUSYP bit in PWR_CR4
+    #[doc = "Radio Busy is enabled and triggers a wakeup from Standby event to CPU2 when a rising or a falling edge occurs. The active edge is configured via the WRFBUSYP bit in PWR_CR4"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWRFBUSY_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
+        self.variant(EWRFBUSY_A::Enabled)
     }
 }
-///Apply pull-up and pull-down configuration for CPU2
-///
-///Value on reset: 0
+#[doc = "Apply pull-up and pull-down configuration for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum APC_A {
-    ///0: I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied
-    DISABLED = 0,
-    ///1: PWR_PUCRx and PWR_PDCRx registers are NOT applied to the I/Os
-    ENABLED = 1,
+    #[doc = "0: I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied"]
+    Disabled = 0,
+    #[doc = "1: PWR_PUCRx and PWR_PDCRx registers are NOT applied to the I/Os"]
+    Enabled = 1,
 }
 impl From<APC_A> for bool {
     #[inline(always)]
@@ -309,84 +202,49 @@ impl From<APC_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `APC` reader - Apply pull-up and pull-down configuration for CPU2
-pub struct APC_R(crate::FieldReader<bool, APC_A>);
+#[doc = "Field `APC` reader - Apply pull-up and pull-down configuration for CPU2"]
+pub type APC_R = crate::BitReader<APC_A>;
 impl APC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        APC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> APC_A {
         match self.bits {
-            false => APC_A::DISABLED,
-            true => APC_A::ENABLED,
+            false => APC_A::Disabled,
+            true => APC_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == APC_A::DISABLED
+        *self == APC_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == APC_A::ENABLED
+        *self == APC_A::Enabled
     }
 }
-impl core::ops::Deref for APC_R {
-    type Target = crate::FieldReader<bool, APC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `APC` writer - Apply pull-up and pull-down configuration for CPU2
-pub struct APC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: APC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied
+#[doc = "Field `APC` writer - Apply pull-up and pull-down configuration for CPU2"]
+pub type APC_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, APC_A, O>;
+impl<'a, const O: u8> APC_W<'a, O> {
+    #[doc = "I/O pull-up and pull-down configurations defined in the PWR_PUCRx and PWR_PDCRx registers are applied"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(APC_A::DISABLED)
+        self.variant(APC_A::Disabled)
     }
-    ///PWR_PUCRx and PWR_PDCRx registers are NOT applied to the I/Os
+    #[doc = "PWR_PUCRx and PWR_PDCRx registers are NOT applied to the I/Os"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(APC_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(APC_A::Enabled)
     }
 }
-///Enable wakeup PVD for CPU2
-///
-///Value on reset: 0
+#[doc = "Enable wakeup PVD for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWPVD_A {
-    ///0: PVD not enabled by the sub-GHz radio active state
-    DISABLED = 0,
-    ///1: PVD enabled while the sub-GHz radio is active
-    ENABLED = 1,
+    #[doc = "0: PVD not enabled by the sub-GHz radio active state"]
+    Disabled = 0,
+    #[doc = "1: PVD enabled while the sub-GHz radio is active"]
+    Enabled = 1,
 }
 impl From<EWPVD_A> for bool {
     #[inline(always)]
@@ -394,84 +252,49 @@ impl From<EWPVD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWPVD` reader - Enable wakeup PVD for CPU2
-pub struct EWPVD_R(crate::FieldReader<bool, EWPVD_A>);
+#[doc = "Field `EWPVD` reader - Enable wakeup PVD for CPU2"]
+pub type EWPVD_R = crate::BitReader<EWPVD_A>;
 impl EWPVD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWPVD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWPVD_A {
         match self.bits {
-            false => EWPVD_A::DISABLED,
-            true => EWPVD_A::ENABLED,
+            false => EWPVD_A::Disabled,
+            true => EWPVD_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWPVD_A::DISABLED
+        *self == EWPVD_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWPVD_A::ENABLED
+        *self == EWPVD_A::Enabled
     }
 }
-impl core::ops::Deref for EWPVD_R {
-    type Target = crate::FieldReader<bool, EWPVD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWPVD` writer - Enable wakeup PVD for CPU2
-pub struct EWPVD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWPVD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWPVD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PVD not enabled by the sub-GHz radio active state
+#[doc = "Field `EWPVD` writer - Enable wakeup PVD for CPU2"]
+pub type EWPVD_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWPVD_A, O>;
+impl<'a, const O: u8> EWPVD_W<'a, O> {
+    #[doc = "PVD not enabled by the sub-GHz radio active state"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWPVD_A::DISABLED)
+        self.variant(EWPVD_A::Disabled)
     }
-    ///PVD enabled while the sub-GHz radio is active
+    #[doc = "PVD enabled while the sub-GHz radio is active"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWPVD_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(EWPVD_A::Enabled)
     }
 }
-///Enable Wakeup pin WKUP3 for CPU2
-///
-///Value on reset: 0
+#[doc = "Enable Wakeup pin WKUP3 for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWUP3_A {
-    ///0: WKUP pin 3 is used for general purpose I/Os. An event on the WKUP pin 3 does not wakeup the device from Standby mode
-    DISABLED = 0,
-    ///1: WKUP pin 3 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 3wakes-up the system from Standby mode)
-    ENABLED = 1,
+    #[doc = "0: WKUP pin 3 is used for general purpose I/Os. An event on the WKUP pin 3 does not wakeup the device from Standby mode"]
+    Disabled = 0,
+    #[doc = "1: WKUP pin 3 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 3wakes-up the system from Standby mode)"]
+    Enabled = 1,
 }
 impl From<EWUP3_A> for bool {
     #[inline(always)]
@@ -479,84 +302,49 @@ impl From<EWUP3_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWUP3` reader - Enable Wakeup pin WKUP3 for CPU2
-pub struct EWUP3_R(crate::FieldReader<bool, EWUP3_A>);
+#[doc = "Field `EWUP3` reader - Enable Wakeup pin WKUP3 for CPU2"]
+pub type EWUP3_R = crate::BitReader<EWUP3_A>;
 impl EWUP3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWUP3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWUP3_A {
         match self.bits {
-            false => EWUP3_A::DISABLED,
-            true => EWUP3_A::ENABLED,
+            false => EWUP3_A::Disabled,
+            true => EWUP3_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWUP3_A::DISABLED
+        *self == EWUP3_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWUP3_A::ENABLED
+        *self == EWUP3_A::Enabled
     }
 }
-impl core::ops::Deref for EWUP3_R {
-    type Target = crate::FieldReader<bool, EWUP3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWUP3` writer - Enable Wakeup pin WKUP3 for CPU2
-pub struct EWUP3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWUP3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWUP3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///WKUP pin 3 is used for general purpose I/Os. An event on the WKUP pin 3 does not wakeup the device from Standby mode
+#[doc = "Field `EWUP3` writer - Enable Wakeup pin WKUP3 for CPU2"]
+pub type EWUP3_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWUP3_A, O>;
+impl<'a, const O: u8> EWUP3_W<'a, O> {
+    #[doc = "WKUP pin 3 is used for general purpose I/Os. An event on the WKUP pin 3 does not wakeup the device from Standby mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWUP3_A::DISABLED)
+        self.variant(EWUP3_A::Disabled)
     }
-    ///WKUP pin 3 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 3wakes-up the system from Standby mode)
+    #[doc = "WKUP pin 3 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 3wakes-up the system from Standby mode)"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWUP3_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(EWUP3_A::Enabled)
     }
 }
-///Enable Wakeup pin WKUP2 for CPU2
-///
-///Value on reset: 0
+#[doc = "Enable Wakeup pin WKUP2 for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWUP2_A {
-    ///0: WKUP pin 2 is used for general purpose I/Os. An event on the WKUP pin 2 does not wakeup the device from Standby mode
-    DISABLED = 0,
-    ///1: WKUP pin 2 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 2 wakes-up the system from Standby mode)
-    ENABLED = 1,
+    #[doc = "0: WKUP pin 2 is used for general purpose I/Os. An event on the WKUP pin 2 does not wakeup the device from Standby mode"]
+    Disabled = 0,
+    #[doc = "1: WKUP pin 2 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 2 wakes-up the system from Standby mode)"]
+    Enabled = 1,
 }
 impl From<EWUP2_A> for bool {
     #[inline(always)]
@@ -564,84 +352,49 @@ impl From<EWUP2_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWUP2` reader - Enable Wakeup pin WKUP2 for CPU2
-pub struct EWUP2_R(crate::FieldReader<bool, EWUP2_A>);
+#[doc = "Field `EWUP2` reader - Enable Wakeup pin WKUP2 for CPU2"]
+pub type EWUP2_R = crate::BitReader<EWUP2_A>;
 impl EWUP2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWUP2_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWUP2_A {
         match self.bits {
-            false => EWUP2_A::DISABLED,
-            true => EWUP2_A::ENABLED,
+            false => EWUP2_A::Disabled,
+            true => EWUP2_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWUP2_A::DISABLED
+        *self == EWUP2_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWUP2_A::ENABLED
+        *self == EWUP2_A::Enabled
     }
 }
-impl core::ops::Deref for EWUP2_R {
-    type Target = crate::FieldReader<bool, EWUP2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWUP2` writer - Enable Wakeup pin WKUP2 for CPU2
-pub struct EWUP2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWUP2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWUP2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///WKUP pin 2 is used for general purpose I/Os. An event on the WKUP pin 2 does not wakeup the device from Standby mode
+#[doc = "Field `EWUP2` writer - Enable Wakeup pin WKUP2 for CPU2"]
+pub type EWUP2_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWUP2_A, O>;
+impl<'a, const O: u8> EWUP2_W<'a, O> {
+    #[doc = "WKUP pin 2 is used for general purpose I/Os. An event on the WKUP pin 2 does not wakeup the device from Standby mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWUP2_A::DISABLED)
+        self.variant(EWUP2_A::Disabled)
     }
-    ///WKUP pin 2 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 2 wakes-up the system from Standby mode)
+    #[doc = "WKUP pin 2 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 2 wakes-up the system from Standby mode)"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWUP2_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(EWUP2_A::Enabled)
     }
 }
-///Enable Wakeup pin WKUP1 for CPU2
-///
-///Value on reset: 0
+#[doc = "Enable Wakeup pin WKUP1 for CPU2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWUP1_A {
-    ///0: WKUP pin 1 is used for general purpose I/Os. An event on the WKUP pin 1 does not wakeup the device from Standby mode
-    DISABLED = 0,
-    ///1: WKUP pin 1 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 1 wakes-up the system from Standby mode)
-    ENABLED = 1,
+    #[doc = "0: WKUP pin 1 is used for general purpose I/Os. An event on the WKUP pin 1 does not wakeup the device from Standby mode"]
+    Disabled = 0,
+    #[doc = "1: WKUP pin 1 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 1 wakes-up the system from Standby mode)"]
+    Enabled = 1,
 }
 impl From<EWUP1_A> for bool {
     #[inline(always)]
@@ -649,183 +402,146 @@ impl From<EWUP1_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EWUP1` reader - Enable Wakeup pin WKUP1 for CPU2
-pub struct EWUP1_R(crate::FieldReader<bool, EWUP1_A>);
+#[doc = "Field `EWUP1` reader - Enable Wakeup pin WKUP1 for CPU2"]
+pub type EWUP1_R = crate::BitReader<EWUP1_A>;
 impl EWUP1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EWUP1_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EWUP1_A {
         match self.bits {
-            false => EWUP1_A::DISABLED,
-            true => EWUP1_A::ENABLED,
+            false => EWUP1_A::Disabled,
+            true => EWUP1_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == EWUP1_A::DISABLED
+        *self == EWUP1_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == EWUP1_A::ENABLED
+        *self == EWUP1_A::Enabled
     }
 }
-impl core::ops::Deref for EWUP1_R {
-    type Target = crate::FieldReader<bool, EWUP1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EWUP1` writer - Enable Wakeup pin WKUP1 for CPU2
-pub struct EWUP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWUP1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EWUP1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///WKUP pin 1 is used for general purpose I/Os. An event on the WKUP pin 1 does not wakeup the device from Standby mode
+#[doc = "Field `EWUP1` writer - Enable Wakeup pin WKUP1 for CPU2"]
+pub type EWUP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR3_SPEC, EWUP1_A, O>;
+impl<'a, const O: u8> EWUP1_W<'a, O> {
+    #[doc = "WKUP pin 1 is used for general purpose I/Os. An event on the WKUP pin 1 does not wakeup the device from Standby mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EWUP1_A::DISABLED)
+        self.variant(EWUP1_A::Disabled)
     }
-    ///WKUP pin 1 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 1 wakes-up the system from Standby mode)
+    #[doc = "WKUP pin 1 is used for wakeup from Standby mode and forced in input pull down configuration (rising edge on WKUP pin 1 wakes-up the system from Standby mode)"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EWUP1_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(EWUP1_A::Enabled)
     }
 }
 impl R {
-    ///Bit 15 - Enable internal wakeup line for CPU2
+    #[doc = "Bit 15 - Enable internal wakeup line for CPU2"]
     #[inline(always)]
     pub fn eiwul(&self) -> EIWUL_R {
-        EIWUL_R::new(((self.bits >> 15) & 0x01) != 0)
+        EIWUL_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 13 - akeup for CPU2
+    #[doc = "Bit 13 - akeup for CPU2"]
     #[inline(always)]
     pub fn ewrfirq(&self) -> EWRFIRQ_R {
-        EWRFIRQ_R::new(((self.bits >> 13) & 0x01) != 0)
+        EWRFIRQ_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 11 - EWRFBUSY
+    #[doc = "Bit 11 - EWRFBUSY"]
     #[inline(always)]
     pub fn ewrfbusy(&self) -> EWRFBUSY_R {
-        EWRFBUSY_R::new(((self.bits >> 11) & 0x01) != 0)
+        EWRFBUSY_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - Apply pull-up and pull-down configuration for CPU2
+    #[doc = "Bit 10 - Apply pull-up and pull-down configuration for CPU2"]
     #[inline(always)]
     pub fn apc(&self) -> APC_R {
-        APC_R::new(((self.bits >> 10) & 0x01) != 0)
+        APC_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 8 - Enable wakeup PVD for CPU2
+    #[doc = "Bit 8 - Enable wakeup PVD for CPU2"]
     #[inline(always)]
     pub fn ewpvd(&self) -> EWPVD_R {
-        EWPVD_R::new(((self.bits >> 8) & 0x01) != 0)
+        EWPVD_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 2 - Enable Wakeup pin WKUP3 for CPU2
+    #[doc = "Bit 2 - Enable Wakeup pin WKUP3 for CPU2"]
     #[inline(always)]
     pub fn ewup3(&self) -> EWUP3_R {
-        EWUP3_R::new(((self.bits >> 2) & 0x01) != 0)
+        EWUP3_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Enable Wakeup pin WKUP2 for CPU2
+    #[doc = "Bit 1 - Enable Wakeup pin WKUP2 for CPU2"]
     #[inline(always)]
     pub fn ewup2(&self) -> EWUP2_R {
-        EWUP2_R::new(((self.bits >> 1) & 0x01) != 0)
+        EWUP2_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Enable Wakeup pin WKUP1 for CPU2
+    #[doc = "Bit 0 - Enable Wakeup pin WKUP1 for CPU2"]
     #[inline(always)]
     pub fn ewup1(&self) -> EWUP1_R {
-        EWUP1_R::new((self.bits & 0x01) != 0)
+        EWUP1_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 15 - Enable internal wakeup line for CPU2
+    #[doc = "Bit 15 - Enable internal wakeup line for CPU2"]
     #[inline(always)]
-    pub fn eiwul(&mut self) -> EIWUL_W {
-        EIWUL_W { w: self }
+    pub fn eiwul(&mut self) -> EIWUL_W<15> {
+        EIWUL_W::new(self)
     }
-    ///Bit 13 - akeup for CPU2
+    #[doc = "Bit 13 - akeup for CPU2"]
     #[inline(always)]
-    pub fn ewrfirq(&mut self) -> EWRFIRQ_W {
-        EWRFIRQ_W { w: self }
+    pub fn ewrfirq(&mut self) -> EWRFIRQ_W<13> {
+        EWRFIRQ_W::new(self)
     }
-    ///Bit 11 - EWRFBUSY
+    #[doc = "Bit 11 - EWRFBUSY"]
     #[inline(always)]
-    pub fn ewrfbusy(&mut self) -> EWRFBUSY_W {
-        EWRFBUSY_W { w: self }
+    pub fn ewrfbusy(&mut self) -> EWRFBUSY_W<11> {
+        EWRFBUSY_W::new(self)
     }
-    ///Bit 10 - Apply pull-up and pull-down configuration for CPU2
+    #[doc = "Bit 10 - Apply pull-up and pull-down configuration for CPU2"]
     #[inline(always)]
-    pub fn apc(&mut self) -> APC_W {
-        APC_W { w: self }
+    pub fn apc(&mut self) -> APC_W<10> {
+        APC_W::new(self)
     }
-    ///Bit 8 - Enable wakeup PVD for CPU2
+    #[doc = "Bit 8 - Enable wakeup PVD for CPU2"]
     #[inline(always)]
-    pub fn ewpvd(&mut self) -> EWPVD_W {
-        EWPVD_W { w: self }
+    pub fn ewpvd(&mut self) -> EWPVD_W<8> {
+        EWPVD_W::new(self)
     }
-    ///Bit 2 - Enable Wakeup pin WKUP3 for CPU2
+    #[doc = "Bit 2 - Enable Wakeup pin WKUP3 for CPU2"]
     #[inline(always)]
-    pub fn ewup3(&mut self) -> EWUP3_W {
-        EWUP3_W { w: self }
+    pub fn ewup3(&mut self) -> EWUP3_W<2> {
+        EWUP3_W::new(self)
     }
-    ///Bit 1 - Enable Wakeup pin WKUP2 for CPU2
+    #[doc = "Bit 1 - Enable Wakeup pin WKUP2 for CPU2"]
     #[inline(always)]
-    pub fn ewup2(&mut self) -> EWUP2_W {
-        EWUP2_W { w: self }
+    pub fn ewup2(&mut self) -> EWUP2_W<1> {
+        EWUP2_W::new(self)
     }
-    ///Bit 0 - Enable Wakeup pin WKUP1 for CPU2
+    #[doc = "Bit 0 - Enable Wakeup pin WKUP1 for CPU2"]
     #[inline(always)]
-    pub fn ewup1(&mut self) -> EWUP1_W {
-        EWUP1_W { w: self }
+    pub fn ewup1(&mut self) -> EWUP1_W<0> {
+        EWUP1_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Power CPU2 control register 3 \[dual core device only\]
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [c2cr3](index.html) module
+#[doc = "Power CPU2 control register 3 \\[dual core device only\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c2cr3](index.html) module"]
 pub struct C2CR3_SPEC;
 impl crate::RegisterSpec for C2CR3_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [c2cr3::R](R) reader structure
+#[doc = "`read()` method returns [c2cr3::R](R) reader structure"]
 impl crate::Readable for C2CR3_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [c2cr3::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [c2cr3::W](W) writer structure"]
 impl crate::Writable for C2CR3_SPEC {
     type Writer = W;
 }
-///`reset()` method sets C2CR3 to value 0x8000
+#[doc = "`reset()` method sets C2CR3 to value 0x8000"]
 impl crate::Resettable for C2CR3_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

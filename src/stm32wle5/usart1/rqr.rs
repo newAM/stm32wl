@@ -1,4 +1,4 @@
-///Register `RQR` reader
+#[doc = "Register `RQR` reader"]
 pub struct R(crate::R<RQR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RQR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RQR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `RQR` writer
+#[doc = "Register `RQR` writer"]
 pub struct W(crate::W<RQR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RQR_SPEC>;
@@ -34,13 +34,11 @@ impl From<crate::W<RQR_SPEC>> for W {
         W(writer)
     }
 }
-///Transmit data flush request
-///
-///Value on reset: 0
+#[doc = "Transmit data flush request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFRQ_A {
-    ///1: Set the TXE flags. This allows to discard the transmit data
-    DISCARD = 1,
+    #[doc = "1: Set the TXE flags. This allows to discard the transmit data"]
+    Discard = 1,
 }
 impl From<TXFRQ_A> for bool {
     #[inline(always)]
@@ -48,72 +46,37 @@ impl From<TXFRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `TXFRQ` reader - Transmit data flush request
-pub struct TXFRQ_R(crate::FieldReader<bool, TXFRQ_A>);
+#[doc = "Field `TXFRQ` reader - Transmit data flush request"]
+pub type TXFRQ_R = crate::BitReader<TXFRQ_A>;
 impl TXFRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXFRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TXFRQ_A> {
         match self.bits {
-            true => Some(TXFRQ_A::DISCARD),
+            true => Some(TXFRQ_A::Discard),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DISCARD`
+    #[doc = "Checks if the value of the field is `Discard`"]
     #[inline(always)]
     pub fn is_discard(&self) -> bool {
-        **self == TXFRQ_A::DISCARD
+        *self == TXFRQ_A::Discard
     }
 }
-impl core::ops::Deref for TXFRQ_R {
-    type Target = crate::FieldReader<bool, TXFRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TXFRQ` writer - Transmit data flush request
-pub struct TXFRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXFRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TXFRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Set the TXE flags. This allows to discard the transmit data
+#[doc = "Field `TXFRQ` writer - Transmit data flush request"]
+pub type TXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, TXFRQ_A, O>;
+impl<'a, const O: u8> TXFRQ_W<'a, O> {
+    #[doc = "Set the TXE flags. This allows to discard the transmit data"]
     #[inline(always)]
     pub fn discard(self) -> &'a mut W {
-        self.variant(TXFRQ_A::DISCARD)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(TXFRQ_A::Discard)
     }
 }
-///Receive data flush request
-///
-///Value on reset: 0
+#[doc = "Receive data flush request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFRQ_A {
-    ///1: clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition
-    DISCARD = 1,
+    #[doc = "1: clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
+    Discard = 1,
 }
 impl From<RXFRQ_A> for bool {
     #[inline(always)]
@@ -121,72 +84,37 @@ impl From<RXFRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RXFRQ` reader - Receive data flush request
-pub struct RXFRQ_R(crate::FieldReader<bool, RXFRQ_A>);
+#[doc = "Field `RXFRQ` reader - Receive data flush request"]
+pub type RXFRQ_R = crate::BitReader<RXFRQ_A>;
 impl RXFRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXFRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RXFRQ_A> {
         match self.bits {
-            true => Some(RXFRQ_A::DISCARD),
+            true => Some(RXFRQ_A::Discard),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DISCARD`
+    #[doc = "Checks if the value of the field is `Discard`"]
     #[inline(always)]
     pub fn is_discard(&self) -> bool {
-        **self == RXFRQ_A::DISCARD
+        *self == RXFRQ_A::Discard
     }
 }
-impl core::ops::Deref for RXFRQ_R {
-    type Target = crate::FieldReader<bool, RXFRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RXFRQ` writer - Receive data flush request
-pub struct RXFRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RXFRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition
+#[doc = "Field `RXFRQ` writer - Receive data flush request"]
+pub type RXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, RXFRQ_A, O>;
+impl<'a, const O: u8> RXFRQ_W<'a, O> {
+    #[doc = "clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
     #[inline(always)]
     pub fn discard(self) -> &'a mut W {
-        self.variant(RXFRQ_A::DISCARD)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(RXFRQ_A::Discard)
     }
 }
-///Mute mode request
-///
-///Value on reset: 0
+#[doc = "Mute mode request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMRQ_A {
-    ///1: Puts the USART in mute mode and sets the RWU flag
-    MUTE = 1,
+    #[doc = "1: Puts the USART in mute mode and sets the RWU flag"]
+    Mute = 1,
 }
 impl From<MMRQ_A> for bool {
     #[inline(always)]
@@ -194,72 +122,37 @@ impl From<MMRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MMRQ` reader - Mute mode request
-pub struct MMRQ_R(crate::FieldReader<bool, MMRQ_A>);
+#[doc = "Field `MMRQ` reader - Mute mode request"]
+pub type MMRQ_R = crate::BitReader<MMRQ_A>;
 impl MMRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MMRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MMRQ_A> {
         match self.bits {
-            true => Some(MMRQ_A::MUTE),
+            true => Some(MMRQ_A::Mute),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `MUTE`
+    #[doc = "Checks if the value of the field is `Mute`"]
     #[inline(always)]
     pub fn is_mute(&self) -> bool {
-        **self == MMRQ_A::MUTE
+        *self == MMRQ_A::Mute
     }
 }
-impl core::ops::Deref for MMRQ_R {
-    type Target = crate::FieldReader<bool, MMRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MMRQ` writer - Mute mode request
-pub struct MMRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MMRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MMRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Puts the USART in mute mode and sets the RWU flag
+#[doc = "Field `MMRQ` writer - Mute mode request"]
+pub type MMRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, MMRQ_A, O>;
+impl<'a, const O: u8> MMRQ_W<'a, O> {
+    #[doc = "Puts the USART in mute mode and sets the RWU flag"]
     #[inline(always)]
     pub fn mute(self) -> &'a mut W {
-        self.variant(MMRQ_A::MUTE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(MMRQ_A::Mute)
     }
 }
-///Send break request
-///
-///Value on reset: 0
+#[doc = "Send break request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBKRQ_A {
-    ///1: sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available
-    BREAK = 1,
+    #[doc = "1: sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
+    Break = 1,
 }
 impl From<SBKRQ_A> for bool {
     #[inline(always)]
@@ -267,72 +160,37 @@ impl From<SBKRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SBKRQ` reader - Send break request
-pub struct SBKRQ_R(crate::FieldReader<bool, SBKRQ_A>);
+#[doc = "Field `SBKRQ` reader - Send break request"]
+pub type SBKRQ_R = crate::BitReader<SBKRQ_A>;
 impl SBKRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SBKRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SBKRQ_A> {
         match self.bits {
-            true => Some(SBKRQ_A::BREAK),
+            true => Some(SBKRQ_A::Break),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `BREAK`
+    #[doc = "Checks if the value of the field is `Break`"]
     #[inline(always)]
     pub fn is_break(&self) -> bool {
-        **self == SBKRQ_A::BREAK
+        *self == SBKRQ_A::Break
     }
 }
-impl core::ops::Deref for SBKRQ_R {
-    type Target = crate::FieldReader<bool, SBKRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SBKRQ` writer - Send break request
-pub struct SBKRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SBKRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SBKRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available
+#[doc = "Field `SBKRQ` writer - Send break request"]
+pub type SBKRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, SBKRQ_A, O>;
+impl<'a, const O: u8> SBKRQ_W<'a, O> {
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
     #[inline(always)]
     pub fn break_(self) -> &'a mut W {
-        self.variant(SBKRQ_A::BREAK)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(SBKRQ_A::Break)
     }
 }
-///Auto baud rate request
-///
-///Value on reset: 0
+#[doc = "Auto baud rate request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ABRRQ_A {
-    ///1: resets the ABRF flag in the USART_ISR and request an automatic baud rate measurement on the next received data frame
-    REQUEST = 1,
+    #[doc = "1: resets the ABRF flag in the USART_ISR and request an automatic baud rate measurement on the next received data frame"]
+    Request = 1,
 }
 impl From<ABRRQ_A> for bool {
     #[inline(always)]
@@ -340,143 +198,106 @@ impl From<ABRRQ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ABRRQ` reader - Auto baud rate request
-pub struct ABRRQ_R(crate::FieldReader<bool, ABRRQ_A>);
+#[doc = "Field `ABRRQ` reader - Auto baud rate request"]
+pub type ABRRQ_R = crate::BitReader<ABRRQ_A>;
 impl ABRRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ABRRQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ABRRQ_A> {
         match self.bits {
-            true => Some(ABRRQ_A::REQUEST),
+            true => Some(ABRRQ_A::Request),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `REQUEST`
+    #[doc = "Checks if the value of the field is `Request`"]
     #[inline(always)]
     pub fn is_request(&self) -> bool {
-        **self == ABRRQ_A::REQUEST
+        *self == ABRRQ_A::Request
     }
 }
-impl core::ops::Deref for ABRRQ_R {
-    type Target = crate::FieldReader<bool, ABRRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ABRRQ` writer - Auto baud rate request
-pub struct ABRRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ABRRQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ABRRQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///resets the ABRF flag in the USART_ISR and request an automatic baud rate measurement on the next received data frame
+#[doc = "Field `ABRRQ` writer - Auto baud rate request"]
+pub type ABRRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, ABRRQ_A, O>;
+impl<'a, const O: u8> ABRRQ_W<'a, O> {
+    #[doc = "resets the ABRF flag in the USART_ISR and request an automatic baud rate measurement on the next received data frame"]
     #[inline(always)]
     pub fn request(self) -> &'a mut W {
-        self.variant(ABRRQ_A::REQUEST)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(ABRRQ_A::Request)
     }
 }
 impl R {
-    ///Bit 4 - Transmit data flush request
+    #[doc = "Bit 4 - Transmit data flush request"]
     #[inline(always)]
     pub fn txfrq(&self) -> TXFRQ_R {
-        TXFRQ_R::new(((self.bits >> 4) & 0x01) != 0)
+        TXFRQ_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 3 - Receive data flush request
+    #[doc = "Bit 3 - Receive data flush request"]
     #[inline(always)]
     pub fn rxfrq(&self) -> RXFRQ_R {
-        RXFRQ_R::new(((self.bits >> 3) & 0x01) != 0)
+        RXFRQ_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Mute mode request
+    #[doc = "Bit 2 - Mute mode request"]
     #[inline(always)]
     pub fn mmrq(&self) -> MMRQ_R {
-        MMRQ_R::new(((self.bits >> 2) & 0x01) != 0)
+        MMRQ_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - Send break request
+    #[doc = "Bit 1 - Send break request"]
     #[inline(always)]
     pub fn sbkrq(&self) -> SBKRQ_R {
-        SBKRQ_R::new(((self.bits >> 1) & 0x01) != 0)
+        SBKRQ_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Auto baud rate request
+    #[doc = "Bit 0 - Auto baud rate request"]
     #[inline(always)]
     pub fn abrrq(&self) -> ABRRQ_R {
-        ABRRQ_R::new((self.bits & 0x01) != 0)
+        ABRRQ_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 4 - Transmit data flush request
+    #[doc = "Bit 4 - Transmit data flush request"]
     #[inline(always)]
-    pub fn txfrq(&mut self) -> TXFRQ_W {
-        TXFRQ_W { w: self }
+    pub fn txfrq(&mut self) -> TXFRQ_W<4> {
+        TXFRQ_W::new(self)
     }
-    ///Bit 3 - Receive data flush request
+    #[doc = "Bit 3 - Receive data flush request"]
     #[inline(always)]
-    pub fn rxfrq(&mut self) -> RXFRQ_W {
-        RXFRQ_W { w: self }
+    pub fn rxfrq(&mut self) -> RXFRQ_W<3> {
+        RXFRQ_W::new(self)
     }
-    ///Bit 2 - Mute mode request
+    #[doc = "Bit 2 - Mute mode request"]
     #[inline(always)]
-    pub fn mmrq(&mut self) -> MMRQ_W {
-        MMRQ_W { w: self }
+    pub fn mmrq(&mut self) -> MMRQ_W<2> {
+        MMRQ_W::new(self)
     }
-    ///Bit 1 - Send break request
+    #[doc = "Bit 1 - Send break request"]
     #[inline(always)]
-    pub fn sbkrq(&mut self) -> SBKRQ_W {
-        SBKRQ_W { w: self }
+    pub fn sbkrq(&mut self) -> SBKRQ_W<1> {
+        SBKRQ_W::new(self)
     }
-    ///Bit 0 - Auto baud rate request
+    #[doc = "Bit 0 - Auto baud rate request"]
     #[inline(always)]
-    pub fn abrrq(&mut self) -> ABRRQ_W {
-        ABRRQ_W { w: self }
+    pub fn abrrq(&mut self) -> ABRRQ_W<0> {
+        ABRRQ_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///request register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rqr](index.html) module
+#[doc = "request register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rqr](index.html) module"]
 pub struct RQR_SPEC;
 impl crate::RegisterSpec for RQR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rqr::R](R) reader structure
+#[doc = "`read()` method returns [rqr::R](R) reader structure"]
 impl crate::Readable for RQR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [rqr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [rqr::W](W) writer structure"]
 impl crate::Writable for RQR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets RQR to value 0
+#[doc = "`reset()` method sets RQR to value 0"]
 impl crate::Resettable for RQR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

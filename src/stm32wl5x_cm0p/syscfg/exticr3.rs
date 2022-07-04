@@ -1,4 +1,4 @@
-///Register `EXTICR3` reader
+#[doc = "Register `EXTICR3` reader"]
 pub struct R(crate::R<EXTICR3_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EXTICR3_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EXTICR3_SPEC>> for R {
         R(reader)
     }
 }
-///Register `EXTICR3` writer
+#[doc = "Register `EXTICR3` writer"]
 pub struct W(crate::W<EXTICR3_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EXTICR3_SPEC>;
@@ -34,16 +34,14 @@ impl From<crate::W<EXTICR3_SPEC>> for W {
         W(writer)
     }
 }
-///EXTI 11 configuration bits
-///
-///Value on reset: 0
+#[doc = "EXTI 11 configuration bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EXTI11_A {
-    ///0: Select PA11 as the source input for the EXTI11 external interrupt
-    PA11 = 0,
-    ///1: Select PB11 as the source input for the EXTI11 external interrupt
-    PB11 = 1,
+    #[doc = "0: Select PA11 as the source input for the EXTI11 external interrupt"]
+    Pa11 = 0,
+    #[doc = "1: Select PB11 as the source input for the EXTI11 external interrupt"]
+    Pb11 = 1,
 }
 impl From<EXTI11_A> for u8 {
     #[inline(always)]
@@ -51,76 +49,51 @@ impl From<EXTI11_A> for u8 {
         variant as _
     }
 }
-///Field `EXTI11` reader - EXTI 11 configuration bits
-pub struct EXTI11_R(crate::FieldReader<u8, EXTI11_A>);
+#[doc = "Field `EXTI11` reader - EXTI 11 configuration bits"]
+pub type EXTI11_R = crate::FieldReader<u8, EXTI11_A>;
 impl EXTI11_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXTI11_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EXTI11_A> {
         match self.bits {
-            0 => Some(EXTI11_A::PA11),
-            1 => Some(EXTI11_A::PB11),
+            0 => Some(EXTI11_A::Pa11),
+            1 => Some(EXTI11_A::Pb11),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PA11`
+    #[doc = "Checks if the value of the field is `Pa11`"]
     #[inline(always)]
     pub fn is_pa11(&self) -> bool {
-        **self == EXTI11_A::PA11
+        *self == EXTI11_A::Pa11
     }
-    ///Checks if the value of the field is `PB11`
+    #[doc = "Checks if the value of the field is `Pb11`"]
     #[inline(always)]
     pub fn is_pb11(&self) -> bool {
-        **self == EXTI11_A::PB11
+        *self == EXTI11_A::Pb11
     }
 }
-impl core::ops::Deref for EXTI11_R {
-    type Target = crate::FieldReader<u8, EXTI11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI11` writer - EXTI 11 configuration bits
-pub struct EXTI11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI11_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EXTI11_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Select PA11 as the source input for the EXTI11 external interrupt
+#[doc = "Field `EXTI11` writer - EXTI 11 configuration bits"]
+pub type EXTI11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR3_SPEC, u8, EXTI11_A, 3, O>;
+impl<'a, const O: u8> EXTI11_W<'a, O> {
+    #[doc = "Select PA11 as the source input for the EXTI11 external interrupt"]
     #[inline(always)]
     pub fn pa11(self) -> &'a mut W {
-        self.variant(EXTI11_A::PA11)
+        self.variant(EXTI11_A::Pa11)
     }
-    ///Select PB11 as the source input for the EXTI11 external interrupt
+    #[doc = "Select PB11 as the source input for the EXTI11 external interrupt"]
     #[inline(always)]
     pub fn pb11(self) -> &'a mut W {
-        self.variant(EXTI11_A::PB11)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
+        self.variant(EXTI11_A::Pb11)
     }
 }
-///EXTI 10 configuration bits
-///
-///Value on reset: 0
+#[doc = "EXTI 10 configuration bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EXTI10_A {
-    ///0: Select PA10 as the source input for the EXTI10 external interrupt
-    PA10 = 0,
-    ///1: Select PB10 as the source input for the EXTI10 external interrupt
-    PB10 = 1,
+    #[doc = "0: Select PA10 as the source input for the EXTI10 external interrupt"]
+    Pa10 = 0,
+    #[doc = "1: Select PB10 as the source input for the EXTI10 external interrupt"]
+    Pb10 = 1,
 }
 impl From<EXTI10_A> for u8 {
     #[inline(always)]
@@ -128,76 +101,51 @@ impl From<EXTI10_A> for u8 {
         variant as _
     }
 }
-///Field `EXTI10` reader - EXTI 10 configuration bits
-pub struct EXTI10_R(crate::FieldReader<u8, EXTI10_A>);
+#[doc = "Field `EXTI10` reader - EXTI 10 configuration bits"]
+pub type EXTI10_R = crate::FieldReader<u8, EXTI10_A>;
 impl EXTI10_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXTI10_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EXTI10_A> {
         match self.bits {
-            0 => Some(EXTI10_A::PA10),
-            1 => Some(EXTI10_A::PB10),
+            0 => Some(EXTI10_A::Pa10),
+            1 => Some(EXTI10_A::Pb10),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PA10`
+    #[doc = "Checks if the value of the field is `Pa10`"]
     #[inline(always)]
     pub fn is_pa10(&self) -> bool {
-        **self == EXTI10_A::PA10
+        *self == EXTI10_A::Pa10
     }
-    ///Checks if the value of the field is `PB10`
+    #[doc = "Checks if the value of the field is `Pb10`"]
     #[inline(always)]
     pub fn is_pb10(&self) -> bool {
-        **self == EXTI10_A::PB10
+        *self == EXTI10_A::Pb10
     }
 }
-impl core::ops::Deref for EXTI10_R {
-    type Target = crate::FieldReader<u8, EXTI10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI10` writer - EXTI 10 configuration bits
-pub struct EXTI10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI10_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EXTI10_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Select PA10 as the source input for the EXTI10 external interrupt
+#[doc = "Field `EXTI10` writer - EXTI 10 configuration bits"]
+pub type EXTI10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR3_SPEC, u8, EXTI10_A, 3, O>;
+impl<'a, const O: u8> EXTI10_W<'a, O> {
+    #[doc = "Select PA10 as the source input for the EXTI10 external interrupt"]
     #[inline(always)]
     pub fn pa10(self) -> &'a mut W {
-        self.variant(EXTI10_A::PA10)
+        self.variant(EXTI10_A::Pa10)
     }
-    ///Select PB10 as the source input for the EXTI10 external interrupt
+    #[doc = "Select PB10 as the source input for the EXTI10 external interrupt"]
     #[inline(always)]
     pub fn pb10(self) -> &'a mut W {
-        self.variant(EXTI10_A::PB10)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
+        self.variant(EXTI10_A::Pb10)
     }
 }
-///EXTI 9 configuration bits
-///
-///Value on reset: 0
+#[doc = "EXTI 9 configuration bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EXTI9_A {
-    ///0: Select PA9 as the source input for the EXTI9 external interrupt
-    PA9 = 0,
-    ///1: Select PB9 as the source input for the EXTI9 external interrupt
-    PB9 = 1,
+    #[doc = "0: Select PA9 as the source input for the EXTI9 external interrupt"]
+    Pa9 = 0,
+    #[doc = "1: Select PB9 as the source input for the EXTI9 external interrupt"]
+    Pb9 = 1,
 }
 impl From<EXTI9_A> for u8 {
     #[inline(always)]
@@ -205,76 +153,51 @@ impl From<EXTI9_A> for u8 {
         variant as _
     }
 }
-///Field `EXTI9` reader - EXTI 9 configuration bits
-pub struct EXTI9_R(crate::FieldReader<u8, EXTI9_A>);
+#[doc = "Field `EXTI9` reader - EXTI 9 configuration bits"]
+pub type EXTI9_R = crate::FieldReader<u8, EXTI9_A>;
 impl EXTI9_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXTI9_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EXTI9_A> {
         match self.bits {
-            0 => Some(EXTI9_A::PA9),
-            1 => Some(EXTI9_A::PB9),
+            0 => Some(EXTI9_A::Pa9),
+            1 => Some(EXTI9_A::Pb9),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PA9`
+    #[doc = "Checks if the value of the field is `Pa9`"]
     #[inline(always)]
     pub fn is_pa9(&self) -> bool {
-        **self == EXTI9_A::PA9
+        *self == EXTI9_A::Pa9
     }
-    ///Checks if the value of the field is `PB9`
+    #[doc = "Checks if the value of the field is `Pb9`"]
     #[inline(always)]
     pub fn is_pb9(&self) -> bool {
-        **self == EXTI9_A::PB9
+        *self == EXTI9_A::Pb9
     }
 }
-impl core::ops::Deref for EXTI9_R {
-    type Target = crate::FieldReader<u8, EXTI9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI9` writer - EXTI 9 configuration bits
-pub struct EXTI9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI9_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EXTI9_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Select PA9 as the source input for the EXTI9 external interrupt
+#[doc = "Field `EXTI9` writer - EXTI 9 configuration bits"]
+pub type EXTI9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR3_SPEC, u8, EXTI9_A, 3, O>;
+impl<'a, const O: u8> EXTI9_W<'a, O> {
+    #[doc = "Select PA9 as the source input for the EXTI9 external interrupt"]
     #[inline(always)]
     pub fn pa9(self) -> &'a mut W {
-        self.variant(EXTI9_A::PA9)
+        self.variant(EXTI9_A::Pa9)
     }
-    ///Select PB9 as the source input for the EXTI9 external interrupt
+    #[doc = "Select PB9 as the source input for the EXTI9 external interrupt"]
     #[inline(always)]
     pub fn pb9(self) -> &'a mut W {
-        self.variant(EXTI9_A::PB9)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
+        self.variant(EXTI9_A::Pb9)
     }
 }
-///EXTI 8 configuration bits
-///
-///Value on reset: 0
+#[doc = "EXTI 8 configuration bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EXTI8_A {
-    ///0: Select PA8 as the source input for the EXTI8 external interrupt
-    PA8 = 0,
-    ///1: Select PB8 as the source input for the EXTI8 external interrupt
-    PB8 = 1,
+    #[doc = "0: Select PA8 as the source input for the EXTI8 external interrupt"]
+    Pa8 = 0,
+    #[doc = "1: Select PB8 as the source input for the EXTI8 external interrupt"]
+    Pb8 = 1,
 }
 impl From<EXTI8_A> for u8 {
     #[inline(always)]
@@ -282,134 +205,107 @@ impl From<EXTI8_A> for u8 {
         variant as _
     }
 }
-///Field `EXTI8` reader - EXTI 8 configuration bits
-pub struct EXTI8_R(crate::FieldReader<u8, EXTI8_A>);
+#[doc = "Field `EXTI8` reader - EXTI 8 configuration bits"]
+pub type EXTI8_R = crate::FieldReader<u8, EXTI8_A>;
 impl EXTI8_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXTI8_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EXTI8_A> {
         match self.bits {
-            0 => Some(EXTI8_A::PA8),
-            1 => Some(EXTI8_A::PB8),
+            0 => Some(EXTI8_A::Pa8),
+            1 => Some(EXTI8_A::Pb8),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PA8`
+    #[doc = "Checks if the value of the field is `Pa8`"]
     #[inline(always)]
     pub fn is_pa8(&self) -> bool {
-        **self == EXTI8_A::PA8
+        *self == EXTI8_A::Pa8
     }
-    ///Checks if the value of the field is `PB8`
+    #[doc = "Checks if the value of the field is `Pb8`"]
     #[inline(always)]
     pub fn is_pb8(&self) -> bool {
-        **self == EXTI8_A::PB8
+        *self == EXTI8_A::Pb8
     }
 }
-impl core::ops::Deref for EXTI8_R {
-    type Target = crate::FieldReader<u8, EXTI8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI8` writer - EXTI 8 configuration bits
-pub struct EXTI8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI8_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EXTI8_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Select PA8 as the source input for the EXTI8 external interrupt
+#[doc = "Field `EXTI8` writer - EXTI 8 configuration bits"]
+pub type EXTI8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR3_SPEC, u8, EXTI8_A, 3, O>;
+impl<'a, const O: u8> EXTI8_W<'a, O> {
+    #[doc = "Select PA8 as the source input for the EXTI8 external interrupt"]
     #[inline(always)]
     pub fn pa8(self) -> &'a mut W {
-        self.variant(EXTI8_A::PA8)
+        self.variant(EXTI8_A::Pa8)
     }
-    ///Select PB8 as the source input for the EXTI8 external interrupt
+    #[doc = "Select PB8 as the source input for the EXTI8 external interrupt"]
     #[inline(always)]
     pub fn pb8(self) -> &'a mut W {
-        self.variant(EXTI8_A::PB8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(EXTI8_A::Pb8)
     }
 }
 impl R {
-    ///Bits 12:14 - EXTI 11 configuration bits
+    #[doc = "Bits 12:14 - EXTI 11 configuration bits"]
     #[inline(always)]
     pub fn exti11(&self) -> EXTI11_R {
-        EXTI11_R::new(((self.bits >> 12) & 0x07) as u8)
+        EXTI11_R::new(((self.bits >> 12) & 7) as u8)
     }
-    ///Bits 8:10 - EXTI 10 configuration bits
+    #[doc = "Bits 8:10 - EXTI 10 configuration bits"]
     #[inline(always)]
     pub fn exti10(&self) -> EXTI10_R {
-        EXTI10_R::new(((self.bits >> 8) & 0x07) as u8)
+        EXTI10_R::new(((self.bits >> 8) & 7) as u8)
     }
-    ///Bits 4:6 - EXTI 9 configuration bits
+    #[doc = "Bits 4:6 - EXTI 9 configuration bits"]
     #[inline(always)]
     pub fn exti9(&self) -> EXTI9_R {
-        EXTI9_R::new(((self.bits >> 4) & 0x07) as u8)
+        EXTI9_R::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bits 0:2 - EXTI 8 configuration bits
+    #[doc = "Bits 0:2 - EXTI 8 configuration bits"]
     #[inline(always)]
     pub fn exti8(&self) -> EXTI8_R {
-        EXTI8_R::new((self.bits & 0x07) as u8)
+        EXTI8_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
-    ///Bits 12:14 - EXTI 11 configuration bits
+    #[doc = "Bits 12:14 - EXTI 11 configuration bits"]
     #[inline(always)]
-    pub fn exti11(&mut self) -> EXTI11_W {
-        EXTI11_W { w: self }
+    pub fn exti11(&mut self) -> EXTI11_W<12> {
+        EXTI11_W::new(self)
     }
-    ///Bits 8:10 - EXTI 10 configuration bits
+    #[doc = "Bits 8:10 - EXTI 10 configuration bits"]
     #[inline(always)]
-    pub fn exti10(&mut self) -> EXTI10_W {
-        EXTI10_W { w: self }
+    pub fn exti10(&mut self) -> EXTI10_W<8> {
+        EXTI10_W::new(self)
     }
-    ///Bits 4:6 - EXTI 9 configuration bits
+    #[doc = "Bits 4:6 - EXTI 9 configuration bits"]
     #[inline(always)]
-    pub fn exti9(&mut self) -> EXTI9_W {
-        EXTI9_W { w: self }
+    pub fn exti9(&mut self) -> EXTI9_W<4> {
+        EXTI9_W::new(self)
     }
-    ///Bits 0:2 - EXTI 8 configuration bits
+    #[doc = "Bits 0:2 - EXTI 8 configuration bits"]
     #[inline(always)]
-    pub fn exti8(&mut self) -> EXTI8_W {
-        EXTI8_W { w: self }
+    pub fn exti8(&mut self) -> EXTI8_W<0> {
+        EXTI8_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///external interrupt configuration register 3
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [exticr3](index.html) module
+#[doc = "external interrupt configuration register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [exticr3](index.html) module"]
 pub struct EXTICR3_SPEC;
 impl crate::RegisterSpec for EXTICR3_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [exticr3::R](R) reader structure
+#[doc = "`read()` method returns [exticr3::R](R) reader structure"]
 impl crate::Readable for EXTICR3_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [exticr3::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [exticr3::W](W) writer structure"]
 impl crate::Writable for EXTICR3_SPEC {
     type Writer = W;
 }
-///`reset()` method sets EXTICR3 to value 0
+#[doc = "`reset()` method sets EXTICR3 to value 0"]
 impl crate::Resettable for EXTICR3_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

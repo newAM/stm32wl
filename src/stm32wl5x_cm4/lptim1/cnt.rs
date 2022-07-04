@@ -1,4 +1,4 @@
-///Register `CNT` reader
+#[doc = "Register `CNT` reader"]
 pub struct R(crate::R<CNT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CNT_SPEC>;
@@ -13,41 +13,25 @@ impl From<crate::R<CNT_SPEC>> for R {
         R(reader)
     }
 }
-///Field `CNT` reader - Counter value
-pub struct CNT_R(crate::FieldReader<u16, u16>);
-impl CNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CNT` reader - Counter value"]
+pub type CNT_R = crate::FieldReader<u16, u16>;
 impl R {
-    ///Bits 0:15 - Counter value
+    #[doc = "Bits 0:15 - Counter value"]
     #[inline(always)]
     pub fn cnt(&self) -> CNT_R {
         CNT_R::new((self.bits & 0xffff) as u16)
     }
 }
-///counter register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cnt](index.html) module
+#[doc = "counter register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cnt](index.html) module"]
 pub struct CNT_SPEC;
 impl crate::RegisterSpec for CNT_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cnt::R](R) reader structure
+#[doc = "`read()` method returns [cnt::R](R) reader structure"]
 impl crate::Readable for CNT_SPEC {
     type Reader = R;
 }
-///`reset()` method sets CNT to value 0
+#[doc = "`reset()` method sets CNT to value 0"]
 impl crate::Resettable for CNT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

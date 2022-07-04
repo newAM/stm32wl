@@ -1,4 +1,4 @@
-///Register `CCMR1_Output` reader
+#[doc = "Register `CCMR1_Output` reader"]
 pub struct R(crate::R<CCMR1_OUTPUT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCMR1_OUTPUT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCMR1_OUTPUT_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCMR1_Output` writer
+#[doc = "Register `CCMR1_Output` writer"]
 pub struct W(crate::W<CCMR1_OUTPUT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCMR1_OUTPUT_SPEC>;
@@ -34,64 +34,30 @@ impl From<crate::W<CCMR1_OUTPUT_SPEC>> for W {
         W(writer)
     }
 }
-///Field `OC1M_3` reader - OC1M
-pub struct OC1M_3_R(crate::FieldReader<bool, bool>);
-impl OC1M_3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OC1M_3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OC1M_3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OC1M_3` writer - OC1M
-pub struct OC1M_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OC1M_3_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
-///OC1M
-///
-///Value on reset: 0
+#[doc = "Field `OC1M_3` reader - OC1M"]
+pub type OC1M_3_R = crate::BitReader<bool>;
+#[doc = "Field `OC1M_3` writer - OC1M"]
+pub type OC1M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, bool, O>;
+#[doc = "OC1M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum OC1M_A {
-    ///0: The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs
-    FROZEN = 0,
-    ///1: Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register
-    ACTIVEONMATCH = 1,
-    ///2: Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register
-    INACTIVEONMATCH = 2,
-    ///3: OCyREF toggles when TIMx_CNT=TIMx_CCRy
-    TOGGLE = 3,
-    ///4: OCyREF is forced low
-    FORCEINACTIVE = 4,
-    ///5: OCyREF is forced high
-    FORCEACTIVE = 5,
-    ///6: In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active
-    PWMMODE1 = 6,
-    ///7: Inversely to PwmMode1
-    PWMMODE2 = 7,
+    #[doc = "0: The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs"]
+    Frozen = 0,
+    #[doc = "1: Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register"]
+    ActiveOnMatch = 1,
+    #[doc = "2: Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register"]
+    InactiveOnMatch = 2,
+    #[doc = "3: OCyREF toggles when TIMx_CNT=TIMx_CCRy"]
+    Toggle = 3,
+    #[doc = "4: OCyREF is forced low"]
+    ForceInactive = 4,
+    #[doc = "5: OCyREF is forced high"]
+    ForceActive = 5,
+    #[doc = "6: In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active"]
+    PwmMode1 = 6,
+    #[doc = "7: Inversely to PwmMode1"]
+    PwmMode2 = 7,
 }
 impl From<OC1M_A> for u8 {
     #[inline(always)]
@@ -99,141 +65,117 @@ impl From<OC1M_A> for u8 {
         variant as _
     }
 }
-///Field `OC1M` reader - OC1M
-pub struct OC1M_R(crate::FieldReader<u8, OC1M_A>);
+#[doc = "Field `OC1M` reader - OC1M"]
+pub type OC1M_R = crate::FieldReader<u8, OC1M_A>;
 impl OC1M_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        OC1M_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OC1M_A {
         match self.bits {
-            0 => OC1M_A::FROZEN,
-            1 => OC1M_A::ACTIVEONMATCH,
-            2 => OC1M_A::INACTIVEONMATCH,
-            3 => OC1M_A::TOGGLE,
-            4 => OC1M_A::FORCEINACTIVE,
-            5 => OC1M_A::FORCEACTIVE,
-            6 => OC1M_A::PWMMODE1,
-            7 => OC1M_A::PWMMODE2,
+            0 => OC1M_A::Frozen,
+            1 => OC1M_A::ActiveOnMatch,
+            2 => OC1M_A::InactiveOnMatch,
+            3 => OC1M_A::Toggle,
+            4 => OC1M_A::ForceInactive,
+            5 => OC1M_A::ForceActive,
+            6 => OC1M_A::PwmMode1,
+            7 => OC1M_A::PwmMode2,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `FROZEN`
+    #[doc = "Checks if the value of the field is `Frozen`"]
     #[inline(always)]
     pub fn is_frozen(&self) -> bool {
-        **self == OC1M_A::FROZEN
+        *self == OC1M_A::Frozen
     }
-    ///Checks if the value of the field is `ACTIVEONMATCH`
+    #[doc = "Checks if the value of the field is `ActiveOnMatch`"]
     #[inline(always)]
     pub fn is_active_on_match(&self) -> bool {
-        **self == OC1M_A::ACTIVEONMATCH
+        *self == OC1M_A::ActiveOnMatch
     }
-    ///Checks if the value of the field is `INACTIVEONMATCH`
+    #[doc = "Checks if the value of the field is `InactiveOnMatch`"]
     #[inline(always)]
     pub fn is_inactive_on_match(&self) -> bool {
-        **self == OC1M_A::INACTIVEONMATCH
+        *self == OC1M_A::InactiveOnMatch
     }
-    ///Checks if the value of the field is `TOGGLE`
+    #[doc = "Checks if the value of the field is `Toggle`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        **self == OC1M_A::TOGGLE
+        *self == OC1M_A::Toggle
     }
-    ///Checks if the value of the field is `FORCEINACTIVE`
+    #[doc = "Checks if the value of the field is `ForceInactive`"]
     #[inline(always)]
     pub fn is_force_inactive(&self) -> bool {
-        **self == OC1M_A::FORCEINACTIVE
+        *self == OC1M_A::ForceInactive
     }
-    ///Checks if the value of the field is `FORCEACTIVE`
+    #[doc = "Checks if the value of the field is `ForceActive`"]
     #[inline(always)]
     pub fn is_force_active(&self) -> bool {
-        **self == OC1M_A::FORCEACTIVE
+        *self == OC1M_A::ForceActive
     }
-    ///Checks if the value of the field is `PWMMODE1`
+    #[doc = "Checks if the value of the field is `PwmMode1`"]
     #[inline(always)]
     pub fn is_pwm_mode1(&self) -> bool {
-        **self == OC1M_A::PWMMODE1
+        *self == OC1M_A::PwmMode1
     }
-    ///Checks if the value of the field is `PWMMODE2`
+    #[doc = "Checks if the value of the field is `PwmMode2`"]
     #[inline(always)]
     pub fn is_pwm_mode2(&self) -> bool {
-        **self == OC1M_A::PWMMODE2
+        *self == OC1M_A::PwmMode2
     }
 }
-impl core::ops::Deref for OC1M_R {
-    type Target = crate::FieldReader<u8, OC1M_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OC1M` writer - OC1M
-pub struct OC1M_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OC1M_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OC1M_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs
+#[doc = "Field `OC1M` writer - OC1M"]
+pub type OC1M_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCMR1_OUTPUT_SPEC, u8, OC1M_A, 3, O>;
+impl<'a, const O: u8> OC1M_W<'a, O> {
+    #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs"]
     #[inline(always)]
     pub fn frozen(self) -> &'a mut W {
-        self.variant(OC1M_A::FROZEN)
+        self.variant(OC1M_A::Frozen)
     }
-    ///Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register
+    #[doc = "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register"]
     #[inline(always)]
     pub fn active_on_match(self) -> &'a mut W {
-        self.variant(OC1M_A::ACTIVEONMATCH)
+        self.variant(OC1M_A::ActiveOnMatch)
     }
-    ///Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register
+    #[doc = "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register"]
     #[inline(always)]
     pub fn inactive_on_match(self) -> &'a mut W {
-        self.variant(OC1M_A::INACTIVEONMATCH)
+        self.variant(OC1M_A::InactiveOnMatch)
     }
-    ///OCyREF toggles when TIMx_CNT=TIMx_CCRy
+    #[doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy"]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
-        self.variant(OC1M_A::TOGGLE)
+        self.variant(OC1M_A::Toggle)
     }
-    ///OCyREF is forced low
+    #[doc = "OCyREF is forced low"]
     #[inline(always)]
     pub fn force_inactive(self) -> &'a mut W {
-        self.variant(OC1M_A::FORCEINACTIVE)
+        self.variant(OC1M_A::ForceInactive)
     }
-    ///OCyREF is forced high
+    #[doc = "OCyREF is forced high"]
     #[inline(always)]
     pub fn force_active(self) -> &'a mut W {
-        self.variant(OC1M_A::FORCEACTIVE)
+        self.variant(OC1M_A::ForceActive)
     }
-    ///In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active
+    #[doc = "In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active"]
     #[inline(always)]
     pub fn pwm_mode1(self) -> &'a mut W {
-        self.variant(OC1M_A::PWMMODE1)
+        self.variant(OC1M_A::PwmMode1)
     }
-    ///Inversely to PwmMode1
+    #[doc = "Inversely to PwmMode1"]
     #[inline(always)]
     pub fn pwm_mode2(self) -> &'a mut W {
-        self.variant(OC1M_A::PWMMODE2)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
+        self.variant(OC1M_A::PwmMode2)
     }
 }
-///OC1PE
-///
-///Value on reset: 0
+#[doc = "OC1PE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OC1PE_A {
-    ///0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately
-    DISABLED = 0,
-    ///1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event
-    ENABLED = 1,
+    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    Disabled = 0,
+    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    Enabled = 1,
 }
 impl From<OC1PE_A> for bool {
     #[inline(always)]
@@ -241,84 +183,49 @@ impl From<OC1PE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OC1PE` reader - OC1PE
-pub struct OC1PE_R(crate::FieldReader<bool, OC1PE_A>);
+#[doc = "Field `OC1PE` reader - OC1PE"]
+pub type OC1PE_R = crate::BitReader<OC1PE_A>;
 impl OC1PE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OC1PE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OC1PE_A {
         match self.bits {
-            false => OC1PE_A::DISABLED,
-            true => OC1PE_A::ENABLED,
+            false => OC1PE_A::Disabled,
+            true => OC1PE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == OC1PE_A::DISABLED
+        *self == OC1PE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == OC1PE_A::ENABLED
+        *self == OC1PE_A::Enabled
     }
 }
-impl core::ops::Deref for OC1PE_R {
-    type Target = crate::FieldReader<bool, OC1PE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OC1PE` writer - OC1PE
-pub struct OC1PE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OC1PE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OC1PE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Preload register on CCRx disabled. New values written to CCRx are taken into account immediately
+#[doc = "Field `OC1PE` writer - OC1PE"]
+pub type OC1PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1PE_A, O>;
+impl<'a, const O: u8> OC1PE_W<'a, O> {
+    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC1PE_A::DISABLED)
+        self.variant(OC1PE_A::Disabled)
     }
-    ///Preload register on CCRx enabled. Preload value is loaded into active register on each update event
+    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC1PE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(OC1PE_A::Enabled)
     }
 }
-///OC1FE
-///
-///Value on reset: 0
+#[doc = "OC1FE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OC1FE_A {
-    ///0: Fast output disabled
-    DISABLED = 0,
-    ///1: Fast output enabled
-    ENABLED = 1,
+    #[doc = "0: Fast output disabled"]
+    Disabled = 0,
+    #[doc = "1: Fast output enabled"]
+    Enabled = 1,
 }
 impl From<OC1FE_A> for bool {
     #[inline(always)]
@@ -326,85 +233,50 @@ impl From<OC1FE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OC1FE` reader - OC1FE
-pub struct OC1FE_R(crate::FieldReader<bool, OC1FE_A>);
+#[doc = "Field `OC1FE` reader - OC1FE"]
+pub type OC1FE_R = crate::BitReader<OC1FE_A>;
 impl OC1FE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OC1FE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OC1FE_A {
         match self.bits {
-            false => OC1FE_A::DISABLED,
-            true => OC1FE_A::ENABLED,
+            false => OC1FE_A::Disabled,
+            true => OC1FE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == OC1FE_A::DISABLED
+        *self == OC1FE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == OC1FE_A::ENABLED
+        *self == OC1FE_A::Enabled
     }
 }
-impl core::ops::Deref for OC1FE_R {
-    type Target = crate::FieldReader<bool, OC1FE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OC1FE` writer - OC1FE
-pub struct OC1FE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OC1FE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OC1FE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Fast output disabled
+#[doc = "Field `OC1FE` writer - OC1FE"]
+pub type OC1FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1FE_A, O>;
+impl<'a, const O: u8> OC1FE_W<'a, O> {
+    #[doc = "Fast output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC1FE_A::DISABLED)
+        self.variant(OC1FE_A::Disabled)
     }
-    ///Fast output enabled
+    #[doc = "Fast output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC1FE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(OC1FE_A::Enabled)
     }
 }
-///CC1S
-///
-///Value on reset: 0
+#[doc = "CC1S\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CC1S_A {
-    ///0: CCx channel is configured as output
-    OUTPUT = 0,
-    ///1: CCx channel is configured as input, ICx is mapped on TI1
-    TI1 = 1,
+    #[doc = "0: CCx channel is configured as output"]
+    Output = 0,
+    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
+    Ti1 = 1,
 }
 impl From<CC1S_A> for u8 {
     #[inline(always)]
@@ -412,144 +284,117 @@ impl From<CC1S_A> for u8 {
         variant as _
     }
 }
-///Field `CC1S` reader - CC1S
-pub struct CC1S_R(crate::FieldReader<u8, CC1S_A>);
+#[doc = "Field `CC1S` reader - CC1S"]
+pub type CC1S_R = crate::FieldReader<u8, CC1S_A>;
 impl CC1S_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CC1S_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CC1S_A> {
         match self.bits {
-            0 => Some(CC1S_A::OUTPUT),
-            1 => Some(CC1S_A::TI1),
+            0 => Some(CC1S_A::Output),
+            1 => Some(CC1S_A::Ti1),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `OUTPUT`
+    #[doc = "Checks if the value of the field is `Output`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == CC1S_A::OUTPUT
+        *self == CC1S_A::Output
     }
-    ///Checks if the value of the field is `TI1`
+    #[doc = "Checks if the value of the field is `Ti1`"]
     #[inline(always)]
     pub fn is_ti1(&self) -> bool {
-        **self == CC1S_A::TI1
+        *self == CC1S_A::Ti1
     }
 }
-impl core::ops::Deref for CC1S_R {
-    type Target = crate::FieldReader<u8, CC1S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1S` writer - CC1S
-pub struct CC1S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1S_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CC1S_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///CCx channel is configured as output
+#[doc = "Field `CC1S` writer - CC1S"]
+pub type CC1S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCMR1_OUTPUT_SPEC, u8, CC1S_A, 2, O>;
+impl<'a, const O: u8> CC1S_W<'a, O> {
+    #[doc = "CCx channel is configured as output"]
     #[inline(always)]
     pub fn output(self) -> &'a mut W {
-        self.variant(CC1S_A::OUTPUT)
+        self.variant(CC1S_A::Output)
     }
-    ///CCx channel is configured as input, ICx is mapped on TI1
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
     #[inline(always)]
     pub fn ti1(self) -> &'a mut W {
-        self.variant(CC1S_A::TI1)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(CC1S_A::Ti1)
     }
 }
 impl R {
-    ///Bit 16 - OC1M
+    #[doc = "Bit 16 - OC1M"]
     #[inline(always)]
     pub fn oc1m_3(&self) -> OC1M_3_R {
-        OC1M_3_R::new(((self.bits >> 16) & 0x01) != 0)
+        OC1M_3_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 4:6 - OC1M
+    #[doc = "Bits 4:6 - OC1M"]
     #[inline(always)]
     pub fn oc1m(&self) -> OC1M_R {
-        OC1M_R::new(((self.bits >> 4) & 0x07) as u8)
+        OC1M_R::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bit 3 - OC1PE
+    #[doc = "Bit 3 - OC1PE"]
     #[inline(always)]
     pub fn oc1pe(&self) -> OC1PE_R {
-        OC1PE_R::new(((self.bits >> 3) & 0x01) != 0)
+        OC1PE_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - OC1FE
+    #[doc = "Bit 2 - OC1FE"]
     #[inline(always)]
     pub fn oc1fe(&self) -> OC1FE_R {
-        OC1FE_R::new(((self.bits >> 2) & 0x01) != 0)
+        OC1FE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bits 0:1 - CC1S
+    #[doc = "Bits 0:1 - CC1S"]
     #[inline(always)]
     pub fn cc1s(&self) -> CC1S_R {
-        CC1S_R::new((self.bits & 0x03) as u8)
+        CC1S_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    ///Bit 16 - OC1M
+    #[doc = "Bit 16 - OC1M"]
     #[inline(always)]
-    pub fn oc1m_3(&mut self) -> OC1M_3_W {
-        OC1M_3_W { w: self }
+    pub fn oc1m_3(&mut self) -> OC1M_3_W<16> {
+        OC1M_3_W::new(self)
     }
-    ///Bits 4:6 - OC1M
+    #[doc = "Bits 4:6 - OC1M"]
     #[inline(always)]
-    pub fn oc1m(&mut self) -> OC1M_W {
-        OC1M_W { w: self }
+    pub fn oc1m(&mut self) -> OC1M_W<4> {
+        OC1M_W::new(self)
     }
-    ///Bit 3 - OC1PE
+    #[doc = "Bit 3 - OC1PE"]
     #[inline(always)]
-    pub fn oc1pe(&mut self) -> OC1PE_W {
-        OC1PE_W { w: self }
+    pub fn oc1pe(&mut self) -> OC1PE_W<3> {
+        OC1PE_W::new(self)
     }
-    ///Bit 2 - OC1FE
+    #[doc = "Bit 2 - OC1FE"]
     #[inline(always)]
-    pub fn oc1fe(&mut self) -> OC1FE_W {
-        OC1FE_W { w: self }
+    pub fn oc1fe(&mut self) -> OC1FE_W<2> {
+        OC1FE_W::new(self)
     }
-    ///Bits 0:1 - CC1S
+    #[doc = "Bits 0:1 - CC1S"]
     #[inline(always)]
-    pub fn cc1s(&mut self) -> CC1S_W {
-        CC1S_W { w: self }
+    pub fn cc1s(&mut self) -> CC1S_W<0> {
+        CC1S_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TIM16/TIM17 capture/compare mode register 1
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccmr1_output](index.html) module
+#[doc = "TIM16/TIM17 capture/compare mode register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccmr1_output](index.html) module"]
 pub struct CCMR1_OUTPUT_SPEC;
 impl crate::RegisterSpec for CCMR1_OUTPUT_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccmr1_output::R](R) reader structure
+#[doc = "`read()` method returns [ccmr1_output::R](R) reader structure"]
 impl crate::Readable for CCMR1_OUTPUT_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccmr1_output::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccmr1_output::W](W) writer structure"]
 impl crate::Writable for CCMR1_OUTPUT_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCMR1_Output to value 0
+#[doc = "`reset()` method sets CCMR1_Output to value 0"]
 impl crate::Resettable for CCMR1_OUTPUT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `SWIER2` reader
+#[doc = "Register `SWIER2` reader"]
 pub struct R(crate::R<SWIER2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SWIER2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SWIER2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SWIER2` writer
+#[doc = "Register `SWIER2` writer"]
 pub struct W(crate::W<SWIER2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SWIER2_SPEC>;
@@ -34,13 +34,11 @@ impl From<crate::W<SWIER2_SPEC>> for W {
         W(writer)
     }
 }
-///Software interrupt on event
-///
-///Value on reset: 0
+#[doc = "Software interrupt on event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWI34_A {
-    ///1: Generates an interrupt request
-    PEND = 1,
+    #[doc = "1: Generates an interrupt request"]
+    Pend = 1,
 }
 impl From<SWI34_A> for bool {
     #[inline(always)]
@@ -48,149 +46,82 @@ impl From<SWI34_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SWI34` reader - Software interrupt on event
-pub struct SWI34_R(crate::FieldReader<bool, SWI34_A>);
+#[doc = "Field `SWI34` reader - Software interrupt on event"]
+pub type SWI34_R = crate::BitReader<SWI34_A>;
 impl SWI34_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SWI34_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SWI34_A> {
         match self.bits {
-            true => Some(SWI34_A::PEND),
+            true => Some(SWI34_A::Pend),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PEND`
+    #[doc = "Checks if the value of the field is `Pend`"]
     #[inline(always)]
     pub fn is_pend(&self) -> bool {
-        **self == SWI34_A::PEND
+        *self == SWI34_A::Pend
     }
 }
-impl core::ops::Deref for SWI34_R {
-    type Target = crate::FieldReader<bool, SWI34_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SWI34` writer - Software interrupt on event
-pub struct SWI34_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWI34_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SWI34_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Generates an interrupt request
+#[doc = "Field `SWI34` writer - Software interrupt on event"]
+pub type SWI34_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWIER2_SPEC, SWI34_A, O>;
+impl<'a, const O: u8> SWI34_W<'a, O> {
+    #[doc = "Generates an interrupt request"]
     #[inline(always)]
     pub fn pend(self) -> &'a mut W {
-        self.variant(SWI34_A::PEND)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(SWI34_A::Pend)
     }
 }
-///Software interrupt on event 45
-pub type SWI45_A = SWI34_A;
-///Field `SWI45` reader - Software interrupt on event 45
-pub type SWI45_R = SWI34_R;
-///Field `SWI45` writer - Software interrupt on event 45
-pub struct SWI45_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWI45_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SWI45_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Generates an interrupt request
-    #[inline(always)]
-    pub fn pend(self) -> &'a mut W {
-        self.variant(SWI45_A::PEND)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+#[doc = "Software interrupt on event 45"]
+pub use SWI34_A as SWI45_A;
+#[doc = "Field `SWI45` reader - Software interrupt on event 45"]
+pub use SWI34_R as SWI45_R;
+#[doc = "Field `SWI45` writer - Software interrupt on event 45"]
+pub use SWI34_W as SWI45_W;
 impl R {
-    ///Bit 2 - Software interrupt on event
+    #[doc = "Bit 2 - Software interrupt on event"]
     #[inline(always)]
     pub fn swi34(&self) -> SWI34_R {
-        SWI34_R::new(((self.bits >> 2) & 0x01) != 0)
+        SWI34_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 13 - Software interrupt on event 45
+    #[doc = "Bit 13 - Software interrupt on event 45"]
     #[inline(always)]
     pub fn swi45(&self) -> SWI45_R {
-        SWI45_R::new(((self.bits >> 13) & 0x01) != 0)
+        SWI45_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 2 - Software interrupt on event
+    #[doc = "Bit 2 - Software interrupt on event"]
     #[inline(always)]
-    pub fn swi34(&mut self) -> SWI34_W {
-        SWI34_W { w: self }
+    pub fn swi34(&mut self) -> SWI34_W<2> {
+        SWI34_W::new(self)
     }
-    ///Bit 13 - Software interrupt on event 45
+    #[doc = "Bit 13 - Software interrupt on event 45"]
     #[inline(always)]
-    pub fn swi45(&mut self) -> SWI45_W {
-        SWI45_W { w: self }
+    pub fn swi45(&mut self) -> SWI45_W<13> {
+        SWI45_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///software interrupt event register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [swier2](index.html) module
+#[doc = "software interrupt event register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [swier2](index.html) module"]
 pub struct SWIER2_SPEC;
 impl crate::RegisterSpec for SWIER2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [swier2::R](R) reader structure
+#[doc = "`read()` method returns [swier2::R](R) reader structure"]
 impl crate::Readable for SWIER2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [swier2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [swier2::W](W) writer structure"]
 impl crate::Writable for SWIER2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SWIER2 to value 0
+#[doc = "`reset()` method sets SWIER2 to value 0"]
 impl crate::Resettable for SWIER2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

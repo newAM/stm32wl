@@ -1,4 +1,4 @@
-///Register `ACR2` reader
+#[doc = "Register `ACR2` reader"]
 pub struct R(crate::R<ACR2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ACR2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ACR2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `ACR2` writer
+#[doc = "Register `ACR2` writer"]
 pub struct W(crate::W<ACR2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ACR2_SPEC>;
@@ -34,172 +34,72 @@ impl From<crate::W<ACR2_SPEC>> for W {
         W(writer)
     }
 }
-///Field `PRIVMODE` reader - CFI privileged mode enable
-pub struct PRIVMODE_R(crate::FieldReader<bool, bool>);
-impl PRIVMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRIVMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRIVMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRIVMODE` writer - CFI privileged mode enable
-pub struct PRIVMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRIVMODE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
-///Field `HDPADIS` reader - Flash user hide protection area access disable
-pub struct HDPADIS_R(crate::FieldReader<bool, bool>);
-impl HDPADIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HDPADIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HDPADIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HDPADIS` writer - Flash user hide protection area access disable
-pub struct HDPADIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HDPADIS_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///Field `C2SWDBGEN` reader - CPU2 Software debug enable
-pub struct C2SWDBGEN_R(crate::FieldReader<bool, bool>);
-impl C2SWDBGEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C2SWDBGEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C2SWDBGEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `C2SWDBGEN` writer - CPU2 Software debug enable
-pub struct C2SWDBGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C2SWDBGEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+#[doc = "Field `PRIVMODE` reader - CFI privileged mode enable"]
+pub type PRIVMODE_R = crate::BitReader<bool>;
+#[doc = "Field `PRIVMODE` writer - CFI privileged mode enable"]
+pub type PRIVMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR2_SPEC, bool, O>;
+#[doc = "Field `HDPADIS` reader - Flash user hide protection area access disable"]
+pub type HDPADIS_R = crate::BitReader<bool>;
+#[doc = "Field `HDPADIS` writer - Flash user hide protection area access disable"]
+pub type HDPADIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR2_SPEC, bool, O>;
+#[doc = "Field `C2SWDBGEN` reader - CPU2 Software debug enable"]
+pub type C2SWDBGEN_R = crate::BitReader<bool>;
+#[doc = "Field `C2SWDBGEN` writer - CPU2 Software debug enable"]
+pub type C2SWDBGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR2_SPEC, bool, O>;
 impl R {
-    ///Bit 0 - CFI privileged mode enable
+    #[doc = "Bit 0 - CFI privileged mode enable"]
     #[inline(always)]
     pub fn privmode(&self) -> PRIVMODE_R {
-        PRIVMODE_R::new((self.bits & 0x01) != 0)
+        PRIVMODE_R::new((self.bits & 1) != 0)
     }
-    ///Bit 1 - Flash user hide protection area access disable
+    #[doc = "Bit 1 - Flash user hide protection area access disable"]
     #[inline(always)]
     pub fn hdpadis(&self) -> HDPADIS_R {
-        HDPADIS_R::new(((self.bits >> 1) & 0x01) != 0)
+        HDPADIS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2 - CPU2 Software debug enable
+    #[doc = "Bit 2 - CPU2 Software debug enable"]
     #[inline(always)]
     pub fn c2swdbgen(&self) -> C2SWDBGEN_R {
-        C2SWDBGEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        C2SWDBGEN_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - CFI privileged mode enable
+    #[doc = "Bit 0 - CFI privileged mode enable"]
     #[inline(always)]
-    pub fn privmode(&mut self) -> PRIVMODE_W {
-        PRIVMODE_W { w: self }
+    pub fn privmode(&mut self) -> PRIVMODE_W<0> {
+        PRIVMODE_W::new(self)
     }
-    ///Bit 1 - Flash user hide protection area access disable
+    #[doc = "Bit 1 - Flash user hide protection area access disable"]
     #[inline(always)]
-    pub fn hdpadis(&mut self) -> HDPADIS_W {
-        HDPADIS_W { w: self }
+    pub fn hdpadis(&mut self) -> HDPADIS_W<1> {
+        HDPADIS_W::new(self)
     }
-    ///Bit 2 - CPU2 Software debug enable
+    #[doc = "Bit 2 - CPU2 Software debug enable"]
     #[inline(always)]
-    pub fn c2swdbgen(&mut self) -> C2SWDBGEN_W {
-        C2SWDBGEN_W { w: self }
+    pub fn c2swdbgen(&mut self) -> C2SWDBGEN_W<2> {
+        C2SWDBGEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Flash access control register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [acr2](index.html) module
+#[doc = "Flash access control register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr2](index.html) module"]
 pub struct ACR2_SPEC;
 impl crate::RegisterSpec for ACR2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [acr2::R](R) reader structure
+#[doc = "`read()` method returns [acr2::R](R) reader structure"]
 impl crate::Readable for ACR2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [acr2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [acr2::W](W) writer structure"]
 impl crate::Writable for ACR2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets ACR2 to value 0
+#[doc = "`reset()` method sets ACR2 to value 0"]
 impl crate::Resettable for ACR2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

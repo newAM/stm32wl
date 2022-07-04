@@ -1,4 +1,4 @@
-///Register `OR1` reader
+#[doc = "Register `OR1` reader"]
 pub struct R(crate::R<OR1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<OR1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<OR1_SPEC>> for R {
         R(reader)
     }
 }
-///Register `OR1` writer
+#[doc = "Register `OR1` writer"]
 pub struct W(crate::W<OR1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OR1_SPEC>;
@@ -34,20 +34,18 @@ impl From<crate::W<OR1_SPEC>> for W {
         W(writer)
     }
 }
-///Input capture 4 remap
-///
-///Value on reset: 0
+#[doc = "Input capture 4 remap\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TI4_RMP_A {
-    ///0: TIM2 TI4 is connected to GPIO: Refer to Alternate Function mapping
-    GPIO = 0,
-    ///1: TIM2 TI4 is connected to COMP1_OUT
-    COMP_1 = 1,
-    ///2: TIM2 TI4 is connected to COMP2_OUT
-    COMP_2 = 2,
-    ///3: TIM2 TI4 is connected to a logical OR between COMP1_OUT and COMP2_OUT
-    COMP_12 = 3,
+    #[doc = "0: TIM2 TI4 is connected to GPIO: Refer to Alternate Function mapping"]
+    Gpio = 0,
+    #[doc = "1: TIM2 TI4 is connected to COMP1_OUT"]
+    Comp1 = 1,
+    #[doc = "2: TIM2 TI4 is connected to COMP2_OUT"]
+    Comp2 = 2,
+    #[doc = "3: TIM2 TI4 is connected to a logical OR between COMP1_OUT and COMP2_OUT"]
+    Comp12 = 3,
 }
 impl From<TI4_RMP_A> for u8 {
     #[inline(always)]
@@ -55,97 +53,73 @@ impl From<TI4_RMP_A> for u8 {
         variant as _
     }
 }
-///Field `TI4_RMP` reader - Input capture 4 remap
-pub struct TI4_RMP_R(crate::FieldReader<u8, TI4_RMP_A>);
+#[doc = "Field `TI4_RMP` reader - Input capture 4 remap"]
+pub type TI4_RMP_R = crate::FieldReader<u8, TI4_RMP_A>;
 impl TI4_RMP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TI4_RMP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TI4_RMP_A {
         match self.bits {
-            0 => TI4_RMP_A::GPIO,
-            1 => TI4_RMP_A::COMP_1,
-            2 => TI4_RMP_A::COMP_2,
-            3 => TI4_RMP_A::COMP_12,
+            0 => TI4_RMP_A::Gpio,
+            1 => TI4_RMP_A::Comp1,
+            2 => TI4_RMP_A::Comp2,
+            3 => TI4_RMP_A::Comp12,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `GPIO`
+    #[doc = "Checks if the value of the field is `Gpio`"]
     #[inline(always)]
     pub fn is_gpio(&self) -> bool {
-        **self == TI4_RMP_A::GPIO
+        *self == TI4_RMP_A::Gpio
     }
-    ///Checks if the value of the field is `COMP_1`
+    #[doc = "Checks if the value of the field is `Comp1`"]
     #[inline(always)]
     pub fn is_comp_1(&self) -> bool {
-        **self == TI4_RMP_A::COMP_1
+        *self == TI4_RMP_A::Comp1
     }
-    ///Checks if the value of the field is `COMP_2`
+    #[doc = "Checks if the value of the field is `Comp2`"]
     #[inline(always)]
     pub fn is_comp_2(&self) -> bool {
-        **self == TI4_RMP_A::COMP_2
+        *self == TI4_RMP_A::Comp2
     }
-    ///Checks if the value of the field is `COMP_12`
+    #[doc = "Checks if the value of the field is `Comp12`"]
     #[inline(always)]
     pub fn is_comp_12(&self) -> bool {
-        **self == TI4_RMP_A::COMP_12
+        *self == TI4_RMP_A::Comp12
     }
 }
-impl core::ops::Deref for TI4_RMP_R {
-    type Target = crate::FieldReader<u8, TI4_RMP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TI4_RMP` writer - Input capture 4 remap
-pub struct TI4_RMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TI4_RMP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: TI4_RMP_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///TIM2 TI4 is connected to GPIO: Refer to Alternate Function mapping
+#[doc = "Field `TI4_RMP` writer - Input capture 4 remap"]
+pub type TI4_RMP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, OR1_SPEC, u8, TI4_RMP_A, 2, O>;
+impl<'a, const O: u8> TI4_RMP_W<'a, O> {
+    #[doc = "TIM2 TI4 is connected to GPIO: Refer to Alternate Function mapping"]
     #[inline(always)]
     pub fn gpio(self) -> &'a mut W {
-        self.variant(TI4_RMP_A::GPIO)
+        self.variant(TI4_RMP_A::Gpio)
     }
-    ///TIM2 TI4 is connected to COMP1_OUT
+    #[doc = "TIM2 TI4 is connected to COMP1_OUT"]
     #[inline(always)]
     pub fn comp_1(self) -> &'a mut W {
-        self.variant(TI4_RMP_A::COMP_1)
+        self.variant(TI4_RMP_A::Comp1)
     }
-    ///TIM2 TI4 is connected to COMP2_OUT
+    #[doc = "TIM2 TI4 is connected to COMP2_OUT"]
     #[inline(always)]
     pub fn comp_2(self) -> &'a mut W {
-        self.variant(TI4_RMP_A::COMP_2)
+        self.variant(TI4_RMP_A::Comp2)
     }
-    ///TIM2 TI4 is connected to a logical OR between COMP1_OUT and COMP2_OUT
+    #[doc = "TIM2 TI4 is connected to a logical OR between COMP1_OUT and COMP2_OUT"]
     #[inline(always)]
     pub fn comp_12(self) -> &'a mut W {
-        self.variant(TI4_RMP_A::COMP_12)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
+        self.variant(TI4_RMP_A::Comp12)
     }
 }
-///External trigger remap
-///
-///Value on reset: 0
+#[doc = "External trigger remap\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETR_RMP_A {
-    ///0: TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping
-    GPIO = 0,
-    ///1: LSE internal clock is connected to TIM2_ETR input
-    TIM2_ETR = 1,
+    #[doc = "0: TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
+    Gpio = 0,
+    #[doc = "1: LSE internal clock is connected to TIM2_ETR input"]
+    Tim2Etr = 1,
 }
 impl From<ETR_RMP_A> for bool {
     #[inline(always)]
@@ -153,123 +127,86 @@ impl From<ETR_RMP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ETR_RMP` reader - External trigger remap
-pub struct ETR_RMP_R(crate::FieldReader<bool, ETR_RMP_A>);
+#[doc = "Field `ETR_RMP` reader - External trigger remap"]
+pub type ETR_RMP_R = crate::BitReader<ETR_RMP_A>;
 impl ETR_RMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ETR_RMP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ETR_RMP_A {
         match self.bits {
-            false => ETR_RMP_A::GPIO,
-            true => ETR_RMP_A::TIM2_ETR,
+            false => ETR_RMP_A::Gpio,
+            true => ETR_RMP_A::Tim2Etr,
         }
     }
-    ///Checks if the value of the field is `GPIO`
+    #[doc = "Checks if the value of the field is `Gpio`"]
     #[inline(always)]
     pub fn is_gpio(&self) -> bool {
-        **self == ETR_RMP_A::GPIO
+        *self == ETR_RMP_A::Gpio
     }
-    ///Checks if the value of the field is `TIM2_ETR`
+    #[doc = "Checks if the value of the field is `Tim2Etr`"]
     #[inline(always)]
     pub fn is_tim2_etr(&self) -> bool {
-        **self == ETR_RMP_A::TIM2_ETR
+        *self == ETR_RMP_A::Tim2Etr
     }
 }
-impl core::ops::Deref for ETR_RMP_R {
-    type Target = crate::FieldReader<bool, ETR_RMP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ETR_RMP` writer - External trigger remap
-pub struct ETR_RMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETR_RMP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ETR_RMP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping
+#[doc = "Field `ETR_RMP` writer - External trigger remap"]
+pub type ETR_RMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR1_SPEC, ETR_RMP_A, O>;
+impl<'a, const O: u8> ETR_RMP_W<'a, O> {
+    #[doc = "TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
     #[inline(always)]
     pub fn gpio(self) -> &'a mut W {
-        self.variant(ETR_RMP_A::GPIO)
+        self.variant(ETR_RMP_A::Gpio)
     }
-    ///LSE internal clock is connected to TIM2_ETR input
+    #[doc = "LSE internal clock is connected to TIM2_ETR input"]
     #[inline(always)]
     pub fn tim2_etr(self) -> &'a mut W {
-        self.variant(ETR_RMP_A::TIM2_ETR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(ETR_RMP_A::Tim2Etr)
     }
 }
 impl R {
-    ///Bits 2:3 - Input capture 4 remap
+    #[doc = "Bits 2:3 - Input capture 4 remap"]
     #[inline(always)]
     pub fn ti4_rmp(&self) -> TI4_RMP_R {
-        TI4_RMP_R::new(((self.bits >> 2) & 0x03) as u8)
+        TI4_RMP_R::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bit 1 - External trigger remap
+    #[doc = "Bit 1 - External trigger remap"]
     #[inline(always)]
     pub fn etr_rmp(&self) -> ETR_RMP_R {
-        ETR_RMP_R::new(((self.bits >> 1) & 0x01) != 0)
+        ETR_RMP_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
-    ///Bits 2:3 - Input capture 4 remap
+    #[doc = "Bits 2:3 - Input capture 4 remap"]
     #[inline(always)]
-    pub fn ti4_rmp(&mut self) -> TI4_RMP_W {
-        TI4_RMP_W { w: self }
+    pub fn ti4_rmp(&mut self) -> TI4_RMP_W<2> {
+        TI4_RMP_W::new(self)
     }
-    ///Bit 1 - External trigger remap
+    #[doc = "Bit 1 - External trigger remap"]
     #[inline(always)]
-    pub fn etr_rmp(&mut self) -> ETR_RMP_W {
-        ETR_RMP_W { w: self }
+    pub fn etr_rmp(&mut self) -> ETR_RMP_W<1> {
+        ETR_RMP_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TIM2 option register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [or1](index.html) module
+#[doc = "TIM2 option register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [or1](index.html) module"]
 pub struct OR1_SPEC;
 impl crate::RegisterSpec for OR1_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [or1::R](R) reader structure
+#[doc = "`read()` method returns [or1::R](R) reader structure"]
 impl crate::Readable for OR1_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [or1::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [or1::W](W) writer structure"]
 impl crate::Writable for OR1_SPEC {
     type Writer = W;
 }
-///`reset()` method sets OR1 to value 0
+#[doc = "`reset()` method sets OR1 to value 0"]
 impl crate::Resettable for OR1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

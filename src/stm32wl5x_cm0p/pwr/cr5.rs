@@ -1,4 +1,4 @@
-///Register `CR5` reader
+#[doc = "Register `CR5` reader"]
 pub struct R(crate::R<CR5_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CR5_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CR5_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CR5` writer
+#[doc = "Register `CR5` writer"]
 pub struct W(crate::W<CR5_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CR5_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CR5_SPEC>> for W {
         W(writer)
     }
 }
-///Enable SMPS Step Down converter SMPS mode enabled.
-///
-///Value on reset: 0
+#[doc = "Enable SMPS Step Down converter SMPS mode enabled.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMPSEN_A {
-    ///0: SMPS step-down converter SMPS mode disabled (LDO mode enabled)
-    DISABLED = 0,
-    ///1: SMPS step-down converter SMPS mode enabled
-    ENABLED = 1,
+    #[doc = "0: SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
+    Disabled = 0,
+    #[doc = "1: SMPS step-down converter SMPS mode enabled"]
+    Enabled = 1,
 }
 impl From<SMPSEN_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<SMPSEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SMPSEN` reader - Enable SMPS Step Down converter SMPS mode enabled.
-pub struct SMPSEN_R(crate::FieldReader<bool, SMPSEN_A>);
+#[doc = "Field `SMPSEN` reader - Enable SMPS Step Down converter SMPS mode enabled."]
+pub type SMPSEN_R = crate::BitReader<SMPSEN_A>;
 impl SMPSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMPSEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMPSEN_A {
         match self.bits {
-            false => SMPSEN_A::DISABLED,
-            true => SMPSEN_A::ENABLED,
+            false => SMPSEN_A::Disabled,
+            true => SMPSEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SMPSEN_A::DISABLED
+        *self == SMPSEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SMPSEN_A::ENABLED
+        *self == SMPSEN_A::Enabled
     }
 }
-impl core::ops::Deref for SMPSEN_R {
-    type Target = crate::FieldReader<bool, SMPSEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SMPSEN` writer - Enable SMPS Step Down converter SMPS mode enabled.
-pub struct SMPSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMPSEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SMPSEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///SMPS step-down converter SMPS mode disabled (LDO mode enabled)
+#[doc = "Field `SMPSEN` writer - Enable SMPS Step Down converter SMPS mode enabled."]
+pub type SMPSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR5_SPEC, SMPSEN_A, O>;
+impl<'a, const O: u8> SMPSEN_W<'a, O> {
+    #[doc = "SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SMPSEN_A::DISABLED)
+        self.variant(SMPSEN_A::Disabled)
     }
-    ///SMPS step-down converter SMPS mode enabled
+    #[doc = "SMPS step-down converter SMPS mode enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(SMPSEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(SMPSEN_A::Enabled)
     }
 }
-///Enable Radio End Of Life detector enabled
-///
-///Value on reset: 0
+#[doc = "Enable Radio End Of Life detector enabled\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFEOLEN_A {
-    ///0: Radio end-of-life detector disabled
-    DISABLED = 0,
-    ///1: Radio end-of-life detector enabled
-    ENABLED = 1,
+    #[doc = "0: Radio end-of-life detector disabled"]
+    Disabled = 0,
+    #[doc = "1: Radio end-of-life detector enabled"]
+    Enabled = 1,
 }
 impl From<RFEOLEN_A> for bool {
     #[inline(always)]
@@ -135,123 +98,86 @@ impl From<RFEOLEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `RFEOLEN` reader - Enable Radio End Of Life detector enabled
-pub struct RFEOLEN_R(crate::FieldReader<bool, RFEOLEN_A>);
+#[doc = "Field `RFEOLEN` reader - Enable Radio End Of Life detector enabled"]
+pub type RFEOLEN_R = crate::BitReader<RFEOLEN_A>;
 impl RFEOLEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RFEOLEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RFEOLEN_A {
         match self.bits {
-            false => RFEOLEN_A::DISABLED,
-            true => RFEOLEN_A::ENABLED,
+            false => RFEOLEN_A::Disabled,
+            true => RFEOLEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RFEOLEN_A::DISABLED
+        *self == RFEOLEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RFEOLEN_A::ENABLED
+        *self == RFEOLEN_A::Enabled
     }
 }
-impl core::ops::Deref for RFEOLEN_R {
-    type Target = crate::FieldReader<bool, RFEOLEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RFEOLEN` writer - Enable Radio End Of Life detector enabled
-pub struct RFEOLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFEOLEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RFEOLEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Radio end-of-life detector disabled
+#[doc = "Field `RFEOLEN` writer - Enable Radio End Of Life detector enabled"]
+pub type RFEOLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR5_SPEC, RFEOLEN_A, O>;
+impl<'a, const O: u8> RFEOLEN_W<'a, O> {
+    #[doc = "Radio end-of-life detector disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(RFEOLEN_A::DISABLED)
+        self.variant(RFEOLEN_A::Disabled)
     }
-    ///Radio end-of-life detector enabled
+    #[doc = "Radio end-of-life detector enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(RFEOLEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
+        self.variant(RFEOLEN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 15 - Enable SMPS Step Down converter SMPS mode enabled.
+    #[doc = "Bit 15 - Enable SMPS Step Down converter SMPS mode enabled."]
     #[inline(always)]
     pub fn smpsen(&self) -> SMPSEN_R {
-        SMPSEN_R::new(((self.bits >> 15) & 0x01) != 0)
+        SMPSEN_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 14 - Enable Radio End Of Life detector enabled
+    #[doc = "Bit 14 - Enable Radio End Of Life detector enabled"]
     #[inline(always)]
     pub fn rfeolen(&self) -> RFEOLEN_R {
-        RFEOLEN_R::new(((self.bits >> 14) & 0x01) != 0)
+        RFEOLEN_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 15 - Enable SMPS Step Down converter SMPS mode enabled.
+    #[doc = "Bit 15 - Enable SMPS Step Down converter SMPS mode enabled."]
     #[inline(always)]
-    pub fn smpsen(&mut self) -> SMPSEN_W {
-        SMPSEN_W { w: self }
+    pub fn smpsen(&mut self) -> SMPSEN_W<15> {
+        SMPSEN_W::new(self)
     }
-    ///Bit 14 - Enable Radio End Of Life detector enabled
+    #[doc = "Bit 14 - Enable Radio End Of Life detector enabled"]
     #[inline(always)]
-    pub fn rfeolen(&mut self) -> RFEOLEN_W {
-        RFEOLEN_W { w: self }
+    pub fn rfeolen(&mut self) -> RFEOLEN_W<14> {
+        RFEOLEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Power control register 5
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [cr5](index.html) module
+#[doc = "Power control register 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr5](index.html) module"]
 pub struct CR5_SPEC;
 impl crate::RegisterSpec for CR5_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [cr5::R](R) reader structure
+#[doc = "`read()` method returns [cr5::R](R) reader structure"]
 impl crate::Readable for CR5_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [cr5::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [cr5::W](W) writer structure"]
 impl crate::Writable for CR5_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CR5 to value 0
+#[doc = "`reset()` method sets CR5 to value 0"]
 impl crate::Resettable for CR5_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

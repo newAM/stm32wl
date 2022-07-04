@@ -1,4 +1,4 @@
-///Register `CCR4` reader
+#[doc = "Register `CCR4` reader"]
 pub struct R(crate::R<CCR4_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCR4_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCR4_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCR4` writer
+#[doc = "Register `CCR4` writer"]
 pub struct W(crate::W<CCR4_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCR4_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<CCR4_SPEC>> for W {
         W(writer)
     }
 }
-///Field `CCR4` reader - Capture/Compare value
-pub struct CCR4_R(crate::FieldReader<u16, u16>);
-impl CCR4_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CCR4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CCR4_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CCR4` writer - Capture/Compare value
-pub struct CCR4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCR4_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+#[doc = "Field `CCR4` reader - Capture/Compare value"]
+pub type CCR4_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CCR4` writer - Capture/Compare value"]
+pub type CCR4_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CCR4_SPEC, u16, u16, 16, O>;
 impl R {
-    ///Bits 0:15 - Capture/Compare value
+    #[doc = "Bits 0:15 - Capture/Compare value"]
     #[inline(always)]
     pub fn ccr4(&self) -> CCR4_R {
         CCR4_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    ///Bits 0:15 - Capture/Compare value
+    #[doc = "Bits 0:15 - Capture/Compare value"]
     #[inline(always)]
-    pub fn ccr4(&mut self) -> CCR4_W {
-        CCR4_W { w: self }
+    pub fn ccr4(&mut self) -> CCR4_W<0> {
+        CCR4_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///capture/compare register 4
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccr4](index.html) module
+#[doc = "capture/compare register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr4](index.html) module"]
 pub struct CCR4_SPEC;
 impl crate::RegisterSpec for CCR4_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccr4::R](R) reader structure
+#[doc = "`read()` method returns [ccr4::R](R) reader structure"]
 impl crate::Readable for CCR4_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccr4::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccr4::W](W) writer structure"]
 impl crate::Writable for CCR4_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCR4 to value 0
+#[doc = "`reset()` method sets CCR4 to value 0"]
 impl crate::Resettable for CCR4_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

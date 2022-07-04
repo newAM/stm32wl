@@ -1,4 +1,4 @@
-///Register `I2SPR` reader
+#[doc = "Register `I2SPR` reader"]
 pub struct R(crate::R<I2SPR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<I2SPR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<I2SPR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `I2SPR` writer
+#[doc = "Register `I2SPR` writer"]
 pub struct W(crate::W<I2SPR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<I2SPR_SPEC>;
@@ -34,41 +34,17 @@ impl From<crate::W<I2SPR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `I2SDIV` reader - I2SDIV
-pub struct I2SDIV_R(crate::FieldReader<u8, u8>);
-impl I2SDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        I2SDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for I2SDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `I2SDIV` writer - I2SDIV
-pub struct I2SDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2SDIV_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
-///ODD
-///
-///Value on reset: 0
+#[doc = "Field `I2SDIV` reader - I2SDIV"]
+pub type I2SDIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `I2SDIV` writer - I2SDIV"]
+pub type I2SDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, I2SPR_SPEC, u8, u8, 8, O>;
+#[doc = "ODD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODD_A {
-    ///0: Real divider value is I2SDIV * 2
-    EVEN = 0,
-    ///1: Real divider value is (I2SDIV * 2) + 1
-    ODD = 1,
+    #[doc = "0: Real divider value is I2SDIV * 2"]
+    Even = 0,
+    #[doc = "1: Real divider value is (I2SDIV * 2) + 1"]
+    Odd = 1,
 }
 impl From<ODD_A> for bool {
     #[inline(always)]
@@ -76,84 +52,49 @@ impl From<ODD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ODD` reader - ODD
-pub struct ODD_R(crate::FieldReader<bool, ODD_A>);
+#[doc = "Field `ODD` reader - ODD"]
+pub type ODD_R = crate::BitReader<ODD_A>;
 impl ODD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ODD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ODD_A {
         match self.bits {
-            false => ODD_A::EVEN,
-            true => ODD_A::ODD,
+            false => ODD_A::Even,
+            true => ODD_A::Odd,
         }
     }
-    ///Checks if the value of the field is `EVEN`
+    #[doc = "Checks if the value of the field is `Even`"]
     #[inline(always)]
     pub fn is_even(&self) -> bool {
-        **self == ODD_A::EVEN
+        *self == ODD_A::Even
     }
-    ///Checks if the value of the field is `ODD`
+    #[doc = "Checks if the value of the field is `Odd`"]
     #[inline(always)]
     pub fn is_odd(&self) -> bool {
-        **self == ODD_A::ODD
+        *self == ODD_A::Odd
     }
 }
-impl core::ops::Deref for ODD_R {
-    type Target = crate::FieldReader<bool, ODD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ODD` writer - ODD
-pub struct ODD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ODD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ODD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Real divider value is I2SDIV * 2
+#[doc = "Field `ODD` writer - ODD"]
+pub type ODD_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SPR_SPEC, ODD_A, O>;
+impl<'a, const O: u8> ODD_W<'a, O> {
+    #[doc = "Real divider value is I2SDIV * 2"]
     #[inline(always)]
     pub fn even(self) -> &'a mut W {
-        self.variant(ODD_A::EVEN)
+        self.variant(ODD_A::Even)
     }
-    ///Real divider value is (I2SDIV * 2) + 1
+    #[doc = "Real divider value is (I2SDIV * 2) + 1"]
     #[inline(always)]
     pub fn odd(self) -> &'a mut W {
-        self.variant(ODD_A::ODD)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(ODD_A::Odd)
     }
 }
-///MCKOE
-///
-///Value on reset: 0
+#[doc = "MCKOE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCKOE_A {
-    ///0: Master clock output is disabled
-    DISABLED = 0,
-    ///1: Master clock output is enabled
-    ENABLED = 1,
+    #[doc = "0: Master clock output is disabled"]
+    Disabled = 0,
+    #[doc = "1: Master clock output is enabled"]
+    Enabled = 1,
 }
 impl From<MCKOE_A> for bool {
     #[inline(always)]
@@ -161,133 +102,96 @@ impl From<MCKOE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `MCKOE` reader - MCKOE
-pub struct MCKOE_R(crate::FieldReader<bool, MCKOE_A>);
+#[doc = "Field `MCKOE` reader - MCKOE"]
+pub type MCKOE_R = crate::BitReader<MCKOE_A>;
 impl MCKOE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MCKOE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCKOE_A {
         match self.bits {
-            false => MCKOE_A::DISABLED,
-            true => MCKOE_A::ENABLED,
+            false => MCKOE_A::Disabled,
+            true => MCKOE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == MCKOE_A::DISABLED
+        *self == MCKOE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == MCKOE_A::ENABLED
+        *self == MCKOE_A::Enabled
     }
 }
-impl core::ops::Deref for MCKOE_R {
-    type Target = crate::FieldReader<bool, MCKOE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `MCKOE` writer - MCKOE
-pub struct MCKOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCKOE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: MCKOE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Master clock output is disabled
+#[doc = "Field `MCKOE` writer - MCKOE"]
+pub type MCKOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2SPR_SPEC, MCKOE_A, O>;
+impl<'a, const O: u8> MCKOE_W<'a, O> {
+    #[doc = "Master clock output is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(MCKOE_A::DISABLED)
+        self.variant(MCKOE_A::Disabled)
     }
-    ///Master clock output is enabled
+    #[doc = "Master clock output is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(MCKOE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(MCKOE_A::Enabled)
     }
 }
 impl R {
-    ///Bits 0:7 - I2SDIV
+    #[doc = "Bits 0:7 - I2SDIV"]
     #[inline(always)]
     pub fn i2sdiv(&self) -> I2SDIV_R {
         I2SDIV_R::new((self.bits & 0xff) as u8)
     }
-    ///Bit 8 - ODD
+    #[doc = "Bit 8 - ODD"]
     #[inline(always)]
     pub fn odd(&self) -> ODD_R {
-        ODD_R::new(((self.bits >> 8) & 0x01) != 0)
+        ODD_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 9 - MCKOE
+    #[doc = "Bit 9 - MCKOE"]
     #[inline(always)]
     pub fn mckoe(&self) -> MCKOE_R {
-        MCKOE_R::new(((self.bits >> 9) & 0x01) != 0)
+        MCKOE_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
-    ///Bits 0:7 - I2SDIV
+    #[doc = "Bits 0:7 - I2SDIV"]
     #[inline(always)]
-    pub fn i2sdiv(&mut self) -> I2SDIV_W {
-        I2SDIV_W { w: self }
+    pub fn i2sdiv(&mut self) -> I2SDIV_W<0> {
+        I2SDIV_W::new(self)
     }
-    ///Bit 8 - ODD
+    #[doc = "Bit 8 - ODD"]
     #[inline(always)]
-    pub fn odd(&mut self) -> ODD_W {
-        ODD_W { w: self }
+    pub fn odd(&mut self) -> ODD_W<8> {
+        ODD_W::new(self)
     }
-    ///Bit 9 - MCKOE
+    #[doc = "Bit 9 - MCKOE"]
     #[inline(always)]
-    pub fn mckoe(&mut self) -> MCKOE_W {
-        MCKOE_W { w: self }
+    pub fn mckoe(&mut self) -> MCKOE_W<9> {
+        MCKOE_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///prescaler register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [i2spr](index.html) module
+#[doc = "prescaler register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2spr](index.html) module"]
 pub struct I2SPR_SPEC;
 impl crate::RegisterSpec for I2SPR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [i2spr::R](R) reader structure
+#[doc = "`read()` method returns [i2spr::R](R) reader structure"]
 impl crate::Readable for I2SPR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [i2spr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [i2spr::W](W) writer structure"]
 impl crate::Writable for I2SPR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets I2SPR to value 0x02
+#[doc = "`reset()` method sets I2SPR to value 0x02"]
 impl crate::Resettable for I2SPR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

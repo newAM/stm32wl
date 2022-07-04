@@ -1,4 +1,4 @@
-///Register `CSR` reader
+#[doc = "Register `CSR` reader"]
 pub struct R(crate::R<CSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CSR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CSR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CSR` writer
+#[doc = "Register `CSR` writer"]
 pub struct W(crate::W<CSR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CSR_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CSR_SPEC>> for W {
         W(writer)
     }
 }
-///Voltage reference buffer ready
-///
-///Value on reset: 0
+#[doc = "Voltage reference buffer ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VRR_A {
-    ///0: The voltage reference buffer output is not ready
-    NOTREADY = 0,
-    ///1: The voltage reference buffer output reached the requested level
-    READY = 1,
+    #[doc = "0: The voltage reference buffer output is not ready"]
+    NotReady = 0,
+    #[doc = "1: The voltage reference buffer output reached the requested level"]
+    Ready = 1,
 }
 impl From<VRR_A> for bool {
     #[inline(always)]
@@ -50,47 +48,35 @@ impl From<VRR_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `VRR` reader - Voltage reference buffer ready
-pub struct VRR_R(crate::FieldReader<bool, VRR_A>);
+#[doc = "Field `VRR` reader - Voltage reference buffer ready"]
+pub type VRR_R = crate::BitReader<VRR_A>;
 impl VRR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VRR_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VRR_A {
         match self.bits {
-            false => VRR_A::NOTREADY,
-            true => VRR_A::READY,
+            false => VRR_A::NotReady,
+            true => VRR_A::Ready,
         }
     }
-    ///Checks if the value of the field is `NOTREADY`
+    #[doc = "Checks if the value of the field is `NotReady`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        **self == VRR_A::NOTREADY
+        *self == VRR_A::NotReady
     }
-    ///Checks if the value of the field is `READY`
+    #[doc = "Checks if the value of the field is `Ready`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == VRR_A::READY
+        *self == VRR_A::Ready
     }
 }
-impl core::ops::Deref for VRR_R {
-    type Target = crate::FieldReader<bool, VRR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Voltage reference scale
-///
-///Value on reset: 0
+#[doc = "Voltage reference scale\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VRS_A {
-    ///0: Voltage reference set to VREF_OUT1 (around 2.048 V)
-    V2_048 = 0,
-    ///1: Voltage reference set to VREF_OUT2 (around 2.5 V)
-    V2_5 = 1,
+    #[doc = "0: Voltage reference set to VREF_OUT1 (around 2.048 V)"]
+    V2048 = 0,
+    #[doc = "1: Voltage reference set to VREF_OUT2 (around 2.5 V)"]
+    V25 = 1,
 }
 impl From<VRS_A> for bool {
     #[inline(always)]
@@ -98,84 +84,49 @@ impl From<VRS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `VRS` reader - Voltage reference scale
-pub struct VRS_R(crate::FieldReader<bool, VRS_A>);
+#[doc = "Field `VRS` reader - Voltage reference scale"]
+pub type VRS_R = crate::BitReader<VRS_A>;
 impl VRS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VRS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VRS_A {
         match self.bits {
-            false => VRS_A::V2_048,
-            true => VRS_A::V2_5,
+            false => VRS_A::V2048,
+            true => VRS_A::V25,
         }
     }
-    ///Checks if the value of the field is `V2_048`
+    #[doc = "Checks if the value of the field is `V2048`"]
     #[inline(always)]
     pub fn is_v2_048(&self) -> bool {
-        **self == VRS_A::V2_048
+        *self == VRS_A::V2048
     }
-    ///Checks if the value of the field is `V2_5`
+    #[doc = "Checks if the value of the field is `V25`"]
     #[inline(always)]
     pub fn is_v2_5(&self) -> bool {
-        **self == VRS_A::V2_5
+        *self == VRS_A::V25
     }
 }
-impl core::ops::Deref for VRS_R {
-    type Target = crate::FieldReader<bool, VRS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `VRS` writer - Voltage reference scale
-pub struct VRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VRS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: VRS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Voltage reference set to VREF_OUT1 (around 2.048 V)
+#[doc = "Field `VRS` writer - Voltage reference scale"]
+pub type VRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, VRS_A, O>;
+impl<'a, const O: u8> VRS_W<'a, O> {
+    #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)"]
     #[inline(always)]
     pub fn v2_048(self) -> &'a mut W {
-        self.variant(VRS_A::V2_048)
+        self.variant(VRS_A::V2048)
     }
-    ///Voltage reference set to VREF_OUT2 (around 2.5 V)
+    #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)"]
     #[inline(always)]
     pub fn v2_5(self) -> &'a mut W {
-        self.variant(VRS_A::V2_5)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(VRS_A::V25)
     }
 }
-///High impedance mode
-///
-///Value on reset: 1
+#[doc = "High impedance mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIZ_A {
-    ///0: VREF+ pin is internally connected to the voltage reference buffer output
-    CONNECTED = 0,
-    ///1: VREF+ pin is high impedance
-    HIGHZ = 1,
+    #[doc = "0: VREF+ pin is internally connected to the voltage reference buffer output"]
+    Connected = 0,
+    #[doc = "1: VREF+ pin is high impedance"]
+    HighZ = 1,
 }
 impl From<HIZ_A> for bool {
     #[inline(always)]
@@ -183,84 +134,49 @@ impl From<HIZ_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HIZ` reader - High impedance mode
-pub struct HIZ_R(crate::FieldReader<bool, HIZ_A>);
+#[doc = "Field `HIZ` reader - High impedance mode"]
+pub type HIZ_R = crate::BitReader<HIZ_A>;
 impl HIZ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HIZ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HIZ_A {
         match self.bits {
-            false => HIZ_A::CONNECTED,
-            true => HIZ_A::HIGHZ,
+            false => HIZ_A::Connected,
+            true => HIZ_A::HighZ,
         }
     }
-    ///Checks if the value of the field is `CONNECTED`
+    #[doc = "Checks if the value of the field is `Connected`"]
     #[inline(always)]
     pub fn is_connected(&self) -> bool {
-        **self == HIZ_A::CONNECTED
+        *self == HIZ_A::Connected
     }
-    ///Checks if the value of the field is `HIGHZ`
+    #[doc = "Checks if the value of the field is `HighZ`"]
     #[inline(always)]
     pub fn is_high_z(&self) -> bool {
-        **self == HIZ_A::HIGHZ
+        *self == HIZ_A::HighZ
     }
 }
-impl core::ops::Deref for HIZ_R {
-    type Target = crate::FieldReader<bool, HIZ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HIZ` writer - High impedance mode
-pub struct HIZ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIZ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HIZ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///VREF+ pin is internally connected to the voltage reference buffer output
+#[doc = "Field `HIZ` writer - High impedance mode"]
+pub type HIZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, HIZ_A, O>;
+impl<'a, const O: u8> HIZ_W<'a, O> {
+    #[doc = "VREF+ pin is internally connected to the voltage reference buffer output"]
     #[inline(always)]
     pub fn connected(self) -> &'a mut W {
-        self.variant(HIZ_A::CONNECTED)
+        self.variant(HIZ_A::Connected)
     }
-    ///VREF+ pin is high impedance
+    #[doc = "VREF+ pin is high impedance"]
     #[inline(always)]
     pub fn high_z(self) -> &'a mut W {
-        self.variant(HIZ_A::HIGHZ)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(HIZ_A::HighZ)
     }
 }
-///Voltage reference buffer mode enable
-///
-///Value on reset: 0
+#[doc = "Voltage reference buffer mode enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENVR_A {
-    ///0: Internal voltage reference mode disable (external voltage reference mode)
-    DISABLED = 0,
-    ///1: Internal voltage reference mode (reference buffer enable or hold mode) enable
-    ENABLED = 1,
+    #[doc = "0: Internal voltage reference mode disable (external voltage reference mode)"]
+    Disabled = 0,
+    #[doc = "1: Internal voltage reference mode (reference buffer enable or hold mode) enable"]
+    Enabled = 1,
 }
 impl From<ENVR_A> for bool {
     #[inline(always)]
@@ -268,138 +184,101 @@ impl From<ENVR_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ENVR` reader - Voltage reference buffer mode enable
-pub struct ENVR_R(crate::FieldReader<bool, ENVR_A>);
+#[doc = "Field `ENVR` reader - Voltage reference buffer mode enable"]
+pub type ENVR_R = crate::BitReader<ENVR_A>;
 impl ENVR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENVR_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENVR_A {
         match self.bits {
-            false => ENVR_A::DISABLED,
-            true => ENVR_A::ENABLED,
+            false => ENVR_A::Disabled,
+            true => ENVR_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ENVR_A::DISABLED
+        *self == ENVR_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ENVR_A::ENABLED
+        *self == ENVR_A::Enabled
     }
 }
-impl core::ops::Deref for ENVR_R {
-    type Target = crate::FieldReader<bool, ENVR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ENVR` writer - Voltage reference buffer mode enable
-pub struct ENVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENVR_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ENVR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Internal voltage reference mode disable (external voltage reference mode)
+#[doc = "Field `ENVR` writer - Voltage reference buffer mode enable"]
+pub type ENVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, ENVR_A, O>;
+impl<'a, const O: u8> ENVR_W<'a, O> {
+    #[doc = "Internal voltage reference mode disable (external voltage reference mode)"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ENVR_A::DISABLED)
+        self.variant(ENVR_A::Disabled)
     }
-    ///Internal voltage reference mode (reference buffer enable or hold mode) enable
+    #[doc = "Internal voltage reference mode (reference buffer enable or hold mode) enable"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ENVR_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(ENVR_A::Enabled)
     }
 }
 impl R {
-    ///Bit 3 - Voltage reference buffer ready
+    #[doc = "Bit 3 - Voltage reference buffer ready"]
     #[inline(always)]
     pub fn vrr(&self) -> VRR_R {
-        VRR_R::new(((self.bits >> 3) & 0x01) != 0)
+        VRR_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 2 - Voltage reference scale
+    #[doc = "Bit 2 - Voltage reference scale"]
     #[inline(always)]
     pub fn vrs(&self) -> VRS_R {
-        VRS_R::new(((self.bits >> 2) & 0x01) != 0)
+        VRS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - High impedance mode
+    #[doc = "Bit 1 - High impedance mode"]
     #[inline(always)]
     pub fn hiz(&self) -> HIZ_R {
-        HIZ_R::new(((self.bits >> 1) & 0x01) != 0)
+        HIZ_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Voltage reference buffer mode enable
+    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
     #[inline(always)]
     pub fn envr(&self) -> ENVR_R {
-        ENVR_R::new((self.bits & 0x01) != 0)
+        ENVR_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 2 - Voltage reference scale
+    #[doc = "Bit 2 - Voltage reference scale"]
     #[inline(always)]
-    pub fn vrs(&mut self) -> VRS_W {
-        VRS_W { w: self }
+    pub fn vrs(&mut self) -> VRS_W<2> {
+        VRS_W::new(self)
     }
-    ///Bit 1 - High impedance mode
+    #[doc = "Bit 1 - High impedance mode"]
     #[inline(always)]
-    pub fn hiz(&mut self) -> HIZ_W {
-        HIZ_W { w: self }
+    pub fn hiz(&mut self) -> HIZ_W<1> {
+        HIZ_W::new(self)
     }
-    ///Bit 0 - Voltage reference buffer mode enable
+    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
     #[inline(always)]
-    pub fn envr(&mut self) -> ENVR_W {
-        ENVR_W { w: self }
+    pub fn envr(&mut self) -> ENVR_W<0> {
+        ENVR_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///control and status register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [csr](index.html) module
+#[doc = "control and status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr](index.html) module"]
 pub struct CSR_SPEC;
 impl crate::RegisterSpec for CSR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [csr::R](R) reader structure
+#[doc = "`read()` method returns [csr::R](R) reader structure"]
 impl crate::Readable for CSR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [csr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [csr::W](W) writer structure"]
 impl crate::Writable for CSR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CSR to value 0x02
+#[doc = "`reset()` method sets CSR to value 0x02"]
 impl crate::Resettable for CSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

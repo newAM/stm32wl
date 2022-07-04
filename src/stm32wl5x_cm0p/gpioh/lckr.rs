@@ -1,4 +1,4 @@
-///Register `LCKR` reader
+#[doc = "Register `LCKR` reader"]
 pub struct R(crate::R<LCKR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LCKR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LCKR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `LCKR` writer
+#[doc = "Register `LCKR` writer"]
 pub struct W(crate::W<LCKR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LCKR_SPEC>;
@@ -34,126 +34,150 @@ impl From<crate::W<LCKR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `LCKK` reader - Port x lock bit y (y= 0..15)
-pub struct LCKK_R(crate::FieldReader<bool, bool>);
+#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCKK_A {
+    #[doc = "0: Port configuration lock key not active"]
+    NotActive = 0,
+    #[doc = "1: Port configuration lock key active"]
+    Active = 1,
+}
+impl From<LCKK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LCKK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LCKK` reader - Port x lock bit y (y= 0..15)"]
+pub type LCKK_R = crate::BitReader<LCKK_A>;
 impl LCKK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCKK_R(crate::FieldReader::new(bits))
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCKK_A {
+        match self.bits {
+            false => LCKK_A::NotActive,
+            true => LCKK_A::Active,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotActive`"]
+    #[inline(always)]
+    pub fn is_not_active(&self) -> bool {
+        *self == LCKK_A::NotActive
+    }
+    #[doc = "Checks if the value of the field is `Active`"]
+    #[inline(always)]
+    pub fn is_active(&self) -> bool {
+        *self == LCKK_A::Active
     }
 }
-impl core::ops::Deref for LCKK_R {
-    type Target = crate::FieldReader<bool, bool>;
+#[doc = "Field `LCKK` writer - Port x lock bit y (y= 0..15)"]
+pub type LCKK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCKK_A, O>;
+impl<'a, const O: u8> LCKK_W<'a, O> {
+    #[doc = "Port configuration lock key not active"]
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    pub fn not_active(self) -> &'a mut W {
+        self.variant(LCKK_A::NotActive)
+    }
+    #[doc = "Port configuration lock key active"]
+    #[inline(always)]
+    pub fn active(self) -> &'a mut W {
+        self.variant(LCKK_A::Active)
     }
 }
-///Field `LCKK` writer - Port x lock bit y (y= 0..15)
-pub struct LCKK_W<'a> {
-    w: &'a mut W,
+#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCK3_A {
+    #[doc = "0: Port configuration not locked"]
+    Unlocked = 0,
+    #[doc = "1: Port configuration locked"]
+    Locked = 1,
 }
-impl<'a> LCKK_W<'a> {
-    ///Sets the field bit
+impl From<LCK3_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+    fn from(variant: LCK3_A) -> Self {
+        variant as u8 != 0
     }
 }
-///Field `LCK3` reader - Port x lock bit y (y= 0..15)
-pub struct LCK3_R(crate::FieldReader<bool, bool>);
+#[doc = "Field `LCK3` reader - Port x lock bit y (y= 0..15)"]
+pub type LCK3_R = crate::BitReader<LCK3_A>;
 impl LCK3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LCK3_R(crate::FieldReader::new(bits))
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCK3_A {
+        match self.bits {
+            false => LCK3_A::Unlocked,
+            true => LCK3_A::Locked,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Unlocked`"]
+    #[inline(always)]
+    pub fn is_unlocked(&self) -> bool {
+        *self == LCK3_A::Unlocked
+    }
+    #[doc = "Checks if the value of the field is `Locked`"]
+    #[inline(always)]
+    pub fn is_locked(&self) -> bool {
+        *self == LCK3_A::Locked
     }
 }
-impl core::ops::Deref for LCK3_R {
-    type Target = crate::FieldReader<bool, bool>;
+#[doc = "Field `LCK3` writer - Port x lock bit y (y= 0..15)"]
+pub type LCK3_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCK3_A, O>;
+impl<'a, const O: u8> LCK3_W<'a, O> {
+    #[doc = "Port configuration not locked"]
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    pub fn unlocked(self) -> &'a mut W {
+        self.variant(LCK3_A::Unlocked)
     }
-}
-///Field `LCK3` writer - Port x lock bit y (y= 0..15)
-pub struct LCK3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK3_W<'a> {
-    ///Sets the field bit
+    #[doc = "Port configuration locked"]
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+    pub fn locked(self) -> &'a mut W {
+        self.variant(LCK3_A::Locked)
     }
 }
 impl R {
-    ///Bit 16 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lckk(&self) -> LCKK_R {
-        LCKK_R::new(((self.bits >> 16) & 0x01) != 0)
+        LCKK_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 3 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck3(&self) -> LCK3_R {
-        LCK3_R::new(((self.bits >> 3) & 0x01) != 0)
+        LCK3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 16 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lckk(&mut self) -> LCKK_W {
-        LCKK_W { w: self }
+    pub fn lckk(&mut self) -> LCKK_W<16> {
+        LCKK_W::new(self)
     }
-    ///Bit 3 - Port x lock bit y (y= 0..15)
+    #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lck3(&mut self) -> LCK3_W {
-        LCK3_W { w: self }
+    pub fn lck3(&mut self) -> LCK3_W<3> {
+        LCK3_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///GPIO port configuration lock register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [lckr](index.html) module
+#[doc = "GPIO port configuration lock register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lckr](index.html) module"]
 pub struct LCKR_SPEC;
 impl crate::RegisterSpec for LCKR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [lckr::R](R) reader structure
+#[doc = "`read()` method returns [lckr::R](R) reader structure"]
 impl crate::Readable for LCKR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [lckr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [lckr::W](W) writer structure"]
 impl crate::Writable for LCKR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets LCKR to value 0
+#[doc = "`reset()` method sets LCKR to value 0"]
 impl crate::Resettable for LCKR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

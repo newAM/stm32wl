@@ -1,4 +1,4 @@
-///Register `PLLCFGR` reader
+#[doc = "Register `PLLCFGR` reader"]
 pub struct R(crate::R<PLLCFGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PLLCFGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PLLCFGR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `PLLCFGR` writer
+#[doc = "Register `PLLCFGR` writer"]
 pub struct W(crate::W<PLLCFGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PLLCFGR_SPEC>;
@@ -34,123 +34,36 @@ impl From<crate::W<PLLCFGR_SPEC>> for W {
         W(writer)
     }
 }
-///Main PLL division factor for PLLRCLK
-pub type PLLR_A = PLLQ_A;
-///Field `PLLR` reader - Main PLL division factor for PLLRCLK
-pub type PLLR_R = PLLQ_R;
-///Field `PLLR` writer - Main PLL division factor for PLLRCLK
-pub struct PLLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLR_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div2(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV2)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div3(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV3)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div4(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV4)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div5(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV5)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div6(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV6)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div7(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV7)
-    }
-    ///PLL = VCO/(N+1)
-    #[inline(always)]
-    pub fn div8(self) -> &'a mut W {
-        self.variant(PLLR_A::DIV8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 29)) | ((value as u32 & 0x07) << 29);
-        self.w
-    }
-}
-///Main PLL PLLRCLK output enable
-pub type PLLREN_A = PLLPEN_A;
-///Field `PLLREN` reader - Main PLL PLLRCLK output enable
-pub type PLLREN_R = PLLPEN_R;
-///Field `PLLREN` writer - Main PLL PLLRCLK output enable
-pub struct PLLREN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLREN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLREN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PLLCLK output disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PLLREN_A::DISABLED)
-    }
-    ///PLLCLK output enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PLLREN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
-///Main PLL division factor for PLLQCLK
-///
-///Value on reset: 1
+#[doc = "Main PLL PLLRCLK output enable"]
+pub use PLLPEN_A as PLLREN_A;
+#[doc = "Field `PLLREN` reader - Main PLL PLLRCLK output enable"]
+pub use PLLPEN_R as PLLREN_R;
+#[doc = "Field `PLLREN` writer - Main PLL PLLRCLK output enable"]
+pub use PLLPEN_W as PLLREN_W;
+#[doc = "Main PLL division factor for PLLRCLK"]
+pub use PLLQ_A as PLLR_A;
+#[doc = "Field `PLLR` reader - Main PLL division factor for PLLRCLK"]
+pub use PLLQ_R as PLLR_R;
+#[doc = "Field `PLLR` writer - Main PLL division factor for PLLRCLK"]
+pub use PLLQ_W as PLLR_W;
+#[doc = "Main PLL division factor for PLLQCLK\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PLLQ_A {
-    ///1: PLL = VCO/(N+1)
-    DIV2 = 1,
-    ///2: PLL = VCO/(N+1)
-    DIV3 = 2,
-    ///3: PLL = VCO/(N+1)
-    DIV4 = 3,
-    ///4: PLL = VCO/(N+1)
-    DIV5 = 4,
-    ///5: PLL = VCO/(N+1)
-    DIV6 = 5,
-    ///6: PLL = VCO/(N+1)
-    DIV7 = 6,
-    ///7: PLL = VCO/(N+1)
-    DIV8 = 7,
+    #[doc = "1: PLL = VCO/(N+1)"]
+    Div2 = 1,
+    #[doc = "2: PLL = VCO/(N+1)"]
+    Div3 = 2,
+    #[doc = "3: PLL = VCO/(N+1)"]
+    Div4 = 3,
+    #[doc = "4: PLL = VCO/(N+1)"]
+    Div5 = 4,
+    #[doc = "5: PLL = VCO/(N+1)"]
+    Div6 = 5,
+    #[doc = "6: PLL = VCO/(N+1)"]
+    Div7 = 6,
+    #[doc = "7: PLL = VCO/(N+1)"]
+    Div8 = 7,
 }
 impl From<PLLQ_A> for u8 {
     #[inline(always)]
@@ -158,230 +71,170 @@ impl From<PLLQ_A> for u8 {
         variant as _
     }
 }
-///Field `PLLQ` reader - Main PLL division factor for PLLQCLK
-pub struct PLLQ_R(crate::FieldReader<u8, PLLQ_A>);
+#[doc = "Field `PLLQ` reader - Main PLL division factor for PLLQCLK"]
+pub type PLLQ_R = crate::FieldReader<u8, PLLQ_A>;
 impl PLLQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLQ_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PLLQ_A> {
         match self.bits {
-            1 => Some(PLLQ_A::DIV2),
-            2 => Some(PLLQ_A::DIV3),
-            3 => Some(PLLQ_A::DIV4),
-            4 => Some(PLLQ_A::DIV5),
-            5 => Some(PLLQ_A::DIV6),
-            6 => Some(PLLQ_A::DIV7),
-            7 => Some(PLLQ_A::DIV8),
+            1 => Some(PLLQ_A::Div2),
+            2 => Some(PLLQ_A::Div3),
+            3 => Some(PLLQ_A::Div4),
+            4 => Some(PLLQ_A::Div5),
+            5 => Some(PLLQ_A::Div6),
+            6 => Some(PLLQ_A::Div7),
+            7 => Some(PLLQ_A::Div8),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PLLQ_A::DIV2
+        *self == PLLQ_A::Div2
     }
-    ///Checks if the value of the field is `DIV3`
+    #[doc = "Checks if the value of the field is `Div3`"]
     #[inline(always)]
     pub fn is_div3(&self) -> bool {
-        **self == PLLQ_A::DIV3
+        *self == PLLQ_A::Div3
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PLLQ_A::DIV4
+        *self == PLLQ_A::Div4
     }
-    ///Checks if the value of the field is `DIV5`
+    #[doc = "Checks if the value of the field is `Div5`"]
     #[inline(always)]
     pub fn is_div5(&self) -> bool {
-        **self == PLLQ_A::DIV5
+        *self == PLLQ_A::Div5
     }
-    ///Checks if the value of the field is `DIV6`
+    #[doc = "Checks if the value of the field is `Div6`"]
     #[inline(always)]
     pub fn is_div6(&self) -> bool {
-        **self == PLLQ_A::DIV6
+        *self == PLLQ_A::Div6
     }
-    ///Checks if the value of the field is `DIV7`
+    #[doc = "Checks if the value of the field is `Div7`"]
     #[inline(always)]
     pub fn is_div7(&self) -> bool {
-        **self == PLLQ_A::DIV7
+        *self == PLLQ_A::Div7
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PLLQ_A::DIV8
+        *self == PLLQ_A::Div8
     }
 }
-impl core::ops::Deref for PLLQ_R {
-    type Target = crate::FieldReader<u8, PLLQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLQ` writer - Main PLL division factor for PLLQCLK
-pub struct PLLQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLQ_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PLL = VCO/(N+1)
+#[doc = "Field `PLLQ` writer - Main PLL division factor for PLLQCLK"]
+pub type PLLQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCFGR_SPEC, u8, PLLQ_A, 3, O>;
+impl<'a, const O: u8> PLLQ_W<'a, O> {
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV2)
+        self.variant(PLLQ_A::Div2)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div3(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV3)
+        self.variant(PLLQ_A::Div3)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV4)
+        self.variant(PLLQ_A::Div4)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div5(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV5)
+        self.variant(PLLQ_A::Div5)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div6(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV6)
+        self.variant(PLLQ_A::Div6)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div7(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV7)
+        self.variant(PLLQ_A::Div7)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PLLQ_A::DIV8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 25)) | ((value as u32 & 0x07) << 25);
-        self.w
+        self.variant(PLLQ_A::Div8)
     }
 }
-///Main PLL PLLQCLK output enable
-pub type PLLQEN_A = PLLPEN_A;
-///Field `PLLQEN` reader - Main PLL PLLQCLK output enable
-pub type PLLQEN_R = PLLPEN_R;
-///Field `PLLQEN` writer - Main PLL PLLQCLK output enable
-pub struct PLLQEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLQEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLQEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PLLCLK output disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PLLQEN_A::DISABLED)
-    }
-    ///PLLCLK output enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PLLQEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
-///Main PLL division factor for PLLPCLK.
-///
-///Value on reset: 2
+#[doc = "Main PLL PLLQCLK output enable"]
+pub use PLLPEN_A as PLLQEN_A;
+#[doc = "Field `PLLQEN` reader - Main PLL PLLQCLK output enable"]
+pub use PLLPEN_R as PLLQEN_R;
+#[doc = "Field `PLLQEN` writer - Main PLL PLLQCLK output enable"]
+pub use PLLPEN_W as PLLQEN_W;
+#[doc = "Main PLL division factor for PLLPCLK.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PLLP_A {
-    ///1: PLL = VCO/(N+1)
-    DIV2 = 1,
-    ///2: PLL = VCO/(N+1)
-    DIV3 = 2,
-    ///3: PLL = VCO/(N+1)
-    DIV4 = 3,
-    ///4: PLL = VCO/(N+1)
-    DIV5 = 4,
-    ///5: PLL = VCO/(N+1)
-    DIV6 = 5,
-    ///6: PLL = VCO/(N+1)
-    DIV7 = 6,
-    ///7: PLL = VCO/(N+1)
-    DIV8 = 7,
-    ///8: PLL = VCO/(N+1)
-    DIV9 = 8,
-    ///9: PLL = VCO/(N+1)
-    DIV10 = 9,
-    ///10: PLL = VCO/(N+1)
-    DIV11 = 10,
-    ///11: PLL = VCO/(N+1)
-    DIV12 = 11,
-    ///12: PLL = VCO/(N+1)
-    DIV13 = 12,
-    ///13: PLL = VCO/(N+1)
-    DIV14 = 13,
-    ///14: PLL = VCO/(N+1)
-    DIV15 = 14,
-    ///15: PLL = VCO/(N+1)
-    DIV16 = 15,
-    ///16: PLL = VCO/(N+1)
-    DIV17 = 16,
-    ///17: PLL = VCO/(N+1)
-    DIV18 = 17,
-    ///18: PLL = VCO/(N+1)
-    DIV19 = 18,
-    ///19: PLL = VCO/(N+1)
-    DIV20 = 19,
-    ///20: PLL = VCO/(N+1)
-    DIV21 = 20,
-    ///21: PLL = VCO/(N+1)
-    DIV22 = 21,
-    ///22: PLL = VCO/(N+1)
-    DIV23 = 22,
-    ///23: PLL = VCO/(N+1)
-    DIV24 = 23,
-    ///24: PLL = VCO/(N+1)
-    DIV25 = 24,
-    ///25: PLL = VCO/(N+1)
-    DIV26 = 25,
-    ///26: PLL = VCO/(N+1)
-    DIV27 = 26,
-    ///27: PLL = VCO/(N+1)
-    DIV28 = 27,
-    ///28: PLL = VCO/(N+1)
-    DIV29 = 28,
-    ///29: PLL = VCO/(N+1)
-    DIV30 = 29,
-    ///30: PLL = VCO/(N+1)
-    DIV31 = 30,
-    ///31: PLL = VCO/(N+1)
-    DIV32 = 31,
+    #[doc = "1: PLL = VCO/(N+1)"]
+    Div2 = 1,
+    #[doc = "2: PLL = VCO/(N+1)"]
+    Div3 = 2,
+    #[doc = "3: PLL = VCO/(N+1)"]
+    Div4 = 3,
+    #[doc = "4: PLL = VCO/(N+1)"]
+    Div5 = 4,
+    #[doc = "5: PLL = VCO/(N+1)"]
+    Div6 = 5,
+    #[doc = "6: PLL = VCO/(N+1)"]
+    Div7 = 6,
+    #[doc = "7: PLL = VCO/(N+1)"]
+    Div8 = 7,
+    #[doc = "8: PLL = VCO/(N+1)"]
+    Div9 = 8,
+    #[doc = "9: PLL = VCO/(N+1)"]
+    Div10 = 9,
+    #[doc = "10: PLL = VCO/(N+1)"]
+    Div11 = 10,
+    #[doc = "11: PLL = VCO/(N+1)"]
+    Div12 = 11,
+    #[doc = "12: PLL = VCO/(N+1)"]
+    Div13 = 12,
+    #[doc = "13: PLL = VCO/(N+1)"]
+    Div14 = 13,
+    #[doc = "14: PLL = VCO/(N+1)"]
+    Div15 = 14,
+    #[doc = "15: PLL = VCO/(N+1)"]
+    Div16 = 15,
+    #[doc = "16: PLL = VCO/(N+1)"]
+    Div17 = 16,
+    #[doc = "17: PLL = VCO/(N+1)"]
+    Div18 = 17,
+    #[doc = "18: PLL = VCO/(N+1)"]
+    Div19 = 18,
+    #[doc = "19: PLL = VCO/(N+1)"]
+    Div20 = 19,
+    #[doc = "20: PLL = VCO/(N+1)"]
+    Div21 = 20,
+    #[doc = "21: PLL = VCO/(N+1)"]
+    Div22 = 21,
+    #[doc = "22: PLL = VCO/(N+1)"]
+    Div23 = 22,
+    #[doc = "23: PLL = VCO/(N+1)"]
+    Div24 = 23,
+    #[doc = "24: PLL = VCO/(N+1)"]
+    Div25 = 24,
+    #[doc = "25: PLL = VCO/(N+1)"]
+    Div26 = 25,
+    #[doc = "26: PLL = VCO/(N+1)"]
+    Div27 = 26,
+    #[doc = "27: PLL = VCO/(N+1)"]
+    Div28 = 27,
+    #[doc = "28: PLL = VCO/(N+1)"]
+    Div29 = 28,
+    #[doc = "29: PLL = VCO/(N+1)"]
+    Div30 = 29,
+    #[doc = "30: PLL = VCO/(N+1)"]
+    Div31 = 30,
+    #[doc = "31: PLL = VCO/(N+1)"]
+    Div32 = 31,
 }
 impl From<PLLP_A> for u8 {
     #[inline(always)]
@@ -389,394 +242,369 @@ impl From<PLLP_A> for u8 {
         variant as _
     }
 }
-///Field `PLLP` reader - Main PLL division factor for PLLPCLK.
-pub struct PLLP_R(crate::FieldReader<u8, PLLP_A>);
+#[doc = "Field `PLLP` reader - Main PLL division factor for PLLPCLK."]
+pub type PLLP_R = crate::FieldReader<u8, PLLP_A>;
 impl PLLP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PLLP_A> {
         match self.bits {
-            1 => Some(PLLP_A::DIV2),
-            2 => Some(PLLP_A::DIV3),
-            3 => Some(PLLP_A::DIV4),
-            4 => Some(PLLP_A::DIV5),
-            5 => Some(PLLP_A::DIV6),
-            6 => Some(PLLP_A::DIV7),
-            7 => Some(PLLP_A::DIV8),
-            8 => Some(PLLP_A::DIV9),
-            9 => Some(PLLP_A::DIV10),
-            10 => Some(PLLP_A::DIV11),
-            11 => Some(PLLP_A::DIV12),
-            12 => Some(PLLP_A::DIV13),
-            13 => Some(PLLP_A::DIV14),
-            14 => Some(PLLP_A::DIV15),
-            15 => Some(PLLP_A::DIV16),
-            16 => Some(PLLP_A::DIV17),
-            17 => Some(PLLP_A::DIV18),
-            18 => Some(PLLP_A::DIV19),
-            19 => Some(PLLP_A::DIV20),
-            20 => Some(PLLP_A::DIV21),
-            21 => Some(PLLP_A::DIV22),
-            22 => Some(PLLP_A::DIV23),
-            23 => Some(PLLP_A::DIV24),
-            24 => Some(PLLP_A::DIV25),
-            25 => Some(PLLP_A::DIV26),
-            26 => Some(PLLP_A::DIV27),
-            27 => Some(PLLP_A::DIV28),
-            28 => Some(PLLP_A::DIV29),
-            29 => Some(PLLP_A::DIV30),
-            30 => Some(PLLP_A::DIV31),
-            31 => Some(PLLP_A::DIV32),
+            1 => Some(PLLP_A::Div2),
+            2 => Some(PLLP_A::Div3),
+            3 => Some(PLLP_A::Div4),
+            4 => Some(PLLP_A::Div5),
+            5 => Some(PLLP_A::Div6),
+            6 => Some(PLLP_A::Div7),
+            7 => Some(PLLP_A::Div8),
+            8 => Some(PLLP_A::Div9),
+            9 => Some(PLLP_A::Div10),
+            10 => Some(PLLP_A::Div11),
+            11 => Some(PLLP_A::Div12),
+            12 => Some(PLLP_A::Div13),
+            13 => Some(PLLP_A::Div14),
+            14 => Some(PLLP_A::Div15),
+            15 => Some(PLLP_A::Div16),
+            16 => Some(PLLP_A::Div17),
+            17 => Some(PLLP_A::Div18),
+            18 => Some(PLLP_A::Div19),
+            19 => Some(PLLP_A::Div20),
+            20 => Some(PLLP_A::Div21),
+            21 => Some(PLLP_A::Div22),
+            22 => Some(PLLP_A::Div23),
+            23 => Some(PLLP_A::Div24),
+            24 => Some(PLLP_A::Div25),
+            25 => Some(PLLP_A::Div26),
+            26 => Some(PLLP_A::Div27),
+            27 => Some(PLLP_A::Div28),
+            28 => Some(PLLP_A::Div29),
+            29 => Some(PLLP_A::Div30),
+            30 => Some(PLLP_A::Div31),
+            31 => Some(PLLP_A::Div32),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PLLP_A::DIV2
+        *self == PLLP_A::Div2
     }
-    ///Checks if the value of the field is `DIV3`
+    #[doc = "Checks if the value of the field is `Div3`"]
     #[inline(always)]
     pub fn is_div3(&self) -> bool {
-        **self == PLLP_A::DIV3
+        *self == PLLP_A::Div3
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PLLP_A::DIV4
+        *self == PLLP_A::Div4
     }
-    ///Checks if the value of the field is `DIV5`
+    #[doc = "Checks if the value of the field is `Div5`"]
     #[inline(always)]
     pub fn is_div5(&self) -> bool {
-        **self == PLLP_A::DIV5
+        *self == PLLP_A::Div5
     }
-    ///Checks if the value of the field is `DIV6`
+    #[doc = "Checks if the value of the field is `Div6`"]
     #[inline(always)]
     pub fn is_div6(&self) -> bool {
-        **self == PLLP_A::DIV6
+        *self == PLLP_A::Div6
     }
-    ///Checks if the value of the field is `DIV7`
+    #[doc = "Checks if the value of the field is `Div7`"]
     #[inline(always)]
     pub fn is_div7(&self) -> bool {
-        **self == PLLP_A::DIV7
+        *self == PLLP_A::Div7
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PLLP_A::DIV8
+        *self == PLLP_A::Div8
     }
-    ///Checks if the value of the field is `DIV9`
+    #[doc = "Checks if the value of the field is `Div9`"]
     #[inline(always)]
     pub fn is_div9(&self) -> bool {
-        **self == PLLP_A::DIV9
+        *self == PLLP_A::Div9
     }
-    ///Checks if the value of the field is `DIV10`
+    #[doc = "Checks if the value of the field is `Div10`"]
     #[inline(always)]
     pub fn is_div10(&self) -> bool {
-        **self == PLLP_A::DIV10
+        *self == PLLP_A::Div10
     }
-    ///Checks if the value of the field is `DIV11`
+    #[doc = "Checks if the value of the field is `Div11`"]
     #[inline(always)]
     pub fn is_div11(&self) -> bool {
-        **self == PLLP_A::DIV11
+        *self == PLLP_A::Div11
     }
-    ///Checks if the value of the field is `DIV12`
+    #[doc = "Checks if the value of the field is `Div12`"]
     #[inline(always)]
     pub fn is_div12(&self) -> bool {
-        **self == PLLP_A::DIV12
+        *self == PLLP_A::Div12
     }
-    ///Checks if the value of the field is `DIV13`
+    #[doc = "Checks if the value of the field is `Div13`"]
     #[inline(always)]
     pub fn is_div13(&self) -> bool {
-        **self == PLLP_A::DIV13
+        *self == PLLP_A::Div13
     }
-    ///Checks if the value of the field is `DIV14`
+    #[doc = "Checks if the value of the field is `Div14`"]
     #[inline(always)]
     pub fn is_div14(&self) -> bool {
-        **self == PLLP_A::DIV14
+        *self == PLLP_A::Div14
     }
-    ///Checks if the value of the field is `DIV15`
+    #[doc = "Checks if the value of the field is `Div15`"]
     #[inline(always)]
     pub fn is_div15(&self) -> bool {
-        **self == PLLP_A::DIV15
+        *self == PLLP_A::Div15
     }
-    ///Checks if the value of the field is `DIV16`
+    #[doc = "Checks if the value of the field is `Div16`"]
     #[inline(always)]
     pub fn is_div16(&self) -> bool {
-        **self == PLLP_A::DIV16
+        *self == PLLP_A::Div16
     }
-    ///Checks if the value of the field is `DIV17`
+    #[doc = "Checks if the value of the field is `Div17`"]
     #[inline(always)]
     pub fn is_div17(&self) -> bool {
-        **self == PLLP_A::DIV17
+        *self == PLLP_A::Div17
     }
-    ///Checks if the value of the field is `DIV18`
+    #[doc = "Checks if the value of the field is `Div18`"]
     #[inline(always)]
     pub fn is_div18(&self) -> bool {
-        **self == PLLP_A::DIV18
+        *self == PLLP_A::Div18
     }
-    ///Checks if the value of the field is `DIV19`
+    #[doc = "Checks if the value of the field is `Div19`"]
     #[inline(always)]
     pub fn is_div19(&self) -> bool {
-        **self == PLLP_A::DIV19
+        *self == PLLP_A::Div19
     }
-    ///Checks if the value of the field is `DIV20`
+    #[doc = "Checks if the value of the field is `Div20`"]
     #[inline(always)]
     pub fn is_div20(&self) -> bool {
-        **self == PLLP_A::DIV20
+        *self == PLLP_A::Div20
     }
-    ///Checks if the value of the field is `DIV21`
+    #[doc = "Checks if the value of the field is `Div21`"]
     #[inline(always)]
     pub fn is_div21(&self) -> bool {
-        **self == PLLP_A::DIV21
+        *self == PLLP_A::Div21
     }
-    ///Checks if the value of the field is `DIV22`
+    #[doc = "Checks if the value of the field is `Div22`"]
     #[inline(always)]
     pub fn is_div22(&self) -> bool {
-        **self == PLLP_A::DIV22
+        *self == PLLP_A::Div22
     }
-    ///Checks if the value of the field is `DIV23`
+    #[doc = "Checks if the value of the field is `Div23`"]
     #[inline(always)]
     pub fn is_div23(&self) -> bool {
-        **self == PLLP_A::DIV23
+        *self == PLLP_A::Div23
     }
-    ///Checks if the value of the field is `DIV24`
+    #[doc = "Checks if the value of the field is `Div24`"]
     #[inline(always)]
     pub fn is_div24(&self) -> bool {
-        **self == PLLP_A::DIV24
+        *self == PLLP_A::Div24
     }
-    ///Checks if the value of the field is `DIV25`
+    #[doc = "Checks if the value of the field is `Div25`"]
     #[inline(always)]
     pub fn is_div25(&self) -> bool {
-        **self == PLLP_A::DIV25
+        *self == PLLP_A::Div25
     }
-    ///Checks if the value of the field is `DIV26`
+    #[doc = "Checks if the value of the field is `Div26`"]
     #[inline(always)]
     pub fn is_div26(&self) -> bool {
-        **self == PLLP_A::DIV26
+        *self == PLLP_A::Div26
     }
-    ///Checks if the value of the field is `DIV27`
+    #[doc = "Checks if the value of the field is `Div27`"]
     #[inline(always)]
     pub fn is_div27(&self) -> bool {
-        **self == PLLP_A::DIV27
+        *self == PLLP_A::Div27
     }
-    ///Checks if the value of the field is `DIV28`
+    #[doc = "Checks if the value of the field is `Div28`"]
     #[inline(always)]
     pub fn is_div28(&self) -> bool {
-        **self == PLLP_A::DIV28
+        *self == PLLP_A::Div28
     }
-    ///Checks if the value of the field is `DIV29`
+    #[doc = "Checks if the value of the field is `Div29`"]
     #[inline(always)]
     pub fn is_div29(&self) -> bool {
-        **self == PLLP_A::DIV29
+        *self == PLLP_A::Div29
     }
-    ///Checks if the value of the field is `DIV30`
+    #[doc = "Checks if the value of the field is `Div30`"]
     #[inline(always)]
     pub fn is_div30(&self) -> bool {
-        **self == PLLP_A::DIV30
+        *self == PLLP_A::Div30
     }
-    ///Checks if the value of the field is `DIV31`
+    #[doc = "Checks if the value of the field is `Div31`"]
     #[inline(always)]
     pub fn is_div31(&self) -> bool {
-        **self == PLLP_A::DIV31
+        *self == PLLP_A::Div31
     }
-    ///Checks if the value of the field is `DIV32`
+    #[doc = "Checks if the value of the field is `Div32`"]
     #[inline(always)]
     pub fn is_div32(&self) -> bool {
-        **self == PLLP_A::DIV32
+        *self == PLLP_A::Div32
     }
 }
-impl core::ops::Deref for PLLP_R {
-    type Target = crate::FieldReader<u8, PLLP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLP` writer - Main PLL division factor for PLLPCLK.
-pub struct PLLP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PLL = VCO/(N+1)
+#[doc = "Field `PLLP` writer - Main PLL division factor for PLLPCLK."]
+pub type PLLP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCFGR_SPEC, u8, PLLP_A, 5, O>;
+impl<'a, const O: u8> PLLP_W<'a, O> {
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV2)
+        self.variant(PLLP_A::Div2)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div3(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV3)
+        self.variant(PLLP_A::Div3)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV4)
+        self.variant(PLLP_A::Div4)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div5(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV5)
+        self.variant(PLLP_A::Div5)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div6(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV6)
+        self.variant(PLLP_A::Div6)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div7(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV7)
+        self.variant(PLLP_A::Div7)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV8)
+        self.variant(PLLP_A::Div8)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div9(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV9)
+        self.variant(PLLP_A::Div9)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div10(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV10)
+        self.variant(PLLP_A::Div10)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div11(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV11)
+        self.variant(PLLP_A::Div11)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div12(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV12)
+        self.variant(PLLP_A::Div12)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div13(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV13)
+        self.variant(PLLP_A::Div13)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div14(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV14)
+        self.variant(PLLP_A::Div14)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div15(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV15)
+        self.variant(PLLP_A::Div15)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV16)
+        self.variant(PLLP_A::Div16)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div17(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV17)
+        self.variant(PLLP_A::Div17)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div18(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV18)
+        self.variant(PLLP_A::Div18)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div19(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV19)
+        self.variant(PLLP_A::Div19)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div20(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV20)
+        self.variant(PLLP_A::Div20)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div21(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV21)
+        self.variant(PLLP_A::Div21)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div22(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV22)
+        self.variant(PLLP_A::Div22)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div23(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV23)
+        self.variant(PLLP_A::Div23)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div24(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV24)
+        self.variant(PLLP_A::Div24)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div25(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV25)
+        self.variant(PLLP_A::Div25)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div26(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV26)
+        self.variant(PLLP_A::Div26)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div27(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV27)
+        self.variant(PLLP_A::Div27)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div28(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV28)
+        self.variant(PLLP_A::Div28)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div29(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV29)
+        self.variant(PLLP_A::Div29)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div30(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV30)
+        self.variant(PLLP_A::Div30)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div31(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV31)
+        self.variant(PLLP_A::Div31)
     }
-    ///PLL = VCO/(N+1)
+    #[doc = "PLL = VCO/(N+1)"]
     #[inline(always)]
     pub fn div32(self) -> &'a mut W {
-        self.variant(PLLP_A::DIV32)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 17)) | ((value as u32 & 0x1f) << 17);
-        self.w
+        self.variant(PLLP_A::Div32)
     }
 }
-///Main PLL PLLPCLK output enable
-///
-///Value on reset: 0
+#[doc = "Main PLL PLLPCLK output enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLPEN_A {
-    ///0: PLLCLK output disabled
-    DISABLED = 0,
-    ///1: PLLCLK output enabled
-    ENABLED = 1,
+    #[doc = "0: PLLCLK output disabled"]
+    Disabled = 0,
+    #[doc = "1: PLLCLK output enabled"]
+    Enabled = 1,
 }
 impl From<PLLPEN_A> for bool {
     #[inline(always)]
@@ -784,123 +612,66 @@ impl From<PLLPEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PLLPEN` reader - Main PLL PLLPCLK output enable
-pub struct PLLPEN_R(crate::FieldReader<bool, PLLPEN_A>);
+#[doc = "Field `PLLPEN` reader - Main PLL PLLPCLK output enable"]
+pub type PLLPEN_R = crate::BitReader<PLLPEN_A>;
 impl PLLPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PLLPEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLPEN_A {
         match self.bits {
-            false => PLLPEN_A::DISABLED,
-            true => PLLPEN_A::ENABLED,
+            false => PLLPEN_A::Disabled,
+            true => PLLPEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PLLPEN_A::DISABLED
+        *self == PLLPEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PLLPEN_A::ENABLED
+        *self == PLLPEN_A::Enabled
     }
 }
-impl core::ops::Deref for PLLPEN_R {
-    type Target = crate::FieldReader<bool, PLLPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLPEN` writer - Main PLL PLLPCLK output enable
-pub struct PLLPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLPEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///PLLCLK output disabled
+#[doc = "Field `PLLPEN` writer - Main PLL PLLPCLK output enable"]
+pub type PLLPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCFGR_SPEC, PLLPEN_A, O>;
+impl<'a, const O: u8> PLLPEN_W<'a, O> {
+    #[doc = "PLLCLK output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PLLPEN_A::DISABLED)
+        self.variant(PLLPEN_A::Disabled)
     }
-    ///PLLCLK output enabled
+    #[doc = "PLLCLK output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PLLPEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(PLLPEN_A::Enabled)
     }
 }
-///Field `PLLN` reader - Main PLL multiplication factor for VCO
-pub struct PLLN_R(crate::FieldReader<u8, u8>);
-impl PLLN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLN` writer - Main PLL multiplication factor for VCO
-pub struct PLLN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLN_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
-///Division factor for the main PLL input clock
-///
-///Value on reset: 0
+#[doc = "Field `PLLN` reader - Main PLL multiplication factor for VCO"]
+pub type PLLN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `PLLN` writer - Main PLL multiplication factor for VCO"]
+pub type PLLN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCFGR_SPEC, u8, u8, 7, O>;
+#[doc = "Division factor for the main PLL input clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PLLM_A {
-    ///0: VCO input = PLL input / PLLM
-    DIV1 = 0,
-    ///1: VCO input = PLL input / PLLM
-    DIV2 = 1,
-    ///2: VCO input = PLL input / PLLM
-    DIV3 = 2,
-    ///3: VCO input = PLL input / PLLM
-    DIV4 = 3,
-    ///4: VCO input = PLL input / PLLM
-    DIV5 = 4,
-    ///5: VCO input = PLL input / PLLM
-    DIV6 = 5,
-    ///6: VCO input = PLL input / PLLM
-    DIV7 = 6,
-    ///7: VCO input = PLL input / PLLM
-    DIV8 = 7,
+    #[doc = "0: VCO input = PLL input / PLLM"]
+    Div1 = 0,
+    #[doc = "1: VCO input = PLL input / PLLM"]
+    Div2 = 1,
+    #[doc = "2: VCO input = PLL input / PLLM"]
+    Div3 = 2,
+    #[doc = "3: VCO input = PLL input / PLLM"]
+    Div4 = 3,
+    #[doc = "4: VCO input = PLL input / PLLM"]
+    Div5 = 4,
+    #[doc = "5: VCO input = PLL input / PLLM"]
+    Div6 = 5,
+    #[doc = "6: VCO input = PLL input / PLLM"]
+    Div7 = 6,
+    #[doc = "7: VCO input = PLL input / PLLM"]
+    Div8 = 7,
 }
 impl From<PLLM_A> for u8 {
     #[inline(always)]
@@ -908,146 +679,121 @@ impl From<PLLM_A> for u8 {
         variant as _
     }
 }
-///Field `PLLM` reader - Division factor for the main PLL input clock
-pub struct PLLM_R(crate::FieldReader<u8, PLLM_A>);
+#[doc = "Field `PLLM` reader - Division factor for the main PLL input clock"]
+pub type PLLM_R = crate::FieldReader<u8, PLLM_A>;
 impl PLLM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLM_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLM_A {
         match self.bits {
-            0 => PLLM_A::DIV1,
-            1 => PLLM_A::DIV2,
-            2 => PLLM_A::DIV3,
-            3 => PLLM_A::DIV4,
-            4 => PLLM_A::DIV5,
-            5 => PLLM_A::DIV6,
-            6 => PLLM_A::DIV7,
-            7 => PLLM_A::DIV8,
+            0 => PLLM_A::Div1,
+            1 => PLLM_A::Div2,
+            2 => PLLM_A::Div3,
+            3 => PLLM_A::Div4,
+            4 => PLLM_A::Div5,
+            5 => PLLM_A::Div6,
+            6 => PLLM_A::Div7,
+            7 => PLLM_A::Div8,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `DIV1`
+    #[doc = "Checks if the value of the field is `Div1`"]
     #[inline(always)]
     pub fn is_div1(&self) -> bool {
-        **self == PLLM_A::DIV1
+        *self == PLLM_A::Div1
     }
-    ///Checks if the value of the field is `DIV2`
+    #[doc = "Checks if the value of the field is `Div2`"]
     #[inline(always)]
     pub fn is_div2(&self) -> bool {
-        **self == PLLM_A::DIV2
+        *self == PLLM_A::Div2
     }
-    ///Checks if the value of the field is `DIV3`
+    #[doc = "Checks if the value of the field is `Div3`"]
     #[inline(always)]
     pub fn is_div3(&self) -> bool {
-        **self == PLLM_A::DIV3
+        *self == PLLM_A::Div3
     }
-    ///Checks if the value of the field is `DIV4`
+    #[doc = "Checks if the value of the field is `Div4`"]
     #[inline(always)]
     pub fn is_div4(&self) -> bool {
-        **self == PLLM_A::DIV4
+        *self == PLLM_A::Div4
     }
-    ///Checks if the value of the field is `DIV5`
+    #[doc = "Checks if the value of the field is `Div5`"]
     #[inline(always)]
     pub fn is_div5(&self) -> bool {
-        **self == PLLM_A::DIV5
+        *self == PLLM_A::Div5
     }
-    ///Checks if the value of the field is `DIV6`
+    #[doc = "Checks if the value of the field is `Div6`"]
     #[inline(always)]
     pub fn is_div6(&self) -> bool {
-        **self == PLLM_A::DIV6
+        *self == PLLM_A::Div6
     }
-    ///Checks if the value of the field is `DIV7`
+    #[doc = "Checks if the value of the field is `Div7`"]
     #[inline(always)]
     pub fn is_div7(&self) -> bool {
-        **self == PLLM_A::DIV7
+        *self == PLLM_A::Div7
     }
-    ///Checks if the value of the field is `DIV8`
+    #[doc = "Checks if the value of the field is `Div8`"]
     #[inline(always)]
     pub fn is_div8(&self) -> bool {
-        **self == PLLM_A::DIV8
+        *self == PLLM_A::Div8
     }
 }
-impl core::ops::Deref for PLLM_R {
-    type Target = crate::FieldReader<u8, PLLM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLM` writer - Division factor for the main PLL input clock
-pub struct PLLM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLM_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLM_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///VCO input = PLL input / PLLM
+#[doc = "Field `PLLM` writer - Division factor for the main PLL input clock"]
+pub type PLLM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PLLCFGR_SPEC, u8, PLLM_A, 3, O>;
+impl<'a, const O: u8> PLLM_W<'a, O> {
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV1)
+        self.variant(PLLM_A::Div1)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div2(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV2)
+        self.variant(PLLM_A::Div2)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div3(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV3)
+        self.variant(PLLM_A::Div3)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div4(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV4)
+        self.variant(PLLM_A::Div4)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div5(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV5)
+        self.variant(PLLM_A::Div5)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div6(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV6)
+        self.variant(PLLM_A::Div6)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div7(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV7)
+        self.variant(PLLM_A::Div7)
     }
-    ///VCO input = PLL input / PLLM
+    #[doc = "VCO input = PLL input / PLLM"]
     #[inline(always)]
     pub fn div8(self) -> &'a mut W {
-        self.variant(PLLM_A::DIV8)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
+        self.variant(PLLM_A::Div8)
     }
 }
-///Main PLL entry clock source
-///
-///Value on reset: 0
+#[doc = "Main PLL entry clock source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PLLSRC_A {
-    ///0: No clock sent to PLL
-    NOCLOCK = 0,
-    ///1: MSI clock selected as PLL clock entry
-    MSI = 1,
-    ///2: HSI16 clock selected as PLL clock entry
-    HSI16 = 2,
-    ///3: HSE32 clock selected as PLL clock entry
-    HSE32 = 3,
+    #[doc = "0: No clock sent to PLL"]
+    NoClock = 0,
+    #[doc = "1: MSI clock selected as PLL clock entry"]
+    Msi = 1,
+    #[doc = "2: HSI16 clock selected as PLL clock entry"]
+    Hsi16 = 2,
+    #[doc = "3: HSE32 clock selected as PLL clock entry"]
+    Hse32 = 3,
 }
 impl From<PLLSRC_A> for u8 {
     #[inline(always)]
@@ -1055,206 +801,180 @@ impl From<PLLSRC_A> for u8 {
         variant as _
     }
 }
-///Field `PLLSRC` reader - Main PLL entry clock source
-pub struct PLLSRC_R(crate::FieldReader<u8, PLLSRC_A>);
+#[doc = "Field `PLLSRC` reader - Main PLL entry clock source"]
+pub type PLLSRC_R = crate::FieldReader<u8, PLLSRC_A>;
 impl PLLSRC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLSRC_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLSRC_A {
         match self.bits {
-            0 => PLLSRC_A::NOCLOCK,
-            1 => PLLSRC_A::MSI,
-            2 => PLLSRC_A::HSI16,
-            3 => PLLSRC_A::HSE32,
+            0 => PLLSRC_A::NoClock,
+            1 => PLLSRC_A::Msi,
+            2 => PLLSRC_A::Hsi16,
+            3 => PLLSRC_A::Hse32,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NOCLOCK`
+    #[doc = "Checks if the value of the field is `NoClock`"]
     #[inline(always)]
     pub fn is_no_clock(&self) -> bool {
-        **self == PLLSRC_A::NOCLOCK
+        *self == PLLSRC_A::NoClock
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == PLLSRC_A::MSI
+        *self == PLLSRC_A::Msi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == PLLSRC_A::HSI16
+        *self == PLLSRC_A::Hsi16
     }
-    ///Checks if the value of the field is `HSE32`
+    #[doc = "Checks if the value of the field is `Hse32`"]
     #[inline(always)]
     pub fn is_hse32(&self) -> bool {
-        **self == PLLSRC_A::HSE32
+        *self == PLLSRC_A::Hse32
     }
 }
-impl core::ops::Deref for PLLSRC_R {
-    type Target = crate::FieldReader<u8, PLLSRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PLLSRC` writer - Main PLL entry clock source
-pub struct PLLSRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLSRC_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PLLSRC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///No clock sent to PLL
+#[doc = "Field `PLLSRC` writer - Main PLL entry clock source"]
+pub type PLLSRC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PLLCFGR_SPEC, u8, PLLSRC_A, 2, O>;
+impl<'a, const O: u8> PLLSRC_W<'a, O> {
+    #[doc = "No clock sent to PLL"]
     #[inline(always)]
     pub fn no_clock(self) -> &'a mut W {
-        self.variant(PLLSRC_A::NOCLOCK)
+        self.variant(PLLSRC_A::NoClock)
     }
-    ///MSI clock selected as PLL clock entry
+    #[doc = "MSI clock selected as PLL clock entry"]
     #[inline(always)]
     pub fn msi(self) -> &'a mut W {
-        self.variant(PLLSRC_A::MSI)
+        self.variant(PLLSRC_A::Msi)
     }
-    ///HSI16 clock selected as PLL clock entry
+    #[doc = "HSI16 clock selected as PLL clock entry"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(PLLSRC_A::HSI16)
+        self.variant(PLLSRC_A::Hsi16)
     }
-    ///HSE32 clock selected as PLL clock entry
+    #[doc = "HSE32 clock selected as PLL clock entry"]
     #[inline(always)]
     pub fn hse32(self) -> &'a mut W {
-        self.variant(PLLSRC_A::HSE32)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(PLLSRC_A::Hse32)
     }
 }
 impl R {
-    ///Bits 29:31 - Main PLL division factor for PLLRCLK
+    #[doc = "Bits 29:31 - Main PLL division factor for PLLRCLK"]
     #[inline(always)]
     pub fn pllr(&self) -> PLLR_R {
-        PLLR_R::new(((self.bits >> 29) & 0x07) as u8)
+        PLLR_R::new(((self.bits >> 29) & 7) as u8)
     }
-    ///Bit 28 - Main PLL PLLRCLK output enable
+    #[doc = "Bit 28 - Main PLL PLLRCLK output enable"]
     #[inline(always)]
     pub fn pllren(&self) -> PLLREN_R {
-        PLLREN_R::new(((self.bits >> 28) & 0x01) != 0)
+        PLLREN_R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bits 25:27 - Main PLL division factor for PLLQCLK
+    #[doc = "Bits 25:27 - Main PLL division factor for PLLQCLK"]
     #[inline(always)]
     pub fn pllq(&self) -> PLLQ_R {
-        PLLQ_R::new(((self.bits >> 25) & 0x07) as u8)
+        PLLQ_R::new(((self.bits >> 25) & 7) as u8)
     }
-    ///Bit 24 - Main PLL PLLQCLK output enable
+    #[doc = "Bit 24 - Main PLL PLLQCLK output enable"]
     #[inline(always)]
     pub fn pllqen(&self) -> PLLQEN_R {
-        PLLQEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        PLLQEN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bits 17:21 - Main PLL division factor for PLLPCLK.
+    #[doc = "Bits 17:21 - Main PLL division factor for PLLPCLK."]
     #[inline(always)]
     pub fn pllp(&self) -> PLLP_R {
         PLLP_R::new(((self.bits >> 17) & 0x1f) as u8)
     }
-    ///Bit 16 - Main PLL PLLPCLK output enable
+    #[doc = "Bit 16 - Main PLL PLLPCLK output enable"]
     #[inline(always)]
     pub fn pllpen(&self) -> PLLPEN_R {
-        PLLPEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        PLLPEN_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bits 8:14 - Main PLL multiplication factor for VCO
+    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO"]
     #[inline(always)]
     pub fn plln(&self) -> PLLN_R {
         PLLN_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
-    ///Bits 4:6 - Division factor for the main PLL input clock
+    #[doc = "Bits 4:6 - Division factor for the main PLL input clock"]
     #[inline(always)]
     pub fn pllm(&self) -> PLLM_R {
-        PLLM_R::new(((self.bits >> 4) & 0x07) as u8)
+        PLLM_R::new(((self.bits >> 4) & 7) as u8)
     }
-    ///Bits 0:1 - Main PLL entry clock source
+    #[doc = "Bits 0:1 - Main PLL entry clock source"]
     #[inline(always)]
     pub fn pllsrc(&self) -> PLLSRC_R {
-        PLLSRC_R::new((self.bits & 0x03) as u8)
+        PLLSRC_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    ///Bits 29:31 - Main PLL division factor for PLLRCLK
+    #[doc = "Bits 29:31 - Main PLL division factor for PLLRCLK"]
     #[inline(always)]
-    pub fn pllr(&mut self) -> PLLR_W {
-        PLLR_W { w: self }
+    pub fn pllr(&mut self) -> PLLR_W<29> {
+        PLLR_W::new(self)
     }
-    ///Bit 28 - Main PLL PLLRCLK output enable
+    #[doc = "Bit 28 - Main PLL PLLRCLK output enable"]
     #[inline(always)]
-    pub fn pllren(&mut self) -> PLLREN_W {
-        PLLREN_W { w: self }
+    pub fn pllren(&mut self) -> PLLREN_W<28> {
+        PLLREN_W::new(self)
     }
-    ///Bits 25:27 - Main PLL division factor for PLLQCLK
+    #[doc = "Bits 25:27 - Main PLL division factor for PLLQCLK"]
     #[inline(always)]
-    pub fn pllq(&mut self) -> PLLQ_W {
-        PLLQ_W { w: self }
+    pub fn pllq(&mut self) -> PLLQ_W<25> {
+        PLLQ_W::new(self)
     }
-    ///Bit 24 - Main PLL PLLQCLK output enable
+    #[doc = "Bit 24 - Main PLL PLLQCLK output enable"]
     #[inline(always)]
-    pub fn pllqen(&mut self) -> PLLQEN_W {
-        PLLQEN_W { w: self }
+    pub fn pllqen(&mut self) -> PLLQEN_W<24> {
+        PLLQEN_W::new(self)
     }
-    ///Bits 17:21 - Main PLL division factor for PLLPCLK.
+    #[doc = "Bits 17:21 - Main PLL division factor for PLLPCLK."]
     #[inline(always)]
-    pub fn pllp(&mut self) -> PLLP_W {
-        PLLP_W { w: self }
+    pub fn pllp(&mut self) -> PLLP_W<17> {
+        PLLP_W::new(self)
     }
-    ///Bit 16 - Main PLL PLLPCLK output enable
+    #[doc = "Bit 16 - Main PLL PLLPCLK output enable"]
     #[inline(always)]
-    pub fn pllpen(&mut self) -> PLLPEN_W {
-        PLLPEN_W { w: self }
+    pub fn pllpen(&mut self) -> PLLPEN_W<16> {
+        PLLPEN_W::new(self)
     }
-    ///Bits 8:14 - Main PLL multiplication factor for VCO
+    #[doc = "Bits 8:14 - Main PLL multiplication factor for VCO"]
     #[inline(always)]
-    pub fn plln(&mut self) -> PLLN_W {
-        PLLN_W { w: self }
+    pub fn plln(&mut self) -> PLLN_W<8> {
+        PLLN_W::new(self)
     }
-    ///Bits 4:6 - Division factor for the main PLL input clock
+    #[doc = "Bits 4:6 - Division factor for the main PLL input clock"]
     #[inline(always)]
-    pub fn pllm(&mut self) -> PLLM_W {
-        PLLM_W { w: self }
+    pub fn pllm(&mut self) -> PLLM_W<4> {
+        PLLM_W::new(self)
     }
-    ///Bits 0:1 - Main PLL entry clock source
+    #[doc = "Bits 0:1 - Main PLL entry clock source"]
     #[inline(always)]
-    pub fn pllsrc(&mut self) -> PLLSRC_W {
-        PLLSRC_W { w: self }
+    pub fn pllsrc(&mut self) -> PLLSRC_W<0> {
+        PLLSRC_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///PLL configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [pllcfgr](index.html) module
+#[doc = "PLL configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pllcfgr](index.html) module"]
 pub struct PLLCFGR_SPEC;
 impl crate::RegisterSpec for PLLCFGR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [pllcfgr::R](R) reader structure
+#[doc = "`read()` method returns [pllcfgr::R](R) reader structure"]
 impl crate::Readable for PLLCFGR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [pllcfgr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [pllcfgr::W](W) writer structure"]
 impl crate::Writable for PLLCFGR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets PLLCFGR to value 0x2204_0100
+#[doc = "`reset()` method sets PLLCFGR to value 0x2204_0100"]
 impl crate::Resettable for PLLCFGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

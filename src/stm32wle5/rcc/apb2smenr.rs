@@ -1,4 +1,4 @@
-///Register `APB2SMENR` reader
+#[doc = "Register `APB2SMENR` reader"]
 pub struct R(crate::R<APB2SMENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<APB2SMENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<APB2SMENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `APB2SMENR` writer
+#[doc = "Register `APB2SMENR` writer"]
 pub struct W(crate::W<APB2SMENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<APB2SMENR_SPEC>;
@@ -34,310 +34,114 @@ impl From<crate::W<APB2SMENR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `TIM17SMEN` reader - TIM17 timer clock enable during CPU1 CSleep mode.
-pub struct TIM17SMEN_R(crate::FieldReader<bool, bool>);
-impl TIM17SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIM17SMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIM17SMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIM17SMEN` writer - TIM17 timer clock enable during CPU1 CSleep mode.
-pub struct TIM17SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM17SMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///Field `TIM16SMEN` reader - TIM16 timer clock enable during CPU1 CSleep mode.
-pub struct TIM16SMEN_R(crate::FieldReader<bool, bool>);
-impl TIM16SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIM16SMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIM16SMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIM16SMEN` writer - TIM16 timer clock enable during CPU1 CSleep mode.
-pub struct TIM16SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM16SMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///Field `USART1SMEN` reader - USART1 clock enable during CPU1 Csleep and CStop modes.
-pub struct USART1SMEN_R(crate::FieldReader<bool, bool>);
-impl USART1SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USART1SMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USART1SMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `USART1SMEN` writer - USART1 clock enable during CPU1 Csleep and CStop modes.
-pub struct USART1SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USART1SMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
-///Field `SPI1SMEN` reader - SPI1 clock enable during CPU1 CSleep mode.
-pub struct SPI1SMEN_R(crate::FieldReader<bool, bool>);
-impl SPI1SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SPI1SMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPI1SMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SPI1SMEN` writer - SPI1 clock enable during CPU1 CSleep mode.
-pub struct SPI1SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPI1SMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///Field `TIM1SMEN` reader - TIM1 timer clock enable during CPU1 CSleep mode.
-pub struct TIM1SMEN_R(crate::FieldReader<bool, bool>);
-impl TIM1SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIM1SMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIM1SMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TIM1SMEN` writer - TIM1 timer clock enable during CPU1 CSleep mode.
-pub struct TIM1SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIM1SMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///Field `ADCSMEN` reader - ADC clocks enable during CPU1 Csleep and CStop modes
-pub struct ADCSMEN_R(crate::FieldReader<bool, bool>);
-impl ADCSMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADCSMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADCSMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ADCSMEN` writer - ADC clocks enable during CPU1 Csleep and CStop modes
-pub struct ADCSMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSMEN_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+#[doc = "Field `TIM17SMEN` reader - TIM17 timer clock enable during CPU1 CSleep mode."]
+pub type TIM17SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `TIM17SMEN` writer - TIM17 timer clock enable during CPU1 CSleep mode."]
+pub type TIM17SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
+#[doc = "Field `TIM16SMEN` reader - TIM16 timer clock enable during CPU1 CSleep mode."]
+pub type TIM16SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `TIM16SMEN` writer - TIM16 timer clock enable during CPU1 CSleep mode."]
+pub type TIM16SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
+#[doc = "Field `USART1SMEN` reader - USART1 clock enable during CPU1 Csleep and CStop modes."]
+pub type USART1SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `USART1SMEN` writer - USART1 clock enable during CPU1 Csleep and CStop modes."]
+pub type USART1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
+#[doc = "Field `SPI1SMEN` reader - SPI1 clock enable during CPU1 CSleep mode."]
+pub type SPI1SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `SPI1SMEN` writer - SPI1 clock enable during CPU1 CSleep mode."]
+pub type SPI1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
+#[doc = "Field `TIM1SMEN` reader - TIM1 timer clock enable during CPU1 CSleep mode."]
+pub type TIM1SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `TIM1SMEN` writer - TIM1 timer clock enable during CPU1 CSleep mode."]
+pub type TIM1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
+#[doc = "Field `ADCSMEN` reader - ADC clocks enable during CPU1 Csleep and CStop modes"]
+pub type ADCSMEN_R = crate::BitReader<bool>;
+#[doc = "Field `ADCSMEN` writer - ADC clocks enable during CPU1 Csleep and CStop modes"]
+pub type ADCSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2SMENR_SPEC, bool, O>;
 impl R {
-    ///Bit 18 - TIM17 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 18 - TIM17 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn tim17smen(&self) -> TIM17SMEN_R {
-        TIM17SMEN_R::new(((self.bits >> 18) & 0x01) != 0)
+        TIM17SMEN_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 17 - TIM16 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 17 - TIM16 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn tim16smen(&self) -> TIM16SMEN_R {
-        TIM16SMEN_R::new(((self.bits >> 17) & 0x01) != 0)
+        TIM16SMEN_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 14 - USART1 clock enable during CPU1 Csleep and CStop modes.
+    #[doc = "Bit 14 - USART1 clock enable during CPU1 Csleep and CStop modes."]
     #[inline(always)]
     pub fn usart1smen(&self) -> USART1SMEN_R {
-        USART1SMEN_R::new(((self.bits >> 14) & 0x01) != 0)
+        USART1SMEN_R::new(((self.bits >> 14) & 1) != 0)
     }
-    ///Bit 12 - SPI1 clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 12 - SPI1 clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn spi1smen(&self) -> SPI1SMEN_R {
-        SPI1SMEN_R::new(((self.bits >> 12) & 0x01) != 0)
+        SPI1SMEN_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 11 - TIM1 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 11 - TIM1 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn tim1smen(&self) -> TIM1SMEN_R {
-        TIM1SMEN_R::new(((self.bits >> 11) & 0x01) != 0)
+        TIM1SMEN_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 9 - ADC clocks enable during CPU1 Csleep and CStop modes
+    #[doc = "Bit 9 - ADC clocks enable during CPU1 Csleep and CStop modes"]
     #[inline(always)]
     pub fn adcsmen(&self) -> ADCSMEN_R {
-        ADCSMEN_R::new(((self.bits >> 9) & 0x01) != 0)
+        ADCSMEN_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 18 - TIM17 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 18 - TIM17 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn tim17smen(&mut self) -> TIM17SMEN_W {
-        TIM17SMEN_W { w: self }
+    pub fn tim17smen(&mut self) -> TIM17SMEN_W<18> {
+        TIM17SMEN_W::new(self)
     }
-    ///Bit 17 - TIM16 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 17 - TIM16 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn tim16smen(&mut self) -> TIM16SMEN_W {
-        TIM16SMEN_W { w: self }
+    pub fn tim16smen(&mut self) -> TIM16SMEN_W<17> {
+        TIM16SMEN_W::new(self)
     }
-    ///Bit 14 - USART1 clock enable during CPU1 Csleep and CStop modes.
+    #[doc = "Bit 14 - USART1 clock enable during CPU1 Csleep and CStop modes."]
     #[inline(always)]
-    pub fn usart1smen(&mut self) -> USART1SMEN_W {
-        USART1SMEN_W { w: self }
+    pub fn usart1smen(&mut self) -> USART1SMEN_W<14> {
+        USART1SMEN_W::new(self)
     }
-    ///Bit 12 - SPI1 clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 12 - SPI1 clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn spi1smen(&mut self) -> SPI1SMEN_W {
-        SPI1SMEN_W { w: self }
+    pub fn spi1smen(&mut self) -> SPI1SMEN_W<12> {
+        SPI1SMEN_W::new(self)
     }
-    ///Bit 11 - TIM1 timer clock enable during CPU1 CSleep mode.
+    #[doc = "Bit 11 - TIM1 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn tim1smen(&mut self) -> TIM1SMEN_W {
-        TIM1SMEN_W { w: self }
+    pub fn tim1smen(&mut self) -> TIM1SMEN_W<11> {
+        TIM1SMEN_W::new(self)
     }
-    ///Bit 9 - ADC clocks enable during CPU1 Csleep and CStop modes
+    #[doc = "Bit 9 - ADC clocks enable during CPU1 Csleep and CStop modes"]
     #[inline(always)]
-    pub fn adcsmen(&mut self) -> ADCSMEN_W {
-        ADCSMEN_W { w: self }
+    pub fn adcsmen(&mut self) -> ADCSMEN_W<9> {
+        ADCSMEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///APB2 peripheral clocks enable in Sleep mode register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [apb2smenr](index.html) module
+#[doc = "APB2 peripheral clocks enable in Sleep mode register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb2smenr](index.html) module"]
 pub struct APB2SMENR_SPEC;
 impl crate::RegisterSpec for APB2SMENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [apb2smenr::R](R) reader structure
+#[doc = "`read()` method returns [apb2smenr::R](R) reader structure"]
 impl crate::Readable for APB2SMENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [apb2smenr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [apb2smenr::W](W) writer structure"]
 impl crate::Writable for APB2SMENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets APB2SMENR to value 0x0006_5a00
+#[doc = "`reset()` method sets APB2SMENR to value 0x0006_5a00"]
 impl crate::Resettable for APB2SMENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

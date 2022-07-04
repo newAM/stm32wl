@@ -1,4 +1,4 @@
-///Register `C2IMR1` reader
+#[doc = "Register `C2IMR1` reader"]
 pub struct R(crate::R<C2IMR1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<C2IMR1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<C2IMR1_SPEC>> for R {
         R(reader)
     }
 }
-///Register `C2IMR1` writer
+#[doc = "Register `C2IMR1` writer"]
 pub struct W(crate::W<C2IMR1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<C2IMR1_SPEC>;
@@ -34,1276 +34,408 @@ impl From<crate::W<C2IMR1_SPEC>> for W {
         W(writer)
     }
 }
-///Field `RTCSTAMPTAMPLSECSSIM` reader - RTCSTAMPTAMPLSECSSIM
-pub struct RTCSTAMPTAMPLSECSSIM_R(crate::FieldReader<bool, bool>);
-impl RTCSTAMPTAMPLSECSSIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCSTAMPTAMPLSECSSIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCSTAMPTAMPLSECSSIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCSTAMPTAMPLSECSSIM` writer - RTCSTAMPTAMPLSECSSIM
-pub struct RTCSTAMPTAMPLSECSSIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCSTAMPTAMPLSECSSIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
-///Field `RTCALARMIM` reader - RTCALARMIM
-pub struct RTCALARMIM_R(crate::FieldReader<bool, bool>);
-impl RTCALARMIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCALARMIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCALARMIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCALARMIM` writer - RTCALARMIM
-pub struct RTCALARMIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCALARMIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///Field `RTCSSRUIM` reader - RTCSSRUIM
-pub struct RTCSSRUIM_R(crate::FieldReader<bool, bool>);
-impl RTCSSRUIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCSSRUIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCSSRUIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCSSRUIM` writer - RTCSSRUIM
-pub struct RTCSSRUIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCSSRUIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///Field `RTCWKUPIM` reader - RTCWKUPIM
-pub struct RTCWKUPIM_R(crate::FieldReader<bool, bool>);
-impl RTCWKUPIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCWKUPIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCWKUPIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RTCWKUPIM` writer - RTCWKUPIM
-pub struct RTCWKUPIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCWKUPIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///Field `RCCIM` reader - RCCIM
-pub struct RCCIM_R(crate::FieldReader<bool, bool>);
-impl RCCIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCCIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCCIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RCCIM` writer - RCCIM
-pub struct RCCIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCCIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///Field `FLASHIM` reader - FLASHIM
-pub struct FLASHIM_R(crate::FieldReader<bool, bool>);
-impl FLASHIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FLASHIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASHIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `FLASHIM` writer - FLASHIM
-pub struct FLASHIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASHIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-///Field `PKAIM` reader - PKAIM
-pub struct PKAIM_R(crate::FieldReader<bool, bool>);
-impl PKAIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PKAIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKAIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PKAIM` writer - PKAIM
-pub struct PKAIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKAIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
-///Field `AESIM` reader - AESIM
-pub struct AESIM_R(crate::FieldReader<bool, bool>);
-impl AESIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AESIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AESIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `AESIM` writer - AESIM
-pub struct AESIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
-///Field `COMPIM` reader - COMPIM
-pub struct COMPIM_R(crate::FieldReader<bool, bool>);
-impl COMPIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMPIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMPIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `COMPIM` writer - COMPIM
-pub struct COMPIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMPIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///Field `ADCIM` reader - ADCIM
-pub struct ADCIM_R(crate::FieldReader<bool, bool>);
-impl ADCIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADCIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADCIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ADCIM` writer - ADCIM
-pub struct ADCIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///Field `DACIM` reader - DACIM
-pub struct DACIM_R(crate::FieldReader<bool, bool>);
-impl DACIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DACIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DACIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DACIM` writer - DACIM
-pub struct DACIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DACIM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
-///Field `EXTI0IM` reader - EXTI0IM
-pub struct EXTI0IM_R(crate::FieldReader<bool, bool>);
-impl EXTI0IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI0IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI0IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI0IM` writer - EXTI0IM
-pub struct EXTI0IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI0IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
-///Field `EXTI1IM` reader - EXTI1IM
-pub struct EXTI1IM_R(crate::FieldReader<bool, bool>);
-impl EXTI1IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI1IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI1IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI1IM` writer - EXTI1IM
-pub struct EXTI1IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI1IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
-///Field `EXTI2IM` reader - EXTI2IM
-pub struct EXTI2IM_R(crate::FieldReader<bool, bool>);
-impl EXTI2IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI2IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI2IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI2IM` writer - EXTI2IM
-pub struct EXTI2IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI2IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
-///Field `EXTI3IM` reader - EXTI3IM
-pub struct EXTI3IM_R(crate::FieldReader<bool, bool>);
-impl EXTI3IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI3IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI3IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI3IM` writer - EXTI3IM
-pub struct EXTI3IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI3IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
-///Field `EXTI4IM` reader - EXTI4IM
-pub struct EXTI4IM_R(crate::FieldReader<bool, bool>);
-impl EXTI4IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI4IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI4IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI4IM` writer - EXTI4IM
-pub struct EXTI4IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI4IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
-///Field `EXTI5IM` reader - EXTI5IM
-pub struct EXTI5IM_R(crate::FieldReader<bool, bool>);
-impl EXTI5IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI5IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI5IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI5IM` writer - EXTI5IM
-pub struct EXTI5IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI5IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
-///Field `EXTI6IM` reader - EXTI6IM
-pub struct EXTI6IM_R(crate::FieldReader<bool, bool>);
-impl EXTI6IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI6IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI6IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI6IM` writer - EXTI6IM
-pub struct EXTI6IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI6IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
-///Field `EXTI7IM` reader - EXTI7IM
-pub struct EXTI7IM_R(crate::FieldReader<bool, bool>);
-impl EXTI7IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI7IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI7IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI7IM` writer - EXTI7IM
-pub struct EXTI7IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI7IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
-///Field `EXTI8IM` reader - EXTI8IM
-pub struct EXTI8IM_R(crate::FieldReader<bool, bool>);
-impl EXTI8IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI8IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI8IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI8IM` writer - EXTI8IM
-pub struct EXTI8IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI8IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
-///Field `EXTI9IM` reader - EXTI9IM
-pub struct EXTI9IM_R(crate::FieldReader<bool, bool>);
-impl EXTI9IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI9IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI9IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI9IM` writer - EXTI9IM
-pub struct EXTI9IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI9IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
-///Field `EXTI10IM` reader - EXTI10IM
-pub struct EXTI10IM_R(crate::FieldReader<bool, bool>);
-impl EXTI10IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI10IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI10IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI10IM` writer - EXTI10IM
-pub struct EXTI10IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI10IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
-///Field `EXTI11IM` reader - EXTI11IM
-pub struct EXTI11IM_R(crate::FieldReader<bool, bool>);
-impl EXTI11IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI11IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI11IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI11IM` writer - EXTI11IM
-pub struct EXTI11IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI11IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
-///Field `EXTI12IM` reader - EXTI12IM
-pub struct EXTI12IM_R(crate::FieldReader<bool, bool>);
-impl EXTI12IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI12IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI12IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI12IM` writer - EXTI12IM
-pub struct EXTI12IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI12IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
-///Field `EXTI13IM` reader - EXTI13IM
-pub struct EXTI13IM_R(crate::FieldReader<bool, bool>);
-impl EXTI13IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI13IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI13IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI13IM` writer - EXTI13IM
-pub struct EXTI13IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI13IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
-///Field `EXTI14IM` reader - EXTI14IM
-pub struct EXTI14IM_R(crate::FieldReader<bool, bool>);
-impl EXTI14IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI14IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI14IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI14IM` writer - EXTI14IM
-pub struct EXTI14IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI14IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
-///Field `EXTI15IM` reader - EXTI15IM
-pub struct EXTI15IM_R(crate::FieldReader<bool, bool>);
-impl EXTI15IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EXTI15IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXTI15IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EXTI15IM` writer - EXTI15IM
-pub struct EXTI15IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTI15IM_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `RTCSTAMPTAMPLSECSSIM` reader - RTCSTAMPTAMPLSECSSIM"]
+pub type RTCSTAMPTAMPLSECSSIM_R = crate::BitReader<bool>;
+#[doc = "Field `RTCSTAMPTAMPLSECSSIM` writer - RTCSTAMPTAMPLSECSSIM"]
+pub type RTCSTAMPTAMPLSECSSIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `RTCALARMIM` reader - RTCALARMIM"]
+pub type RTCALARMIM_R = crate::BitReader<bool>;
+#[doc = "Field `RTCALARMIM` writer - RTCALARMIM"]
+pub type RTCALARMIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `RTCSSRUIM` reader - RTCSSRUIM"]
+pub type RTCSSRUIM_R = crate::BitReader<bool>;
+#[doc = "Field `RTCSSRUIM` writer - RTCSSRUIM"]
+pub type RTCSSRUIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `RTCWKUPIM` reader - RTCWKUPIM"]
+pub type RTCWKUPIM_R = crate::BitReader<bool>;
+#[doc = "Field `RTCWKUPIM` writer - RTCWKUPIM"]
+pub type RTCWKUPIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `RCCIM` reader - RCCIM"]
+pub type RCCIM_R = crate::BitReader<bool>;
+#[doc = "Field `RCCIM` writer - RCCIM"]
+pub type RCCIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `FLASHIM` reader - FLASHIM"]
+pub type FLASHIM_R = crate::BitReader<bool>;
+#[doc = "Field `FLASHIM` writer - FLASHIM"]
+pub type FLASHIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `PKAIM` reader - PKAIM"]
+pub type PKAIM_R = crate::BitReader<bool>;
+#[doc = "Field `PKAIM` writer - PKAIM"]
+pub type PKAIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `AESIM` reader - AESIM"]
+pub type AESIM_R = crate::BitReader<bool>;
+#[doc = "Field `AESIM` writer - AESIM"]
+pub type AESIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `COMPIM` reader - COMPIM"]
+pub type COMPIM_R = crate::BitReader<bool>;
+#[doc = "Field `COMPIM` writer - COMPIM"]
+pub type COMPIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `ADCIM` reader - ADCIM"]
+pub type ADCIM_R = crate::BitReader<bool>;
+#[doc = "Field `ADCIM` writer - ADCIM"]
+pub type ADCIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `DACIM` reader - DACIM"]
+pub type DACIM_R = crate::BitReader<bool>;
+#[doc = "Field `DACIM` writer - DACIM"]
+pub type DACIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI0IM` reader - EXTI0IM"]
+pub type EXTI0IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI0IM` writer - EXTI0IM"]
+pub type EXTI0IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI1IM` reader - EXTI1IM"]
+pub type EXTI1IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI1IM` writer - EXTI1IM"]
+pub type EXTI1IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI2IM` reader - EXTI2IM"]
+pub type EXTI2IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI2IM` writer - EXTI2IM"]
+pub type EXTI2IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI3IM` reader - EXTI3IM"]
+pub type EXTI3IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI3IM` writer - EXTI3IM"]
+pub type EXTI3IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI4IM` reader - EXTI4IM"]
+pub type EXTI4IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI4IM` writer - EXTI4IM"]
+pub type EXTI4IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI5IM` reader - EXTI5IM"]
+pub type EXTI5IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI5IM` writer - EXTI5IM"]
+pub type EXTI5IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI6IM` reader - EXTI6IM"]
+pub type EXTI6IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI6IM` writer - EXTI6IM"]
+pub type EXTI6IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI7IM` reader - EXTI7IM"]
+pub type EXTI7IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI7IM` writer - EXTI7IM"]
+pub type EXTI7IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI8IM` reader - EXTI8IM"]
+pub type EXTI8IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI8IM` writer - EXTI8IM"]
+pub type EXTI8IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI9IM` reader - EXTI9IM"]
+pub type EXTI9IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI9IM` writer - EXTI9IM"]
+pub type EXTI9IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI10IM` reader - EXTI10IM"]
+pub type EXTI10IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI10IM` writer - EXTI10IM"]
+pub type EXTI10IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI11IM` reader - EXTI11IM"]
+pub type EXTI11IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI11IM` writer - EXTI11IM"]
+pub type EXTI11IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI12IM` reader - EXTI12IM"]
+pub type EXTI12IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI12IM` writer - EXTI12IM"]
+pub type EXTI12IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI13IM` reader - EXTI13IM"]
+pub type EXTI13IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI13IM` writer - EXTI13IM"]
+pub type EXTI13IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI14IM` reader - EXTI14IM"]
+pub type EXTI14IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI14IM` writer - EXTI14IM"]
+pub type EXTI14IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
+#[doc = "Field `EXTI15IM` reader - EXTI15IM"]
+pub type EXTI15IM_R = crate::BitReader<bool>;
+#[doc = "Field `EXTI15IM` writer - EXTI15IM"]
+pub type EXTI15IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2IMR1_SPEC, bool, O>;
 impl R {
-    ///Bit 0 - RTCSTAMPTAMPLSECSSIM
+    #[doc = "Bit 0 - RTCSTAMPTAMPLSECSSIM"]
     #[inline(always)]
     pub fn rtcstamptamplsecssim(&self) -> RTCSTAMPTAMPLSECSSIM_R {
-        RTCSTAMPTAMPLSECSSIM_R::new((self.bits & 0x01) != 0)
+        RTCSTAMPTAMPLSECSSIM_R::new((self.bits & 1) != 0)
     }
-    ///Bit 1 - RTCALARMIM
+    #[doc = "Bit 1 - RTCALARMIM"]
     #[inline(always)]
     pub fn rtcalarmim(&self) -> RTCALARMIM_R {
-        RTCALARMIM_R::new(((self.bits >> 1) & 0x01) != 0)
+        RTCALARMIM_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2 - RTCSSRUIM
+    #[doc = "Bit 2 - RTCSSRUIM"]
     #[inline(always)]
     pub fn rtcssruim(&self) -> RTCSSRUIM_R {
-        RTCSSRUIM_R::new(((self.bits >> 2) & 0x01) != 0)
+        RTCSSRUIM_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 3 - RTCWKUPIM
+    #[doc = "Bit 3 - RTCWKUPIM"]
     #[inline(always)]
     pub fn rtcwkupim(&self) -> RTCWKUPIM_R {
-        RTCWKUPIM_R::new(((self.bits >> 3) & 0x01) != 0)
+        RTCWKUPIM_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 5 - RCCIM
+    #[doc = "Bit 5 - RCCIM"]
     #[inline(always)]
     pub fn rccim(&self) -> RCCIM_R {
-        RCCIM_R::new(((self.bits >> 5) & 0x01) != 0)
+        RCCIM_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 6 - FLASHIM
+    #[doc = "Bit 6 - FLASHIM"]
     #[inline(always)]
     pub fn flashim(&self) -> FLASHIM_R {
-        FLASHIM_R::new(((self.bits >> 6) & 0x01) != 0)
+        FLASHIM_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 8 - PKAIM
+    #[doc = "Bit 8 - PKAIM"]
     #[inline(always)]
     pub fn pkaim(&self) -> PKAIM_R {
-        PKAIM_R::new(((self.bits >> 8) & 0x01) != 0)
+        PKAIM_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 10 - AESIM
+    #[doc = "Bit 10 - AESIM"]
     #[inline(always)]
     pub fn aesim(&self) -> AESIM_R {
-        AESIM_R::new(((self.bits >> 10) & 0x01) != 0)
+        AESIM_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 11 - COMPIM
+    #[doc = "Bit 11 - COMPIM"]
     #[inline(always)]
     pub fn compim(&self) -> COMPIM_R {
-        COMPIM_R::new(((self.bits >> 11) & 0x01) != 0)
+        COMPIM_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 12 - ADCIM
+    #[doc = "Bit 12 - ADCIM"]
     #[inline(always)]
     pub fn adcim(&self) -> ADCIM_R {
-        ADCIM_R::new(((self.bits >> 12) & 0x01) != 0)
+        ADCIM_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 13 - DACIM
+    #[doc = "Bit 13 - DACIM"]
     #[inline(always)]
     pub fn dacim(&self) -> DACIM_R {
-        DACIM_R::new(((self.bits >> 13) & 0x01) != 0)
+        DACIM_R::new(((self.bits >> 13) & 1) != 0)
     }
-    ///Bit 16 - EXTI0IM
+    #[doc = "Bit 16 - EXTI0IM"]
     #[inline(always)]
     pub fn exti0im(&self) -> EXTI0IM_R {
-        EXTI0IM_R::new(((self.bits >> 16) & 0x01) != 0)
+        EXTI0IM_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 17 - EXTI1IM
+    #[doc = "Bit 17 - EXTI1IM"]
     #[inline(always)]
     pub fn exti1im(&self) -> EXTI1IM_R {
-        EXTI1IM_R::new(((self.bits >> 17) & 0x01) != 0)
+        EXTI1IM_R::new(((self.bits >> 17) & 1) != 0)
     }
-    ///Bit 18 - EXTI2IM
+    #[doc = "Bit 18 - EXTI2IM"]
     #[inline(always)]
     pub fn exti2im(&self) -> EXTI2IM_R {
-        EXTI2IM_R::new(((self.bits >> 18) & 0x01) != 0)
+        EXTI2IM_R::new(((self.bits >> 18) & 1) != 0)
     }
-    ///Bit 19 - EXTI3IM
+    #[doc = "Bit 19 - EXTI3IM"]
     #[inline(always)]
     pub fn exti3im(&self) -> EXTI3IM_R {
-        EXTI3IM_R::new(((self.bits >> 19) & 0x01) != 0)
+        EXTI3IM_R::new(((self.bits >> 19) & 1) != 0)
     }
-    ///Bit 20 - EXTI4IM
+    #[doc = "Bit 20 - EXTI4IM"]
     #[inline(always)]
     pub fn exti4im(&self) -> EXTI4IM_R {
-        EXTI4IM_R::new(((self.bits >> 20) & 0x01) != 0)
+        EXTI4IM_R::new(((self.bits >> 20) & 1) != 0)
     }
-    ///Bit 21 - EXTI5IM
+    #[doc = "Bit 21 - EXTI5IM"]
     #[inline(always)]
     pub fn exti5im(&self) -> EXTI5IM_R {
-        EXTI5IM_R::new(((self.bits >> 21) & 0x01) != 0)
+        EXTI5IM_R::new(((self.bits >> 21) & 1) != 0)
     }
-    ///Bit 22 - EXTI6IM
+    #[doc = "Bit 22 - EXTI6IM"]
     #[inline(always)]
     pub fn exti6im(&self) -> EXTI6IM_R {
-        EXTI6IM_R::new(((self.bits >> 22) & 0x01) != 0)
+        EXTI6IM_R::new(((self.bits >> 22) & 1) != 0)
     }
-    ///Bit 23 - EXTI7IM
+    #[doc = "Bit 23 - EXTI7IM"]
     #[inline(always)]
     pub fn exti7im(&self) -> EXTI7IM_R {
-        EXTI7IM_R::new(((self.bits >> 23) & 0x01) != 0)
+        EXTI7IM_R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 24 - EXTI8IM
+    #[doc = "Bit 24 - EXTI8IM"]
     #[inline(always)]
     pub fn exti8im(&self) -> EXTI8IM_R {
-        EXTI8IM_R::new(((self.bits >> 24) & 0x01) != 0)
+        EXTI8IM_R::new(((self.bits >> 24) & 1) != 0)
     }
-    ///Bit 25 - EXTI9IM
+    #[doc = "Bit 25 - EXTI9IM"]
     #[inline(always)]
     pub fn exti9im(&self) -> EXTI9IM_R {
-        EXTI9IM_R::new(((self.bits >> 25) & 0x01) != 0)
+        EXTI9IM_R::new(((self.bits >> 25) & 1) != 0)
     }
-    ///Bit 26 - EXTI10IM
+    #[doc = "Bit 26 - EXTI10IM"]
     #[inline(always)]
     pub fn exti10im(&self) -> EXTI10IM_R {
-        EXTI10IM_R::new(((self.bits >> 26) & 0x01) != 0)
+        EXTI10IM_R::new(((self.bits >> 26) & 1) != 0)
     }
-    ///Bit 27 - EXTI11IM
+    #[doc = "Bit 27 - EXTI11IM"]
     #[inline(always)]
     pub fn exti11im(&self) -> EXTI11IM_R {
-        EXTI11IM_R::new(((self.bits >> 27) & 0x01) != 0)
+        EXTI11IM_R::new(((self.bits >> 27) & 1) != 0)
     }
-    ///Bit 28 - EXTI12IM
+    #[doc = "Bit 28 - EXTI12IM"]
     #[inline(always)]
     pub fn exti12im(&self) -> EXTI12IM_R {
-        EXTI12IM_R::new(((self.bits >> 28) & 0x01) != 0)
+        EXTI12IM_R::new(((self.bits >> 28) & 1) != 0)
     }
-    ///Bit 29 - EXTI13IM
+    #[doc = "Bit 29 - EXTI13IM"]
     #[inline(always)]
     pub fn exti13im(&self) -> EXTI13IM_R {
-        EXTI13IM_R::new(((self.bits >> 29) & 0x01) != 0)
+        EXTI13IM_R::new(((self.bits >> 29) & 1) != 0)
     }
-    ///Bit 30 - EXTI14IM
+    #[doc = "Bit 30 - EXTI14IM"]
     #[inline(always)]
     pub fn exti14im(&self) -> EXTI14IM_R {
-        EXTI14IM_R::new(((self.bits >> 30) & 0x01) != 0)
+        EXTI14IM_R::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 31 - EXTI15IM
+    #[doc = "Bit 31 - EXTI15IM"]
     #[inline(always)]
     pub fn exti15im(&self) -> EXTI15IM_R {
-        EXTI15IM_R::new(((self.bits >> 31) & 0x01) != 0)
+        EXTI15IM_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - RTCSTAMPTAMPLSECSSIM
+    #[doc = "Bit 0 - RTCSTAMPTAMPLSECSSIM"]
     #[inline(always)]
-    pub fn rtcstamptamplsecssim(&mut self) -> RTCSTAMPTAMPLSECSSIM_W {
-        RTCSTAMPTAMPLSECSSIM_W { w: self }
+    pub fn rtcstamptamplsecssim(&mut self) -> RTCSTAMPTAMPLSECSSIM_W<0> {
+        RTCSTAMPTAMPLSECSSIM_W::new(self)
     }
-    ///Bit 1 - RTCALARMIM
+    #[doc = "Bit 1 - RTCALARMIM"]
     #[inline(always)]
-    pub fn rtcalarmim(&mut self) -> RTCALARMIM_W {
-        RTCALARMIM_W { w: self }
+    pub fn rtcalarmim(&mut self) -> RTCALARMIM_W<1> {
+        RTCALARMIM_W::new(self)
     }
-    ///Bit 2 - RTCSSRUIM
+    #[doc = "Bit 2 - RTCSSRUIM"]
     #[inline(always)]
-    pub fn rtcssruim(&mut self) -> RTCSSRUIM_W {
-        RTCSSRUIM_W { w: self }
+    pub fn rtcssruim(&mut self) -> RTCSSRUIM_W<2> {
+        RTCSSRUIM_W::new(self)
     }
-    ///Bit 3 - RTCWKUPIM
+    #[doc = "Bit 3 - RTCWKUPIM"]
     #[inline(always)]
-    pub fn rtcwkupim(&mut self) -> RTCWKUPIM_W {
-        RTCWKUPIM_W { w: self }
+    pub fn rtcwkupim(&mut self) -> RTCWKUPIM_W<3> {
+        RTCWKUPIM_W::new(self)
     }
-    ///Bit 5 - RCCIM
+    #[doc = "Bit 5 - RCCIM"]
     #[inline(always)]
-    pub fn rccim(&mut self) -> RCCIM_W {
-        RCCIM_W { w: self }
+    pub fn rccim(&mut self) -> RCCIM_W<5> {
+        RCCIM_W::new(self)
     }
-    ///Bit 6 - FLASHIM
+    #[doc = "Bit 6 - FLASHIM"]
     #[inline(always)]
-    pub fn flashim(&mut self) -> FLASHIM_W {
-        FLASHIM_W { w: self }
+    pub fn flashim(&mut self) -> FLASHIM_W<6> {
+        FLASHIM_W::new(self)
     }
-    ///Bit 8 - PKAIM
+    #[doc = "Bit 8 - PKAIM"]
     #[inline(always)]
-    pub fn pkaim(&mut self) -> PKAIM_W {
-        PKAIM_W { w: self }
+    pub fn pkaim(&mut self) -> PKAIM_W<8> {
+        PKAIM_W::new(self)
     }
-    ///Bit 10 - AESIM
+    #[doc = "Bit 10 - AESIM"]
     #[inline(always)]
-    pub fn aesim(&mut self) -> AESIM_W {
-        AESIM_W { w: self }
+    pub fn aesim(&mut self) -> AESIM_W<10> {
+        AESIM_W::new(self)
     }
-    ///Bit 11 - COMPIM
+    #[doc = "Bit 11 - COMPIM"]
     #[inline(always)]
-    pub fn compim(&mut self) -> COMPIM_W {
-        COMPIM_W { w: self }
+    pub fn compim(&mut self) -> COMPIM_W<11> {
+        COMPIM_W::new(self)
     }
-    ///Bit 12 - ADCIM
+    #[doc = "Bit 12 - ADCIM"]
     #[inline(always)]
-    pub fn adcim(&mut self) -> ADCIM_W {
-        ADCIM_W { w: self }
+    pub fn adcim(&mut self) -> ADCIM_W<12> {
+        ADCIM_W::new(self)
     }
-    ///Bit 13 - DACIM
+    #[doc = "Bit 13 - DACIM"]
     #[inline(always)]
-    pub fn dacim(&mut self) -> DACIM_W {
-        DACIM_W { w: self }
+    pub fn dacim(&mut self) -> DACIM_W<13> {
+        DACIM_W::new(self)
     }
-    ///Bit 16 - EXTI0IM
+    #[doc = "Bit 16 - EXTI0IM"]
     #[inline(always)]
-    pub fn exti0im(&mut self) -> EXTI0IM_W {
-        EXTI0IM_W { w: self }
+    pub fn exti0im(&mut self) -> EXTI0IM_W<16> {
+        EXTI0IM_W::new(self)
     }
-    ///Bit 17 - EXTI1IM
+    #[doc = "Bit 17 - EXTI1IM"]
     #[inline(always)]
-    pub fn exti1im(&mut self) -> EXTI1IM_W {
-        EXTI1IM_W { w: self }
+    pub fn exti1im(&mut self) -> EXTI1IM_W<17> {
+        EXTI1IM_W::new(self)
     }
-    ///Bit 18 - EXTI2IM
+    #[doc = "Bit 18 - EXTI2IM"]
     #[inline(always)]
-    pub fn exti2im(&mut self) -> EXTI2IM_W {
-        EXTI2IM_W { w: self }
+    pub fn exti2im(&mut self) -> EXTI2IM_W<18> {
+        EXTI2IM_W::new(self)
     }
-    ///Bit 19 - EXTI3IM
+    #[doc = "Bit 19 - EXTI3IM"]
     #[inline(always)]
-    pub fn exti3im(&mut self) -> EXTI3IM_W {
-        EXTI3IM_W { w: self }
+    pub fn exti3im(&mut self) -> EXTI3IM_W<19> {
+        EXTI3IM_W::new(self)
     }
-    ///Bit 20 - EXTI4IM
+    #[doc = "Bit 20 - EXTI4IM"]
     #[inline(always)]
-    pub fn exti4im(&mut self) -> EXTI4IM_W {
-        EXTI4IM_W { w: self }
+    pub fn exti4im(&mut self) -> EXTI4IM_W<20> {
+        EXTI4IM_W::new(self)
     }
-    ///Bit 21 - EXTI5IM
+    #[doc = "Bit 21 - EXTI5IM"]
     #[inline(always)]
-    pub fn exti5im(&mut self) -> EXTI5IM_W {
-        EXTI5IM_W { w: self }
+    pub fn exti5im(&mut self) -> EXTI5IM_W<21> {
+        EXTI5IM_W::new(self)
     }
-    ///Bit 22 - EXTI6IM
+    #[doc = "Bit 22 - EXTI6IM"]
     #[inline(always)]
-    pub fn exti6im(&mut self) -> EXTI6IM_W {
-        EXTI6IM_W { w: self }
+    pub fn exti6im(&mut self) -> EXTI6IM_W<22> {
+        EXTI6IM_W::new(self)
     }
-    ///Bit 23 - EXTI7IM
+    #[doc = "Bit 23 - EXTI7IM"]
     #[inline(always)]
-    pub fn exti7im(&mut self) -> EXTI7IM_W {
-        EXTI7IM_W { w: self }
+    pub fn exti7im(&mut self) -> EXTI7IM_W<23> {
+        EXTI7IM_W::new(self)
     }
-    ///Bit 24 - EXTI8IM
+    #[doc = "Bit 24 - EXTI8IM"]
     #[inline(always)]
-    pub fn exti8im(&mut self) -> EXTI8IM_W {
-        EXTI8IM_W { w: self }
+    pub fn exti8im(&mut self) -> EXTI8IM_W<24> {
+        EXTI8IM_W::new(self)
     }
-    ///Bit 25 - EXTI9IM
+    #[doc = "Bit 25 - EXTI9IM"]
     #[inline(always)]
-    pub fn exti9im(&mut self) -> EXTI9IM_W {
-        EXTI9IM_W { w: self }
+    pub fn exti9im(&mut self) -> EXTI9IM_W<25> {
+        EXTI9IM_W::new(self)
     }
-    ///Bit 26 - EXTI10IM
+    #[doc = "Bit 26 - EXTI10IM"]
     #[inline(always)]
-    pub fn exti10im(&mut self) -> EXTI10IM_W {
-        EXTI10IM_W { w: self }
+    pub fn exti10im(&mut self) -> EXTI10IM_W<26> {
+        EXTI10IM_W::new(self)
     }
-    ///Bit 27 - EXTI11IM
+    #[doc = "Bit 27 - EXTI11IM"]
     #[inline(always)]
-    pub fn exti11im(&mut self) -> EXTI11IM_W {
-        EXTI11IM_W { w: self }
+    pub fn exti11im(&mut self) -> EXTI11IM_W<27> {
+        EXTI11IM_W::new(self)
     }
-    ///Bit 28 - EXTI12IM
+    #[doc = "Bit 28 - EXTI12IM"]
     #[inline(always)]
-    pub fn exti12im(&mut self) -> EXTI12IM_W {
-        EXTI12IM_W { w: self }
+    pub fn exti12im(&mut self) -> EXTI12IM_W<28> {
+        EXTI12IM_W::new(self)
     }
-    ///Bit 29 - EXTI13IM
+    #[doc = "Bit 29 - EXTI13IM"]
     #[inline(always)]
-    pub fn exti13im(&mut self) -> EXTI13IM_W {
-        EXTI13IM_W { w: self }
+    pub fn exti13im(&mut self) -> EXTI13IM_W<29> {
+        EXTI13IM_W::new(self)
     }
-    ///Bit 30 - EXTI14IM
+    #[doc = "Bit 30 - EXTI14IM"]
     #[inline(always)]
-    pub fn exti14im(&mut self) -> EXTI14IM_W {
-        EXTI14IM_W { w: self }
+    pub fn exti14im(&mut self) -> EXTI14IM_W<30> {
+        EXTI14IM_W::new(self)
     }
-    ///Bit 31 - EXTI15IM
+    #[doc = "Bit 31 - EXTI15IM"]
     #[inline(always)]
-    pub fn exti15im(&mut self) -> EXTI15IM_W {
-        EXTI15IM_W { w: self }
+    pub fn exti15im(&mut self) -> EXTI15IM_W<31> {
+        EXTI15IM_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///SYSCFG CPU2 interrupt mask register 1
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [c2imr1](index.html) module
+#[doc = "SYSCFG CPU2 interrupt mask register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c2imr1](index.html) module"]
 pub struct C2IMR1_SPEC;
 impl crate::RegisterSpec for C2IMR1_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [c2imr1::R](R) reader structure
+#[doc = "`read()` method returns [c2imr1::R](R) reader structure"]
 impl crate::Readable for C2IMR1_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [c2imr1::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [c2imr1::W](W) writer structure"]
 impl crate::Writable for C2IMR1_SPEC {
     type Writer = W;
 }
-///`reset()` method sets C2IMR1 to value 0
+#[doc = "`reset()` method sets C2IMR1 to value 0"]
 impl crate::Resettable for C2IMR1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

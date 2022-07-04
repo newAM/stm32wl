@@ -1,4 +1,4 @@
-///Register `ACR` reader
+#[doc = "Register `ACR` reader"]
 pub struct R(crate::R<ACR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ACR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ACR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `ACR` writer
+#[doc = "Register `ACR` writer"]
 pub struct W(crate::W<ACR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ACR_SPEC>;
@@ -34,18 +34,16 @@ impl From<crate::W<ACR_SPEC>> for W {
         W(writer)
     }
 }
-///Latency
-///
-///Value on reset: 0
+#[doc = "Latency\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LATENCY_A {
-    ///0: 0 wait states
-    WS0 = 0,
-    ///1: 1 wait states
-    WS1 = 1,
-    ///2: 2 wait states
-    WS2 = 2,
+    #[doc = "0: 0 wait states"]
+    Ws0 = 0,
+    #[doc = "1: 1 wait states"]
+    Ws1 = 1,
+    #[doc = "2: 2 wait states"]
+    Ws2 = 2,
 }
 impl From<LATENCY_A> for u8 {
     #[inline(always)]
@@ -53,86 +51,61 @@ impl From<LATENCY_A> for u8 {
         variant as _
     }
 }
-///Field `LATENCY` reader - Latency
-pub struct LATENCY_R(crate::FieldReader<u8, LATENCY_A>);
+#[doc = "Field `LATENCY` reader - Latency"]
+pub type LATENCY_R = crate::FieldReader<u8, LATENCY_A>;
 impl LATENCY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LATENCY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LATENCY_A> {
         match self.bits {
-            0 => Some(LATENCY_A::WS0),
-            1 => Some(LATENCY_A::WS1),
-            2 => Some(LATENCY_A::WS2),
+            0 => Some(LATENCY_A::Ws0),
+            1 => Some(LATENCY_A::Ws1),
+            2 => Some(LATENCY_A::Ws2),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `WS0`
+    #[doc = "Checks if the value of the field is `Ws0`"]
     #[inline(always)]
     pub fn is_ws0(&self) -> bool {
-        **self == LATENCY_A::WS0
+        *self == LATENCY_A::Ws0
     }
-    ///Checks if the value of the field is `WS1`
+    #[doc = "Checks if the value of the field is `Ws1`"]
     #[inline(always)]
     pub fn is_ws1(&self) -> bool {
-        **self == LATENCY_A::WS1
+        *self == LATENCY_A::Ws1
     }
-    ///Checks if the value of the field is `WS2`
+    #[doc = "Checks if the value of the field is `Ws2`"]
     #[inline(always)]
     pub fn is_ws2(&self) -> bool {
-        **self == LATENCY_A::WS2
+        *self == LATENCY_A::Ws2
     }
 }
-impl core::ops::Deref for LATENCY_R {
-    type Target = crate::FieldReader<u8, LATENCY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LATENCY` writer - Latency
-pub struct LATENCY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LATENCY_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LATENCY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///0 wait states
+#[doc = "Field `LATENCY` writer - Latency"]
+pub type LATENCY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, LATENCY_A, 3, O>;
+impl<'a, const O: u8> LATENCY_W<'a, O> {
+    #[doc = "0 wait states"]
     #[inline(always)]
     pub fn ws0(self) -> &'a mut W {
-        self.variant(LATENCY_A::WS0)
+        self.variant(LATENCY_A::Ws0)
     }
-    ///1 wait states
+    #[doc = "1 wait states"]
     #[inline(always)]
     pub fn ws1(self) -> &'a mut W {
-        self.variant(LATENCY_A::WS1)
+        self.variant(LATENCY_A::Ws1)
     }
-    ///2 wait states
+    #[doc = "2 wait states"]
     #[inline(always)]
     pub fn ws2(self) -> &'a mut W {
-        self.variant(LATENCY_A::WS2)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(LATENCY_A::Ws2)
     }
 }
-///Prefetch enable
-///
-///Value on reset: 0
+#[doc = "Prefetch enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRFTEN_A {
-    ///0: Prefetch is disabled
-    DISABLED = 0,
-    ///1: Prefetch is enabled
-    ENABLED = 1,
+    #[doc = "0: Prefetch is disabled"]
+    Disabled = 0,
+    #[doc = "1: Prefetch is enabled"]
+    Enabled = 1,
 }
 impl From<PRFTEN_A> for bool {
     #[inline(always)]
@@ -140,84 +113,49 @@ impl From<PRFTEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PRFTEN` reader - Prefetch enable
-pub struct PRFTEN_R(crate::FieldReader<bool, PRFTEN_A>);
+#[doc = "Field `PRFTEN` reader - Prefetch enable"]
+pub type PRFTEN_R = crate::BitReader<PRFTEN_A>;
 impl PRFTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRFTEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRFTEN_A {
         match self.bits {
-            false => PRFTEN_A::DISABLED,
-            true => PRFTEN_A::ENABLED,
+            false => PRFTEN_A::Disabled,
+            true => PRFTEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PRFTEN_A::DISABLED
+        *self == PRFTEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PRFTEN_A::ENABLED
+        *self == PRFTEN_A::Enabled
     }
 }
-impl core::ops::Deref for PRFTEN_R {
-    type Target = crate::FieldReader<bool, PRFTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PRFTEN` writer - Prefetch enable
-pub struct PRFTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRFTEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PRFTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Prefetch is disabled
+#[doc = "Field `PRFTEN` writer - Prefetch enable"]
+pub type PRFTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, PRFTEN_A, O>;
+impl<'a, const O: u8> PRFTEN_W<'a, O> {
+    #[doc = "Prefetch is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PRFTEN_A::DISABLED)
+        self.variant(PRFTEN_A::Disabled)
     }
-    ///Prefetch is enabled
+    #[doc = "Prefetch is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PRFTEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(PRFTEN_A::Enabled)
     }
 }
-///Instruction cache enable
-///
-///Value on reset: 1
+#[doc = "Instruction cache enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICEN_A {
-    ///0: Instruction cache is disabled
-    DISABLED = 0,
-    ///1: Instruction cache is enabled
-    ENABLED = 1,
+    #[doc = "0: Instruction cache is disabled"]
+    Disabled = 0,
+    #[doc = "1: Instruction cache is enabled"]
+    Enabled = 1,
 }
 impl From<ICEN_A> for bool {
     #[inline(always)]
@@ -225,84 +163,49 @@ impl From<ICEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ICEN` reader - Instruction cache enable
-pub struct ICEN_R(crate::FieldReader<bool, ICEN_A>);
+#[doc = "Field `ICEN` reader - Instruction cache enable"]
+pub type ICEN_R = crate::BitReader<ICEN_A>;
 impl ICEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ICEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ICEN_A {
         match self.bits {
-            false => ICEN_A::DISABLED,
-            true => ICEN_A::ENABLED,
+            false => ICEN_A::Disabled,
+            true => ICEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == ICEN_A::DISABLED
+        *self == ICEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == ICEN_A::ENABLED
+        *self == ICEN_A::Enabled
     }
 }
-impl core::ops::Deref for ICEN_R {
-    type Target = crate::FieldReader<bool, ICEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ICEN` writer - Instruction cache enable
-pub struct ICEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ICEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Instruction cache is disabled
+#[doc = "Field `ICEN` writer - Instruction cache enable"]
+pub type ICEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, ICEN_A, O>;
+impl<'a, const O: u8> ICEN_W<'a, O> {
+    #[doc = "Instruction cache is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ICEN_A::DISABLED)
+        self.variant(ICEN_A::Disabled)
     }
-    ///Instruction cache is enabled
+    #[doc = "Instruction cache is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ICEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(ICEN_A::Enabled)
     }
 }
-///Data cache enable
-///
-///Value on reset: 1
+#[doc = "Data cache enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN_A {
-    ///0: Data cache is disabled
-    DISABLED = 0,
-    ///1: Data cache is enabled
-    ENABLED = 1,
+    #[doc = "0: Data cache is disabled"]
+    Disabled = 0,
+    #[doc = "1: Data cache is enabled"]
+    Enabled = 1,
 }
 impl From<DCEN_A> for bool {
     #[inline(always)]
@@ -310,84 +213,49 @@ impl From<DCEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DCEN` reader - Data cache enable
-pub struct DCEN_R(crate::FieldReader<bool, DCEN_A>);
+#[doc = "Field `DCEN` reader - Data cache enable"]
+pub type DCEN_R = crate::BitReader<DCEN_A>;
 impl DCEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DCEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCEN_A {
         match self.bits {
-            false => DCEN_A::DISABLED,
-            true => DCEN_A::ENABLED,
+            false => DCEN_A::Disabled,
+            true => DCEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DCEN_A::DISABLED
+        *self == DCEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DCEN_A::ENABLED
+        *self == DCEN_A::Enabled
     }
 }
-impl core::ops::Deref for DCEN_R {
-    type Target = crate::FieldReader<bool, DCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DCEN` writer - Data cache enable
-pub struct DCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Data cache is disabled
+#[doc = "Field `DCEN` writer - Data cache enable"]
+pub type DCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, DCEN_A, O>;
+impl<'a, const O: u8> DCEN_W<'a, O> {
+    #[doc = "Data cache is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(DCEN_A::DISABLED)
+        self.variant(DCEN_A::Disabled)
     }
-    ///Data cache is enabled
+    #[doc = "Data cache is enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(DCEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(DCEN_A::Enabled)
     }
 }
-///Instruction cache reset
-///
-///Value on reset: 0
+#[doc = "Instruction cache reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICRST_A {
-    ///0: Instruction cache is not reset
-    NOTRESET = 0,
-    ///1: Instruction cache is reset
-    RESET = 1,
+    #[doc = "0: Instruction cache is not reset"]
+    NotReset = 0,
+    #[doc = "1: Instruction cache is reset"]
+    Reset = 1,
 }
 impl From<ICRST_A> for bool {
     #[inline(always)]
@@ -395,84 +263,49 @@ impl From<ICRST_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `ICRST` reader - Instruction cache reset
-pub struct ICRST_R(crate::FieldReader<bool, ICRST_A>);
+#[doc = "Field `ICRST` reader - Instruction cache reset"]
+pub type ICRST_R = crate::BitReader<ICRST_A>;
 impl ICRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ICRST_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ICRST_A {
         match self.bits {
-            false => ICRST_A::NOTRESET,
-            true => ICRST_A::RESET,
+            false => ICRST_A::NotReset,
+            true => ICRST_A::Reset,
         }
     }
-    ///Checks if the value of the field is `NOTRESET`
+    #[doc = "Checks if the value of the field is `NotReset`"]
     #[inline(always)]
     pub fn is_not_reset(&self) -> bool {
-        **self == ICRST_A::NOTRESET
+        *self == ICRST_A::NotReset
     }
-    ///Checks if the value of the field is `RESET`
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == ICRST_A::RESET
+        *self == ICRST_A::Reset
     }
 }
-impl core::ops::Deref for ICRST_R {
-    type Target = crate::FieldReader<bool, ICRST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ICRST` writer - Instruction cache reset
-pub struct ICRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ICRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Instruction cache is not reset
+#[doc = "Field `ICRST` writer - Instruction cache reset"]
+pub type ICRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, ICRST_A, O>;
+impl<'a, const O: u8> ICRST_W<'a, O> {
+    #[doc = "Instruction cache is not reset"]
     #[inline(always)]
     pub fn not_reset(self) -> &'a mut W {
-        self.variant(ICRST_A::NOTRESET)
+        self.variant(ICRST_A::NotReset)
     }
-    ///Instruction cache is reset
+    #[doc = "Instruction cache is reset"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(ICRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
+        self.variant(ICRST_A::Reset)
     }
 }
-///Data cache reset
-///
-///Value on reset: 0
+#[doc = "Data cache reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCRST_A {
-    ///0: Data cache is not reset
-    NOTRESET = 0,
-    ///1: Data cache is reset
-    RESET = 1,
+    #[doc = "0: Data cache is not reset"]
+    NotReset = 0,
+    #[doc = "1: Data cache is reset"]
+    Reset = 1,
 }
 impl From<DCRST_A> for bool {
     #[inline(always)]
@@ -480,84 +313,49 @@ impl From<DCRST_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DCRST` reader - Data cache reset
-pub struct DCRST_R(crate::FieldReader<bool, DCRST_A>);
+#[doc = "Field `DCRST` reader - Data cache reset"]
+pub type DCRST_R = crate::BitReader<DCRST_A>;
 impl DCRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DCRST_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCRST_A {
         match self.bits {
-            false => DCRST_A::NOTRESET,
-            true => DCRST_A::RESET,
+            false => DCRST_A::NotReset,
+            true => DCRST_A::Reset,
         }
     }
-    ///Checks if the value of the field is `NOTRESET`
+    #[doc = "Checks if the value of the field is `NotReset`"]
     #[inline(always)]
     pub fn is_not_reset(&self) -> bool {
-        **self == DCRST_A::NOTRESET
+        *self == DCRST_A::NotReset
     }
-    ///Checks if the value of the field is `RESET`
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == DCRST_A::RESET
+        *self == DCRST_A::Reset
     }
 }
-impl core::ops::Deref for DCRST_R {
-    type Target = crate::FieldReader<bool, DCRST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DCRST` writer - Data cache reset
-pub struct DCRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCRST_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DCRST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Data cache is not reset
+#[doc = "Field `DCRST` writer - Data cache reset"]
+pub type DCRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, DCRST_A, O>;
+impl<'a, const O: u8> DCRST_W<'a, O> {
+    #[doc = "Data cache is not reset"]
     #[inline(always)]
     pub fn not_reset(self) -> &'a mut W {
-        self.variant(DCRST_A::NOTRESET)
+        self.variant(DCRST_A::NotReset)
     }
-    ///Data cache is reset
+    #[doc = "Data cache is reset"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(DCRST_A::RESET)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(DCRST_A::Reset)
     }
 }
-///CPU1 programm erase suspend request
-///
-///Value on reset: 0
+#[doc = "CPU1 programm erase suspend request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PES_A {
-    ///0: Flash program and erase operations granted
-    GRANTED = 0,
-    ///1: Any new Flash program and erase operation is suspended until this bit is cleared. The PESD bit in FLASH_SR is set when PES bit in FLASH_ACR is set
-    SUSPENDED = 1,
+    #[doc = "0: Flash program and erase operations granted"]
+    Granted = 0,
+    #[doc = "1: Any new Flash program and erase operation is suspended until this bit is cleared. The PESD bit in FLASH_SR is set when PES bit in FLASH_ACR is set"]
+    Suspended = 1,
 }
 impl From<PES_A> for bool {
     #[inline(always)]
@@ -565,84 +363,49 @@ impl From<PES_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `PES` reader - CPU1 programm erase suspend request
-pub struct PES_R(crate::FieldReader<bool, PES_A>);
+#[doc = "Field `PES` reader - CPU1 programm erase suspend request"]
+pub type PES_R = crate::BitReader<PES_A>;
 impl PES_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PES_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PES_A {
         match self.bits {
-            false => PES_A::GRANTED,
-            true => PES_A::SUSPENDED,
+            false => PES_A::Granted,
+            true => PES_A::Suspended,
         }
     }
-    ///Checks if the value of the field is `GRANTED`
+    #[doc = "Checks if the value of the field is `Granted`"]
     #[inline(always)]
     pub fn is_granted(&self) -> bool {
-        **self == PES_A::GRANTED
+        *self == PES_A::Granted
     }
-    ///Checks if the value of the field is `SUSPENDED`
+    #[doc = "Checks if the value of the field is `Suspended`"]
     #[inline(always)]
     pub fn is_suspended(&self) -> bool {
-        **self == PES_A::SUSPENDED
+        *self == PES_A::Suspended
     }
 }
-impl core::ops::Deref for PES_R {
-    type Target = crate::FieldReader<bool, PES_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PES` writer - CPU1 programm erase suspend request
-pub struct PES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PES_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: PES_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Flash program and erase operations granted
+#[doc = "Field `PES` writer - CPU1 programm erase suspend request"]
+pub type PES_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, PES_A, O>;
+impl<'a, const O: u8> PES_W<'a, O> {
+    #[doc = "Flash program and erase operations granted"]
     #[inline(always)]
     pub fn granted(self) -> &'a mut W {
-        self.variant(PES_A::GRANTED)
+        self.variant(PES_A::Granted)
     }
-    ///Any new Flash program and erase operation is suspended until this bit is cleared. The PESD bit in FLASH_SR is set when PES bit in FLASH_ACR is set
+    #[doc = "Any new Flash program and erase operation is suspended until this bit is cleared. The PESD bit in FLASH_SR is set when PES bit in FLASH_ACR is set"]
     #[inline(always)]
     pub fn suspended(self) -> &'a mut W {
-        self.variant(PES_A::SUSPENDED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(PES_A::Suspended)
     }
 }
-///Flash User area empty
-///
-///Value on reset: 0
+#[doc = "Flash User area empty\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMPTY_A {
-    ///0: User Flash programmend
-    PROGRAMMED = 0,
-    ///1: User Flash empty
-    EMPTY = 1,
+    #[doc = "0: User Flash programmend"]
+    Programmed = 0,
+    #[doc = "1: User Flash empty"]
+    Empty = 1,
 }
 impl From<EMPTY_A> for bool {
     #[inline(always)]
@@ -650,183 +413,146 @@ impl From<EMPTY_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `EMPTY` reader - Flash User area empty
-pub struct EMPTY_R(crate::FieldReader<bool, EMPTY_A>);
+#[doc = "Field `EMPTY` reader - Flash User area empty"]
+pub type EMPTY_R = crate::BitReader<EMPTY_A>;
 impl EMPTY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EMPTY_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMPTY_A {
         match self.bits {
-            false => EMPTY_A::PROGRAMMED,
-            true => EMPTY_A::EMPTY,
+            false => EMPTY_A::Programmed,
+            true => EMPTY_A::Empty,
         }
     }
-    ///Checks if the value of the field is `PROGRAMMED`
+    #[doc = "Checks if the value of the field is `Programmed`"]
     #[inline(always)]
     pub fn is_programmed(&self) -> bool {
-        **self == EMPTY_A::PROGRAMMED
+        *self == EMPTY_A::Programmed
     }
-    ///Checks if the value of the field is `EMPTY`
+    #[doc = "Checks if the value of the field is `Empty`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == EMPTY_A::EMPTY
+        *self == EMPTY_A::Empty
     }
 }
-impl core::ops::Deref for EMPTY_R {
-    type Target = crate::FieldReader<bool, EMPTY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `EMPTY` writer - Flash User area empty
-pub struct EMPTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMPTY_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: EMPTY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///User Flash programmend
+#[doc = "Field `EMPTY` writer - Flash User area empty"]
+pub type EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, EMPTY_A, O>;
+impl<'a, const O: u8> EMPTY_W<'a, O> {
+    #[doc = "User Flash programmend"]
     #[inline(always)]
     pub fn programmed(self) -> &'a mut W {
-        self.variant(EMPTY_A::PROGRAMMED)
+        self.variant(EMPTY_A::Programmed)
     }
-    ///User Flash empty
+    #[doc = "User Flash empty"]
     #[inline(always)]
     pub fn empty(self) -> &'a mut W {
-        self.variant(EMPTY_A::EMPTY)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(EMPTY_A::Empty)
     }
 }
 impl R {
-    ///Bits 0:2 - Latency
+    #[doc = "Bits 0:2 - Latency"]
     #[inline(always)]
     pub fn latency(&self) -> LATENCY_R {
-        LATENCY_R::new((self.bits & 0x07) as u8)
+        LATENCY_R::new((self.bits & 7) as u8)
     }
-    ///Bit 8 - Prefetch enable
+    #[doc = "Bit 8 - Prefetch enable"]
     #[inline(always)]
     pub fn prften(&self) -> PRFTEN_R {
-        PRFTEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        PRFTEN_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 9 - Instruction cache enable
+    #[doc = "Bit 9 - Instruction cache enable"]
     #[inline(always)]
     pub fn icen(&self) -> ICEN_R {
-        ICEN_R::new(((self.bits >> 9) & 0x01) != 0)
+        ICEN_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 10 - Data cache enable
+    #[doc = "Bit 10 - Data cache enable"]
     #[inline(always)]
     pub fn dcen(&self) -> DCEN_R {
-        DCEN_R::new(((self.bits >> 10) & 0x01) != 0)
+        DCEN_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 11 - Instruction cache reset
+    #[doc = "Bit 11 - Instruction cache reset"]
     #[inline(always)]
     pub fn icrst(&self) -> ICRST_R {
-        ICRST_R::new(((self.bits >> 11) & 0x01) != 0)
+        ICRST_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 12 - Data cache reset
+    #[doc = "Bit 12 - Data cache reset"]
     #[inline(always)]
     pub fn dcrst(&self) -> DCRST_R {
-        DCRST_R::new(((self.bits >> 12) & 0x01) != 0)
+        DCRST_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 15 - CPU1 programm erase suspend request
+    #[doc = "Bit 15 - CPU1 programm erase suspend request"]
     #[inline(always)]
     pub fn pes(&self) -> PES_R {
-        PES_R::new(((self.bits >> 15) & 0x01) != 0)
+        PES_R::new(((self.bits >> 15) & 1) != 0)
     }
-    ///Bit 16 - Flash User area empty
+    #[doc = "Bit 16 - Flash User area empty"]
     #[inline(always)]
     pub fn empty(&self) -> EMPTY_R {
-        EMPTY_R::new(((self.bits >> 16) & 0x01) != 0)
+        EMPTY_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
-    ///Bits 0:2 - Latency
+    #[doc = "Bits 0:2 - Latency"]
     #[inline(always)]
-    pub fn latency(&mut self) -> LATENCY_W {
-        LATENCY_W { w: self }
+    pub fn latency(&mut self) -> LATENCY_W<0> {
+        LATENCY_W::new(self)
     }
-    ///Bit 8 - Prefetch enable
+    #[doc = "Bit 8 - Prefetch enable"]
     #[inline(always)]
-    pub fn prften(&mut self) -> PRFTEN_W {
-        PRFTEN_W { w: self }
+    pub fn prften(&mut self) -> PRFTEN_W<8> {
+        PRFTEN_W::new(self)
     }
-    ///Bit 9 - Instruction cache enable
+    #[doc = "Bit 9 - Instruction cache enable"]
     #[inline(always)]
-    pub fn icen(&mut self) -> ICEN_W {
-        ICEN_W { w: self }
+    pub fn icen(&mut self) -> ICEN_W<9> {
+        ICEN_W::new(self)
     }
-    ///Bit 10 - Data cache enable
+    #[doc = "Bit 10 - Data cache enable"]
     #[inline(always)]
-    pub fn dcen(&mut self) -> DCEN_W {
-        DCEN_W { w: self }
+    pub fn dcen(&mut self) -> DCEN_W<10> {
+        DCEN_W::new(self)
     }
-    ///Bit 11 - Instruction cache reset
+    #[doc = "Bit 11 - Instruction cache reset"]
     #[inline(always)]
-    pub fn icrst(&mut self) -> ICRST_W {
-        ICRST_W { w: self }
+    pub fn icrst(&mut self) -> ICRST_W<11> {
+        ICRST_W::new(self)
     }
-    ///Bit 12 - Data cache reset
+    #[doc = "Bit 12 - Data cache reset"]
     #[inline(always)]
-    pub fn dcrst(&mut self) -> DCRST_W {
-        DCRST_W { w: self }
+    pub fn dcrst(&mut self) -> DCRST_W<12> {
+        DCRST_W::new(self)
     }
-    ///Bit 15 - CPU1 programm erase suspend request
+    #[doc = "Bit 15 - CPU1 programm erase suspend request"]
     #[inline(always)]
-    pub fn pes(&mut self) -> PES_W {
-        PES_W { w: self }
+    pub fn pes(&mut self) -> PES_W<15> {
+        PES_W::new(self)
     }
-    ///Bit 16 - Flash User area empty
+    #[doc = "Bit 16 - Flash User area empty"]
     #[inline(always)]
-    pub fn empty(&mut self) -> EMPTY_W {
-        EMPTY_W { w: self }
+    pub fn empty(&mut self) -> EMPTY_W<16> {
+        EMPTY_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Access control register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [acr](index.html) module
+#[doc = "Access control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr](index.html) module"]
 pub struct ACR_SPEC;
 impl crate::RegisterSpec for ACR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [acr::R](R) reader structure
+#[doc = "`read()` method returns [acr::R](R) reader structure"]
 impl crate::Readable for ACR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [acr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets ACR to value 0x0600
+#[doc = "`reset()` method sets ACR to value 0x0600"]
 impl crate::Resettable for ACR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

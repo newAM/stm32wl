@@ -1,4 +1,4 @@
-///Register `SFR` reader
+#[doc = "Register `SFR` reader"]
 pub struct R(crate::R<SFR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SFR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SFR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `SFR` writer
+#[doc = "Register `SFR` writer"]
 pub struct W(crate::W<SFR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SFR_SPEC>;
@@ -34,41 +34,17 @@ impl From<crate::W<SFR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `SFSA` reader - Secure Flash start address
-pub struct SFSA_R(crate::FieldReader<u8, u8>);
-impl SFSA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SFSA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SFSA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SFSA` writer - Secure Flash start address
-pub struct SFSA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SFSA_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
-///Flash security disabled
-///
-///Value on reset: 1
+#[doc = "Field `SFSA` reader - Secure Flash start address"]
+pub type SFSA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SFSA` writer - Secure Flash start address"]
+pub type SFSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SFR_SPEC, u8, u8, 7, O>;
+#[doc = "Flash security disabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FSD_A {
-    ///0: System and Flash memory secure
-    SECURE = 0,
-    ///1: System and Flash memory non-secure
-    NONSECURE = 1,
+    #[doc = "0: System and Flash memory secure"]
+    Secure = 0,
+    #[doc = "1: System and Flash memory non-secure"]
+    NonSecure = 1,
 }
 impl From<FSD_A> for bool {
     #[inline(always)]
@@ -76,84 +52,49 @@ impl From<FSD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `FSD` reader - Flash security disabled
-pub struct FSD_R(crate::FieldReader<bool, FSD_A>);
+#[doc = "Field `FSD` reader - Flash security disabled"]
+pub type FSD_R = crate::BitReader<FSD_A>;
 impl FSD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FSD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FSD_A {
         match self.bits {
-            false => FSD_A::SECURE,
-            true => FSD_A::NONSECURE,
+            false => FSD_A::Secure,
+            true => FSD_A::NonSecure,
         }
     }
-    ///Checks if the value of the field is `SECURE`
+    #[doc = "Checks if the value of the field is `Secure`"]
     #[inline(always)]
     pub fn is_secure(&self) -> bool {
-        **self == FSD_A::SECURE
+        *self == FSD_A::Secure
     }
-    ///Checks if the value of the field is `NONSECURE`
+    #[doc = "Checks if the value of the field is `NonSecure`"]
     #[inline(always)]
     pub fn is_non_secure(&self) -> bool {
-        **self == FSD_A::NONSECURE
+        *self == FSD_A::NonSecure
     }
 }
-impl core::ops::Deref for FSD_R {
-    type Target = crate::FieldReader<bool, FSD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `FSD` writer - Flash security disabled
-pub struct FSD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FSD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: FSD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///System and Flash memory secure
+#[doc = "Field `FSD` writer - Flash security disabled"]
+pub type FSD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, FSD_A, O>;
+impl<'a, const O: u8> FSD_W<'a, O> {
+    #[doc = "System and Flash memory secure"]
     #[inline(always)]
     pub fn secure(self) -> &'a mut W {
-        self.variant(FSD_A::SECURE)
+        self.variant(FSD_A::Secure)
     }
-    ///System and Flash memory non-secure
+    #[doc = "System and Flash memory non-secure"]
     #[inline(always)]
     pub fn non_secure(self) -> &'a mut W {
-        self.variant(FSD_A::NONSECURE)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(FSD_A::NonSecure)
     }
 }
-///DDS
-///
-///Value on reset: 0
+#[doc = "DDS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDS_A {
-    ///0: CPU2 debug access enabled
-    ENABLED = 0,
-    ///1: CPU2 debug access disabled
-    DISABLED = 1,
+    #[doc = "0: CPU2 debug access enabled"]
+    Enabled = 0,
+    #[doc = "1: CPU2 debug access disabled"]
+    Disabled = 1,
 }
 impl From<DDS_A> for bool {
     #[inline(always)]
@@ -161,111 +102,54 @@ impl From<DDS_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `DDS` reader - DDS
-pub struct DDS_R(crate::FieldReader<bool, DDS_A>);
+#[doc = "Field `DDS` reader - DDS"]
+pub type DDS_R = crate::BitReader<DDS_A>;
 impl DDS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DDS_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DDS_A {
         match self.bits {
-            false => DDS_A::ENABLED,
-            true => DDS_A::DISABLED,
+            false => DDS_A::Enabled,
+            true => DDS_A::Disabled,
         }
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DDS_A::ENABLED
+        *self == DDS_A::Enabled
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DDS_A::DISABLED
+        *self == DDS_A::Disabled
     }
 }
-impl core::ops::Deref for DDS_R {
-    type Target = crate::FieldReader<bool, DDS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DDS` writer - DDS
-pub struct DDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDS_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: DDS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///CPU2 debug access enabled
+#[doc = "Field `DDS` writer - DDS"]
+pub type DDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, DDS_A, O>;
+impl<'a, const O: u8> DDS_W<'a, O> {
+    #[doc = "CPU2 debug access enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(DDS_A::ENABLED)
+        self.variant(DDS_A::Enabled)
     }
-    ///CPU2 debug access disabled
+    #[doc = "CPU2 debug access disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(DDS_A::DISABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(DDS_A::Disabled)
     }
 }
-///Field `HDPSA` reader - User Flash hide protection area start address
-pub struct HDPSA_R(crate::FieldReader<u8, u8>);
-impl HDPSA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HDPSA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HDPSA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HDPSA` writer - User Flash hide protection area start address
-pub struct HDPSA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HDPSA_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
-///User Flash hide protection area disabled
-///
-///Value on reset: 1
+#[doc = "Field `HDPSA` reader - User Flash hide protection area start address"]
+pub type HDPSA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HDPSA` writer - User Flash hide protection area start address"]
+pub type HDPSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SFR_SPEC, u8, u8, 7, O>;
+#[doc = "User Flash hide protection area disabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDPAD_A {
-    ///0: User Flash memory hide protection area enabled. HDPSA\[6:0\]
-    ///contains the start address of the first 2-Kbyte page of the user Flash memory hide protection area
-    ENABLED = 0,
-    ///1: User Flash memory hide protection area disabled
-    DISABLED = 1,
+    #[doc = "0: User Flash memory hide protection area enabled. HDPSA\\[6:0\\]
+contains the start address of the first 2-Kbyte page of the user Flash memory hide protection area"]
+    Enabled = 0,
+    #[doc = "1: User Flash memory hide protection area disabled"]
+    Disabled = 1,
 }
 impl From<HDPAD_A> for bool {
     #[inline(always)]
@@ -273,85 +157,50 @@ impl From<HDPAD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `HDPAD` reader - User Flash hide protection area disabled
-pub struct HDPAD_R(crate::FieldReader<bool, HDPAD_A>);
+#[doc = "Field `HDPAD` reader - User Flash hide protection area disabled"]
+pub type HDPAD_R = crate::BitReader<HDPAD_A>;
 impl HDPAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HDPAD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HDPAD_A {
         match self.bits {
-            false => HDPAD_A::ENABLED,
-            true => HDPAD_A::DISABLED,
+            false => HDPAD_A::Enabled,
+            true => HDPAD_A::Disabled,
         }
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HDPAD_A::ENABLED
+        *self == HDPAD_A::Enabled
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HDPAD_A::DISABLED
+        *self == HDPAD_A::Disabled
     }
 }
-impl core::ops::Deref for HDPAD_R {
-    type Target = crate::FieldReader<bool, HDPAD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `HDPAD` writer - User Flash hide protection area disabled
-pub struct HDPAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HDPAD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: HDPAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///User Flash memory hide protection area enabled. HDPSA\[6:0\]
-    ///contains the start address of the first 2-Kbyte page of the user Flash memory hide protection area
+#[doc = "Field `HDPAD` writer - User Flash hide protection area disabled"]
+pub type HDPAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, HDPAD_A, O>;
+impl<'a, const O: u8> HDPAD_W<'a, O> {
+    #[doc = "User Flash memory hide protection area enabled. HDPSA\\[6:0\\]
+contains the start address of the first 2-Kbyte page of the user Flash memory hide protection area"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(HDPAD_A::ENABLED)
+        self.variant(HDPAD_A::Enabled)
     }
-    ///User Flash memory hide protection area disabled
+    #[doc = "User Flash memory hide protection area disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(HDPAD_A::DISABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
+        self.variant(HDPAD_A::Disabled)
     }
 }
-///sub-GHz radio SPI security disable
-///
-///Value on reset: 1
+#[doc = "sub-GHz radio SPI security disable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUBGHSPISD_A {
-    ///0: sub-GHz radio SPI security enabled
-    ENABLED = 0,
-    ///1: sub-GHz radio SPI security disabled
-    DISABLED = 1,
+    #[doc = "0: sub-GHz radio SPI security enabled"]
+    Enabled = 0,
+    #[doc = "1: sub-GHz radio SPI security disabled"]
+    Disabled = 1,
 }
 impl From<SUBGHSPISD_A> for bool {
     #[inline(always)]
@@ -359,163 +208,126 @@ impl From<SUBGHSPISD_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `SUBGHSPISD` reader - sub-GHz radio SPI security disable
-pub struct SUBGHSPISD_R(crate::FieldReader<bool, SUBGHSPISD_A>);
+#[doc = "Field `SUBGHSPISD` reader - sub-GHz radio SPI security disable"]
+pub type SUBGHSPISD_R = crate::BitReader<SUBGHSPISD_A>;
 impl SUBGHSPISD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SUBGHSPISD_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUBGHSPISD_A {
         match self.bits {
-            false => SUBGHSPISD_A::ENABLED,
-            true => SUBGHSPISD_A::DISABLED,
+            false => SUBGHSPISD_A::Enabled,
+            true => SUBGHSPISD_A::Disabled,
         }
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SUBGHSPISD_A::ENABLED
+        *self == SUBGHSPISD_A::Enabled
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SUBGHSPISD_A::DISABLED
+        *self == SUBGHSPISD_A::Disabled
     }
 }
-impl core::ops::Deref for SUBGHSPISD_R {
-    type Target = crate::FieldReader<bool, SUBGHSPISD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SUBGHSPISD` writer - sub-GHz radio SPI security disable
-pub struct SUBGHSPISD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUBGHSPISD_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SUBGHSPISD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///sub-GHz radio SPI security enabled
+#[doc = "Field `SUBGHSPISD` writer - sub-GHz radio SPI security disable"]
+pub type SUBGHSPISD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, SUBGHSPISD_A, O>;
+impl<'a, const O: u8> SUBGHSPISD_W<'a, O> {
+    #[doc = "sub-GHz radio SPI security enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(SUBGHSPISD_A::ENABLED)
+        self.variant(SUBGHSPISD_A::Enabled)
     }
-    ///sub-GHz radio SPI security disabled
+    #[doc = "sub-GHz radio SPI security disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SUBGHSPISD_A::DISABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
+        self.variant(SUBGHSPISD_A::Disabled)
     }
 }
 impl R {
-    ///Bits 0:6 - Secure Flash start address
+    #[doc = "Bits 0:6 - Secure Flash start address"]
     #[inline(always)]
     pub fn sfsa(&self) -> SFSA_R {
         SFSA_R::new((self.bits & 0x7f) as u8)
     }
-    ///Bit 7 - Flash security disabled
+    #[doc = "Bit 7 - Flash security disabled"]
     #[inline(always)]
     pub fn fsd(&self) -> FSD_R {
-        FSD_R::new(((self.bits >> 7) & 0x01) != 0)
+        FSD_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 12 - DDS
+    #[doc = "Bit 12 - DDS"]
     #[inline(always)]
     pub fn dds(&self) -> DDS_R {
-        DDS_R::new(((self.bits >> 12) & 0x01) != 0)
+        DDS_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bits 16:22 - User Flash hide protection area start address
+    #[doc = "Bits 16:22 - User Flash hide protection area start address"]
     #[inline(always)]
     pub fn hdpsa(&self) -> HDPSA_R {
         HDPSA_R::new(((self.bits >> 16) & 0x7f) as u8)
     }
-    ///Bit 23 - User Flash hide protection area disabled
+    #[doc = "Bit 23 - User Flash hide protection area disabled"]
     #[inline(always)]
     pub fn hdpad(&self) -> HDPAD_R {
-        HDPAD_R::new(((self.bits >> 23) & 0x01) != 0)
+        HDPAD_R::new(((self.bits >> 23) & 1) != 0)
     }
-    ///Bit 31 - sub-GHz radio SPI security disable
+    #[doc = "Bit 31 - sub-GHz radio SPI security disable"]
     #[inline(always)]
     pub fn subghspisd(&self) -> SUBGHSPISD_R {
-        SUBGHSPISD_R::new(((self.bits >> 31) & 0x01) != 0)
+        SUBGHSPISD_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    ///Bits 0:6 - Secure Flash start address
+    #[doc = "Bits 0:6 - Secure Flash start address"]
     #[inline(always)]
-    pub fn sfsa(&mut self) -> SFSA_W {
-        SFSA_W { w: self }
+    pub fn sfsa(&mut self) -> SFSA_W<0> {
+        SFSA_W::new(self)
     }
-    ///Bit 7 - Flash security disabled
+    #[doc = "Bit 7 - Flash security disabled"]
     #[inline(always)]
-    pub fn fsd(&mut self) -> FSD_W {
-        FSD_W { w: self }
+    pub fn fsd(&mut self) -> FSD_W<7> {
+        FSD_W::new(self)
     }
-    ///Bit 12 - DDS
+    #[doc = "Bit 12 - DDS"]
     #[inline(always)]
-    pub fn dds(&mut self) -> DDS_W {
-        DDS_W { w: self }
+    pub fn dds(&mut self) -> DDS_W<12> {
+        DDS_W::new(self)
     }
-    ///Bits 16:22 - User Flash hide protection area start address
+    #[doc = "Bits 16:22 - User Flash hide protection area start address"]
     #[inline(always)]
-    pub fn hdpsa(&mut self) -> HDPSA_W {
-        HDPSA_W { w: self }
+    pub fn hdpsa(&mut self) -> HDPSA_W<16> {
+        HDPSA_W::new(self)
     }
-    ///Bit 23 - User Flash hide protection area disabled
+    #[doc = "Bit 23 - User Flash hide protection area disabled"]
     #[inline(always)]
-    pub fn hdpad(&mut self) -> HDPAD_W {
-        HDPAD_W { w: self }
+    pub fn hdpad(&mut self) -> HDPAD_W<23> {
+        HDPAD_W::new(self)
     }
-    ///Bit 31 - sub-GHz radio SPI security disable
+    #[doc = "Bit 31 - sub-GHz radio SPI security disable"]
     #[inline(always)]
-    pub fn subghspisd(&mut self) -> SUBGHSPISD_W {
-        SUBGHSPISD_W { w: self }
+    pub fn subghspisd(&mut self) -> SUBGHSPISD_W<31> {
+        SUBGHSPISD_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Flash secure Flash start address register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [sfr](index.html) module
+#[doc = "Flash secure Flash start address register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sfr](index.html) module"]
 pub struct SFR_SPEC;
 impl crate::RegisterSpec for SFR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [sfr::R](R) reader structure
+#[doc = "`read()` method returns [sfr::R](R) reader structure"]
 impl crate::Readable for SFR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [sfr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [sfr::W](W) writer structure"]
 impl crate::Writable for SFR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SFR to value 0xffff_efff
+#[doc = "`reset()` method sets SFR to value 0xffff_efff"]
 impl crate::Resettable for SFR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,28 +1,28 @@
-///Register block
+#[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    ///0x00 - Key register
+    #[doc = "0x00 - Key register"]
     pub kr: crate::Reg<kr::KR_SPEC>,
-    ///0x04 - Prescaler register
+    #[doc = "0x04 - Prescaler register"]
     pub pr: crate::Reg<pr::PR_SPEC>,
-    ///0x08 - Reload register
+    #[doc = "0x08 - Reload register"]
     pub rlr: crate::Reg<rlr::RLR_SPEC>,
-    ///0x0c - Status register
+    #[doc = "0x0c - Status register"]
     pub sr: crate::Reg<sr::SR_SPEC>,
 }
-///KR register accessor: an alias for `Reg<KR_SPEC>`
+#[doc = "KR register accessor: an alias for `Reg<KR_SPEC>`"]
 pub type KR = crate::Reg<kr::KR_SPEC>;
-///Key register
+#[doc = "Key register"]
 pub mod kr;
-///PR register accessor: an alias for `Reg<PR_SPEC>`
+#[doc = "PR register accessor: an alias for `Reg<PR_SPEC>`"]
 pub type PR = crate::Reg<pr::PR_SPEC>;
-///Prescaler register
+#[doc = "Prescaler register"]
 pub mod pr;
-///RLR register accessor: an alias for `Reg<RLR_SPEC>`
+#[doc = "RLR register accessor: an alias for `Reg<RLR_SPEC>`"]
 pub type RLR = crate::Reg<rlr::RLR_SPEC>;
-///Reload register
+#[doc = "Reload register"]
 pub mod rlr;
-///SR register accessor: an alias for `Reg<SR_SPEC>`
+#[doc = "SR register accessor: an alias for `Reg<SR_SPEC>`"]
 pub type SR = crate::Reg<sr::SR_SPEC>;
-///Status register
+#[doc = "Status register"]
 pub mod sr;

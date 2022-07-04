@@ -1,4 +1,4 @@
-///Register `SSR` reader
+#[doc = "Register `SSR` reader"]
 pub struct R(crate::R<SSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SSR_SPEC>;
@@ -13,41 +13,25 @@ impl From<crate::R<SSR_SPEC>> for R {
         R(reader)
     }
 }
-///Field `SS` reader - Synchronous binary counter
-pub struct SS_R(crate::FieldReader<u32, u32>);
-impl SS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SS` reader - Synchronous binary counter"]
+pub type SS_R = crate::FieldReader<u32, u32>;
 impl R {
-    ///Bits 0:31 - Synchronous binary counter
+    #[doc = "Bits 0:31 - Synchronous binary counter"]
     #[inline(always)]
     pub fn ss(&self) -> SS_R {
-        SS_R::new((self.bits & 0xffff_ffff) as u32)
+        SS_R::new(self.bits)
     }
 }
-///Sub second register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ssr](index.html) module
+#[doc = "Sub second register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ssr](index.html) module"]
 pub struct SSR_SPEC;
 impl crate::RegisterSpec for SSR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ssr::R](R) reader structure
+#[doc = "`read()` method returns [ssr::R](R) reader structure"]
 impl crate::Readable for SSR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets SSR to value 0
+#[doc = "`reset()` method sets SSR to value 0"]
 impl crate::Resettable for SSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

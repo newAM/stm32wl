@@ -1,4 +1,4 @@
-///Register `INIT` reader
+#[doc = "Register `INIT` reader"]
 pub struct R(crate::R<INIT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<INIT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<INIT_SPEC>> for R {
         R(reader)
     }
 }
-///Register `INIT` writer
+#[doc = "Register `INIT` writer"]
 pub struct W(crate::W<INIT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<INIT_SPEC>;
@@ -34,70 +34,44 @@ impl From<crate::W<INIT_SPEC>> for W {
         W(writer)
     }
 }
-///Field `INIT` reader - Programmable initial CRC value
-pub struct INIT_R(crate::FieldReader<u32, u32>);
-impl INIT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        INIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INIT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `INIT` writer - Programmable initial CRC value
-pub struct INIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INIT_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+#[doc = "Field `INIT` reader - Programmable initial CRC value"]
+pub type INIT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `INIT` writer - Programmable initial CRC value"]
+pub type INIT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INIT_SPEC, u32, u32, 32, O>;
 impl R {
-    ///Bits 0:31 - Programmable initial CRC value
+    #[doc = "Bits 0:31 - Programmable initial CRC value"]
     #[inline(always)]
     pub fn init(&self) -> INIT_R {
-        INIT_R::new((self.bits & 0xffff_ffff) as u32)
+        INIT_R::new(self.bits)
     }
 }
 impl W {
-    ///Bits 0:31 - Programmable initial CRC value
+    #[doc = "Bits 0:31 - Programmable initial CRC value"]
     #[inline(always)]
-    pub fn init(&mut self) -> INIT_W {
-        INIT_W { w: self }
+    pub fn init(&mut self) -> INIT_W<0> {
+        INIT_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+    pub fn bits(&mut self, bits: u32) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }
-///Initial CRC value
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [init](index.html) module
+#[doc = "Initial CRC value\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [init](index.html) module"]
 pub struct INIT_SPEC;
 impl crate::RegisterSpec for INIT_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [init::R](R) reader structure
+#[doc = "`read()` method returns [init::R](R) reader structure"]
 impl crate::Readable for INIT_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [init::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [init::W](W) writer structure"]
 impl crate::Writable for INIT_SPEC {
     type Writer = W;
 }
-///`reset()` method sets INIT to value 0xffff_ffff
+#[doc = "`reset()` method sets INIT to value 0xffff_ffff"]
 impl crate::Resettable for INIT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

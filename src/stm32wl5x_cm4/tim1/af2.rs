@@ -1,4 +1,4 @@
-///Register `AF2` reader
+#[doc = "Register `AF2` reader"]
 pub struct R(crate::R<AF2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AF2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AF2_SPEC>> for R {
         R(reader)
     }
 }
-///Register `AF2` writer
+#[doc = "Register `AF2` writer"]
 pub struct W(crate::W<AF2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AF2_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<AF2_SPEC>> for W {
         W(writer)
     }
 }
-///BRK2 COMP2 input polarity
-///
-///Value on reset: 0
+#[doc = "BRK2 COMP2 input polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2CMP2P_A {
-    ///0: Input polarity not inverted
-    NOTINVERTED = 0,
-    ///1: Input polarity inverted
-    INVERTED = 1,
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
 }
 impl From<BK2CMP2P_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<BK2CMP2P_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2CMP2P` reader - BRK2 COMP2 input polarity
-pub struct BK2CMP2P_R(crate::FieldReader<bool, BK2CMP2P_A>);
+#[doc = "Field `BK2CMP2P` reader - BRK2 COMP2 input polarity"]
+pub type BK2CMP2P_R = crate::BitReader<BK2CMP2P_A>;
 impl BK2CMP2P_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2CMP2P_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2CMP2P_A {
         match self.bits {
-            false => BK2CMP2P_A::NOTINVERTED,
-            true => BK2CMP2P_A::INVERTED,
+            false => BK2CMP2P_A::NotInverted,
+            true => BK2CMP2P_A::Inverted,
         }
     }
-    ///Checks if the value of the field is `NOTINVERTED`
+    #[doc = "Checks if the value of the field is `NotInverted`"]
     #[inline(always)]
     pub fn is_not_inverted(&self) -> bool {
-        **self == BK2CMP2P_A::NOTINVERTED
+        *self == BK2CMP2P_A::NotInverted
     }
-    ///Checks if the value of the field is `INVERTED`
+    #[doc = "Checks if the value of the field is `Inverted`"]
     #[inline(always)]
     pub fn is_inverted(&self) -> bool {
-        **self == BK2CMP2P_A::INVERTED
+        *self == BK2CMP2P_A::Inverted
     }
 }
-impl core::ops::Deref for BK2CMP2P_R {
-    type Target = crate::FieldReader<bool, BK2CMP2P_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2CMP2P` writer - BRK2 COMP2 input polarity
-pub struct BK2CMP2P_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2CMP2P_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2CMP2P_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Input polarity not inverted
+#[doc = "Field `BK2CMP2P` writer - BRK2 COMP2 input polarity"]
+pub type BK2CMP2P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2CMP2P_A, O>;
+impl<'a, const O: u8> BK2CMP2P_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
     #[inline(always)]
     pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BK2CMP2P_A::NOTINVERTED)
+        self.variant(BK2CMP2P_A::NotInverted)
     }
-    ///Input polarity inverted
+    #[doc = "Input polarity inverted"]
     #[inline(always)]
     pub fn inverted(self) -> &'a mut W {
-        self.variant(BK2CMP2P_A::INVERTED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
+        self.variant(BK2CMP2P_A::Inverted)
     }
 }
-///BRK2 COMP1 input polarity
-///
-///Value on reset: 0
+#[doc = "BRK2 COMP1 input polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2CMP1P_A {
-    ///0: Input polarity not inverted
-    NOTINVERTED = 0,
-    ///1: Input polarity inverted
-    INVERTED = 1,
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
 }
 impl From<BK2CMP1P_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<BK2CMP1P_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2CMP1P` reader - BRK2 COMP1 input polarity
-pub struct BK2CMP1P_R(crate::FieldReader<bool, BK2CMP1P_A>);
+#[doc = "Field `BK2CMP1P` reader - BRK2 COMP1 input polarity"]
+pub type BK2CMP1P_R = crate::BitReader<BK2CMP1P_A>;
 impl BK2CMP1P_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2CMP1P_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2CMP1P_A {
         match self.bits {
-            false => BK2CMP1P_A::NOTINVERTED,
-            true => BK2CMP1P_A::INVERTED,
+            false => BK2CMP1P_A::NotInverted,
+            true => BK2CMP1P_A::Inverted,
         }
     }
-    ///Checks if the value of the field is `NOTINVERTED`
+    #[doc = "Checks if the value of the field is `NotInverted`"]
     #[inline(always)]
     pub fn is_not_inverted(&self) -> bool {
-        **self == BK2CMP1P_A::NOTINVERTED
+        *self == BK2CMP1P_A::NotInverted
     }
-    ///Checks if the value of the field is `INVERTED`
+    #[doc = "Checks if the value of the field is `Inverted`"]
     #[inline(always)]
     pub fn is_inverted(&self) -> bool {
-        **self == BK2CMP1P_A::INVERTED
+        *self == BK2CMP1P_A::Inverted
     }
 }
-impl core::ops::Deref for BK2CMP1P_R {
-    type Target = crate::FieldReader<bool, BK2CMP1P_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2CMP1P` writer - BRK2 COMP1 input polarity
-pub struct BK2CMP1P_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2CMP1P_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2CMP1P_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Input polarity not inverted
+#[doc = "Field `BK2CMP1P` writer - BRK2 COMP1 input polarity"]
+pub type BK2CMP1P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2CMP1P_A, O>;
+impl<'a, const O: u8> BK2CMP1P_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
     #[inline(always)]
     pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BK2CMP1P_A::NOTINVERTED)
+        self.variant(BK2CMP1P_A::NotInverted)
     }
-    ///Input polarity inverted
+    #[doc = "Input polarity inverted"]
     #[inline(always)]
     pub fn inverted(self) -> &'a mut W {
-        self.variant(BK2CMP1P_A::INVERTED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(BK2CMP1P_A::Inverted)
     }
 }
-///BRK2 BKIN2 input polarity
-///
-///Value on reset: 0
+#[doc = "BRK2 BKIN2 input polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2INP_A {
-    ///0: Input polarity not inverted
-    NOTINVERTED = 0,
-    ///1: Input polarity inverted
-    INVERTED = 1,
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
 }
 impl From<BK2INP_A> for bool {
     #[inline(always)]
@@ -220,84 +148,49 @@ impl From<BK2INP_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2INP` reader - BRK2 BKIN2 input polarity
-pub struct BK2INP_R(crate::FieldReader<bool, BK2INP_A>);
+#[doc = "Field `BK2INP` reader - BRK2 BKIN2 input polarity"]
+pub type BK2INP_R = crate::BitReader<BK2INP_A>;
 impl BK2INP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2INP_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2INP_A {
         match self.bits {
-            false => BK2INP_A::NOTINVERTED,
-            true => BK2INP_A::INVERTED,
+            false => BK2INP_A::NotInverted,
+            true => BK2INP_A::Inverted,
         }
     }
-    ///Checks if the value of the field is `NOTINVERTED`
+    #[doc = "Checks if the value of the field is `NotInverted`"]
     #[inline(always)]
     pub fn is_not_inverted(&self) -> bool {
-        **self == BK2INP_A::NOTINVERTED
+        *self == BK2INP_A::NotInverted
     }
-    ///Checks if the value of the field is `INVERTED`
+    #[doc = "Checks if the value of the field is `Inverted`"]
     #[inline(always)]
     pub fn is_inverted(&self) -> bool {
-        **self == BK2INP_A::INVERTED
+        *self == BK2INP_A::Inverted
     }
 }
-impl core::ops::Deref for BK2INP_R {
-    type Target = crate::FieldReader<bool, BK2INP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2INP` writer - BRK2 BKIN2 input polarity
-pub struct BK2INP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2INP_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2INP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Input polarity not inverted
+#[doc = "Field `BK2INP` writer - BRK2 BKIN2 input polarity"]
+pub type BK2INP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2INP_A, O>;
+impl<'a, const O: u8> BK2INP_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
     #[inline(always)]
     pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BK2INP_A::NOTINVERTED)
+        self.variant(BK2INP_A::NotInverted)
     }
-    ///Input polarity inverted
+    #[doc = "Input polarity inverted"]
     #[inline(always)]
     pub fn inverted(self) -> &'a mut W {
-        self.variant(BK2INP_A::INVERTED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(BK2INP_A::Inverted)
     }
 }
-///BRK2 COMP2 enable
-///
-///Value on reset: 0
+#[doc = "BRK2 COMP2 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2CMP2E_A {
-    ///0: COMP2 input disabled
-    DISABLED = 0,
-    ///1: COMP2 input enabled
-    ENABLED = 1,
+    #[doc = "0: COMP2 input disabled"]
+    Disabled = 0,
+    #[doc = "1: COMP2 input enabled"]
+    Enabled = 1,
 }
 impl From<BK2CMP2E_A> for bool {
     #[inline(always)]
@@ -305,84 +198,49 @@ impl From<BK2CMP2E_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2CMP2E` reader - BRK2 COMP2 enable
-pub struct BK2CMP2E_R(crate::FieldReader<bool, BK2CMP2E_A>);
+#[doc = "Field `BK2CMP2E` reader - BRK2 COMP2 enable"]
+pub type BK2CMP2E_R = crate::BitReader<BK2CMP2E_A>;
 impl BK2CMP2E_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2CMP2E_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2CMP2E_A {
         match self.bits {
-            false => BK2CMP2E_A::DISABLED,
-            true => BK2CMP2E_A::ENABLED,
+            false => BK2CMP2E_A::Disabled,
+            true => BK2CMP2E_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == BK2CMP2E_A::DISABLED
+        *self == BK2CMP2E_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == BK2CMP2E_A::ENABLED
+        *self == BK2CMP2E_A::Enabled
     }
 }
-impl core::ops::Deref for BK2CMP2E_R {
-    type Target = crate::FieldReader<bool, BK2CMP2E_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2CMP2E` writer - BRK2 COMP2 enable
-pub struct BK2CMP2E_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2CMP2E_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2CMP2E_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///COMP2 input disabled
+#[doc = "Field `BK2CMP2E` writer - BRK2 COMP2 enable"]
+pub type BK2CMP2E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2CMP2E_A, O>;
+impl<'a, const O: u8> BK2CMP2E_W<'a, O> {
+    #[doc = "COMP2 input disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(BK2CMP2E_A::DISABLED)
+        self.variant(BK2CMP2E_A::Disabled)
     }
-    ///COMP2 input enabled
+    #[doc = "COMP2 input enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(BK2CMP2E_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(BK2CMP2E_A::Enabled)
     }
 }
-///BRK2 COMP1 enable
-///
-///Value on reset: 0
+#[doc = "BRK2 COMP1 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2CMP1E_A {
-    ///0: COMP1 input disabled
-    DISABLED = 0,
-    ///1: COMP1 input enabled
-    ENABLED = 1,
+    #[doc = "0: COMP1 input disabled"]
+    Disabled = 0,
+    #[doc = "1: COMP1 input enabled"]
+    Enabled = 1,
 }
 impl From<BK2CMP1E_A> for bool {
     #[inline(always)]
@@ -390,84 +248,49 @@ impl From<BK2CMP1E_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2CMP1E` reader - BRK2 COMP1 enable
-pub struct BK2CMP1E_R(crate::FieldReader<bool, BK2CMP1E_A>);
+#[doc = "Field `BK2CMP1E` reader - BRK2 COMP1 enable"]
+pub type BK2CMP1E_R = crate::BitReader<BK2CMP1E_A>;
 impl BK2CMP1E_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2CMP1E_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2CMP1E_A {
         match self.bits {
-            false => BK2CMP1E_A::DISABLED,
-            true => BK2CMP1E_A::ENABLED,
+            false => BK2CMP1E_A::Disabled,
+            true => BK2CMP1E_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == BK2CMP1E_A::DISABLED
+        *self == BK2CMP1E_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == BK2CMP1E_A::ENABLED
+        *self == BK2CMP1E_A::Enabled
     }
 }
-impl core::ops::Deref for BK2CMP1E_R {
-    type Target = crate::FieldReader<bool, BK2CMP1E_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2CMP1E` writer - BRK2 COMP1 enable
-pub struct BK2CMP1E_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2CMP1E_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2CMP1E_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///COMP1 input disabled
+#[doc = "Field `BK2CMP1E` writer - BRK2 COMP1 enable"]
+pub type BK2CMP1E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2CMP1E_A, O>;
+impl<'a, const O: u8> BK2CMP1E_W<'a, O> {
+    #[doc = "COMP1 input disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(BK2CMP1E_A::DISABLED)
+        self.variant(BK2CMP1E_A::Disabled)
     }
-    ///COMP1 input enabled
+    #[doc = "COMP1 input enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(BK2CMP1E_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(BK2CMP1E_A::Enabled)
     }
 }
-///BRK2 BKIN input enable
-///
-///Value on reset: 1
+#[doc = "BRK2 BKIN input enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BK2INE_A {
-    ///0: BKIN input disabled
-    DISABLED = 0,
-    ///1: BKIN input enabled
-    ENABLED = 1,
+    #[doc = "0: BKIN input disabled"]
+    Disabled = 0,
+    #[doc = "1: BKIN input enabled"]
+    Enabled = 1,
 }
 impl From<BK2INE_A> for bool {
     #[inline(always)]
@@ -475,163 +298,126 @@ impl From<BK2INE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `BK2INE` reader - BRK2 BKIN input enable
-pub struct BK2INE_R(crate::FieldReader<bool, BK2INE_A>);
+#[doc = "Field `BK2INE` reader - BRK2 BKIN input enable"]
+pub type BK2INE_R = crate::BitReader<BK2INE_A>;
 impl BK2INE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BK2INE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BK2INE_A {
         match self.bits {
-            false => BK2INE_A::DISABLED,
-            true => BK2INE_A::ENABLED,
+            false => BK2INE_A::Disabled,
+            true => BK2INE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == BK2INE_A::DISABLED
+        *self == BK2INE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == BK2INE_A::ENABLED
+        *self == BK2INE_A::Enabled
     }
 }
-impl core::ops::Deref for BK2INE_R {
-    type Target = crate::FieldReader<bool, BK2INE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BK2INE` writer - BRK2 BKIN input enable
-pub struct BK2INE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BK2INE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: BK2INE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///BKIN input disabled
+#[doc = "Field `BK2INE` writer - BRK2 BKIN input enable"]
+pub type BK2INE_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF2_SPEC, BK2INE_A, O>;
+impl<'a, const O: u8> BK2INE_W<'a, O> {
+    #[doc = "BKIN input disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(BK2INE_A::DISABLED)
+        self.variant(BK2INE_A::Disabled)
     }
-    ///BKIN input enabled
+    #[doc = "BKIN input enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(BK2INE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(BK2INE_A::Enabled)
     }
 }
 impl R {
-    ///Bit 11 - BRK2 COMP2 input polarity
+    #[doc = "Bit 11 - BRK2 COMP2 input polarity"]
     #[inline(always)]
     pub fn bk2cmp2p(&self) -> BK2CMP2P_R {
-        BK2CMP2P_R::new(((self.bits >> 11) & 0x01) != 0)
+        BK2CMP2P_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 10 - BRK2 COMP1 input polarity
+    #[doc = "Bit 10 - BRK2 COMP1 input polarity"]
     #[inline(always)]
     pub fn bk2cmp1p(&self) -> BK2CMP1P_R {
-        BK2CMP1P_R::new(((self.bits >> 10) & 0x01) != 0)
+        BK2CMP1P_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 9 - BRK2 BKIN2 input polarity
+    #[doc = "Bit 9 - BRK2 BKIN2 input polarity"]
     #[inline(always)]
     pub fn bk2inp(&self) -> BK2INP_R {
-        BK2INP_R::new(((self.bits >> 9) & 0x01) != 0)
+        BK2INP_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 2 - BRK2 COMP2 enable
+    #[doc = "Bit 2 - BRK2 COMP2 enable"]
     #[inline(always)]
     pub fn bk2cmp2e(&self) -> BK2CMP2E_R {
-        BK2CMP2E_R::new(((self.bits >> 2) & 0x01) != 0)
+        BK2CMP2E_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - BRK2 COMP1 enable
+    #[doc = "Bit 1 - BRK2 COMP1 enable"]
     #[inline(always)]
     pub fn bk2cmp1e(&self) -> BK2CMP1E_R {
-        BK2CMP1E_R::new(((self.bits >> 1) & 0x01) != 0)
+        BK2CMP1E_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - BRK2 BKIN input enable
+    #[doc = "Bit 0 - BRK2 BKIN input enable"]
     #[inline(always)]
     pub fn bk2ine(&self) -> BK2INE_R {
-        BK2INE_R::new((self.bits & 0x01) != 0)
+        BK2INE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 11 - BRK2 COMP2 input polarity
+    #[doc = "Bit 11 - BRK2 COMP2 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp2p(&mut self) -> BK2CMP2P_W {
-        BK2CMP2P_W { w: self }
+    pub fn bk2cmp2p(&mut self) -> BK2CMP2P_W<11> {
+        BK2CMP2P_W::new(self)
     }
-    ///Bit 10 - BRK2 COMP1 input polarity
+    #[doc = "Bit 10 - BRK2 COMP1 input polarity"]
     #[inline(always)]
-    pub fn bk2cmp1p(&mut self) -> BK2CMP1P_W {
-        BK2CMP1P_W { w: self }
+    pub fn bk2cmp1p(&mut self) -> BK2CMP1P_W<10> {
+        BK2CMP1P_W::new(self)
     }
-    ///Bit 9 - BRK2 BKIN2 input polarity
+    #[doc = "Bit 9 - BRK2 BKIN2 input polarity"]
     #[inline(always)]
-    pub fn bk2inp(&mut self) -> BK2INP_W {
-        BK2INP_W { w: self }
+    pub fn bk2inp(&mut self) -> BK2INP_W<9> {
+        BK2INP_W::new(self)
     }
-    ///Bit 2 - BRK2 COMP2 enable
+    #[doc = "Bit 2 - BRK2 COMP2 enable"]
     #[inline(always)]
-    pub fn bk2cmp2e(&mut self) -> BK2CMP2E_W {
-        BK2CMP2E_W { w: self }
+    pub fn bk2cmp2e(&mut self) -> BK2CMP2E_W<2> {
+        BK2CMP2E_W::new(self)
     }
-    ///Bit 1 - BRK2 COMP1 enable
+    #[doc = "Bit 1 - BRK2 COMP1 enable"]
     #[inline(always)]
-    pub fn bk2cmp1e(&mut self) -> BK2CMP1E_W {
-        BK2CMP1E_W { w: self }
+    pub fn bk2cmp1e(&mut self) -> BK2CMP1E_W<1> {
+        BK2CMP1E_W::new(self)
     }
-    ///Bit 0 - BRK2 BKIN input enable
+    #[doc = "Bit 0 - BRK2 BKIN input enable"]
     #[inline(always)]
-    pub fn bk2ine(&mut self) -> BK2INE_W {
-        BK2INE_W { w: self }
+    pub fn bk2ine(&mut self) -> BK2INE_W<0> {
+        BK2INE_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Alternate function register 2
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [af2](index.html) module
+#[doc = "Alternate function register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [af2](index.html) module"]
 pub struct AF2_SPEC;
 impl crate::RegisterSpec for AF2_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [af2::R](R) reader structure
+#[doc = "`read()` method returns [af2::R](R) reader structure"]
 impl crate::Readable for AF2_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [af2::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [af2::W](W) writer structure"]
 impl crate::Writable for AF2_SPEC {
     type Writer = W;
 }
-///`reset()` method sets AF2 to value 0x01
+#[doc = "`reset()` method sets AF2 to value 0x01"]
 impl crate::Resettable for AF2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

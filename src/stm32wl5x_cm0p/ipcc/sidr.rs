@@ -1,4 +1,4 @@
-///Register `SIDR` reader
+#[doc = "Register `SIDR` reader"]
 pub struct R(crate::R<SIDR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SIDR_SPEC>;
@@ -13,41 +13,25 @@ impl From<crate::R<SIDR_SPEC>> for R {
         R(reader)
     }
 }
-///Field `SID` reader - SID
-pub struct SID_R(crate::FieldReader<u32, u32>);
-impl SID_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SID_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SID` reader - SID"]
+pub type SID_R = crate::FieldReader<u32, u32>;
 impl R {
-    ///Bits 0:31 - SID
+    #[doc = "Bits 0:31 - SID"]
     #[inline(always)]
     pub fn sid(&self) -> SID_R {
-        SID_R::new((self.bits & 0xffff_ffff) as u32)
+        SID_R::new(self.bits)
     }
 }
-///IPCC Size ID register
-///
-///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [sidr](index.html) module
+#[doc = "IPCC Size ID register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sidr](index.html) module"]
 pub struct SIDR_SPEC;
 impl crate::RegisterSpec for SIDR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [sidr::R](R) reader structure
+#[doc = "`read()` method returns [sidr::R](R) reader structure"]
 impl crate::Readable for SIDR_SPEC {
     type Reader = R;
 }
-///`reset()` method sets SIDR to value 0xa3c5_dd01
+#[doc = "`reset()` method sets SIDR to value 0xa3c5_dd01"]
 impl crate::Resettable for SIDR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

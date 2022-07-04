@@ -1,4 +1,4 @@
-///Register `OPTKEYR` writer
+#[doc = "Register `OPTKEYR` writer"]
 pub struct W(crate::W<OPTKEYR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OPTKEYR_SPEC>;
@@ -19,45 +19,31 @@ impl From<crate::W<OPTKEYR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `OPTKEY` writer - Option byte key
-pub struct OPTKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OPTKEY_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+#[doc = "Field `OPTKEY` writer - Option byte key"]
+pub type OPTKEY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OPTKEYR_SPEC, u32, u32, 32, O>;
 impl W {
-    ///Bits 0:31 - Option byte key
+    #[doc = "Bits 0:31 - Option byte key"]
     #[inline(always)]
-    pub fn optkey(&mut self) -> OPTKEY_W {
-        OPTKEY_W { w: self }
+    pub fn optkey(&mut self) -> OPTKEY_W<0> {
+        OPTKEY_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+    pub fn bits(&mut self, bits: u32) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }
-///Option byte key register
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [optkeyr](index.html) module
+#[doc = "Option byte key register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [optkeyr](index.html) module"]
 pub struct OPTKEYR_SPEC;
 impl crate::RegisterSpec for OPTKEYR_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [optkeyr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [optkeyr::W](W) writer structure"]
 impl crate::Writable for OPTKEYR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets OPTKEYR to value 0
+#[doc = "`reset()` method sets OPTKEYR to value 0"]
 impl crate::Resettable for OPTKEYR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

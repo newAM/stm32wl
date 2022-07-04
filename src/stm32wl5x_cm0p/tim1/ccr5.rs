@@ -1,4 +1,4 @@
-///Register `CCR5` reader
+#[doc = "Register `CCR5` reader"]
 pub struct R(crate::R<CCR5_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCR5_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCR5_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCR5` writer
+#[doc = "Register `CCR5` writer"]
 pub struct W(crate::W<CCR5_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCR5_SPEC>;
@@ -34,15 +34,13 @@ impl From<crate::W<CCR5_SPEC>> for W {
         W(writer)
     }
 }
-///Group Channel 5 and Channel 3
-///
-///Value on reset: 0
+#[doc = "Group Channel 5 and Channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GC5C3_A {
-    ///0: No effect of OC5REF on OC3REFC
-    DISABLED = 0,
-    ///1: OC3REFC is the logical AND of OC3REFC and OC5REF
-    ENABLED = 1,
+    #[doc = "0: No effect of OC5REF on OC3REFC"]
+    Disabled = 0,
+    #[doc = "1: OC3REFC is the logical AND of OC3REFC and OC5REF"]
+    Enabled = 1,
 }
 impl From<GC5C3_A> for bool {
     #[inline(always)]
@@ -50,84 +48,49 @@ impl From<GC5C3_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `GC5C3` reader - Group Channel 5 and Channel 3
-pub struct GC5C3_R(crate::FieldReader<bool, GC5C3_A>);
+#[doc = "Field `GC5C3` reader - Group Channel 5 and Channel 3"]
+pub type GC5C3_R = crate::BitReader<GC5C3_A>;
 impl GC5C3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GC5C3_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GC5C3_A {
         match self.bits {
-            false => GC5C3_A::DISABLED,
-            true => GC5C3_A::ENABLED,
+            false => GC5C3_A::Disabled,
+            true => GC5C3_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GC5C3_A::DISABLED
+        *self == GC5C3_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GC5C3_A::ENABLED
+        *self == GC5C3_A::Enabled
     }
 }
-impl core::ops::Deref for GC5C3_R {
-    type Target = crate::FieldReader<bool, GC5C3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GC5C3` writer - Group Channel 5 and Channel 3
-pub struct GC5C3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GC5C3_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GC5C3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect of OC5REF on OC3REFC
+#[doc = "Field `GC5C3` writer - Group Channel 5 and Channel 3"]
+pub type GC5C3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR5_SPEC, GC5C3_A, O>;
+impl<'a, const O: u8> GC5C3_W<'a, O> {
+    #[doc = "No effect of OC5REF on OC3REFC"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(GC5C3_A::DISABLED)
+        self.variant(GC5C3_A::Disabled)
     }
-    ///OC3REFC is the logical AND of OC3REFC and OC5REF
+    #[doc = "OC3REFC is the logical AND of OC3REFC and OC5REF"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(GC5C3_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
+        self.variant(GC5C3_A::Enabled)
     }
 }
-///Group Channel 5 and Channel 2
-///
-///Value on reset: 0
+#[doc = "Group Channel 5 and Channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GC5C2_A {
-    ///0: No effect of OC5REF on OC2REFC
-    DISABLED = 0,
-    ///1: OC2REFC is the logical AND of OC2REFC and OC5REF
-    ENABLED = 1,
+    #[doc = "0: No effect of OC5REF on OC2REFC"]
+    Disabled = 0,
+    #[doc = "1: OC2REFC is the logical AND of OC2REFC and OC5REF"]
+    Enabled = 1,
 }
 impl From<GC5C2_A> for bool {
     #[inline(always)]
@@ -135,84 +98,49 @@ impl From<GC5C2_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `GC5C2` reader - Group Channel 5 and Channel 2
-pub struct GC5C2_R(crate::FieldReader<bool, GC5C2_A>);
+#[doc = "Field `GC5C2` reader - Group Channel 5 and Channel 2"]
+pub type GC5C2_R = crate::BitReader<GC5C2_A>;
 impl GC5C2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GC5C2_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GC5C2_A {
         match self.bits {
-            false => GC5C2_A::DISABLED,
-            true => GC5C2_A::ENABLED,
+            false => GC5C2_A::Disabled,
+            true => GC5C2_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GC5C2_A::DISABLED
+        *self == GC5C2_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GC5C2_A::ENABLED
+        *self == GC5C2_A::Enabled
     }
 }
-impl core::ops::Deref for GC5C2_R {
-    type Target = crate::FieldReader<bool, GC5C2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GC5C2` writer - Group Channel 5 and Channel 2
-pub struct GC5C2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GC5C2_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GC5C2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect of OC5REF on OC2REFC
+#[doc = "Field `GC5C2` writer - Group Channel 5 and Channel 2"]
+pub type GC5C2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR5_SPEC, GC5C2_A, O>;
+impl<'a, const O: u8> GC5C2_W<'a, O> {
+    #[doc = "No effect of OC5REF on OC2REFC"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(GC5C2_A::DISABLED)
+        self.variant(GC5C2_A::Disabled)
     }
-    ///OC2REFC is the logical AND of OC2REFC and OC5REF
+    #[doc = "OC2REFC is the logical AND of OC2REFC and OC5REF"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(GC5C2_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
+        self.variant(GC5C2_A::Enabled)
     }
 }
-///Group Channel 5 and Channel 1
-///
-///Value on reset: 0
+#[doc = "Group Channel 5 and Channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GC5C1_A {
-    ///0: No effect of OC5REF on OC1REFC
-    DISABLED = 0,
-    ///1: OC1REFC is the logical AND of OC1REFC and OC5REF
-    ENABLED = 1,
+    #[doc = "0: No effect of OC5REF on OC1REFC"]
+    Disabled = 0,
+    #[doc = "1: OC1REFC is the logical AND of OC1REFC and OC5REF"]
+    Enabled = 1,
 }
 impl From<GC5C1_A> for bool {
     #[inline(always)]
@@ -220,169 +148,110 @@ impl From<GC5C1_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `GC5C1` reader - Group Channel 5 and Channel 1
-pub struct GC5C1_R(crate::FieldReader<bool, GC5C1_A>);
+#[doc = "Field `GC5C1` reader - Group Channel 5 and Channel 1"]
+pub type GC5C1_R = crate::BitReader<GC5C1_A>;
 impl GC5C1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GC5C1_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GC5C1_A {
         match self.bits {
-            false => GC5C1_A::DISABLED,
-            true => GC5C1_A::ENABLED,
+            false => GC5C1_A::Disabled,
+            true => GC5C1_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GC5C1_A::DISABLED
+        *self == GC5C1_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GC5C1_A::ENABLED
+        *self == GC5C1_A::Enabled
     }
 }
-impl core::ops::Deref for GC5C1_R {
-    type Target = crate::FieldReader<bool, GC5C1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GC5C1` writer - Group Channel 5 and Channel 1
-pub struct GC5C1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GC5C1_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GC5C1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///No effect of OC5REF on OC1REFC
+#[doc = "Field `GC5C1` writer - Group Channel 5 and Channel 1"]
+pub type GC5C1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR5_SPEC, GC5C1_A, O>;
+impl<'a, const O: u8> GC5C1_W<'a, O> {
+    #[doc = "No effect of OC5REF on OC1REFC"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(GC5C1_A::DISABLED)
+        self.variant(GC5C1_A::Disabled)
     }
-    ///OC1REFC is the logical AND of OC1REFC and OC5REF
+    #[doc = "OC1REFC is the logical AND of OC1REFC and OC5REF"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(GC5C1_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
+        self.variant(GC5C1_A::Enabled)
     }
 }
-///Field `CCR5` reader - Capture/Compare 5 value
-pub struct CCR5_R(crate::FieldReader<u16, u16>);
-impl CCR5_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CCR5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CCR5_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CCR5` writer - Capture/Compare 5 value
-pub struct CCR5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCR5_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+#[doc = "Field `CCR5` reader - Capture/Compare 5 value"]
+pub type CCR5_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CCR5` writer - Capture/Compare 5 value"]
+pub type CCR5_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CCR5_SPEC, u16, u16, 16, O>;
 impl R {
-    ///Bit 31 - Group Channel 5 and Channel 3
+    #[doc = "Bit 31 - Group Channel 5 and Channel 3"]
     #[inline(always)]
     pub fn gc5c3(&self) -> GC5C3_R {
-        GC5C3_R::new(((self.bits >> 31) & 0x01) != 0)
+        GC5C3_R::new(((self.bits >> 31) & 1) != 0)
     }
-    ///Bit 30 - Group Channel 5 and Channel 2
+    #[doc = "Bit 30 - Group Channel 5 and Channel 2"]
     #[inline(always)]
     pub fn gc5c2(&self) -> GC5C2_R {
-        GC5C2_R::new(((self.bits >> 30) & 0x01) != 0)
+        GC5C2_R::new(((self.bits >> 30) & 1) != 0)
     }
-    ///Bit 29 - Group Channel 5 and Channel 1
+    #[doc = "Bit 29 - Group Channel 5 and Channel 1"]
     #[inline(always)]
     pub fn gc5c1(&self) -> GC5C1_R {
-        GC5C1_R::new(((self.bits >> 29) & 0x01) != 0)
+        GC5C1_R::new(((self.bits >> 29) & 1) != 0)
     }
-    ///Bits 0:15 - Capture/Compare 5 value
+    #[doc = "Bits 0:15 - Capture/Compare 5 value"]
     #[inline(always)]
     pub fn ccr5(&self) -> CCR5_R {
         CCR5_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    ///Bit 31 - Group Channel 5 and Channel 3
+    #[doc = "Bit 31 - Group Channel 5 and Channel 3"]
     #[inline(always)]
-    pub fn gc5c3(&mut self) -> GC5C3_W {
-        GC5C3_W { w: self }
+    pub fn gc5c3(&mut self) -> GC5C3_W<31> {
+        GC5C3_W::new(self)
     }
-    ///Bit 30 - Group Channel 5 and Channel 2
+    #[doc = "Bit 30 - Group Channel 5 and Channel 2"]
     #[inline(always)]
-    pub fn gc5c2(&mut self) -> GC5C2_W {
-        GC5C2_W { w: self }
+    pub fn gc5c2(&mut self) -> GC5C2_W<30> {
+        GC5C2_W::new(self)
     }
-    ///Bit 29 - Group Channel 5 and Channel 1
+    #[doc = "Bit 29 - Group Channel 5 and Channel 1"]
     #[inline(always)]
-    pub fn gc5c1(&mut self) -> GC5C1_W {
-        GC5C1_W { w: self }
+    pub fn gc5c1(&mut self) -> GC5C1_W<29> {
+        GC5C1_W::new(self)
     }
-    ///Bits 0:15 - Capture/Compare 5 value
+    #[doc = "Bits 0:15 - Capture/Compare 5 value"]
     #[inline(always)]
-    pub fn ccr5(&mut self) -> CCR5_W {
-        CCR5_W { w: self }
+    pub fn ccr5(&mut self) -> CCR5_W<0> {
+        CCR5_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///capture/compare register 5
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccr5](index.html) module
+#[doc = "capture/compare register 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr5](index.html) module"]
 pub struct CCR5_SPEC;
 impl crate::RegisterSpec for CCR5_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccr5::R](R) reader structure
+#[doc = "`read()` method returns [ccr5::R](R) reader structure"]
 impl crate::Readable for CCR5_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccr5::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccr5::W](W) writer structure"]
 impl crate::Writable for CCR5_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCR5 to value 0
+#[doc = "`reset()` method sets CCR5 to value 0"]
 impl crate::Resettable for CCR5_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

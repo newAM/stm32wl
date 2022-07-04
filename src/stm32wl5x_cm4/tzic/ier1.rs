@@ -1,4 +1,4 @@
-///Register `IER1` reader
+#[doc = "Register `IER1` reader"]
 pub struct R(crate::R<IER1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IER1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IER1_SPEC>> for R {
         R(reader)
     }
 }
-///Register `IER1` writer
+#[doc = "Register `IER1` writer"]
 pub struct W(crate::W<IER1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IER1_SPEC>;
@@ -34,678 +34,226 @@ impl From<crate::W<IER1_SPEC>> for W {
         W(writer)
     }
 }
-///Field `TZICIE` reader - TZICIE
-pub struct TZICIE_R(crate::FieldReader<bool, bool>);
-impl TZICIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TZICIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TZICIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TZICIE` writer - TZICIE
-pub struct TZICIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TZICIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
-///Field `TZSCIE` reader - TZSCIE
-pub struct TZSCIE_R(crate::FieldReader<bool, bool>);
-impl TZSCIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TZSCIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TZSCIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `TZSCIE` writer - TZSCIE
-pub struct TZSCIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TZSCIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///Field `AESIE` reader - AESIE
-pub struct AESIE_R(crate::FieldReader<bool, bool>);
-impl AESIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AESIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AESIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `AESIE` writer - AESIE
-pub struct AESIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///Field `RNGIE` reader - RNGIE
-pub struct RNGIE_R(crate::FieldReader<bool, bool>);
-impl RNGIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RNGIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RNGIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNGIE` writer - RNGIE
-pub struct RNGIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNGIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-///Field `SUBGHZSPIIE` reader - SUBGHZSPIIE
-pub struct SUBGHZSPIIE_R(crate::FieldReader<bool, bool>);
-impl SUBGHZSPIIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SUBGHZSPIIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUBGHZSPIIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SUBGHZSPIIE` writer - SUBGHZSPIIE
-pub struct SUBGHZSPIIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUBGHZSPIIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
-///Field `PWRIE` reader - PWRIE
-pub struct PWRIE_R(crate::FieldReader<bool, bool>);
-impl PWRIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PWRIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PWRIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PWRIE` writer - PWRIE
-pub struct PWRIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWRIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///Field `FLASHIFIE` reader - FLASHIFIE
-pub struct FLASHIFIE_R(crate::FieldReader<bool, bool>);
-impl FLASHIFIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FLASHIFIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASHIFIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `FLASHIFIE` writer - FLASHIFIE
-pub struct FLASHIFIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASHIFIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-///Field `DMA1IE` reader - DMA1IE
-pub struct DMA1IE_R(crate::FieldReader<bool, bool>);
-impl DMA1IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA1IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA1IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DMA1IE` writer - DMA1IE
-pub struct DMA1IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA1IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-///Field `DMA2IE` reader - DMA2IE
-pub struct DMA2IE_R(crate::FieldReader<bool, bool>);
-impl DMA2IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA2IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA2IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DMA2IE` writer - DMA2IE
-pub struct DMA2IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA2IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
-///Field `DMAMUX1IE` reader - DMAMUX1IE
-pub struct DMAMUX1IE_R(crate::FieldReader<bool, bool>);
-impl DMAMUX1IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAMUX1IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAMUX1IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `DMAMUX1IE` writer - DMAMUX1IE
-pub struct DMAMUX1IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAMUX1IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
-///Field `FLASHIE` reader - FLASHIE
-pub struct FLASHIE_R(crate::FieldReader<bool, bool>);
-impl FLASHIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FLASHIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASHIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `FLASHIE` writer - FLASHIE
-pub struct FLASHIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASHIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
-///Field `SRAM1IE` reader - SRAM1IE
-pub struct SRAM1IE_R(crate::FieldReader<bool, bool>);
-impl SRAM1IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SRAM1IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRAM1IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SRAM1IE` writer - SRAM1IE
-pub struct SRAM1IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRAM1IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-///Field `SRAM2IE` reader - SRAM2IE
-pub struct SRAM2IE_R(crate::FieldReader<bool, bool>);
-impl SRAM2IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SRAM2IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRAM2IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SRAM2IE` writer - SRAM2IE
-pub struct SRAM2IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRAM2IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-///Field `PKAIE` reader - PKAIE
-pub struct PKAIE_R(crate::FieldReader<bool, bool>);
-impl PKAIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PKAIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKAIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `PKAIE` writer - PKAIE
-pub struct PKAIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKAIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+#[doc = "Field `TZICIE` reader - TZICIE"]
+pub type TZICIE_R = crate::BitReader<bool>;
+#[doc = "Field `TZICIE` writer - TZICIE"]
+pub type TZICIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `TZSCIE` reader - TZSCIE"]
+pub type TZSCIE_R = crate::BitReader<bool>;
+#[doc = "Field `TZSCIE` writer - TZSCIE"]
+pub type TZSCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `AESIE` reader - AESIE"]
+pub type AESIE_R = crate::BitReader<bool>;
+#[doc = "Field `AESIE` writer - AESIE"]
+pub type AESIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `RNGIE` reader - RNGIE"]
+pub type RNGIE_R = crate::BitReader<bool>;
+#[doc = "Field `RNGIE` writer - RNGIE"]
+pub type RNGIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `SUBGHZSPIIE` reader - SUBGHZSPIIE"]
+pub type SUBGHZSPIIE_R = crate::BitReader<bool>;
+#[doc = "Field `SUBGHZSPIIE` writer - SUBGHZSPIIE"]
+pub type SUBGHZSPIIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `PWRIE` reader - PWRIE"]
+pub type PWRIE_R = crate::BitReader<bool>;
+#[doc = "Field `PWRIE` writer - PWRIE"]
+pub type PWRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `FLASHIFIE` reader - FLASHIFIE"]
+pub type FLASHIFIE_R = crate::BitReader<bool>;
+#[doc = "Field `FLASHIFIE` writer - FLASHIFIE"]
+pub type FLASHIFIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `DMA1IE` reader - DMA1IE"]
+pub type DMA1IE_R = crate::BitReader<bool>;
+#[doc = "Field `DMA1IE` writer - DMA1IE"]
+pub type DMA1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `DMA2IE` reader - DMA2IE"]
+pub type DMA2IE_R = crate::BitReader<bool>;
+#[doc = "Field `DMA2IE` writer - DMA2IE"]
+pub type DMA2IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `DMAMUX1IE` reader - DMAMUX1IE"]
+pub type DMAMUX1IE_R = crate::BitReader<bool>;
+#[doc = "Field `DMAMUX1IE` writer - DMAMUX1IE"]
+pub type DMAMUX1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `FLASHIE` reader - FLASHIE"]
+pub type FLASHIE_R = crate::BitReader<bool>;
+#[doc = "Field `FLASHIE` writer - FLASHIE"]
+pub type FLASHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `SRAM1IE` reader - SRAM1IE"]
+pub type SRAM1IE_R = crate::BitReader<bool>;
+#[doc = "Field `SRAM1IE` writer - SRAM1IE"]
+pub type SRAM1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `SRAM2IE` reader - SRAM2IE"]
+pub type SRAM2IE_R = crate::BitReader<bool>;
+#[doc = "Field `SRAM2IE` writer - SRAM2IE"]
+pub type SRAM2IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
+#[doc = "Field `PKAIE` reader - PKAIE"]
+pub type PKAIE_R = crate::BitReader<bool>;
+#[doc = "Field `PKAIE` writer - PKAIE"]
+pub type PKAIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER1_SPEC, bool, O>;
 impl R {
-    ///Bit 0 - TZICIE
+    #[doc = "Bit 0 - TZICIE"]
     #[inline(always)]
     pub fn tzicie(&self) -> TZICIE_R {
-        TZICIE_R::new((self.bits & 0x01) != 0)
+        TZICIE_R::new((self.bits & 1) != 0)
     }
-    ///Bit 1 - TZSCIE
+    #[doc = "Bit 1 - TZSCIE"]
     #[inline(always)]
     pub fn tzscie(&self) -> TZSCIE_R {
-        TZSCIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TZSCIE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 2 - AESIE
+    #[doc = "Bit 2 - AESIE"]
     #[inline(always)]
     pub fn aesie(&self) -> AESIE_R {
-        AESIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        AESIE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 3 - RNGIE
+    #[doc = "Bit 3 - RNGIE"]
     #[inline(always)]
     pub fn rngie(&self) -> RNGIE_R {
-        RNGIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        RNGIE_R::new(((self.bits >> 3) & 1) != 0)
     }
-    ///Bit 4 - SUBGHZSPIIE
+    #[doc = "Bit 4 - SUBGHZSPIIE"]
     #[inline(always)]
     pub fn subghzspiie(&self) -> SUBGHZSPIIE_R {
-        SUBGHZSPIIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        SUBGHZSPIIE_R::new(((self.bits >> 4) & 1) != 0)
     }
-    ///Bit 5 - PWRIE
+    #[doc = "Bit 5 - PWRIE"]
     #[inline(always)]
     pub fn pwrie(&self) -> PWRIE_R {
-        PWRIE_R::new(((self.bits >> 5) & 0x01) != 0)
+        PWRIE_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 6 - FLASHIFIE
+    #[doc = "Bit 6 - FLASHIFIE"]
     #[inline(always)]
     pub fn flashifie(&self) -> FLASHIFIE_R {
-        FLASHIFIE_R::new(((self.bits >> 6) & 0x01) != 0)
+        FLASHIFIE_R::new(((self.bits >> 6) & 1) != 0)
     }
-    ///Bit 7 - DMA1IE
+    #[doc = "Bit 7 - DMA1IE"]
     #[inline(always)]
     pub fn dma1ie(&self) -> DMA1IE_R {
-        DMA1IE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DMA1IE_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 8 - DMA2IE
+    #[doc = "Bit 8 - DMA2IE"]
     #[inline(always)]
     pub fn dma2ie(&self) -> DMA2IE_R {
-        DMA2IE_R::new(((self.bits >> 8) & 0x01) != 0)
+        DMA2IE_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 9 - DMAMUX1IE
+    #[doc = "Bit 9 - DMAMUX1IE"]
     #[inline(always)]
     pub fn dmamux1ie(&self) -> DMAMUX1IE_R {
-        DMAMUX1IE_R::new(((self.bits >> 9) & 0x01) != 0)
+        DMAMUX1IE_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 10 - FLASHIE
+    #[doc = "Bit 10 - FLASHIE"]
     #[inline(always)]
     pub fn flashie(&self) -> FLASHIE_R {
-        FLASHIE_R::new(((self.bits >> 10) & 0x01) != 0)
+        FLASHIE_R::new(((self.bits >> 10) & 1) != 0)
     }
-    ///Bit 11 - SRAM1IE
+    #[doc = "Bit 11 - SRAM1IE"]
     #[inline(always)]
     pub fn sram1ie(&self) -> SRAM1IE_R {
-        SRAM1IE_R::new(((self.bits >> 11) & 0x01) != 0)
+        SRAM1IE_R::new(((self.bits >> 11) & 1) != 0)
     }
-    ///Bit 12 - SRAM2IE
+    #[doc = "Bit 12 - SRAM2IE"]
     #[inline(always)]
     pub fn sram2ie(&self) -> SRAM2IE_R {
-        SRAM2IE_R::new(((self.bits >> 12) & 0x01) != 0)
+        SRAM2IE_R::new(((self.bits >> 12) & 1) != 0)
     }
-    ///Bit 13 - PKAIE
+    #[doc = "Bit 13 - PKAIE"]
     #[inline(always)]
     pub fn pkaie(&self) -> PKAIE_R {
-        PKAIE_R::new(((self.bits >> 13) & 0x01) != 0)
+        PKAIE_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
-    ///Bit 0 - TZICIE
+    #[doc = "Bit 0 - TZICIE"]
     #[inline(always)]
-    pub fn tzicie(&mut self) -> TZICIE_W {
-        TZICIE_W { w: self }
+    pub fn tzicie(&mut self) -> TZICIE_W<0> {
+        TZICIE_W::new(self)
     }
-    ///Bit 1 - TZSCIE
+    #[doc = "Bit 1 - TZSCIE"]
     #[inline(always)]
-    pub fn tzscie(&mut self) -> TZSCIE_W {
-        TZSCIE_W { w: self }
+    pub fn tzscie(&mut self) -> TZSCIE_W<1> {
+        TZSCIE_W::new(self)
     }
-    ///Bit 2 - AESIE
+    #[doc = "Bit 2 - AESIE"]
     #[inline(always)]
-    pub fn aesie(&mut self) -> AESIE_W {
-        AESIE_W { w: self }
+    pub fn aesie(&mut self) -> AESIE_W<2> {
+        AESIE_W::new(self)
     }
-    ///Bit 3 - RNGIE
+    #[doc = "Bit 3 - RNGIE"]
     #[inline(always)]
-    pub fn rngie(&mut self) -> RNGIE_W {
-        RNGIE_W { w: self }
+    pub fn rngie(&mut self) -> RNGIE_W<3> {
+        RNGIE_W::new(self)
     }
-    ///Bit 4 - SUBGHZSPIIE
+    #[doc = "Bit 4 - SUBGHZSPIIE"]
     #[inline(always)]
-    pub fn subghzspiie(&mut self) -> SUBGHZSPIIE_W {
-        SUBGHZSPIIE_W { w: self }
+    pub fn subghzspiie(&mut self) -> SUBGHZSPIIE_W<4> {
+        SUBGHZSPIIE_W::new(self)
     }
-    ///Bit 5 - PWRIE
+    #[doc = "Bit 5 - PWRIE"]
     #[inline(always)]
-    pub fn pwrie(&mut self) -> PWRIE_W {
-        PWRIE_W { w: self }
+    pub fn pwrie(&mut self) -> PWRIE_W<5> {
+        PWRIE_W::new(self)
     }
-    ///Bit 6 - FLASHIFIE
+    #[doc = "Bit 6 - FLASHIFIE"]
     #[inline(always)]
-    pub fn flashifie(&mut self) -> FLASHIFIE_W {
-        FLASHIFIE_W { w: self }
+    pub fn flashifie(&mut self) -> FLASHIFIE_W<6> {
+        FLASHIFIE_W::new(self)
     }
-    ///Bit 7 - DMA1IE
+    #[doc = "Bit 7 - DMA1IE"]
     #[inline(always)]
-    pub fn dma1ie(&mut self) -> DMA1IE_W {
-        DMA1IE_W { w: self }
+    pub fn dma1ie(&mut self) -> DMA1IE_W<7> {
+        DMA1IE_W::new(self)
     }
-    ///Bit 8 - DMA2IE
+    #[doc = "Bit 8 - DMA2IE"]
     #[inline(always)]
-    pub fn dma2ie(&mut self) -> DMA2IE_W {
-        DMA2IE_W { w: self }
+    pub fn dma2ie(&mut self) -> DMA2IE_W<8> {
+        DMA2IE_W::new(self)
     }
-    ///Bit 9 - DMAMUX1IE
+    #[doc = "Bit 9 - DMAMUX1IE"]
     #[inline(always)]
-    pub fn dmamux1ie(&mut self) -> DMAMUX1IE_W {
-        DMAMUX1IE_W { w: self }
+    pub fn dmamux1ie(&mut self) -> DMAMUX1IE_W<9> {
+        DMAMUX1IE_W::new(self)
     }
-    ///Bit 10 - FLASHIE
+    #[doc = "Bit 10 - FLASHIE"]
     #[inline(always)]
-    pub fn flashie(&mut self) -> FLASHIE_W {
-        FLASHIE_W { w: self }
+    pub fn flashie(&mut self) -> FLASHIE_W<10> {
+        FLASHIE_W::new(self)
     }
-    ///Bit 11 - SRAM1IE
+    #[doc = "Bit 11 - SRAM1IE"]
     #[inline(always)]
-    pub fn sram1ie(&mut self) -> SRAM1IE_W {
-        SRAM1IE_W { w: self }
+    pub fn sram1ie(&mut self) -> SRAM1IE_W<11> {
+        SRAM1IE_W::new(self)
     }
-    ///Bit 12 - SRAM2IE
+    #[doc = "Bit 12 - SRAM2IE"]
     #[inline(always)]
-    pub fn sram2ie(&mut self) -> SRAM2IE_W {
-        SRAM2IE_W { w: self }
+    pub fn sram2ie(&mut self) -> SRAM2IE_W<12> {
+        SRAM2IE_W::new(self)
     }
-    ///Bit 13 - PKAIE
+    #[doc = "Bit 13 - PKAIE"]
     #[inline(always)]
-    pub fn pkaie(&mut self) -> PKAIE_W {
-        PKAIE_W { w: self }
+    pub fn pkaie(&mut self) -> PKAIE_W<13> {
+        PKAIE_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TZIC interrupt enable register 1
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ier1](index.html) module
+#[doc = "TZIC interrupt enable register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier1](index.html) module"]
 pub struct IER1_SPEC;
 impl crate::RegisterSpec for IER1_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ier1::R](R) reader structure
+#[doc = "`read()` method returns [ier1::R](R) reader structure"]
 impl crate::Readable for IER1_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ier1::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ier1::W](W) writer structure"]
 impl crate::Writable for IER1_SPEC {
     type Writer = W;
 }
-///`reset()` method sets IER1 to value 0xffff_ffff
+#[doc = "`reset()` method sets IER1 to value 0xffff_ffff"]
 impl crate::Resettable for IER1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-///Register `CCIPR` reader
+#[doc = "Register `CCIPR` reader"]
 pub struct R(crate::R<CCIPR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCIPR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCIPR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `CCIPR` writer
+#[doc = "Register `CCIPR` writer"]
 pub struct W(crate::W<CCIPR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCIPR_SPEC>;
@@ -34,20 +34,18 @@ impl From<crate::W<CCIPR_SPEC>> for W {
         W(writer)
     }
 }
-///RNG clock source selection
-///
-///Value on reset: 0
+#[doc = "RNG clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RNGSEL_A {
-    ///0: PLLQ clock selected
-    PLLQ = 0,
-    ///1: LSI clock selected
-    LSI = 1,
-    ///2: LSE clock selected
-    LSE = 2,
-    ///3: MSI clock selected
-    MSI = 3,
+    #[doc = "0: PLLQ clock selected"]
+    Pllq = 0,
+    #[doc = "1: LSI clock selected"]
+    Lsi = 1,
+    #[doc = "2: LSE clock selected"]
+    Lse = 2,
+    #[doc = "3: MSI clock selected"]
+    Msi = 3,
 }
 impl From<RNGSEL_A> for u8 {
     #[inline(always)]
@@ -55,102 +53,78 @@ impl From<RNGSEL_A> for u8 {
         variant as _
     }
 }
-///Field `RNGSEL` reader - RNG clock source selection
-pub struct RNGSEL_R(crate::FieldReader<u8, RNGSEL_A>);
+#[doc = "Field `RNGSEL` reader - RNG clock source selection"]
+pub type RNGSEL_R = crate::FieldReader<u8, RNGSEL_A>;
 impl RNGSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RNGSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RNGSEL_A {
         match self.bits {
-            0 => RNGSEL_A::PLLQ,
-            1 => RNGSEL_A::LSI,
-            2 => RNGSEL_A::LSE,
-            3 => RNGSEL_A::MSI,
+            0 => RNGSEL_A::Pllq,
+            1 => RNGSEL_A::Lsi,
+            2 => RNGSEL_A::Lse,
+            3 => RNGSEL_A::Msi,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `PLLQ`
+    #[doc = "Checks if the value of the field is `Pllq`"]
     #[inline(always)]
     pub fn is_pllq(&self) -> bool {
-        **self == RNGSEL_A::PLLQ
+        *self == RNGSEL_A::Pllq
     }
-    ///Checks if the value of the field is `LSI`
+    #[doc = "Checks if the value of the field is `Lsi`"]
     #[inline(always)]
     pub fn is_lsi(&self) -> bool {
-        **self == RNGSEL_A::LSI
+        *self == RNGSEL_A::Lsi
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == RNGSEL_A::LSE
+        *self == RNGSEL_A::Lse
     }
-    ///Checks if the value of the field is `MSI`
+    #[doc = "Checks if the value of the field is `Msi`"]
     #[inline(always)]
     pub fn is_msi(&self) -> bool {
-        **self == RNGSEL_A::MSI
+        *self == RNGSEL_A::Msi
     }
 }
-impl core::ops::Deref for RNGSEL_R {
-    type Target = crate::FieldReader<u8, RNGSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `RNGSEL` writer - RNG clock source selection
-pub struct RNGSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RNGSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: RNGSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PLLQ clock selected
+#[doc = "Field `RNGSEL` writer - RNG clock source selection"]
+pub type RNGSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCIPR_SPEC, u8, RNGSEL_A, 2, O>;
+impl<'a, const O: u8> RNGSEL_W<'a, O> {
+    #[doc = "PLLQ clock selected"]
     #[inline(always)]
     pub fn pllq(self) -> &'a mut W {
-        self.variant(RNGSEL_A::PLLQ)
+        self.variant(RNGSEL_A::Pllq)
     }
-    ///LSI clock selected
+    #[doc = "LSI clock selected"]
     #[inline(always)]
     pub fn lsi(self) -> &'a mut W {
-        self.variant(RNGSEL_A::LSI)
+        self.variant(RNGSEL_A::Lsi)
     }
-    ///LSE clock selected
+    #[doc = "LSE clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(RNGSEL_A::LSE)
+        self.variant(RNGSEL_A::Lse)
     }
-    ///MSI clock selected
+    #[doc = "MSI clock selected"]
     #[inline(always)]
     pub fn msi(self) -> &'a mut W {
-        self.variant(RNGSEL_A::MSI)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
+        self.variant(RNGSEL_A::Msi)
     }
 }
-///ADC clock source selection
-///
-///Value on reset: 0
+#[doc = "ADC clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum ADCSEL_A {
-    ///0: No clock selected
-    NOCLOCK = 0,
-    ///1: HSI16 clock selected
-    HSI16 = 1,
-    ///2: PLLP clock selected
-    PLLP = 2,
-    ///3: SYSCLK clock selected
-    SYSCLK = 3,
+    #[doc = "0: No clock selected"]
+    NoClock = 0,
+    #[doc = "1: HSI16 clock selected"]
+    Hsi16 = 1,
+    #[doc = "2: PLLP clock selected"]
+    Pllp = 2,
+    #[doc = "3: SYSCLK clock selected"]
+    Sysclk = 3,
 }
 impl From<ADCSEL_A> for u8 {
     #[inline(always)]
@@ -158,184 +132,90 @@ impl From<ADCSEL_A> for u8 {
         variant as _
     }
 }
-///Field `ADCSEL` reader - ADC clock source selection
-pub struct ADCSEL_R(crate::FieldReader<u8, ADCSEL_A>);
+#[doc = "Field `ADCSEL` reader - ADC clock source selection"]
+pub type ADCSEL_R = crate::FieldReader<u8, ADCSEL_A>;
 impl ADCSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADCSEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADCSEL_A {
         match self.bits {
-            0 => ADCSEL_A::NOCLOCK,
-            1 => ADCSEL_A::HSI16,
-            2 => ADCSEL_A::PLLP,
-            3 => ADCSEL_A::SYSCLK,
+            0 => ADCSEL_A::NoClock,
+            1 => ADCSEL_A::Hsi16,
+            2 => ADCSEL_A::Pllp,
+            3 => ADCSEL_A::Sysclk,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NOCLOCK`
+    #[doc = "Checks if the value of the field is `NoClock`"]
     #[inline(always)]
     pub fn is_no_clock(&self) -> bool {
-        **self == ADCSEL_A::NOCLOCK
+        *self == ADCSEL_A::NoClock
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == ADCSEL_A::HSI16
+        *self == ADCSEL_A::Hsi16
     }
-    ///Checks if the value of the field is `PLLP`
+    #[doc = "Checks if the value of the field is `Pllp`"]
     #[inline(always)]
     pub fn is_pllp(&self) -> bool {
-        **self == ADCSEL_A::PLLP
+        *self == ADCSEL_A::Pllp
     }
-    ///Checks if the value of the field is `SYSCLK`
+    #[doc = "Checks if the value of the field is `Sysclk`"]
     #[inline(always)]
     pub fn is_sysclk(&self) -> bool {
-        **self == ADCSEL_A::SYSCLK
+        *self == ADCSEL_A::Sysclk
     }
 }
-impl core::ops::Deref for ADCSEL_R {
-    type Target = crate::FieldReader<u8, ADCSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `ADCSEL` writer - ADC clock source selection
-pub struct ADCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCSEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: ADCSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///No clock selected
+#[doc = "Field `ADCSEL` writer - ADC clock source selection"]
+pub type ADCSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCIPR_SPEC, u8, ADCSEL_A, 2, O>;
+impl<'a, const O: u8> ADCSEL_W<'a, O> {
+    #[doc = "No clock selected"]
     #[inline(always)]
     pub fn no_clock(self) -> &'a mut W {
-        self.variant(ADCSEL_A::NOCLOCK)
+        self.variant(ADCSEL_A::NoClock)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(ADCSEL_A::HSI16)
+        self.variant(ADCSEL_A::Hsi16)
     }
-    ///PLLP clock selected
+    #[doc = "PLLP clock selected"]
     #[inline(always)]
     pub fn pllp(self) -> &'a mut W {
-        self.variant(ADCSEL_A::PLLP)
+        self.variant(ADCSEL_A::Pllp)
     }
-    ///SYSCLK clock selected
+    #[doc = "SYSCLK clock selected"]
     #[inline(always)]
     pub fn sysclk(self) -> &'a mut W {
-        self.variant(ADCSEL_A::SYSCLK)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
+        self.variant(ADCSEL_A::Sysclk)
     }
 }
-///Low power timer 3 clock source selection
-pub type LPTIM3SEL_A = LPTIM1SEL_A;
-///Field `LPTIM3SEL` reader - Low power timer 3 clock source selection
-pub type LPTIM3SEL_R = LPTIM1SEL_R;
-///Field `LPTIM3SEL` writer - Low power timer 3 clock source selection
-pub struct LPTIM3SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPTIM3SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPTIM3SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(LPTIM3SEL_A::PCLK)
-    }
-    ///LSI clock selected
-    #[inline(always)]
-    pub fn lsi(self) -> &'a mut W {
-        self.variant(LPTIM3SEL_A::LSI)
-    }
-    ///HSI16 clock selected
-    #[inline(always)]
-    pub fn hsi16(self) -> &'a mut W {
-        self.variant(LPTIM3SEL_A::HSI16)
-    }
-    ///LSE clock selected
-    #[inline(always)]
-    pub fn lse(self) -> &'a mut W {
-        self.variant(LPTIM3SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
-}
-///Low power timer 2 clock source selection
-pub type LPTIM2SEL_A = LPTIM1SEL_A;
-///Field `LPTIM2SEL` reader - Low power timer 2 clock source selection
-pub type LPTIM2SEL_R = LPTIM1SEL_R;
-///Field `LPTIM2SEL` writer - Low power timer 2 clock source selection
-pub struct LPTIM2SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPTIM2SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPTIM2SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(LPTIM2SEL_A::PCLK)
-    }
-    ///LSI clock selected
-    #[inline(always)]
-    pub fn lsi(self) -> &'a mut W {
-        self.variant(LPTIM2SEL_A::LSI)
-    }
-    ///HSI16 clock selected
-    #[inline(always)]
-    pub fn hsi16(self) -> &'a mut W {
-        self.variant(LPTIM2SEL_A::HSI16)
-    }
-    ///LSE clock selected
-    #[inline(always)]
-    pub fn lse(self) -> &'a mut W {
-        self.variant(LPTIM2SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
-        self.w
-    }
-}
-///Low power timer 1 clock source selection
-///
-///Value on reset: 0
+#[doc = "Low power timer 3 clock source selection"]
+pub use LPTIM1SEL_A as LPTIM3SEL_A;
+#[doc = "Low power timer 2 clock source selection"]
+pub use LPTIM1SEL_A as LPTIM2SEL_A;
+#[doc = "Field `LPTIM3SEL` reader - Low power timer 3 clock source selection"]
+pub use LPTIM1SEL_R as LPTIM3SEL_R;
+#[doc = "Field `LPTIM2SEL` reader - Low power timer 2 clock source selection"]
+pub use LPTIM1SEL_R as LPTIM2SEL_R;
+#[doc = "Field `LPTIM3SEL` writer - Low power timer 3 clock source selection"]
+pub use LPTIM1SEL_W as LPTIM3SEL_W;
+#[doc = "Field `LPTIM2SEL` writer - Low power timer 2 clock source selection"]
+pub use LPTIM1SEL_W as LPTIM2SEL_W;
+#[doc = "Low power timer 1 clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LPTIM1SEL_A {
-    ///0: PCLK clock selected
-    PCLK = 0,
-    ///1: LSI clock selected
-    LSI = 1,
-    ///2: HSI16 clock selected
-    HSI16 = 2,
-    ///3: LSE clock selected
-    LSE = 3,
+    #[doc = "0: PCLK clock selected"]
+    Pclk = 0,
+    #[doc = "1: LSI clock selected"]
+    Lsi = 1,
+    #[doc = "2: HSI16 clock selected"]
+    Hsi16 = 2,
+    #[doc = "3: LSE clock selected"]
+    Lse = 3,
 }
 impl From<LPTIM1SEL_A> for u8 {
     #[inline(always)]
@@ -343,172 +223,88 @@ impl From<LPTIM1SEL_A> for u8 {
         variant as _
     }
 }
-///Field `LPTIM1SEL` reader - Low power timer 1 clock source selection
-pub struct LPTIM1SEL_R(crate::FieldReader<u8, LPTIM1SEL_A>);
+#[doc = "Field `LPTIM1SEL` reader - Low power timer 1 clock source selection"]
+pub type LPTIM1SEL_R = crate::FieldReader<u8, LPTIM1SEL_A>;
 impl LPTIM1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LPTIM1SEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPTIM1SEL_A {
         match self.bits {
-            0 => LPTIM1SEL_A::PCLK,
-            1 => LPTIM1SEL_A::LSI,
-            2 => LPTIM1SEL_A::HSI16,
-            3 => LPTIM1SEL_A::LSE,
+            0 => LPTIM1SEL_A::Pclk,
+            1 => LPTIM1SEL_A::Lsi,
+            2 => LPTIM1SEL_A::Hsi16,
+            3 => LPTIM1SEL_A::Lse,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `PCLK`
+    #[doc = "Checks if the value of the field is `Pclk`"]
     #[inline(always)]
     pub fn is_pclk(&self) -> bool {
-        **self == LPTIM1SEL_A::PCLK
+        *self == LPTIM1SEL_A::Pclk
     }
-    ///Checks if the value of the field is `LSI`
+    #[doc = "Checks if the value of the field is `Lsi`"]
     #[inline(always)]
     pub fn is_lsi(&self) -> bool {
-        **self == LPTIM1SEL_A::LSI
+        *self == LPTIM1SEL_A::Lsi
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == LPTIM1SEL_A::HSI16
+        *self == LPTIM1SEL_A::Hsi16
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == LPTIM1SEL_A::LSE
+        *self == LPTIM1SEL_A::Lse
     }
 }
-impl core::ops::Deref for LPTIM1SEL_R {
-    type Target = crate::FieldReader<u8, LPTIM1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LPTIM1SEL` writer - Low power timer 1 clock source selection
-pub struct LPTIM1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPTIM1SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPTIM1SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
+#[doc = "Field `LPTIM1SEL` writer - Low power timer 1 clock source selection"]
+pub type LPTIM1SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCIPR_SPEC, u8, LPTIM1SEL_A, 2, O>;
+impl<'a, const O: u8> LPTIM1SEL_W<'a, O> {
+    #[doc = "PCLK clock selected"]
     #[inline(always)]
     pub fn pclk(self) -> &'a mut W {
-        self.variant(LPTIM1SEL_A::PCLK)
+        self.variant(LPTIM1SEL_A::Pclk)
     }
-    ///LSI clock selected
+    #[doc = "LSI clock selected"]
     #[inline(always)]
     pub fn lsi(self) -> &'a mut W {
-        self.variant(LPTIM1SEL_A::LSI)
+        self.variant(LPTIM1SEL_A::Lsi)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(LPTIM1SEL_A::HSI16)
+        self.variant(LPTIM1SEL_A::Hsi16)
     }
-    ///LSE clock selected
+    #[doc = "LSE clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(LPTIM1SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
-        self.w
+        self.variant(LPTIM1SEL_A::Lse)
     }
 }
-///I2C3 clock source selection
-pub type I2C3SEL_A = I2C1SEL_A;
-///Field `I2C3SEL` reader - I2C3 clock source selection
-pub type I2C3SEL_R = I2C1SEL_R;
-///Field `I2C3SEL` writer - I2C3 clock source selection
-pub struct I2C3SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2C3SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: I2C3SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PCLK clock selected
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(I2C3SEL_A::PCLK)
-    }
-    ///SYSCLK clock selected
-    #[inline(always)]
-    pub fn sysclk(self) -> &'a mut W {
-        self.variant(I2C3SEL_A::SYSCLK)
-    }
-    ///HSI16 clock selected
-    #[inline(always)]
-    pub fn hsi16(self) -> &'a mut W {
-        self.variant(I2C3SEL_A::HSI16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
-///I2C2 clock source selection
-pub type I2C2SEL_A = I2C1SEL_A;
-///Field `I2C2SEL` reader - I2C2 clock source selection
-pub type I2C2SEL_R = I2C1SEL_R;
-///Field `I2C2SEL` writer - I2C2 clock source selection
-pub struct I2C2SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2C2SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: I2C2SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PCLK clock selected
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(I2C2SEL_A::PCLK)
-    }
-    ///SYSCLK clock selected
-    #[inline(always)]
-    pub fn sysclk(self) -> &'a mut W {
-        self.variant(I2C2SEL_A::SYSCLK)
-    }
-    ///HSI16 clock selected
-    #[inline(always)]
-    pub fn hsi16(self) -> &'a mut W {
-        self.variant(I2C2SEL_A::HSI16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
-        self.w
-    }
-}
-///I2C1 clock source selection
-///
-///Value on reset: 0
+#[doc = "I2C3 clock source selection"]
+pub use I2C1SEL_A as I2C3SEL_A;
+#[doc = "I2C2 clock source selection"]
+pub use I2C1SEL_A as I2C2SEL_A;
+#[doc = "Field `I2C3SEL` reader - I2C3 clock source selection"]
+pub use I2C1SEL_R as I2C3SEL_R;
+#[doc = "Field `I2C2SEL` reader - I2C2 clock source selection"]
+pub use I2C1SEL_R as I2C2SEL_R;
+#[doc = "Field `I2C3SEL` writer - I2C3 clock source selection"]
+pub use I2C1SEL_W as I2C3SEL_W;
+#[doc = "Field `I2C2SEL` writer - I2C2 clock source selection"]
+pub use I2C1SEL_W as I2C2SEL_W;
+#[doc = "I2C1 clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum I2C1SEL_A {
-    ///0: PCLK clock selected
-    PCLK = 0,
-    ///1: SYSCLK clock selected
-    SYSCLK = 1,
-    ///2: HSI16 clock selected
-    HSI16 = 2,
+    #[doc = "0: PCLK clock selected"]
+    Pclk = 0,
+    #[doc = "1: SYSCLK clock selected"]
+    Sysclk = 1,
+    #[doc = "2: HSI16 clock selected"]
+    Hsi16 = 2,
 }
 impl From<I2C1SEL_A> for u8 {
     #[inline(always)]
@@ -516,91 +312,66 @@ impl From<I2C1SEL_A> for u8 {
         variant as _
     }
 }
-///Field `I2C1SEL` reader - I2C1 clock source selection
-pub struct I2C1SEL_R(crate::FieldReader<u8, I2C1SEL_A>);
+#[doc = "Field `I2C1SEL` reader - I2C1 clock source selection"]
+pub type I2C1SEL_R = crate::FieldReader<u8, I2C1SEL_A>;
 impl I2C1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        I2C1SEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<I2C1SEL_A> {
         match self.bits {
-            0 => Some(I2C1SEL_A::PCLK),
-            1 => Some(I2C1SEL_A::SYSCLK),
-            2 => Some(I2C1SEL_A::HSI16),
+            0 => Some(I2C1SEL_A::Pclk),
+            1 => Some(I2C1SEL_A::Sysclk),
+            2 => Some(I2C1SEL_A::Hsi16),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PCLK`
+    #[doc = "Checks if the value of the field is `Pclk`"]
     #[inline(always)]
     pub fn is_pclk(&self) -> bool {
-        **self == I2C1SEL_A::PCLK
+        *self == I2C1SEL_A::Pclk
     }
-    ///Checks if the value of the field is `SYSCLK`
+    #[doc = "Checks if the value of the field is `Sysclk`"]
     #[inline(always)]
     pub fn is_sysclk(&self) -> bool {
-        **self == I2C1SEL_A::SYSCLK
+        *self == I2C1SEL_A::Sysclk
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == I2C1SEL_A::HSI16
+        *self == I2C1SEL_A::Hsi16
     }
 }
-impl core::ops::Deref for I2C1SEL_R {
-    type Target = crate::FieldReader<u8, I2C1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `I2C1SEL` writer - I2C1 clock source selection
-pub struct I2C1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2C1SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: I2C1SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PCLK clock selected
+#[doc = "Field `I2C1SEL` writer - I2C1 clock source selection"]
+pub type I2C1SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCIPR_SPEC, u8, I2C1SEL_A, 2, O>;
+impl<'a, const O: u8> I2C1SEL_W<'a, O> {
+    #[doc = "PCLK clock selected"]
     #[inline(always)]
     pub fn pclk(self) -> &'a mut W {
-        self.variant(I2C1SEL_A::PCLK)
+        self.variant(I2C1SEL_A::Pclk)
     }
-    ///SYSCLK clock selected
+    #[doc = "SYSCLK clock selected"]
     #[inline(always)]
     pub fn sysclk(self) -> &'a mut W {
-        self.variant(I2C1SEL_A::SYSCLK)
+        self.variant(I2C1SEL_A::Sysclk)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(I2C1SEL_A::HSI16)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
+        self.variant(I2C1SEL_A::Hsi16)
     }
 }
-///LPUART1 clock source selection
-///
-///Value on reset: 0
+#[doc = "LPUART1 clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LPUART1SEL_A {
-    ///0: PCLK clock selected
-    PCLK = 0,
-    ///1: SYSCLK clock selected
-    SYSCLK = 1,
-    ///2: HSI16 clock selected
-    HSI16 = 2,
-    ///3: LSE clock selected
-    LSE = 3,
+    #[doc = "0: PCLK clock selected"]
+    Pclk = 0,
+    #[doc = "1: SYSCLK clock selected"]
+    Sysclk = 1,
+    #[doc = "2: HSI16 clock selected"]
+    Hsi16 = 2,
+    #[doc = "3: LSE clock selected"]
+    Lse = 3,
 }
 impl From<LPUART1SEL_A> for u8 {
     #[inline(always)]
@@ -608,100 +379,76 @@ impl From<LPUART1SEL_A> for u8 {
         variant as _
     }
 }
-///Field `LPUART1SEL` reader - LPUART1 clock source selection
-pub struct LPUART1SEL_R(crate::FieldReader<u8, LPUART1SEL_A>);
+#[doc = "Field `LPUART1SEL` reader - LPUART1 clock source selection"]
+pub type LPUART1SEL_R = crate::FieldReader<u8, LPUART1SEL_A>;
 impl LPUART1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LPUART1SEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPUART1SEL_A {
         match self.bits {
-            0 => LPUART1SEL_A::PCLK,
-            1 => LPUART1SEL_A::SYSCLK,
-            2 => LPUART1SEL_A::HSI16,
-            3 => LPUART1SEL_A::LSE,
+            0 => LPUART1SEL_A::Pclk,
+            1 => LPUART1SEL_A::Sysclk,
+            2 => LPUART1SEL_A::Hsi16,
+            3 => LPUART1SEL_A::Lse,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `PCLK`
+    #[doc = "Checks if the value of the field is `Pclk`"]
     #[inline(always)]
     pub fn is_pclk(&self) -> bool {
-        **self == LPUART1SEL_A::PCLK
+        *self == LPUART1SEL_A::Pclk
     }
-    ///Checks if the value of the field is `SYSCLK`
+    #[doc = "Checks if the value of the field is `Sysclk`"]
     #[inline(always)]
     pub fn is_sysclk(&self) -> bool {
-        **self == LPUART1SEL_A::SYSCLK
+        *self == LPUART1SEL_A::Sysclk
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == LPUART1SEL_A::HSI16
+        *self == LPUART1SEL_A::Hsi16
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == LPUART1SEL_A::LSE
+        *self == LPUART1SEL_A::Lse
     }
 }
-impl core::ops::Deref for LPUART1SEL_R {
-    type Target = crate::FieldReader<u8, LPUART1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `LPUART1SEL` writer - LPUART1 clock source selection
-pub struct LPUART1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPUART1SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: LPUART1SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
+#[doc = "Field `LPUART1SEL` writer - LPUART1 clock source selection"]
+pub type LPUART1SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCIPR_SPEC, u8, LPUART1SEL_A, 2, O>;
+impl<'a, const O: u8> LPUART1SEL_W<'a, O> {
+    #[doc = "PCLK clock selected"]
     #[inline(always)]
     pub fn pclk(self) -> &'a mut W {
-        self.variant(LPUART1SEL_A::PCLK)
+        self.variant(LPUART1SEL_A::Pclk)
     }
-    ///SYSCLK clock selected
+    #[doc = "SYSCLK clock selected"]
     #[inline(always)]
     pub fn sysclk(self) -> &'a mut W {
-        self.variant(LPUART1SEL_A::SYSCLK)
+        self.variant(LPUART1SEL_A::Sysclk)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(LPUART1SEL_A::HSI16)
+        self.variant(LPUART1SEL_A::Hsi16)
     }
-    ///LSE clock selected
+    #[doc = "LSE clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(LPUART1SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
+        self.variant(LPUART1SEL_A::Lse)
     }
 }
-///SPI2S2 I2S clock source selection
-///
-///Value on reset: 0
+#[doc = "SPI2S2 I2S clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SPI2S2SEL_A {
-    ///1: PLLQ clock selected
-    PLLQ = 1,
-    ///2: HSI16 clock selected
-    HSI16 = 2,
-    ///3: External input I2S_CKIN selected
-    I2S = 3,
+    #[doc = "1: PLLQ clock selected"]
+    Pllq = 1,
+    #[doc = "2: HSI16 clock selected"]
+    Hsi16 = 2,
+    #[doc = "3: External input I2S_CKIN selected"]
+    I2s = 3,
 }
 impl From<SPI2S2SEL_A> for u8 {
     #[inline(always)]
@@ -709,132 +456,73 @@ impl From<SPI2S2SEL_A> for u8 {
         variant as _
     }
 }
-///Field `SPI2S2SEL` reader - SPI2S2 I2S clock source selection
-pub struct SPI2S2SEL_R(crate::FieldReader<u8, SPI2S2SEL_A>);
+#[doc = "Field `SPI2S2SEL` reader - SPI2S2 I2S clock source selection"]
+pub type SPI2S2SEL_R = crate::FieldReader<u8, SPI2S2SEL_A>;
 impl SPI2S2SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SPI2S2SEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SPI2S2SEL_A> {
         match self.bits {
-            1 => Some(SPI2S2SEL_A::PLLQ),
-            2 => Some(SPI2S2SEL_A::HSI16),
-            3 => Some(SPI2S2SEL_A::I2S),
+            1 => Some(SPI2S2SEL_A::Pllq),
+            2 => Some(SPI2S2SEL_A::Hsi16),
+            3 => Some(SPI2S2SEL_A::I2s),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `PLLQ`
+    #[doc = "Checks if the value of the field is `Pllq`"]
     #[inline(always)]
     pub fn is_pllq(&self) -> bool {
-        **self == SPI2S2SEL_A::PLLQ
+        *self == SPI2S2SEL_A::Pllq
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == SPI2S2SEL_A::HSI16
+        *self == SPI2S2SEL_A::Hsi16
     }
-    ///Checks if the value of the field is `I2S`
+    #[doc = "Checks if the value of the field is `I2s`"]
     #[inline(always)]
     pub fn is_i2s(&self) -> bool {
-        **self == SPI2S2SEL_A::I2S
+        *self == SPI2S2SEL_A::I2s
     }
 }
-impl core::ops::Deref for SPI2S2SEL_R {
-    type Target = crate::FieldReader<u8, SPI2S2SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SPI2S2SEL` writer - SPI2S2 I2S clock source selection
-pub struct SPI2S2SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPI2S2SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SPI2S2SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///PLLQ clock selected
+#[doc = "Field `SPI2S2SEL` writer - SPI2S2 I2S clock source selection"]
+pub type SPI2S2SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CCIPR_SPEC, u8, SPI2S2SEL_A, 2, O>;
+impl<'a, const O: u8> SPI2S2SEL_W<'a, O> {
+    #[doc = "PLLQ clock selected"]
     #[inline(always)]
     pub fn pllq(self) -> &'a mut W {
-        self.variant(SPI2S2SEL_A::PLLQ)
+        self.variant(SPI2S2SEL_A::Pllq)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(SPI2S2SEL_A::HSI16)
+        self.variant(SPI2S2SEL_A::Hsi16)
     }
-    ///External input I2S_CKIN selected
+    #[doc = "External input I2S_CKIN selected"]
     #[inline(always)]
     pub fn i2s(self) -> &'a mut W {
-        self.variant(SPI2S2SEL_A::I2S)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
+        self.variant(SPI2S2SEL_A::I2s)
     }
 }
-///USART2 clock source selection
-pub type USART2SEL_A = USART1SEL_A;
-///Field `USART2SEL` reader - USART2 clock source selection
-pub type USART2SEL_R = USART1SEL_R;
-///Field `USART2SEL` writer - USART2 clock source selection
-pub struct USART2SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USART2SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: USART2SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(USART2SEL_A::PCLK)
-    }
-    ///SYSCLK clock selected
-    #[inline(always)]
-    pub fn sysclk(self) -> &'a mut W {
-        self.variant(USART2SEL_A::SYSCLK)
-    }
-    ///HSI16 clock selected
-    #[inline(always)]
-    pub fn hsi16(self) -> &'a mut W {
-        self.variant(USART2SEL_A::HSI16)
-    }
-    ///LSE clock selected
-    #[inline(always)]
-    pub fn lse(self) -> &'a mut W {
-        self.variant(USART2SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
-///USART1 clock source selection
-///
-///Value on reset: 0
+#[doc = "USART2 clock source selection"]
+pub use USART1SEL_A as USART2SEL_A;
+#[doc = "Field `USART2SEL` reader - USART2 clock source selection"]
+pub use USART1SEL_R as USART2SEL_R;
+#[doc = "Field `USART2SEL` writer - USART2 clock source selection"]
+pub use USART1SEL_W as USART2SEL_W;
+#[doc = "USART1 clock source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USART1SEL_A {
-    ///0: PCLK clock selected
-    PCLK = 0,
-    ///1: SYSCLK clock selected
-    SYSCLK = 1,
-    ///2: HSI16 clock selected
-    HSI16 = 2,
-    ///3: LSE clock selected
-    LSE = 3,
+    #[doc = "0: PCLK clock selected"]
+    Pclk = 0,
+    #[doc = "1: SYSCLK clock selected"]
+    Sysclk = 1,
+    #[doc = "2: HSI16 clock selected"]
+    Hsi16 = 2,
+    #[doc = "3: LSE clock selected"]
+    Lse = 3,
 }
 impl From<USART1SEL_A> for u8 {
     #[inline(always)]
@@ -842,236 +530,210 @@ impl From<USART1SEL_A> for u8 {
         variant as _
     }
 }
-///Field `USART1SEL` reader - USART1 clock source selection
-pub struct USART1SEL_R(crate::FieldReader<u8, USART1SEL_A>);
+#[doc = "Field `USART1SEL` reader - USART1 clock source selection"]
+pub type USART1SEL_R = crate::FieldReader<u8, USART1SEL_A>;
 impl USART1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        USART1SEL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USART1SEL_A {
         match self.bits {
-            0 => USART1SEL_A::PCLK,
-            1 => USART1SEL_A::SYSCLK,
-            2 => USART1SEL_A::HSI16,
-            3 => USART1SEL_A::LSE,
+            0 => USART1SEL_A::Pclk,
+            1 => USART1SEL_A::Sysclk,
+            2 => USART1SEL_A::Hsi16,
+            3 => USART1SEL_A::Lse,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `PCLK`
+    #[doc = "Checks if the value of the field is `Pclk`"]
     #[inline(always)]
     pub fn is_pclk(&self) -> bool {
-        **self == USART1SEL_A::PCLK
+        *self == USART1SEL_A::Pclk
     }
-    ///Checks if the value of the field is `SYSCLK`
+    #[doc = "Checks if the value of the field is `Sysclk`"]
     #[inline(always)]
     pub fn is_sysclk(&self) -> bool {
-        **self == USART1SEL_A::SYSCLK
+        *self == USART1SEL_A::Sysclk
     }
-    ///Checks if the value of the field is `HSI16`
+    #[doc = "Checks if the value of the field is `Hsi16`"]
     #[inline(always)]
     pub fn is_hsi16(&self) -> bool {
-        **self == USART1SEL_A::HSI16
+        *self == USART1SEL_A::Hsi16
     }
-    ///Checks if the value of the field is `LSE`
+    #[doc = "Checks if the value of the field is `Lse`"]
     #[inline(always)]
     pub fn is_lse(&self) -> bool {
-        **self == USART1SEL_A::LSE
+        *self == USART1SEL_A::Lse
     }
 }
-impl core::ops::Deref for USART1SEL_R {
-    type Target = crate::FieldReader<u8, USART1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `USART1SEL` writer - USART1 clock source selection
-pub struct USART1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USART1SEL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: USART1SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///PCLK clock selected
+#[doc = "Field `USART1SEL` writer - USART1 clock source selection"]
+pub type USART1SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCIPR_SPEC, u8, USART1SEL_A, 2, O>;
+impl<'a, const O: u8> USART1SEL_W<'a, O> {
+    #[doc = "PCLK clock selected"]
     #[inline(always)]
     pub fn pclk(self) -> &'a mut W {
-        self.variant(USART1SEL_A::PCLK)
+        self.variant(USART1SEL_A::Pclk)
     }
-    ///SYSCLK clock selected
+    #[doc = "SYSCLK clock selected"]
     #[inline(always)]
     pub fn sysclk(self) -> &'a mut W {
-        self.variant(USART1SEL_A::SYSCLK)
+        self.variant(USART1SEL_A::Sysclk)
     }
-    ///HSI16 clock selected
+    #[doc = "HSI16 clock selected"]
     #[inline(always)]
     pub fn hsi16(self) -> &'a mut W {
-        self.variant(USART1SEL_A::HSI16)
+        self.variant(USART1SEL_A::Hsi16)
     }
-    ///LSE clock selected
+    #[doc = "LSE clock selected"]
     #[inline(always)]
     pub fn lse(self) -> &'a mut W {
-        self.variant(USART1SEL_A::LSE)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(USART1SEL_A::Lse)
     }
 }
 impl R {
-    ///Bits 30:31 - RNG clock source selection
+    #[doc = "Bits 30:31 - RNG clock source selection"]
     #[inline(always)]
     pub fn rngsel(&self) -> RNGSEL_R {
-        RNGSEL_R::new(((self.bits >> 30) & 0x03) as u8)
+        RNGSEL_R::new(((self.bits >> 30) & 3) as u8)
     }
-    ///Bits 28:29 - ADC clock source selection
+    #[doc = "Bits 28:29 - ADC clock source selection"]
     #[inline(always)]
     pub fn adcsel(&self) -> ADCSEL_R {
-        ADCSEL_R::new(((self.bits >> 28) & 0x03) as u8)
+        ADCSEL_R::new(((self.bits >> 28) & 3) as u8)
     }
-    ///Bits 22:23 - Low power timer 3 clock source selection
+    #[doc = "Bits 22:23 - Low power timer 3 clock source selection"]
     #[inline(always)]
     pub fn lptim3sel(&self) -> LPTIM3SEL_R {
-        LPTIM3SEL_R::new(((self.bits >> 22) & 0x03) as u8)
+        LPTIM3SEL_R::new(((self.bits >> 22) & 3) as u8)
     }
-    ///Bits 20:21 - Low power timer 2 clock source selection
+    #[doc = "Bits 20:21 - Low power timer 2 clock source selection"]
     #[inline(always)]
     pub fn lptim2sel(&self) -> LPTIM2SEL_R {
-        LPTIM2SEL_R::new(((self.bits >> 20) & 0x03) as u8)
+        LPTIM2SEL_R::new(((self.bits >> 20) & 3) as u8)
     }
-    ///Bits 18:19 - Low power timer 1 clock source selection
+    #[doc = "Bits 18:19 - Low power timer 1 clock source selection"]
     #[inline(always)]
     pub fn lptim1sel(&self) -> LPTIM1SEL_R {
-        LPTIM1SEL_R::new(((self.bits >> 18) & 0x03) as u8)
+        LPTIM1SEL_R::new(((self.bits >> 18) & 3) as u8)
     }
-    ///Bits 16:17 - I2C3 clock source selection
+    #[doc = "Bits 16:17 - I2C3 clock source selection"]
     #[inline(always)]
     pub fn i2c3sel(&self) -> I2C3SEL_R {
-        I2C3SEL_R::new(((self.bits >> 16) & 0x03) as u8)
+        I2C3SEL_R::new(((self.bits >> 16) & 3) as u8)
     }
-    ///Bits 14:15 - I2C2 clock source selection
+    #[doc = "Bits 14:15 - I2C2 clock source selection"]
     #[inline(always)]
     pub fn i2c2sel(&self) -> I2C2SEL_R {
-        I2C2SEL_R::new(((self.bits >> 14) & 0x03) as u8)
+        I2C2SEL_R::new(((self.bits >> 14) & 3) as u8)
     }
-    ///Bits 12:13 - I2C1 clock source selection
+    #[doc = "Bits 12:13 - I2C1 clock source selection"]
     #[inline(always)]
     pub fn i2c1sel(&self) -> I2C1SEL_R {
-        I2C1SEL_R::new(((self.bits >> 12) & 0x03) as u8)
+        I2C1SEL_R::new(((self.bits >> 12) & 3) as u8)
     }
-    ///Bits 10:11 - LPUART1 clock source selection
+    #[doc = "Bits 10:11 - LPUART1 clock source selection"]
     #[inline(always)]
     pub fn lpuart1sel(&self) -> LPUART1SEL_R {
-        LPUART1SEL_R::new(((self.bits >> 10) & 0x03) as u8)
+        LPUART1SEL_R::new(((self.bits >> 10) & 3) as u8)
     }
-    ///Bits 8:9 - SPI2S2 I2S clock source selection
+    #[doc = "Bits 8:9 - SPI2S2 I2S clock source selection"]
     #[inline(always)]
     pub fn spi2s2sel(&self) -> SPI2S2SEL_R {
-        SPI2S2SEL_R::new(((self.bits >> 8) & 0x03) as u8)
+        SPI2S2SEL_R::new(((self.bits >> 8) & 3) as u8)
     }
-    ///Bits 2:3 - USART2 clock source selection
+    #[doc = "Bits 2:3 - USART2 clock source selection"]
     #[inline(always)]
     pub fn usart2sel(&self) -> USART2SEL_R {
-        USART2SEL_R::new(((self.bits >> 2) & 0x03) as u8)
+        USART2SEL_R::new(((self.bits >> 2) & 3) as u8)
     }
-    ///Bits 0:1 - USART1 clock source selection
+    #[doc = "Bits 0:1 - USART1 clock source selection"]
     #[inline(always)]
     pub fn usart1sel(&self) -> USART1SEL_R {
-        USART1SEL_R::new((self.bits & 0x03) as u8)
+        USART1SEL_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
-    ///Bits 30:31 - RNG clock source selection
+    #[doc = "Bits 30:31 - RNG clock source selection"]
     #[inline(always)]
-    pub fn rngsel(&mut self) -> RNGSEL_W {
-        RNGSEL_W { w: self }
+    pub fn rngsel(&mut self) -> RNGSEL_W<30> {
+        RNGSEL_W::new(self)
     }
-    ///Bits 28:29 - ADC clock source selection
+    #[doc = "Bits 28:29 - ADC clock source selection"]
     #[inline(always)]
-    pub fn adcsel(&mut self) -> ADCSEL_W {
-        ADCSEL_W { w: self }
+    pub fn adcsel(&mut self) -> ADCSEL_W<28> {
+        ADCSEL_W::new(self)
     }
-    ///Bits 22:23 - Low power timer 3 clock source selection
+    #[doc = "Bits 22:23 - Low power timer 3 clock source selection"]
     #[inline(always)]
-    pub fn lptim3sel(&mut self) -> LPTIM3SEL_W {
-        LPTIM3SEL_W { w: self }
+    pub fn lptim3sel(&mut self) -> LPTIM3SEL_W<22> {
+        LPTIM3SEL_W::new(self)
     }
-    ///Bits 20:21 - Low power timer 2 clock source selection
+    #[doc = "Bits 20:21 - Low power timer 2 clock source selection"]
     #[inline(always)]
-    pub fn lptim2sel(&mut self) -> LPTIM2SEL_W {
-        LPTIM2SEL_W { w: self }
+    pub fn lptim2sel(&mut self) -> LPTIM2SEL_W<20> {
+        LPTIM2SEL_W::new(self)
     }
-    ///Bits 18:19 - Low power timer 1 clock source selection
+    #[doc = "Bits 18:19 - Low power timer 1 clock source selection"]
     #[inline(always)]
-    pub fn lptim1sel(&mut self) -> LPTIM1SEL_W {
-        LPTIM1SEL_W { w: self }
+    pub fn lptim1sel(&mut self) -> LPTIM1SEL_W<18> {
+        LPTIM1SEL_W::new(self)
     }
-    ///Bits 16:17 - I2C3 clock source selection
+    #[doc = "Bits 16:17 - I2C3 clock source selection"]
     #[inline(always)]
-    pub fn i2c3sel(&mut self) -> I2C3SEL_W {
-        I2C3SEL_W { w: self }
+    pub fn i2c3sel(&mut self) -> I2C3SEL_W<16> {
+        I2C3SEL_W::new(self)
     }
-    ///Bits 14:15 - I2C2 clock source selection
+    #[doc = "Bits 14:15 - I2C2 clock source selection"]
     #[inline(always)]
-    pub fn i2c2sel(&mut self) -> I2C2SEL_W {
-        I2C2SEL_W { w: self }
+    pub fn i2c2sel(&mut self) -> I2C2SEL_W<14> {
+        I2C2SEL_W::new(self)
     }
-    ///Bits 12:13 - I2C1 clock source selection
+    #[doc = "Bits 12:13 - I2C1 clock source selection"]
     #[inline(always)]
-    pub fn i2c1sel(&mut self) -> I2C1SEL_W {
-        I2C1SEL_W { w: self }
+    pub fn i2c1sel(&mut self) -> I2C1SEL_W<12> {
+        I2C1SEL_W::new(self)
     }
-    ///Bits 10:11 - LPUART1 clock source selection
+    #[doc = "Bits 10:11 - LPUART1 clock source selection"]
     #[inline(always)]
-    pub fn lpuart1sel(&mut self) -> LPUART1SEL_W {
-        LPUART1SEL_W { w: self }
+    pub fn lpuart1sel(&mut self) -> LPUART1SEL_W<10> {
+        LPUART1SEL_W::new(self)
     }
-    ///Bits 8:9 - SPI2S2 I2S clock source selection
+    #[doc = "Bits 8:9 - SPI2S2 I2S clock source selection"]
     #[inline(always)]
-    pub fn spi2s2sel(&mut self) -> SPI2S2SEL_W {
-        SPI2S2SEL_W { w: self }
+    pub fn spi2s2sel(&mut self) -> SPI2S2SEL_W<8> {
+        SPI2S2SEL_W::new(self)
     }
-    ///Bits 2:3 - USART2 clock source selection
+    #[doc = "Bits 2:3 - USART2 clock source selection"]
     #[inline(always)]
-    pub fn usart2sel(&mut self) -> USART2SEL_W {
-        USART2SEL_W { w: self }
+    pub fn usart2sel(&mut self) -> USART2SEL_W<2> {
+        USART2SEL_W::new(self)
     }
-    ///Bits 0:1 - USART1 clock source selection
+    #[doc = "Bits 0:1 - USART1 clock source selection"]
     #[inline(always)]
-    pub fn usart1sel(&mut self) -> USART1SEL_W {
-        USART1SEL_W { w: self }
+    pub fn usart1sel(&mut self) -> USART1SEL_W<0> {
+        USART1SEL_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///Peripherals independent clock configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [ccipr](index.html) module
+#[doc = "Peripherals independent clock configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccipr](index.html) module"]
 pub struct CCIPR_SPEC;
 impl crate::RegisterSpec for CCIPR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [ccipr::R](R) reader structure
+#[doc = "`read()` method returns [ccipr::R](R) reader structure"]
 impl crate::Readable for CCIPR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [ccipr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [ccipr::W](W) writer structure"]
 impl crate::Writable for CCIPR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets CCIPR to value 0
+#[doc = "`reset()` method sets CCIPR to value 0"]
 impl crate::Resettable for CCIPR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

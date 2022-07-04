@@ -1,4 +1,4 @@
-///Register `DIER` reader
+#[doc = "Register `DIER` reader"]
 pub struct R(crate::R<DIER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DIER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DIER_SPEC>> for R {
         R(reader)
     }
 }
-///Register `DIER` writer
+#[doc = "Register `DIER` writer"]
 pub struct W(crate::W<DIER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DIER_SPEC>;
@@ -34,51 +34,17 @@ impl From<crate::W<DIER_SPEC>> for W {
         W(writer)
     }
 }
-///Field `CC1DE` reader - Capture/Compare 1 DMA request enable
-pub struct CC1DE_R(crate::FieldReader<bool, bool>);
-impl CC1DE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1DE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC1DE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1DE` writer - Capture/Compare 1 DMA request enable
-pub struct CC1DE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1DE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
-///Update DMA request enable
-///
-///Value on reset: 0
+#[doc = "Field `CC1DE` reader - Capture/Compare 1 DMA request enable"]
+pub type CC1DE_R = crate::BitReader<bool>;
+#[doc = "Field `CC1DE` writer - Capture/Compare 1 DMA request enable"]
+pub type CC1DE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Update DMA request enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UDE_A {
-    ///0: Update DMA request disabled
-    DISABLED = 0,
-    ///1: Update DMA request enabled
-    ENABLED = 1,
+    #[doc = "0: Update DMA request disabled"]
+    Disabled = 0,
+    #[doc = "1: Update DMA request enabled"]
+    Enabled = 1,
 }
 impl From<UDE_A> for bool {
     #[inline(always)]
@@ -86,192 +52,61 @@ impl From<UDE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `UDE` reader - Update DMA request enable
-pub struct UDE_R(crate::FieldReader<bool, UDE_A>);
+#[doc = "Field `UDE` reader - Update DMA request enable"]
+pub type UDE_R = crate::BitReader<UDE_A>;
 impl UDE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UDE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UDE_A {
         match self.bits {
-            false => UDE_A::DISABLED,
-            true => UDE_A::ENABLED,
+            false => UDE_A::Disabled,
+            true => UDE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == UDE_A::DISABLED
+        *self == UDE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == UDE_A::ENABLED
+        *self == UDE_A::Enabled
     }
 }
-impl core::ops::Deref for UDE_R {
-    type Target = crate::FieldReader<bool, UDE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `UDE` writer - Update DMA request enable
-pub struct UDE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UDE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: UDE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Update DMA request disabled
+#[doc = "Field `UDE` writer - Update DMA request enable"]
+pub type UDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, UDE_A, O>;
+impl<'a, const O: u8> UDE_W<'a, O> {
+    #[doc = "Update DMA request disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(UDE_A::DISABLED)
+        self.variant(UDE_A::Disabled)
     }
-    ///Update DMA request enabled
+    #[doc = "Update DMA request enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(UDE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(UDE_A::Enabled)
     }
 }
-///Field `BIE` reader - Break interrupt enable
-pub struct BIE_R(crate::FieldReader<bool, bool>);
-impl BIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `BIE` writer - Break interrupt enable
-pub struct BIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-///Field `COMIE` reader - COM interrupt enable
-pub struct COMIE_R(crate::FieldReader<bool, bool>);
-impl COMIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COMIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `COMIE` writer - COM interrupt enable
-pub struct COMIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMIE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-///Field `CC1IE` reader - Capture/Compare 1 interrupt enable
-pub struct CC1IE_R(crate::FieldReader<bool, bool>);
-impl CC1IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CC1IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC1IE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `CC1IE` writer - Capture/Compare 1 interrupt enable
-pub struct CC1IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC1IE_W<'a> {
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///Update interrupt enable
-///
-///Value on reset: 0
+#[doc = "Field `BIE` reader - Break interrupt enable"]
+pub type BIE_R = crate::BitReader<bool>;
+#[doc = "Field `BIE` writer - Break interrupt enable"]
+pub type BIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `COMIE` reader - COM interrupt enable"]
+pub type COMIE_R = crate::BitReader<bool>;
+#[doc = "Field `COMIE` writer - COM interrupt enable"]
+pub type COMIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `CC1IE` reader - Capture/Compare 1 interrupt enable"]
+pub type CC1IE_R = crate::BitReader<bool>;
+#[doc = "Field `CC1IE` writer - Capture/Compare 1 interrupt enable"]
+pub type CC1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Update interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIE_A {
-    ///0: Update interrupt disabled
-    DISABLED = 0,
-    ///1: Update interrupt enabled
-    ENABLED = 1,
+    #[doc = "0: Update interrupt disabled"]
+    Disabled = 0,
+    #[doc = "1: Update interrupt enabled"]
+    Enabled = 1,
 }
 impl From<UIE_A> for bool {
     #[inline(always)]
@@ -279,163 +114,126 @@ impl From<UIE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `UIE` reader - Update interrupt enable
-pub struct UIE_R(crate::FieldReader<bool, UIE_A>);
+#[doc = "Field `UIE` reader - Update interrupt enable"]
+pub type UIE_R = crate::BitReader<UIE_A>;
 impl UIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UIE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UIE_A {
         match self.bits {
-            false => UIE_A::DISABLED,
-            true => UIE_A::ENABLED,
+            false => UIE_A::Disabled,
+            true => UIE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == UIE_A::DISABLED
+        *self == UIE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == UIE_A::ENABLED
+        *self == UIE_A::Enabled
     }
 }
-impl core::ops::Deref for UIE_R {
-    type Target = crate::FieldReader<bool, UIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `UIE` writer - Update interrupt enable
-pub struct UIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UIE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: UIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Update interrupt disabled
+#[doc = "Field `UIE` writer - Update interrupt enable"]
+pub type UIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, UIE_A, O>;
+impl<'a, const O: u8> UIE_W<'a, O> {
+    #[doc = "Update interrupt disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(UIE_A::DISABLED)
+        self.variant(UIE_A::Disabled)
     }
-    ///Update interrupt enabled
+    #[doc = "Update interrupt enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(UIE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(UIE_A::Enabled)
     }
 }
 impl R {
-    ///Bit 9 - Capture/Compare 1 DMA request enable
+    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
     #[inline(always)]
     pub fn cc1de(&self) -> CC1DE_R {
-        CC1DE_R::new(((self.bits >> 9) & 0x01) != 0)
+        CC1DE_R::new(((self.bits >> 9) & 1) != 0)
     }
-    ///Bit 8 - Update DMA request enable
+    #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
     pub fn ude(&self) -> UDE_R {
-        UDE_R::new(((self.bits >> 8) & 0x01) != 0)
+        UDE_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bit 7 - Break interrupt enable
+    #[doc = "Bit 7 - Break interrupt enable"]
     #[inline(always)]
     pub fn bie(&self) -> BIE_R {
-        BIE_R::new(((self.bits >> 7) & 0x01) != 0)
+        BIE_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 5 - COM interrupt enable
+    #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
     pub fn comie(&self) -> COMIE_R {
-        COMIE_R::new(((self.bits >> 5) & 0x01) != 0)
+        COMIE_R::new(((self.bits >> 5) & 1) != 0)
     }
-    ///Bit 1 - Capture/Compare 1 interrupt enable
+    #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
     pub fn cc1ie(&self) -> CC1IE_R {
-        CC1IE_R::new(((self.bits >> 1) & 0x01) != 0)
+        CC1IE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - Update interrupt enable
+    #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
     pub fn uie(&self) -> UIE_R {
-        UIE_R::new((self.bits & 0x01) != 0)
+        UIE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 9 - Capture/Compare 1 DMA request enable
+    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
     #[inline(always)]
-    pub fn cc1de(&mut self) -> CC1DE_W {
-        CC1DE_W { w: self }
+    pub fn cc1de(&mut self) -> CC1DE_W<9> {
+        CC1DE_W::new(self)
     }
-    ///Bit 8 - Update DMA request enable
+    #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
-    pub fn ude(&mut self) -> UDE_W {
-        UDE_W { w: self }
+    pub fn ude(&mut self) -> UDE_W<8> {
+        UDE_W::new(self)
     }
-    ///Bit 7 - Break interrupt enable
+    #[doc = "Bit 7 - Break interrupt enable"]
     #[inline(always)]
-    pub fn bie(&mut self) -> BIE_W {
-        BIE_W { w: self }
+    pub fn bie(&mut self) -> BIE_W<7> {
+        BIE_W::new(self)
     }
-    ///Bit 5 - COM interrupt enable
+    #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
-    pub fn comie(&mut self) -> COMIE_W {
-        COMIE_W { w: self }
+    pub fn comie(&mut self) -> COMIE_W<5> {
+        COMIE_W::new(self)
     }
-    ///Bit 1 - Capture/Compare 1 interrupt enable
+    #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
-    pub fn cc1ie(&mut self) -> CC1IE_W {
-        CC1IE_W { w: self }
+    pub fn cc1ie(&mut self) -> CC1IE_W<1> {
+        CC1IE_W::new(self)
     }
-    ///Bit 0 - Update interrupt enable
+    #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
-    pub fn uie(&mut self) -> UIE_W {
-        UIE_W { w: self }
+    pub fn uie(&mut self) -> UIE_W<0> {
+        UIE_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TIM16/TIM17 DMA/interrupt enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [dier](index.html) module
+#[doc = "TIM16/TIM17 DMA/interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dier](index.html) module"]
 pub struct DIER_SPEC;
 impl crate::RegisterSpec for DIER_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [dier::R](R) reader structure
+#[doc = "`read()` method returns [dier::R](R) reader structure"]
 impl crate::Readable for DIER_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [dier::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [dier::W](W) writer structure"]
 impl crate::Writable for DIER_SPEC {
     type Writer = W;
 }
-///`reset()` method sets DIER to value 0
+#[doc = "`reset()` method sets DIER to value 0"]
 impl crate::Resettable for DIER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

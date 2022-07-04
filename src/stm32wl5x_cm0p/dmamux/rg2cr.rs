@@ -1,4 +1,4 @@
-///Register `RG2CR` reader
+#[doc = "Register `RG2CR` reader"]
 pub struct R(crate::R<RG2CR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RG2CR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RG2CR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `RG2CR` writer
+#[doc = "Register `RG2CR` writer"]
 pub struct W(crate::W<RG2CR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RG2CR_SPEC>;
@@ -34,46 +34,22 @@ impl From<crate::W<RG2CR_SPEC>> for W {
         W(writer)
     }
 }
-///Field `GNBREQ` reader - Number of DMA requests to be generated (minus 1)
-pub struct GNBREQ_R(crate::FieldReader<u8, u8>);
-impl GNBREQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GNBREQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GNBREQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GNBREQ` writer - Number of DMA requests to be generated (minus 1)
-pub struct GNBREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GNBREQ_W<'a> {
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 19)) | ((value as u32 & 0x1f) << 19);
-        self.w
-    }
-}
-///DMA request generator trigger polarity
-///
-///Value on reset: 0
+#[doc = "Field `GNBREQ` reader - Number of DMA requests to be generated (minus 1)"]
+pub type GNBREQ_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `GNBREQ` writer - Number of DMA requests to be generated (minus 1)"]
+pub type GNBREQ_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RG2CR_SPEC, u8, u8, 5, O>;
+#[doc = "DMA request generator trigger polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum GPOL_A {
-    ///0: No event, i.e. no detection nor generation
-    NOEDGE = 0,
-    ///1: Rising edge
-    RISINGEDGE = 1,
-    ///2: Falling edge
-    FALLINGEDGE = 2,
-    ///3: Rising and falling edges
-    BOTHEDGES = 3,
+    #[doc = "0: No event, i.e. no detection nor generation"]
+    NoEdge = 0,
+    #[doc = "1: Rising edge"]
+    RisingEdge = 1,
+    #[doc = "2: Falling edge"]
+    FallingEdge = 2,
+    #[doc = "3: Rising and falling edges"]
+    BothEdges = 3,
 }
 impl From<GPOL_A> for u8 {
     #[inline(always)]
@@ -81,97 +57,72 @@ impl From<GPOL_A> for u8 {
         variant as _
     }
 }
-///Field `GPOL` reader - DMA request generator trigger polarity
-pub struct GPOL_R(crate::FieldReader<u8, GPOL_A>);
+#[doc = "Field `GPOL` reader - DMA request generator trigger polarity"]
+pub type GPOL_R = crate::FieldReader<u8, GPOL_A>;
 impl GPOL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GPOL_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPOL_A {
         match self.bits {
-            0 => GPOL_A::NOEDGE,
-            1 => GPOL_A::RISINGEDGE,
-            2 => GPOL_A::FALLINGEDGE,
-            3 => GPOL_A::BOTHEDGES,
+            0 => GPOL_A::NoEdge,
+            1 => GPOL_A::RisingEdge,
+            2 => GPOL_A::FallingEdge,
+            3 => GPOL_A::BothEdges,
             _ => unreachable!(),
         }
     }
-    ///Checks if the value of the field is `NOEDGE`
+    #[doc = "Checks if the value of the field is `NoEdge`"]
     #[inline(always)]
     pub fn is_no_edge(&self) -> bool {
-        **self == GPOL_A::NOEDGE
+        *self == GPOL_A::NoEdge
     }
-    ///Checks if the value of the field is `RISINGEDGE`
+    #[doc = "Checks if the value of the field is `RisingEdge`"]
     #[inline(always)]
     pub fn is_rising_edge(&self) -> bool {
-        **self == GPOL_A::RISINGEDGE
+        *self == GPOL_A::RisingEdge
     }
-    ///Checks if the value of the field is `FALLINGEDGE`
+    #[doc = "Checks if the value of the field is `FallingEdge`"]
     #[inline(always)]
     pub fn is_falling_edge(&self) -> bool {
-        **self == GPOL_A::FALLINGEDGE
+        *self == GPOL_A::FallingEdge
     }
-    ///Checks if the value of the field is `BOTHEDGES`
+    #[doc = "Checks if the value of the field is `BothEdges`"]
     #[inline(always)]
     pub fn is_both_edges(&self) -> bool {
-        **self == GPOL_A::BOTHEDGES
+        *self == GPOL_A::BothEdges
     }
 }
-impl core::ops::Deref for GPOL_R {
-    type Target = crate::FieldReader<u8, GPOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GPOL` writer - DMA request generator trigger polarity
-pub struct GPOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPOL_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GPOL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    ///No event, i.e. no detection nor generation
+#[doc = "Field `GPOL` writer - DMA request generator trigger polarity"]
+pub type GPOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RG2CR_SPEC, u8, GPOL_A, 2, O>;
+impl<'a, const O: u8> GPOL_W<'a, O> {
+    #[doc = "No event, i.e. no detection nor generation"]
     #[inline(always)]
     pub fn no_edge(self) -> &'a mut W {
-        self.variant(GPOL_A::NOEDGE)
+        self.variant(GPOL_A::NoEdge)
     }
-    ///Rising edge
+    #[doc = "Rising edge"]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
-        self.variant(GPOL_A::RISINGEDGE)
+        self.variant(GPOL_A::RisingEdge)
     }
-    ///Falling edge
+    #[doc = "Falling edge"]
     #[inline(always)]
     pub fn falling_edge(self) -> &'a mut W {
-        self.variant(GPOL_A::FALLINGEDGE)
+        self.variant(GPOL_A::FallingEdge)
     }
-    ///Rising and falling edges
+    #[doc = "Rising and falling edges"]
     #[inline(always)]
     pub fn both_edges(self) -> &'a mut W {
-        self.variant(GPOL_A::BOTHEDGES)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 17)) | ((value as u32 & 0x03) << 17);
-        self.w
+        self.variant(GPOL_A::BothEdges)
     }
 }
-///DMA request generator channel x enable
-///
-///Value on reset: 0
+#[doc = "DMA request generator channel x enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GE_A {
-    ///0: DMA request generation disabled
-    DISABLED = 0,
-    ///1: DMA request enabled
-    ENABLED = 1,
+    #[doc = "0: DMA request generation disabled"]
+    Disabled = 0,
+    #[doc = "1: DMA request enabled"]
+    Enabled = 1,
 }
 impl From<GE_A> for bool {
     #[inline(always)]
@@ -179,84 +130,49 @@ impl From<GE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `GE` reader - DMA request generator channel x enable
-pub struct GE_R(crate::FieldReader<bool, GE_A>);
+#[doc = "Field `GE` reader - DMA request generator channel x enable"]
+pub type GE_R = crate::BitReader<GE_A>;
 impl GE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GE_A {
         match self.bits {
-            false => GE_A::DISABLED,
-            true => GE_A::ENABLED,
+            false => GE_A::Disabled,
+            true => GE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GE_A::DISABLED
+        *self == GE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GE_A::ENABLED
+        *self == GE_A::Enabled
     }
 }
-impl core::ops::Deref for GE_R {
-    type Target = crate::FieldReader<bool, GE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GE` writer - DMA request generator channel x enable
-pub struct GE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///DMA request generation disabled
+#[doc = "Field `GE` writer - DMA request generator channel x enable"]
+pub type GE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RG2CR_SPEC, GE_A, O>;
+impl<'a, const O: u8> GE_W<'a, O> {
+    #[doc = "DMA request generation disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(GE_A::DISABLED)
+        self.variant(GE_A::Disabled)
     }
-    ///DMA request enabled
+    #[doc = "DMA request enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(GE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(GE_A::Enabled)
     }
 }
-///Trigger overrun interrupt enable
-///
-///Value on reset: 0
+#[doc = "Trigger overrun interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OIE_A {
-    ///0: Trigger overrun interrupt disabled
-    DISABLED = 0,
-    ///1: Trigger overrun interrupt enabled
-    ENABLED = 1,
+    #[doc = "0: Trigger overrun interrupt disabled"]
+    Disabled = 0,
+    #[doc = "1: Trigger overrun interrupt enabled"]
+    Enabled = 1,
 }
 impl From<OIE_A> for bool {
     #[inline(always)]
@@ -264,123 +180,88 @@ impl From<OIE_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `OIE` reader - Trigger overrun interrupt enable
-pub struct OIE_R(crate::FieldReader<bool, OIE_A>);
+#[doc = "Field `OIE` reader - Trigger overrun interrupt enable"]
+pub type OIE_R = crate::BitReader<OIE_A>;
 impl OIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OIE_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OIE_A {
         match self.bits {
-            false => OIE_A::DISABLED,
-            true => OIE_A::ENABLED,
+            false => OIE_A::Disabled,
+            true => OIE_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == OIE_A::DISABLED
+        *self == OIE_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == OIE_A::ENABLED
+        *self == OIE_A::Enabled
     }
 }
-impl core::ops::Deref for OIE_R {
-    type Target = crate::FieldReader<bool, OIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `OIE` writer - Trigger overrun interrupt enable
-pub struct OIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OIE_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: OIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Trigger overrun interrupt disabled
+#[doc = "Field `OIE` writer - Trigger overrun interrupt enable"]
+pub type OIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RG2CR_SPEC, OIE_A, O>;
+impl<'a, const O: u8> OIE_W<'a, O> {
+    #[doc = "Trigger overrun interrupt disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OIE_A::DISABLED)
+        self.variant(OIE_A::Disabled)
     }
-    ///Trigger overrun interrupt enabled
+    #[doc = "Trigger overrun interrupt enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OIE_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(OIE_A::Enabled)
     }
 }
-///Signal identification
-///
-///Value on reset: 0
+#[doc = "Signal identification\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SIG_ID_A {
-    ///0: Signal `EXTIx` selected as synchronization input
-    EXTI0 = 0,
-    ///1: Signal `EXTIx` selected as synchronization input
-    EXTI1 = 1,
-    ///2: Signal `EXTIx` selected as synchronization input
-    EXTI2 = 2,
-    ///3: Signal `EXTIx` selected as synchronization input
-    EXTI3 = 3,
-    ///4: Signal `EXTIx` selected as synchronization input
-    EXTI4 = 4,
-    ///5: Signal `EXTIx` selected as synchronization input
-    EXTI5 = 5,
-    ///6: Signal `EXTIx` selected as synchronization input
-    EXTI6 = 6,
-    ///7: Signal `EXTIx` selected as synchronization input
-    EXTI7 = 7,
-    ///8: Signal `EXTIx` selected as synchronization input
-    EXTI8 = 8,
-    ///9: Signal `EXTIx` selected as synchronization input
-    EXTI9 = 9,
-    ///10: Signal `EXTIx` selected as synchronization input
-    EXTI10 = 10,
-    ///11: Signal `EXTIx` selected as synchronization input
-    EXTI11 = 11,
-    ///12: Signal `EXTIx` selected as synchronization input
-    EXTI12 = 12,
-    ///13: Signal `EXTIx` selected as synchronization input
-    EXTI13 = 13,
-    ///14: Signal `EXTIx` selected as synchronization input
-    EXTI14 = 14,
-    ///15: Signal `EXTIx` selected as synchronization input
-    EXTI15 = 15,
-    ///16: Signal `dmamux1_evt0` selected as synchronization input
-    DMAMUX1_EVT0 = 16,
-    ///17: Signal `dmamux1_evt1` selected as synchronization input
-    DMAMUX1_EVT1 = 17,
-    ///18: Signal `lptim1_out` selected as synchronization input
-    LPTIM1_OUT = 18,
-    ///19: Signal `lptim2_out` selected as synchronization input
-    LPTIM2_OUT = 19,
-    ///20: Signal `lptim3_out` selected as synchronization input
-    LPTIM3_OUT = 20,
+    #[doc = "0: Signal `EXTIx` selected as synchronization input"]
+    Exti0 = 0,
+    #[doc = "1: Signal `EXTIx` selected as synchronization input"]
+    Exti1 = 1,
+    #[doc = "2: Signal `EXTIx` selected as synchronization input"]
+    Exti2 = 2,
+    #[doc = "3: Signal `EXTIx` selected as synchronization input"]
+    Exti3 = 3,
+    #[doc = "4: Signal `EXTIx` selected as synchronization input"]
+    Exti4 = 4,
+    #[doc = "5: Signal `EXTIx` selected as synchronization input"]
+    Exti5 = 5,
+    #[doc = "6: Signal `EXTIx` selected as synchronization input"]
+    Exti6 = 6,
+    #[doc = "7: Signal `EXTIx` selected as synchronization input"]
+    Exti7 = 7,
+    #[doc = "8: Signal `EXTIx` selected as synchronization input"]
+    Exti8 = 8,
+    #[doc = "9: Signal `EXTIx` selected as synchronization input"]
+    Exti9 = 9,
+    #[doc = "10: Signal `EXTIx` selected as synchronization input"]
+    Exti10 = 10,
+    #[doc = "11: Signal `EXTIx` selected as synchronization input"]
+    Exti11 = 11,
+    #[doc = "12: Signal `EXTIx` selected as synchronization input"]
+    Exti12 = 12,
+    #[doc = "13: Signal `EXTIx` selected as synchronization input"]
+    Exti13 = 13,
+    #[doc = "14: Signal `EXTIx` selected as synchronization input"]
+    Exti14 = 14,
+    #[doc = "15: Signal `EXTIx` selected as synchronization input"]
+    Exti15 = 15,
+    #[doc = "16: Signal `dmamux1_evt0` selected as synchronization input"]
+    Dmamux1Evt0 = 16,
+    #[doc = "17: Signal `dmamux1_evt1` selected as synchronization input"]
+    Dmamux1Evt1 = 17,
+    #[doc = "18: Signal `lptim1_out` selected as synchronization input"]
+    Lptim1Out = 18,
+    #[doc = "19: Signal `lptim2_out` selected as synchronization input"]
+    Lptim2Out = 19,
+    #[doc = "20: Signal `lptim3_out` selected as synchronization input"]
+    Lptim3Out = 20,
 }
 impl From<SIG_ID_A> for u8 {
     #[inline(always)]
@@ -388,353 +269,326 @@ impl From<SIG_ID_A> for u8 {
         variant as _
     }
 }
-///Field `SIG_ID` reader - Signal identification
-pub struct SIG_ID_R(crate::FieldReader<u8, SIG_ID_A>);
+#[doc = "Field `SIG_ID` reader - Signal identification"]
+pub type SIG_ID_R = crate::FieldReader<u8, SIG_ID_A>;
 impl SIG_ID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SIG_ID_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SIG_ID_A> {
         match self.bits {
-            0 => Some(SIG_ID_A::EXTI0),
-            1 => Some(SIG_ID_A::EXTI1),
-            2 => Some(SIG_ID_A::EXTI2),
-            3 => Some(SIG_ID_A::EXTI3),
-            4 => Some(SIG_ID_A::EXTI4),
-            5 => Some(SIG_ID_A::EXTI5),
-            6 => Some(SIG_ID_A::EXTI6),
-            7 => Some(SIG_ID_A::EXTI7),
-            8 => Some(SIG_ID_A::EXTI8),
-            9 => Some(SIG_ID_A::EXTI9),
-            10 => Some(SIG_ID_A::EXTI10),
-            11 => Some(SIG_ID_A::EXTI11),
-            12 => Some(SIG_ID_A::EXTI12),
-            13 => Some(SIG_ID_A::EXTI13),
-            14 => Some(SIG_ID_A::EXTI14),
-            15 => Some(SIG_ID_A::EXTI15),
-            16 => Some(SIG_ID_A::DMAMUX1_EVT0),
-            17 => Some(SIG_ID_A::DMAMUX1_EVT1),
-            18 => Some(SIG_ID_A::LPTIM1_OUT),
-            19 => Some(SIG_ID_A::LPTIM2_OUT),
-            20 => Some(SIG_ID_A::LPTIM3_OUT),
+            0 => Some(SIG_ID_A::Exti0),
+            1 => Some(SIG_ID_A::Exti1),
+            2 => Some(SIG_ID_A::Exti2),
+            3 => Some(SIG_ID_A::Exti3),
+            4 => Some(SIG_ID_A::Exti4),
+            5 => Some(SIG_ID_A::Exti5),
+            6 => Some(SIG_ID_A::Exti6),
+            7 => Some(SIG_ID_A::Exti7),
+            8 => Some(SIG_ID_A::Exti8),
+            9 => Some(SIG_ID_A::Exti9),
+            10 => Some(SIG_ID_A::Exti10),
+            11 => Some(SIG_ID_A::Exti11),
+            12 => Some(SIG_ID_A::Exti12),
+            13 => Some(SIG_ID_A::Exti13),
+            14 => Some(SIG_ID_A::Exti14),
+            15 => Some(SIG_ID_A::Exti15),
+            16 => Some(SIG_ID_A::Dmamux1Evt0),
+            17 => Some(SIG_ID_A::Dmamux1Evt1),
+            18 => Some(SIG_ID_A::Lptim1Out),
+            19 => Some(SIG_ID_A::Lptim2Out),
+            20 => Some(SIG_ID_A::Lptim3Out),
             _ => None,
         }
     }
-    ///Checks if the value of the field is `EXTI0`
+    #[doc = "Checks if the value of the field is `Exti0`"]
     #[inline(always)]
     pub fn is_exti0(&self) -> bool {
-        **self == SIG_ID_A::EXTI0
+        *self == SIG_ID_A::Exti0
     }
-    ///Checks if the value of the field is `EXTI1`
+    #[doc = "Checks if the value of the field is `Exti1`"]
     #[inline(always)]
     pub fn is_exti1(&self) -> bool {
-        **self == SIG_ID_A::EXTI1
+        *self == SIG_ID_A::Exti1
     }
-    ///Checks if the value of the field is `EXTI2`
+    #[doc = "Checks if the value of the field is `Exti2`"]
     #[inline(always)]
     pub fn is_exti2(&self) -> bool {
-        **self == SIG_ID_A::EXTI2
+        *self == SIG_ID_A::Exti2
     }
-    ///Checks if the value of the field is `EXTI3`
+    #[doc = "Checks if the value of the field is `Exti3`"]
     #[inline(always)]
     pub fn is_exti3(&self) -> bool {
-        **self == SIG_ID_A::EXTI3
+        *self == SIG_ID_A::Exti3
     }
-    ///Checks if the value of the field is `EXTI4`
+    #[doc = "Checks if the value of the field is `Exti4`"]
     #[inline(always)]
     pub fn is_exti4(&self) -> bool {
-        **self == SIG_ID_A::EXTI4
+        *self == SIG_ID_A::Exti4
     }
-    ///Checks if the value of the field is `EXTI5`
+    #[doc = "Checks if the value of the field is `Exti5`"]
     #[inline(always)]
     pub fn is_exti5(&self) -> bool {
-        **self == SIG_ID_A::EXTI5
+        *self == SIG_ID_A::Exti5
     }
-    ///Checks if the value of the field is `EXTI6`
+    #[doc = "Checks if the value of the field is `Exti6`"]
     #[inline(always)]
     pub fn is_exti6(&self) -> bool {
-        **self == SIG_ID_A::EXTI6
+        *self == SIG_ID_A::Exti6
     }
-    ///Checks if the value of the field is `EXTI7`
+    #[doc = "Checks if the value of the field is `Exti7`"]
     #[inline(always)]
     pub fn is_exti7(&self) -> bool {
-        **self == SIG_ID_A::EXTI7
+        *self == SIG_ID_A::Exti7
     }
-    ///Checks if the value of the field is `EXTI8`
+    #[doc = "Checks if the value of the field is `Exti8`"]
     #[inline(always)]
     pub fn is_exti8(&self) -> bool {
-        **self == SIG_ID_A::EXTI8
+        *self == SIG_ID_A::Exti8
     }
-    ///Checks if the value of the field is `EXTI9`
+    #[doc = "Checks if the value of the field is `Exti9`"]
     #[inline(always)]
     pub fn is_exti9(&self) -> bool {
-        **self == SIG_ID_A::EXTI9
+        *self == SIG_ID_A::Exti9
     }
-    ///Checks if the value of the field is `EXTI10`
+    #[doc = "Checks if the value of the field is `Exti10`"]
     #[inline(always)]
     pub fn is_exti10(&self) -> bool {
-        **self == SIG_ID_A::EXTI10
+        *self == SIG_ID_A::Exti10
     }
-    ///Checks if the value of the field is `EXTI11`
+    #[doc = "Checks if the value of the field is `Exti11`"]
     #[inline(always)]
     pub fn is_exti11(&self) -> bool {
-        **self == SIG_ID_A::EXTI11
+        *self == SIG_ID_A::Exti11
     }
-    ///Checks if the value of the field is `EXTI12`
+    #[doc = "Checks if the value of the field is `Exti12`"]
     #[inline(always)]
     pub fn is_exti12(&self) -> bool {
-        **self == SIG_ID_A::EXTI12
+        *self == SIG_ID_A::Exti12
     }
-    ///Checks if the value of the field is `EXTI13`
+    #[doc = "Checks if the value of the field is `Exti13`"]
     #[inline(always)]
     pub fn is_exti13(&self) -> bool {
-        **self == SIG_ID_A::EXTI13
+        *self == SIG_ID_A::Exti13
     }
-    ///Checks if the value of the field is `EXTI14`
+    #[doc = "Checks if the value of the field is `Exti14`"]
     #[inline(always)]
     pub fn is_exti14(&self) -> bool {
-        **self == SIG_ID_A::EXTI14
+        *self == SIG_ID_A::Exti14
     }
-    ///Checks if the value of the field is `EXTI15`
+    #[doc = "Checks if the value of the field is `Exti15`"]
     #[inline(always)]
     pub fn is_exti15(&self) -> bool {
-        **self == SIG_ID_A::EXTI15
+        *self == SIG_ID_A::Exti15
     }
-    ///Checks if the value of the field is `DMAMUX1_EVT0`
+    #[doc = "Checks if the value of the field is `Dmamux1Evt0`"]
     #[inline(always)]
     pub fn is_dmamux1_evt0(&self) -> bool {
-        **self == SIG_ID_A::DMAMUX1_EVT0
+        *self == SIG_ID_A::Dmamux1Evt0
     }
-    ///Checks if the value of the field is `DMAMUX1_EVT1`
+    #[doc = "Checks if the value of the field is `Dmamux1Evt1`"]
     #[inline(always)]
     pub fn is_dmamux1_evt1(&self) -> bool {
-        **self == SIG_ID_A::DMAMUX1_EVT1
+        *self == SIG_ID_A::Dmamux1Evt1
     }
-    ///Checks if the value of the field is `LPTIM1_OUT`
+    #[doc = "Checks if the value of the field is `Lptim1Out`"]
     #[inline(always)]
     pub fn is_lptim1_out(&self) -> bool {
-        **self == SIG_ID_A::LPTIM1_OUT
+        *self == SIG_ID_A::Lptim1Out
     }
-    ///Checks if the value of the field is `LPTIM2_OUT`
+    #[doc = "Checks if the value of the field is `Lptim2Out`"]
     #[inline(always)]
     pub fn is_lptim2_out(&self) -> bool {
-        **self == SIG_ID_A::LPTIM2_OUT
+        *self == SIG_ID_A::Lptim2Out
     }
-    ///Checks if the value of the field is `LPTIM3_OUT`
+    #[doc = "Checks if the value of the field is `Lptim3Out`"]
     #[inline(always)]
     pub fn is_lptim3_out(&self) -> bool {
-        **self == SIG_ID_A::LPTIM3_OUT
+        *self == SIG_ID_A::Lptim3Out
     }
 }
-impl core::ops::Deref for SIG_ID_R {
-    type Target = crate::FieldReader<u8, SIG_ID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `SIG_ID` writer - Signal identification
-pub struct SIG_ID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIG_ID_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: SIG_ID_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    ///Signal `EXTIx` selected as synchronization input
+#[doc = "Field `SIG_ID` writer - Signal identification"]
+pub type SIG_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RG2CR_SPEC, u8, SIG_ID_A, 5, O>;
+impl<'a, const O: u8> SIG_ID_W<'a, O> {
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti0(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI0)
+        self.variant(SIG_ID_A::Exti0)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti1(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI1)
+        self.variant(SIG_ID_A::Exti1)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti2(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI2)
+        self.variant(SIG_ID_A::Exti2)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti3(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI3)
+        self.variant(SIG_ID_A::Exti3)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti4(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI4)
+        self.variant(SIG_ID_A::Exti4)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti5(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI5)
+        self.variant(SIG_ID_A::Exti5)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti6(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI6)
+        self.variant(SIG_ID_A::Exti6)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti7(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI7)
+        self.variant(SIG_ID_A::Exti7)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti8(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI8)
+        self.variant(SIG_ID_A::Exti8)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti9(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI9)
+        self.variant(SIG_ID_A::Exti9)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti10(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI10)
+        self.variant(SIG_ID_A::Exti10)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti11(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI11)
+        self.variant(SIG_ID_A::Exti11)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti12(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI12)
+        self.variant(SIG_ID_A::Exti12)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti13(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI13)
+        self.variant(SIG_ID_A::Exti13)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti14(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI14)
+        self.variant(SIG_ID_A::Exti14)
     }
-    ///Signal `EXTIx` selected as synchronization input
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
     #[inline(always)]
     pub fn exti15(self) -> &'a mut W {
-        self.variant(SIG_ID_A::EXTI15)
+        self.variant(SIG_ID_A::Exti15)
     }
-    ///Signal `dmamux1_evt0` selected as synchronization input
+    #[doc = "Signal `dmamux1_evt0` selected as synchronization input"]
     #[inline(always)]
     pub fn dmamux1_evt0(self) -> &'a mut W {
-        self.variant(SIG_ID_A::DMAMUX1_EVT0)
+        self.variant(SIG_ID_A::Dmamux1Evt0)
     }
-    ///Signal `dmamux1_evt1` selected as synchronization input
+    #[doc = "Signal `dmamux1_evt1` selected as synchronization input"]
     #[inline(always)]
     pub fn dmamux1_evt1(self) -> &'a mut W {
-        self.variant(SIG_ID_A::DMAMUX1_EVT1)
+        self.variant(SIG_ID_A::Dmamux1Evt1)
     }
-    ///Signal `lptim1_out` selected as synchronization input
+    #[doc = "Signal `lptim1_out` selected as synchronization input"]
     #[inline(always)]
     pub fn lptim1_out(self) -> &'a mut W {
-        self.variant(SIG_ID_A::LPTIM1_OUT)
+        self.variant(SIG_ID_A::Lptim1Out)
     }
-    ///Signal `lptim2_out` selected as synchronization input
+    #[doc = "Signal `lptim2_out` selected as synchronization input"]
     #[inline(always)]
     pub fn lptim2_out(self) -> &'a mut W {
-        self.variant(SIG_ID_A::LPTIM2_OUT)
+        self.variant(SIG_ID_A::Lptim2Out)
     }
-    ///Signal `lptim3_out` selected as synchronization input
+    #[doc = "Signal `lptim3_out` selected as synchronization input"]
     #[inline(always)]
     pub fn lptim3_out(self) -> &'a mut W {
-        self.variant(SIG_ID_A::LPTIM3_OUT)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
+        self.variant(SIG_ID_A::Lptim3Out)
     }
 }
 impl R {
-    ///Bits 19:23 - Number of DMA requests to be generated (minus 1)
+    #[doc = "Bits 19:23 - Number of DMA requests to be generated (minus 1)"]
     #[inline(always)]
     pub fn gnbreq(&self) -> GNBREQ_R {
         GNBREQ_R::new(((self.bits >> 19) & 0x1f) as u8)
     }
-    ///Bits 17:18 - DMA request generator trigger polarity
+    #[doc = "Bits 17:18 - DMA request generator trigger polarity"]
     #[inline(always)]
     pub fn gpol(&self) -> GPOL_R {
-        GPOL_R::new(((self.bits >> 17) & 0x03) as u8)
+        GPOL_R::new(((self.bits >> 17) & 3) as u8)
     }
-    ///Bit 16 - DMA request generator channel x enable
+    #[doc = "Bit 16 - DMA request generator channel x enable"]
     #[inline(always)]
     pub fn ge(&self) -> GE_R {
-        GE_R::new(((self.bits >> 16) & 0x01) != 0)
+        GE_R::new(((self.bits >> 16) & 1) != 0)
     }
-    ///Bit 8 - Trigger overrun interrupt enable
+    #[doc = "Bit 8 - Trigger overrun interrupt enable"]
     #[inline(always)]
     pub fn oie(&self) -> OIE_R {
-        OIE_R::new(((self.bits >> 8) & 0x01) != 0)
+        OIE_R::new(((self.bits >> 8) & 1) != 0)
     }
-    ///Bits 0:4 - Signal identification
+    #[doc = "Bits 0:4 - Signal identification"]
     #[inline(always)]
     pub fn sig_id(&self) -> SIG_ID_R {
         SIG_ID_R::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
-    ///Bits 19:23 - Number of DMA requests to be generated (minus 1)
+    #[doc = "Bits 19:23 - Number of DMA requests to be generated (minus 1)"]
     #[inline(always)]
-    pub fn gnbreq(&mut self) -> GNBREQ_W {
-        GNBREQ_W { w: self }
+    pub fn gnbreq(&mut self) -> GNBREQ_W<19> {
+        GNBREQ_W::new(self)
     }
-    ///Bits 17:18 - DMA request generator trigger polarity
+    #[doc = "Bits 17:18 - DMA request generator trigger polarity"]
     #[inline(always)]
-    pub fn gpol(&mut self) -> GPOL_W {
-        GPOL_W { w: self }
+    pub fn gpol(&mut self) -> GPOL_W<17> {
+        GPOL_W::new(self)
     }
-    ///Bit 16 - DMA request generator channel x enable
+    #[doc = "Bit 16 - DMA request generator channel x enable"]
     #[inline(always)]
-    pub fn ge(&mut self) -> GE_W {
-        GE_W { w: self }
+    pub fn ge(&mut self) -> GE_W<16> {
+        GE_W::new(self)
     }
-    ///Bit 8 - Trigger overrun interrupt enable
+    #[doc = "Bit 8 - Trigger overrun interrupt enable"]
     #[inline(always)]
-    pub fn oie(&mut self) -> OIE_W {
-        OIE_W { w: self }
+    pub fn oie(&mut self) -> OIE_W<8> {
+        OIE_W::new(self)
     }
-    ///Bits 0:4 - Signal identification
+    #[doc = "Bits 0:4 - Signal identification"]
     #[inline(always)]
-    pub fn sig_id(&mut self) -> SIG_ID_W {
-        SIG_ID_W { w: self }
+    pub fn sig_id(&mut self) -> SIG_ID_W<0> {
+        SIG_ID_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///request generator channel x configuration register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [rg2cr](index.html) module
+#[doc = "request generator channel x configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rg2cr](index.html) module"]
 pub struct RG2CR_SPEC;
 impl crate::RegisterSpec for RG2CR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [rg2cr::R](R) reader structure
+#[doc = "`read()` method returns [rg2cr::R](R) reader structure"]
 impl crate::Readable for RG2CR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [rg2cr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [rg2cr::W](W) writer structure"]
 impl crate::Writable for RG2CR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets RG2CR to value 0
+#[doc = "`reset()` method sets RG2CR to value 0"]
 impl crate::Resettable for RG2CR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

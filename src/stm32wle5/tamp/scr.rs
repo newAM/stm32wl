@@ -1,4 +1,4 @@
-///Register `SCR` writer
+#[doc = "Register `SCR` writer"]
 pub struct W(crate::W<SCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SCR_SPEC>;
@@ -19,13 +19,11 @@ impl From<crate::W<SCR_SPEC>> for W {
         W(writer)
     }
 }
-///CTAMP1F
-///
-///Value on reset: 0
+#[doc = "CTAMP1F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTAMP1F_AW {
-    ///1: Clear tamper flag
-    CLEAR = 1,
+    #[doc = "1: Clear tamper flag"]
+    Clear = 1,
 }
 impl From<CTAMP1F_AW> for bool {
     #[inline(always)]
@@ -33,113 +31,28 @@ impl From<CTAMP1F_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CTAMP1F` writer - CTAMP1F
-pub struct CTAMP1F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTAMP1F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CTAMP1F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
+#[doc = "Field `CTAMP1F` writer - CTAMP1F"]
+pub type CTAMP1F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CTAMP1F_AW, O>;
+impl<'a, const O: u8> CTAMP1F_W<'a, O> {
+    #[doc = "Clear tamper flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CTAMP1F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(CTAMP1F_AW::Clear)
     }
 }
-///CTAMP2F
-pub type CTAMP2F_AW = CTAMP1F_AW;
-///Field `CTAMP2F` writer - CTAMP2F
-pub struct CTAMP2F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTAMP2F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CTAMP2F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CTAMP2F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///CTAMP3F
-pub type CTAMP3F_AW = CTAMP1F_AW;
-///Field `CTAMP3F` writer - CTAMP3F
-pub struct CTAMP3F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTAMP3F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CTAMP3F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CTAMP3F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///CITAMP3F
-///
-///Value on reset: 0
+#[doc = "CTAMP2F"]
+pub use CTAMP1F_AW as CTAMP2F_AW;
+#[doc = "CTAMP3F"]
+pub use CTAMP1F_AW as CTAMP3F_AW;
+#[doc = "Field `CTAMP2F` writer - CTAMP2F"]
+pub use CTAMP1F_W as CTAMP2F_W;
+#[doc = "Field `CTAMP3F` writer - CTAMP3F"]
+pub use CTAMP1F_W as CTAMP3F_W;
+#[doc = "CITAMP3F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CITAMP3F_AW {
-    ///1: Clear tamper flag
-    CLEAR = 1,
+    #[doc = "1: Clear tamper flag"]
+    Clear = 1,
 }
 impl From<CITAMP3F_AW> for bool {
     #[inline(always)]
@@ -147,197 +60,80 @@ impl From<CITAMP3F_AW> for bool {
         variant as u8 != 0
     }
 }
-///Field `CITAMP3F` writer - CITAMP3F
-pub struct CITAMP3F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CITAMP3F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CITAMP3F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
+#[doc = "Field `CITAMP3F` writer - CITAMP3F"]
+pub type CITAMP3F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CITAMP3F_AW, O>;
+impl<'a, const O: u8> CITAMP3F_W<'a, O> {
+    #[doc = "Clear tamper flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CITAMP3F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
+        self.variant(CITAMP3F_AW::Clear)
     }
 }
-///CITAMP5F
-pub type CITAMP5F_AW = CITAMP3F_AW;
-///Field `CITAMP5F` writer - CITAMP5F
-pub struct CITAMP5F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CITAMP5F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CITAMP5F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CITAMP5F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
-///CITAMP6F
-pub type CITAMP6F_AW = CITAMP3F_AW;
-///Field `CITAMP6F` writer - CITAMP6F
-pub struct CITAMP6F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CITAMP6F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CITAMP6F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CITAMP6F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
-///CITAMP8F
-pub type CITAMP8F_AW = CITAMP3F_AW;
-///Field `CITAMP8F` writer - CITAMP8F
-pub struct CITAMP8F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CITAMP8F_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: CITAMP8F_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clear tamper flag
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CITAMP8F_AW::CLEAR)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+#[doc = "CITAMP5F"]
+pub use CITAMP3F_AW as CITAMP5F_AW;
+#[doc = "CITAMP6F"]
+pub use CITAMP3F_AW as CITAMP6F_AW;
+#[doc = "CITAMP8F"]
+pub use CITAMP3F_AW as CITAMP8F_AW;
+#[doc = "Field `CITAMP5F` writer - CITAMP5F"]
+pub use CITAMP3F_W as CITAMP5F_W;
+#[doc = "Field `CITAMP6F` writer - CITAMP6F"]
+pub use CITAMP3F_W as CITAMP6F_W;
+#[doc = "Field `CITAMP8F` writer - CITAMP8F"]
+pub use CITAMP3F_W as CITAMP8F_W;
 impl W {
-    ///Bit 0 - CTAMP1F
+    #[doc = "Bit 0 - CTAMP1F"]
     #[inline(always)]
-    pub fn ctamp1f(&mut self) -> CTAMP1F_W {
-        CTAMP1F_W { w: self }
+    pub fn ctamp1f(&mut self) -> CTAMP1F_W<0> {
+        CTAMP1F_W::new(self)
     }
-    ///Bit 1 - CTAMP2F
+    #[doc = "Bit 1 - CTAMP2F"]
     #[inline(always)]
-    pub fn ctamp2f(&mut self) -> CTAMP2F_W {
-        CTAMP2F_W { w: self }
+    pub fn ctamp2f(&mut self) -> CTAMP2F_W<1> {
+        CTAMP2F_W::new(self)
     }
-    ///Bit 2 - CTAMP3F
+    #[doc = "Bit 2 - CTAMP3F"]
     #[inline(always)]
-    pub fn ctamp3f(&mut self) -> CTAMP3F_W {
-        CTAMP3F_W { w: self }
+    pub fn ctamp3f(&mut self) -> CTAMP3F_W<2> {
+        CTAMP3F_W::new(self)
     }
-    ///Bit 18 - CITAMP3F
+    #[doc = "Bit 18 - CITAMP3F"]
     #[inline(always)]
-    pub fn citamp3f(&mut self) -> CITAMP3F_W {
-        CITAMP3F_W { w: self }
+    pub fn citamp3f(&mut self) -> CITAMP3F_W<18> {
+        CITAMP3F_W::new(self)
     }
-    ///Bit 20 - CITAMP5F
+    #[doc = "Bit 20 - CITAMP5F"]
     #[inline(always)]
-    pub fn citamp5f(&mut self) -> CITAMP5F_W {
-        CITAMP5F_W { w: self }
+    pub fn citamp5f(&mut self) -> CITAMP5F_W<20> {
+        CITAMP5F_W::new(self)
     }
-    ///Bit 21 - CITAMP6F
+    #[doc = "Bit 21 - CITAMP6F"]
     #[inline(always)]
-    pub fn citamp6f(&mut self) -> CITAMP6F_W {
-        CITAMP6F_W { w: self }
+    pub fn citamp6f(&mut self) -> CITAMP6F_W<21> {
+        CITAMP6F_W::new(self)
     }
-    ///Bit 23 - CITAMP8F
+    #[doc = "Bit 23 - CITAMP8F"]
     #[inline(always)]
-    pub fn citamp8f(&mut self) -> CITAMP8F_W {
-        CITAMP8F_W { w: self }
+    pub fn citamp8f(&mut self) -> CITAMP8F_W<23> {
+        CITAMP8F_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///TAMP status clear register
-///
-///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [scr](index.html) module
+#[doc = "TAMP status clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scr](index.html) module"]
 pub struct SCR_SPEC;
 impl crate::RegisterSpec for SCR_SPEC {
     type Ux = u32;
 }
-///`write(|w| ..)` method takes [scr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets SCR to value 0
+#[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

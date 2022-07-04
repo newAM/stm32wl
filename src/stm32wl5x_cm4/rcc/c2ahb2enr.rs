@@ -1,4 +1,4 @@
-///Register `C2AHB2ENR` reader
+#[doc = "Register `C2AHB2ENR` reader"]
 pub struct R(crate::R<C2AHB2ENR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<C2AHB2ENR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<C2AHB2ENR_SPEC>> for R {
         R(reader)
     }
 }
-///Register `C2AHB2ENR` writer
+#[doc = "Register `C2AHB2ENR` writer"]
 pub struct W(crate::W<C2AHB2ENR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<C2AHB2ENR_SPEC>;
@@ -34,138 +34,31 @@ impl From<crate::W<C2AHB2ENR_SPEC>> for W {
         W(writer)
     }
 }
-///CPU2 IO port H clock enable
-pub type GPIOHEN_A = GPIOAEN_A;
-///Field `GPIOHEN` reader - CPU2 IO port H clock enable
-pub type GPIOHEN_R = GPIOAEN_R;
-///Field `GPIOHEN` writer - CPU2 IO port H clock enable
-pub struct GPIOHEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIOHEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GPIOHEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(GPIOHEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(GPIOHEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-///CPU2 IO port C clock enable
-pub type GPIOCEN_A = GPIOAEN_A;
-///Field `GPIOCEN` reader - CPU2 IO port C clock enable
-pub type GPIOCEN_R = GPIOAEN_R;
-///Field `GPIOCEN` writer - CPU2 IO port C clock enable
-pub struct GPIOCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIOCEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GPIOCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(GPIOCEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(GPIOCEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-///CPU2 IO port B clock enable
-pub type GPIOBEN_A = GPIOAEN_A;
-///Field `GPIOBEN` reader - CPU2 IO port B clock enable
-pub type GPIOBEN_R = GPIOAEN_R;
-///Field `GPIOBEN` writer - CPU2 IO port B clock enable
-pub struct GPIOBEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIOBEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GPIOBEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(GPIOBEN_A::DISABLED)
-    }
-    ///Clock enabled
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(GPIOBEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-///CPU2 IO port A clock enable
-///
-///Value on reset: 0
+#[doc = "CPU2 IO port H clock enable"]
+pub use GPIOAEN_A as GPIOHEN_A;
+#[doc = "CPU2 IO port C clock enable"]
+pub use GPIOAEN_A as GPIOCEN_A;
+#[doc = "CPU2 IO port B clock enable"]
+pub use GPIOAEN_A as GPIOBEN_A;
+#[doc = "Field `GPIOHEN` reader - CPU2 IO port H clock enable"]
+pub use GPIOAEN_R as GPIOHEN_R;
+#[doc = "Field `GPIOCEN` reader - CPU2 IO port C clock enable"]
+pub use GPIOAEN_R as GPIOCEN_R;
+#[doc = "Field `GPIOBEN` reader - CPU2 IO port B clock enable"]
+pub use GPIOAEN_R as GPIOBEN_R;
+#[doc = "Field `GPIOHEN` writer - CPU2 IO port H clock enable"]
+pub use GPIOAEN_W as GPIOHEN_W;
+#[doc = "Field `GPIOCEN` writer - CPU2 IO port C clock enable"]
+pub use GPIOAEN_W as GPIOCEN_W;
+#[doc = "Field `GPIOBEN` writer - CPU2 IO port B clock enable"]
+pub use GPIOAEN_W as GPIOBEN_W;
+#[doc = "CPU2 IO port A clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIOAEN_A {
-    ///0: Clock disabled
-    DISABLED = 0,
-    ///1: Clock enabled
-    ENABLED = 1,
+    #[doc = "0: Clock disabled"]
+    Disabled = 0,
+    #[doc = "1: Clock enabled"]
+    Enabled = 1,
 }
 impl From<GPIOAEN_A> for bool {
     #[inline(always)]
@@ -173,143 +66,106 @@ impl From<GPIOAEN_A> for bool {
         variant as u8 != 0
     }
 }
-///Field `GPIOAEN` reader - CPU2 IO port A clock enable
-pub struct GPIOAEN_R(crate::FieldReader<bool, GPIOAEN_A>);
+#[doc = "Field `GPIOAEN` reader - CPU2 IO port A clock enable"]
+pub type GPIOAEN_R = crate::BitReader<GPIOAEN_A>;
 impl GPIOAEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GPIOAEN_R(crate::FieldReader::new(bits))
-    }
-    ///Get enumerated values variant
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPIOAEN_A {
         match self.bits {
-            false => GPIOAEN_A::DISABLED,
-            true => GPIOAEN_A::ENABLED,
+            false => GPIOAEN_A::Disabled,
+            true => GPIOAEN_A::Enabled,
         }
     }
-    ///Checks if the value of the field is `DISABLED`
+    #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == GPIOAEN_A::DISABLED
+        *self == GPIOAEN_A::Disabled
     }
-    ///Checks if the value of the field is `ENABLED`
+    #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == GPIOAEN_A::ENABLED
+        *self == GPIOAEN_A::Enabled
     }
 }
-impl core::ops::Deref for GPIOAEN_R {
-    type Target = crate::FieldReader<bool, GPIOAEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-///Field `GPIOAEN` writer - CPU2 IO port A clock enable
-pub struct GPIOAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIOAEN_W<'a> {
-    ///Writes `variant` to the field
-    #[inline(always)]
-    pub fn variant(self, variant: GPIOAEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    ///Clock disabled
+#[doc = "Field `GPIOAEN` writer - CPU2 IO port A clock enable"]
+pub type GPIOAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB2ENR_SPEC, GPIOAEN_A, O>;
+impl<'a, const O: u8> GPIOAEN_W<'a, O> {
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(GPIOAEN_A::DISABLED)
+        self.variant(GPIOAEN_A::Disabled)
     }
-    ///Clock enabled
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(GPIOAEN_A::ENABLED)
-    }
-    ///Sets the field bit
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    ///Clears the field bit
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    ///Writes raw bits to the field
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(GPIOAEN_A::Enabled)
     }
 }
 impl R {
-    ///Bit 7 - CPU2 IO port H clock enable
+    #[doc = "Bit 7 - CPU2 IO port H clock enable"]
     #[inline(always)]
     pub fn gpiohen(&self) -> GPIOHEN_R {
-        GPIOHEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        GPIOHEN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    ///Bit 2 - CPU2 IO port C clock enable
+    #[doc = "Bit 2 - CPU2 IO port C clock enable"]
     #[inline(always)]
     pub fn gpiocen(&self) -> GPIOCEN_R {
-        GPIOCEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        GPIOCEN_R::new(((self.bits >> 2) & 1) != 0)
     }
-    ///Bit 1 - CPU2 IO port B clock enable
+    #[doc = "Bit 1 - CPU2 IO port B clock enable"]
     #[inline(always)]
     pub fn gpioben(&self) -> GPIOBEN_R {
-        GPIOBEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        GPIOBEN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    ///Bit 0 - CPU2 IO port A clock enable
+    #[doc = "Bit 0 - CPU2 IO port A clock enable"]
     #[inline(always)]
     pub fn gpioaen(&self) -> GPIOAEN_R {
-        GPIOAEN_R::new((self.bits & 0x01) != 0)
+        GPIOAEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
-    ///Bit 7 - CPU2 IO port H clock enable
+    #[doc = "Bit 7 - CPU2 IO port H clock enable"]
     #[inline(always)]
-    pub fn gpiohen(&mut self) -> GPIOHEN_W {
-        GPIOHEN_W { w: self }
+    pub fn gpiohen(&mut self) -> GPIOHEN_W<7> {
+        GPIOHEN_W::new(self)
     }
-    ///Bit 2 - CPU2 IO port C clock enable
+    #[doc = "Bit 2 - CPU2 IO port C clock enable"]
     #[inline(always)]
-    pub fn gpiocen(&mut self) -> GPIOCEN_W {
-        GPIOCEN_W { w: self }
+    pub fn gpiocen(&mut self) -> GPIOCEN_W<2> {
+        GPIOCEN_W::new(self)
     }
-    ///Bit 1 - CPU2 IO port B clock enable
+    #[doc = "Bit 1 - CPU2 IO port B clock enable"]
     #[inline(always)]
-    pub fn gpioben(&mut self) -> GPIOBEN_W {
-        GPIOBEN_W { w: self }
+    pub fn gpioben(&mut self) -> GPIOBEN_W<1> {
+        GPIOBEN_W::new(self)
     }
-    ///Bit 0 - CPU2 IO port A clock enable
+    #[doc = "Bit 0 - CPU2 IO port A clock enable"]
     #[inline(always)]
-    pub fn gpioaen(&mut self) -> GPIOAEN_W {
-        GPIOAEN_W { w: self }
+    pub fn gpioaen(&mut self) -> GPIOAEN_W<0> {
+        GPIOAEN_W::new(self)
     }
-    ///Writes raw bits to the register.
+    #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
     }
 }
-///CPU2 AHB2 peripheral clock enable register
-///
-///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-///
-///For information about available fields see [c2ahb2enr](index.html) module
+#[doc = "CPU2 AHB2 peripheral clock enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c2ahb2enr](index.html) module"]
 pub struct C2AHB2ENR_SPEC;
 impl crate::RegisterSpec for C2AHB2ENR_SPEC {
     type Ux = u32;
 }
-///`read()` method returns [c2ahb2enr::R](R) reader structure
+#[doc = "`read()` method returns [c2ahb2enr::R](R) reader structure"]
 impl crate::Readable for C2AHB2ENR_SPEC {
     type Reader = R;
 }
-///`write(|w| ..)` method takes [c2ahb2enr::W](W) writer structure
+#[doc = "`write(|w| ..)` method takes [c2ahb2enr::W](W) writer structure"]
 impl crate::Writable for C2AHB2ENR_SPEC {
     type Writer = W;
 }
-///`reset()` method sets C2AHB2ENR to value 0
+#[doc = "`reset()` method sets C2AHB2ENR to value 0"]
 impl crate::Resettable for C2AHB2ENR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
