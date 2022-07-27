@@ -34,36 +34,36 @@ impl From<crate::W<GTPR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `GT` reader - Guard time value"]
-pub type GT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `GT` writer - Guard time value"]
-pub type GT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GTPR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PSC` reader - Prescaler value"]
 pub type PSC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PSC` writer - Prescaler value"]
 pub type PSC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GTPR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `GT` reader - Guard time value"]
+pub type GT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `GT` writer - Guard time value"]
+pub type GT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GTPR_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 8:15 - Guard time value"]
-    #[inline(always)]
-    pub fn gt(&self) -> GT_R {
-        GT_R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     #[doc = "Bits 0:7 - Prescaler value"]
     #[inline(always)]
     pub fn psc(&self) -> PSC_R {
         PSC_R::new((self.bits & 0xff) as u8)
     }
-}
-impl W {
     #[doc = "Bits 8:15 - Guard time value"]
     #[inline(always)]
-    pub fn gt(&mut self) -> GT_W<8> {
-        GT_W::new(self)
+    pub fn gt(&self) -> GT_R {
+        GT_R::new(((self.bits >> 8) & 0xff) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:7 - Prescaler value"]
     #[inline(always)]
     pub fn psc(&mut self) -> PSC_W<0> {
         PSC_W::new(self)
+    }
+    #[doc = "Bits 8:15 - Guard time value"]
+    #[inline(always)]
+    pub fn gt(&mut self) -> GT_W<8> {
+        GT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

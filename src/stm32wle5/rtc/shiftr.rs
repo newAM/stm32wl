@@ -19,39 +19,39 @@ impl From<crate::W<SHIFTR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SUBFS` writer - Subtract a fraction of a second"]
+pub type SUBFS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SHIFTR_SPEC, u16, u16, 15, O>;
 #[doc = "Add one second\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADD1S_AW {
+pub enum ADD1SW_AW {
     #[doc = "1: Add one second to the clock/calendar"]
     Add1 = 1,
 }
-impl From<ADD1S_AW> for bool {
+impl From<ADD1SW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADD1S_AW) -> Self {
+    fn from(variant: ADD1SW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADD1S` writer - Add one second"]
-pub type ADD1S_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHIFTR_SPEC, ADD1S_AW, O>;
+pub type ADD1S_W<'a, const O: u8> = crate::BitWriter<'a, u32, SHIFTR_SPEC, ADD1SW_AW, O>;
 impl<'a, const O: u8> ADD1S_W<'a, O> {
     #[doc = "Add one second to the clock/calendar"]
     #[inline(always)]
     pub fn add1(self) -> &'a mut W {
-        self.variant(ADD1S_AW::Add1)
+        self.variant(ADD1SW_AW::Add1)
     }
 }
-#[doc = "Field `SUBFS` writer - Subtract a fraction of a second"]
-pub type SUBFS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SHIFTR_SPEC, u16, u16, 15, O>;
 impl W {
-    #[doc = "Bit 31 - Add one second"]
-    #[inline(always)]
-    pub fn add1s(&mut self) -> ADD1S_W<31> {
-        ADD1S_W::new(self)
-    }
     #[doc = "Bits 0:14 - Subtract a fraction of a second"]
     #[inline(always)]
     pub fn subfs(&mut self) -> SUBFS_W<0> {
         SUBFS_W::new(self)
+    }
+    #[doc = "Bit 31 - Add one second"]
+    #[inline(always)]
+    pub fn add1s(&mut self) -> ADD1S_W<31> {
+        ADD1S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

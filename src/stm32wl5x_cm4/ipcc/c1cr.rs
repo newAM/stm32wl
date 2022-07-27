@@ -34,6 +34,8 @@ impl From<crate::W<C1CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RXOIE` reader - RXOIE"]
+pub type RXOIE_R = crate::BitReader<RXOIE_A>;
 #[doc = "RXOIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXOIE_A {
@@ -48,8 +50,6 @@ impl From<RXOIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXOIE` reader - RXOIE"]
-pub type RXOIE_R = crate::BitReader<RXOIE_A>;
 impl RXOIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> RXOIE_W<'a, O> {
         self.variant(RXOIE_A::Enabled)
     }
 }
+#[doc = "Field `TXFIE` reader - TXFIE"]
+pub type TXFIE_R = crate::BitReader<TXFIE_A>;
 #[doc = "TXFIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFIE_A {
@@ -98,8 +100,6 @@ impl From<TXFIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXFIE` reader - TXFIE"]
-pub type TXFIE_R = crate::BitReader<TXFIE_A>;
 impl TXFIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

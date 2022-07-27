@@ -34,24 +34,8 @@ impl From<crate::W<C2AHB1ENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU2 CRC clock enable"]
-pub use DMA1EN_A as CRCEN_A;
-#[doc = "CPU2 DMAMUX1 clock enable"]
-pub use DMA1EN_A as DMAMUX1EN_A;
-#[doc = "CPU2 DMA2 clock enable"]
-pub use DMA1EN_A as DMA2EN_A;
-#[doc = "Field `CRCEN` reader - CPU2 CRC clock enable"]
-pub use DMA1EN_R as CRCEN_R;
-#[doc = "Field `DMAMUX1EN` reader - CPU2 DMAMUX1 clock enable"]
-pub use DMA1EN_R as DMAMUX1EN_R;
-#[doc = "Field `DMA2EN` reader - CPU2 DMA2 clock enable"]
-pub use DMA1EN_R as DMA2EN_R;
-#[doc = "Field `CRCEN` writer - CPU2 CRC clock enable"]
-pub use DMA1EN_W as CRCEN_W;
-#[doc = "Field `DMAMUX1EN` writer - CPU2 DMAMUX1 clock enable"]
-pub use DMA1EN_W as DMAMUX1EN_W;
-#[doc = "Field `DMA2EN` writer - CPU2 DMA2 clock enable"]
-pub use DMA1EN_W as DMA2EN_W;
+#[doc = "Field `DMA1EN` reader - CPU2 DMA1 clock enable"]
+pub type DMA1EN_R = crate::BitReader<DMA1EN_A>;
 #[doc = "CPU2 DMA1 clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1EN_A {
@@ -66,8 +50,6 @@ impl From<DMA1EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA1EN` reader - CPU2 DMA1 clock enable"]
-pub type DMA1EN_R = crate::BitReader<DMA1EN_A>;
 impl DMA1EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -102,48 +84,60 @@ impl<'a, const O: u8> DMA1EN_W<'a, O> {
         self.variant(DMA1EN_A::Enabled)
     }
 }
+#[doc = "Field `DMA2EN` reader - CPU2 DMA2 clock enable"]
+pub use DMA1EN_R as DMA2EN_R;
+#[doc = "Field `DMAMUX1EN` reader - CPU2 DMAMUX1 clock enable"]
+pub use DMA1EN_R as DMAMUX1EN_R;
+#[doc = "Field `CRCEN` reader - CPU2 CRC clock enable"]
+pub use DMA1EN_R as CRCEN_R;
+#[doc = "Field `DMA2EN` writer - CPU2 DMA2 clock enable"]
+pub use DMA1EN_W as DMA2EN_W;
+#[doc = "Field `DMAMUX1EN` writer - CPU2 DMAMUX1 clock enable"]
+pub use DMA1EN_W as DMAMUX1EN_W;
+#[doc = "Field `CRCEN` writer - CPU2 CRC clock enable"]
+pub use DMA1EN_W as CRCEN_W;
 impl R {
-    #[doc = "Bit 12 - CPU2 CRC clock enable"]
+    #[doc = "Bit 0 - CPU2 DMA1 clock enable"]
     #[inline(always)]
-    pub fn crcen(&self) -> CRCEN_R {
-        CRCEN_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 2 - CPU2 DMAMUX1 clock enable"]
-    #[inline(always)]
-    pub fn dmamux1en(&self) -> DMAMUX1EN_R {
-        DMAMUX1EN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dma1en(&self) -> DMA1EN_R {
+        DMA1EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CPU2 DMA2 clock enable"]
     #[inline(always)]
     pub fn dma2en(&self) -> DMA2EN_R {
         DMA2EN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - CPU2 DMA1 clock enable"]
+    #[doc = "Bit 2 - CPU2 DMAMUX1 clock enable"]
     #[inline(always)]
-    pub fn dma1en(&self) -> DMA1EN_R {
-        DMA1EN_R::new((self.bits & 1) != 0)
+    pub fn dmamux1en(&self) -> DMAMUX1EN_R {
+        DMAMUX1EN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 12 - CPU2 CRC clock enable"]
+    #[inline(always)]
+    pub fn crcen(&self) -> CRCEN_R {
+        CRCEN_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 12 - CPU2 CRC clock enable"]
+    #[doc = "Bit 0 - CPU2 DMA1 clock enable"]
     #[inline(always)]
-    pub fn crcen(&mut self) -> CRCEN_W<12> {
-        CRCEN_W::new(self)
-    }
-    #[doc = "Bit 2 - CPU2 DMAMUX1 clock enable"]
-    #[inline(always)]
-    pub fn dmamux1en(&mut self) -> DMAMUX1EN_W<2> {
-        DMAMUX1EN_W::new(self)
+    pub fn dma1en(&mut self) -> DMA1EN_W<0> {
+        DMA1EN_W::new(self)
     }
     #[doc = "Bit 1 - CPU2 DMA2 clock enable"]
     #[inline(always)]
     pub fn dma2en(&mut self) -> DMA2EN_W<1> {
         DMA2EN_W::new(self)
     }
-    #[doc = "Bit 0 - CPU2 DMA1 clock enable"]
+    #[doc = "Bit 2 - CPU2 DMAMUX1 clock enable"]
     #[inline(always)]
-    pub fn dma1en(&mut self) -> DMA1EN_W<0> {
-        DMA1EN_W::new(self)
+    pub fn dmamux1en(&mut self) -> DMAMUX1EN_W<2> {
+        DMAMUX1EN_W::new(self)
+    }
+    #[doc = "Bit 12 - CPU2 CRC clock enable"]
+    #[inline(always)]
+    pub fn crcen(&mut self) -> CRCEN_W<12> {
+        CRCEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

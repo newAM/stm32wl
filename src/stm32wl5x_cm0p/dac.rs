@@ -2,38 +2,38 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x04 - software trigger register"]
-    pub swtrgr: crate::Reg<swtrgr::SWTRGR_SPEC>,
+    pub swtrgr: SWTRGR,
     #[doc = "0x08 - channel1 12-bit right-aligned data holding register"]
-    pub dhr12r1: crate::Reg<dhr12r1::DHR12R1_SPEC>,
+    pub dhr12r1: DHR12R1,
     #[doc = "0x0c - channel1 12-bit left aligned data holding register"]
-    pub dhr12l1: crate::Reg<dhr12l1::DHR12L1_SPEC>,
+    pub dhr12l1: DHR12L1,
     #[doc = "0x10 - channel1 8-bit right aligned data holding register"]
-    pub dhr8r1: crate::Reg<dhr8r1::DHR8R1_SPEC>,
+    pub dhr8r1: DHR8R1,
     _reserved5: [u8; 0x0c],
     #[doc = "0x20 - Dual DAC 12-bit right-aligned data holding register"]
-    pub dhr12rd: crate::Reg<dhr12rd::DHR12RD_SPEC>,
+    pub dhr12rd: DHR12RD,
     #[doc = "0x24 - Dual DAC 12-bit left aligned data holding register"]
-    pub dhr12ld: crate::Reg<dhr12ld::DHR12LD_SPEC>,
+    pub dhr12ld: DHR12LD,
     #[doc = "0x28 - Dual DAC 8-bit right aligned data holding register"]
-    pub dhr8rd: crate::Reg<dhr8rd::DHR8RD_SPEC>,
+    pub dhr8rd: DHR8RD,
     #[doc = "0x2c - DAC channel1 data output register"]
-    pub dor1: crate::Reg<dor1::DOR1_SPEC>,
+    pub dor1: DOR1,
     _reserved9: [u8; 0x04],
     #[doc = "0x34 - status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x38 - calibration control register"]
-    pub ccr: crate::Reg<ccr::CCR_SPEC>,
+    pub ccr: CCR,
     #[doc = "0x3c - mode control register"]
-    pub mcr: crate::Reg<mcr::MCR_SPEC>,
+    pub mcr: MCR,
     #[doc = "0x40 - Sample and Hold sample time register 1"]
-    pub shsr1: crate::Reg<shsr1::SHSR1_SPEC>,
+    pub shsr1: SHSR1,
     _reserved13: [u8; 0x04],
     #[doc = "0x48 - Sample and Hold hold time register"]
-    pub shhr: crate::Reg<shhr::SHHR_SPEC>,
+    pub shhr: SHHR,
     #[doc = "0x4c - Sample and Hold refresh time register"]
-    pub shrr: crate::Reg<shrr::SHRR_SPEC>,
+    pub shrr: SHRR,
 }
 #[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
 pub type CR = crate::Reg<cr::CR_SPEC>;

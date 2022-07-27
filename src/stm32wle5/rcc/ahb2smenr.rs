@@ -34,64 +34,64 @@ impl From<crate::W<AHB2SMENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `GPIOHSMEN` reader - IO port H clock enable during CPU1 CSleep mode."]
-pub type GPIOHSMEN_R = crate::BitReader<bool>;
-#[doc = "Field `GPIOHSMEN` writer - IO port H clock enable during CPU1 CSleep mode."]
-pub type GPIOHSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
-#[doc = "Field `GPIOCSMEN` reader - IO port C clock enable during CPU1 CSleep mode."]
-pub type GPIOCSMEN_R = crate::BitReader<bool>;
-#[doc = "Field `GPIOCSMEN` writer - IO port C clock enable during CPU1 CSleep mode."]
-pub type GPIOCSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
-#[doc = "Field `GPIOBSMEN` reader - IO port B clock enable during CPU1 CSleep mode."]
-pub type GPIOBSMEN_R = crate::BitReader<bool>;
-#[doc = "Field `GPIOBSMEN` writer - IO port B clock enable during CPU1 CSleep mode."]
-pub type GPIOBSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
 #[doc = "Field `GPIOASMEN` reader - IO port A clock enable during CPU1 CSleep mode."]
 pub type GPIOASMEN_R = crate::BitReader<bool>;
 #[doc = "Field `GPIOASMEN` writer - IO port A clock enable during CPU1 CSleep mode."]
 pub type GPIOASMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
+#[doc = "Field `GPIOBSMEN` reader - IO port B clock enable during CPU1 CSleep mode."]
+pub type GPIOBSMEN_R = crate::BitReader<bool>;
+#[doc = "Field `GPIOBSMEN` writer - IO port B clock enable during CPU1 CSleep mode."]
+pub type GPIOBSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
+#[doc = "Field `GPIOCSMEN` reader - IO port C clock enable during CPU1 CSleep mode."]
+pub type GPIOCSMEN_R = crate::BitReader<bool>;
+#[doc = "Field `GPIOCSMEN` writer - IO port C clock enable during CPU1 CSleep mode."]
+pub type GPIOCSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
+#[doc = "Field `GPIOHSMEN` reader - IO port H clock enable during CPU1 CSleep mode."]
+pub type GPIOHSMEN_R = crate::BitReader<bool>;
+#[doc = "Field `GPIOHSMEN` writer - IO port H clock enable during CPU1 CSleep mode."]
+pub type GPIOHSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AHB2SMENR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 7 - IO port H clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 0 - IO port A clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn gpiohsmen(&self) -> GPIOHSMEN_R {
-        GPIOHSMEN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 2 - IO port C clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn gpiocsmen(&self) -> GPIOCSMEN_R {
-        GPIOCSMEN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn gpioasmen(&self) -> GPIOASMEN_R {
+        GPIOASMEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - IO port B clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn gpiobsmen(&self) -> GPIOBSMEN_R {
         GPIOBSMEN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - IO port A clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 2 - IO port C clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn gpioasmen(&self) -> GPIOASMEN_R {
-        GPIOASMEN_R::new((self.bits & 1) != 0)
+    pub fn gpiocsmen(&self) -> GPIOCSMEN_R {
+        GPIOCSMEN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 7 - IO port H clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn gpiohsmen(&self) -> GPIOHSMEN_R {
+        GPIOHSMEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - IO port H clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 0 - IO port A clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn gpiohsmen(&mut self) -> GPIOHSMEN_W<7> {
-        GPIOHSMEN_W::new(self)
-    }
-    #[doc = "Bit 2 - IO port C clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn gpiocsmen(&mut self) -> GPIOCSMEN_W<2> {
-        GPIOCSMEN_W::new(self)
+    pub fn gpioasmen(&mut self) -> GPIOASMEN_W<0> {
+        GPIOASMEN_W::new(self)
     }
     #[doc = "Bit 1 - IO port B clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn gpiobsmen(&mut self) -> GPIOBSMEN_W<1> {
         GPIOBSMEN_W::new(self)
     }
-    #[doc = "Bit 0 - IO port A clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 2 - IO port C clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn gpioasmen(&mut self) -> GPIOASMEN_W<0> {
-        GPIOASMEN_W::new(self)
+    pub fn gpiocsmen(&mut self) -> GPIOCSMEN_W<2> {
+        GPIOCSMEN_W::new(self)
+    }
+    #[doc = "Bit 7 - IO port H clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn gpiohsmen(&mut self) -> GPIOHSMEN_W<7> {
+        GPIOHSMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

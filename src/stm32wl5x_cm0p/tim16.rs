@@ -2,62 +2,56 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - TIM16/TIM17 control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - TIM16/TIM17 control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     _reserved2: [u8; 0x04],
     #[doc = "0x0c - TIM16/TIM17 DMA/interrupt enable register"]
-    pub dier: crate::Reg<dier::DIER_SPEC>,
+    pub dier: DIER,
     #[doc = "0x10 - TIM16/TIM17 status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x14 - TIM16/TIM17 event generation register"]
-    pub egr: crate::Reg<egr::EGR_SPEC>,
+    pub egr: EGR,
     _reserved_5_ccmr1: [u8; 0x04],
     _reserved6: [u8; 0x04],
     #[doc = "0x20 - TIM16/TIM17 capture/compare enable register"]
-    pub ccer: crate::Reg<ccer::CCER_SPEC>,
+    pub ccer: CCER,
     #[doc = "0x24 - TIM16/TIM17 counter"]
-    pub cnt: crate::Reg<cnt::CNT_SPEC>,
+    pub cnt: CNT,
     #[doc = "0x28 - TIM16/TIM17 prescaler"]
-    pub psc: crate::Reg<psc::PSC_SPEC>,
+    pub psc: PSC,
     #[doc = "0x2c - TIM16/TIM17 auto-reload register"]
-    pub arr: crate::Reg<arr::ARR_SPEC>,
+    pub arr: ARR,
     #[doc = "0x30 - TIM16/TIM17 repetition counter register"]
-    pub rcr: crate::Reg<rcr::RCR_SPEC>,
+    pub rcr: RCR,
     #[doc = "0x34 - TIM16/TIM17 capture/compare register 1"]
-    pub ccr1: crate::Reg<ccr1::CCR1_SPEC>,
+    pub ccr1: CCR1,
     _reserved12: [u8; 0x0c],
     #[doc = "0x44 - TIM16/TIM17 break and dead-time register"]
-    pub bdtr: crate::Reg<bdtr::BDTR_SPEC>,
+    pub bdtr: BDTR,
     #[doc = "0x48 - TIM16/TIM17 DMA control register"]
-    pub dcr: crate::Reg<dcr::DCR_SPEC>,
+    pub dcr: DCR,
     #[doc = "0x4c - TIM16/TIM17 DMA address for full transfer"]
-    pub dmar: crate::Reg<dmar::DMAR_SPEC>,
+    pub dmar: DMAR,
     #[doc = "0x50 - TIM16 option register 1"]
-    pub or1: crate::Reg<or1::OR1_SPEC>,
+    pub or1: OR1,
     _reserved16: [u8; 0x0c],
     #[doc = "0x60 - TIM16 alternate function register 1"]
-    pub af1: crate::Reg<af1::AF1_SPEC>,
+    pub af1: AF1,
     _reserved17: [u8; 0x04],
     #[doc = "0x68 - TIM16 input selection register"]
-    pub tisel: crate::Reg<tisel::TISEL_SPEC>,
+    pub tisel: TISEL,
 }
 impl RegisterBlock {
     #[doc = "0x18 - TIM16/TIM17 capture/compare mode register 1"]
     #[inline(always)]
-    pub fn ccmr1_input(&self) -> &crate::Reg<ccmr1_input::CCMR1_INPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(24usize)
-                as *const crate::Reg<ccmr1_input::CCMR1_INPUT_SPEC>)
-        }
+    pub fn ccmr1_input(&self) -> &CCMR1_INPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(24usize) as *const CCMR1_INPUT) }
     }
     #[doc = "0x18 - TIM16/TIM17 capture/compare mode register 1"]
     #[inline(always)]
-    pub fn ccmr1_output(&self) -> &crate::Reg<ccmr1_output::CCMR1_OUTPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(24usize)
-                as *const crate::Reg<ccmr1_output::CCMR1_OUTPUT_SPEC>)
-        }
+    pub fn ccmr1_output(&self) -> &CCMR1_OUTPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(24usize) as *const CCMR1_OUTPUT) }
     }
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]

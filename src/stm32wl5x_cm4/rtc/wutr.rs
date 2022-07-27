@@ -34,36 +34,36 @@ impl From<crate::W<WUTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WUTOCLR` reader - Wakeup auto-reload output clear value"]
-pub type WUTOCLR_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `WUTOCLR` writer - Wakeup auto-reload output clear value"]
-pub type WUTOCLR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUTR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `WUT` reader - Wakeup auto-reload value bits"]
 pub type WUT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WUT` writer - Wakeup auto-reload value bits"]
 pub type WUT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUTR_SPEC, u16, u16, 16, O>;
+#[doc = "Field `WUTOCLR` reader - Wakeup auto-reload output clear value"]
+pub type WUTOCLR_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `WUTOCLR` writer - Wakeup auto-reload output clear value"]
+pub type WUTOCLR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUTR_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bits 16:31 - Wakeup auto-reload output clear value"]
-    #[inline(always)]
-    pub fn wutoclr(&self) -> WUTOCLR_R {
-        WUTOCLR_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - Wakeup auto-reload value bits"]
     #[inline(always)]
     pub fn wut(&self) -> WUT_R {
         WUT_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:31 - Wakeup auto-reload output clear value"]
     #[inline(always)]
-    pub fn wutoclr(&mut self) -> WUTOCLR_W<16> {
-        WUTOCLR_W::new(self)
+    pub fn wutoclr(&self) -> WUTOCLR_R {
+        WUTOCLR_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:15 - Wakeup auto-reload value bits"]
     #[inline(always)]
     pub fn wut(&mut self) -> WUT_W<0> {
         WUT_W::new(self)
+    }
+    #[doc = "Bits 16:31 - Wakeup auto-reload output clear value"]
+    #[inline(always)]
+    pub fn wutoclr(&mut self) -> WUTOCLR_W<16> {
+        WUTOCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

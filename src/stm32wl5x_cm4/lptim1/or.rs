@@ -34,56 +34,8 @@ impl From<crate::W<OR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Option register bit 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OR_1_A {
-    #[doc = "0: LPTIM1 input 2 is connected to I/O"]
-    Io = 0,
-    #[doc = "1: LPTIM1 input 2 is connected to COMP2_OUT"]
-    Comp2Out = 1,
-}
-impl From<OR_1_A> for bool {
-    #[inline(always)]
-    fn from(variant: OR_1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `OR_1` reader - Option register bit 1"]
-pub type OR_1_R = crate::BitReader<OR_1_A>;
-impl OR_1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> OR_1_A {
-        match self.bits {
-            false => OR_1_A::Io,
-            true => OR_1_A::Comp2Out,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Io`"]
-    #[inline(always)]
-    pub fn is_io(&self) -> bool {
-        *self == OR_1_A::Io
-    }
-    #[doc = "Checks if the value of the field is `Comp2Out`"]
-    #[inline(always)]
-    pub fn is_comp2_out(&self) -> bool {
-        *self == OR_1_A::Comp2Out
-    }
-}
-#[doc = "Field `OR_1` writer - Option register bit 1"]
-pub type OR_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR_SPEC, OR_1_A, O>;
-impl<'a, const O: u8> OR_1_W<'a, O> {
-    #[doc = "LPTIM1 input 2 is connected to I/O"]
-    #[inline(always)]
-    pub fn io(self) -> &'a mut W {
-        self.variant(OR_1_A::Io)
-    }
-    #[doc = "LPTIM1 input 2 is connected to COMP2_OUT"]
-    #[inline(always)]
-    pub fn comp2_out(self) -> &'a mut W {
-        self.variant(OR_1_A::Comp2Out)
-    }
-}
+#[doc = "Field `OR_0` reader - Option register bit 0"]
+pub type OR_0_R = crate::BitReader<OR_0_A>;
 #[doc = "Option register bit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OR_0_A {
@@ -98,8 +50,6 @@ impl From<OR_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OR_0` reader - Option register bit 0"]
-pub type OR_0_R = crate::BitReader<OR_0_A>;
 impl OR_0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,28 +84,78 @@ impl<'a, const O: u8> OR_0_W<'a, O> {
         self.variant(OR_0_A::Comp1Out)
     }
 }
-impl R {
-    #[doc = "Bit 1 - Option register bit 1"]
+#[doc = "Field `OR_1` reader - Option register bit 1"]
+pub type OR_1_R = crate::BitReader<OR_1_A>;
+#[doc = "Option register bit 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OR_1_A {
+    #[doc = "0: LPTIM1 input 2 is connected to I/O"]
+    Io = 0,
+    #[doc = "1: LPTIM1 input 2 is connected to COMP2_OUT"]
+    Comp2Out = 1,
+}
+impl From<OR_1_A> for bool {
     #[inline(always)]
-    pub fn or_1(&self) -> OR_1_R {
-        OR_1_R::new(((self.bits >> 1) & 1) != 0)
+    fn from(variant: OR_1_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl OR_1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OR_1_A {
+        match self.bits {
+            false => OR_1_A::Io,
+            true => OR_1_A::Comp2Out,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Io`"]
+    #[inline(always)]
+    pub fn is_io(&self) -> bool {
+        *self == OR_1_A::Io
+    }
+    #[doc = "Checks if the value of the field is `Comp2Out`"]
+    #[inline(always)]
+    pub fn is_comp2_out(&self) -> bool {
+        *self == OR_1_A::Comp2Out
+    }
+}
+#[doc = "Field `OR_1` writer - Option register bit 1"]
+pub type OR_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR_SPEC, OR_1_A, O>;
+impl<'a, const O: u8> OR_1_W<'a, O> {
+    #[doc = "LPTIM1 input 2 is connected to I/O"]
+    #[inline(always)]
+    pub fn io(self) -> &'a mut W {
+        self.variant(OR_1_A::Io)
+    }
+    #[doc = "LPTIM1 input 2 is connected to COMP2_OUT"]
+    #[inline(always)]
+    pub fn comp2_out(self) -> &'a mut W {
+        self.variant(OR_1_A::Comp2Out)
+    }
+}
+impl R {
     #[doc = "Bit 0 - Option register bit 0"]
     #[inline(always)]
     pub fn or_0(&self) -> OR_0_R {
         OR_0_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 1 - Option register bit 1"]
     #[inline(always)]
-    pub fn or_1(&mut self) -> OR_1_W<1> {
-        OR_1_W::new(self)
+    pub fn or_1(&self) -> OR_1_R {
+        OR_1_R::new(((self.bits >> 1) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Option register bit 0"]
     #[inline(always)]
     pub fn or_0(&mut self) -> OR_0_W<0> {
         OR_0_W::new(self)
+    }
+    #[doc = "Bit 1 - Option register bit 1"]
+    #[inline(always)]
+    pub fn or_1(&mut self) -> OR_1_W<1> {
+        OR_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -2,90 +2,78 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     #[doc = "0x08 - slave mode control register"]
-    pub smcr: crate::Reg<smcr::SMCR_SPEC>,
+    pub smcr: SMCR,
     #[doc = "0x0c - DMA/interrupt enable register"]
-    pub dier: crate::Reg<dier::DIER_SPEC>,
+    pub dier: DIER,
     #[doc = "0x10 - status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x14 - event generation register"]
-    pub egr: crate::Reg<egr::EGR_SPEC>,
+    pub egr: EGR,
     _reserved_6_ccmr1: [u8; 0x04],
     _reserved_7_ccmr2: [u8; 0x04],
     #[doc = "0x20 - capture/compare enable register"]
-    pub ccer: crate::Reg<ccer::CCER_SPEC>,
+    pub ccer: CCER,
     #[doc = "0x24 - counter"]
-    pub cnt: crate::Reg<cnt::CNT_SPEC>,
+    pub cnt: CNT,
     #[doc = "0x28 - prescaler"]
-    pub psc: crate::Reg<psc::PSC_SPEC>,
+    pub psc: PSC,
     #[doc = "0x2c - auto-reload register"]
-    pub arr: crate::Reg<arr::ARR_SPEC>,
+    pub arr: ARR,
     #[doc = "0x30 - repetition counter register"]
-    pub rcr: crate::Reg<rcr::RCR_SPEC>,
+    pub rcr: RCR,
     #[doc = "0x34 - capture/compare register 1"]
-    pub ccr1: crate::Reg<ccr1::CCR1_SPEC>,
+    pub ccr1: CCR1,
     #[doc = "0x38 - capture/compare register 2"]
-    pub ccr2: crate::Reg<ccr2::CCR2_SPEC>,
+    pub ccr2: CCR2,
     #[doc = "0x3c - capture/compare register 3"]
-    pub ccr3: crate::Reg<ccr3::CCR3_SPEC>,
+    pub ccr3: CCR3,
     #[doc = "0x40 - capture/compare register 4"]
-    pub ccr4: crate::Reg<ccr4::CCR4_SPEC>,
+    pub ccr4: CCR4,
     #[doc = "0x44 - break and dead-time register"]
-    pub bdtr: crate::Reg<bdtr::BDTR_SPEC>,
+    pub bdtr: BDTR,
     #[doc = "0x48 - DMA control register"]
-    pub dcr: crate::Reg<dcr::DCR_SPEC>,
+    pub dcr: DCR,
     #[doc = "0x4c - DMA address for full transfer"]
-    pub dmar: crate::Reg<dmar::DMAR_SPEC>,
+    pub dmar: DMAR,
     #[doc = "0x50 - option register 1"]
-    pub or1: crate::Reg<or1::OR1_SPEC>,
+    pub or1: OR1,
     #[doc = "0x54 - capture/compare mode register 3"]
-    pub ccmr3_output: crate::Reg<ccmr3_output::CCMR3_OUTPUT_SPEC>,
+    pub ccmr3_output: CCMR3_OUTPUT,
     #[doc = "0x58 - capture/compare register 5"]
-    pub ccr5: crate::Reg<ccr5::CCR5_SPEC>,
+    pub ccr5: CCR5,
     #[doc = "0x5c - capture/compare register 6"]
-    pub ccr6: crate::Reg<ccr6::CCR6_SPEC>,
+    pub ccr6: CCR6,
     #[doc = "0x60 - alternate function option register 1"]
-    pub af1: crate::Reg<af1::AF1_SPEC>,
+    pub af1: AF1,
     #[doc = "0x64 - Alternate function register 2"]
-    pub af2: crate::Reg<af2::AF2_SPEC>,
+    pub af2: AF2,
     #[doc = "0x68 - timer input selection register"]
-    pub tisel: crate::Reg<tisel::TISEL_SPEC>,
+    pub tisel: TISEL,
 }
 impl RegisterBlock {
     #[doc = "0x18 - capture/compare mode register 1 (input mode)"]
     #[inline(always)]
-    pub fn ccmr1_input(&self) -> &crate::Reg<ccmr1_input::CCMR1_INPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(24usize)
-                as *const crate::Reg<ccmr1_input::CCMR1_INPUT_SPEC>)
-        }
+    pub fn ccmr1_input(&self) -> &CCMR1_INPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(24usize) as *const CCMR1_INPUT) }
     }
     #[doc = "0x18 - capture/compare mode register 1 (output mode)"]
     #[inline(always)]
-    pub fn ccmr1_output(&self) -> &crate::Reg<ccmr1_output::CCMR1_OUTPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(24usize)
-                as *const crate::Reg<ccmr1_output::CCMR1_OUTPUT_SPEC>)
-        }
+    pub fn ccmr1_output(&self) -> &CCMR1_OUTPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(24usize) as *const CCMR1_OUTPUT) }
     }
     #[doc = "0x1c - capture/compare mode register 2 (input mode)"]
     #[inline(always)]
-    pub fn ccmr2_input(&self) -> &crate::Reg<ccmr2_input::CCMR2_INPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(28usize)
-                as *const crate::Reg<ccmr2_input::CCMR2_INPUT_SPEC>)
-        }
+    pub fn ccmr2_input(&self) -> &CCMR2_INPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const CCMR2_INPUT) }
     }
     #[doc = "0x1c - capture/compare mode register 2 (output mode)"]
     #[inline(always)]
-    pub fn ccmr2_output(&self) -> &crate::Reg<ccmr2_output::CCMR2_OUTPUT_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(28usize)
-                as *const crate::Reg<ccmr2_output::CCMR2_OUTPUT_SPEC>)
-        }
+    pub fn ccmr2_output(&self) -> &CCMR2_OUTPUT {
+        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const CCMR2_OUTPUT) }
     }
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]

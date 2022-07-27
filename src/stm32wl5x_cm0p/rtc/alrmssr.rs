@@ -34,6 +34,16 @@ impl From<crate::W<ALRMSSR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SS` reader - Sub seconds value"]
+pub type SS_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `SS` writer - Sub seconds value"]
+pub type SS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ALRMSSR_SPEC, u16, u16, 15, O>;
+#[doc = "Field `MASKSS` reader - Mask the most-significant bits starting at this bit"]
+pub type MASKSS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MASKSS` writer - Mask the most-significant bits starting at this bit"]
+pub type MASKSS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ALRMSSR_SPEC, u8, u8, 6, O>;
+#[doc = "Field `SSCLR` reader - Clear synchronous counter on alarm (Binary mode only)"]
+pub type SSCLR_R = crate::BitReader<SSCLR_A>;
 #[doc = "Clear synchronous counter on alarm (Binary mode only)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSCLR_A {
@@ -51,8 +61,6 @@ impl From<SSCLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SSCLR` reader - Clear synchronous counter on alarm (Binary mode only)"]
-pub type SSCLR_R = crate::BitReader<SSCLR_A>;
 impl SSCLR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -90,46 +98,38 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
         self.variant(SSCLR_A::Alrmbinr)
     }
 }
-#[doc = "Field `MASKSS` reader - Mask the most-significant bits starting at this bit"]
-pub type MASKSS_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `MASKSS` writer - Mask the most-significant bits starting at this bit"]
-pub type MASKSS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ALRMSSR_SPEC, u8, u8, 6, O>;
-#[doc = "Field `SS` reader - Sub seconds value"]
-pub type SS_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `SS` writer - Sub seconds value"]
-pub type SS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ALRMSSR_SPEC, u16, u16, 15, O>;
 impl R {
-    #[doc = "Bit 31 - Clear synchronous counter on alarm (Binary mode only)"]
+    #[doc = "Bits 0:14 - Sub seconds value"]
     #[inline(always)]
-    pub fn ssclr(&self) -> SSCLR_R {
-        SSCLR_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn ss(&self) -> SS_R {
+        SS_R::new((self.bits & 0x7fff) as u16)
     }
     #[doc = "Bits 24:29 - Mask the most-significant bits starting at this bit"]
     #[inline(always)]
     pub fn maskss(&self) -> MASKSS_R {
         MASKSS_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
-    #[doc = "Bits 0:14 - Sub seconds value"]
+    #[doc = "Bit 31 - Clear synchronous counter on alarm (Binary mode only)"]
     #[inline(always)]
-    pub fn ss(&self) -> SS_R {
-        SS_R::new((self.bits & 0x7fff) as u16)
+    pub fn ssclr(&self) -> SSCLR_R {
+        SSCLR_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Clear synchronous counter on alarm (Binary mode only)"]
+    #[doc = "Bits 0:14 - Sub seconds value"]
     #[inline(always)]
-    pub fn ssclr(&mut self) -> SSCLR_W<31> {
-        SSCLR_W::new(self)
+    pub fn ss(&mut self) -> SS_W<0> {
+        SS_W::new(self)
     }
     #[doc = "Bits 24:29 - Mask the most-significant bits starting at this bit"]
     #[inline(always)]
     pub fn maskss(&mut self) -> MASKSS_W<24> {
         MASKSS_W::new(self)
     }
-    #[doc = "Bits 0:14 - Sub seconds value"]
+    #[doc = "Bit 31 - Clear synchronous counter on alarm (Binary mode only)"]
     #[inline(always)]
-    pub fn ss(&mut self) -> SS_W<0> {
-        SS_W::new(self)
+    pub fn ssclr(&mut self) -> SSCLR_W<31> {
+        SSCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

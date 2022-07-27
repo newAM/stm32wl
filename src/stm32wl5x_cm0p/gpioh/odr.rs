@@ -34,6 +34,8 @@ impl From<crate::W<ODR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ODR3` reader - Port output data (y = 0..15)"]
+pub type ODR3_R = crate::BitReader<ODR3_A>;
 #[doc = "Port output data (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODR3_A {
@@ -48,8 +50,6 @@ impl From<ODR3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ODR3` reader - Port output data (y = 0..15)"]
-pub type ODR3_R = crate::BitReader<ODR3_A>;
 impl ODR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

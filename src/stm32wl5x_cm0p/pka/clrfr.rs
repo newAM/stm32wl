@@ -19,25 +19,25 @@ impl From<crate::W<CLRFR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Clear Address error flag\n\nValue on reset: 0"]
+#[doc = "Clear PKA End of Operation flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDRERRFC_AW {
-    #[doc = "1: Clear ADDRERRF flag"]
+pub enum PROCENDFC_AW {
+    #[doc = "1: Clear PROCENDF flag"]
     Clear = 1,
 }
-impl From<ADDRERRFC_AW> for bool {
+impl From<PROCENDFC_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADDRERRFC_AW) -> Self {
+    fn from(variant: PROCENDFC_AW) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRERRFC` writer - Clear Address error flag"]
-pub type ADDRERRFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRFR_SPEC, ADDRERRFC_AW, O>;
-impl<'a, const O: u8> ADDRERRFC_W<'a, O> {
-    #[doc = "Clear ADDRERRF flag"]
+#[doc = "Field `PROCENDFC` writer - Clear PKA End of Operation flag"]
+pub type PROCENDFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRFR_SPEC, PROCENDFC_AW, O>;
+impl<'a, const O: u8> PROCENDFC_W<'a, O> {
+    #[doc = "Clear PROCENDF flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ADDRERRFC_AW::Clear)
+        self.variant(PROCENDFC_AW::Clear)
     }
 }
 #[doc = "Clear PKA RAM error flag\n\nValue on reset: 0"]
@@ -61,42 +61,42 @@ impl<'a, const O: u8> RAMERRFC_W<'a, O> {
         self.variant(RAMERRFC_AW::Clear)
     }
 }
-#[doc = "Clear PKA End of Operation flag\n\nValue on reset: 0"]
+#[doc = "Clear Address error flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROCENDFC_AW {
-    #[doc = "1: Clear PROCENDF flag"]
+pub enum ADDRERRFC_AW {
+    #[doc = "1: Clear ADDRERRF flag"]
     Clear = 1,
 }
-impl From<PROCENDFC_AW> for bool {
+impl From<ADDRERRFC_AW> for bool {
     #[inline(always)]
-    fn from(variant: PROCENDFC_AW) -> Self {
+    fn from(variant: ADDRERRFC_AW) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PROCENDFC` writer - Clear PKA End of Operation flag"]
-pub type PROCENDFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRFR_SPEC, PROCENDFC_AW, O>;
-impl<'a, const O: u8> PROCENDFC_W<'a, O> {
-    #[doc = "Clear PROCENDF flag"]
+#[doc = "Field `ADDRERRFC` writer - Clear Address error flag"]
+pub type ADDRERRFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRFR_SPEC, ADDRERRFC_AW, O>;
+impl<'a, const O: u8> ADDRERRFC_W<'a, O> {
+    #[doc = "Clear ADDRERRF flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PROCENDFC_AW::Clear)
+        self.variant(ADDRERRFC_AW::Clear)
     }
 }
 impl W {
-    #[doc = "Bit 20 - Clear Address error flag"]
+    #[doc = "Bit 17 - Clear PKA End of Operation flag"]
     #[inline(always)]
-    pub fn addrerrfc(&mut self) -> ADDRERRFC_W<20> {
-        ADDRERRFC_W::new(self)
+    pub fn procendfc(&mut self) -> PROCENDFC_W<17> {
+        PROCENDFC_W::new(self)
     }
     #[doc = "Bit 19 - Clear PKA RAM error flag"]
     #[inline(always)]
     pub fn ramerrfc(&mut self) -> RAMERRFC_W<19> {
         RAMERRFC_W::new(self)
     }
-    #[doc = "Bit 17 - Clear PKA End of Operation flag"]
+    #[doc = "Bit 20 - Clear Address error flag"]
     #[inline(always)]
-    pub fn procendfc(&mut self) -> PROCENDFC_W<17> {
-        PROCENDFC_W::new(self)
+    pub fn addrerrfc(&mut self) -> ADDRERRFC_W<20> {
+        ADDRERRFC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<C1IMR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IM0` reader - wakeup with interrupt Mask on event input"]
+pub type IM0_R = crate::BitReader<IM0_A>;
 #[doc = "wakeup with interrupt Mask on event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IM0_A {
@@ -48,8 +50,6 @@ impl From<IM0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IM0` reader - wakeup with interrupt Mask on event input"]
-pub type IM0_R = crate::BitReader<IM0_A>;
 impl IM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,68 +84,6 @@ impl<'a, const O: u8> IM0_W<'a, O> {
         self.variant(IM0_A::Unmasked)
     }
 }
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM1_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM2_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM3_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM4_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM5_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM6_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM7_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM8_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM9_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM10_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM11_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM12_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM13_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM14_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM15_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM16_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM17_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM18_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM19_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM20_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM21_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM22_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM23_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM24_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM25_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM26_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM27_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM28_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM29_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM30_A;
-#[doc = "wakeup with interrupt Mask on event input"]
-pub use IM0_A as IM31_A;
 #[doc = "Field `IM1` reader - wakeup with interrupt Mask on event input"]
 pub use IM0_R as IM1_R;
 #[doc = "Field `IM2` reader - wakeup with interrupt Mask on event input"]

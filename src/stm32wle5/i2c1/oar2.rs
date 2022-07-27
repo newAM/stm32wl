@@ -38,6 +38,8 @@ impl From<crate::W<OAR2_SPEC>> for W {
 pub type OA2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OA2` writer - Interface address"]
 pub type OA2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OAR2_SPEC, u8, u8, 7, O>;
+#[doc = "Field `OA2MSK` reader - Own Address 2 masks"]
+pub type OA2MSK_R = crate::FieldReader<u8, OA2MSK_A>;
 #[doc = "Own Address 2 masks\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -78,8 +80,6 @@ impl From<OA2MSK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OA2MSK` reader - Own Address 2 masks"]
-pub type OA2MSK_R = crate::FieldReader<u8, OA2MSK_A>;
 impl OA2MSK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -194,6 +194,8 @@ are masked and don’t care. No comparison is done, and all (except reserved) 7-
         self.variant(OA2MSK_A::Mask7)
     }
 }
+#[doc = "Field `OA2EN` reader - Own Address 2 enable"]
+pub type OA2EN_R = crate::BitReader<OA2EN_A>;
 #[doc = "Own Address 2 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OA2EN_A {
@@ -208,8 +210,6 @@ impl From<OA2EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OA2EN` reader - Own Address 2 enable"]
-pub type OA2EN_R = crate::BitReader<OA2EN_A>;
 impl OA2EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

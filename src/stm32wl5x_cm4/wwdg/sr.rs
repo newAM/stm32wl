@@ -34,61 +34,61 @@ impl From<crate::W<SR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EWIF` reader - Early wakeup interrupt flag"]
+pub type EWIF_R = crate::BitReader<EWIFR_A>;
 #[doc = "Early wakeup interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWIF_A {
+pub enum EWIFR_A {
     #[doc = "0: The EWI Interrupt Service Routine has been serviced"]
     Finished = 0,
     #[doc = "1: The EWI Interrupt Service Routine has been triggered"]
     Pending = 1,
 }
-impl From<EWIF_A> for bool {
+impl From<EWIFR_A> for bool {
     #[inline(always)]
-    fn from(variant: EWIF_A) -> Self {
+    fn from(variant: EWIFR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EWIF` reader - Early wakeup interrupt flag"]
-pub type EWIF_R = crate::BitReader<EWIF_A>;
 impl EWIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EWIF_A {
+    pub fn variant(&self) -> EWIFR_A {
         match self.bits {
-            false => EWIF_A::Finished,
-            true => EWIF_A::Pending,
+            false => EWIFR_A::Finished,
+            true => EWIFR_A::Pending,
         }
     }
     #[doc = "Checks if the value of the field is `Finished`"]
     #[inline(always)]
     pub fn is_finished(&self) -> bool {
-        *self == EWIF_A::Finished
+        *self == EWIFR_A::Finished
     }
     #[doc = "Checks if the value of the field is `Pending`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == EWIF_A::Pending
+        *self == EWIFR_A::Pending
     }
 }
 #[doc = "Early wakeup interrupt flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWIF_AW {
+pub enum EWIFW_AW {
     #[doc = "0: The EWI Interrupt Service Routine has been serviced"]
     Finished = 0,
 }
-impl From<EWIF_AW> for bool {
+impl From<EWIFW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EWIF_AW) -> Self {
+    fn from(variant: EWIFW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EWIF` writer - Early wakeup interrupt flag"]
-pub type EWIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, EWIF_AW, O>;
+pub type EWIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, EWIFW_AW, O>;
 impl<'a, const O: u8> EWIF_W<'a, O> {
     #[doc = "The EWI Interrupt Service Routine has been serviced"]
     #[inline(always)]
     pub fn finished(self) -> &'a mut W {
-        self.variant(EWIF_AW::Finished)
+        self.variant(EWIFW_AW::Finished)
     }
 }
 impl R {

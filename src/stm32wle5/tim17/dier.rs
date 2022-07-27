@@ -34,72 +34,8 @@ impl From<crate::W<DIER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CC1DE` reader - Capture/Compare 1 DMA request enable"]
-pub type CC1DE_R = crate::BitReader<bool>;
-#[doc = "Field `CC1DE` writer - Capture/Compare 1 DMA request enable"]
-pub type CC1DE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
-#[doc = "Update DMA request enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UDE_A {
-    #[doc = "0: Update DMA request disabled"]
-    Disabled = 0,
-    #[doc = "1: Update DMA request enabled"]
-    Enabled = 1,
-}
-impl From<UDE_A> for bool {
-    #[inline(always)]
-    fn from(variant: UDE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `UDE` reader - Update DMA request enable"]
-pub type UDE_R = crate::BitReader<UDE_A>;
-impl UDE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> UDE_A {
-        match self.bits {
-            false => UDE_A::Disabled,
-            true => UDE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == UDE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == UDE_A::Enabled
-    }
-}
-#[doc = "Field `UDE` writer - Update DMA request enable"]
-pub type UDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, UDE_A, O>;
-impl<'a, const O: u8> UDE_W<'a, O> {
-    #[doc = "Update DMA request disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(UDE_A::Disabled)
-    }
-    #[doc = "Update DMA request enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(UDE_A::Enabled)
-    }
-}
-#[doc = "Field `BIE` reader - Break interrupt enable"]
-pub type BIE_R = crate::BitReader<bool>;
-#[doc = "Field `BIE` writer - Break interrupt enable"]
-pub type BIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
-#[doc = "Field `COMIE` reader - COM interrupt enable"]
-pub type COMIE_R = crate::BitReader<bool>;
-#[doc = "Field `COMIE` writer - COM interrupt enable"]
-pub type COMIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
-#[doc = "Field `CC1IE` reader - Capture/Compare 1 interrupt enable"]
-pub type CC1IE_R = crate::BitReader<bool>;
-#[doc = "Field `CC1IE` writer - Capture/Compare 1 interrupt enable"]
-pub type CC1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `UIE` reader - Update interrupt enable"]
+pub type UIE_R = crate::BitReader<UIE_A>;
 #[doc = "Update interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UIE_A {
@@ -114,8 +50,6 @@ impl From<UIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UIE` reader - Update interrupt enable"]
-pub type UIE_R = crate::BitReader<UIE_A>;
 impl UIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -150,68 +84,134 @@ impl<'a, const O: u8> UIE_W<'a, O> {
         self.variant(UIE_A::Enabled)
     }
 }
+#[doc = "Field `CC1IE` reader - Capture/Compare 1 interrupt enable"]
+pub type CC1IE_R = crate::BitReader<bool>;
+#[doc = "Field `CC1IE` writer - Capture/Compare 1 interrupt enable"]
+pub type CC1IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `COMIE` reader - COM interrupt enable"]
+pub type COMIE_R = crate::BitReader<bool>;
+#[doc = "Field `COMIE` writer - COM interrupt enable"]
+pub type COMIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `BIE` reader - Break interrupt enable"]
+pub type BIE_R = crate::BitReader<bool>;
+#[doc = "Field `BIE` writer - Break interrupt enable"]
+pub type BIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
+#[doc = "Field `UDE` reader - Update DMA request enable"]
+pub type UDE_R = crate::BitReader<UDE_A>;
+#[doc = "Update DMA request enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UDE_A {
+    #[doc = "0: Update DMA request disabled"]
+    Disabled = 0,
+    #[doc = "1: Update DMA request enabled"]
+    Enabled = 1,
+}
+impl From<UDE_A> for bool {
+    #[inline(always)]
+    fn from(variant: UDE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl UDE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UDE_A {
+        match self.bits {
+            false => UDE_A::Disabled,
+            true => UDE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == UDE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == UDE_A::Enabled
+    }
+}
+#[doc = "Field `UDE` writer - Update DMA request enable"]
+pub type UDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, UDE_A, O>;
+impl<'a, const O: u8> UDE_W<'a, O> {
+    #[doc = "Update DMA request disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(UDE_A::Disabled)
+    }
+    #[doc = "Update DMA request enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(UDE_A::Enabled)
+    }
+}
+#[doc = "Field `CC1DE` reader - Capture/Compare 1 DMA request enable"]
+pub type CC1DE_R = crate::BitReader<bool>;
+#[doc = "Field `CC1DE` writer - Capture/Compare 1 DMA request enable"]
+pub type CC1DE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIER_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
+    #[doc = "Bit 0 - Update interrupt enable"]
     #[inline(always)]
-    pub fn cc1de(&self) -> CC1DE_R {
-        CC1DE_R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 8 - Update DMA request enable"]
-    #[inline(always)]
-    pub fn ude(&self) -> UDE_R {
-        UDE_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 7 - Break interrupt enable"]
-    #[inline(always)]
-    pub fn bie(&self) -> BIE_R {
-        BIE_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 5 - COM interrupt enable"]
-    #[inline(always)]
-    pub fn comie(&self) -> COMIE_R {
-        COMIE_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn uie(&self) -> UIE_R {
+        UIE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
     pub fn cc1ie(&self) -> CC1IE_R {
         CC1IE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Update interrupt enable"]
+    #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
-    pub fn uie(&self) -> UIE_R {
-        UIE_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
-    #[inline(always)]
-    pub fn cc1de(&mut self) -> CC1DE_W<9> {
-        CC1DE_W::new(self)
-    }
-    #[doc = "Bit 8 - Update DMA request enable"]
-    #[inline(always)]
-    pub fn ude(&mut self) -> UDE_W<8> {
-        UDE_W::new(self)
+    pub fn comie(&self) -> COMIE_R {
+        COMIE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 7 - Break interrupt enable"]
     #[inline(always)]
-    pub fn bie(&mut self) -> BIE_W<7> {
-        BIE_W::new(self)
+    pub fn bie(&self) -> BIE_R {
+        BIE_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 5 - COM interrupt enable"]
+    #[doc = "Bit 8 - Update DMA request enable"]
     #[inline(always)]
-    pub fn comie(&mut self) -> COMIE_W<5> {
-        COMIE_W::new(self)
+    pub fn ude(&self) -> UDE_R {
+        UDE_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
+    #[inline(always)]
+    pub fn cc1de(&self) -> CC1DE_R {
+        CC1DE_R::new(((self.bits >> 9) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Update interrupt enable"]
+    #[inline(always)]
+    pub fn uie(&mut self) -> UIE_W<0> {
+        UIE_W::new(self)
     }
     #[doc = "Bit 1 - Capture/Compare 1 interrupt enable"]
     #[inline(always)]
     pub fn cc1ie(&mut self) -> CC1IE_W<1> {
         CC1IE_W::new(self)
     }
-    #[doc = "Bit 0 - Update interrupt enable"]
+    #[doc = "Bit 5 - COM interrupt enable"]
     #[inline(always)]
-    pub fn uie(&mut self) -> UIE_W<0> {
-        UIE_W::new(self)
+    pub fn comie(&mut self) -> COMIE_W<5> {
+        COMIE_W::new(self)
+    }
+    #[doc = "Bit 7 - Break interrupt enable"]
+    #[inline(always)]
+    pub fn bie(&mut self) -> BIE_W<7> {
+        BIE_W::new(self)
+    }
+    #[doc = "Bit 8 - Update DMA request enable"]
+    #[inline(always)]
+    pub fn ude(&mut self) -> UDE_W<8> {
+        UDE_W::new(self)
+    }
+    #[doc = "Bit 9 - Capture/Compare 1 DMA request enable"]
+    #[inline(always)]
+    pub fn cc1de(&mut self) -> CC1DE_W<9> {
+        CC1DE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,203 @@ impl From<crate::W<EXTICR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EXTI0` reader - EXTI 0 configuration bits"]
+pub type EXTI0_R = crate::FieldReader<u8, EXTI0_A>;
+#[doc = "EXTI 0 configuration bits\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum EXTI0_A {
+    #[doc = "0: Select PA0 as the source input for the EXTI0 external interrupt"]
+    Pa0 = 0,
+    #[doc = "1: Select PB0 as the source input for the EXTI0 external interrupt"]
+    Pb0 = 1,
+    #[doc = "2: Select PC0 as the source input for the EXTI0 external interrupt"]
+    Pc0 = 2,
+}
+impl From<EXTI0_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EXTI0_A) -> Self {
+        variant as _
+    }
+}
+impl EXTI0_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<EXTI0_A> {
+        match self.bits {
+            0 => Some(EXTI0_A::Pa0),
+            1 => Some(EXTI0_A::Pb0),
+            2 => Some(EXTI0_A::Pc0),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Pa0`"]
+    #[inline(always)]
+    pub fn is_pa0(&self) -> bool {
+        *self == EXTI0_A::Pa0
+    }
+    #[doc = "Checks if the value of the field is `Pb0`"]
+    #[inline(always)]
+    pub fn is_pb0(&self) -> bool {
+        *self == EXTI0_A::Pb0
+    }
+    #[doc = "Checks if the value of the field is `Pc0`"]
+    #[inline(always)]
+    pub fn is_pc0(&self) -> bool {
+        *self == EXTI0_A::Pc0
+    }
+}
+#[doc = "Field `EXTI0` writer - EXTI 0 configuration bits"]
+pub type EXTI0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI0_A, 3, O>;
+impl<'a, const O: u8> EXTI0_W<'a, O> {
+    #[doc = "Select PA0 as the source input for the EXTI0 external interrupt"]
+    #[inline(always)]
+    pub fn pa0(self) -> &'a mut W {
+        self.variant(EXTI0_A::Pa0)
+    }
+    #[doc = "Select PB0 as the source input for the EXTI0 external interrupt"]
+    #[inline(always)]
+    pub fn pb0(self) -> &'a mut W {
+        self.variant(EXTI0_A::Pb0)
+    }
+    #[doc = "Select PC0 as the source input for the EXTI0 external interrupt"]
+    #[inline(always)]
+    pub fn pc0(self) -> &'a mut W {
+        self.variant(EXTI0_A::Pc0)
+    }
+}
+#[doc = "Field `EXTI1` reader - EXTI 1 configuration bits"]
+pub type EXTI1_R = crate::FieldReader<u8, EXTI1_A>;
+#[doc = "EXTI 1 configuration bits\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum EXTI1_A {
+    #[doc = "0: Select PA1 as the source input for the EXTI1 external interrupt"]
+    Pa1 = 0,
+    #[doc = "1: Select PB1 as the source input for the EXTI1 external interrupt"]
+    Pb1 = 1,
+    #[doc = "2: Select PC1 as the source input for the EXTI1 external interrupt"]
+    Pc1 = 2,
+}
+impl From<EXTI1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EXTI1_A) -> Self {
+        variant as _
+    }
+}
+impl EXTI1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<EXTI1_A> {
+        match self.bits {
+            0 => Some(EXTI1_A::Pa1),
+            1 => Some(EXTI1_A::Pb1),
+            2 => Some(EXTI1_A::Pc1),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Pa1`"]
+    #[inline(always)]
+    pub fn is_pa1(&self) -> bool {
+        *self == EXTI1_A::Pa1
+    }
+    #[doc = "Checks if the value of the field is `Pb1`"]
+    #[inline(always)]
+    pub fn is_pb1(&self) -> bool {
+        *self == EXTI1_A::Pb1
+    }
+    #[doc = "Checks if the value of the field is `Pc1`"]
+    #[inline(always)]
+    pub fn is_pc1(&self) -> bool {
+        *self == EXTI1_A::Pc1
+    }
+}
+#[doc = "Field `EXTI1` writer - EXTI 1 configuration bits"]
+pub type EXTI1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI1_A, 3, O>;
+impl<'a, const O: u8> EXTI1_W<'a, O> {
+    #[doc = "Select PA1 as the source input for the EXTI1 external interrupt"]
+    #[inline(always)]
+    pub fn pa1(self) -> &'a mut W {
+        self.variant(EXTI1_A::Pa1)
+    }
+    #[doc = "Select PB1 as the source input for the EXTI1 external interrupt"]
+    #[inline(always)]
+    pub fn pb1(self) -> &'a mut W {
+        self.variant(EXTI1_A::Pb1)
+    }
+    #[doc = "Select PC1 as the source input for the EXTI1 external interrupt"]
+    #[inline(always)]
+    pub fn pc1(self) -> &'a mut W {
+        self.variant(EXTI1_A::Pc1)
+    }
+}
+#[doc = "Field `EXTI2` reader - EXTI 2 configuration bits"]
+pub type EXTI2_R = crate::FieldReader<u8, EXTI2_A>;
+#[doc = "EXTI 2 configuration bits\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum EXTI2_A {
+    #[doc = "0: Select PA2 as the source input for the EXTI2 external interrupt"]
+    Pa2 = 0,
+    #[doc = "1: Select PB2 as the source input for the EXTI2 external interrupt"]
+    Pb2 = 1,
+    #[doc = "2: Select PC2 as the source input for the EXTI2 external interrupt"]
+    Pc2 = 2,
+}
+impl From<EXTI2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EXTI2_A) -> Self {
+        variant as _
+    }
+}
+impl EXTI2_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<EXTI2_A> {
+        match self.bits {
+            0 => Some(EXTI2_A::Pa2),
+            1 => Some(EXTI2_A::Pb2),
+            2 => Some(EXTI2_A::Pc2),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Pa2`"]
+    #[inline(always)]
+    pub fn is_pa2(&self) -> bool {
+        *self == EXTI2_A::Pa2
+    }
+    #[doc = "Checks if the value of the field is `Pb2`"]
+    #[inline(always)]
+    pub fn is_pb2(&self) -> bool {
+        *self == EXTI2_A::Pb2
+    }
+    #[doc = "Checks if the value of the field is `Pc2`"]
+    #[inline(always)]
+    pub fn is_pc2(&self) -> bool {
+        *self == EXTI2_A::Pc2
+    }
+}
+#[doc = "Field `EXTI2` writer - EXTI 2 configuration bits"]
+pub type EXTI2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI2_A, 3, O>;
+impl<'a, const O: u8> EXTI2_W<'a, O> {
+    #[doc = "Select PA2 as the source input for the EXTI2 external interrupt"]
+    #[inline(always)]
+    pub fn pa2(self) -> &'a mut W {
+        self.variant(EXTI2_A::Pa2)
+    }
+    #[doc = "Select PB2 as the source input for the EXTI2 external interrupt"]
+    #[inline(always)]
+    pub fn pb2(self) -> &'a mut W {
+        self.variant(EXTI2_A::Pb2)
+    }
+    #[doc = "Select PC2 as the source input for the EXTI2 external interrupt"]
+    #[inline(always)]
+    pub fn pc2(self) -> &'a mut W {
+        self.variant(EXTI2_A::Pc2)
+    }
+}
+#[doc = "Field `EXTI3` reader - EXTI 3 configuration bits"]
+pub type EXTI3_R = crate::FieldReader<u8, EXTI3_A>;
 #[doc = "EXTI 3 configuration bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +250,6 @@ impl From<EXTI3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXTI3` reader - EXTI 3 configuration bits"]
-pub type EXTI3_R = crate::FieldReader<u8, EXTI3_A>;
 impl EXTI3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -112,243 +307,48 @@ impl<'a, const O: u8> EXTI3_W<'a, O> {
         self.variant(EXTI3_A::Ph3)
     }
 }
-#[doc = "EXTI 2 configuration bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum EXTI2_A {
-    #[doc = "0: Select PA2 as the source input for the EXTI2 external interrupt"]
-    Pa2 = 0,
-    #[doc = "1: Select PB2 as the source input for the EXTI2 external interrupt"]
-    Pb2 = 1,
-    #[doc = "2: Select PC2 as the source input for the EXTI2 external interrupt"]
-    Pc2 = 2,
-}
-impl From<EXTI2_A> for u8 {
-    #[inline(always)]
-    fn from(variant: EXTI2_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `EXTI2` reader - EXTI 2 configuration bits"]
-pub type EXTI2_R = crate::FieldReader<u8, EXTI2_A>;
-impl EXTI2_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<EXTI2_A> {
-        match self.bits {
-            0 => Some(EXTI2_A::Pa2),
-            1 => Some(EXTI2_A::Pb2),
-            2 => Some(EXTI2_A::Pc2),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Pa2`"]
-    #[inline(always)]
-    pub fn is_pa2(&self) -> bool {
-        *self == EXTI2_A::Pa2
-    }
-    #[doc = "Checks if the value of the field is `Pb2`"]
-    #[inline(always)]
-    pub fn is_pb2(&self) -> bool {
-        *self == EXTI2_A::Pb2
-    }
-    #[doc = "Checks if the value of the field is `Pc2`"]
-    #[inline(always)]
-    pub fn is_pc2(&self) -> bool {
-        *self == EXTI2_A::Pc2
-    }
-}
-#[doc = "Field `EXTI2` writer - EXTI 2 configuration bits"]
-pub type EXTI2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI2_A, 3, O>;
-impl<'a, const O: u8> EXTI2_W<'a, O> {
-    #[doc = "Select PA2 as the source input for the EXTI2 external interrupt"]
-    #[inline(always)]
-    pub fn pa2(self) -> &'a mut W {
-        self.variant(EXTI2_A::Pa2)
-    }
-    #[doc = "Select PB2 as the source input for the EXTI2 external interrupt"]
-    #[inline(always)]
-    pub fn pb2(self) -> &'a mut W {
-        self.variant(EXTI2_A::Pb2)
-    }
-    #[doc = "Select PC2 as the source input for the EXTI2 external interrupt"]
-    #[inline(always)]
-    pub fn pc2(self) -> &'a mut W {
-        self.variant(EXTI2_A::Pc2)
-    }
-}
-#[doc = "EXTI 1 configuration bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum EXTI1_A {
-    #[doc = "0: Select PA1 as the source input for the EXTI1 external interrupt"]
-    Pa1 = 0,
-    #[doc = "1: Select PB1 as the source input for the EXTI1 external interrupt"]
-    Pb1 = 1,
-    #[doc = "2: Select PC1 as the source input for the EXTI1 external interrupt"]
-    Pc1 = 2,
-}
-impl From<EXTI1_A> for u8 {
-    #[inline(always)]
-    fn from(variant: EXTI1_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `EXTI1` reader - EXTI 1 configuration bits"]
-pub type EXTI1_R = crate::FieldReader<u8, EXTI1_A>;
-impl EXTI1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<EXTI1_A> {
-        match self.bits {
-            0 => Some(EXTI1_A::Pa1),
-            1 => Some(EXTI1_A::Pb1),
-            2 => Some(EXTI1_A::Pc1),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Pa1`"]
-    #[inline(always)]
-    pub fn is_pa1(&self) -> bool {
-        *self == EXTI1_A::Pa1
-    }
-    #[doc = "Checks if the value of the field is `Pb1`"]
-    #[inline(always)]
-    pub fn is_pb1(&self) -> bool {
-        *self == EXTI1_A::Pb1
-    }
-    #[doc = "Checks if the value of the field is `Pc1`"]
-    #[inline(always)]
-    pub fn is_pc1(&self) -> bool {
-        *self == EXTI1_A::Pc1
-    }
-}
-#[doc = "Field `EXTI1` writer - EXTI 1 configuration bits"]
-pub type EXTI1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI1_A, 3, O>;
-impl<'a, const O: u8> EXTI1_W<'a, O> {
-    #[doc = "Select PA1 as the source input for the EXTI1 external interrupt"]
-    #[inline(always)]
-    pub fn pa1(self) -> &'a mut W {
-        self.variant(EXTI1_A::Pa1)
-    }
-    #[doc = "Select PB1 as the source input for the EXTI1 external interrupt"]
-    #[inline(always)]
-    pub fn pb1(self) -> &'a mut W {
-        self.variant(EXTI1_A::Pb1)
-    }
-    #[doc = "Select PC1 as the source input for the EXTI1 external interrupt"]
-    #[inline(always)]
-    pub fn pc1(self) -> &'a mut W {
-        self.variant(EXTI1_A::Pc1)
-    }
-}
-#[doc = "EXTI 0 configuration bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum EXTI0_A {
-    #[doc = "0: Select PA0 as the source input for the EXTI0 external interrupt"]
-    Pa0 = 0,
-    #[doc = "1: Select PB0 as the source input for the EXTI0 external interrupt"]
-    Pb0 = 1,
-    #[doc = "2: Select PC0 as the source input for the EXTI0 external interrupt"]
-    Pc0 = 2,
-}
-impl From<EXTI0_A> for u8 {
-    #[inline(always)]
-    fn from(variant: EXTI0_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `EXTI0` reader - EXTI 0 configuration bits"]
-pub type EXTI0_R = crate::FieldReader<u8, EXTI0_A>;
-impl EXTI0_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<EXTI0_A> {
-        match self.bits {
-            0 => Some(EXTI0_A::Pa0),
-            1 => Some(EXTI0_A::Pb0),
-            2 => Some(EXTI0_A::Pc0),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Pa0`"]
-    #[inline(always)]
-    pub fn is_pa0(&self) -> bool {
-        *self == EXTI0_A::Pa0
-    }
-    #[doc = "Checks if the value of the field is `Pb0`"]
-    #[inline(always)]
-    pub fn is_pb0(&self) -> bool {
-        *self == EXTI0_A::Pb0
-    }
-    #[doc = "Checks if the value of the field is `Pc0`"]
-    #[inline(always)]
-    pub fn is_pc0(&self) -> bool {
-        *self == EXTI0_A::Pc0
-    }
-}
-#[doc = "Field `EXTI0` writer - EXTI 0 configuration bits"]
-pub type EXTI0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTICR1_SPEC, u8, EXTI0_A, 3, O>;
-impl<'a, const O: u8> EXTI0_W<'a, O> {
-    #[doc = "Select PA0 as the source input for the EXTI0 external interrupt"]
-    #[inline(always)]
-    pub fn pa0(self) -> &'a mut W {
-        self.variant(EXTI0_A::Pa0)
-    }
-    #[doc = "Select PB0 as the source input for the EXTI0 external interrupt"]
-    #[inline(always)]
-    pub fn pb0(self) -> &'a mut W {
-        self.variant(EXTI0_A::Pb0)
-    }
-    #[doc = "Select PC0 as the source input for the EXTI0 external interrupt"]
-    #[inline(always)]
-    pub fn pc0(self) -> &'a mut W {
-        self.variant(EXTI0_A::Pc0)
-    }
-}
 impl R {
-    #[doc = "Bits 12:14 - EXTI 3 configuration bits"]
+    #[doc = "Bits 0:2 - EXTI 0 configuration bits"]
     #[inline(always)]
-    pub fn exti3(&self) -> EXTI3_R {
-        EXTI3_R::new(((self.bits >> 12) & 7) as u8)
-    }
-    #[doc = "Bits 8:10 - EXTI 2 configuration bits"]
-    #[inline(always)]
-    pub fn exti2(&self) -> EXTI2_R {
-        EXTI2_R::new(((self.bits >> 8) & 7) as u8)
+    pub fn exti0(&self) -> EXTI0_R {
+        EXTI0_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - EXTI 1 configuration bits"]
     #[inline(always)]
     pub fn exti1(&self) -> EXTI1_R {
         EXTI1_R::new(((self.bits >> 4) & 7) as u8)
     }
-    #[doc = "Bits 0:2 - EXTI 0 configuration bits"]
+    #[doc = "Bits 8:10 - EXTI 2 configuration bits"]
     #[inline(always)]
-    pub fn exti0(&self) -> EXTI0_R {
-        EXTI0_R::new((self.bits & 7) as u8)
+    pub fn exti2(&self) -> EXTI2_R {
+        EXTI2_R::new(((self.bits >> 8) & 7) as u8)
+    }
+    #[doc = "Bits 12:14 - EXTI 3 configuration bits"]
+    #[inline(always)]
+    pub fn exti3(&self) -> EXTI3_R {
+        EXTI3_R::new(((self.bits >> 12) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 12:14 - EXTI 3 configuration bits"]
+    #[doc = "Bits 0:2 - EXTI 0 configuration bits"]
     #[inline(always)]
-    pub fn exti3(&mut self) -> EXTI3_W<12> {
-        EXTI3_W::new(self)
-    }
-    #[doc = "Bits 8:10 - EXTI 2 configuration bits"]
-    #[inline(always)]
-    pub fn exti2(&mut self) -> EXTI2_W<8> {
-        EXTI2_W::new(self)
+    pub fn exti0(&mut self) -> EXTI0_W<0> {
+        EXTI0_W::new(self)
     }
     #[doc = "Bits 4:6 - EXTI 1 configuration bits"]
     #[inline(always)]
     pub fn exti1(&mut self) -> EXTI1_W<4> {
         EXTI1_W::new(self)
     }
-    #[doc = "Bits 0:2 - EXTI 0 configuration bits"]
+    #[doc = "Bits 8:10 - EXTI 2 configuration bits"]
     #[inline(always)]
-    pub fn exti0(&mut self) -> EXTI0_W<0> {
-        EXTI0_W::new(self)
+    pub fn exti2(&mut self) -> EXTI2_W<8> {
+        EXTI2_W::new(self)
+    }
+    #[doc = "Bits 12:14 - EXTI 3 configuration bits"]
+    #[inline(always)]
+    pub fn exti3(&mut self) -> EXTI3_W<12> {
+        EXTI3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

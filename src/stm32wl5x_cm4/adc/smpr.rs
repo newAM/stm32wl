@@ -34,6 +34,8 @@ impl From<crate::W<SMPR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SMP1` reader - SMP1"]
+pub type SMP1_R = crate::FieldReader<u8, SMP1_A>;
 #[doc = "SMP1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,8 +63,6 @@ impl From<SMP1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SMP1` reader - SMP1"]
-pub type SMP1_R = crate::FieldReader<u8, SMP1_A>;
 impl SMP1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -164,12 +164,12 @@ impl<'a, const O: u8> SMP1_W<'a, O> {
         self.variant(SMP1_A::Cycles1605)
     }
 }
-#[doc = "SMP2"]
-pub use SMP1_A as SMP2_A;
 #[doc = "Field `SMP2` reader - SMP2"]
 pub use SMP1_R as SMP2_R;
 #[doc = "Field `SMP2` writer - SMP2"]
 pub use SMP1_W as SMP2_W;
+#[doc = "Field `SMPSEL0` reader - SMPSEL"]
+pub type SMPSEL0_R = crate::BitReader<SMPSEL0_A>;
 #[doc = "SMPSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMPSEL0_A {
@@ -184,8 +184,6 @@ impl From<SMPSEL0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMPSEL0` reader - SMPSEL"]
-pub type SMPSEL0_R = crate::BitReader<SMPSEL0_A>;
 impl SMPSEL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -220,40 +218,6 @@ impl<'a, const O: u8> SMPSEL0_W<'a, O> {
         self.variant(SMPSEL0_A::Smp2)
     }
 }
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL1_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL2_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL3_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL4_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL5_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL6_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL7_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL8_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL9_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL10_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL11_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL12_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL13_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL14_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL15_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL16_A;
-#[doc = "SMPSEL"]
-pub use SMPSEL0_A as SMPSEL17_A;
 #[doc = "Field `SMPSEL1` reader - SMPSEL"]
 pub use SMPSEL0_R as SMPSEL1_R;
 #[doc = "Field `SMPSEL2` reader - SMPSEL"]

@@ -2,11 +2,11 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x04 - Configuration register"]
-    pub cfr: crate::Reg<cfr::CFR_SPEC>,
+    pub cfr: CFR,
     #[doc = "0x08 - Status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
 }
 #[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
 pub type CR = crate::Reg<cr::CR_SPEC>;

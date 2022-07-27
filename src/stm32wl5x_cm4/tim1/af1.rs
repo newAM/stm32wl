@@ -34,6 +34,308 @@ impl From<crate::W<AF1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BKINE` reader - BRK BKIN input enable"]
+pub type BKINE_R = crate::BitReader<BKINE_A>;
+#[doc = "BRK BKIN input enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKINE_A {
+    #[doc = "0: BKIN input disabled"]
+    Disabled = 0,
+    #[doc = "1: BKIN input enabled"]
+    Enabled = 1,
+}
+impl From<BKINE_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKINE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKINE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKINE_A {
+        match self.bits {
+            false => BKINE_A::Disabled,
+            true => BKINE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == BKINE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == BKINE_A::Enabled
+    }
+}
+#[doc = "Field `BKINE` writer - BRK BKIN input enable"]
+pub type BKINE_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKINE_A, O>;
+impl<'a, const O: u8> BKINE_W<'a, O> {
+    #[doc = "BKIN input disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(BKINE_A::Disabled)
+    }
+    #[doc = "BKIN input enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(BKINE_A::Enabled)
+    }
+}
+#[doc = "Field `BKCMP1E` reader - BRK COMP1 enable"]
+pub type BKCMP1E_R = crate::BitReader<BKCMP1E_A>;
+#[doc = "BRK COMP1 enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKCMP1E_A {
+    #[doc = "0: COMP1 input disabled"]
+    Disabled = 0,
+    #[doc = "1: COMP1 input enabled"]
+    Enabled = 1,
+}
+impl From<BKCMP1E_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKCMP1E_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKCMP1E_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKCMP1E_A {
+        match self.bits {
+            false => BKCMP1E_A::Disabled,
+            true => BKCMP1E_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == BKCMP1E_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == BKCMP1E_A::Enabled
+    }
+}
+#[doc = "Field `BKCMP1E` writer - BRK COMP1 enable"]
+pub type BKCMP1E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP1E_A, O>;
+impl<'a, const O: u8> BKCMP1E_W<'a, O> {
+    #[doc = "COMP1 input disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(BKCMP1E_A::Disabled)
+    }
+    #[doc = "COMP1 input enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(BKCMP1E_A::Enabled)
+    }
+}
+#[doc = "Field `BKCMP2E` reader - BRK COMP2 enable"]
+pub type BKCMP2E_R = crate::BitReader<BKCMP2E_A>;
+#[doc = "BRK COMP2 enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKCMP2E_A {
+    #[doc = "0: COMP2 input disabled"]
+    Disabled = 0,
+    #[doc = "1: COMP2 input enabled"]
+    Enabled = 1,
+}
+impl From<BKCMP2E_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKCMP2E_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKCMP2E_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKCMP2E_A {
+        match self.bits {
+            false => BKCMP2E_A::Disabled,
+            true => BKCMP2E_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == BKCMP2E_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == BKCMP2E_A::Enabled
+    }
+}
+#[doc = "Field `BKCMP2E` writer - BRK COMP2 enable"]
+pub type BKCMP2E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP2E_A, O>;
+impl<'a, const O: u8> BKCMP2E_W<'a, O> {
+    #[doc = "COMP2 input disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(BKCMP2E_A::Disabled)
+    }
+    #[doc = "COMP2 input enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(BKCMP2E_A::Enabled)
+    }
+}
+#[doc = "Field `BKINP` reader - BRK BKIN input polarity"]
+pub type BKINP_R = crate::BitReader<BKINP_A>;
+#[doc = "BRK BKIN input polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKINP_A {
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
+}
+impl From<BKINP_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKINP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKINP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKINP_A {
+        match self.bits {
+            false => BKINP_A::NotInverted,
+            true => BKINP_A::Inverted,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotInverted`"]
+    #[inline(always)]
+    pub fn is_not_inverted(&self) -> bool {
+        *self == BKINP_A::NotInverted
+    }
+    #[doc = "Checks if the value of the field is `Inverted`"]
+    #[inline(always)]
+    pub fn is_inverted(&self) -> bool {
+        *self == BKINP_A::Inverted
+    }
+}
+#[doc = "Field `BKINP` writer - BRK BKIN input polarity"]
+pub type BKINP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKINP_A, O>;
+impl<'a, const O: u8> BKINP_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
+    #[inline(always)]
+    pub fn not_inverted(self) -> &'a mut W {
+        self.variant(BKINP_A::NotInverted)
+    }
+    #[doc = "Input polarity inverted"]
+    #[inline(always)]
+    pub fn inverted(self) -> &'a mut W {
+        self.variant(BKINP_A::Inverted)
+    }
+}
+#[doc = "Field `BKCMP1P` reader - BRK COMP1 input polarity"]
+pub type BKCMP1P_R = crate::BitReader<BKCMP1P_A>;
+#[doc = "BRK COMP1 input polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKCMP1P_A {
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
+}
+impl From<BKCMP1P_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKCMP1P_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKCMP1P_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKCMP1P_A {
+        match self.bits {
+            false => BKCMP1P_A::NotInverted,
+            true => BKCMP1P_A::Inverted,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotInverted`"]
+    #[inline(always)]
+    pub fn is_not_inverted(&self) -> bool {
+        *self == BKCMP1P_A::NotInverted
+    }
+    #[doc = "Checks if the value of the field is `Inverted`"]
+    #[inline(always)]
+    pub fn is_inverted(&self) -> bool {
+        *self == BKCMP1P_A::Inverted
+    }
+}
+#[doc = "Field `BKCMP1P` writer - BRK COMP1 input polarity"]
+pub type BKCMP1P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP1P_A, O>;
+impl<'a, const O: u8> BKCMP1P_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
+    #[inline(always)]
+    pub fn not_inverted(self) -> &'a mut W {
+        self.variant(BKCMP1P_A::NotInverted)
+    }
+    #[doc = "Input polarity inverted"]
+    #[inline(always)]
+    pub fn inverted(self) -> &'a mut W {
+        self.variant(BKCMP1P_A::Inverted)
+    }
+}
+#[doc = "Field `BKCMP2P` reader - BRK COMP2 input polarity"]
+pub type BKCMP2P_R = crate::BitReader<BKCMP2P_A>;
+#[doc = "BRK COMP2 input polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BKCMP2P_A {
+    #[doc = "0: Input polarity not inverted"]
+    NotInverted = 0,
+    #[doc = "1: Input polarity inverted"]
+    Inverted = 1,
+}
+impl From<BKCMP2P_A> for bool {
+    #[inline(always)]
+    fn from(variant: BKCMP2P_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BKCMP2P_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BKCMP2P_A {
+        match self.bits {
+            false => BKCMP2P_A::NotInverted,
+            true => BKCMP2P_A::Inverted,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotInverted`"]
+    #[inline(always)]
+    pub fn is_not_inverted(&self) -> bool {
+        *self == BKCMP2P_A::NotInverted
+    }
+    #[doc = "Checks if the value of the field is `Inverted`"]
+    #[inline(always)]
+    pub fn is_inverted(&self) -> bool {
+        *self == BKCMP2P_A::Inverted
+    }
+}
+#[doc = "Field `BKCMP2P` writer - BRK COMP2 input polarity"]
+pub type BKCMP2P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP2P_A, O>;
+impl<'a, const O: u8> BKCMP2P_W<'a, O> {
+    #[doc = "Input polarity not inverted"]
+    #[inline(always)]
+    pub fn not_inverted(self) -> &'a mut W {
+        self.variant(BKCMP2P_A::NotInverted)
+    }
+    #[doc = "Input polarity inverted"]
+    #[inline(always)]
+    pub fn inverted(self) -> &'a mut W {
+        self.variant(BKCMP2P_A::Inverted)
+    }
+}
+#[doc = "Field `ETRSEL` reader - ETR source selection"]
+pub type ETRSEL_R = crate::FieldReader<u8, ETRSEL_A>;
 #[doc = "ETR source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +353,6 @@ impl From<ETRSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETRSEL` reader - ETR source selection"]
-pub type ETRSEL_R = crate::FieldReader<u8, ETRSEL_A>;
 impl ETRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,378 +399,78 @@ impl<'a, const O: u8> ETRSEL_W<'a, O> {
         self.variant(ETRSEL_A::Comp2)
     }
 }
-#[doc = "BRK COMP2 input polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKCMP2P_A {
-    #[doc = "0: Input polarity not inverted"]
-    NotInverted = 0,
-    #[doc = "1: Input polarity inverted"]
-    Inverted = 1,
-}
-impl From<BKCMP2P_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKCMP2P_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKCMP2P` reader - BRK COMP2 input polarity"]
-pub type BKCMP2P_R = crate::BitReader<BKCMP2P_A>;
-impl BKCMP2P_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKCMP2P_A {
-        match self.bits {
-            false => BKCMP2P_A::NotInverted,
-            true => BKCMP2P_A::Inverted,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotInverted`"]
-    #[inline(always)]
-    pub fn is_not_inverted(&self) -> bool {
-        *self == BKCMP2P_A::NotInverted
-    }
-    #[doc = "Checks if the value of the field is `Inverted`"]
-    #[inline(always)]
-    pub fn is_inverted(&self) -> bool {
-        *self == BKCMP2P_A::Inverted
-    }
-}
-#[doc = "Field `BKCMP2P` writer - BRK COMP2 input polarity"]
-pub type BKCMP2P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP2P_A, O>;
-impl<'a, const O: u8> BKCMP2P_W<'a, O> {
-    #[doc = "Input polarity not inverted"]
-    #[inline(always)]
-    pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BKCMP2P_A::NotInverted)
-    }
-    #[doc = "Input polarity inverted"]
-    #[inline(always)]
-    pub fn inverted(self) -> &'a mut W {
-        self.variant(BKCMP2P_A::Inverted)
-    }
-}
-#[doc = "BRK COMP1 input polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKCMP1P_A {
-    #[doc = "0: Input polarity not inverted"]
-    NotInverted = 0,
-    #[doc = "1: Input polarity inverted"]
-    Inverted = 1,
-}
-impl From<BKCMP1P_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKCMP1P_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKCMP1P` reader - BRK COMP1 input polarity"]
-pub type BKCMP1P_R = crate::BitReader<BKCMP1P_A>;
-impl BKCMP1P_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKCMP1P_A {
-        match self.bits {
-            false => BKCMP1P_A::NotInverted,
-            true => BKCMP1P_A::Inverted,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotInverted`"]
-    #[inline(always)]
-    pub fn is_not_inverted(&self) -> bool {
-        *self == BKCMP1P_A::NotInverted
-    }
-    #[doc = "Checks if the value of the field is `Inverted`"]
-    #[inline(always)]
-    pub fn is_inverted(&self) -> bool {
-        *self == BKCMP1P_A::Inverted
-    }
-}
-#[doc = "Field `BKCMP1P` writer - BRK COMP1 input polarity"]
-pub type BKCMP1P_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP1P_A, O>;
-impl<'a, const O: u8> BKCMP1P_W<'a, O> {
-    #[doc = "Input polarity not inverted"]
-    #[inline(always)]
-    pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BKCMP1P_A::NotInverted)
-    }
-    #[doc = "Input polarity inverted"]
-    #[inline(always)]
-    pub fn inverted(self) -> &'a mut W {
-        self.variant(BKCMP1P_A::Inverted)
-    }
-}
-#[doc = "BRK BKIN input polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKINP_A {
-    #[doc = "0: Input polarity not inverted"]
-    NotInverted = 0,
-    #[doc = "1: Input polarity inverted"]
-    Inverted = 1,
-}
-impl From<BKINP_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKINP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKINP` reader - BRK BKIN input polarity"]
-pub type BKINP_R = crate::BitReader<BKINP_A>;
-impl BKINP_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKINP_A {
-        match self.bits {
-            false => BKINP_A::NotInverted,
-            true => BKINP_A::Inverted,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotInverted`"]
-    #[inline(always)]
-    pub fn is_not_inverted(&self) -> bool {
-        *self == BKINP_A::NotInverted
-    }
-    #[doc = "Checks if the value of the field is `Inverted`"]
-    #[inline(always)]
-    pub fn is_inverted(&self) -> bool {
-        *self == BKINP_A::Inverted
-    }
-}
-#[doc = "Field `BKINP` writer - BRK BKIN input polarity"]
-pub type BKINP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKINP_A, O>;
-impl<'a, const O: u8> BKINP_W<'a, O> {
-    #[doc = "Input polarity not inverted"]
-    #[inline(always)]
-    pub fn not_inverted(self) -> &'a mut W {
-        self.variant(BKINP_A::NotInverted)
-    }
-    #[doc = "Input polarity inverted"]
-    #[inline(always)]
-    pub fn inverted(self) -> &'a mut W {
-        self.variant(BKINP_A::Inverted)
-    }
-}
-#[doc = "BRK COMP2 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKCMP2E_A {
-    #[doc = "0: COMP2 input disabled"]
-    Disabled = 0,
-    #[doc = "1: COMP2 input enabled"]
-    Enabled = 1,
-}
-impl From<BKCMP2E_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKCMP2E_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKCMP2E` reader - BRK COMP2 enable"]
-pub type BKCMP2E_R = crate::BitReader<BKCMP2E_A>;
-impl BKCMP2E_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKCMP2E_A {
-        match self.bits {
-            false => BKCMP2E_A::Disabled,
-            true => BKCMP2E_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == BKCMP2E_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == BKCMP2E_A::Enabled
-    }
-}
-#[doc = "Field `BKCMP2E` writer - BRK COMP2 enable"]
-pub type BKCMP2E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP2E_A, O>;
-impl<'a, const O: u8> BKCMP2E_W<'a, O> {
-    #[doc = "COMP2 input disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(BKCMP2E_A::Disabled)
-    }
-    #[doc = "COMP2 input enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(BKCMP2E_A::Enabled)
-    }
-}
-#[doc = "BRK COMP1 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKCMP1E_A {
-    #[doc = "0: COMP1 input disabled"]
-    Disabled = 0,
-    #[doc = "1: COMP1 input enabled"]
-    Enabled = 1,
-}
-impl From<BKCMP1E_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKCMP1E_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKCMP1E` reader - BRK COMP1 enable"]
-pub type BKCMP1E_R = crate::BitReader<BKCMP1E_A>;
-impl BKCMP1E_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKCMP1E_A {
-        match self.bits {
-            false => BKCMP1E_A::Disabled,
-            true => BKCMP1E_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == BKCMP1E_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == BKCMP1E_A::Enabled
-    }
-}
-#[doc = "Field `BKCMP1E` writer - BRK COMP1 enable"]
-pub type BKCMP1E_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKCMP1E_A, O>;
-impl<'a, const O: u8> BKCMP1E_W<'a, O> {
-    #[doc = "COMP1 input disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(BKCMP1E_A::Disabled)
-    }
-    #[doc = "COMP1 input enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(BKCMP1E_A::Enabled)
-    }
-}
-#[doc = "BRK BKIN input enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKINE_A {
-    #[doc = "0: BKIN input disabled"]
-    Disabled = 0,
-    #[doc = "1: BKIN input enabled"]
-    Enabled = 1,
-}
-impl From<BKINE_A> for bool {
-    #[inline(always)]
-    fn from(variant: BKINE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BKINE` reader - BRK BKIN input enable"]
-pub type BKINE_R = crate::BitReader<BKINE_A>;
-impl BKINE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BKINE_A {
-        match self.bits {
-            false => BKINE_A::Disabled,
-            true => BKINE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == BKINE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == BKINE_A::Enabled
-    }
-}
-#[doc = "Field `BKINE` writer - BRK BKIN input enable"]
-pub type BKINE_W<'a, const O: u8> = crate::BitWriter<'a, u32, AF1_SPEC, BKINE_A, O>;
-impl<'a, const O: u8> BKINE_W<'a, O> {
-    #[doc = "BKIN input disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(BKINE_A::Disabled)
-    }
-    #[doc = "BKIN input enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(BKINE_A::Enabled)
-    }
-}
 impl R {
-    #[doc = "Bits 14:17 - ETR source selection"]
+    #[doc = "Bit 0 - BRK BKIN input enable"]
     #[inline(always)]
-    pub fn etrsel(&self) -> ETRSEL_R {
-        ETRSEL_R::new(((self.bits >> 14) & 0x0f) as u8)
-    }
-    #[doc = "Bit 11 - BRK COMP2 input polarity"]
-    #[inline(always)]
-    pub fn bkcmp2p(&self) -> BKCMP2P_R {
-        BKCMP2P_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - BRK COMP1 input polarity"]
-    #[inline(always)]
-    pub fn bkcmp1p(&self) -> BKCMP1P_R {
-        BKCMP1P_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 9 - BRK BKIN input polarity"]
-    #[inline(always)]
-    pub fn bkinp(&self) -> BKINP_R {
-        BKINP_R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 2 - BRK COMP2 enable"]
-    #[inline(always)]
-    pub fn bkcmp2e(&self) -> BKCMP2E_R {
-        BKCMP2E_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn bkine(&self) -> BKINE_R {
+        BKINE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - BRK COMP1 enable"]
     #[inline(always)]
     pub fn bkcmp1e(&self) -> BKCMP1E_R {
         BKCMP1E_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - BRK BKIN input enable"]
+    #[doc = "Bit 2 - BRK COMP2 enable"]
     #[inline(always)]
-    pub fn bkine(&self) -> BKINE_R {
-        BKINE_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bits 14:17 - ETR source selection"]
-    #[inline(always)]
-    pub fn etrsel(&mut self) -> ETRSEL_W<14> {
-        ETRSEL_W::new(self)
-    }
-    #[doc = "Bit 11 - BRK COMP2 input polarity"]
-    #[inline(always)]
-    pub fn bkcmp2p(&mut self) -> BKCMP2P_W<11> {
-        BKCMP2P_W::new(self)
-    }
-    #[doc = "Bit 10 - BRK COMP1 input polarity"]
-    #[inline(always)]
-    pub fn bkcmp1p(&mut self) -> BKCMP1P_W<10> {
-        BKCMP1P_W::new(self)
+    pub fn bkcmp2e(&self) -> BKCMP2E_R {
+        BKCMP2E_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 9 - BRK BKIN input polarity"]
     #[inline(always)]
-    pub fn bkinp(&mut self) -> BKINP_W<9> {
-        BKINP_W::new(self)
+    pub fn bkinp(&self) -> BKINP_R {
+        BKINP_R::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 2 - BRK COMP2 enable"]
+    #[doc = "Bit 10 - BRK COMP1 input polarity"]
     #[inline(always)]
-    pub fn bkcmp2e(&mut self) -> BKCMP2E_W<2> {
-        BKCMP2E_W::new(self)
+    pub fn bkcmp1p(&self) -> BKCMP1P_R {
+        BKCMP1P_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - BRK COMP2 input polarity"]
+    #[inline(always)]
+    pub fn bkcmp2p(&self) -> BKCMP2P_R {
+        BKCMP2P_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bits 14:17 - ETR source selection"]
+    #[inline(always)]
+    pub fn etrsel(&self) -> ETRSEL_R {
+        ETRSEL_R::new(((self.bits >> 14) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - BRK BKIN input enable"]
+    #[inline(always)]
+    pub fn bkine(&mut self) -> BKINE_W<0> {
+        BKINE_W::new(self)
     }
     #[doc = "Bit 1 - BRK COMP1 enable"]
     #[inline(always)]
     pub fn bkcmp1e(&mut self) -> BKCMP1E_W<1> {
         BKCMP1E_W::new(self)
     }
-    #[doc = "Bit 0 - BRK BKIN input enable"]
+    #[doc = "Bit 2 - BRK COMP2 enable"]
     #[inline(always)]
-    pub fn bkine(&mut self) -> BKINE_W<0> {
-        BKINE_W::new(self)
+    pub fn bkcmp2e(&mut self) -> BKCMP2E_W<2> {
+        BKCMP2E_W::new(self)
+    }
+    #[doc = "Bit 9 - BRK BKIN input polarity"]
+    #[inline(always)]
+    pub fn bkinp(&mut self) -> BKINP_W<9> {
+        BKINP_W::new(self)
+    }
+    #[doc = "Bit 10 - BRK COMP1 input polarity"]
+    #[inline(always)]
+    pub fn bkcmp1p(&mut self) -> BKCMP1P_W<10> {
+        BKCMP1P_W::new(self)
+    }
+    #[doc = "Bit 11 - BRK COMP2 input polarity"]
+    #[inline(always)]
+    pub fn bkcmp2p(&mut self) -> BKCMP2P_W<11> {
+        BKCMP2P_W::new(self)
+    }
+    #[doc = "Bits 14:17 - ETR source selection"]
+    #[inline(always)]
+    pub fn etrsel(&mut self) -> ETRSEL_W<14> {
+        ETRSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -2,30 +2,30 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - rising trigger selection register"]
-    pub rtsr1: crate::Reg<rtsr1::RTSR1_SPEC>,
+    pub rtsr1: RTSR1,
     #[doc = "0x04 - falling trigger selection register"]
-    pub ftsr1: crate::Reg<ftsr1::FTSR1_SPEC>,
+    pub ftsr1: FTSR1,
     #[doc = "0x08 - software interrupt event register"]
-    pub swier1: crate::Reg<swier1::SWIER1_SPEC>,
+    pub swier1: SWIER1,
     #[doc = "0x0c - EXTI pending register"]
-    pub pr1: crate::Reg<pr1::PR1_SPEC>,
+    pub pr1: PR1,
     _reserved4: [u8; 0x10],
     #[doc = "0x20 - rising trigger selection register"]
-    pub rtsr2: crate::Reg<rtsr2::RTSR2_SPEC>,
+    pub rtsr2: RTSR2,
     #[doc = "0x24 - falling trigger selection register"]
-    pub ftsr2: crate::Reg<ftsr2::FTSR2_SPEC>,
+    pub ftsr2: FTSR2,
     #[doc = "0x28 - software interrupt event register"]
-    pub swier2: crate::Reg<swier2::SWIER2_SPEC>,
+    pub swier2: SWIER2,
     #[doc = "0x2c - pending register"]
-    pub pr2: crate::Reg<pr2::PR2_SPEC>,
+    pub pr2: PR2,
     _reserved8: [u8; 0x50],
     #[doc = "0x80 - interrupt mask register"]
-    pub c1imr1: crate::Reg<c1imr1::C1IMR1_SPEC>,
+    pub c1imr1: C1IMR1,
     #[doc = "0x84 - event mask register"]
-    pub emr1: crate::Reg<emr1::EMR1_SPEC>,
+    pub emr1: EMR1,
     _reserved10: [u8; 0x08],
     #[doc = "0x90 - interrupt mask register"]
-    pub c1imr2: crate::Reg<c1imr2::C1IMR2_SPEC>,
+    pub c1imr2: C1IMR2,
 }
 #[doc = "RTSR1 register accessor: an alias for `Reg<RTSR1_SPEC>`"]
 pub type RTSR1 = crate::Reg<rtsr1::RTSR1_SPEC>;

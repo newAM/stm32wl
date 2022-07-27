@@ -34,56 +34,258 @@ impl From<crate::W<CR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "UIF status bit remapping\n\nValue on reset: 0"]
+#[doc = "Field `CEN` reader - Counter enable"]
+pub type CEN_R = crate::BitReader<CEN_A>;
+#[doc = "Counter enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UIFREMAP_A {
-    #[doc = "0: No remapping. UIF status bit is not copied to TIMx_CNT register bit 31"]
+pub enum CEN_A {
+    #[doc = "0: Counter disabled"]
     Disabled = 0,
-    #[doc = "1: Remapping enabled. UIF status bit is copied to TIMx_CNT register bit 31"]
+    #[doc = "1: Counter enabled"]
     Enabled = 1,
 }
-impl From<UIFREMAP_A> for bool {
+impl From<CEN_A> for bool {
     #[inline(always)]
-    fn from(variant: UIFREMAP_A) -> Self {
+    fn from(variant: CEN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UIFREMAP` reader - UIF status bit remapping"]
-pub type UIFREMAP_R = crate::BitReader<UIFREMAP_A>;
-impl UIFREMAP_R {
+impl CEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UIFREMAP_A {
+    pub fn variant(&self) -> CEN_A {
         match self.bits {
-            false => UIFREMAP_A::Disabled,
-            true => UIFREMAP_A::Enabled,
+            false => CEN_A::Disabled,
+            true => CEN_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == UIFREMAP_A::Disabled
+        *self == CEN_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == UIFREMAP_A::Enabled
+        *self == CEN_A::Enabled
     }
 }
-#[doc = "Field `UIFREMAP` writer - UIF status bit remapping"]
-pub type UIFREMAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, UIFREMAP_A, O>;
-impl<'a, const O: u8> UIFREMAP_W<'a, O> {
-    #[doc = "No remapping. UIF status bit is not copied to TIMx_CNT register bit 31"]
+#[doc = "Field `CEN` writer - Counter enable"]
+pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, CEN_A, O>;
+impl<'a, const O: u8> CEN_W<'a, O> {
+    #[doc = "Counter disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(UIFREMAP_A::Disabled)
+        self.variant(CEN_A::Disabled)
     }
-    #[doc = "Remapping enabled. UIF status bit is copied to TIMx_CNT register bit 31"]
+    #[doc = "Counter enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(UIFREMAP_A::Enabled)
+        self.variant(CEN_A::Enabled)
     }
 }
+#[doc = "Field `UDIS` reader - Update disable"]
+pub type UDIS_R = crate::BitReader<UDIS_A>;
+#[doc = "Update disable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UDIS_A {
+    #[doc = "0: Update event enabled"]
+    Enabled = 0,
+    #[doc = "1: Update event disabled"]
+    Disabled = 1,
+}
+impl From<UDIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: UDIS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl UDIS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UDIS_A {
+        match self.bits {
+            false => UDIS_A::Enabled,
+            true => UDIS_A::Disabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == UDIS_A::Enabled
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == UDIS_A::Disabled
+    }
+}
+#[doc = "Field `UDIS` writer - Update disable"]
+pub type UDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, UDIS_A, O>;
+impl<'a, const O: u8> UDIS_W<'a, O> {
+    #[doc = "Update event enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(UDIS_A::Enabled)
+    }
+    #[doc = "Update event disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(UDIS_A::Disabled)
+    }
+}
+#[doc = "Field `URS` reader - Update request source"]
+pub type URS_R = crate::BitReader<URS_A>;
+#[doc = "Update request source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum URS_A {
+    #[doc = "0: Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
+    AnyEvent = 0,
+    #[doc = "1: Only counter overflow/underflow generates an update interrupt or DMA request"]
+    CounterOnly = 1,
+}
+impl From<URS_A> for bool {
+    #[inline(always)]
+    fn from(variant: URS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl URS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> URS_A {
+        match self.bits {
+            false => URS_A::AnyEvent,
+            true => URS_A::CounterOnly,
+        }
+    }
+    #[doc = "Checks if the value of the field is `AnyEvent`"]
+    #[inline(always)]
+    pub fn is_any_event(&self) -> bool {
+        *self == URS_A::AnyEvent
+    }
+    #[doc = "Checks if the value of the field is `CounterOnly`"]
+    #[inline(always)]
+    pub fn is_counter_only(&self) -> bool {
+        *self == URS_A::CounterOnly
+    }
+}
+#[doc = "Field `URS` writer - Update request source"]
+pub type URS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, URS_A, O>;
+impl<'a, const O: u8> URS_W<'a, O> {
+    #[doc = "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
+    #[inline(always)]
+    pub fn any_event(self) -> &'a mut W {
+        self.variant(URS_A::AnyEvent)
+    }
+    #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request"]
+    #[inline(always)]
+    pub fn counter_only(self) -> &'a mut W {
+        self.variant(URS_A::CounterOnly)
+    }
+}
+#[doc = "Field `OPM` reader - One pulse mode"]
+pub type OPM_R = crate::BitReader<OPM_A>;
+#[doc = "One pulse mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OPM_A {
+    #[doc = "0: Counter is not stopped at update event"]
+    Disabled = 0,
+    #[doc = "1: Counter stops counting at the next update event (clearing the CEN bit)"]
+    Enabled = 1,
+}
+impl From<OPM_A> for bool {
+    #[inline(always)]
+    fn from(variant: OPM_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OPM_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OPM_A {
+        match self.bits {
+            false => OPM_A::Disabled,
+            true => OPM_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == OPM_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == OPM_A::Enabled
+    }
+}
+#[doc = "Field `OPM` writer - One pulse mode"]
+pub type OPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, OPM_A, O>;
+impl<'a, const O: u8> OPM_W<'a, O> {
+    #[doc = "Counter is not stopped at update event"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(OPM_A::Disabled)
+    }
+    #[doc = "Counter stops counting at the next update event (clearing the CEN bit)"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(OPM_A::Enabled)
+    }
+}
+#[doc = "Field `ARPE` reader - Auto-reload preload enable"]
+pub type ARPE_R = crate::BitReader<ARPE_A>;
+#[doc = "Auto-reload preload enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ARPE_A {
+    #[doc = "0: TIMx_APRR register is not buffered"]
+    Disabled = 0,
+    #[doc = "1: TIMx_APRR register is buffered"]
+    Enabled = 1,
+}
+impl From<ARPE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ARPE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ARPE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ARPE_A {
+        match self.bits {
+            false => ARPE_A::Disabled,
+            true => ARPE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ARPE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ARPE_A::Enabled
+    }
+}
+#[doc = "Field `ARPE` writer - Auto-reload preload enable"]
+pub type ARPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, ARPE_A, O>;
+impl<'a, const O: u8> ARPE_W<'a, O> {
+    #[doc = "TIMx_APRR register is not buffered"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ARPE_A::Disabled)
+    }
+    #[doc = "TIMx_APRR register is buffered"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ARPE_A::Enabled)
+    }
+}
+#[doc = "Field `CKD` reader - Clock division"]
+pub type CKD_R = crate::FieldReader<u8, CKD_A>;
 #[doc = "Clock division\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -101,8 +303,6 @@ impl From<CKD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CKD` reader - Clock division"]
-pub type CKD_R = crate::FieldReader<u8, CKD_A>;
 impl CKD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,328 +349,128 @@ impl<'a, const O: u8> CKD_W<'a, O> {
         self.variant(CKD_A::Div4)
     }
 }
-#[doc = "Auto-reload preload enable\n\nValue on reset: 0"]
+#[doc = "Field `UIFREMAP` reader - UIF status bit remapping"]
+pub type UIFREMAP_R = crate::BitReader<UIFREMAP_A>;
+#[doc = "UIF status bit remapping\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ARPE_A {
-    #[doc = "0: TIMx_APRR register is not buffered"]
+pub enum UIFREMAP_A {
+    #[doc = "0: No remapping. UIF status bit is not copied to TIMx_CNT register bit 31"]
     Disabled = 0,
-    #[doc = "1: TIMx_APRR register is buffered"]
+    #[doc = "1: Remapping enabled. UIF status bit is copied to TIMx_CNT register bit 31"]
     Enabled = 1,
 }
-impl From<ARPE_A> for bool {
+impl From<UIFREMAP_A> for bool {
     #[inline(always)]
-    fn from(variant: ARPE_A) -> Self {
+    fn from(variant: UIFREMAP_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ARPE` reader - Auto-reload preload enable"]
-pub type ARPE_R = crate::BitReader<ARPE_A>;
-impl ARPE_R {
+impl UIFREMAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARPE_A {
+    pub fn variant(&self) -> UIFREMAP_A {
         match self.bits {
-            false => ARPE_A::Disabled,
-            true => ARPE_A::Enabled,
+            false => UIFREMAP_A::Disabled,
+            true => UIFREMAP_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ARPE_A::Disabled
+        *self == UIFREMAP_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ARPE_A::Enabled
+        *self == UIFREMAP_A::Enabled
     }
 }
-#[doc = "Field `ARPE` writer - Auto-reload preload enable"]
-pub type ARPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, ARPE_A, O>;
-impl<'a, const O: u8> ARPE_W<'a, O> {
-    #[doc = "TIMx_APRR register is not buffered"]
+#[doc = "Field `UIFREMAP` writer - UIF status bit remapping"]
+pub type UIFREMAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, UIFREMAP_A, O>;
+impl<'a, const O: u8> UIFREMAP_W<'a, O> {
+    #[doc = "No remapping. UIF status bit is not copied to TIMx_CNT register bit 31"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ARPE_A::Disabled)
+        self.variant(UIFREMAP_A::Disabled)
     }
-    #[doc = "TIMx_APRR register is buffered"]
+    #[doc = "Remapping enabled. UIF status bit is copied to TIMx_CNT register bit 31"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ARPE_A::Enabled)
-    }
-}
-#[doc = "One pulse mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPM_A {
-    #[doc = "0: Counter is not stopped at update event"]
-    Disabled = 0,
-    #[doc = "1: Counter stops counting at the next update event (clearing the CEN bit)"]
-    Enabled = 1,
-}
-impl From<OPM_A> for bool {
-    #[inline(always)]
-    fn from(variant: OPM_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `OPM` reader - One pulse mode"]
-pub type OPM_R = crate::BitReader<OPM_A>;
-impl OPM_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> OPM_A {
-        match self.bits {
-            false => OPM_A::Disabled,
-            true => OPM_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == OPM_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == OPM_A::Enabled
-    }
-}
-#[doc = "Field `OPM` writer - One pulse mode"]
-pub type OPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, OPM_A, O>;
-impl<'a, const O: u8> OPM_W<'a, O> {
-    #[doc = "Counter is not stopped at update event"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(OPM_A::Disabled)
-    }
-    #[doc = "Counter stops counting at the next update event (clearing the CEN bit)"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(OPM_A::Enabled)
-    }
-}
-#[doc = "Update request source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum URS_A {
-    #[doc = "0: Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
-    AnyEvent = 0,
-    #[doc = "1: Only counter overflow/underflow generates an update interrupt or DMA request"]
-    CounterOnly = 1,
-}
-impl From<URS_A> for bool {
-    #[inline(always)]
-    fn from(variant: URS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `URS` reader - Update request source"]
-pub type URS_R = crate::BitReader<URS_A>;
-impl URS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> URS_A {
-        match self.bits {
-            false => URS_A::AnyEvent,
-            true => URS_A::CounterOnly,
-        }
-    }
-    #[doc = "Checks if the value of the field is `AnyEvent`"]
-    #[inline(always)]
-    pub fn is_any_event(&self) -> bool {
-        *self == URS_A::AnyEvent
-    }
-    #[doc = "Checks if the value of the field is `CounterOnly`"]
-    #[inline(always)]
-    pub fn is_counter_only(&self) -> bool {
-        *self == URS_A::CounterOnly
-    }
-}
-#[doc = "Field `URS` writer - Update request source"]
-pub type URS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, URS_A, O>;
-impl<'a, const O: u8> URS_W<'a, O> {
-    #[doc = "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
-    #[inline(always)]
-    pub fn any_event(self) -> &'a mut W {
-        self.variant(URS_A::AnyEvent)
-    }
-    #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request"]
-    #[inline(always)]
-    pub fn counter_only(self) -> &'a mut W {
-        self.variant(URS_A::CounterOnly)
-    }
-}
-#[doc = "Update disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UDIS_A {
-    #[doc = "0: Update event enabled"]
-    Enabled = 0,
-    #[doc = "1: Update event disabled"]
-    Disabled = 1,
-}
-impl From<UDIS_A> for bool {
-    #[inline(always)]
-    fn from(variant: UDIS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `UDIS` reader - Update disable"]
-pub type UDIS_R = crate::BitReader<UDIS_A>;
-impl UDIS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> UDIS_A {
-        match self.bits {
-            false => UDIS_A::Enabled,
-            true => UDIS_A::Disabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == UDIS_A::Enabled
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == UDIS_A::Disabled
-    }
-}
-#[doc = "Field `UDIS` writer - Update disable"]
-pub type UDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, UDIS_A, O>;
-impl<'a, const O: u8> UDIS_W<'a, O> {
-    #[doc = "Update event enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(UDIS_A::Enabled)
-    }
-    #[doc = "Update event disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(UDIS_A::Disabled)
-    }
-}
-#[doc = "Counter enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEN_A {
-    #[doc = "0: Counter disabled"]
-    Disabled = 0,
-    #[doc = "1: Counter enabled"]
-    Enabled = 1,
-}
-impl From<CEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: CEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CEN` reader - Counter enable"]
-pub type CEN_R = crate::BitReader<CEN_A>;
-impl CEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CEN_A {
-        match self.bits {
-            false => CEN_A::Disabled,
-            true => CEN_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == CEN_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == CEN_A::Enabled
-    }
-}
-#[doc = "Field `CEN` writer - Counter enable"]
-pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR1_SPEC, CEN_A, O>;
-impl<'a, const O: u8> CEN_W<'a, O> {
-    #[doc = "Counter disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CEN_A::Disabled)
-    }
-    #[doc = "Counter enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(CEN_A::Enabled)
+        self.variant(UIFREMAP_A::Enabled)
     }
 }
 impl R {
-    #[doc = "Bit 11 - UIF status bit remapping"]
+    #[doc = "Bit 0 - Counter enable"]
     #[inline(always)]
-    pub fn uifremap(&self) -> UIFREMAP_R {
-        UIFREMAP_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bits 8:9 - Clock division"]
-    #[inline(always)]
-    pub fn ckd(&self) -> CKD_R {
-        CKD_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bit 7 - Auto-reload preload enable"]
-    #[inline(always)]
-    pub fn arpe(&self) -> ARPE_R {
-        ARPE_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 3 - One pulse mode"]
-    #[inline(always)]
-    pub fn opm(&self) -> OPM_R {
-        OPM_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Update request source"]
-    #[inline(always)]
-    pub fn urs(&self) -> URS_R {
-        URS_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn cen(&self) -> CEN_R {
+        CEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Update disable"]
     #[inline(always)]
     pub fn udis(&self) -> UDIS_R {
         UDIS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Counter enable"]
+    #[doc = "Bit 2 - Update request source"]
     #[inline(always)]
-    pub fn cen(&self) -> CEN_R {
-        CEN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 11 - UIF status bit remapping"]
-    #[inline(always)]
-    pub fn uifremap(&mut self) -> UIFREMAP_W<11> {
-        UIFREMAP_W::new(self)
-    }
-    #[doc = "Bits 8:9 - Clock division"]
-    #[inline(always)]
-    pub fn ckd(&mut self) -> CKD_W<8> {
-        CKD_W::new(self)
-    }
-    #[doc = "Bit 7 - Auto-reload preload enable"]
-    #[inline(always)]
-    pub fn arpe(&mut self) -> ARPE_W<7> {
-        ARPE_W::new(self)
+    pub fn urs(&self) -> URS_R {
+        URS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - One pulse mode"]
     #[inline(always)]
-    pub fn opm(&mut self) -> OPM_W<3> {
-        OPM_W::new(self)
+    pub fn opm(&self) -> OPM_R {
+        OPM_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2 - Update request source"]
+    #[doc = "Bit 7 - Auto-reload preload enable"]
     #[inline(always)]
-    pub fn urs(&mut self) -> URS_W<2> {
-        URS_W::new(self)
+    pub fn arpe(&self) -> ARPE_R {
+        ARPE_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:9 - Clock division"]
+    #[inline(always)]
+    pub fn ckd(&self) -> CKD_R {
+        CKD_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    #[doc = "Bit 11 - UIF status bit remapping"]
+    #[inline(always)]
+    pub fn uifremap(&self) -> UIFREMAP_R {
+        UIFREMAP_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Counter enable"]
+    #[inline(always)]
+    pub fn cen(&mut self) -> CEN_W<0> {
+        CEN_W::new(self)
     }
     #[doc = "Bit 1 - Update disable"]
     #[inline(always)]
     pub fn udis(&mut self) -> UDIS_W<1> {
         UDIS_W::new(self)
     }
-    #[doc = "Bit 0 - Counter enable"]
+    #[doc = "Bit 2 - Update request source"]
     #[inline(always)]
-    pub fn cen(&mut self) -> CEN_W<0> {
-        CEN_W::new(self)
+    pub fn urs(&mut self) -> URS_W<2> {
+        URS_W::new(self)
+    }
+    #[doc = "Bit 3 - One pulse mode"]
+    #[inline(always)]
+    pub fn opm(&mut self) -> OPM_W<3> {
+        OPM_W::new(self)
+    }
+    #[doc = "Bit 7 - Auto-reload preload enable"]
+    #[inline(always)]
+    pub fn arpe(&mut self) -> ARPE_W<7> {
+        ARPE_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Clock division"]
+    #[inline(always)]
+    pub fn ckd(&mut self) -> CKD_W<8> {
+        CKD_W::new(self)
+    }
+    #[doc = "Bit 11 - UIF status bit remapping"]
+    #[inline(always)]
+    pub fn uifremap(&mut self) -> UIFREMAP_W<11> {
+        UIFREMAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

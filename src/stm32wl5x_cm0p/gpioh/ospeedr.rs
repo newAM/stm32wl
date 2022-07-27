@@ -34,6 +34,8 @@ impl From<crate::W<OSPEEDR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OSPEEDR3` reader - Port x configuration bits (y = 0..15)"]
+pub type OSPEEDR3_R = crate::FieldReader<u8, OSPEEDR3_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<OSPEEDR3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OSPEEDR3` reader - Port x configuration bits (y = 0..15)"]
-pub type OSPEEDR3_R = crate::FieldReader<u8, OSPEEDR3_A>;
 impl OSPEEDR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

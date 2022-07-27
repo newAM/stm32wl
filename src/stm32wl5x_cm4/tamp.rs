@@ -2,28 +2,28 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     #[doc = "0x08 - TAMP control register 3"]
-    pub cr3: crate::Reg<cr3::CR3_SPEC>,
+    pub cr3: CR3,
     #[doc = "0x0c - TAMP filter control register"]
-    pub fltcr: crate::Reg<fltcr::FLTCR_SPEC>,
+    pub fltcr: FLTCR,
     _reserved4: [u8; 0x1c],
     #[doc = "0x2c - TAMP interrupt enable register"]
-    pub ier: crate::Reg<ier::IER_SPEC>,
+    pub ier: IER,
     #[doc = "0x30 - TAMP status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x34 - TAMP masked interrupt status register"]
-    pub misr: crate::Reg<misr::MISR_SPEC>,
+    pub misr: MISR,
     _reserved7: [u8; 0x04],
     #[doc = "0x3c - TAMP status clear register"]
-    pub scr: crate::Reg<scr::SCR_SPEC>,
+    pub scr: SCR,
     #[doc = "0x40 - monotonic counter register"]
-    pub countr: crate::Reg<countr::COUNTR_SPEC>,
+    pub countr: COUNTR,
     _reserved9: [u8; 0xbc],
     #[doc = "0x100..0x150 - TAMP backup register"]
-    pub bkpr: [crate::Reg<bkpr::BKPR_SPEC>; 20],
+    pub bkpr: [BKPR; 20],
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]
 pub type CR1 = crate::Reg<cr1::CR1_SPEC>;

@@ -34,6 +34,8 @@ impl From<crate::W<FLTCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAMPFREQ` reader - TAMPFREQ"]
+pub type TAMPFREQ_R = crate::FieldReader<u8, TAMPFREQ_A>;
 #[doc = "TAMPFREQ\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,8 +63,6 @@ impl From<TAMPFREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAMPFREQ` reader - TAMPFREQ"]
-pub type TAMPFREQ_R = crate::FieldReader<u8, TAMPFREQ_A>;
 impl TAMPFREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -165,6 +165,8 @@ impl<'a, const O: u8> TAMPFREQ_W<'a, O> {
         self.variant(TAMPFREQ_A::Hz128)
     }
 }
+#[doc = "Field `TAMPFLT` reader - TAMPFLT"]
+pub type TAMPFLT_R = crate::FieldReader<u8, TAMPFLT_A>;
 #[doc = "TAMPFLT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -184,8 +186,6 @@ impl From<TAMPFLT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAMPFLT` reader - TAMPFLT"]
-pub type TAMPFLT_R = crate::FieldReader<u8, TAMPFLT_A>;
 impl TAMPFLT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -244,6 +244,8 @@ impl<'a, const O: u8> TAMPFLT_W<'a, O> {
         self.variant(TAMPFLT_A::Filter8)
     }
 }
+#[doc = "Field `TAMPPRCH` reader - TAMPPRCH"]
+pub type TAMPPRCH_R = crate::FieldReader<u8, TAMPPRCH_A>;
 #[doc = "TAMPPRCH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -263,8 +265,6 @@ impl From<TAMPPRCH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAMPPRCH` reader - TAMPPRCH"]
-pub type TAMPPRCH_R = crate::FieldReader<u8, TAMPPRCH_A>;
 impl TAMPPRCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,6 +323,8 @@ impl<'a, const O: u8> TAMPPRCH_W<'a, O> {
         self.variant(TAMPPRCH_A::Cycles8)
     }
 }
+#[doc = "Field `TAMPPUDIS` reader - TAMPPUDIS"]
+pub type TAMPPUDIS_R = crate::BitReader<TAMPPUDIS_A>;
 #[doc = "TAMPPUDIS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMPPUDIS_A {
@@ -337,8 +339,6 @@ impl From<TAMPPUDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMPPUDIS` reader - TAMPPUDIS"]
-pub type TAMPPUDIS_R = crate::BitReader<TAMPPUDIS_A>;
 impl TAMPPUDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

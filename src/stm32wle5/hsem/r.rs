@@ -42,68 +42,68 @@ pub type PROCID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, R_SPEC, u8,
 pub type COREID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COREID` writer - Semaphore MASTERID"]
 pub type COREID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, R_SPEC, u8, u8, 4, O>;
+#[doc = "Field `LOCK` reader - Lock indication"]
+pub type LOCK_R = crate::BitReader<LOCKR_A>;
 #[doc = "Lock indication\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_A {
+pub enum LOCKR_A {
     #[doc = "0: Semaphore is free"]
     Free = 0,
     #[doc = "1: Semaphore is locked"]
     Locked = 1,
 }
-impl From<LOCK_A> for bool {
+impl From<LOCKR_A> for bool {
     #[inline(always)]
-    fn from(variant: LOCK_A) -> Self {
+    fn from(variant: LOCKR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - Lock indication"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_A {
+    pub fn variant(&self) -> LOCKR_A {
         match self.bits {
-            false => LOCK_A::Free,
-            true => LOCK_A::Locked,
+            false => LOCKR_A::Free,
+            true => LOCKR_A::Locked,
         }
     }
     #[doc = "Checks if the value of the field is `Free`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
-        *self == LOCK_A::Free
+        *self == LOCKR_A::Free
     }
     #[doc = "Checks if the value of the field is `Locked`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCK_A::Locked
+        *self == LOCKR_A::Locked
     }
 }
 #[doc = "Lock indication\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_AW {
+pub enum LOCKW_AW {
     #[doc = "0: Free semaphore"]
     Free = 0,
     #[doc = "1: Try to lock semaphore"]
     TryLock = 1,
 }
-impl From<LOCK_AW> for bool {
+impl From<LOCKW_AW> for bool {
     #[inline(always)]
-    fn from(variant: LOCK_AW) -> Self {
+    fn from(variant: LOCKW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOCK` writer - Lock indication"]
-pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, R_SPEC, LOCK_AW, O>;
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, R_SPEC, LOCKW_AW, O>;
 impl<'a, const O: u8> LOCK_W<'a, O> {
     #[doc = "Free semaphore"]
     #[inline(always)]
     pub fn free(self) -> &'a mut W {
-        self.variant(LOCK_AW::Free)
+        self.variant(LOCKW_AW::Free)
     }
     #[doc = "Try to lock semaphore"]
     #[inline(always)]
     pub fn try_lock(self) -> &'a mut W {
-        self.variant(LOCK_AW::TryLock)
+        self.variant(LOCKW_AW::TryLock)
     }
 }
 impl R {

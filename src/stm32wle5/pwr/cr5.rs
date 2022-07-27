@@ -34,56 +34,8 @@ impl From<crate::W<CR5_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Enable SMPS Step Down converter SMPS mode enabled.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SMPSEN_A {
-    #[doc = "0: SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
-    Disabled = 0,
-    #[doc = "1: SMPS step-down converter SMPS mode enabled"]
-    Enabled = 1,
-}
-impl From<SMPSEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: SMPSEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `SMPSEN` reader - Enable SMPS Step Down converter SMPS mode enabled."]
-pub type SMPSEN_R = crate::BitReader<SMPSEN_A>;
-impl SMPSEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SMPSEN_A {
-        match self.bits {
-            false => SMPSEN_A::Disabled,
-            true => SMPSEN_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == SMPSEN_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == SMPSEN_A::Enabled
-    }
-}
-#[doc = "Field `SMPSEN` writer - Enable SMPS Step Down converter SMPS mode enabled."]
-pub type SMPSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR5_SPEC, SMPSEN_A, O>;
-impl<'a, const O: u8> SMPSEN_W<'a, O> {
-    #[doc = "SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SMPSEN_A::Disabled)
-    }
-    #[doc = "SMPS step-down converter SMPS mode enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SMPSEN_A::Enabled)
-    }
-}
+#[doc = "Field `RFEOLEN` reader - Enable Radio End Of Life detector enabled"]
+pub type RFEOLEN_R = crate::BitReader<RFEOLEN_A>;
 #[doc = "Enable Radio End Of Life detector enabled\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFEOLEN_A {
@@ -98,8 +50,6 @@ impl From<RFEOLEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RFEOLEN` reader - Enable Radio End Of Life detector enabled"]
-pub type RFEOLEN_R = crate::BitReader<RFEOLEN_A>;
 impl RFEOLEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,28 +84,78 @@ impl<'a, const O: u8> RFEOLEN_W<'a, O> {
         self.variant(RFEOLEN_A::Enabled)
     }
 }
-impl R {
-    #[doc = "Bit 15 - Enable SMPS Step Down converter SMPS mode enabled."]
+#[doc = "Field `SMPSEN` reader - Enable SMPS Step Down converter SMPS mode enabled."]
+pub type SMPSEN_R = crate::BitReader<SMPSEN_A>;
+#[doc = "Enable SMPS Step Down converter SMPS mode enabled.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SMPSEN_A {
+    #[doc = "0: SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
+    Disabled = 0,
+    #[doc = "1: SMPS step-down converter SMPS mode enabled"]
+    Enabled = 1,
+}
+impl From<SMPSEN_A> for bool {
     #[inline(always)]
-    pub fn smpsen(&self) -> SMPSEN_R {
-        SMPSEN_R::new(((self.bits >> 15) & 1) != 0)
+    fn from(variant: SMPSEN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl SMPSEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SMPSEN_A {
+        match self.bits {
+            false => SMPSEN_A::Disabled,
+            true => SMPSEN_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SMPSEN_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SMPSEN_A::Enabled
+    }
+}
+#[doc = "Field `SMPSEN` writer - Enable SMPS Step Down converter SMPS mode enabled."]
+pub type SMPSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR5_SPEC, SMPSEN_A, O>;
+impl<'a, const O: u8> SMPSEN_W<'a, O> {
+    #[doc = "SMPS step-down converter SMPS mode disabled (LDO mode enabled)"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SMPSEN_A::Disabled)
+    }
+    #[doc = "SMPS step-down converter SMPS mode enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SMPSEN_A::Enabled)
+    }
+}
+impl R {
     #[doc = "Bit 14 - Enable Radio End Of Life detector enabled"]
     #[inline(always)]
     pub fn rfeolen(&self) -> RFEOLEN_R {
         RFEOLEN_R::new(((self.bits >> 14) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 15 - Enable SMPS Step Down converter SMPS mode enabled."]
     #[inline(always)]
-    pub fn smpsen(&mut self) -> SMPSEN_W<15> {
-        SMPSEN_W::new(self)
+    pub fn smpsen(&self) -> SMPSEN_R {
+        SMPSEN_R::new(((self.bits >> 15) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 14 - Enable Radio End Of Life detector enabled"]
     #[inline(always)]
     pub fn rfeolen(&mut self) -> RFEOLEN_W<14> {
         RFEOLEN_W::new(self)
+    }
+    #[doc = "Bit 15 - Enable SMPS Step Down converter SMPS mode enabled."]
+    #[inline(always)]
+    pub fn smpsen(&mut self) -> SMPSEN_W<15> {
+        SMPSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -2,48 +2,48 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Access control register"]
-    pub acr: crate::Reg<acr::ACR_SPEC>,
+    pub acr: ACR,
     #[doc = "0x04 - Flash access control register 2"]
-    pub acr2: crate::Reg<acr2::ACR2_SPEC>,
+    pub acr2: ACR2,
     #[doc = "0x08 - Flash key register"]
-    pub keyr: crate::Reg<keyr::KEYR_SPEC>,
+    pub keyr: KEYR,
     #[doc = "0x0c - Option byte key register"]
-    pub optkeyr: crate::Reg<optkeyr::OPTKEYR_SPEC>,
+    pub optkeyr: OPTKEYR,
     #[doc = "0x10 - Status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x14 - Flash control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x18 - Flash ECC register"]
-    pub eccr: crate::Reg<eccr::ECCR_SPEC>,
+    pub eccr: ECCR,
     _reserved7: [u8; 0x04],
     #[doc = "0x20 - Flash option register"]
-    pub optr: crate::Reg<optr::OPTR_SPEC>,
+    pub optr: OPTR,
     #[doc = "0x24 - Flash PCROP zone A Start address register"]
-    pub pcrop1asr: crate::Reg<pcrop1asr::PCROP1ASR_SPEC>,
+    pub pcrop1asr: PCROP1ASR,
     #[doc = "0x28 - Flash PCROP zone A End address register"]
-    pub pcrop1aer: crate::Reg<pcrop1aer::PCROP1AER_SPEC>,
+    pub pcrop1aer: PCROP1AER,
     #[doc = "0x2c - Flash WRP area A address register"]
-    pub wrp1ar: crate::Reg<wrp1ar::WRP1AR_SPEC>,
+    pub wrp1ar: WRP1AR,
     #[doc = "0x30 - Flash WRP area B address register"]
-    pub wrp1br: crate::Reg<wrp1br::WRP1BR_SPEC>,
+    pub wrp1br: WRP1BR,
     #[doc = "0x34 - Flash PCROP zone B Start address register"]
-    pub pcrop1bsr: crate::Reg<pcrop1bsr::PCROP1BSR_SPEC>,
+    pub pcrop1bsr: PCROP1BSR,
     #[doc = "0x38 - Flash PCROP zone B End address register"]
-    pub pcrop1ber: crate::Reg<pcrop1ber::PCROP1BER_SPEC>,
+    pub pcrop1ber: PCROP1BER,
     #[doc = "0x3c - Flash IPCC data buffer address register"]
-    pub ipccbr: crate::Reg<ipccbr::IPCCBR_SPEC>,
+    pub ipccbr: IPCCBR,
     _reserved15: [u8; 0x1c],
     #[doc = "0x5c - Flash CPU2 access control register"]
-    pub c2acr: crate::Reg<c2acr::C2ACR_SPEC>,
+    pub c2acr: C2ACR,
     #[doc = "0x60 - Flash CPU2 status register"]
-    pub c2sr: crate::Reg<c2sr::C2SR_SPEC>,
+    pub c2sr: C2SR,
     #[doc = "0x64 - Flash CPU2 control register"]
-    pub c2cr: crate::Reg<c2cr::C2CR_SPEC>,
+    pub c2cr: C2CR,
     _reserved18: [u8; 0x18],
     #[doc = "0x80 - Flash secure Flash start address register"]
-    pub sfr: crate::Reg<sfr::SFR_SPEC>,
+    pub sfr: SFR,
     #[doc = "0x84 - Flash secure SRAM start address and CPU2 reset vector register"]
-    pub srrvr: crate::Reg<srrvr::SRRVR_SPEC>,
+    pub srrvr: SRRVR,
 }
 #[doc = "ACR register accessor: an alias for `Reg<ACR_SPEC>`"]
 pub type ACR = crate::Reg<acr::ACR_SPEC>;

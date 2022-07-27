@@ -34,18 +34,8 @@ impl From<crate::W<FTSR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT21_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT22_A;
-#[doc = "Field `FT21` reader - Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_R as FT21_R;
-#[doc = "Field `FT22` reader - Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_R as FT22_R;
-#[doc = "Field `FT21` writer - Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_W as FT21_W;
-#[doc = "Field `FT22` writer - Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_W as FT22_W;
+#[doc = "Field `FT0` reader - Falling trigger event configuration bit of Configurable Event input"]
+pub type FT0_R = crate::BitReader<FT0_A>;
 #[doc = "Falling trigger event configuration bit of Configurable Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FT0_A {
@@ -60,8 +50,6 @@ impl From<FT0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FT0` reader - Falling trigger event configuration bit of Configurable Event input"]
-pub type FT0_R = crate::BitReader<FT0_A>;
 impl FT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -96,38 +84,6 @@ impl<'a, const O: u8> FT0_W<'a, O> {
         self.variant(FT0_A::Enabled)
     }
 }
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT1_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT2_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT3_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT4_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT5_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT6_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT7_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT8_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT9_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT10_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT11_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT12_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT13_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT14_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT15_A;
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT0_A as FT16_A;
 #[doc = "Field `FT1` reader - Falling trigger event configuration bit of Configurable Event input"]
 pub use FT0_R as FT1_R;
 #[doc = "Field `FT2` reader - Falling trigger event configuration bit of Configurable Event input"]
@@ -160,6 +116,10 @@ pub use FT0_R as FT14_R;
 pub use FT0_R as FT15_R;
 #[doc = "Field `FT16` reader - Falling trigger event configuration bit of Configurable Event input"]
 pub use FT0_R as FT16_R;
+#[doc = "Field `FT21` reader - Falling trigger event configuration bit of Configurable Event input"]
+pub use FT0_R as FT21_R;
+#[doc = "Field `FT22` reader - Falling trigger event configuration bit of Configurable Event input"]
+pub use FT0_R as FT22_R;
 #[doc = "Field `FT1` writer - Falling trigger event configuration bit of Configurable Event input"]
 pub use FT0_W as FT1_W;
 #[doc = "Field `FT2` writer - Falling trigger event configuration bit of Configurable Event input"]
@@ -192,17 +152,11 @@ pub use FT0_W as FT14_W;
 pub use FT0_W as FT15_W;
 #[doc = "Field `FT16` writer - Falling trigger event configuration bit of Configurable Event input"]
 pub use FT0_W as FT16_W;
+#[doc = "Field `FT21` writer - Falling trigger event configuration bit of Configurable Event input"]
+pub use FT0_W as FT21_W;
+#[doc = "Field `FT22` writer - Falling trigger event configuration bit of Configurable Event input"]
+pub use FT0_W as FT22_W;
 impl R {
-    #[doc = "Bit 21 - Falling trigger event configuration bit of Configurable Event input"]
-    #[inline(always)]
-    pub fn ft21(&self) -> FT21_R {
-        FT21_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 22 - Falling trigger event configuration bit of Configurable Event input"]
-    #[inline(always)]
-    pub fn ft22(&self) -> FT22_R {
-        FT22_R::new(((self.bits >> 22) & 1) != 0)
-    }
     #[doc = "Bit 0 - Falling trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn ft0(&self) -> FT0_R {
@@ -288,18 +242,18 @@ impl R {
     pub fn ft16(&self) -> FT16_R {
         FT16_R::new(((self.bits >> 16) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 21 - Falling trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn ft21(&mut self) -> FT21_W<21> {
-        FT21_W::new(self)
+    pub fn ft21(&self) -> FT21_R {
+        FT21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Falling trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn ft22(&mut self) -> FT22_W<22> {
-        FT22_W::new(self)
+    pub fn ft22(&self) -> FT22_R {
+        FT22_R::new(((self.bits >> 22) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Falling trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn ft0(&mut self) -> FT0_W<0> {
@@ -384,6 +338,16 @@ impl W {
     #[inline(always)]
     pub fn ft16(&mut self) -> FT16_W<16> {
         FT16_W::new(self)
+    }
+    #[doc = "Bit 21 - Falling trigger event configuration bit of Configurable Event input"]
+    #[inline(always)]
+    pub fn ft21(&mut self) -> FT21_W<21> {
+        FT21_W::new(self)
+    }
+    #[doc = "Bit 22 - Falling trigger event configuration bit of Configurable Event input"]
+    #[inline(always)]
+    pub fn ft22(&mut self) -> FT22_W<22> {
+        FT22_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

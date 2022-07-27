@@ -34,6 +34,8 @@ impl From<crate::W<HTCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HTCFG` reader - health test configuration"]
+pub type HTCFG_R = crate::FieldReader<u32, HTCFG_A>;
 #[doc = "health test configuration\n\nValue on reset: 23118"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -49,8 +51,6 @@ impl From<HTCFG_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `HTCFG` reader - health test configuration"]
-pub type HTCFG_R = crate::FieldReader<u32, HTCFG_A>;
 impl HTCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -2,23 +2,23 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     #[doc = "0x08 - status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x0c - data register"]
-    pub dr: crate::Reg<dr::DR_SPEC>,
+    pub dr: DR,
     #[doc = "0x10 - CRC polynomial register"]
-    pub crcpr: crate::Reg<crcpr::CRCPR_SPEC>,
+    pub crcpr: CRCPR,
     #[doc = "0x14 - RX CRC register"]
-    pub rxcrcr: crate::Reg<rxcrcr::RXCRCR_SPEC>,
+    pub rxcrcr: RXCRCR,
     #[doc = "0x18 - TX CRC register"]
-    pub txcrcr: crate::Reg<txcrcr::TXCRCR_SPEC>,
+    pub txcrcr: TXCRCR,
     #[doc = "0x1c - configuration register"]
-    pub i2scfgr: crate::Reg<i2scfgr::I2SCFGR_SPEC>,
+    pub i2scfgr: I2SCFGR,
     #[doc = "0x20 - prescaler register"]
-    pub i2spr: crate::Reg<i2spr::I2SPR_SPEC>,
+    pub i2spr: I2SPR,
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]
 pub type CR1 = crate::Reg<cr1::CR1_SPEC>;

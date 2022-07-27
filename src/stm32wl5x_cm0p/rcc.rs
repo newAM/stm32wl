@@ -2,107 +2,107 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Clock control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x04 - Internal clock sources calibration register"]
-    pub icscr: crate::Reg<icscr::ICSCR_SPEC>,
+    pub icscr: ICSCR,
     #[doc = "0x08 - Clock configuration register"]
-    pub cfgr: crate::Reg<cfgr::CFGR_SPEC>,
+    pub cfgr: CFGR,
     #[doc = "0x0c - PLL configuration register"]
-    pub pllcfgr: crate::Reg<pllcfgr::PLLCFGR_SPEC>,
+    pub pllcfgr: PLLCFGR,
     _reserved4: [u8; 0x08],
     #[doc = "0x18 - Clock interrupt enable register"]
-    pub cier: crate::Reg<cier::CIER_SPEC>,
+    pub cier: CIER,
     #[doc = "0x1c - Clock interrupt flag register"]
-    pub cifr: crate::Reg<cifr::CIFR_SPEC>,
+    pub cifr: CIFR,
     #[doc = "0x20 - Clock interrupt clear register"]
-    pub cicr: crate::Reg<cicr::CICR_SPEC>,
+    pub cicr: CICR,
     _reserved7: [u8; 0x04],
     #[doc = "0x28 - AHB1 peripheral reset register"]
-    pub ahb1rstr: crate::Reg<ahb1rstr::AHB1RSTR_SPEC>,
+    pub ahb1rstr: AHB1RSTR,
     #[doc = "0x2c - AHB2 peripheral reset register"]
-    pub ahb2rstr: crate::Reg<ahb2rstr::AHB2RSTR_SPEC>,
+    pub ahb2rstr: AHB2RSTR,
     #[doc = "0x30 - AHB3 peripheral reset register"]
-    pub ahb3rstr: crate::Reg<ahb3rstr::AHB3RSTR_SPEC>,
+    pub ahb3rstr: AHB3RSTR,
     _reserved10: [u8; 0x04],
     #[doc = "0x38 - APB1 peripheral reset register 1"]
-    pub apb1rstr1: crate::Reg<apb1rstr1::APB1RSTR1_SPEC>,
+    pub apb1rstr1: APB1RSTR1,
     #[doc = "0x3c - APB1 peripheral reset register 2"]
-    pub apb1rstr2: crate::Reg<apb1rstr2::APB1RSTR2_SPEC>,
+    pub apb1rstr2: APB1RSTR2,
     #[doc = "0x40 - APB2 peripheral reset register"]
-    pub apb2rstr: crate::Reg<apb2rstr::APB2RSTR_SPEC>,
+    pub apb2rstr: APB2RSTR,
     #[doc = "0x44 - APB3 peripheral reset register"]
-    pub apb3rstr: crate::Reg<apb3rstr::APB3RSTR_SPEC>,
+    pub apb3rstr: APB3RSTR,
     #[doc = "0x48 - AHB1 peripheral clock enable register"]
-    pub ahb1enr: crate::Reg<ahb1enr::AHB1ENR_SPEC>,
+    pub ahb1enr: AHB1ENR,
     #[doc = "0x4c - AHB2 peripheral clock enable register"]
-    pub ahb2enr: crate::Reg<ahb2enr::AHB2ENR_SPEC>,
+    pub ahb2enr: AHB2ENR,
     #[doc = "0x50 - AHB3 peripheral clock enable register"]
-    pub ahb3enr: crate::Reg<ahb3enr::AHB3ENR_SPEC>,
+    pub ahb3enr: AHB3ENR,
     _reserved17: [u8; 0x04],
     #[doc = "0x58 - APB1 peripheral clock enable register 1"]
-    pub apb1enr1: crate::Reg<apb1enr1::APB1ENR1_SPEC>,
+    pub apb1enr1: APB1ENR1,
     #[doc = "0x5c - APB1 peripheral clock enable register 2"]
-    pub apb1enr2: crate::Reg<apb1enr2::APB1ENR2_SPEC>,
+    pub apb1enr2: APB1ENR2,
     #[doc = "0x60 - APB2 peripheral clock enable register"]
-    pub apb2enr: crate::Reg<apb2enr::APB2ENR_SPEC>,
+    pub apb2enr: APB2ENR,
     #[doc = "0x64 - APB3 peripheral clock enable register"]
-    pub apb3enr: crate::Reg<apb3enr::APB3ENR_SPEC>,
+    pub apb3enr: APB3ENR,
     #[doc = "0x68 - AHB1 peripheral clocks enable in Sleep modes register"]
-    pub ahb1smenr: crate::Reg<ahb1smenr::AHB1SMENR_SPEC>,
+    pub ahb1smenr: AHB1SMENR,
     #[doc = "0x6c - AHB2 peripheral clocks enable in Sleep modes register"]
-    pub ahb2smenr: crate::Reg<ahb2smenr::AHB2SMENR_SPEC>,
+    pub ahb2smenr: AHB2SMENR,
     #[doc = "0x70 - AHB3 peripheral clocks enable in Sleep and Stop modes register"]
-    pub ahb3smenr: crate::Reg<ahb3smenr::AHB3SMENR_SPEC>,
+    pub ahb3smenr: AHB3SMENR,
     _reserved24: [u8; 0x04],
     #[doc = "0x78 - APB1 peripheral clocks enable in Sleep mode register 1"]
-    pub apb1smenr1: crate::Reg<apb1smenr1::APB1SMENR1_SPEC>,
+    pub apb1smenr1: APB1SMENR1,
     #[doc = "0x7c - APB1 peripheral clocks enable in Sleep mode register 2"]
-    pub apb1smenr2: crate::Reg<apb1smenr2::APB1SMENR2_SPEC>,
+    pub apb1smenr2: APB1SMENR2,
     #[doc = "0x80 - APB2 peripheral clocks enable in Sleep mode register"]
-    pub apb2smenr: crate::Reg<apb2smenr::APB2SMENR_SPEC>,
+    pub apb2smenr: APB2SMENR,
     #[doc = "0x84 - APB3 peripheral clock enable in Sleep mode register"]
-    pub apb3smenr: crate::Reg<apb3smenr::APB3SMENR_SPEC>,
+    pub apb3smenr: APB3SMENR,
     #[doc = "0x88 - Peripherals independent clock configuration register"]
-    pub ccipr: crate::Reg<ccipr::CCIPR_SPEC>,
+    pub ccipr: CCIPR,
     _reserved29: [u8; 0x04],
     #[doc = "0x90 - Backup domain control register"]
-    pub bdcr: crate::Reg<bdcr::BDCR_SPEC>,
+    pub bdcr: BDCR,
     #[doc = "0x94 - Control/status register"]
-    pub csr: crate::Reg<csr::CSR_SPEC>,
+    pub csr: CSR,
     _reserved31: [u8; 0x70],
     #[doc = "0x108 - Extended clock recovery register"]
-    pub extcfgr: crate::Reg<extcfgr::EXTCFGR_SPEC>,
+    pub extcfgr: EXTCFGR,
     _reserved32: [u8; 0x3c],
     #[doc = "0x148 - CPU2 AHB1 peripheral clock enable register"]
-    pub c2ahb1enr: crate::Reg<c2ahb1enr::C2AHB1ENR_SPEC>,
+    pub c2ahb1enr: C2AHB1ENR,
     #[doc = "0x14c - CPU2 AHB2 peripheral clock enable register"]
-    pub c2ahb2enr: crate::Reg<c2ahb2enr::C2AHB2ENR_SPEC>,
+    pub c2ahb2enr: C2AHB2ENR,
     #[doc = "0x150 - CPU2 AHB3 peripheral clock enable register \\[dual core device only\\]"]
-    pub c2ahb3enr: crate::Reg<c2ahb3enr::C2AHB3ENR_SPEC>,
+    pub c2ahb3enr: C2AHB3ENR,
     _reserved35: [u8; 0x04],
     #[doc = "0x158 - CPU2 APB1 peripheral clock enable register 1 \\[dual core device only\\]"]
-    pub c2apb1enr1: crate::Reg<c2apb1enr1::C2APB1ENR1_SPEC>,
+    pub c2apb1enr1: C2APB1ENR1,
     #[doc = "0x15c - CPU2 APB1 peripheral clock enable register 2 \\[dual core device only\\]"]
-    pub c2apb1enr2: crate::Reg<c2apb1enr2::C2APB1ENR2_SPEC>,
+    pub c2apb1enr2: C2APB1ENR2,
     #[doc = "0x160 - CPU2 APB2 peripheral clock enable register \\[dual core device only\\]"]
-    pub c2apb2enr: crate::Reg<c2apb2enr::C2APB2ENR_SPEC>,
+    pub c2apb2enr: C2APB2ENR,
     #[doc = "0x164 - CPU2 APB3 peripheral clock enable register \\[dual core device only\\]"]
-    pub c2apb3enr: crate::Reg<c2apb3enr::C2APB3ENR_SPEC>,
+    pub c2apb3enr: C2APB3ENR,
     #[doc = "0x168 - CPU2 AHB1 peripheral clocks enable in Sleep modes register \\[dual core device only\\]"]
-    pub c2ahb1smenr: crate::Reg<c2ahb1smenr::C2AHB1SMENR_SPEC>,
+    pub c2ahb1smenr: C2AHB1SMENR,
     #[doc = "0x16c - CPU2 AHB2 peripheral clocks enable in Sleep modes register \\[dual core device only\\]"]
-    pub c2ahb2smenr: crate::Reg<c2ahb2smenr::C2AHB2SMENR_SPEC>,
+    pub c2ahb2smenr: C2AHB2SMENR,
     #[doc = "0x170 - CPU2 AHB3 peripheral clocks enable in Sleep mode register \\[dual core device only\\]"]
-    pub c2ahb3smenr: crate::Reg<c2ahb3smenr::C2AHB3SMENR_SPEC>,
+    pub c2ahb3smenr: C2AHB3SMENR,
     _reserved42: [u8; 0x04],
     #[doc = "0x178 - CPU2 APB1 peripheral clocks enable in Sleep mode register 1 \\[dual core device only\\]"]
-    pub c2apb1smenr1: crate::Reg<c2apb1smenr1::C2APB1SMENR1_SPEC>,
+    pub c2apb1smenr1: C2APB1SMENR1,
     #[doc = "0x17c - CPU2 APB1 peripheral clocks enable in Sleep mode register 2 \\[dual core device only\\]"]
-    pub c2apb1smenr2: crate::Reg<c2apb1smenr2::C2APB1SMENR2_SPEC>,
+    pub c2apb1smenr2: C2APB1SMENR2,
     #[doc = "0x180 - CPU2 APB2 peripheral clocks enable in Sleep mode register \\[dual core device only\\]"]
-    pub c2apb2smenr: crate::Reg<c2apb2smenr::C2APB2SMENR_SPEC>,
+    pub c2apb2smenr: C2APB2SMENR,
     #[doc = "0x184 - CPU2 APB3 peripheral clock enable in Sleep mode register \\[dual core device only\\]"]
-    pub c2apb3smenr: crate::Reg<c2apb3smenr::C2APB3SMENR_SPEC>,
+    pub c2apb3smenr: C2APB3SMENR,
 }
 #[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
 pub type CR = crate::Reg<cr::CR_SPEC>;

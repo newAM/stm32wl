@@ -34,56 +34,58 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "TI1 selection\n\nValue on reset: 0"]
+#[doc = "Field `CCDS` reader - Capture/compare DMA selection"]
+pub type CCDS_R = crate::BitReader<CCDS_A>;
+#[doc = "Capture/compare DMA selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TI1S_A {
-    #[doc = "0: The TIMx_CH1 pin is connected to TI1 input"]
-    Normal = 0,
-    #[doc = "1: The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
-    Xor = 1,
+pub enum CCDS_A {
+    #[doc = "0: CCx DMA request sent when CCx event occurs"]
+    OnCompare = 0,
+    #[doc = "1: CCx DMA request sent when update event occurs"]
+    OnUpdate = 1,
 }
-impl From<TI1S_A> for bool {
+impl From<CCDS_A> for bool {
     #[inline(always)]
-    fn from(variant: TI1S_A) -> Self {
+    fn from(variant: CCDS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TI1S` reader - TI1 selection"]
-pub type TI1S_R = crate::BitReader<TI1S_A>;
-impl TI1S_R {
+impl CCDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TI1S_A {
+    pub fn variant(&self) -> CCDS_A {
         match self.bits {
-            false => TI1S_A::Normal,
-            true => TI1S_A::Xor,
+            false => CCDS_A::OnCompare,
+            true => CCDS_A::OnUpdate,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Checks if the value of the field is `OnCompare`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == TI1S_A::Normal
+    pub fn is_on_compare(&self) -> bool {
+        *self == CCDS_A::OnCompare
     }
-    #[doc = "Checks if the value of the field is `Xor`"]
+    #[doc = "Checks if the value of the field is `OnUpdate`"]
     #[inline(always)]
-    pub fn is_xor(&self) -> bool {
-        *self == TI1S_A::Xor
-    }
-}
-#[doc = "Field `TI1S` writer - TI1 selection"]
-pub type TI1S_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, TI1S_A, O>;
-impl<'a, const O: u8> TI1S_W<'a, O> {
-    #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(TI1S_A::Normal)
-    }
-    #[doc = "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
-    #[inline(always)]
-    pub fn xor(self) -> &'a mut W {
-        self.variant(TI1S_A::Xor)
+    pub fn is_on_update(&self) -> bool {
+        *self == CCDS_A::OnUpdate
     }
 }
+#[doc = "Field `CCDS` writer - Capture/compare DMA selection"]
+pub type CCDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, CCDS_A, O>;
+impl<'a, const O: u8> CCDS_W<'a, O> {
+    #[doc = "CCx DMA request sent when CCx event occurs"]
+    #[inline(always)]
+    pub fn on_compare(self) -> &'a mut W {
+        self.variant(CCDS_A::OnCompare)
+    }
+    #[doc = "CCx DMA request sent when update event occurs"]
+    #[inline(always)]
+    pub fn on_update(self) -> &'a mut W {
+        self.variant(CCDS_A::OnUpdate)
+    }
+}
+#[doc = "Field `MMS` reader - Master mode selection"]
+pub type MMS_R = crate::FieldReader<u8, MMS_A>;
 #[doc = "Master mode selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -111,8 +113,6 @@ impl From<MMS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MMS` reader - Master mode selection"]
-pub type MMS_R = crate::FieldReader<u8, MMS_A>;
 impl MMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -214,88 +214,88 @@ impl<'a, const O: u8> MMS_W<'a, O> {
         self.variant(MMS_A::CompareOc4)
     }
 }
-#[doc = "Capture/compare DMA selection\n\nValue on reset: 0"]
+#[doc = "Field `TI1S` reader - TI1 selection"]
+pub type TI1S_R = crate::BitReader<TI1S_A>;
+#[doc = "TI1 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCDS_A {
-    #[doc = "0: CCx DMA request sent when CCx event occurs"]
-    OnCompare = 0,
-    #[doc = "1: CCx DMA request sent when update event occurs"]
-    OnUpdate = 1,
+pub enum TI1S_A {
+    #[doc = "0: The TIMx_CH1 pin is connected to TI1 input"]
+    Normal = 0,
+    #[doc = "1: The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
+    Xor = 1,
 }
-impl From<CCDS_A> for bool {
+impl From<TI1S_A> for bool {
     #[inline(always)]
-    fn from(variant: CCDS_A) -> Self {
+    fn from(variant: TI1S_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCDS` reader - Capture/compare DMA selection"]
-pub type CCDS_R = crate::BitReader<CCDS_A>;
-impl CCDS_R {
+impl TI1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCDS_A {
+    pub fn variant(&self) -> TI1S_A {
         match self.bits {
-            false => CCDS_A::OnCompare,
-            true => CCDS_A::OnUpdate,
+            false => TI1S_A::Normal,
+            true => TI1S_A::Xor,
         }
     }
-    #[doc = "Checks if the value of the field is `OnCompare`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
-    pub fn is_on_compare(&self) -> bool {
-        *self == CCDS_A::OnCompare
+    pub fn is_normal(&self) -> bool {
+        *self == TI1S_A::Normal
     }
-    #[doc = "Checks if the value of the field is `OnUpdate`"]
+    #[doc = "Checks if the value of the field is `Xor`"]
     #[inline(always)]
-    pub fn is_on_update(&self) -> bool {
-        *self == CCDS_A::OnUpdate
+    pub fn is_xor(&self) -> bool {
+        *self == TI1S_A::Xor
     }
 }
-#[doc = "Field `CCDS` writer - Capture/compare DMA selection"]
-pub type CCDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, CCDS_A, O>;
-impl<'a, const O: u8> CCDS_W<'a, O> {
-    #[doc = "CCx DMA request sent when CCx event occurs"]
+#[doc = "Field `TI1S` writer - TI1 selection"]
+pub type TI1S_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, TI1S_A, O>;
+impl<'a, const O: u8> TI1S_W<'a, O> {
+    #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
     #[inline(always)]
-    pub fn on_compare(self) -> &'a mut W {
-        self.variant(CCDS_A::OnCompare)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(TI1S_A::Normal)
     }
-    #[doc = "CCx DMA request sent when update event occurs"]
+    #[doc = "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
     #[inline(always)]
-    pub fn on_update(self) -> &'a mut W {
-        self.variant(CCDS_A::OnUpdate)
+    pub fn xor(self) -> &'a mut W {
+        self.variant(TI1S_A::Xor)
     }
 }
 impl R {
-    #[doc = "Bit 7 - TI1 selection"]
+    #[doc = "Bit 3 - Capture/compare DMA selection"]
     #[inline(always)]
-    pub fn ti1s(&self) -> TI1S_R {
-        TI1S_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn ccds(&self) -> CCDS_R {
+        CCDS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Master mode selection"]
     #[inline(always)]
     pub fn mms(&self) -> MMS_R {
         MMS_R::new(((self.bits >> 4) & 7) as u8)
     }
-    #[doc = "Bit 3 - Capture/compare DMA selection"]
+    #[doc = "Bit 7 - TI1 selection"]
     #[inline(always)]
-    pub fn ccds(&self) -> CCDS_R {
-        CCDS_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ti1s(&self) -> TI1S_R {
+        TI1S_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - TI1 selection"]
+    #[doc = "Bit 3 - Capture/compare DMA selection"]
     #[inline(always)]
-    pub fn ti1s(&mut self) -> TI1S_W<7> {
-        TI1S_W::new(self)
+    pub fn ccds(&mut self) -> CCDS_W<3> {
+        CCDS_W::new(self)
     }
     #[doc = "Bits 4:6 - Master mode selection"]
     #[inline(always)]
     pub fn mms(&mut self) -> MMS_W<4> {
         MMS_W::new(self)
     }
-    #[doc = "Bit 3 - Capture/compare DMA selection"]
+    #[doc = "Bit 7 - TI1 selection"]
     #[inline(always)]
-    pub fn ccds(&mut self) -> CCDS_W<3> {
-        CCDS_W::new(self)
+    pub fn ti1s(&mut self) -> TI1S_W<7> {
+        TI1S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

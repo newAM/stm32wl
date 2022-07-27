@@ -2,23 +2,23 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - TZSC control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     _reserved1: [u8; 0x0c],
     #[doc = "0x10 - TZSC security configuration register"]
-    pub seccfgr1: crate::Reg<seccfgr1::SECCFGR1_SPEC>,
+    pub seccfgr1: SECCFGR1,
     _reserved2: [u8; 0x0c],
     #[doc = "0x20 - TZSC privilege configuration register 1"]
-    pub privcfgr1: crate::Reg<privcfgr1::PRIVCFGR1_SPEC>,
+    pub privcfgr1: PRIVCFGR1,
     _reserved3: [u8; 0x010c],
     #[doc = "0x130 - Unprivileged Water Mark 1 register"]
-    pub mpcwm1_upwmr: crate::Reg<mpcwm1_upwmr::MPCWM1_UPWMR_SPEC>,
+    pub mpcwm1_upwmr: MPCWM1_UPWMR,
     #[doc = "0x134 - Unprivileged Writable Water Mark 1 register"]
-    pub mpcwm1_upwwmr: crate::Reg<mpcwm1_upwwmr::MPCWM1_UPWWMR_SPEC>,
+    pub mpcwm1_upwwmr: MPCWM1_UPWWMR,
     #[doc = "0x138 - Unprivileged Water Mark 2 register"]
-    pub mpcwm2_upwmr: crate::Reg<mpcwm2_upwmr::MPCWM2_UPWMR_SPEC>,
+    pub mpcwm2_upwmr: MPCWM2_UPWMR,
     _reserved6: [u8; 0x04],
     #[doc = "0x140 - Unprivileged Water Mark 3 register"]
-    pub mpcwm3_upwmr: crate::Reg<mpcwm3_upwmr::MPCWM3_UPWMR_SPEC>,
+    pub mpcwm3_upwmr: MPCWM3_UPWMR,
 }
 #[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
 pub type CR = crate::Reg<cr::CR_SPEC>;

@@ -34,6 +34,8 @@ impl From<crate::W<CHSELR0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CHSEL` reader - CHSEL"]
+pub type CHSEL_R = crate::FieldReader<u32, CHSEL_A>;
 #[doc = "CHSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -49,8 +51,6 @@ impl From<CHSEL_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `CHSEL` reader - CHSEL"]
-pub type CHSEL_R = crate::FieldReader<u32, CHSEL_A>;
 impl CHSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<SUBGHZSPICR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NSS` reader - sub-GHz SPI NSS control"]
+pub type NSS_R = crate::BitReader<NSS_A>;
 #[doc = "sub-GHz SPI NSS control\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NSS_A {
@@ -48,8 +50,6 @@ impl From<NSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NSS` reader - sub-GHz SPI NSS control"]
-pub type NSS_R = crate::BitReader<NSS_A>;
 impl NSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

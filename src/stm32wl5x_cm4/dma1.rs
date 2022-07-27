@@ -2,71 +2,71 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - interrupt status register"]
-    pub isr: crate::Reg<isr::ISR_SPEC>,
+    pub isr: ISR,
     #[doc = "0x04 - interrupt flag clear register"]
-    pub ifcr: crate::Reg<ifcr::IFCR_SPEC>,
+    pub ifcr: IFCR,
     #[doc = "0x08 - channel x configuration register"]
-    pub ccr1: crate::Reg<ccr1::CCR1_SPEC>,
+    pub ccr1: CCR1,
     #[doc = "0x0c - channel x number of data to transfer register"]
-    pub cndtr1: crate::Reg<cndtr1::CNDTR1_SPEC>,
+    pub cndtr1: CNDTR1,
     #[doc = "0x10 - channel x peripheral address register"]
-    pub cpar1: crate::Reg<cpar1::CPAR1_SPEC>,
+    pub cpar1: CPAR1,
     #[doc = "0x14 - channel x memory address register"]
-    pub cmar1: crate::Reg<cmar1::CMAR1_SPEC>,
+    pub cmar1: CMAR1,
     _reserved6: [u8; 0x04],
     #[doc = "0x1c - channel x configuration register"]
-    pub ccr2: crate::Reg<ccr2::CCR2_SPEC>,
+    pub ccr2: CCR2,
     #[doc = "0x20 - channel x number of data to transfer register"]
-    pub cndtr2: crate::Reg<cndtr2::CNDTR2_SPEC>,
+    pub cndtr2: CNDTR2,
     #[doc = "0x24 - channel x peripheral address register"]
-    pub cpar2: crate::Reg<cpar2::CPAR2_SPEC>,
+    pub cpar2: CPAR2,
     #[doc = "0x28 - channel x memory address register"]
-    pub cmar2: crate::Reg<cmar2::CMAR2_SPEC>,
+    pub cmar2: CMAR2,
     _reserved10: [u8; 0x04],
     #[doc = "0x30 - channel x configuration register"]
-    pub ccr3: crate::Reg<ccr3::CCR3_SPEC>,
+    pub ccr3: CCR3,
     #[doc = "0x34 - channel x number of data to transfer register"]
-    pub cndtr3: crate::Reg<cndtr3::CNDTR3_SPEC>,
+    pub cndtr3: CNDTR3,
     #[doc = "0x38 - channel x peripheral address register"]
-    pub cpar3: crate::Reg<cpar3::CPAR3_SPEC>,
+    pub cpar3: CPAR3,
     #[doc = "0x3c - channel x memory address register"]
-    pub cmar3: crate::Reg<cmar3::CMAR3_SPEC>,
+    pub cmar3: CMAR3,
     _reserved14: [u8; 0x04],
     #[doc = "0x44 - channel x configuration register"]
-    pub ccr4: crate::Reg<ccr4::CCR4_SPEC>,
+    pub ccr4: CCR4,
     #[doc = "0x48 - channel x number of data to transfer register"]
-    pub cndtr4: crate::Reg<cndtr4::CNDTR4_SPEC>,
+    pub cndtr4: CNDTR4,
     #[doc = "0x4c - channel x peripheral address register"]
-    pub cpar4: crate::Reg<cpar4::CPAR4_SPEC>,
+    pub cpar4: CPAR4,
     #[doc = "0x50 - channel x memory address register"]
-    pub cmar4: crate::Reg<cmar4::CMAR4_SPEC>,
+    pub cmar4: CMAR4,
     _reserved18: [u8; 0x04],
     #[doc = "0x58 - channel x configuration register"]
-    pub ccr5: crate::Reg<ccr5::CCR5_SPEC>,
+    pub ccr5: CCR5,
     #[doc = "0x5c - channel x number of data to transfer register"]
-    pub cndtr5: crate::Reg<cndtr5::CNDTR5_SPEC>,
+    pub cndtr5: CNDTR5,
     #[doc = "0x60 - channel x peripheral address register"]
-    pub cpar5: crate::Reg<cpar5::CPAR5_SPEC>,
+    pub cpar5: CPAR5,
     #[doc = "0x64 - channel x memory address register"]
-    pub cmar5: crate::Reg<cmar5::CMAR5_SPEC>,
+    pub cmar5: CMAR5,
     _reserved22: [u8; 0x04],
     #[doc = "0x6c - channel x configuration register"]
-    pub ccr6: crate::Reg<ccr6::CCR6_SPEC>,
+    pub ccr6: CCR6,
     #[doc = "0x70 - channel x number of data to transfer register"]
-    pub cndtr6: crate::Reg<cndtr6::CNDTR6_SPEC>,
+    pub cndtr6: CNDTR6,
     #[doc = "0x74 - channel x peripheral address register"]
-    pub cpar6: crate::Reg<cpar6::CPAR6_SPEC>,
+    pub cpar6: CPAR6,
     #[doc = "0x78 - channel x memory address register"]
-    pub cmar6: crate::Reg<cmar6::CMAR6_SPEC>,
+    pub cmar6: CMAR6,
     _reserved26: [u8; 0x04],
     #[doc = "0x80 - channel x configuration register"]
-    pub ccr7: crate::Reg<ccr7::CCR7_SPEC>,
+    pub ccr7: CCR7,
     #[doc = "0x84 - channel x number of data to transfer register"]
-    pub cndtr7: crate::Reg<cndtr7::CNDTR7_SPEC>,
+    pub cndtr7: CNDTR7,
     #[doc = "0x88 - channel x peripheral address register"]
-    pub cpar7: crate::Reg<cpar7::CPAR7_SPEC>,
+    pub cpar7: CPAR7,
     #[doc = "0x8c - channel x memory address register"]
-    pub cmar7: crate::Reg<cmar7::CMAR7_SPEC>,
+    pub cmar7: CMAR7,
 }
 #[doc = "ISR register accessor: an alias for `Reg<ISR_SPEC>`"]
 pub type ISR = crate::Reg<isr::ISR_SPEC>;

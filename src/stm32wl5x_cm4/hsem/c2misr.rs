@@ -13,6 +13,8 @@ impl From<crate::R<C2MISR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `MISF0` reader - masked interrupt(N) semaphore n status bit after enable (mask)"]
+pub type MISF0_R = crate::BitReader<MISF0_A>;
 #[doc = "masked interrupt(N) semaphore n status bit after enable (mask)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MISF0_A {
@@ -27,8 +29,6 @@ impl From<MISF0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MISF0` reader - masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub type MISF0_R = crate::BitReader<MISF0_A>;
 impl MISF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,36 +49,6 @@ impl MISF0_R {
         *self == MISF0_A::Pending
     }
 }
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF1_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF2_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF3_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF4_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF5_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF6_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF7_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF8_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF9_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF10_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF11_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF12_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF13_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF14_A;
-#[doc = "masked interrupt(N) semaphore n status bit after enable (mask)"]
-pub use MISF0_A as MISF15_A;
 #[doc = "Field `MISF1` reader - masked interrupt(N) semaphore n status bit after enable (mask)"]
 pub use MISF0_R as MISF1_R;
 #[doc = "Field `MISF2` reader - masked interrupt(N) semaphore n status bit after enable (mask)"]

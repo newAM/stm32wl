@@ -34,67 +34,63 @@ impl From<crate::W<PR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PIF34` reader - Configurable event inputs 33 Pending bit."]
+pub type PIF34_R = crate::BitReader<PIF34R_A>;
 #[doc = "Configurable event inputs 33 Pending bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIF34_A {
+pub enum PIF34R_A {
     #[doc = "0: No trigger request occurred"]
     NotPending = 0,
     #[doc = "1: Selected trigger request occurred"]
     Pending = 1,
 }
-impl From<PIF34_A> for bool {
+impl From<PIF34R_A> for bool {
     #[inline(always)]
-    fn from(variant: PIF34_A) -> Self {
+    fn from(variant: PIF34R_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PIF34` reader - Configurable event inputs 33 Pending bit."]
-pub type PIF34_R = crate::BitReader<PIF34_A>;
 impl PIF34_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIF34_A {
+    pub fn variant(&self) -> PIF34R_A {
         match self.bits {
-            false => PIF34_A::NotPending,
-            true => PIF34_A::Pending,
+            false => PIF34R_A::NotPending,
+            true => PIF34R_A::Pending,
         }
     }
     #[doc = "Checks if the value of the field is `NotPending`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == PIF34_A::NotPending
+        *self == PIF34R_A::NotPending
     }
     #[doc = "Checks if the value of the field is `Pending`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == PIF34_A::Pending
+        *self == PIF34R_A::Pending
     }
 }
 #[doc = "Configurable event inputs 33 Pending bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIF34_AW {
+pub enum PIF34W_AW {
     #[doc = "1: Clears pending bit"]
     Clear = 1,
 }
-impl From<PIF34_AW> for bool {
+impl From<PIF34W_AW> for bool {
     #[inline(always)]
-    fn from(variant: PIF34_AW) -> Self {
+    fn from(variant: PIF34W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PIF34` writer - Configurable event inputs 33 Pending bit."]
-pub type PIF34_W<'a, const O: u8> = crate::BitWriter<'a, u32, PR2_SPEC, PIF34_AW, O>;
+pub type PIF34_W<'a, const O: u8> = crate::BitWriter<'a, u32, PR2_SPEC, PIF34W_AW, O>;
 impl<'a, const O: u8> PIF34_W<'a, O> {
     #[doc = "Clears pending bit"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PIF34_AW::Clear)
+        self.variant(PIF34W_AW::Clear)
     }
 }
-#[doc = "Configurable event inputs 45 Pending bit."]
-pub use PIF34_A as PIF45_A;
-#[doc = "Configurable event inputs 45 Pending bit."]
-pub use PIF34_AW as PIF45_AW;
 #[doc = "Field `PIF45` reader - Configurable event inputs 45 Pending bit."]
 pub use PIF34_R as PIF45_R;
 #[doc = "Field `PIF45` writer - Configurable event inputs 45 Pending bit."]

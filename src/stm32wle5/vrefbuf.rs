@@ -2,9 +2,9 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control and status register"]
-    pub csr: crate::Reg<csr::CSR_SPEC>,
+    pub csr: CSR,
     #[doc = "0x04 - calibration control register"]
-    pub ccr: crate::Reg<ccr::CCR_SPEC>,
+    pub ccr: CCR,
 }
 #[doc = "CSR register accessor: an alias for `Reg<CSR_SPEC>`"]
 pub type CSR = crate::Reg<csr::CSR_SPEC>;

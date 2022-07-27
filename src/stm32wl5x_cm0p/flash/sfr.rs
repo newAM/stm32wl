@@ -38,6 +38,8 @@ impl From<crate::W<SFR_SPEC>> for W {
 pub type SFSA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SFSA` writer - Secure Flash start address"]
 pub type SFSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SFR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `FSD` reader - Flash security disabled"]
+pub type FSD_R = crate::BitReader<FSD_A>;
 #[doc = "Flash security disabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FSD_A {
@@ -52,8 +54,6 @@ impl From<FSD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FSD` reader - Flash security disabled"]
-pub type FSD_R = crate::BitReader<FSD_A>;
 impl FSD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,6 +88,8 @@ impl<'a, const O: u8> FSD_W<'a, O> {
         self.variant(FSD_A::NonSecure)
     }
 }
+#[doc = "Field `DDS` reader - DDS"]
+pub type DDS_R = crate::BitReader<DDS_A>;
 #[doc = "DDS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDS_A {
@@ -102,8 +104,6 @@ impl From<DDS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DDS` reader - DDS"]
-pub type DDS_R = crate::BitReader<DDS_A>;
 impl DDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -142,6 +142,8 @@ impl<'a, const O: u8> DDS_W<'a, O> {
 pub type HDPSA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HDPSA` writer - User Flash hide protection area start address"]
 pub type HDPSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SFR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `HDPAD` reader - User Flash hide protection area disabled"]
+pub type HDPAD_R = crate::BitReader<HDPAD_A>;
 #[doc = "User Flash hide protection area disabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDPAD_A {
@@ -157,8 +159,6 @@ impl From<HDPAD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HDPAD` reader - User Flash hide protection area disabled"]
-pub type HDPAD_R = crate::BitReader<HDPAD_A>;
 impl HDPAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -194,6 +194,8 @@ contains the start address of the first 2-Kbyte page of the user Flash memory hi
         self.variant(HDPAD_A::Disabled)
     }
 }
+#[doc = "Field `SUBGHSPISD` reader - sub-GHz radio SPI security disable"]
+pub type SUBGHSPISD_R = crate::BitReader<SUBGHSPISD_A>;
 #[doc = "sub-GHz radio SPI security disable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUBGHSPISD_A {
@@ -208,8 +210,6 @@ impl From<SUBGHSPISD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SUBGHSPISD` reader - sub-GHz radio SPI security disable"]
-pub type SUBGHSPISD_R = crate::BitReader<SUBGHSPISD_A>;
 impl SUBGHSPISD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

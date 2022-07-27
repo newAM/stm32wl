@@ -34,42 +34,8 @@ impl From<crate::W<EXTCFGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SHDHPREF_A {
-    #[doc = "0: HCLK3 prescaler value not yet applied"]
-    NotApplied = 0,
-    #[doc = "1: HCLK3 prescaler value applied"]
-    Applied = 1,
-}
-impl From<SHDHPREF_A> for bool {
-    #[inline(always)]
-    fn from(variant: SHDHPREF_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `SHDHPREF` reader - HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)"]
-pub type SHDHPREF_R = crate::BitReader<SHDHPREF_A>;
-impl SHDHPREF_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SHDHPREF_A {
-        match self.bits {
-            false => SHDHPREF_A::NotApplied,
-            true => SHDHPREF_A::Applied,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotApplied`"]
-    #[inline(always)]
-    pub fn is_not_applied(&self) -> bool {
-        *self == SHDHPREF_A::NotApplied
-    }
-    #[doc = "Checks if the value of the field is `Applied`"]
-    #[inline(always)]
-    pub fn is_applied(&self) -> bool {
-        *self == SHDHPREF_A::Applied
-    }
-}
+#[doc = "Field `SHDHPRE` reader - HCLK3 shared prescaler (AHB3, Flash, and SRAM2)"]
+pub type SHDHPRE_R = crate::FieldReader<u8, SHDHPRE_A>;
 #[doc = "HCLK3 shared prescaler (AHB3, Flash, and SRAM2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -109,8 +75,6 @@ impl From<SHDHPRE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SHDHPRE` reader - HCLK3 shared prescaler (AHB3, Flash, and SRAM2)"]
-pub type SHDHPRE_R = crate::FieldReader<u8, SHDHPRE_A>;
 impl SHDHPRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -279,16 +243,52 @@ impl<'a, const O: u8> SHDHPRE_W<'a, O> {
         self.variant(SHDHPRE_A::Div512)
     }
 }
-impl R {
-    #[doc = "Bit 16 - HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)"]
+#[doc = "Field `SHDHPREF` reader - HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)"]
+pub type SHDHPREF_R = crate::BitReader<SHDHPREF_A>;
+#[doc = "HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SHDHPREF_A {
+    #[doc = "0: HCLK3 prescaler value not yet applied"]
+    NotApplied = 0,
+    #[doc = "1: HCLK3 prescaler value applied"]
+    Applied = 1,
+}
+impl From<SHDHPREF_A> for bool {
     #[inline(always)]
-    pub fn shdhpref(&self) -> SHDHPREF_R {
-        SHDHPREF_R::new(((self.bits >> 16) & 1) != 0)
+    fn from(variant: SHDHPREF_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl SHDHPREF_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SHDHPREF_A {
+        match self.bits {
+            false => SHDHPREF_A::NotApplied,
+            true => SHDHPREF_A::Applied,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotApplied`"]
+    #[inline(always)]
+    pub fn is_not_applied(&self) -> bool {
+        *self == SHDHPREF_A::NotApplied
+    }
+    #[doc = "Checks if the value of the field is `Applied`"]
+    #[inline(always)]
+    pub fn is_applied(&self) -> bool {
+        *self == SHDHPREF_A::Applied
+    }
+}
+impl R {
     #[doc = "Bits 0:3 - HCLK3 shared prescaler (AHB3, Flash, and SRAM2)"]
     #[inline(always)]
     pub fn shdhpre(&self) -> SHDHPRE_R {
         SHDHPRE_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bit 16 - HCLK3 shared prescaler flag (AHB3, Flash, and SRAM2)"]
+    #[inline(always)]
+    pub fn shdhpref(&self) -> SHDHPREF_R {
+        SHDHPREF_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {

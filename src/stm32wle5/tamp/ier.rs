@@ -34,6 +34,8 @@ impl From<crate::W<IER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAMP1IE` reader - TAMP1IE"]
+pub type TAMP1IE_R = crate::BitReader<TAMP1IE_A>;
 #[doc = "TAMP1IE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1IE_A {
@@ -48,8 +50,6 @@ impl From<TAMP1IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMP1IE` reader - TAMP1IE"]
-pub type TAMP1IE_R = crate::BitReader<TAMP1IE_A>;
 impl TAMP1IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,10 +84,6 @@ impl<'a, const O: u8> TAMP1IE_W<'a, O> {
         self.variant(TAMP1IE_A::Enabled)
     }
 }
-#[doc = "TAMP2IE"]
-pub use TAMP1IE_A as TAMP2IE_A;
-#[doc = "TAMP3IE"]
-pub use TAMP1IE_A as TAMP3IE_A;
 #[doc = "Field `TAMP2IE` reader - TAMP2IE"]
 pub use TAMP1IE_R as TAMP2IE_R;
 #[doc = "Field `TAMP3IE` reader - TAMP3IE"]
@@ -96,6 +92,8 @@ pub use TAMP1IE_R as TAMP3IE_R;
 pub use TAMP1IE_W as TAMP2IE_W;
 #[doc = "Field `TAMP3IE` writer - TAMP3IE"]
 pub use TAMP1IE_W as TAMP3IE_W;
+#[doc = "Field `ITAMP3IE` reader - ITAMP3IE"]
+pub type ITAMP3IE_R = crate::BitReader<ITAMP3IE_A>;
 #[doc = "ITAMP3IE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITAMP3IE_A {
@@ -110,8 +108,6 @@ impl From<ITAMP3IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ITAMP3IE` reader - ITAMP3IE"]
-pub type ITAMP3IE_R = crate::BitReader<ITAMP3IE_A>;
 impl ITAMP3IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -146,12 +142,6 @@ impl<'a, const O: u8> ITAMP3IE_W<'a, O> {
         self.variant(ITAMP3IE_A::Enabled)
     }
 }
-#[doc = "ITAMP5IE"]
-pub use ITAMP3IE_A as ITAMP5IE_A;
-#[doc = "ITAMP6IE"]
-pub use ITAMP3IE_A as ITAMP6IE_A;
-#[doc = "ITAMP8IE"]
-pub use ITAMP3IE_A as ITAMP8IE_A;
 #[doc = "Field `ITAMP5IE` reader - ITAMP5IE"]
 pub use ITAMP3IE_R as ITAMP5IE_R;
 #[doc = "Field `ITAMP6IE` reader - ITAMP6IE"]

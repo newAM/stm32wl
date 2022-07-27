@@ -2,26 +2,26 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - interrupt and status register"]
-    pub isr: crate::Reg<isr::ISR_SPEC>,
+    pub isr: ISR,
     #[doc = "0x04 - interrupt clear register"]
-    pub icr: crate::Reg<icr::ICR_SPEC>,
+    pub icr: ICR,
     #[doc = "0x08 - interrupt enable register"]
-    pub ier: crate::Reg<ier::IER_SPEC>,
+    pub ier: IER,
     #[doc = "0x0c - configuration register"]
-    pub cfgr: crate::Reg<cfgr::CFGR_SPEC>,
+    pub cfgr: CFGR,
     #[doc = "0x10 - control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x14 - compare register"]
-    pub cmp: crate::Reg<cmp::CMP_SPEC>,
+    pub cmp: CMP,
     #[doc = "0x18 - autoreload register"]
-    pub arr: crate::Reg<arr::ARR_SPEC>,
+    pub arr: ARR,
     #[doc = "0x1c - counter register"]
-    pub cnt: crate::Reg<cnt::CNT_SPEC>,
+    pub cnt: CNT,
     #[doc = "0x20 - option register"]
-    pub or: crate::Reg<or::OR_SPEC>,
+    pub or: OR,
     _reserved9: [u8; 0x04],
     #[doc = "0x28 - repetition register"]
-    pub rcr: crate::Reg<rcr::RCR_SPEC>,
+    pub rcr: RCR,
 }
 #[doc = "ISR register accessor: an alias for `Reg<ISR_SPEC>`"]
 pub type ISR = crate::Reg<isr::ISR_SPEC>;

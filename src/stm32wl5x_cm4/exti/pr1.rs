@@ -34,143 +34,63 @@ impl From<crate::W<PR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF21_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF22_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF21_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF22_AW;
-#[doc = "Field `PIF21` reader - Configurable event inputs Pending bit"]
-pub use PIF0_R as PIF21_R;
-#[doc = "Field `PIF22` reader - Configurable event inputs Pending bit"]
-pub use PIF0_R as PIF22_R;
-#[doc = "Field `PIF21` writer - Configurable event inputs Pending bit"]
-pub use PIF0_W as PIF21_W;
-#[doc = "Field `PIF22` writer - Configurable event inputs Pending bit"]
-pub use PIF0_W as PIF22_W;
+#[doc = "Field `PIF0` reader - Configurable event inputs Pending bit"]
+pub type PIF0_R = crate::BitReader<PIF0R_A>;
 #[doc = "Configurable event inputs Pending bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIF0_A {
+pub enum PIF0R_A {
     #[doc = "0: No trigger request occurred"]
     NotPending = 0,
     #[doc = "1: Selected trigger request occurred"]
     Pending = 1,
 }
-impl From<PIF0_A> for bool {
+impl From<PIF0R_A> for bool {
     #[inline(always)]
-    fn from(variant: PIF0_A) -> Self {
+    fn from(variant: PIF0R_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PIF0` reader - Configurable event inputs Pending bit"]
-pub type PIF0_R = crate::BitReader<PIF0_A>;
 impl PIF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIF0_A {
+    pub fn variant(&self) -> PIF0R_A {
         match self.bits {
-            false => PIF0_A::NotPending,
-            true => PIF0_A::Pending,
+            false => PIF0R_A::NotPending,
+            true => PIF0R_A::Pending,
         }
     }
     #[doc = "Checks if the value of the field is `NotPending`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == PIF0_A::NotPending
+        *self == PIF0R_A::NotPending
     }
     #[doc = "Checks if the value of the field is `Pending`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == PIF0_A::Pending
+        *self == PIF0R_A::Pending
     }
 }
 #[doc = "Configurable event inputs Pending bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIF0_AW {
+pub enum PIF0W_AW {
     #[doc = "1: Clears pending bit"]
     Clear = 1,
 }
-impl From<PIF0_AW> for bool {
+impl From<PIF0W_AW> for bool {
     #[inline(always)]
-    fn from(variant: PIF0_AW) -> Self {
+    fn from(variant: PIF0W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PIF0` writer - Configurable event inputs Pending bit"]
-pub type PIF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PR1_SPEC, PIF0_AW, O>;
+pub type PIF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PR1_SPEC, PIF0W_AW, O>;
 impl<'a, const O: u8> PIF0_W<'a, O> {
     #[doc = "Clears pending bit"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PIF0_AW::Clear)
+        self.variant(PIF0W_AW::Clear)
     }
 }
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF1_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF2_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF3_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF4_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF5_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF6_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF7_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF8_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF9_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF10_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF11_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF12_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF13_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF14_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF15_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_A as PIF16_A;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF1_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF2_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF3_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF4_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF5_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF6_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF7_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF8_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF9_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF10_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF11_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF12_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF13_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF14_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF15_AW;
-#[doc = "Configurable event inputs Pending bit"]
-pub use PIF0_AW as PIF16_AW;
 #[doc = "Field `PIF1` reader - Configurable event inputs Pending bit"]
 pub use PIF0_R as PIF1_R;
 #[doc = "Field `PIF2` reader - Configurable event inputs Pending bit"]
@@ -203,6 +123,10 @@ pub use PIF0_R as PIF14_R;
 pub use PIF0_R as PIF15_R;
 #[doc = "Field `PIF16` reader - Configurable event inputs Pending bit"]
 pub use PIF0_R as PIF16_R;
+#[doc = "Field `PIF21` reader - Configurable event inputs Pending bit"]
+pub use PIF0_R as PIF21_R;
+#[doc = "Field `PIF22` reader - Configurable event inputs Pending bit"]
+pub use PIF0_R as PIF22_R;
 #[doc = "Field `PIF1` writer - Configurable event inputs Pending bit"]
 pub use PIF0_W as PIF1_W;
 #[doc = "Field `PIF2` writer - Configurable event inputs Pending bit"]
@@ -235,17 +159,11 @@ pub use PIF0_W as PIF14_W;
 pub use PIF0_W as PIF15_W;
 #[doc = "Field `PIF16` writer - Configurable event inputs Pending bit"]
 pub use PIF0_W as PIF16_W;
+#[doc = "Field `PIF21` writer - Configurable event inputs Pending bit"]
+pub use PIF0_W as PIF21_W;
+#[doc = "Field `PIF22` writer - Configurable event inputs Pending bit"]
+pub use PIF0_W as PIF22_W;
 impl R {
-    #[doc = "Bit 21 - Configurable event inputs Pending bit"]
-    #[inline(always)]
-    pub fn pif21(&self) -> PIF21_R {
-        PIF21_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 22 - Configurable event inputs Pending bit"]
-    #[inline(always)]
-    pub fn pif22(&self) -> PIF22_R {
-        PIF22_R::new(((self.bits >> 22) & 1) != 0)
-    }
     #[doc = "Bit 0 - Configurable event inputs Pending bit"]
     #[inline(always)]
     pub fn pif0(&self) -> PIF0_R {
@@ -331,18 +249,18 @@ impl R {
     pub fn pif16(&self) -> PIF16_R {
         PIF16_R::new(((self.bits >> 16) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 21 - Configurable event inputs Pending bit"]
     #[inline(always)]
-    pub fn pif21(&mut self) -> PIF21_W<21> {
-        PIF21_W::new(self)
+    pub fn pif21(&self) -> PIF21_R {
+        PIF21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Configurable event inputs Pending bit"]
     #[inline(always)]
-    pub fn pif22(&mut self) -> PIF22_W<22> {
-        PIF22_W::new(self)
+    pub fn pif22(&self) -> PIF22_R {
+        PIF22_R::new(((self.bits >> 22) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Configurable event inputs Pending bit"]
     #[inline(always)]
     pub fn pif0(&mut self) -> PIF0_W<0> {
@@ -427,6 +345,16 @@ impl W {
     #[inline(always)]
     pub fn pif16(&mut self) -> PIF16_W<16> {
         PIF16_W::new(self)
+    }
+    #[doc = "Bit 21 - Configurable event inputs Pending bit"]
+    #[inline(always)]
+    pub fn pif21(&mut self) -> PIF21_W<21> {
+        PIF21_W::new(self)
+    }
+    #[doc = "Bit 22 - Configurable event inputs Pending bit"]
+    #[inline(always)]
+    pub fn pif22(&mut self) -> PIF22_W<22> {
+        PIF22_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

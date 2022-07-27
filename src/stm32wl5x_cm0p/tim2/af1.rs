@@ -34,6 +34,8 @@ impl From<crate::W<AF1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ETRSEL` reader - External trigger source selection"]
+pub type ETRSEL_R = crate::FieldReader<u8, ETRSEL_A>;
 #[doc = "External trigger source selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<ETRSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETRSEL` reader - External trigger source selection"]
-pub type ETRSEL_R = crate::FieldReader<u8, ETRSEL_A>;
 impl ETRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

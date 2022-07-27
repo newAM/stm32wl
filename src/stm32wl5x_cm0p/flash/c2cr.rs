@@ -34,6 +34,8 @@ impl From<crate::W<C2CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PG` reader - Programming"]
+pub type PG_R = crate::BitReader<PG_A>;
 #[doc = "Programming\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PG_A {
@@ -48,8 +50,6 @@ impl From<PG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PG` reader - Programming"]
-pub type PG_R = crate::BitReader<PG_A>;
 impl PG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> PG_W<'a, O> {
         self.variant(PG_A::Enabled)
     }
 }
+#[doc = "Field `PER` reader - Page erase"]
+pub type PER_R = crate::BitReader<PER_A>;
 #[doc = "Page erase\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PER_A {
@@ -98,8 +100,6 @@ impl From<PER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PER` reader - Page erase"]
-pub type PER_R = crate::BitReader<PER_A>;
 impl PER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> PER_W<'a, O> {
         self.variant(PER_A::Enabled)
     }
 }
+#[doc = "Field `MER` reader - Mass erase"]
+pub type MER_R = crate::BitReader<MER_A>;
 #[doc = "Mass erase\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MER_A {
@@ -148,8 +150,6 @@ impl From<MER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MER` reader - Mass erase"]
-pub type MER_R = crate::BitReader<MER_A>;
 impl MER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -188,56 +188,58 @@ impl<'a, const O: u8> MER_W<'a, O> {
 pub type PNB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PNB` writer - Page number selection"]
 pub type PNB_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, C2CR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `STRT` reader - Start"]
+pub type STRT_R = crate::BitReader<STRTR_A>;
 #[doc = "Start\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STRT_A {
+pub enum STRTR_A {
     #[doc = "0: Options modification completed or idle"]
     Done = 0,
 }
-impl From<STRT_A> for bool {
+impl From<STRTR_A> for bool {
     #[inline(always)]
-    fn from(variant: STRT_A) -> Self {
+    fn from(variant: STRTR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STRT` reader - Start"]
-pub type STRT_R = crate::BitReader<STRT_A>;
 impl STRT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STRT_A> {
+    pub fn variant(&self) -> Option<STRTR_A> {
         match self.bits {
-            false => Some(STRT_A::Done),
+            false => Some(STRTR_A::Done),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `Done`"]
     #[inline(always)]
     pub fn is_done(&self) -> bool {
-        *self == STRT_A::Done
+        *self == STRTR_A::Done
     }
 }
 #[doc = "Start\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STRT_AW {
+pub enum STRTW_AW {
     #[doc = "1: Trigger options programming operation"]
     Start = 1,
 }
-impl From<STRT_AW> for bool {
+impl From<STRTW_AW> for bool {
     #[inline(always)]
-    fn from(variant: STRT_AW) -> Self {
+    fn from(variant: STRTW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STRT` writer - Start"]
-pub type STRT_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR_SPEC, STRT_AW, O>;
+pub type STRT_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR_SPEC, STRTW_AW, O>;
 impl<'a, const O: u8> STRT_W<'a, O> {
     #[doc = "Trigger options programming operation"]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
-        self.variant(STRT_AW::Start)
+        self.variant(STRTW_AW::Start)
     }
 }
+#[doc = "Field `FSTPG` reader - Fast programming"]
+pub type FSTPG_R = crate::BitReader<FSTPG_A>;
 #[doc = "Fast programming\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FSTPG_A {
@@ -252,8 +254,6 @@ impl From<FSTPG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FSTPG` reader - Fast programming"]
-pub type FSTPG_R = crate::BitReader<FSTPG_A>;
 impl FSTPG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -288,6 +288,8 @@ impl<'a, const O: u8> FSTPG_W<'a, O> {
         self.variant(FSTPG_A::Enabled)
     }
 }
+#[doc = "Field `EOPIE` reader - End of operation interrupt enable"]
+pub type EOPIE_R = crate::BitReader<EOPIE_A>;
 #[doc = "End of operation interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOPIE_A {
@@ -302,8 +304,6 @@ impl From<EOPIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOPIE` reader - End of operation interrupt enable"]
-pub type EOPIE_R = crate::BitReader<EOPIE_A>;
 impl EOPIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -338,6 +338,8 @@ impl<'a, const O: u8> EOPIE_W<'a, O> {
         self.variant(EOPIE_A::Enabled)
     }
 }
+#[doc = "Field `ERRIE` reader - Error interrupt enable"]
+pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 #[doc = "Error interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRIE_A {
@@ -352,8 +354,6 @@ impl From<ERRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRIE` reader - Error interrupt enable"]
-pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 impl ERRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -388,6 +388,8 @@ impl<'a, const O: u8> ERRIE_W<'a, O> {
         self.variant(ERRIE_A::Enabled)
     }
 }
+#[doc = "Field `RDERRIE` reader - RDERRIE"]
+pub type RDERRIE_R = crate::BitReader<RDERRIE_A>;
 #[doc = "RDERRIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDERRIE_A {
@@ -402,8 +404,6 @@ impl From<RDERRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RDERRIE` reader - RDERRIE"]
-pub type RDERRIE_R = crate::BitReader<RDERRIE_A>;
 impl RDERRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

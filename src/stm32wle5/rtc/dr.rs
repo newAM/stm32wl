@@ -34,106 +34,106 @@ impl From<crate::W<DR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `YT` reader - Year tens in BCD format"]
-pub type YT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `YT` writer - Year tens in BCD format"]
-pub type YT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
-#[doc = "Field `YU` reader - Year units in BCD format"]
-pub type YU_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `YU` writer - Year units in BCD format"]
-pub type YU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
-#[doc = "Field `WDU` reader - Week day units"]
-pub type WDU_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `WDU` writer - Week day units"]
-pub type WDU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DR_SPEC, u8, u8, 3, O>;
-#[doc = "Field `MT` reader - Month tens in BCD format"]
-pub type MT_R = crate::BitReader<bool>;
-#[doc = "Field `MT` writer - Month tens in BCD format"]
-pub type MT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DR_SPEC, bool, O>;
-#[doc = "Field `MU` reader - Month units in BCD format"]
-pub type MU_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `MU` writer - Month units in BCD format"]
-pub type MU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
-#[doc = "Field `DT` reader - Date tens in BCD format"]
-pub type DT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DT` writer - Date tens in BCD format"]
-pub type DT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `DU` reader - Date units in BCD format"]
 pub type DU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DU` writer - Date units in BCD format"]
 pub type DU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DT` reader - Date tens in BCD format"]
+pub type DT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DT` writer - Date tens in BCD format"]
+pub type DT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 2, O>;
+#[doc = "Field `MU` reader - Month units in BCD format"]
+pub type MU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MU` writer - Month units in BCD format"]
+pub type MU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
+#[doc = "Field `MT` reader - Month tens in BCD format"]
+pub type MT_R = crate::BitReader<bool>;
+#[doc = "Field `MT` writer - Month tens in BCD format"]
+pub type MT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DR_SPEC, bool, O>;
+#[doc = "Field `WDU` reader - Week day units"]
+pub type WDU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WDU` writer - Week day units"]
+pub type WDU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DR_SPEC, u8, u8, 3, O>;
+#[doc = "Field `YU` reader - Year units in BCD format"]
+pub type YU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `YU` writer - Year units in BCD format"]
+pub type YU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
+#[doc = "Field `YT` reader - Year tens in BCD format"]
+pub type YT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `YT` writer - Year tens in BCD format"]
+pub type YT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DR_SPEC, u8, u8, 4, O>;
 impl R {
-    #[doc = "Bits 20:23 - Year tens in BCD format"]
+    #[doc = "Bits 0:3 - Date units in BCD format"]
     #[inline(always)]
-    pub fn yt(&self) -> YT_R {
-        YT_R::new(((self.bits >> 20) & 0x0f) as u8)
-    }
-    #[doc = "Bits 16:19 - Year units in BCD format"]
-    #[inline(always)]
-    pub fn yu(&self) -> YU_R {
-        YU_R::new(((self.bits >> 16) & 0x0f) as u8)
-    }
-    #[doc = "Bits 13:15 - Week day units"]
-    #[inline(always)]
-    pub fn wdu(&self) -> WDU_R {
-        WDU_R::new(((self.bits >> 13) & 7) as u8)
-    }
-    #[doc = "Bit 12 - Month tens in BCD format"]
-    #[inline(always)]
-    pub fn mt(&self) -> MT_R {
-        MT_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bits 8:11 - Month units in BCD format"]
-    #[inline(always)]
-    pub fn mu(&self) -> MU_R {
-        MU_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn du(&self) -> DU_R {
+        DU_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:5 - Date tens in BCD format"]
     #[inline(always)]
     pub fn dt(&self) -> DT_R {
         DT_R::new(((self.bits >> 4) & 3) as u8)
     }
-    #[doc = "Bits 0:3 - Date units in BCD format"]
+    #[doc = "Bits 8:11 - Month units in BCD format"]
     #[inline(always)]
-    pub fn du(&self) -> DU_R {
-        DU_R::new((self.bits & 0x0f) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 20:23 - Year tens in BCD format"]
-    #[inline(always)]
-    pub fn yt(&mut self) -> YT_W<20> {
-        YT_W::new(self)
-    }
-    #[doc = "Bits 16:19 - Year units in BCD format"]
-    #[inline(always)]
-    pub fn yu(&mut self) -> YU_W<16> {
-        YU_W::new(self)
-    }
-    #[doc = "Bits 13:15 - Week day units"]
-    #[inline(always)]
-    pub fn wdu(&mut self) -> WDU_W<13> {
-        WDU_W::new(self)
+    pub fn mu(&self) -> MU_R {
+        MU_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bit 12 - Month tens in BCD format"]
     #[inline(always)]
-    pub fn mt(&mut self) -> MT_W<12> {
-        MT_W::new(self)
+    pub fn mt(&self) -> MT_R {
+        MT_R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bits 8:11 - Month units in BCD format"]
+    #[doc = "Bits 13:15 - Week day units"]
     #[inline(always)]
-    pub fn mu(&mut self) -> MU_W<8> {
-        MU_W::new(self)
+    pub fn wdu(&self) -> WDU_R {
+        WDU_R::new(((self.bits >> 13) & 7) as u8)
+    }
+    #[doc = "Bits 16:19 - Year units in BCD format"]
+    #[inline(always)]
+    pub fn yu(&self) -> YU_R {
+        YU_R::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+    #[doc = "Bits 20:23 - Year tens in BCD format"]
+    #[inline(always)]
+    pub fn yt(&self) -> YT_R {
+        YT_R::new(((self.bits >> 20) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:3 - Date units in BCD format"]
+    #[inline(always)]
+    pub fn du(&mut self) -> DU_W<0> {
+        DU_W::new(self)
     }
     #[doc = "Bits 4:5 - Date tens in BCD format"]
     #[inline(always)]
     pub fn dt(&mut self) -> DT_W<4> {
         DT_W::new(self)
     }
-    #[doc = "Bits 0:3 - Date units in BCD format"]
+    #[doc = "Bits 8:11 - Month units in BCD format"]
     #[inline(always)]
-    pub fn du(&mut self) -> DU_W<0> {
-        DU_W::new(self)
+    pub fn mu(&mut self) -> MU_W<8> {
+        MU_W::new(self)
+    }
+    #[doc = "Bit 12 - Month tens in BCD format"]
+    #[inline(always)]
+    pub fn mt(&mut self) -> MT_W<12> {
+        MT_W::new(self)
+    }
+    #[doc = "Bits 13:15 - Week day units"]
+    #[inline(always)]
+    pub fn wdu(&mut self) -> WDU_W<13> {
+        WDU_W::new(self)
+    }
+    #[doc = "Bits 16:19 - Year units in BCD format"]
+    #[inline(always)]
+    pub fn yu(&mut self) -> YU_W<16> {
+        YU_W::new(self)
+    }
+    #[doc = "Bits 20:23 - Year tens in BCD format"]
+    #[inline(always)]
+    pub fn yt(&mut self) -> YT_W<20> {
+        YT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

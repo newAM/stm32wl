@@ -13,6 +13,8 @@ impl From<crate::R<MISR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TAMP1MF` reader - TAMP1MF:"]
+pub type TAMP1MF_R = crate::BitReader<TAMP1MF_A>;
 #[doc = "TAMP1MF:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1MF_A {
@@ -27,8 +29,6 @@ impl From<TAMP1MF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMP1MF` reader - TAMP1MF:"]
-pub type TAMP1MF_R = crate::BitReader<TAMP1MF_A>;
 impl TAMP1MF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,14 +49,12 @@ impl TAMP1MF_R {
         *self == TAMP1MF_A::Tamper
     }
 }
-#[doc = "TAMP2MF"]
-pub use TAMP1MF_A as TAMP2MF_A;
-#[doc = "TAMP3MF"]
-pub use TAMP1MF_A as TAMP3MF_A;
 #[doc = "Field `TAMP2MF` reader - TAMP2MF"]
 pub use TAMP1MF_R as TAMP2MF_R;
 #[doc = "Field `TAMP3MF` reader - TAMP3MF"]
 pub use TAMP1MF_R as TAMP3MF_R;
+#[doc = "Field `ITAMP3MF` reader - ITAMP3MF"]
+pub type ITAMP3MF_R = crate::BitReader<ITAMP3MF_A>;
 #[doc = "ITAMP3MF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITAMP3MF_A {
@@ -71,8 +69,6 @@ impl From<ITAMP3MF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ITAMP3MF` reader - ITAMP3MF"]
-pub type ITAMP3MF_R = crate::BitReader<ITAMP3MF_A>;
 impl ITAMP3MF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,12 +89,6 @@ impl ITAMP3MF_R {
         *self == ITAMP3MF_A::Tamper
     }
 }
-#[doc = "ITAMP5MF"]
-pub use ITAMP3MF_A as ITAMP5MF_A;
-#[doc = "ITAMP6MF"]
-pub use ITAMP3MF_A as ITAMP6MF_A;
-#[doc = "ITAMP8MF"]
-pub use ITAMP3MF_A as ITAMP8MF_A;
 #[doc = "Field `ITAMP5MF` reader - ITAMP5MF"]
 pub use ITAMP3MF_R as ITAMP5MF_R;
 #[doc = "Field `ITAMP6MF` reader - ITAMP6MF"]

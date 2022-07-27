@@ -34,136 +34,108 @@ impl From<crate::W<CCMR3_OUTPUT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "OC6M"]
-pub use OC5M_3_A as OC6M_3_A;
-#[doc = "Field `OC6M_3` reader - OC6M"]
-pub use OC5M_3_R as OC6M_3_R;
-#[doc = "Field `OC6M_3` writer - OC6M"]
-pub use OC5M_3_W as OC6M_3_W;
-#[doc = "OC5M\n\nValue on reset: 0"]
+#[doc = "Field `OC5FE` reader - OC5FE"]
+pub type OC5FE_R = crate::BitReader<OC5FE_A>;
+#[doc = "OC5FE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC5M_3_A {
-    #[doc = "0: Normal output compare mode (modes 0-7)"]
-    Normal = 0,
-    #[doc = "1: Extended output compare mode (modes 7-15)"]
-    Extended = 1,
-}
-impl From<OC5M_3_A> for bool {
-    #[inline(always)]
-    fn from(variant: OC5M_3_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `OC5M_3` reader - OC5M"]
-pub type OC5M_3_R = crate::BitReader<OC5M_3_A>;
-impl OC5M_3_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> OC5M_3_A {
-        match self.bits {
-            false => OC5M_3_A::Normal,
-            true => OC5M_3_A::Extended,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Normal`"]
-    #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == OC5M_3_A::Normal
-    }
-    #[doc = "Checks if the value of the field is `Extended`"]
-    #[inline(always)]
-    pub fn is_extended(&self) -> bool {
-        *self == OC5M_3_A::Extended
-    }
-}
-#[doc = "Field `OC5M_3` writer - OC5M"]
-pub type OC5M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5M_3_A, O>;
-impl<'a, const O: u8> OC5M_3_W<'a, O> {
-    #[doc = "Normal output compare mode (modes 0-7)"]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(OC5M_3_A::Normal)
-    }
-    #[doc = "Extended output compare mode (modes 7-15)"]
-    #[inline(always)]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(OC5M_3_A::Extended)
-    }
-}
-#[doc = "OC6CE"]
-pub use OC5CE_A as OC6CE_A;
-#[doc = "Field `OC6CE` reader - OC6CE"]
-pub use OC5CE_R as OC6CE_R;
-#[doc = "Field `OC6CE` writer - OC6CE"]
-pub use OC5CE_W as OC6CE_W;
-#[doc = "OC6FE"]
-pub use OC5FE_A as OC6FE_A;
-#[doc = "Field `OC6FE` reader - OC6FE"]
-pub use OC5FE_R as OC6FE_R;
-#[doc = "Field `OC6FE` writer - OC6FE"]
-pub use OC5FE_W as OC6FE_W;
-#[doc = "OC6M"]
-pub use OC5M_A as OC6M_A;
-#[doc = "Field `OC6M` reader - OC6M"]
-pub use OC5M_R as OC6M_R;
-#[doc = "Field `OC6M` writer - OC6M"]
-pub use OC5M_W as OC6M_W;
-#[doc = "OC6PE"]
-pub use OC5PE_A as OC6PE_A;
-#[doc = "Field `OC6PE` reader - OC6PE"]
-pub use OC5PE_R as OC6PE_R;
-#[doc = "Field `OC6PE` writer - OC6PE"]
-pub use OC5PE_W as OC6PE_W;
-#[doc = "OC5CE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC5CE_A {
-    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
+pub enum OC5FE_A {
+    #[doc = "0: Fast output disabled"]
     Disabled = 0,
-    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "1: Fast output enabled"]
     Enabled = 1,
 }
-impl From<OC5CE_A> for bool {
+impl From<OC5FE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC5CE_A) -> Self {
+    fn from(variant: OC5FE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC5CE` reader - OC5CE"]
-pub type OC5CE_R = crate::BitReader<OC5CE_A>;
-impl OC5CE_R {
+impl OC5FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC5CE_A {
+    pub fn variant(&self) -> OC5FE_A {
         match self.bits {
-            false => OC5CE_A::Disabled,
-            true => OC5CE_A::Enabled,
+            false => OC5FE_A::Disabled,
+            true => OC5FE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC5CE_A::Disabled
+        *self == OC5FE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC5CE_A::Enabled
+        *self == OC5FE_A::Enabled
     }
 }
-#[doc = "Field `OC5CE` writer - OC5CE"]
-pub type OC5CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5CE_A, O>;
-impl<'a, const O: u8> OC5CE_W<'a, O> {
-    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
+#[doc = "Field `OC5FE` writer - OC5FE"]
+pub type OC5FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5FE_A, O>;
+impl<'a, const O: u8> OC5FE_W<'a, O> {
+    #[doc = "Fast output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC5CE_A::Disabled)
+        self.variant(OC5FE_A::Disabled)
     }
-    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "Fast output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC5CE_A::Enabled)
+        self.variant(OC5FE_A::Enabled)
     }
 }
+#[doc = "Field `OC5PE` reader - OC5PE"]
+pub type OC5PE_R = crate::BitReader<OC5PE_A>;
+#[doc = "OC5PE\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OC5PE_A {
+    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    Disabled = 0,
+    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    Enabled = 1,
+}
+impl From<OC5PE_A> for bool {
+    #[inline(always)]
+    fn from(variant: OC5PE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OC5PE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OC5PE_A {
+        match self.bits {
+            false => OC5PE_A::Disabled,
+            true => OC5PE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == OC5PE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == OC5PE_A::Enabled
+    }
+}
+#[doc = "Field `OC5PE` writer - OC5PE"]
+pub type OC5PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5PE_A, O>;
+impl<'a, const O: u8> OC5PE_W<'a, O> {
+    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(OC5PE_A::Disabled)
+    }
+    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(OC5PE_A::Enabled)
+    }
+}
+#[doc = "Field `OC5M` reader - OC5M"]
+pub type OC5M_R = crate::FieldReader<u8, OC5M_A>;
 #[doc = "OC5M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -191,8 +163,6 @@ impl From<OC5M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OC5M` reader - OC5M"]
-pub type OC5M_R = crate::FieldReader<u8, OC5M_A>;
 impl OC5M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -295,208 +265,228 @@ impl<'a, const O: u8> OC5M_W<'a, O> {
         self.variant(OC5M_A::PwmMode2)
     }
 }
-#[doc = "OC5PE\n\nValue on reset: 0"]
+#[doc = "Field `OC5CE` reader - OC5CE"]
+pub type OC5CE_R = crate::BitReader<OC5CE_A>;
+#[doc = "OC5CE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC5PE_A {
-    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+pub enum OC5CE_A {
+    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
     Disabled = 0,
-    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     Enabled = 1,
 }
-impl From<OC5PE_A> for bool {
+impl From<OC5CE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC5PE_A) -> Self {
+    fn from(variant: OC5CE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC5PE` reader - OC5PE"]
-pub type OC5PE_R = crate::BitReader<OC5PE_A>;
-impl OC5PE_R {
+impl OC5CE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC5PE_A {
+    pub fn variant(&self) -> OC5CE_A {
         match self.bits {
-            false => OC5PE_A::Disabled,
-            true => OC5PE_A::Enabled,
+            false => OC5CE_A::Disabled,
+            true => OC5CE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC5PE_A::Disabled
+        *self == OC5CE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC5PE_A::Enabled
+        *self == OC5CE_A::Enabled
     }
 }
-#[doc = "Field `OC5PE` writer - OC5PE"]
-pub type OC5PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5PE_A, O>;
-impl<'a, const O: u8> OC5PE_W<'a, O> {
-    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+#[doc = "Field `OC5CE` writer - OC5CE"]
+pub type OC5CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5CE_A, O>;
+impl<'a, const O: u8> OC5CE_W<'a, O> {
+    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC5PE_A::Disabled)
+        self.variant(OC5CE_A::Disabled)
     }
-    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC5PE_A::Enabled)
+        self.variant(OC5CE_A::Enabled)
     }
 }
-#[doc = "OC5FE\n\nValue on reset: 0"]
+#[doc = "Field `OC6CE` reader - OC6CE"]
+pub use OC5CE_R as OC6CE_R;
+#[doc = "Field `OC6CE` writer - OC6CE"]
+pub use OC5CE_W as OC6CE_W;
+#[doc = "Field `OC6FE` reader - OC6FE"]
+pub use OC5FE_R as OC6FE_R;
+#[doc = "Field `OC6FE` writer - OC6FE"]
+pub use OC5FE_W as OC6FE_W;
+#[doc = "Field `OC6M` reader - OC6M"]
+pub use OC5M_R as OC6M_R;
+#[doc = "Field `OC6M` writer - OC6M"]
+pub use OC5M_W as OC6M_W;
+#[doc = "Field `OC6PE` reader - OC6PE"]
+pub use OC5PE_R as OC6PE_R;
+#[doc = "Field `OC6PE` writer - OC6PE"]
+pub use OC5PE_W as OC6PE_W;
+#[doc = "Field `OC5M_3` reader - OC5M"]
+pub type OC5M_3_R = crate::BitReader<OC5M_3_A>;
+#[doc = "OC5M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC5FE_A {
-    #[doc = "0: Fast output disabled"]
-    Disabled = 0,
-    #[doc = "1: Fast output enabled"]
-    Enabled = 1,
+pub enum OC5M_3_A {
+    #[doc = "0: Normal output compare mode (modes 0-7)"]
+    Normal = 0,
+    #[doc = "1: Extended output compare mode (modes 7-15)"]
+    Extended = 1,
 }
-impl From<OC5FE_A> for bool {
+impl From<OC5M_3_A> for bool {
     #[inline(always)]
-    fn from(variant: OC5FE_A) -> Self {
+    fn from(variant: OC5M_3_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC5FE` reader - OC5FE"]
-pub type OC5FE_R = crate::BitReader<OC5FE_A>;
-impl OC5FE_R {
+impl OC5M_3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC5FE_A {
+    pub fn variant(&self) -> OC5M_3_A {
         match self.bits {
-            false => OC5FE_A::Disabled,
-            true => OC5FE_A::Enabled,
+            false => OC5M_3_A::Normal,
+            true => OC5M_3_A::Extended,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == OC5FE_A::Disabled
+    pub fn is_normal(&self) -> bool {
+        *self == OC5M_3_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[doc = "Checks if the value of the field is `Extended`"]
     #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == OC5FE_A::Enabled
-    }
-}
-#[doc = "Field `OC5FE` writer - OC5FE"]
-pub type OC5FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5FE_A, O>;
-impl<'a, const O: u8> OC5FE_W<'a, O> {
-    #[doc = "Fast output disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(OC5FE_A::Disabled)
-    }
-    #[doc = "Fast output enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(OC5FE_A::Enabled)
+    pub fn is_extended(&self) -> bool {
+        *self == OC5M_3_A::Extended
     }
 }
+#[doc = "Field `OC5M_3` writer - OC5M"]
+pub type OC5M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR3_OUTPUT_SPEC, OC5M_3_A, O>;
+impl<'a, const O: u8> OC5M_3_W<'a, O> {
+    #[doc = "Normal output compare mode (modes 0-7)"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(OC5M_3_A::Normal)
+    }
+    #[doc = "Extended output compare mode (modes 7-15)"]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(OC5M_3_A::Extended)
+    }
+}
+#[doc = "Field `OC6M_3` reader - OC6M"]
+pub use OC5M_3_R as OC6M_3_R;
+#[doc = "Field `OC6M_3` writer - OC6M"]
+pub use OC5M_3_W as OC6M_3_W;
 impl R {
-    #[doc = "Bit 24 - OC6M"]
+    #[doc = "Bit 2 - OC5FE"]
     #[inline(always)]
-    pub fn oc6m_3(&self) -> OC6M_3_R {
-        OC6M_3_R::new(((self.bits >> 24) & 1) != 0)
-    }
-    #[doc = "Bit 16 - OC5M"]
-    #[inline(always)]
-    pub fn oc5m_3(&self) -> OC5M_3_R {
-        OC5M_3_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 15 - OC6CE"]
-    #[inline(always)]
-    pub fn oc6ce(&self) -> OC6CE_R {
-        OC6CE_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bits 12:14 - OC6M"]
-    #[inline(always)]
-    pub fn oc6m(&self) -> OC6M_R {
-        OC6M_R::new(((self.bits >> 12) & 7) as u8)
-    }
-    #[doc = "Bit 11 - OC6PE"]
-    #[inline(always)]
-    pub fn oc6pe(&self) -> OC6PE_R {
-        OC6PE_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - OC6FE"]
-    #[inline(always)]
-    pub fn oc6fe(&self) -> OC6FE_R {
-        OC6FE_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 7 - OC5CE"]
-    #[inline(always)]
-    pub fn oc5ce(&self) -> OC5CE_R {
-        OC5CE_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 4:6 - OC5M"]
-    #[inline(always)]
-    pub fn oc5m(&self) -> OC5M_R {
-        OC5M_R::new(((self.bits >> 4) & 7) as u8)
+    pub fn oc5fe(&self) -> OC5FE_R {
+        OC5FE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - OC5PE"]
     #[inline(always)]
     pub fn oc5pe(&self) -> OC5PE_R {
         OC5PE_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2 - OC5FE"]
+    #[doc = "Bits 4:6 - OC5M"]
     #[inline(always)]
-    pub fn oc5fe(&self) -> OC5FE_R {
-        OC5FE_R::new(((self.bits >> 2) & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 24 - OC6M"]
-    #[inline(always)]
-    pub fn oc6m_3(&mut self) -> OC6M_3_W<24> {
-        OC6M_3_W::new(self)
-    }
-    #[doc = "Bit 16 - OC5M"]
-    #[inline(always)]
-    pub fn oc5m_3(&mut self) -> OC5M_3_W<16> {
-        OC5M_3_W::new(self)
-    }
-    #[doc = "Bit 15 - OC6CE"]
-    #[inline(always)]
-    pub fn oc6ce(&mut self) -> OC6CE_W<15> {
-        OC6CE_W::new(self)
-    }
-    #[doc = "Bits 12:14 - OC6M"]
-    #[inline(always)]
-    pub fn oc6m(&mut self) -> OC6M_W<12> {
-        OC6M_W::new(self)
-    }
-    #[doc = "Bit 11 - OC6PE"]
-    #[inline(always)]
-    pub fn oc6pe(&mut self) -> OC6PE_W<11> {
-        OC6PE_W::new(self)
-    }
-    #[doc = "Bit 10 - OC6FE"]
-    #[inline(always)]
-    pub fn oc6fe(&mut self) -> OC6FE_W<10> {
-        OC6FE_W::new(self)
+    pub fn oc5m(&self) -> OC5M_R {
+        OC5M_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - OC5CE"]
     #[inline(always)]
-    pub fn oc5ce(&mut self) -> OC5CE_W<7> {
-        OC5CE_W::new(self)
+    pub fn oc5ce(&self) -> OC5CE_R {
+        OC5CE_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 4:6 - OC5M"]
+    #[doc = "Bit 10 - OC6FE"]
     #[inline(always)]
-    pub fn oc5m(&mut self) -> OC5M_W<4> {
-        OC5M_W::new(self)
+    pub fn oc6fe(&self) -> OC6FE_R {
+        OC6FE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - OC6PE"]
+    #[inline(always)]
+    pub fn oc6pe(&self) -> OC6PE_R {
+        OC6PE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bits 12:14 - OC6M"]
+    #[inline(always)]
+    pub fn oc6m(&self) -> OC6M_R {
+        OC6M_R::new(((self.bits >> 12) & 7) as u8)
+    }
+    #[doc = "Bit 15 - OC6CE"]
+    #[inline(always)]
+    pub fn oc6ce(&self) -> OC6CE_R {
+        OC6CE_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bit 16 - OC5M"]
+    #[inline(always)]
+    pub fn oc5m_3(&self) -> OC5M_3_R {
+        OC5M_3_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 24 - OC6M"]
+    #[inline(always)]
+    pub fn oc6m_3(&self) -> OC6M_3_R {
+        OC6M_3_R::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 2 - OC5FE"]
+    #[inline(always)]
+    pub fn oc5fe(&mut self) -> OC5FE_W<2> {
+        OC5FE_W::new(self)
     }
     #[doc = "Bit 3 - OC5PE"]
     #[inline(always)]
     pub fn oc5pe(&mut self) -> OC5PE_W<3> {
         OC5PE_W::new(self)
     }
-    #[doc = "Bit 2 - OC5FE"]
+    #[doc = "Bits 4:6 - OC5M"]
     #[inline(always)]
-    pub fn oc5fe(&mut self) -> OC5FE_W<2> {
-        OC5FE_W::new(self)
+    pub fn oc5m(&mut self) -> OC5M_W<4> {
+        OC5M_W::new(self)
+    }
+    #[doc = "Bit 7 - OC5CE"]
+    #[inline(always)]
+    pub fn oc5ce(&mut self) -> OC5CE_W<7> {
+        OC5CE_W::new(self)
+    }
+    #[doc = "Bit 10 - OC6FE"]
+    #[inline(always)]
+    pub fn oc6fe(&mut self) -> OC6FE_W<10> {
+        OC6FE_W::new(self)
+    }
+    #[doc = "Bit 11 - OC6PE"]
+    #[inline(always)]
+    pub fn oc6pe(&mut self) -> OC6PE_W<11> {
+        OC6PE_W::new(self)
+    }
+    #[doc = "Bits 12:14 - OC6M"]
+    #[inline(always)]
+    pub fn oc6m(&mut self) -> OC6M_W<12> {
+        OC6M_W::new(self)
+    }
+    #[doc = "Bit 15 - OC6CE"]
+    #[inline(always)]
+    pub fn oc6ce(&mut self) -> OC6CE_W<15> {
+        OC6CE_W::new(self)
+    }
+    #[doc = "Bit 16 - OC5M"]
+    #[inline(always)]
+    pub fn oc5m_3(&mut self) -> OC5M_3_W<16> {
+        OC5M_3_W::new(self)
+    }
+    #[doc = "Bit 24 - OC6M"]
+    #[inline(always)]
+    pub fn oc6m_3(&mut self) -> OC6M_3_W<24> {
+        OC6M_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

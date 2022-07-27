@@ -13,6 +13,8 @@ impl From<crate::R<C1TOC2SR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `CH1F` reader - CH1F"]
+pub type CH1F_R = crate::BitReader<CH1F_A>;
 #[doc = "CH1F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1F_A {
@@ -27,8 +29,6 @@ impl From<CH1F_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1F` reader - CH1F"]
-pub type CH1F_R = crate::BitReader<CH1F_A>;
 impl CH1F_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,14 +49,6 @@ impl CH1F_R {
         *self == CH1F_A::Occupied
     }
 }
-#[doc = "CH2F"]
-pub use CH1F_A as CH2F_A;
-#[doc = "CH3F"]
-pub use CH1F_A as CH3F_A;
-#[doc = "CH4F"]
-pub use CH1F_A as CH4F_A;
-#[doc = "CH5F"]
-pub use CH1F_A as CH5F_A;
 #[doc = "Field `CH2F` reader - CH2F"]
 pub use CH1F_R as CH2F_R;
 #[doc = "Field `CH3F` reader - CH3F"]

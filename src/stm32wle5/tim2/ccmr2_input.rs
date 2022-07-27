@@ -34,24 +34,166 @@ impl From<crate::W<CCMR2_INPUT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Capture/Compare 4 selection"]
-pub use CC3S_A as CC4S_A;
-#[doc = "Field `CC4S` reader - Capture/Compare 4 selection"]
-pub use CC3S_R as CC4S_R;
-#[doc = "Field `CC4S` writer - Capture/Compare 4 selection"]
-pub use CC3S_W as CC4S_W;
-#[doc = "Input capture 4 filter"]
-pub use IC3F_A as IC4F_A;
-#[doc = "Field `IC4F` reader - Input capture 4 filter"]
-pub use IC3F_R as IC4F_R;
-#[doc = "Field `IC4F` writer - Input capture 4 filter"]
-pub use IC3F_W as IC4F_W;
-#[doc = "Input capture 4 prescaler"]
-pub use IC3PSC_A as IC4PSC_A;
-#[doc = "Field `IC4PSC` reader - Input capture 4 prescaler"]
-pub use IC3PSC_R as IC4PSC_R;
-#[doc = "Field `IC4PSC` writer - Input capture 4 prescaler"]
-pub use IC3PSC_W as IC4PSC_W;
+#[doc = "Field `CC3S` reader - Capture/Compare 3 selection"]
+pub type CC3S_R = crate::FieldReader<u8, CC3S_A>;
+#[doc = "Capture/Compare 3 selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum CC3S_A {
+    #[doc = "0: CCx channel is configured as output"]
+    Output = 0,
+    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
+    Ti1 = 1,
+    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
+    Ti2 = 2,
+    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
+    Trc = 3,
+}
+impl From<CC3S_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CC3S_A) -> Self {
+        variant as _
+    }
+}
+impl CC3S_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CC3S_A {
+        match self.bits {
+            0 => CC3S_A::Output,
+            1 => CC3S_A::Ti1,
+            2 => CC3S_A::Ti2,
+            3 => CC3S_A::Trc,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `Output`"]
+    #[inline(always)]
+    pub fn is_output(&self) -> bool {
+        *self == CC3S_A::Output
+    }
+    #[doc = "Checks if the value of the field is `Ti1`"]
+    #[inline(always)]
+    pub fn is_ti1(&self) -> bool {
+        *self == CC3S_A::Ti1
+    }
+    #[doc = "Checks if the value of the field is `Ti2`"]
+    #[inline(always)]
+    pub fn is_ti2(&self) -> bool {
+        *self == CC3S_A::Ti2
+    }
+    #[doc = "Checks if the value of the field is `Trc`"]
+    #[inline(always)]
+    pub fn is_trc(&self) -> bool {
+        *self == CC3S_A::Trc
+    }
+}
+#[doc = "Field `CC3S` writer - Capture/Compare 3 selection"]
+pub type CC3S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCMR2_INPUT_SPEC, u8, CC3S_A, 2, O>;
+impl<'a, const O: u8> CC3S_W<'a, O> {
+    #[doc = "CCx channel is configured as output"]
+    #[inline(always)]
+    pub fn output(self) -> &'a mut W {
+        self.variant(CC3S_A::Output)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
+    #[inline(always)]
+    pub fn ti1(self) -> &'a mut W {
+        self.variant(CC3S_A::Ti1)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
+    #[inline(always)]
+    pub fn ti2(self) -> &'a mut W {
+        self.variant(CC3S_A::Ti2)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
+    #[inline(always)]
+    pub fn trc(self) -> &'a mut W {
+        self.variant(CC3S_A::Trc)
+    }
+}
+#[doc = "Field `IC3PSC` reader - Input capture 3 prescaler"]
+pub type IC3PSC_R = crate::FieldReader<u8, IC3PSC_A>;
+#[doc = "Input capture 3 prescaler\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum IC3PSC_A {
+    #[doc = "0: CCx channel is configured as output"]
+    Output = 0,
+    #[doc = "1: Capture is done once every 2 events"]
+    Capture2 = 1,
+    #[doc = "2: Capture is done once every 4 events"]
+    Capture4 = 2,
+    #[doc = "3: Capture is done once every 8 events"]
+    Capture8 = 3,
+}
+impl From<IC3PSC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IC3PSC_A) -> Self {
+        variant as _
+    }
+}
+impl IC3PSC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IC3PSC_A {
+        match self.bits {
+            0 => IC3PSC_A::Output,
+            1 => IC3PSC_A::Capture2,
+            2 => IC3PSC_A::Capture4,
+            3 => IC3PSC_A::Capture8,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `Output`"]
+    #[inline(always)]
+    pub fn is_output(&self) -> bool {
+        *self == IC3PSC_A::Output
+    }
+    #[doc = "Checks if the value of the field is `Capture2`"]
+    #[inline(always)]
+    pub fn is_capture2(&self) -> bool {
+        *self == IC3PSC_A::Capture2
+    }
+    #[doc = "Checks if the value of the field is `Capture4`"]
+    #[inline(always)]
+    pub fn is_capture4(&self) -> bool {
+        *self == IC3PSC_A::Capture4
+    }
+    #[doc = "Checks if the value of the field is `Capture8`"]
+    #[inline(always)]
+    pub fn is_capture8(&self) -> bool {
+        *self == IC3PSC_A::Capture8
+    }
+}
+#[doc = "Field `IC3PSC` writer - Input capture 3 prescaler"]
+pub type IC3PSC_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCMR2_INPUT_SPEC, u8, IC3PSC_A, 2, O>;
+impl<'a, const O: u8> IC3PSC_W<'a, O> {
+    #[doc = "CCx channel is configured as output"]
+    #[inline(always)]
+    pub fn output(self) -> &'a mut W {
+        self.variant(IC3PSC_A::Output)
+    }
+    #[doc = "Capture is done once every 2 events"]
+    #[inline(always)]
+    pub fn capture2(self) -> &'a mut W {
+        self.variant(IC3PSC_A::Capture2)
+    }
+    #[doc = "Capture is done once every 4 events"]
+    #[inline(always)]
+    pub fn capture4(self) -> &'a mut W {
+        self.variant(IC3PSC_A::Capture4)
+    }
+    #[doc = "Capture is done once every 8 events"]
+    #[inline(always)]
+    pub fn capture8(self) -> &'a mut W {
+        self.variant(IC3PSC_A::Capture8)
+    }
+}
+#[doc = "Field `IC3F` reader - Input capture 3 filter"]
+pub type IC3F_R = crate::FieldReader<u8, IC3F_A>;
 #[doc = "Input capture 3 filter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -95,8 +237,6 @@ impl From<IC3F_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `IC3F` reader - Input capture 3 filter"]
-pub type IC3F_R = crate::FieldReader<u8, IC3F_A>;
 impl IC3F_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -287,226 +427,80 @@ impl<'a, const O: u8> IC3F_W<'a, O> {
         self.variant(IC3F_A::FdtsDiv32N8)
     }
 }
-#[doc = "Input capture 3 prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum IC3PSC_A {
-    #[doc = "0: CCx channel is configured as output"]
-    Output = 0,
-    #[doc = "1: Capture is done once every 2 events"]
-    Capture2 = 1,
-    #[doc = "2: Capture is done once every 4 events"]
-    Capture4 = 2,
-    #[doc = "3: Capture is done once every 8 events"]
-    Capture8 = 3,
-}
-impl From<IC3PSC_A> for u8 {
-    #[inline(always)]
-    fn from(variant: IC3PSC_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `IC3PSC` reader - Input capture 3 prescaler"]
-pub type IC3PSC_R = crate::FieldReader<u8, IC3PSC_A>;
-impl IC3PSC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IC3PSC_A {
-        match self.bits {
-            0 => IC3PSC_A::Output,
-            1 => IC3PSC_A::Capture2,
-            2 => IC3PSC_A::Capture4,
-            3 => IC3PSC_A::Capture8,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `Output`"]
-    #[inline(always)]
-    pub fn is_output(&self) -> bool {
-        *self == IC3PSC_A::Output
-    }
-    #[doc = "Checks if the value of the field is `Capture2`"]
-    #[inline(always)]
-    pub fn is_capture2(&self) -> bool {
-        *self == IC3PSC_A::Capture2
-    }
-    #[doc = "Checks if the value of the field is `Capture4`"]
-    #[inline(always)]
-    pub fn is_capture4(&self) -> bool {
-        *self == IC3PSC_A::Capture4
-    }
-    #[doc = "Checks if the value of the field is `Capture8`"]
-    #[inline(always)]
-    pub fn is_capture8(&self) -> bool {
-        *self == IC3PSC_A::Capture8
-    }
-}
-#[doc = "Field `IC3PSC` writer - Input capture 3 prescaler"]
-pub type IC3PSC_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CCMR2_INPUT_SPEC, u8, IC3PSC_A, 2, O>;
-impl<'a, const O: u8> IC3PSC_W<'a, O> {
-    #[doc = "CCx channel is configured as output"]
-    #[inline(always)]
-    pub fn output(self) -> &'a mut W {
-        self.variant(IC3PSC_A::Output)
-    }
-    #[doc = "Capture is done once every 2 events"]
-    #[inline(always)]
-    pub fn capture2(self) -> &'a mut W {
-        self.variant(IC3PSC_A::Capture2)
-    }
-    #[doc = "Capture is done once every 4 events"]
-    #[inline(always)]
-    pub fn capture4(self) -> &'a mut W {
-        self.variant(IC3PSC_A::Capture4)
-    }
-    #[doc = "Capture is done once every 8 events"]
-    #[inline(always)]
-    pub fn capture8(self) -> &'a mut W {
-        self.variant(IC3PSC_A::Capture8)
-    }
-}
-#[doc = "Capture/Compare 3 selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum CC3S_A {
-    #[doc = "0: CCx channel is configured as output"]
-    Output = 0,
-    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
-    Ti1 = 1,
-    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
-    Ti2 = 2,
-    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
-    Trc = 3,
-}
-impl From<CC3S_A> for u8 {
-    #[inline(always)]
-    fn from(variant: CC3S_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `CC3S` reader - Capture/Compare 3 selection"]
-pub type CC3S_R = crate::FieldReader<u8, CC3S_A>;
-impl CC3S_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CC3S_A {
-        match self.bits {
-            0 => CC3S_A::Output,
-            1 => CC3S_A::Ti1,
-            2 => CC3S_A::Ti2,
-            3 => CC3S_A::Trc,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `Output`"]
-    #[inline(always)]
-    pub fn is_output(&self) -> bool {
-        *self == CC3S_A::Output
-    }
-    #[doc = "Checks if the value of the field is `Ti1`"]
-    #[inline(always)]
-    pub fn is_ti1(&self) -> bool {
-        *self == CC3S_A::Ti1
-    }
-    #[doc = "Checks if the value of the field is `Ti2`"]
-    #[inline(always)]
-    pub fn is_ti2(&self) -> bool {
-        *self == CC3S_A::Ti2
-    }
-    #[doc = "Checks if the value of the field is `Trc`"]
-    #[inline(always)]
-    pub fn is_trc(&self) -> bool {
-        *self == CC3S_A::Trc
-    }
-}
-#[doc = "Field `CC3S` writer - Capture/Compare 3 selection"]
-pub type CC3S_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CCMR2_INPUT_SPEC, u8, CC3S_A, 2, O>;
-impl<'a, const O: u8> CC3S_W<'a, O> {
-    #[doc = "CCx channel is configured as output"]
-    #[inline(always)]
-    pub fn output(self) -> &'a mut W {
-        self.variant(CC3S_A::Output)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
-    #[inline(always)]
-    pub fn ti1(self) -> &'a mut W {
-        self.variant(CC3S_A::Ti1)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
-    #[inline(always)]
-    pub fn ti2(self) -> &'a mut W {
-        self.variant(CC3S_A::Ti2)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
-    #[inline(always)]
-    pub fn trc(self) -> &'a mut W {
-        self.variant(CC3S_A::Trc)
-    }
-}
+#[doc = "Field `CC4S` reader - Capture/Compare 4 selection"]
+pub use CC3S_R as CC4S_R;
+#[doc = "Field `CC4S` writer - Capture/Compare 4 selection"]
+pub use CC3S_W as CC4S_W;
+#[doc = "Field `IC4F` reader - Input capture 4 filter"]
+pub use IC3F_R as IC4F_R;
+#[doc = "Field `IC4F` writer - Input capture 4 filter"]
+pub use IC3F_W as IC4F_W;
+#[doc = "Field `IC4PSC` reader - Input capture 4 prescaler"]
+pub use IC3PSC_R as IC4PSC_R;
+#[doc = "Field `IC4PSC` writer - Input capture 4 prescaler"]
+pub use IC3PSC_W as IC4PSC_W;
 impl R {
-    #[doc = "Bits 12:15 - Input capture 4 filter"]
+    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
     #[inline(always)]
-    pub fn ic4f(&self) -> IC4F_R {
-        IC4F_R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
-    #[doc = "Bits 10:11 - Input capture 4 prescaler"]
-    #[inline(always)]
-    pub fn ic4psc(&self) -> IC4PSC_R {
-        IC4PSC_R::new(((self.bits >> 10) & 3) as u8)
-    }
-    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
-    #[inline(always)]
-    pub fn cc4s(&self) -> CC4S_R {
-        CC4S_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bits 4:7 - Input capture 3 filter"]
-    #[inline(always)]
-    pub fn ic3f(&self) -> IC3F_R {
-        IC3F_R::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn cc3s(&self) -> CC3S_R {
+        CC3S_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Input capture 3 prescaler"]
     #[inline(always)]
     pub fn ic3psc(&self) -> IC3PSC_R {
         IC3PSC_R::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[doc = "Bits 4:7 - Input capture 3 filter"]
     #[inline(always)]
-    pub fn cc3s(&self) -> CC3S_R {
-        CC3S_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 12:15 - Input capture 4 filter"]
-    #[inline(always)]
-    pub fn ic4f(&mut self) -> IC4F_W<12> {
-        IC4F_W::new(self)
-    }
-    #[doc = "Bits 10:11 - Input capture 4 prescaler"]
-    #[inline(always)]
-    pub fn ic4psc(&mut self) -> IC4PSC_W<10> {
-        IC4PSC_W::new(self)
+    pub fn ic3f(&self) -> IC3F_R {
+        IC3F_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
     #[inline(always)]
-    pub fn cc4s(&mut self) -> CC4S_W<8> {
-        CC4S_W::new(self)
+    pub fn cc4s(&self) -> CC4S_R {
+        CC4S_R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 4:7 - Input capture 3 filter"]
+    #[doc = "Bits 10:11 - Input capture 4 prescaler"]
     #[inline(always)]
-    pub fn ic3f(&mut self) -> IC3F_W<4> {
-        IC3F_W::new(self)
+    pub fn ic4psc(&self) -> IC4PSC_R {
+        IC4PSC_R::new(((self.bits >> 10) & 3) as u8)
+    }
+    #[doc = "Bits 12:15 - Input capture 4 filter"]
+    #[inline(always)]
+    pub fn ic4f(&self) -> IC4F_R {
+        IC4F_R::new(((self.bits >> 12) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[inline(always)]
+    pub fn cc3s(&mut self) -> CC3S_W<0> {
+        CC3S_W::new(self)
     }
     #[doc = "Bits 2:3 - Input capture 3 prescaler"]
     #[inline(always)]
     pub fn ic3psc(&mut self) -> IC3PSC_W<2> {
         IC3PSC_W::new(self)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[doc = "Bits 4:7 - Input capture 3 filter"]
     #[inline(always)]
-    pub fn cc3s(&mut self) -> CC3S_W<0> {
-        CC3S_W::new(self)
+    pub fn ic3f(&mut self) -> IC3F_W<4> {
+        IC3F_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
+    #[inline(always)]
+    pub fn cc4s(&mut self) -> CC4S_W<8> {
+        CC4S_W::new(self)
+    }
+    #[doc = "Bits 10:11 - Input capture 4 prescaler"]
+    #[inline(always)]
+    pub fn ic4psc(&mut self) -> IC4PSC_W<10> {
+        IC4PSC_W::new(self)
+    }
+    #[doc = "Bits 12:15 - Input capture 4 filter"]
+    #[inline(always)]
+    pub fn ic4f(&mut self) -> IC4F_W<12> {
+        IC4F_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

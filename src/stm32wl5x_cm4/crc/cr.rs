@@ -34,134 +34,46 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Reverse output data\n\nValue on reset: 0"]
+#[doc = "Field `RESET` reader - RESET bit"]
+pub type RESET_R = crate::BitReader<RESETW_A>;
+#[doc = "RESET bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REV_OUT_A {
-    #[doc = "0: Bit order not affected"]
-    Normal = 0,
-    #[doc = "1: Bit reversed output"]
-    Reversed = 1,
+pub enum RESETW_A {
+    #[doc = "1: Resets the CRC calculation unit and sets the data register to 0xFFFF FFFF"]
+    Reset = 1,
 }
-impl From<REV_OUT_A> for bool {
+impl From<RESETW_A> for bool {
     #[inline(always)]
-    fn from(variant: REV_OUT_A) -> Self {
+    fn from(variant: RESETW_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REV_OUT` reader - Reverse output data"]
-pub type REV_OUT_R = crate::BitReader<REV_OUT_A>;
-impl REV_OUT_R {
+impl RESET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV_OUT_A {
+    pub fn variant(&self) -> Option<RESETW_A> {
         match self.bits {
-            false => REV_OUT_A::Normal,
-            true => REV_OUT_A::Reversed,
+            true => Some(RESETW_A::Reset),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == REV_OUT_A::Normal
-    }
-    #[doc = "Checks if the value of the field is `Reversed`"]
-    #[inline(always)]
-    pub fn is_reversed(&self) -> bool {
-        *self == REV_OUT_A::Reversed
+    pub fn is_reset(&self) -> bool {
+        *self == RESETW_A::Reset
     }
 }
-#[doc = "Field `REV_OUT` writer - Reverse output data"]
-pub type REV_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, REV_OUT_A, O>;
-impl<'a, const O: u8> REV_OUT_W<'a, O> {
-    #[doc = "Bit order not affected"]
+#[doc = "Field `RESET` writer - RESET bit"]
+pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, RESETW_A, O>;
+impl<'a, const O: u8> RESET_W<'a, O> {
+    #[doc = "Resets the CRC calculation unit and sets the data register to 0xFFFF FFFF"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(REV_OUT_A::Normal)
-    }
-    #[doc = "Bit reversed output"]
-    #[inline(always)]
-    pub fn reversed(self) -> &'a mut W {
-        self.variant(REV_OUT_A::Reversed)
+    pub fn reset(self) -> &'a mut W {
+        self.variant(RESETW_A::Reset)
     }
 }
-#[doc = "Reverse input data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum REV_IN_A {
-    #[doc = "0: Bit order not affected"]
-    Normal = 0,
-    #[doc = "1: Bit reversal done by byte"]
-    Byte = 1,
-    #[doc = "2: Bit reversal done by half-word"]
-    HalfWord = 2,
-    #[doc = "3: Bit reversal done by word"]
-    Word = 3,
-}
-impl From<REV_IN_A> for u8 {
-    #[inline(always)]
-    fn from(variant: REV_IN_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `REV_IN` reader - Reverse input data"]
-pub type REV_IN_R = crate::FieldReader<u8, REV_IN_A>;
-impl REV_IN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> REV_IN_A {
-        match self.bits {
-            0 => REV_IN_A::Normal,
-            1 => REV_IN_A::Byte,
-            2 => REV_IN_A::HalfWord,
-            3 => REV_IN_A::Word,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `Normal`"]
-    #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == REV_IN_A::Normal
-    }
-    #[doc = "Checks if the value of the field is `Byte`"]
-    #[inline(always)]
-    pub fn is_byte(&self) -> bool {
-        *self == REV_IN_A::Byte
-    }
-    #[doc = "Checks if the value of the field is `HalfWord`"]
-    #[inline(always)]
-    pub fn is_half_word(&self) -> bool {
-        *self == REV_IN_A::HalfWord
-    }
-    #[doc = "Checks if the value of the field is `Word`"]
-    #[inline(always)]
-    pub fn is_word(&self) -> bool {
-        *self == REV_IN_A::Word
-    }
-}
-#[doc = "Field `REV_IN` writer - Reverse input data"]
-pub type REV_IN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, REV_IN_A, 2, O>;
-impl<'a, const O: u8> REV_IN_W<'a, O> {
-    #[doc = "Bit order not affected"]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(REV_IN_A::Normal)
-    }
-    #[doc = "Bit reversal done by byte"]
-    #[inline(always)]
-    pub fn byte(self) -> &'a mut W {
-        self.variant(REV_IN_A::Byte)
-    }
-    #[doc = "Bit reversal done by half-word"]
-    #[inline(always)]
-    pub fn half_word(self) -> &'a mut W {
-        self.variant(REV_IN_A::HalfWord)
-    }
-    #[doc = "Bit reversal done by word"]
-    #[inline(always)]
-    pub fn word(self) -> &'a mut W {
-        self.variant(REV_IN_A::Word)
-    }
-}
+#[doc = "Field `POLYSIZE` reader - Polynomial size"]
+pub type POLYSIZE_R = crate::FieldReader<u8, POLYSIZE_A>;
 #[doc = "Polynomial size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -181,8 +93,6 @@ impl From<POLYSIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `POLYSIZE` reader - Polynomial size"]
-pub type POLYSIZE_R = crate::FieldReader<u8, POLYSIZE_A>;
 impl POLYSIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -241,86 +151,176 @@ impl<'a, const O: u8> POLYSIZE_W<'a, O> {
         self.variant(POLYSIZE_A::Polysize7)
     }
 }
-#[doc = "RESET bit\n\nValue on reset: 0"]
+#[doc = "Field `REV_IN` reader - Reverse input data"]
+pub type REV_IN_R = crate::FieldReader<u8, REV_IN_A>;
+#[doc = "Reverse input data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESET_A {
-    #[doc = "1: Resets the CRC calculation unit and sets the data register to 0xFFFF FFFF"]
-    Reset = 1,
+#[repr(u8)]
+pub enum REV_IN_A {
+    #[doc = "0: Bit order not affected"]
+    Normal = 0,
+    #[doc = "1: Bit reversal done by byte"]
+    Byte = 1,
+    #[doc = "2: Bit reversal done by half-word"]
+    HalfWord = 2,
+    #[doc = "3: Bit reversal done by word"]
+    Word = 3,
 }
-impl From<RESET_A> for bool {
+impl From<REV_IN_A> for u8 {
     #[inline(always)]
-    fn from(variant: RESET_A) -> Self {
+    fn from(variant: REV_IN_A) -> Self {
+        variant as _
+    }
+}
+impl REV_IN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REV_IN_A {
+        match self.bits {
+            0 => REV_IN_A::Normal,
+            1 => REV_IN_A::Byte,
+            2 => REV_IN_A::HalfWord,
+            3 => REV_IN_A::Word,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `Normal`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == REV_IN_A::Normal
+    }
+    #[doc = "Checks if the value of the field is `Byte`"]
+    #[inline(always)]
+    pub fn is_byte(&self) -> bool {
+        *self == REV_IN_A::Byte
+    }
+    #[doc = "Checks if the value of the field is `HalfWord`"]
+    #[inline(always)]
+    pub fn is_half_word(&self) -> bool {
+        *self == REV_IN_A::HalfWord
+    }
+    #[doc = "Checks if the value of the field is `Word`"]
+    #[inline(always)]
+    pub fn is_word(&self) -> bool {
+        *self == REV_IN_A::Word
+    }
+}
+#[doc = "Field `REV_IN` writer - Reverse input data"]
+pub type REV_IN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, REV_IN_A, 2, O>;
+impl<'a, const O: u8> REV_IN_W<'a, O> {
+    #[doc = "Bit order not affected"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(REV_IN_A::Normal)
+    }
+    #[doc = "Bit reversal done by byte"]
+    #[inline(always)]
+    pub fn byte(self) -> &'a mut W {
+        self.variant(REV_IN_A::Byte)
+    }
+    #[doc = "Bit reversal done by half-word"]
+    #[inline(always)]
+    pub fn half_word(self) -> &'a mut W {
+        self.variant(REV_IN_A::HalfWord)
+    }
+    #[doc = "Bit reversal done by word"]
+    #[inline(always)]
+    pub fn word(self) -> &'a mut W {
+        self.variant(REV_IN_A::Word)
+    }
+}
+#[doc = "Field `REV_OUT` reader - Reverse output data"]
+pub type REV_OUT_R = crate::BitReader<REV_OUT_A>;
+#[doc = "Reverse output data\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REV_OUT_A {
+    #[doc = "0: Bit order not affected"]
+    Normal = 0,
+    #[doc = "1: Bit reversed output"]
+    Reversed = 1,
+}
+impl From<REV_OUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: REV_OUT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESET` reader - RESET bit"]
-pub type RESET_R = crate::BitReader<RESET_A>;
-impl RESET_R {
+impl REV_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RESET_A> {
+    pub fn variant(&self) -> REV_OUT_A {
         match self.bits {
-            true => Some(RESET_A::Reset),
-            _ => None,
+            false => REV_OUT_A::Normal,
+            true => REV_OUT_A::Reversed,
         }
     }
-    #[doc = "Checks if the value of the field is `Reset`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
-    pub fn is_reset(&self) -> bool {
-        *self == RESET_A::Reset
+    pub fn is_normal(&self) -> bool {
+        *self == REV_OUT_A::Normal
+    }
+    #[doc = "Checks if the value of the field is `Reversed`"]
+    #[inline(always)]
+    pub fn is_reversed(&self) -> bool {
+        *self == REV_OUT_A::Reversed
     }
 }
-#[doc = "Field `RESET` writer - RESET bit"]
-pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, RESET_A, O>;
-impl<'a, const O: u8> RESET_W<'a, O> {
-    #[doc = "Resets the CRC calculation unit and sets the data register to 0xFFFF FFFF"]
+#[doc = "Field `REV_OUT` writer - Reverse output data"]
+pub type REV_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, REV_OUT_A, O>;
+impl<'a, const O: u8> REV_OUT_W<'a, O> {
+    #[doc = "Bit order not affected"]
     #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(RESET_A::Reset)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(REV_OUT_A::Normal)
+    }
+    #[doc = "Bit reversed output"]
+    #[inline(always)]
+    pub fn reversed(self) -> &'a mut W {
+        self.variant(REV_OUT_A::Reversed)
     }
 }
 impl R {
-    #[doc = "Bit 7 - Reverse output data"]
+    #[doc = "Bit 0 - RESET bit"]
     #[inline(always)]
-    pub fn rev_out(&self) -> REV_OUT_R {
-        REV_OUT_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 5:6 - Reverse input data"]
-    #[inline(always)]
-    pub fn rev_in(&self) -> REV_IN_R {
-        REV_IN_R::new(((self.bits >> 5) & 3) as u8)
+    pub fn reset(&self) -> RESET_R {
+        RESET_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 3:4 - Polynomial size"]
     #[inline(always)]
     pub fn polysize(&self) -> POLYSIZE_R {
         POLYSIZE_R::new(((self.bits >> 3) & 3) as u8)
     }
-    #[doc = "Bit 0 - RESET bit"]
+    #[doc = "Bits 5:6 - Reverse input data"]
     #[inline(always)]
-    pub fn reset(&self) -> RESET_R {
-        RESET_R::new((self.bits & 1) != 0)
+    pub fn rev_in(&self) -> REV_IN_R {
+        REV_IN_R::new(((self.bits >> 5) & 3) as u8)
+    }
+    #[doc = "Bit 7 - Reverse output data"]
+    #[inline(always)]
+    pub fn rev_out(&self) -> REV_OUT_R {
+        REV_OUT_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - Reverse output data"]
+    #[doc = "Bit 0 - RESET bit"]
     #[inline(always)]
-    pub fn rev_out(&mut self) -> REV_OUT_W<7> {
-        REV_OUT_W::new(self)
-    }
-    #[doc = "Bits 5:6 - Reverse input data"]
-    #[inline(always)]
-    pub fn rev_in(&mut self) -> REV_IN_W<5> {
-        REV_IN_W::new(self)
+    pub fn reset(&mut self) -> RESET_W<0> {
+        RESET_W::new(self)
     }
     #[doc = "Bits 3:4 - Polynomial size"]
     #[inline(always)]
     pub fn polysize(&mut self) -> POLYSIZE_W<3> {
         POLYSIZE_W::new(self)
     }
-    #[doc = "Bit 0 - RESET bit"]
+    #[doc = "Bits 5:6 - Reverse input data"]
     #[inline(always)]
-    pub fn reset(&mut self) -> RESET_W<0> {
-        RESET_W::new(self)
+    pub fn rev_in(&mut self) -> REV_IN_W<5> {
+        REV_IN_W::new(self)
+    }
+    #[doc = "Bit 7 - Reverse output data"]
+    #[inline(always)]
+    pub fn rev_out(&mut self) -> REV_OUT_W<7> {
+        REV_OUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

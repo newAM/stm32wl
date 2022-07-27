@@ -34,6 +34,58 @@ impl From<crate::W<OR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ETR_RMP` reader - External trigger remap"]
+pub type ETR_RMP_R = crate::BitReader<ETR_RMP_A>;
+#[doc = "External trigger remap\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ETR_RMP_A {
+    #[doc = "0: TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
+    Gpio = 0,
+    #[doc = "1: LSE internal clock is connected to TIM2_ETR input"]
+    Tim2Etr = 1,
+}
+impl From<ETR_RMP_A> for bool {
+    #[inline(always)]
+    fn from(variant: ETR_RMP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ETR_RMP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ETR_RMP_A {
+        match self.bits {
+            false => ETR_RMP_A::Gpio,
+            true => ETR_RMP_A::Tim2Etr,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Gpio`"]
+    #[inline(always)]
+    pub fn is_gpio(&self) -> bool {
+        *self == ETR_RMP_A::Gpio
+    }
+    #[doc = "Checks if the value of the field is `Tim2Etr`"]
+    #[inline(always)]
+    pub fn is_tim2_etr(&self) -> bool {
+        *self == ETR_RMP_A::Tim2Etr
+    }
+}
+#[doc = "Field `ETR_RMP` writer - External trigger remap"]
+pub type ETR_RMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR1_SPEC, ETR_RMP_A, O>;
+impl<'a, const O: u8> ETR_RMP_W<'a, O> {
+    #[doc = "TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
+    #[inline(always)]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(ETR_RMP_A::Gpio)
+    }
+    #[doc = "LSE internal clock is connected to TIM2_ETR input"]
+    #[inline(always)]
+    pub fn tim2_etr(self) -> &'a mut W {
+        self.variant(ETR_RMP_A::Tim2Etr)
+    }
+}
+#[doc = "Field `TI4_RMP` reader - Input capture 4 remap"]
+pub type TI4_RMP_R = crate::FieldReader<u8, TI4_RMP_A>;
 #[doc = "Input capture 4 remap\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +105,6 @@ impl From<TI4_RMP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TI4_RMP` reader - Input capture 4 remap"]
-pub type TI4_RMP_R = crate::FieldReader<u8, TI4_RMP_A>;
 impl TI4_RMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,78 +163,28 @@ impl<'a, const O: u8> TI4_RMP_W<'a, O> {
         self.variant(TI4_RMP_A::Comp12)
     }
 }
-#[doc = "External trigger remap\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETR_RMP_A {
-    #[doc = "0: TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
-    Gpio = 0,
-    #[doc = "1: LSE internal clock is connected to TIM2_ETR input"]
-    Tim2Etr = 1,
-}
-impl From<ETR_RMP_A> for bool {
-    #[inline(always)]
-    fn from(variant: ETR_RMP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ETR_RMP` reader - External trigger remap"]
-pub type ETR_RMP_R = crate::BitReader<ETR_RMP_A>;
-impl ETR_RMP_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ETR_RMP_A {
-        match self.bits {
-            false => ETR_RMP_A::Gpio,
-            true => ETR_RMP_A::Tim2Etr,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Gpio`"]
-    #[inline(always)]
-    pub fn is_gpio(&self) -> bool {
-        *self == ETR_RMP_A::Gpio
-    }
-    #[doc = "Checks if the value of the field is `Tim2Etr`"]
-    #[inline(always)]
-    pub fn is_tim2_etr(&self) -> bool {
-        *self == ETR_RMP_A::Tim2Etr
-    }
-}
-#[doc = "Field `ETR_RMP` writer - External trigger remap"]
-pub type ETR_RMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR1_SPEC, ETR_RMP_A, O>;
-impl<'a, const O: u8> ETR_RMP_W<'a, O> {
-    #[doc = "TIM2 ETR is connected to GPIO: Refer to Alternate Function mapping"]
-    #[inline(always)]
-    pub fn gpio(self) -> &'a mut W {
-        self.variant(ETR_RMP_A::Gpio)
-    }
-    #[doc = "LSE internal clock is connected to TIM2_ETR input"]
-    #[inline(always)]
-    pub fn tim2_etr(self) -> &'a mut W {
-        self.variant(ETR_RMP_A::Tim2Etr)
-    }
-}
 impl R {
-    #[doc = "Bits 2:3 - Input capture 4 remap"]
-    #[inline(always)]
-    pub fn ti4_rmp(&self) -> TI4_RMP_R {
-        TI4_RMP_R::new(((self.bits >> 2) & 3) as u8)
-    }
     #[doc = "Bit 1 - External trigger remap"]
     #[inline(always)]
     pub fn etr_rmp(&self) -> ETR_RMP_R {
         ETR_RMP_R::new(((self.bits >> 1) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bits 2:3 - Input capture 4 remap"]
     #[inline(always)]
-    pub fn ti4_rmp(&mut self) -> TI4_RMP_W<2> {
-        TI4_RMP_W::new(self)
+    pub fn ti4_rmp(&self) -> TI4_RMP_R {
+        TI4_RMP_R::new(((self.bits >> 2) & 3) as u8)
     }
+}
+impl W {
     #[doc = "Bit 1 - External trigger remap"]
     #[inline(always)]
     pub fn etr_rmp(&mut self) -> ETR_RMP_W<1> {
         ETR_RMP_W::new(self)
+    }
+    #[doc = "Bits 2:3 - Input capture 4 remap"]
+    #[inline(always)]
+    pub fn ti4_rmp(&mut self) -> TI4_RMP_W<2> {
+        TI4_RMP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

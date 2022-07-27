@@ -19,18 +19,6 @@ impl From<crate::W<RGCFR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Clear trigger overrun event flag"]
-pub use COF0_AW as COF3_AW;
-#[doc = "COF2"]
-pub use COF0_AW as COF2_AW;
-#[doc = "COF1"]
-pub use COF0_AW as COF1_AW;
-#[doc = "Field `COF3` writer - Clear trigger overrun event flag"]
-pub use COF0_W as COF3_W;
-#[doc = "Field `COF2` writer - COF2"]
-pub use COF0_W as COF2_W;
-#[doc = "Field `COF1` writer - COF1"]
-pub use COF0_W as COF1_W;
 #[doc = "COF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COF0_AW {
@@ -52,26 +40,32 @@ impl<'a, const O: u8> COF0_W<'a, O> {
         self.variant(COF0_AW::Clear)
     }
 }
+#[doc = "Field `COF1` writer - COF1"]
+pub use COF0_W as COF1_W;
+#[doc = "Field `COF2` writer - COF2"]
+pub use COF0_W as COF2_W;
+#[doc = "Field `COF3` writer - Clear trigger overrun event flag"]
+pub use COF0_W as COF3_W;
 impl W {
-    #[doc = "Bit 3 - Clear trigger overrun event flag"]
+    #[doc = "Bit 0 - COF0"]
     #[inline(always)]
-    pub fn cof3(&mut self) -> COF3_W<3> {
-        COF3_W::new(self)
-    }
-    #[doc = "Bit 2 - COF2"]
-    #[inline(always)]
-    pub fn cof2(&mut self) -> COF2_W<2> {
-        COF2_W::new(self)
+    pub fn cof0(&mut self) -> COF0_W<0> {
+        COF0_W::new(self)
     }
     #[doc = "Bit 1 - COF1"]
     #[inline(always)]
     pub fn cof1(&mut self) -> COF1_W<1> {
         COF1_W::new(self)
     }
-    #[doc = "Bit 0 - COF0"]
+    #[doc = "Bit 2 - COF2"]
     #[inline(always)]
-    pub fn cof0(&mut self) -> COF0_W<0> {
-        COF0_W::new(self)
+    pub fn cof2(&mut self) -> COF2_W<2> {
+        COF2_W::new(self)
+    }
+    #[doc = "Bit 3 - Clear trigger overrun event flag"]
+    #[inline(always)]
+    pub fn cof3(&mut self) -> COF3_W<3> {
+        COF3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

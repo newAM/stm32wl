@@ -34,6 +34,8 @@ impl From<crate::W<CR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PE` reader - Peripheral enable"]
+pub type PE_R = crate::BitReader<PE_A>;
 #[doc = "Peripheral enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PE_A {
@@ -48,8 +50,6 @@ impl From<PE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PE` reader - Peripheral enable"]
-pub type PE_R = crate::BitReader<PE_A>;
 impl PE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> PE_W<'a, O> {
         self.variant(PE_A::Enabled)
     }
 }
+#[doc = "Field `TXIE` reader - TX Interrupt enable"]
+pub type TXIE_R = crate::BitReader<TXIE_A>;
 #[doc = "TX Interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXIE_A {
@@ -98,8 +100,6 @@ impl From<TXIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXIE` reader - TX Interrupt enable"]
-pub type TXIE_R = crate::BitReader<TXIE_A>;
 impl TXIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> TXIE_W<'a, O> {
         self.variant(TXIE_A::Enabled)
     }
 }
+#[doc = "Field `RXIE` reader - RX Interrupt enable"]
+pub type RXIE_R = crate::BitReader<RXIE_A>;
 #[doc = "RX Interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXIE_A {
@@ -148,8 +150,6 @@ impl From<RXIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXIE` reader - RX Interrupt enable"]
-pub type RXIE_R = crate::BitReader<RXIE_A>;
 impl RXIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> RXIE_W<'a, O> {
         self.variant(RXIE_A::Enabled)
     }
 }
+#[doc = "Field `ADDRIE` reader - Address match interrupt enable (slave only)"]
+pub type ADDRIE_R = crate::BitReader<ADDRIE_A>;
 #[doc = "Address match interrupt enable (slave only)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRIE_A {
@@ -198,8 +200,6 @@ impl From<ADDRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRIE` reader - Address match interrupt enable (slave only)"]
-pub type ADDRIE_R = crate::BitReader<ADDRIE_A>;
 impl ADDRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -234,6 +234,8 @@ impl<'a, const O: u8> ADDRIE_W<'a, O> {
         self.variant(ADDRIE_A::Enabled)
     }
 }
+#[doc = "Field `NACKIE` reader - Not acknowledge received interrupt enable"]
+pub type NACKIE_R = crate::BitReader<NACKIE_A>;
 #[doc = "Not acknowledge received interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NACKIE_A {
@@ -248,8 +250,6 @@ impl From<NACKIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NACKIE` reader - Not acknowledge received interrupt enable"]
-pub type NACKIE_R = crate::BitReader<NACKIE_A>;
 impl NACKIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -284,6 +284,8 @@ impl<'a, const O: u8> NACKIE_W<'a, O> {
         self.variant(NACKIE_A::Enabled)
     }
 }
+#[doc = "Field `STOPIE` reader - STOP detection Interrupt enable"]
+pub type STOPIE_R = crate::BitReader<STOPIE_A>;
 #[doc = "STOP detection Interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPIE_A {
@@ -298,8 +300,6 @@ impl From<STOPIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STOPIE` reader - STOP detection Interrupt enable"]
-pub type STOPIE_R = crate::BitReader<STOPIE_A>;
 impl STOPIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -334,6 +334,8 @@ impl<'a, const O: u8> STOPIE_W<'a, O> {
         self.variant(STOPIE_A::Enabled)
     }
 }
+#[doc = "Field `TCIE` reader - Transfer Complete interrupt enable"]
+pub type TCIE_R = crate::BitReader<TCIE_A>;
 #[doc = "Transfer Complete interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCIE_A {
@@ -348,8 +350,6 @@ impl From<TCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TCIE` reader - Transfer Complete interrupt enable"]
-pub type TCIE_R = crate::BitReader<TCIE_A>;
 impl TCIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -384,6 +384,8 @@ impl<'a, const O: u8> TCIE_W<'a, O> {
         self.variant(TCIE_A::Enabled)
     }
 }
+#[doc = "Field `ERRIE` reader - Error interrupts enable"]
+pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 #[doc = "Error interrupts enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRIE_A {
@@ -398,8 +400,6 @@ impl From<ERRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRIE` reader - Error interrupts enable"]
-pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 impl ERRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -434,6 +434,8 @@ impl<'a, const O: u8> ERRIE_W<'a, O> {
         self.variant(ERRIE_A::Enabled)
     }
 }
+#[doc = "Field `DNF` reader - Digital noise filter"]
+pub type DNF_R = crate::FieldReader<u8, DNF_A>;
 #[doc = "Digital noise filter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -477,8 +479,6 @@ impl From<DNF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DNF` reader - Digital noise filter"]
-pub type DNF_R = crate::FieldReader<u8, DNF_A>;
 impl DNF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -668,6 +668,8 @@ impl<'a, const O: u8> DNF_W<'a, O> {
         self.variant(DNF_A::Filter15)
     }
 }
+#[doc = "Field `ANFOFF` reader - Analog noise filter OFF"]
+pub type ANFOFF_R = crate::BitReader<ANFOFF_A>;
 #[doc = "Analog noise filter OFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANFOFF_A {
@@ -682,8 +684,6 @@ impl From<ANFOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ANFOFF` reader - Analog noise filter OFF"]
-pub type ANFOFF_R = crate::BitReader<ANFOFF_A>;
 impl ANFOFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -718,6 +718,8 @@ impl<'a, const O: u8> ANFOFF_W<'a, O> {
         self.variant(ANFOFF_A::Disabled)
     }
 }
+#[doc = "Field `TXDMAEN` reader - DMA transmission requests enable"]
+pub type TXDMAEN_R = crate::BitReader<TXDMAEN_A>;
 #[doc = "DMA transmission requests enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDMAEN_A {
@@ -732,8 +734,6 @@ impl From<TXDMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXDMAEN` reader - DMA transmission requests enable"]
-pub type TXDMAEN_R = crate::BitReader<TXDMAEN_A>;
 impl TXDMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -768,6 +768,8 @@ impl<'a, const O: u8> TXDMAEN_W<'a, O> {
         self.variant(TXDMAEN_A::Enabled)
     }
 }
+#[doc = "Field `RXDMAEN` reader - DMA reception requests enable"]
+pub type RXDMAEN_R = crate::BitReader<RXDMAEN_A>;
 #[doc = "DMA reception requests enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDMAEN_A {
@@ -782,8 +784,6 @@ impl From<RXDMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXDMAEN` reader - DMA reception requests enable"]
-pub type RXDMAEN_R = crate::BitReader<RXDMAEN_A>;
 impl RXDMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -818,6 +818,8 @@ impl<'a, const O: u8> RXDMAEN_W<'a, O> {
         self.variant(RXDMAEN_A::Enabled)
     }
 }
+#[doc = "Field `SBC` reader - Slave byte control"]
+pub type SBC_R = crate::BitReader<SBC_A>;
 #[doc = "Slave byte control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBC_A {
@@ -832,8 +834,6 @@ impl From<SBC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SBC` reader - Slave byte control"]
-pub type SBC_R = crate::BitReader<SBC_A>;
 impl SBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -868,6 +868,8 @@ impl<'a, const O: u8> SBC_W<'a, O> {
         self.variant(SBC_A::Enabled)
     }
 }
+#[doc = "Field `NOSTRETCH` reader - Clock stretching disable"]
+pub type NOSTRETCH_R = crate::BitReader<NOSTRETCH_A>;
 #[doc = "Clock stretching disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOSTRETCH_A {
@@ -882,8 +884,6 @@ impl From<NOSTRETCH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NOSTRETCH` reader - Clock stretching disable"]
-pub type NOSTRETCH_R = crate::BitReader<NOSTRETCH_A>;
 impl NOSTRETCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -918,6 +918,8 @@ impl<'a, const O: u8> NOSTRETCH_W<'a, O> {
         self.variant(NOSTRETCH_A::Disabled)
     }
 }
+#[doc = "Field `WUPEN` reader - Wakeup from STOP enable"]
+pub type WUPEN_R = crate::BitReader<WUPEN_A>;
 #[doc = "Wakeup from STOP enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WUPEN_A {
@@ -932,8 +934,6 @@ impl From<WUPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WUPEN` reader - Wakeup from STOP enable"]
-pub type WUPEN_R = crate::BitReader<WUPEN_A>;
 impl WUPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -968,6 +968,8 @@ impl<'a, const O: u8> WUPEN_W<'a, O> {
         self.variant(WUPEN_A::Enabled)
     }
 }
+#[doc = "Field `GCEN` reader - General call enable"]
+pub type GCEN_R = crate::BitReader<GCEN_A>;
 #[doc = "General call enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GCEN_A {
@@ -982,8 +984,6 @@ impl From<GCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GCEN` reader - General call enable"]
-pub type GCEN_R = crate::BitReader<GCEN_A>;
 impl GCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1018,6 +1018,8 @@ impl<'a, const O: u8> GCEN_W<'a, O> {
         self.variant(GCEN_A::Enabled)
     }
 }
+#[doc = "Field `SMBHEN` reader - SMBus Host address enable"]
+pub type SMBHEN_R = crate::BitReader<SMBHEN_A>;
 #[doc = "SMBus Host address enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMBHEN_A {
@@ -1032,8 +1034,6 @@ impl From<SMBHEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMBHEN` reader - SMBus Host address enable"]
-pub type SMBHEN_R = crate::BitReader<SMBHEN_A>;
 impl SMBHEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1068,6 +1068,8 @@ impl<'a, const O: u8> SMBHEN_W<'a, O> {
         self.variant(SMBHEN_A::Enabled)
     }
 }
+#[doc = "Field `SMBDEN` reader - SMBus Device Default address enable"]
+pub type SMBDEN_R = crate::BitReader<SMBDEN_A>;
 #[doc = "SMBus Device Default address enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMBDEN_A {
@@ -1082,8 +1084,6 @@ impl From<SMBDEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMBDEN` reader - SMBus Device Default address enable"]
-pub type SMBDEN_R = crate::BitReader<SMBDEN_A>;
 impl SMBDEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1118,6 +1118,8 @@ impl<'a, const O: u8> SMBDEN_W<'a, O> {
         self.variant(SMBDEN_A::Enabled)
     }
 }
+#[doc = "Field `ALERTEN` reader - SMBUS alert enable"]
+pub type ALERTEN_R = crate::BitReader<ALERTEN_A>;
 #[doc = "SMBUS alert enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALERTEN_A {
@@ -1132,8 +1134,6 @@ impl From<ALERTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALERTEN` reader - SMBUS alert enable"]
-pub type ALERTEN_R = crate::BitReader<ALERTEN_A>;
 impl ALERTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1168,6 +1168,8 @@ impl<'a, const O: u8> ALERTEN_W<'a, O> {
         self.variant(ALERTEN_A::Enabled)
     }
 }
+#[doc = "Field `PECEN` reader - PEC enable"]
+pub type PECEN_R = crate::BitReader<PECEN_A>;
 #[doc = "PEC enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PECEN_A {
@@ -1182,8 +1184,6 @@ impl From<PECEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PECEN` reader - PEC enable"]
-pub type PECEN_R = crate::BitReader<PECEN_A>;
 impl PECEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

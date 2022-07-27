@@ -34,142 +34,187 @@ impl From<crate::W<CCMR1_OUTPUT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Output Compare 2 mode - bit 3"]
-pub use OC1M_3_A as OC2M_3_A;
-#[doc = "Field `OC2M_3` reader - Output Compare 2 mode - bit 3"]
-pub use OC1M_3_R as OC2M_3_R;
-#[doc = "Field `OC2M_3` writer - Output Compare 2 mode - bit 3"]
-pub use OC1M_3_W as OC2M_3_W;
-#[doc = "Output Compare 1 mode - bit 3\n\nValue on reset: 0"]
+#[doc = "Field `CC1S` reader - Capture/Compare 1 selection"]
+pub type CC1S_R = crate::FieldReader<u8, CC1S_A>;
+#[doc = "Capture/Compare 1 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1M_3_A {
-    #[doc = "0: Normal output compare mode (modes 0-7)"]
-    Normal = 0,
-    #[doc = "1: Extended output compare mode (modes 7-15)"]
-    Extended = 1,
+#[repr(u8)]
+pub enum CC1S_A {
+    #[doc = "0: CCx channel is configured as output"]
+    Output = 0,
+    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
+    Ti1 = 1,
+    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
+    Ti2 = 2,
+    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
+    Trc = 3,
 }
-impl From<OC1M_3_A> for bool {
+impl From<CC1S_A> for u8 {
     #[inline(always)]
-    fn from(variant: OC1M_3_A) -> Self {
-        variant as u8 != 0
+    fn from(variant: CC1S_A) -> Self {
+        variant as _
     }
 }
-#[doc = "Field `OC1M_3` reader - Output Compare 1 mode - bit 3"]
-pub type OC1M_3_R = crate::BitReader<OC1M_3_A>;
-impl OC1M_3_R {
+impl CC1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC1M_3_A {
+    pub fn variant(&self) -> CC1S_A {
         match self.bits {
-            false => OC1M_3_A::Normal,
-            true => OC1M_3_A::Extended,
+            0 => CC1S_A::Output,
+            1 => CC1S_A::Ti1,
+            2 => CC1S_A::Ti2,
+            3 => CC1S_A::Trc,
+            _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Checks if the value of the field is `Output`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == OC1M_3_A::Normal
+    pub fn is_output(&self) -> bool {
+        *self == CC1S_A::Output
     }
-    #[doc = "Checks if the value of the field is `Extended`"]
+    #[doc = "Checks if the value of the field is `Ti1`"]
     #[inline(always)]
-    pub fn is_extended(&self) -> bool {
-        *self == OC1M_3_A::Extended
+    pub fn is_ti1(&self) -> bool {
+        *self == CC1S_A::Ti1
     }
-}
-#[doc = "Field `OC1M_3` writer - Output Compare 1 mode - bit 3"]
-pub type OC1M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1M_3_A, O>;
-impl<'a, const O: u8> OC1M_3_W<'a, O> {
-    #[doc = "Normal output compare mode (modes 0-7)"]
+    #[doc = "Checks if the value of the field is `Ti2`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(OC1M_3_A::Normal)
+    pub fn is_ti2(&self) -> bool {
+        *self == CC1S_A::Ti2
     }
-    #[doc = "Extended output compare mode (modes 7-15)"]
+    #[doc = "Checks if the value of the field is `Trc`"]
     #[inline(always)]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(OC1M_3_A::Extended)
+    pub fn is_trc(&self) -> bool {
+        *self == CC1S_A::Trc
     }
 }
-#[doc = "Capture/Compare 2 selection"]
-pub use CC1S_A as CC2S_A;
-#[doc = "Field `CC2S` reader - Capture/Compare 2 selection"]
-pub use CC1S_R as CC2S_R;
-#[doc = "Field `CC2S` writer - Capture/Compare 2 selection"]
-pub use CC1S_W as CC2S_W;
-#[doc = "Output compare 2 clear enable"]
-pub use OC1CE_A as OC2CE_A;
-#[doc = "Field `OC2CE` reader - Output compare 2 clear enable"]
-pub use OC1CE_R as OC2CE_R;
-#[doc = "Field `OC2CE` writer - Output compare 2 clear enable"]
-pub use OC1CE_W as OC2CE_W;
-#[doc = "Output compare 2 fast enable"]
-pub use OC1FE_A as OC2FE_A;
-#[doc = "Field `OC2FE` reader - Output compare 2 fast enable"]
-pub use OC1FE_R as OC2FE_R;
-#[doc = "Field `OC2FE` writer - Output compare 2 fast enable"]
-pub use OC1FE_W as OC2FE_W;
-#[doc = "Output compare 2 mode"]
-pub use OC1M_A as OC2M_A;
-#[doc = "Field `OC2M` reader - Output compare 2 mode"]
-pub use OC1M_R as OC2M_R;
-#[doc = "Field `OC2M` writer - Output compare 2 mode"]
-pub use OC1M_W as OC2M_W;
-#[doc = "Output compare 2 preload enable"]
-pub use OC1PE_A as OC2PE_A;
-#[doc = "Field `OC2PE` reader - Output compare 2 preload enable"]
-pub use OC1PE_R as OC2PE_R;
-#[doc = "Field `OC2PE` writer - Output compare 2 preload enable"]
-pub use OC1PE_W as OC2PE_W;
-#[doc = "Output compare 1 clear enable\n\nValue on reset: 0"]
+#[doc = "Field `CC1S` writer - Capture/Compare 1 selection"]
+pub type CC1S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCMR1_OUTPUT_SPEC, u8, CC1S_A, 2, O>;
+impl<'a, const O: u8> CC1S_W<'a, O> {
+    #[doc = "CCx channel is configured as output"]
+    #[inline(always)]
+    pub fn output(self) -> &'a mut W {
+        self.variant(CC1S_A::Output)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
+    #[inline(always)]
+    pub fn ti1(self) -> &'a mut W {
+        self.variant(CC1S_A::Ti1)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
+    #[inline(always)]
+    pub fn ti2(self) -> &'a mut W {
+        self.variant(CC1S_A::Ti2)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
+    #[inline(always)]
+    pub fn trc(self) -> &'a mut W {
+        self.variant(CC1S_A::Trc)
+    }
+}
+#[doc = "Field `OC1FE` reader - Output compare 1 fast enable"]
+pub type OC1FE_R = crate::BitReader<OC1FE_A>;
+#[doc = "Output compare 1 fast enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1CE_A {
-    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
+pub enum OC1FE_A {
+    #[doc = "0: Fast output disabled"]
     Disabled = 0,
-    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "1: Fast output enabled"]
     Enabled = 1,
 }
-impl From<OC1CE_A> for bool {
+impl From<OC1FE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC1CE_A) -> Self {
+    fn from(variant: OC1FE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC1CE` reader - Output compare 1 clear enable"]
-pub type OC1CE_R = crate::BitReader<OC1CE_A>;
-impl OC1CE_R {
+impl OC1FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC1CE_A {
+    pub fn variant(&self) -> OC1FE_A {
         match self.bits {
-            false => OC1CE_A::Disabled,
-            true => OC1CE_A::Enabled,
+            false => OC1FE_A::Disabled,
+            true => OC1FE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC1CE_A::Disabled
+        *self == OC1FE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC1CE_A::Enabled
+        *self == OC1FE_A::Enabled
     }
 }
-#[doc = "Field `OC1CE` writer - Output compare 1 clear enable"]
-pub type OC1CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1CE_A, O>;
-impl<'a, const O: u8> OC1CE_W<'a, O> {
-    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
+#[doc = "Field `OC1FE` writer - Output compare 1 fast enable"]
+pub type OC1FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1FE_A, O>;
+impl<'a, const O: u8> OC1FE_W<'a, O> {
+    #[doc = "Fast output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC1CE_A::Disabled)
+        self.variant(OC1FE_A::Disabled)
     }
-    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "Fast output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC1CE_A::Enabled)
+        self.variant(OC1FE_A::Enabled)
     }
 }
+#[doc = "Field `OC1PE` reader - Output compare 1 preload enable"]
+pub type OC1PE_R = crate::BitReader<OC1PE_A>;
+#[doc = "Output compare 1 preload enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OC1PE_A {
+    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    Disabled = 0,
+    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    Enabled = 1,
+}
+impl From<OC1PE_A> for bool {
+    #[inline(always)]
+    fn from(variant: OC1PE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OC1PE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OC1PE_A {
+        match self.bits {
+            false => OC1PE_A::Disabled,
+            true => OC1PE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == OC1PE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == OC1PE_A::Enabled
+    }
+}
+#[doc = "Field `OC1PE` writer - Output compare 1 preload enable"]
+pub type OC1PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1PE_A, O>;
+impl<'a, const O: u8> OC1PE_W<'a, O> {
+    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(OC1PE_A::Disabled)
+    }
+    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(OC1PE_A::Enabled)
+    }
+}
+#[doc = "Field `OC1M` reader - Output compare 1 mode"]
+pub type OC1M_R = crate::FieldReader<u8, OC1M_A>;
 #[doc = "Output compare 1 mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -197,8 +242,6 @@ impl From<OC1M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OC1M` reader - Output compare 1 mode"]
-pub type OC1M_R = crate::FieldReader<u8, OC1M_A>;
 impl OC1M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -301,307 +344,252 @@ impl<'a, const O: u8> OC1M_W<'a, O> {
         self.variant(OC1M_A::PwmMode2)
     }
 }
-#[doc = "Output compare 1 preload enable\n\nValue on reset: 0"]
+#[doc = "Field `OC1CE` reader - Output compare 1 clear enable"]
+pub type OC1CE_R = crate::BitReader<OC1CE_A>;
+#[doc = "Output compare 1 clear enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1PE_A {
-    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+pub enum OC1CE_A {
+    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
     Disabled = 0,
-    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     Enabled = 1,
 }
-impl From<OC1PE_A> for bool {
+impl From<OC1CE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC1PE_A) -> Self {
+    fn from(variant: OC1CE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC1PE` reader - Output compare 1 preload enable"]
-pub type OC1PE_R = crate::BitReader<OC1PE_A>;
-impl OC1PE_R {
+impl OC1CE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC1PE_A {
+    pub fn variant(&self) -> OC1CE_A {
         match self.bits {
-            false => OC1PE_A::Disabled,
-            true => OC1PE_A::Enabled,
+            false => OC1CE_A::Disabled,
+            true => OC1CE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC1PE_A::Disabled
+        *self == OC1CE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC1PE_A::Enabled
+        *self == OC1CE_A::Enabled
     }
 }
-#[doc = "Field `OC1PE` writer - Output compare 1 preload enable"]
-pub type OC1PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1PE_A, O>;
-impl<'a, const O: u8> OC1PE_W<'a, O> {
-    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+#[doc = "Field `OC1CE` writer - Output compare 1 clear enable"]
+pub type OC1CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1CE_A, O>;
+impl<'a, const O: u8> OC1CE_W<'a, O> {
+    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC1PE_A::Disabled)
+        self.variant(OC1CE_A::Disabled)
     }
-    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC1PE_A::Enabled)
+        self.variant(OC1CE_A::Enabled)
     }
 }
-#[doc = "Output compare 1 fast enable\n\nValue on reset: 0"]
+#[doc = "Field `CC2S` reader - Capture/Compare 2 selection"]
+pub use CC1S_R as CC2S_R;
+#[doc = "Field `CC2S` writer - Capture/Compare 2 selection"]
+pub use CC1S_W as CC2S_W;
+#[doc = "Field `OC2CE` reader - Output compare 2 clear enable"]
+pub use OC1CE_R as OC2CE_R;
+#[doc = "Field `OC2CE` writer - Output compare 2 clear enable"]
+pub use OC1CE_W as OC2CE_W;
+#[doc = "Field `OC2FE` reader - Output compare 2 fast enable"]
+pub use OC1FE_R as OC2FE_R;
+#[doc = "Field `OC2FE` writer - Output compare 2 fast enable"]
+pub use OC1FE_W as OC2FE_W;
+#[doc = "Field `OC2M` reader - Output compare 2 mode"]
+pub use OC1M_R as OC2M_R;
+#[doc = "Field `OC2M` writer - Output compare 2 mode"]
+pub use OC1M_W as OC2M_W;
+#[doc = "Field `OC2PE` reader - Output compare 2 preload enable"]
+pub use OC1PE_R as OC2PE_R;
+#[doc = "Field `OC2PE` writer - Output compare 2 preload enable"]
+pub use OC1PE_W as OC2PE_W;
+#[doc = "Field `OC1M_3` reader - Output Compare 1 mode - bit 3"]
+pub type OC1M_3_R = crate::BitReader<OC1M_3_A>;
+#[doc = "Output Compare 1 mode - bit 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC1FE_A {
-    #[doc = "0: Fast output disabled"]
-    Disabled = 0,
-    #[doc = "1: Fast output enabled"]
-    Enabled = 1,
+pub enum OC1M_3_A {
+    #[doc = "0: Normal output compare mode (modes 0-7)"]
+    Normal = 0,
+    #[doc = "1: Extended output compare mode (modes 7-15)"]
+    Extended = 1,
 }
-impl From<OC1FE_A> for bool {
+impl From<OC1M_3_A> for bool {
     #[inline(always)]
-    fn from(variant: OC1FE_A) -> Self {
+    fn from(variant: OC1M_3_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC1FE` reader - Output compare 1 fast enable"]
-pub type OC1FE_R = crate::BitReader<OC1FE_A>;
-impl OC1FE_R {
+impl OC1M_3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC1FE_A {
+    pub fn variant(&self) -> OC1M_3_A {
         match self.bits {
-            false => OC1FE_A::Disabled,
-            true => OC1FE_A::Enabled,
+            false => OC1M_3_A::Normal,
+            true => OC1M_3_A::Extended,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == OC1FE_A::Disabled
+    pub fn is_normal(&self) -> bool {
+        *self == OC1M_3_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[doc = "Checks if the value of the field is `Extended`"]
     #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == OC1FE_A::Enabled
-    }
-}
-#[doc = "Field `OC1FE` writer - Output compare 1 fast enable"]
-pub type OC1FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1FE_A, O>;
-impl<'a, const O: u8> OC1FE_W<'a, O> {
-    #[doc = "Fast output disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(OC1FE_A::Disabled)
-    }
-    #[doc = "Fast output enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(OC1FE_A::Enabled)
+    pub fn is_extended(&self) -> bool {
+        *self == OC1M_3_A::Extended
     }
 }
-#[doc = "Capture/Compare 1 selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum CC1S_A {
-    #[doc = "0: CCx channel is configured as output"]
-    Output = 0,
-    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
-    Ti1 = 1,
-    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
-    Ti2 = 2,
-    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
-    Trc = 3,
-}
-impl From<CC1S_A> for u8 {
+#[doc = "Field `OC1M_3` writer - Output Compare 1 mode - bit 3"]
+pub type OC1M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR1_OUTPUT_SPEC, OC1M_3_A, O>;
+impl<'a, const O: u8> OC1M_3_W<'a, O> {
+    #[doc = "Normal output compare mode (modes 0-7)"]
     #[inline(always)]
-    fn from(variant: CC1S_A) -> Self {
-        variant as _
+    pub fn normal(self) -> &'a mut W {
+        self.variant(OC1M_3_A::Normal)
+    }
+    #[doc = "Extended output compare mode (modes 7-15)"]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(OC1M_3_A::Extended)
     }
 }
-#[doc = "Field `CC1S` reader - Capture/Compare 1 selection"]
-pub type CC1S_R = crate::FieldReader<u8, CC1S_A>;
-impl CC1S_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CC1S_A {
-        match self.bits {
-            0 => CC1S_A::Output,
-            1 => CC1S_A::Ti1,
-            2 => CC1S_A::Ti2,
-            3 => CC1S_A::Trc,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `Output`"]
-    #[inline(always)]
-    pub fn is_output(&self) -> bool {
-        *self == CC1S_A::Output
-    }
-    #[doc = "Checks if the value of the field is `Ti1`"]
-    #[inline(always)]
-    pub fn is_ti1(&self) -> bool {
-        *self == CC1S_A::Ti1
-    }
-    #[doc = "Checks if the value of the field is `Ti2`"]
-    #[inline(always)]
-    pub fn is_ti2(&self) -> bool {
-        *self == CC1S_A::Ti2
-    }
-    #[doc = "Checks if the value of the field is `Trc`"]
-    #[inline(always)]
-    pub fn is_trc(&self) -> bool {
-        *self == CC1S_A::Trc
-    }
-}
-#[doc = "Field `CC1S` writer - Capture/Compare 1 selection"]
-pub type CC1S_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CCMR1_OUTPUT_SPEC, u8, CC1S_A, 2, O>;
-impl<'a, const O: u8> CC1S_W<'a, O> {
-    #[doc = "CCx channel is configured as output"]
-    #[inline(always)]
-    pub fn output(self) -> &'a mut W {
-        self.variant(CC1S_A::Output)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
-    #[inline(always)]
-    pub fn ti1(self) -> &'a mut W {
-        self.variant(CC1S_A::Ti1)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
-    #[inline(always)]
-    pub fn ti2(self) -> &'a mut W {
-        self.variant(CC1S_A::Ti2)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
-    #[inline(always)]
-    pub fn trc(self) -> &'a mut W {
-        self.variant(CC1S_A::Trc)
-    }
-}
+#[doc = "Field `OC2M_3` reader - Output Compare 2 mode - bit 3"]
+pub use OC1M_3_R as OC2M_3_R;
+#[doc = "Field `OC2M_3` writer - Output Compare 2 mode - bit 3"]
+pub use OC1M_3_W as OC2M_3_W;
 impl R {
-    #[doc = "Bit 24 - Output Compare 2 mode - bit 3"]
+    #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
     #[inline(always)]
-    pub fn oc2m_3(&self) -> OC2M_3_R {
-        OC2M_3_R::new(((self.bits >> 24) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Output Compare 1 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc1m_3(&self) -> OC1M_3_R {
-        OC1M_3_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 15 - Output compare 2 clear enable"]
-    #[inline(always)]
-    pub fn oc2ce(&self) -> OC2CE_R {
-        OC2CE_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bits 12:14 - Output compare 2 mode"]
-    #[inline(always)]
-    pub fn oc2m(&self) -> OC2M_R {
-        OC2M_R::new(((self.bits >> 12) & 7) as u8)
-    }
-    #[doc = "Bit 11 - Output compare 2 preload enable"]
-    #[inline(always)]
-    pub fn oc2pe(&self) -> OC2PE_R {
-        OC2PE_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - Output compare 2 fast enable"]
-    #[inline(always)]
-    pub fn oc2fe(&self) -> OC2FE_R {
-        OC2FE_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bits 8:9 - Capture/Compare 2 selection"]
-    #[inline(always)]
-    pub fn cc2s(&self) -> CC2S_R {
-        CC2S_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bit 7 - Output compare 1 clear enable"]
-    #[inline(always)]
-    pub fn oc1ce(&self) -> OC1CE_R {
-        OC1CE_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 4:6 - Output compare 1 mode"]
-    #[inline(always)]
-    pub fn oc1m(&self) -> OC1M_R {
-        OC1M_R::new(((self.bits >> 4) & 7) as u8)
-    }
-    #[doc = "Bit 3 - Output compare 1 preload enable"]
-    #[inline(always)]
-    pub fn oc1pe(&self) -> OC1PE_R {
-        OC1PE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn cc1s(&self) -> CC1S_R {
+        CC1S_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Output compare 1 fast enable"]
     #[inline(always)]
     pub fn oc1fe(&self) -> OC1FE_R {
         OC1FE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
+    #[doc = "Bit 3 - Output compare 1 preload enable"]
     #[inline(always)]
-    pub fn cc1s(&self) -> CC1S_R {
-        CC1S_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
-    #[doc = "Bit 24 - Output Compare 2 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc2m_3(&mut self) -> OC2M_3_W<24> {
-        OC2M_3_W::new(self)
-    }
-    #[doc = "Bit 16 - Output Compare 1 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc1m_3(&mut self) -> OC1M_3_W<16> {
-        OC1M_3_W::new(self)
-    }
-    #[doc = "Bit 15 - Output compare 2 clear enable"]
-    #[inline(always)]
-    pub fn oc2ce(&mut self) -> OC2CE_W<15> {
-        OC2CE_W::new(self)
-    }
-    #[doc = "Bits 12:14 - Output compare 2 mode"]
-    #[inline(always)]
-    pub fn oc2m(&mut self) -> OC2M_W<12> {
-        OC2M_W::new(self)
-    }
-    #[doc = "Bit 11 - Output compare 2 preload enable"]
-    #[inline(always)]
-    pub fn oc2pe(&mut self) -> OC2PE_W<11> {
-        OC2PE_W::new(self)
-    }
-    #[doc = "Bit 10 - Output compare 2 fast enable"]
-    #[inline(always)]
-    pub fn oc2fe(&mut self) -> OC2FE_W<10> {
-        OC2FE_W::new(self)
-    }
-    #[doc = "Bits 8:9 - Capture/Compare 2 selection"]
-    #[inline(always)]
-    pub fn cc2s(&mut self) -> CC2S_W<8> {
-        CC2S_W::new(self)
-    }
-    #[doc = "Bit 7 - Output compare 1 clear enable"]
-    #[inline(always)]
-    pub fn oc1ce(&mut self) -> OC1CE_W<7> {
-        OC1CE_W::new(self)
+    pub fn oc1pe(&self) -> OC1PE_R {
+        OC1PE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Output compare 1 mode"]
     #[inline(always)]
-    pub fn oc1m(&mut self) -> OC1M_W<4> {
-        OC1M_W::new(self)
+    pub fn oc1m(&self) -> OC1M_R {
+        OC1M_R::new(((self.bits >> 4) & 7) as u8)
     }
-    #[doc = "Bit 3 - Output compare 1 preload enable"]
+    #[doc = "Bit 7 - Output compare 1 clear enable"]
     #[inline(always)]
-    pub fn oc1pe(&mut self) -> OC1PE_W<3> {
-        OC1PE_W::new(self)
+    pub fn oc1ce(&self) -> OC1CE_R {
+        OC1CE_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:9 - Capture/Compare 2 selection"]
+    #[inline(always)]
+    pub fn cc2s(&self) -> CC2S_R {
+        CC2S_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    #[doc = "Bit 10 - Output compare 2 fast enable"]
+    #[inline(always)]
+    pub fn oc2fe(&self) -> OC2FE_R {
+        OC2FE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - Output compare 2 preload enable"]
+    #[inline(always)]
+    pub fn oc2pe(&self) -> OC2PE_R {
+        OC2PE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bits 12:14 - Output compare 2 mode"]
+    #[inline(always)]
+    pub fn oc2m(&self) -> OC2M_R {
+        OC2M_R::new(((self.bits >> 12) & 7) as u8)
+    }
+    #[doc = "Bit 15 - Output compare 2 clear enable"]
+    #[inline(always)]
+    pub fn oc2ce(&self) -> OC2CE_R {
+        OC2CE_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bit 16 - Output Compare 1 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc1m_3(&self) -> OC1M_3_R {
+        OC1M_3_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 24 - Output Compare 2 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc2m_3(&self) -> OC2M_3_R {
+        OC2M_3_R::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
+    #[inline(always)]
+    pub fn cc1s(&mut self) -> CC1S_W<0> {
+        CC1S_W::new(self)
     }
     #[doc = "Bit 2 - Output compare 1 fast enable"]
     #[inline(always)]
     pub fn oc1fe(&mut self) -> OC1FE_W<2> {
         OC1FE_W::new(self)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 1 selection"]
+    #[doc = "Bit 3 - Output compare 1 preload enable"]
     #[inline(always)]
-    pub fn cc1s(&mut self) -> CC1S_W<0> {
-        CC1S_W::new(self)
+    pub fn oc1pe(&mut self) -> OC1PE_W<3> {
+        OC1PE_W::new(self)
+    }
+    #[doc = "Bits 4:6 - Output compare 1 mode"]
+    #[inline(always)]
+    pub fn oc1m(&mut self) -> OC1M_W<4> {
+        OC1M_W::new(self)
+    }
+    #[doc = "Bit 7 - Output compare 1 clear enable"]
+    #[inline(always)]
+    pub fn oc1ce(&mut self) -> OC1CE_W<7> {
+        OC1CE_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Capture/Compare 2 selection"]
+    #[inline(always)]
+    pub fn cc2s(&mut self) -> CC2S_W<8> {
+        CC2S_W::new(self)
+    }
+    #[doc = "Bit 10 - Output compare 2 fast enable"]
+    #[inline(always)]
+    pub fn oc2fe(&mut self) -> OC2FE_W<10> {
+        OC2FE_W::new(self)
+    }
+    #[doc = "Bit 11 - Output compare 2 preload enable"]
+    #[inline(always)]
+    pub fn oc2pe(&mut self) -> OC2PE_W<11> {
+        OC2PE_W::new(self)
+    }
+    #[doc = "Bits 12:14 - Output compare 2 mode"]
+    #[inline(always)]
+    pub fn oc2m(&mut self) -> OC2M_W<12> {
+        OC2M_W::new(self)
+    }
+    #[doc = "Bit 15 - Output compare 2 clear enable"]
+    #[inline(always)]
+    pub fn oc2ce(&mut self) -> OC2CE_W<15> {
+        OC2CE_W::new(self)
+    }
+    #[doc = "Bit 16 - Output Compare 1 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc1m_3(&mut self) -> OC1M_3_W<16> {
+        OC1M_3_W::new(self)
+    }
+    #[doc = "Bit 24 - Output Compare 2 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc2m_3(&mut self) -> OC2M_3_W<24> {
+        OC2M_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

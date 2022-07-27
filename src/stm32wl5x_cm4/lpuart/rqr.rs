@@ -19,46 +19,25 @@ impl From<crate::W<RQR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Transmit data flush request\n\nValue on reset: 0"]
+#[doc = "Send break request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXFRQ_AW {
-    #[doc = "1: Set the TXE flags. This allows to discard the transmit data"]
-    Discard = 1,
+pub enum SBKRQ_AW {
+    #[doc = "1: sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
+    Break = 1,
 }
-impl From<TXFRQ_AW> for bool {
+impl From<SBKRQ_AW> for bool {
     #[inline(always)]
-    fn from(variant: TXFRQ_AW) -> Self {
+    fn from(variant: SBKRQ_AW) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXFRQ` writer - Transmit data flush request"]
-pub type TXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, TXFRQ_AW, O>;
-impl<'a, const O: u8> TXFRQ_W<'a, O> {
-    #[doc = "Set the TXE flags. This allows to discard the transmit data"]
+#[doc = "Field `SBKRQ` writer - Send break request"]
+pub type SBKRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, SBKRQ_AW, O>;
+impl<'a, const O: u8> SBKRQ_W<'a, O> {
+    #[doc = "sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
     #[inline(always)]
-    pub fn discard(self) -> &'a mut W {
-        self.variant(TXFRQ_AW::Discard)
-    }
-}
-#[doc = "Receive data flush request\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXFRQ_AW {
-    #[doc = "1: clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
-    Discard = 1,
-}
-impl From<RXFRQ_AW> for bool {
-    #[inline(always)]
-    fn from(variant: RXFRQ_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `RXFRQ` writer - Receive data flush request"]
-pub type RXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, RXFRQ_AW, O>;
-impl<'a, const O: u8> RXFRQ_W<'a, O> {
-    #[doc = "clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
-    #[inline(always)]
-    pub fn discard(self) -> &'a mut W {
-        self.variant(RXFRQ_AW::Discard)
+    pub fn break_(self) -> &'a mut W {
+        self.variant(SBKRQ_AW::Break)
     }
 }
 #[doc = "Mute mode request\n\nValue on reset: 0"]
@@ -82,47 +61,68 @@ impl<'a, const O: u8> MMRQ_W<'a, O> {
         self.variant(MMRQ_AW::Mute)
     }
 }
-#[doc = "Send break request\n\nValue on reset: 0"]
+#[doc = "Receive data flush request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SBKRQ_AW {
-    #[doc = "1: sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
-    Break = 1,
+pub enum RXFRQ_AW {
+    #[doc = "1: clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
+    Discard = 1,
 }
-impl From<SBKRQ_AW> for bool {
+impl From<RXFRQ_AW> for bool {
     #[inline(always)]
-    fn from(variant: SBKRQ_AW) -> Self {
+    fn from(variant: RXFRQ_AW) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SBKRQ` writer - Send break request"]
-pub type SBKRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, SBKRQ_AW, O>;
-impl<'a, const O: u8> SBKRQ_W<'a, O> {
-    #[doc = "sets the SBKF flag and request to send a BREAK on the line, as soon as the transmit machine is available"]
+#[doc = "Field `RXFRQ` writer - Receive data flush request"]
+pub type RXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, RXFRQ_AW, O>;
+impl<'a, const O: u8> RXFRQ_W<'a, O> {
+    #[doc = "clears the RXNE flag. This allows to discard the received data without reading it, and avoid an overrun condition"]
     #[inline(always)]
-    pub fn break_(self) -> &'a mut W {
-        self.variant(SBKRQ_AW::Break)
+    pub fn discard(self) -> &'a mut W {
+        self.variant(RXFRQ_AW::Discard)
+    }
+}
+#[doc = "Transmit data flush request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TXFRQ_AW {
+    #[doc = "1: Set the TXE flags. This allows to discard the transmit data"]
+    Discard = 1,
+}
+impl From<TXFRQ_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TXFRQ_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TXFRQ` writer - Transmit data flush request"]
+pub type TXFRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RQR_SPEC, TXFRQ_AW, O>;
+impl<'a, const O: u8> TXFRQ_W<'a, O> {
+    #[doc = "Set the TXE flags. This allows to discard the transmit data"]
+    #[inline(always)]
+    pub fn discard(self) -> &'a mut W {
+        self.variant(TXFRQ_AW::Discard)
     }
 }
 impl W {
-    #[doc = "Bit 4 - Transmit data flush request"]
+    #[doc = "Bit 1 - Send break request"]
     #[inline(always)]
-    pub fn txfrq(&mut self) -> TXFRQ_W<4> {
-        TXFRQ_W::new(self)
-    }
-    #[doc = "Bit 3 - Receive data flush request"]
-    #[inline(always)]
-    pub fn rxfrq(&mut self) -> RXFRQ_W<3> {
-        RXFRQ_W::new(self)
+    pub fn sbkrq(&mut self) -> SBKRQ_W<1> {
+        SBKRQ_W::new(self)
     }
     #[doc = "Bit 2 - Mute mode request"]
     #[inline(always)]
     pub fn mmrq(&mut self) -> MMRQ_W<2> {
         MMRQ_W::new(self)
     }
-    #[doc = "Bit 1 - Send break request"]
+    #[doc = "Bit 3 - Receive data flush request"]
     #[inline(always)]
-    pub fn sbkrq(&mut self) -> SBKRQ_W<1> {
-        SBKRQ_W::new(self)
+    pub fn rxfrq(&mut self) -> RXFRQ_W<3> {
+        RXFRQ_W::new(self)
+    }
+    #[doc = "Bit 4 - Transmit data flush request"]
+    #[inline(always)]
+    pub fn txfrq(&mut self) -> TXFRQ_W<4> {
+        TXFRQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

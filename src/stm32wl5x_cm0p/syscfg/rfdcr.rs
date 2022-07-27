@@ -34,6 +34,8 @@ impl From<crate::W<RFDCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RFTBSEL` reader - radio debug test bus selection"]
+pub type RFTBSEL_R = crate::BitReader<RFTBSEL_A>;
 #[doc = "radio debug test bus selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFTBSEL_A {
@@ -48,8 +50,6 @@ impl From<RFTBSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RFTBSEL` reader - radio debug test bus selection"]
-pub type RFTBSEL_R = crate::BitReader<RFTBSEL_A>;
 impl RFTBSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

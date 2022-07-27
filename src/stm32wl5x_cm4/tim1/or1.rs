@@ -34,56 +34,8 @@ impl From<crate::W<OR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Input Capture 1 remap\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TI1_RMP_A {
-    #[doc = "0: TIM1 input capture 1 is connected to I/O"]
-    Io = 0,
-    #[doc = "1: TIM1 input capture 1 is connected to COMP1 output"]
-    Comp1 = 1,
-}
-impl From<TI1_RMP_A> for bool {
-    #[inline(always)]
-    fn from(variant: TI1_RMP_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `TI1_RMP` reader - Input Capture 1 remap"]
-pub type TI1_RMP_R = crate::BitReader<TI1_RMP_A>;
-impl TI1_RMP_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TI1_RMP_A {
-        match self.bits {
-            false => TI1_RMP_A::Io,
-            true => TI1_RMP_A::Comp1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Io`"]
-    #[inline(always)]
-    pub fn is_io(&self) -> bool {
-        *self == TI1_RMP_A::Io
-    }
-    #[doc = "Checks if the value of the field is `Comp1`"]
-    #[inline(always)]
-    pub fn is_comp1(&self) -> bool {
-        *self == TI1_RMP_A::Comp1
-    }
-}
-#[doc = "Field `TI1_RMP` writer - Input Capture 1 remap"]
-pub type TI1_RMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR1_SPEC, TI1_RMP_A, O>;
-impl<'a, const O: u8> TI1_RMP_W<'a, O> {
-    #[doc = "TIM1 input capture 1 is connected to I/O"]
-    #[inline(always)]
-    pub fn io(self) -> &'a mut W {
-        self.variant(TI1_RMP_A::Io)
-    }
-    #[doc = "TIM1 input capture 1 is connected to COMP1 output"]
-    #[inline(always)]
-    pub fn comp1(self) -> &'a mut W {
-        self.variant(TI1_RMP_A::Comp1)
-    }
-}
+#[doc = "Field `TIM1_ETR_ADC1_RMP` reader - TIM1_ETR_ADC1 remapping capability"]
+pub type TIM1_ETR_ADC1_RMP_R = crate::FieldReader<u8, TIM1_ETR_ADC1_RMP_A>;
 #[doc = "TIM1_ETR_ADC1 remapping capability\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -103,8 +55,6 @@ impl From<TIM1_ETR_ADC1_RMP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TIM1_ETR_ADC1_RMP` reader - TIM1_ETR_ADC1 remapping capability"]
-pub type TIM1_ETR_ADC1_RMP_R = crate::FieldReader<u8, TIM1_ETR_ADC1_RMP_A>;
 impl TIM1_ETR_ADC1_RMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -163,28 +113,78 @@ impl<'a, const O: u8> TIM1_ETR_ADC1_RMP_W<'a, O> {
         self.variant(TIM1_ETR_ADC1_RMP_A::AdcAwd3)
     }
 }
-impl R {
-    #[doc = "Bit 4 - Input Capture 1 remap"]
+#[doc = "Field `TI1_RMP` reader - Input Capture 1 remap"]
+pub type TI1_RMP_R = crate::BitReader<TI1_RMP_A>;
+#[doc = "Input Capture 1 remap\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TI1_RMP_A {
+    #[doc = "0: TIM1 input capture 1 is connected to I/O"]
+    Io = 0,
+    #[doc = "1: TIM1 input capture 1 is connected to COMP1 output"]
+    Comp1 = 1,
+}
+impl From<TI1_RMP_A> for bool {
     #[inline(always)]
-    pub fn ti1_rmp(&self) -> TI1_RMP_R {
-        TI1_RMP_R::new(((self.bits >> 4) & 1) != 0)
+    fn from(variant: TI1_RMP_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl TI1_RMP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TI1_RMP_A {
+        match self.bits {
+            false => TI1_RMP_A::Io,
+            true => TI1_RMP_A::Comp1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Io`"]
+    #[inline(always)]
+    pub fn is_io(&self) -> bool {
+        *self == TI1_RMP_A::Io
+    }
+    #[doc = "Checks if the value of the field is `Comp1`"]
+    #[inline(always)]
+    pub fn is_comp1(&self) -> bool {
+        *self == TI1_RMP_A::Comp1
+    }
+}
+#[doc = "Field `TI1_RMP` writer - Input Capture 1 remap"]
+pub type TI1_RMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OR1_SPEC, TI1_RMP_A, O>;
+impl<'a, const O: u8> TI1_RMP_W<'a, O> {
+    #[doc = "TIM1 input capture 1 is connected to I/O"]
+    #[inline(always)]
+    pub fn io(self) -> &'a mut W {
+        self.variant(TI1_RMP_A::Io)
+    }
+    #[doc = "TIM1 input capture 1 is connected to COMP1 output"]
+    #[inline(always)]
+    pub fn comp1(self) -> &'a mut W {
+        self.variant(TI1_RMP_A::Comp1)
+    }
+}
+impl R {
     #[doc = "Bits 0:1 - TIM1_ETR_ADC1 remapping capability"]
     #[inline(always)]
     pub fn tim1_etr_adc1_rmp(&self) -> TIM1_ETR_ADC1_RMP_R {
         TIM1_ETR_ADC1_RMP_R::new((self.bits & 3) as u8)
     }
-}
-impl W {
     #[doc = "Bit 4 - Input Capture 1 remap"]
     #[inline(always)]
-    pub fn ti1_rmp(&mut self) -> TI1_RMP_W<4> {
-        TI1_RMP_W::new(self)
+    pub fn ti1_rmp(&self) -> TI1_RMP_R {
+        TI1_RMP_R::new(((self.bits >> 4) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:1 - TIM1_ETR_ADC1 remapping capability"]
     #[inline(always)]
     pub fn tim1_etr_adc1_rmp(&mut self) -> TIM1_ETR_ADC1_RMP_W<0> {
         TIM1_ETR_ADC1_RMP_W::new(self)
+    }
+    #[doc = "Bit 4 - Input Capture 1 remap"]
+    #[inline(always)]
+    pub fn ti1_rmp(&mut self) -> TI1_RMP_W<4> {
+        TI1_RMP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

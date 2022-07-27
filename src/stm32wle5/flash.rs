@@ -2,33 +2,33 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Access control register"]
-    pub acr: crate::Reg<acr::ACR_SPEC>,
+    pub acr: ACR,
     _reserved1: [u8; 0x04],
     #[doc = "0x08 - Flash key register"]
-    pub keyr: crate::Reg<keyr::KEYR_SPEC>,
+    pub keyr: KEYR,
     #[doc = "0x0c - Option byte key register"]
-    pub optkeyr: crate::Reg<optkeyr::OPTKEYR_SPEC>,
+    pub optkeyr: OPTKEYR,
     #[doc = "0x10 - Status register"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x14 - Flash control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x18 - Flash ECC register"]
-    pub eccr: crate::Reg<eccr::ECCR_SPEC>,
+    pub eccr: ECCR,
     _reserved6: [u8; 0x04],
     #[doc = "0x20 - Flash option register"]
-    pub optr: crate::Reg<optr::OPTR_SPEC>,
+    pub optr: OPTR,
     #[doc = "0x24 - Flash PCROP zone A Start address register"]
-    pub pcrop1asr: crate::Reg<pcrop1asr::PCROP1ASR_SPEC>,
+    pub pcrop1asr: PCROP1ASR,
     #[doc = "0x28 - Flash PCROP zone A End address register"]
-    pub pcrop1aer: crate::Reg<pcrop1aer::PCROP1AER_SPEC>,
+    pub pcrop1aer: PCROP1AER,
     #[doc = "0x2c - Flash WRP area A address register"]
-    pub wrp1ar: crate::Reg<wrp1ar::WRP1AR_SPEC>,
+    pub wrp1ar: WRP1AR,
     #[doc = "0x30 - Flash WRP area B address register"]
-    pub wrp1br: crate::Reg<wrp1br::WRP1BR_SPEC>,
+    pub wrp1br: WRP1BR,
     #[doc = "0x34 - Flash PCROP zone B Start address register"]
-    pub pcrop1bsr: crate::Reg<pcrop1bsr::PCROP1BSR_SPEC>,
+    pub pcrop1bsr: PCROP1BSR,
     #[doc = "0x38 - Flash PCROP zone B End address register"]
-    pub pcrop1ber: crate::Reg<pcrop1ber::PCROP1BER_SPEC>,
+    pub pcrop1ber: PCROP1BER,
 }
 #[doc = "ACR register accessor: an alias for `Reg<ACR_SPEC>`"]
 pub type ACR = crate::Reg<acr::ACR_SPEC>;

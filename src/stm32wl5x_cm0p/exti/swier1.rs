@@ -34,88 +34,44 @@ impl From<crate::W<SWIER1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI21_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI22_A;
-#[doc = "Field `SWI21` reader - Software interrupt on event"]
-pub use SWI0_R as SWI21_R;
-#[doc = "Field `SWI22` reader - Software interrupt on event"]
-pub use SWI0_R as SWI22_R;
-#[doc = "Field `SWI21` writer - Software interrupt on event"]
-pub use SWI0_W as SWI21_W;
-#[doc = "Field `SWI22` writer - Software interrupt on event"]
-pub use SWI0_W as SWI22_W;
+#[doc = "Field `SWI0` reader - Software interrupt on event"]
+pub type SWI0_R = crate::BitReader<SWI0W_A>;
 #[doc = "Software interrupt on event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWI0_A {
+pub enum SWI0W_A {
     #[doc = "1: Generates an interrupt request"]
     Pend = 1,
 }
-impl From<SWI0_A> for bool {
+impl From<SWI0W_A> for bool {
     #[inline(always)]
-    fn from(variant: SWI0_A) -> Self {
+    fn from(variant: SWI0W_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SWI0` reader - Software interrupt on event"]
-pub type SWI0_R = crate::BitReader<SWI0_A>;
 impl SWI0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SWI0_A> {
+    pub fn variant(&self) -> Option<SWI0W_A> {
         match self.bits {
-            true => Some(SWI0_A::Pend),
+            true => Some(SWI0W_A::Pend),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `Pend`"]
     #[inline(always)]
     pub fn is_pend(&self) -> bool {
-        *self == SWI0_A::Pend
+        *self == SWI0W_A::Pend
     }
 }
 #[doc = "Field `SWI0` writer - Software interrupt on event"]
-pub type SWI0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWIER1_SPEC, SWI0_A, O>;
+pub type SWI0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWIER1_SPEC, SWI0W_A, O>;
 impl<'a, const O: u8> SWI0_W<'a, O> {
     #[doc = "Generates an interrupt request"]
     #[inline(always)]
     pub fn pend(self) -> &'a mut W {
-        self.variant(SWI0_A::Pend)
+        self.variant(SWI0W_A::Pend)
     }
 }
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI1_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI2_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI3_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI4_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI5_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI6_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI7_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI8_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI9_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI10_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI11_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI12_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI13_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI14_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI15_A;
-#[doc = "Software interrupt on event"]
-pub use SWI0_A as SWI16_A;
 #[doc = "Field `SWI1` reader - Software interrupt on event"]
 pub use SWI0_R as SWI1_R;
 #[doc = "Field `SWI2` reader - Software interrupt on event"]
@@ -148,6 +104,10 @@ pub use SWI0_R as SWI14_R;
 pub use SWI0_R as SWI15_R;
 #[doc = "Field `SWI16` reader - Software interrupt on event"]
 pub use SWI0_R as SWI16_R;
+#[doc = "Field `SWI21` reader - Software interrupt on event"]
+pub use SWI0_R as SWI21_R;
+#[doc = "Field `SWI22` reader - Software interrupt on event"]
+pub use SWI0_R as SWI22_R;
 #[doc = "Field `SWI1` writer - Software interrupt on event"]
 pub use SWI0_W as SWI1_W;
 #[doc = "Field `SWI2` writer - Software interrupt on event"]
@@ -180,17 +140,11 @@ pub use SWI0_W as SWI14_W;
 pub use SWI0_W as SWI15_W;
 #[doc = "Field `SWI16` writer - Software interrupt on event"]
 pub use SWI0_W as SWI16_W;
+#[doc = "Field `SWI21` writer - Software interrupt on event"]
+pub use SWI0_W as SWI21_W;
+#[doc = "Field `SWI22` writer - Software interrupt on event"]
+pub use SWI0_W as SWI22_W;
 impl R {
-    #[doc = "Bit 21 - Software interrupt on event"]
-    #[inline(always)]
-    pub fn swi21(&self) -> SWI21_R {
-        SWI21_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 22 - Software interrupt on event"]
-    #[inline(always)]
-    pub fn swi22(&self) -> SWI22_R {
-        SWI22_R::new(((self.bits >> 22) & 1) != 0)
-    }
     #[doc = "Bit 0 - Software interrupt on event"]
     #[inline(always)]
     pub fn swi0(&self) -> SWI0_R {
@@ -276,18 +230,18 @@ impl R {
     pub fn swi16(&self) -> SWI16_R {
         SWI16_R::new(((self.bits >> 16) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 21 - Software interrupt on event"]
     #[inline(always)]
-    pub fn swi21(&mut self) -> SWI21_W<21> {
-        SWI21_W::new(self)
+    pub fn swi21(&self) -> SWI21_R {
+        SWI21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Software interrupt on event"]
     #[inline(always)]
-    pub fn swi22(&mut self) -> SWI22_W<22> {
-        SWI22_W::new(self)
+    pub fn swi22(&self) -> SWI22_R {
+        SWI22_R::new(((self.bits >> 22) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Software interrupt on event"]
     #[inline(always)]
     pub fn swi0(&mut self) -> SWI0_W<0> {
@@ -372,6 +326,16 @@ impl W {
     #[inline(always)]
     pub fn swi16(&mut self) -> SWI16_W<16> {
         SWI16_W::new(self)
+    }
+    #[doc = "Bit 21 - Software interrupt on event"]
+    #[inline(always)]
+    pub fn swi21(&mut self) -> SWI21_W<21> {
+        SWI21_W::new(self)
+    }
+    #[doc = "Bit 22 - Software interrupt on event"]
+    #[inline(always)]
+    pub fn swi22(&mut self) -> SWI22_W<22> {
+        SWI22_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

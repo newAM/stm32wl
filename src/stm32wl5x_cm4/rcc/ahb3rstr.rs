@@ -34,36 +34,8 @@ impl From<crate::W<AHB3RSTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Flash interface reset"]
-pub use PKARST_A as FLASHRST_A;
-#[doc = "IPCCRST"]
-pub use PKARST_A as IPCCRST_A;
-#[doc = "HSEMRST"]
-pub use PKARST_A as HSEMRST_A;
-#[doc = "RNGRST"]
-pub use PKARST_A as RNGRST_A;
-#[doc = "AESRST"]
-pub use PKARST_A as AESRST_A;
-#[doc = "Field `FLASHRST` reader - Flash interface reset"]
-pub use PKARST_R as FLASHRST_R;
-#[doc = "Field `IPCCRST` reader - IPCCRST"]
-pub use PKARST_R as IPCCRST_R;
-#[doc = "Field `HSEMRST` reader - HSEMRST"]
-pub use PKARST_R as HSEMRST_R;
-#[doc = "Field `RNGRST` reader - RNGRST"]
-pub use PKARST_R as RNGRST_R;
-#[doc = "Field `AESRST` reader - AESRST"]
-pub use PKARST_R as AESRST_R;
-#[doc = "Field `FLASHRST` writer - Flash interface reset"]
-pub use PKARST_W as FLASHRST_W;
-#[doc = "Field `IPCCRST` writer - IPCCRST"]
-pub use PKARST_W as IPCCRST_W;
-#[doc = "Field `HSEMRST` writer - HSEMRST"]
-pub use PKARST_W as HSEMRST_W;
-#[doc = "Field `RNGRST` writer - RNGRST"]
-pub use PKARST_W as RNGRST_W;
-#[doc = "Field `AESRST` writer - AESRST"]
-pub use PKARST_W as AESRST_W;
+#[doc = "Field `PKARST` reader - PKARST"]
+pub type PKARST_R = crate::BitReader<PKARST_A>;
 #[doc = "PKARST\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PKARST_A {
@@ -78,8 +50,6 @@ impl From<PKARST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PKARST` reader - PKARST"]
-pub type PKARST_R = crate::BitReader<PKARST_A>;
 impl PKARST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -114,68 +84,88 @@ impl<'a, const O: u8> PKARST_W<'a, O> {
         self.variant(PKARST_A::Reset)
     }
 }
+#[doc = "Field `AESRST` reader - AESRST"]
+pub use PKARST_R as AESRST_R;
+#[doc = "Field `RNGRST` reader - RNGRST"]
+pub use PKARST_R as RNGRST_R;
+#[doc = "Field `HSEMRST` reader - HSEMRST"]
+pub use PKARST_R as HSEMRST_R;
+#[doc = "Field `IPCCRST` reader - IPCCRST"]
+pub use PKARST_R as IPCCRST_R;
+#[doc = "Field `FLASHRST` reader - Flash interface reset"]
+pub use PKARST_R as FLASHRST_R;
+#[doc = "Field `AESRST` writer - AESRST"]
+pub use PKARST_W as AESRST_W;
+#[doc = "Field `RNGRST` writer - RNGRST"]
+pub use PKARST_W as RNGRST_W;
+#[doc = "Field `HSEMRST` writer - HSEMRST"]
+pub use PKARST_W as HSEMRST_W;
+#[doc = "Field `IPCCRST` writer - IPCCRST"]
+pub use PKARST_W as IPCCRST_W;
+#[doc = "Field `FLASHRST` writer - Flash interface reset"]
+pub use PKARST_W as FLASHRST_W;
 impl R {
-    #[doc = "Bit 25 - Flash interface reset"]
+    #[doc = "Bit 16 - PKARST"]
     #[inline(always)]
-    pub fn flashrst(&self) -> FLASHRST_R {
-        FLASHRST_R::new(((self.bits >> 25) & 1) != 0)
-    }
-    #[doc = "Bit 20 - IPCCRST"]
-    #[inline(always)]
-    pub fn ipccrst(&self) -> IPCCRST_R {
-        IPCCRST_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 19 - HSEMRST"]
-    #[inline(always)]
-    pub fn hsemrst(&self) -> HSEMRST_R {
-        HSEMRST_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 18 - RNGRST"]
-    #[inline(always)]
-    pub fn rngrst(&self) -> RNGRST_R {
-        RNGRST_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn pkarst(&self) -> PKARST_R {
+        PKARST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - AESRST"]
     #[inline(always)]
     pub fn aesrst(&self) -> AESRST_R {
         AESRST_R::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bit 16 - PKARST"]
+    #[doc = "Bit 18 - RNGRST"]
     #[inline(always)]
-    pub fn pkarst(&self) -> PKARST_R {
-        PKARST_R::new(((self.bits >> 16) & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 25 - Flash interface reset"]
-    #[inline(always)]
-    pub fn flashrst(&mut self) -> FLASHRST_W<25> {
-        FLASHRST_W::new(self)
-    }
-    #[doc = "Bit 20 - IPCCRST"]
-    #[inline(always)]
-    pub fn ipccrst(&mut self) -> IPCCRST_W<20> {
-        IPCCRST_W::new(self)
+    pub fn rngrst(&self) -> RNGRST_R {
+        RNGRST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - HSEMRST"]
     #[inline(always)]
-    pub fn hsemrst(&mut self) -> HSEMRST_W<19> {
-        HSEMRST_W::new(self)
+    pub fn hsemrst(&self) -> HSEMRST_R {
+        HSEMRST_R::new(((self.bits >> 19) & 1) != 0)
     }
-    #[doc = "Bit 18 - RNGRST"]
+    #[doc = "Bit 20 - IPCCRST"]
     #[inline(always)]
-    pub fn rngrst(&mut self) -> RNGRST_W<18> {
-        RNGRST_W::new(self)
+    pub fn ipccrst(&self) -> IPCCRST_R {
+        IPCCRST_R::new(((self.bits >> 20) & 1) != 0)
+    }
+    #[doc = "Bit 25 - Flash interface reset"]
+    #[inline(always)]
+    pub fn flashrst(&self) -> FLASHRST_R {
+        FLASHRST_R::new(((self.bits >> 25) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 16 - PKARST"]
+    #[inline(always)]
+    pub fn pkarst(&mut self) -> PKARST_W<16> {
+        PKARST_W::new(self)
     }
     #[doc = "Bit 17 - AESRST"]
     #[inline(always)]
     pub fn aesrst(&mut self) -> AESRST_W<17> {
         AESRST_W::new(self)
     }
-    #[doc = "Bit 16 - PKARST"]
+    #[doc = "Bit 18 - RNGRST"]
     #[inline(always)]
-    pub fn pkarst(&mut self) -> PKARST_W<16> {
-        PKARST_W::new(self)
+    pub fn rngrst(&mut self) -> RNGRST_W<18> {
+        RNGRST_W::new(self)
+    }
+    #[doc = "Bit 19 - HSEMRST"]
+    #[inline(always)]
+    pub fn hsemrst(&mut self) -> HSEMRST_W<19> {
+        HSEMRST_W::new(self)
+    }
+    #[doc = "Bit 20 - IPCCRST"]
+    #[inline(always)]
+    pub fn ipccrst(&mut self) -> IPCCRST_W<20> {
+        IPCCRST_W::new(self)
+    }
+    #[doc = "Bit 25 - Flash interface reset"]
+    #[inline(always)]
+    pub fn flashrst(&mut self) -> FLASHRST_W<25> {
+        FLASHRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

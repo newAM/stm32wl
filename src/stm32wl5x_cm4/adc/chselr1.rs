@@ -34,6 +34,8 @@ impl From<crate::W<CHSELR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SQ1` reader - SQ1"]
+pub type SQ1_R = crate::FieldReader<u8, SQ1_A>;
 #[doc = "SQ1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -77,8 +79,6 @@ impl From<SQ1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SQ1` reader - SQ1"]
-pub type SQ1_R = crate::FieldReader<u8, SQ1_A>;
 impl SQ1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -268,20 +268,6 @@ impl<'a, const O: u8> SQ1_W<'a, O> {
         self.variant(SQ1_A::Eos)
     }
 }
-#[doc = "SQ2"]
-pub use SQ1_A as SQ2_A;
-#[doc = "SQ3"]
-pub use SQ1_A as SQ3_A;
-#[doc = "SQ4"]
-pub use SQ1_A as SQ4_A;
-#[doc = "SQ5"]
-pub use SQ1_A as SQ5_A;
-#[doc = "SQ6"]
-pub use SQ1_A as SQ6_A;
-#[doc = "SQ7"]
-pub use SQ1_A as SQ7_A;
-#[doc = "SQ8"]
-pub use SQ1_A as SQ8_A;
 #[doc = "Field `SQ2` reader - SQ2"]
 pub use SQ1_R as SQ2_R;
 #[doc = "Field `SQ3` reader - SQ3"]

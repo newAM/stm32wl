@@ -34,78 +34,78 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `OIS1N` reader - OIS1N"]
-pub type OIS1N_R = crate::BitReader<bool>;
-#[doc = "Field `OIS1N` writer - OIS1N"]
-pub type OIS1N_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
-#[doc = "Field `OIS1` reader - OIS1"]
-pub type OIS1_R = crate::BitReader<bool>;
-#[doc = "Field `OIS1` writer - OIS1"]
-pub type OIS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
-#[doc = "Field `CCDS` reader - CCDS"]
-pub type CCDS_R = crate::BitReader<bool>;
-#[doc = "Field `CCDS` writer - CCDS"]
-pub type CCDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
-#[doc = "Field `CCUS` reader - CCUS"]
-pub type CCUS_R = crate::BitReader<bool>;
-#[doc = "Field `CCUS` writer - CCUS"]
-pub type CCUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
 #[doc = "Field `CCPC` reader - CCPC"]
 pub type CCPC_R = crate::BitReader<bool>;
 #[doc = "Field `CCPC` writer - CCPC"]
 pub type CCPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
+#[doc = "Field `CCUS` reader - CCUS"]
+pub type CCUS_R = crate::BitReader<bool>;
+#[doc = "Field `CCUS` writer - CCUS"]
+pub type CCUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
+#[doc = "Field `CCDS` reader - CCDS"]
+pub type CCDS_R = crate::BitReader<bool>;
+#[doc = "Field `CCDS` writer - CCDS"]
+pub type CCDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
+#[doc = "Field `OIS1` reader - OIS1"]
+pub type OIS1_R = crate::BitReader<bool>;
+#[doc = "Field `OIS1` writer - OIS1"]
+pub type OIS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
+#[doc = "Field `OIS1N` reader - OIS1N"]
+pub type OIS1N_R = crate::BitReader<bool>;
+#[doc = "Field `OIS1N` writer - OIS1N"]
+pub type OIS1N_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 9 - OIS1N"]
+    #[doc = "Bit 0 - CCPC"]
     #[inline(always)]
-    pub fn ois1n(&self) -> OIS1N_R {
-        OIS1N_R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 8 - OIS1"]
-    #[inline(always)]
-    pub fn ois1(&self) -> OIS1_R {
-        OIS1_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 3 - CCDS"]
-    #[inline(always)]
-    pub fn ccds(&self) -> CCDS_R {
-        CCDS_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ccpc(&self) -> CCPC_R {
+        CCPC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - CCUS"]
     #[inline(always)]
     pub fn ccus(&self) -> CCUS_R {
         CCUS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 0 - CCPC"]
+    #[doc = "Bit 3 - CCDS"]
     #[inline(always)]
-    pub fn ccpc(&self) -> CCPC_R {
-        CCPC_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 9 - OIS1N"]
-    #[inline(always)]
-    pub fn ois1n(&mut self) -> OIS1N_W<9> {
-        OIS1N_W::new(self)
+    pub fn ccds(&self) -> CCDS_R {
+        CCDS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - OIS1"]
     #[inline(always)]
-    pub fn ois1(&mut self) -> OIS1_W<8> {
-        OIS1_W::new(self)
+    pub fn ois1(&self) -> OIS1_R {
+        OIS1_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 3 - CCDS"]
+    #[doc = "Bit 9 - OIS1N"]
     #[inline(always)]
-    pub fn ccds(&mut self) -> CCDS_W<3> {
-        CCDS_W::new(self)
+    pub fn ois1n(&self) -> OIS1N_R {
+        OIS1N_R::new(((self.bits >> 9) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - CCPC"]
+    #[inline(always)]
+    pub fn ccpc(&mut self) -> CCPC_W<0> {
+        CCPC_W::new(self)
     }
     #[doc = "Bit 2 - CCUS"]
     #[inline(always)]
     pub fn ccus(&mut self) -> CCUS_W<2> {
         CCUS_W::new(self)
     }
-    #[doc = "Bit 0 - CCPC"]
+    #[doc = "Bit 3 - CCDS"]
     #[inline(always)]
-    pub fn ccpc(&mut self) -> CCPC_W<0> {
-        CCPC_W::new(self)
+    pub fn ccds(&mut self) -> CCDS_W<3> {
+        CCDS_W::new(self)
+    }
+    #[doc = "Bit 8 - OIS1"]
+    #[inline(always)]
+    pub fn ois1(&mut self) -> OIS1_W<8> {
+        OIS1_W::new(self)
+    }
+    #[doc = "Bit 9 - OIS1N"]
+    #[inline(always)]
+    pub fn ois1n(&mut self) -> OIS1N_W<9> {
+        OIS1N_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

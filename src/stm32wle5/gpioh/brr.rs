@@ -34,54 +34,54 @@ impl From<crate::W<BRR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BR3` reader - Port Reset bit"]
+pub type BR3_R = crate::BitReader<BR3W_A>;
 #[doc = "Port Reset bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BR3_A {
+pub enum BR3W_A {
     #[doc = "0: No action on the corresponding ODx bit"]
     NoAction = 0,
     #[doc = "1: Reset the ODx bit"]
     Reset = 1,
 }
-impl From<BR3_A> for bool {
+impl From<BR3W_A> for bool {
     #[inline(always)]
-    fn from(variant: BR3_A) -> Self {
+    fn from(variant: BR3W_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BR3` reader - Port Reset bit"]
-pub type BR3_R = crate::BitReader<BR3_A>;
 impl BR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BR3_A {
+    pub fn variant(&self) -> BR3W_A {
         match self.bits {
-            false => BR3_A::NoAction,
-            true => BR3_A::Reset,
+            false => BR3W_A::NoAction,
+            true => BR3W_A::Reset,
         }
     }
     #[doc = "Checks if the value of the field is `NoAction`"]
     #[inline(always)]
     pub fn is_no_action(&self) -> bool {
-        *self == BR3_A::NoAction
+        *self == BR3W_A::NoAction
     }
     #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        *self == BR3_A::Reset
+        *self == BR3W_A::Reset
     }
 }
 #[doc = "Field `BR3` writer - Port Reset bit"]
-pub type BR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRR_SPEC, BR3_A, O>;
+pub type BR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRR_SPEC, BR3W_A, O>;
 impl<'a, const O: u8> BR3_W<'a, O> {
     #[doc = "No action on the corresponding ODx bit"]
     #[inline(always)]
     pub fn no_action(self) -> &'a mut W {
-        self.variant(BR3_A::NoAction)
+        self.variant(BR3W_A::NoAction)
     }
     #[doc = "Reset the ODx bit"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(BR3_A::Reset)
+        self.variant(BR3W_A::Reset)
     }
 }
 impl R {

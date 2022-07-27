@@ -2,56 +2,50 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - ADC interrupt and status register"]
-    pub isr: crate::Reg<isr::ISR_SPEC>,
+    pub isr: ISR,
     #[doc = "0x04 - ADC interrupt enable register"]
-    pub ier: crate::Reg<ier::IER_SPEC>,
+    pub ier: IER,
     #[doc = "0x08 - ADC control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x0c - ADC configuration register 1"]
-    pub cfgr1: crate::Reg<cfgr1::CFGR1_SPEC>,
+    pub cfgr1: CFGR1,
     #[doc = "0x10 - ADC configuration register 2"]
-    pub cfgr2: crate::Reg<cfgr2::CFGR2_SPEC>,
+    pub cfgr2: CFGR2,
     #[doc = "0x14 - ADC sampling time register"]
-    pub smpr: crate::Reg<smpr::SMPR_SPEC>,
+    pub smpr: SMPR,
     _reserved6: [u8; 0x08],
     #[doc = "0x20 - ADC watchdog threshold register"]
-    pub awd1tr: crate::Reg<awd1tr::AWD1TR_SPEC>,
+    pub awd1tr: AWD1TR,
     #[doc = "0x24 - ADC watchdog threshold register"]
-    pub awd2tr: crate::Reg<awd2tr::AWD2TR_SPEC>,
+    pub awd2tr: AWD2TR,
     _reserved_8_chselr0: [u8; 0x04],
     #[doc = "0x2c - ADC watchdog threshold register"]
-    pub awd3tr: crate::Reg<awd3tr::AWD3TR_SPEC>,
+    pub awd3tr: AWD3TR,
     _reserved10: [u8; 0x10],
     #[doc = "0x40 - ADC data register"]
-    pub dr: crate::Reg<dr::DR_SPEC>,
+    pub dr: DR,
     _reserved11: [u8; 0x5c],
     #[doc = "0xa0 - ADC Analog Watchdog 2 Configuration register"]
-    pub awd2cr: crate::Reg<awd2cr::AWD2CR_SPEC>,
+    pub awd2cr: AWD2CR,
     #[doc = "0xa4 - ADC Analog Watchdog 3 Configuration register"]
-    pub awd3cr: crate::Reg<awd3cr::AWD3CR_SPEC>,
+    pub awd3cr: AWD3CR,
     _reserved13: [u8; 0x0c],
     #[doc = "0xb4 - ADC Calibration factor"]
-    pub calfact: crate::Reg<calfact::CALFACT_SPEC>,
+    pub calfact: CALFACT,
     _reserved14: [u8; 0x0250],
     #[doc = "0x308 - ADC common configuration register"]
-    pub ccr: crate::Reg<ccr::CCR_SPEC>,
+    pub ccr: CCR,
 }
 impl RegisterBlock {
     #[doc = "0x28 - channel selection register"]
     #[inline(always)]
-    pub fn chselr1(&self) -> &crate::Reg<chselr1::CHSELR1_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(40usize)
-                as *const crate::Reg<chselr1::CHSELR1_SPEC>)
-        }
+    pub fn chselr1(&self) -> &CHSELR1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(40usize) as *const CHSELR1) }
     }
     #[doc = "0x28 - channel selection register"]
     #[inline(always)]
-    pub fn chselr0(&self) -> &crate::Reg<chselr0::CHSELR0_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(40usize)
-                as *const crate::Reg<chselr0::CHSELR0_SPEC>)
-        }
+    pub fn chselr0(&self) -> &CHSELR0 {
+        unsafe { &*(((self as *const Self) as *const u8).add(40usize) as *const CHSELR0) }
     }
 }
 #[doc = "ISR register accessor: an alias for `Reg<ISR_SPEC>`"]

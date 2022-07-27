@@ -34,6 +34,8 @@ impl From<crate::W<MEMRMP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MEM_MODE` reader - Memory mapping selection"]
+pub type MEM_MODE_R = crate::FieldReader<u8, MEM_MODE_A>;
 #[doc = "Memory mapping selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<MEM_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MEM_MODE` reader - Memory mapping selection"]
-pub type MEM_MODE_R = crate::FieldReader<u8, MEM_MODE_A>;
 impl MEM_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

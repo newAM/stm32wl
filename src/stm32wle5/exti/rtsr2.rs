@@ -34,6 +34,8 @@ impl From<crate::W<RTSR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RT34` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub type RT34_R = crate::BitReader<RT34_A>;
 #[doc = "Rising trigger event configuration bit of Configurable Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RT34_A {
@@ -48,8 +50,6 @@ impl From<RT34_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RT34` reader - Rising trigger event configuration bit of Configurable Event input"]
-pub type RT34_R = crate::BitReader<RT34_A>;
 impl RT34_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,8 +84,6 @@ impl<'a, const O: u8> RT34_W<'a, O> {
         self.variant(RT34_A::Enabled)
     }
 }
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT34_A as RT45_A;
 #[doc = "Field `RT45` reader - Rising trigger event configuration bit of Configurable Event input"]
 pub use RT34_R as RT45_R;
 #[doc = "Field `RT45` writer - Rising trigger event configuration bit of Configurable Event input"]

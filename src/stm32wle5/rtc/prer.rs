@@ -34,36 +34,36 @@ impl From<crate::W<PRER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PREDIV_A` reader - Asynchronous prescaler factor"]
-pub type PREDIV_A_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PREDIV_A` writer - Asynchronous prescaler factor"]
-pub type PREDIV_A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PRER_SPEC, u8, u8, 7, O>;
 #[doc = "Field `PREDIV_S` reader - Synchronous prescaler factor"]
 pub type PREDIV_S_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PREDIV_S` writer - Synchronous prescaler factor"]
 pub type PREDIV_S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PRER_SPEC, u16, u16, 15, O>;
+#[doc = "Field `PREDIV_A` reader - Asynchronous prescaler factor"]
+pub type PREDIV_A_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `PREDIV_A` writer - Asynchronous prescaler factor"]
+pub type PREDIV_A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PRER_SPEC, u8, u8, 7, O>;
 impl R {
-    #[doc = "Bits 16:22 - Asynchronous prescaler factor"]
-    #[inline(always)]
-    pub fn prediv_a(&self) -> PREDIV_A_R {
-        PREDIV_A_R::new(((self.bits >> 16) & 0x7f) as u8)
-    }
     #[doc = "Bits 0:14 - Synchronous prescaler factor"]
     #[inline(always)]
     pub fn prediv_s(&self) -> PREDIV_S_R {
         PREDIV_S_R::new((self.bits & 0x7fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:22 - Asynchronous prescaler factor"]
     #[inline(always)]
-    pub fn prediv_a(&mut self) -> PREDIV_A_W<16> {
-        PREDIV_A_W::new(self)
+    pub fn prediv_a(&self) -> PREDIV_A_R {
+        PREDIV_A_R::new(((self.bits >> 16) & 0x7f) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:14 - Synchronous prescaler factor"]
     #[inline(always)]
     pub fn prediv_s(&mut self) -> PREDIV_S_W<0> {
         PREDIV_S_W::new(self)
+    }
+    #[doc = "Bits 16:22 - Asynchronous prescaler factor"]
+    #[inline(always)]
+    pub fn prediv_a(&mut self) -> PREDIV_A_W<16> {
+        PREDIV_A_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

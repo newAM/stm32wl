@@ -34,31 +34,33 @@ impl From<crate::W<CFR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Early wakeup interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWI_AW {
-    #[doc = "1: interrupt occurs whenever the counter reaches the value 0x40"]
-    Enable = 1,
-}
-impl From<EWI_AW> for bool {
-    #[inline(always)]
-    fn from(variant: EWI_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `EWI` writer - Early wakeup interrupt"]
-pub type EWI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFR_SPEC, EWI_AW, O>;
-impl<'a, const O: u8> EWI_W<'a, O> {
-    #[doc = "interrupt occurs whenever the counter reaches the value 0x40"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(EWI_AW::Enable)
-    }
-}
 #[doc = "Field `W` reader - 7-bit window value"]
 pub type W_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `W` writer - 7-bit window value"]
 pub type W_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CFR_SPEC, u8, u8, 7, O>;
+#[doc = "Early wakeup interrupt\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EWIW_AW {
+    #[doc = "1: interrupt occurs whenever the counter reaches the value 0x40"]
+    Enable = 1,
+}
+impl From<EWIW_AW> for bool {
+    #[inline(always)]
+    fn from(variant: EWIW_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `EWI` writer - Early wakeup interrupt"]
+pub type EWI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFR_SPEC, EWIW_AW, O>;
+impl<'a, const O: u8> EWI_W<'a, O> {
+    #[doc = "interrupt occurs whenever the counter reaches the value 0x40"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(EWIW_AW::Enable)
+    }
+}
+#[doc = "Field `WDGTB` reader - Timer base"]
+pub type WDGTB_R = crate::FieldReader<u8, WDGTB_A>;
 #[doc = "Timer base\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -78,8 +80,6 @@ impl From<WDGTB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDGTB` reader - Timer base"]
-pub type WDGTB_R = crate::FieldReader<u8, WDGTB_A>;
 impl WDGTB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -150,15 +150,15 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 9 - Early wakeup interrupt"]
-    #[inline(always)]
-    pub fn ewi(&mut self) -> EWI_W<9> {
-        EWI_W::new(self)
-    }
     #[doc = "Bits 0:6 - 7-bit window value"]
     #[inline(always)]
     pub fn w(&mut self) -> W_W<0> {
         W_W::new(self)
+    }
+    #[doc = "Bit 9 - Early wakeup interrupt"]
+    #[inline(always)]
+    pub fn ewi(&mut self) -> EWI_W<9> {
+        EWI_W::new(self)
     }
     #[doc = "Bits 11:13 - Timer base"]
     #[inline(always)]

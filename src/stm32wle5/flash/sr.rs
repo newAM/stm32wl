@@ -34,519 +34,521 @@ impl From<crate::W<SR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EOP` reader - End of operation"]
+pub type EOP_R = crate::BitReader<EOPR_A>;
 #[doc = "End of operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOP_A {
+pub enum EOPR_A {
     #[doc = "0: No EOP operation occurred"]
     NoEvent = 0,
     #[doc = "1: An EOP event occurred"]
     Event = 1,
 }
-impl From<EOP_A> for bool {
+impl From<EOPR_A> for bool {
     #[inline(always)]
-    fn from(variant: EOP_A) -> Self {
+    fn from(variant: EOPR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOP` reader - End of operation"]
-pub type EOP_R = crate::BitReader<EOP_A>;
 impl EOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOP_A {
+    pub fn variant(&self) -> EOPR_A {
         match self.bits {
-            false => EOP_A::NoEvent,
-            true => EOP_A::Event,
+            false => EOPR_A::NoEvent,
+            true => EOPR_A::Event,
         }
     }
     #[doc = "Checks if the value of the field is `NoEvent`"]
     #[inline(always)]
     pub fn is_no_event(&self) -> bool {
-        *self == EOP_A::NoEvent
+        *self == EOPR_A::NoEvent
     }
     #[doc = "Checks if the value of the field is `Event`"]
     #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == EOP_A::Event
+        *self == EOPR_A::Event
     }
 }
 #[doc = "End of operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOP_AW {
+pub enum EOPW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<EOP_AW> for bool {
+impl From<EOPW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EOP_AW) -> Self {
+    fn from(variant: EOPW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EOP` writer - End of operation"]
-pub type EOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, EOP_AW, O>;
+pub type EOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, EOPW_AW, O>;
 impl<'a, const O: u8> EOP_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(EOP_AW::Clear)
+        self.variant(EOPW_AW::Clear)
     }
 }
+#[doc = "Field `OPERR` reader - Operation error"]
+pub type OPERR_R = crate::BitReader<OPERRR_A>;
 #[doc = "Operation error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPERR_A {
+pub enum OPERRR_A {
     #[doc = "0: No memory opreation error happened"]
     NoError = 0,
     #[doc = "1: Memory operation error happened"]
     Error = 1,
 }
-impl From<OPERR_A> for bool {
+impl From<OPERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: OPERR_A) -> Self {
+    fn from(variant: OPERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OPERR` reader - Operation error"]
-pub type OPERR_R = crate::BitReader<OPERR_A>;
 impl OPERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OPERR_A {
+    pub fn variant(&self) -> OPERRR_A {
         match self.bits {
-            false => OPERR_A::NoError,
-            true => OPERR_A::Error,
+            false => OPERRR_A::NoError,
+            true => OPERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == OPERR_A::NoError
+        *self == OPERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == OPERR_A::Error
+        *self == OPERRR_A::Error
     }
 }
 #[doc = "Operation error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPERR_AW {
+pub enum OPERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<OPERR_AW> for bool {
+impl From<OPERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: OPERR_AW) -> Self {
+    fn from(variant: OPERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OPERR` writer - Operation error"]
-pub type OPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, OPERR_AW, O>;
+pub type OPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, OPERRW_AW, O>;
 impl<'a, const O: u8> OPERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(OPERR_AW::Clear)
+        self.variant(OPERRW_AW::Clear)
     }
 }
+#[doc = "Field `PROGERR` reader - Programming error"]
+pub type PROGERR_R = crate::BitReader<PROGERRR_A>;
 #[doc = "Programming error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROGERR_A {
+pub enum PROGERRR_A {
     #[doc = "0: No size programming error happened"]
     NoError = 0,
     #[doc = "1: Programming error happened"]
     Error = 1,
 }
-impl From<PROGERR_A> for bool {
+impl From<PROGERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: PROGERR_A) -> Self {
+    fn from(variant: PROGERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PROGERR` reader - Programming error"]
-pub type PROGERR_R = crate::BitReader<PROGERR_A>;
 impl PROGERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROGERR_A {
+    pub fn variant(&self) -> PROGERRR_A {
         match self.bits {
-            false => PROGERR_A::NoError,
-            true => PROGERR_A::Error,
+            false => PROGERRR_A::NoError,
+            true => PROGERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == PROGERR_A::NoError
+        *self == PROGERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == PROGERR_A::Error
+        *self == PROGERRR_A::Error
     }
 }
 #[doc = "Programming error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROGERR_AW {
+pub enum PROGERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<PROGERR_AW> for bool {
+impl From<PROGERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: PROGERR_AW) -> Self {
+    fn from(variant: PROGERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PROGERR` writer - Programming error"]
-pub type PROGERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PROGERR_AW, O>;
+pub type PROGERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PROGERRW_AW, O>;
 impl<'a, const O: u8> PROGERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PROGERR_AW::Clear)
+        self.variant(PROGERRW_AW::Clear)
     }
 }
+#[doc = "Field `WRPERR` reader - Write protected error"]
+pub type WRPERR_R = crate::BitReader<WRPERRR_A>;
 #[doc = "Write protected error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WRPERR_A {
+pub enum WRPERRR_A {
     #[doc = "0: No write protection error happened"]
     NoError = 0,
     #[doc = "1: Write protection error happened"]
     Error = 1,
 }
-impl From<WRPERR_A> for bool {
+impl From<WRPERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: WRPERR_A) -> Self {
+    fn from(variant: WRPERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRPERR` reader - Write protected error"]
-pub type WRPERR_R = crate::BitReader<WRPERR_A>;
 impl WRPERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRPERR_A {
+    pub fn variant(&self) -> WRPERRR_A {
         match self.bits {
-            false => WRPERR_A::NoError,
-            true => WRPERR_A::Error,
+            false => WRPERRR_A::NoError,
+            true => WRPERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == WRPERR_A::NoError
+        *self == WRPERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == WRPERR_A::Error
+        *self == WRPERRR_A::Error
     }
 }
 #[doc = "Write protected error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WRPERR_AW {
+pub enum WRPERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<WRPERR_AW> for bool {
+impl From<WRPERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: WRPERR_AW) -> Self {
+    fn from(variant: WRPERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WRPERR` writer - Write protected error"]
-pub type WRPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, WRPERR_AW, O>;
+pub type WRPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, WRPERRW_AW, O>;
 impl<'a, const O: u8> WRPERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(WRPERR_AW::Clear)
+        self.variant(WRPERRW_AW::Clear)
     }
 }
+#[doc = "Field `PGAERR` reader - Programming alignment error"]
+pub type PGAERR_R = crate::BitReader<PGAERRR_A>;
 #[doc = "Programming alignment error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PGAERR_A {
+pub enum PGAERRR_A {
     #[doc = "0: No programming alignment error happened"]
     NoError = 0,
     #[doc = "1: Programming alignment error happened"]
     Error = 1,
 }
-impl From<PGAERR_A> for bool {
+impl From<PGAERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: PGAERR_A) -> Self {
+    fn from(variant: PGAERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PGAERR` reader - Programming alignment error"]
-pub type PGAERR_R = crate::BitReader<PGAERR_A>;
 impl PGAERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PGAERR_A {
+    pub fn variant(&self) -> PGAERRR_A {
         match self.bits {
-            false => PGAERR_A::NoError,
-            true => PGAERR_A::Error,
+            false => PGAERRR_A::NoError,
+            true => PGAERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == PGAERR_A::NoError
+        *self == PGAERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == PGAERR_A::Error
+        *self == PGAERRR_A::Error
     }
 }
 #[doc = "Programming alignment error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PGAERR_AW {
+pub enum PGAERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<PGAERR_AW> for bool {
+impl From<PGAERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: PGAERR_AW) -> Self {
+    fn from(variant: PGAERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PGAERR` writer - Programming alignment error"]
-pub type PGAERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PGAERR_AW, O>;
+pub type PGAERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PGAERRW_AW, O>;
 impl<'a, const O: u8> PGAERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PGAERR_AW::Clear)
+        self.variant(PGAERRW_AW::Clear)
     }
 }
+#[doc = "Field `SIZERR` reader - Size error"]
+pub type SIZERR_R = crate::BitReader<SIZERRR_A>;
 #[doc = "Size error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIZERR_A {
+pub enum SIZERRR_A {
     #[doc = "0: No size error happened"]
     NoError = 0,
     #[doc = "1: Size error happened"]
     Error = 1,
 }
-impl From<SIZERR_A> for bool {
+impl From<SIZERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: SIZERR_A) -> Self {
+    fn from(variant: SIZERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SIZERR` reader - Size error"]
-pub type SIZERR_R = crate::BitReader<SIZERR_A>;
 impl SIZERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SIZERR_A {
+    pub fn variant(&self) -> SIZERRR_A {
         match self.bits {
-            false => SIZERR_A::NoError,
-            true => SIZERR_A::Error,
+            false => SIZERRR_A::NoError,
+            true => SIZERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == SIZERR_A::NoError
+        *self == SIZERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == SIZERR_A::Error
+        *self == SIZERRR_A::Error
     }
 }
 #[doc = "Size error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIZERR_AW {
+pub enum SIZERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<SIZERR_AW> for bool {
+impl From<SIZERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: SIZERR_AW) -> Self {
+    fn from(variant: SIZERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIZERR` writer - Size error"]
-pub type SIZERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, SIZERR_AW, O>;
+pub type SIZERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, SIZERRW_AW, O>;
 impl<'a, const O: u8> SIZERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(SIZERR_AW::Clear)
+        self.variant(SIZERRW_AW::Clear)
     }
 }
+#[doc = "Field `PGSERR` reader - Programming sequence error"]
+pub type PGSERR_R = crate::BitReader<PGSERRR_A>;
 #[doc = "Programming sequence error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PGSERR_A {
+pub enum PGSERRR_A {
     #[doc = "0: No fast programming sequence error happened"]
     NoError = 0,
     #[doc = "1: Fast programming sequence error happened"]
     Error = 1,
 }
-impl From<PGSERR_A> for bool {
+impl From<PGSERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: PGSERR_A) -> Self {
+    fn from(variant: PGSERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PGSERR` reader - Programming sequence error"]
-pub type PGSERR_R = crate::BitReader<PGSERR_A>;
 impl PGSERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PGSERR_A {
+    pub fn variant(&self) -> PGSERRR_A {
         match self.bits {
-            false => PGSERR_A::NoError,
-            true => PGSERR_A::Error,
+            false => PGSERRR_A::NoError,
+            true => PGSERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == PGSERR_A::NoError
+        *self == PGSERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == PGSERR_A::Error
+        *self == PGSERRR_A::Error
     }
 }
 #[doc = "Programming sequence error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PGSERR_AW {
+pub enum PGSERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<PGSERR_AW> for bool {
+impl From<PGSERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: PGSERR_AW) -> Self {
+    fn from(variant: PGSERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PGSERR` writer - Programming sequence error"]
-pub type PGSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PGSERR_AW, O>;
+pub type PGSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, PGSERRW_AW, O>;
 impl<'a, const O: u8> PGSERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PGSERR_AW::Clear)
+        self.variant(PGSERRW_AW::Clear)
     }
 }
+#[doc = "Field `MISSERR` reader - Fast programming data miss error"]
+pub type MISSERR_R = crate::BitReader<MISSERRR_A>;
 #[doc = "Fast programming data miss error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MISSERR_A {
+pub enum MISSERRR_A {
     #[doc = "0: No fast programming data miss error happened"]
     NoError = 0,
     #[doc = "1: Fast programming data miss error happened"]
     Error = 1,
 }
-impl From<MISSERR_A> for bool {
+impl From<MISSERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: MISSERR_A) -> Self {
+    fn from(variant: MISSERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MISSERR` reader - Fast programming data miss error"]
-pub type MISSERR_R = crate::BitReader<MISSERR_A>;
 impl MISSERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MISSERR_A {
+    pub fn variant(&self) -> MISSERRR_A {
         match self.bits {
-            false => MISSERR_A::NoError,
-            true => MISSERR_A::Error,
+            false => MISSERRR_A::NoError,
+            true => MISSERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == MISSERR_A::NoError
+        *self == MISSERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == MISSERR_A::Error
+        *self == MISSERRR_A::Error
     }
 }
 #[doc = "Fast programming data miss error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MISSERR_AW {
+pub enum MISSERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<MISSERR_AW> for bool {
+impl From<MISSERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: MISSERR_AW) -> Self {
+    fn from(variant: MISSERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MISSERR` writer - Fast programming data miss error"]
-pub type MISSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, MISSERR_AW, O>;
+pub type MISSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, MISSERRW_AW, O>;
 impl<'a, const O: u8> MISSERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(MISSERR_AW::Clear)
+        self.variant(MISSERRW_AW::Clear)
     }
 }
+#[doc = "Field `FASTERR` reader - Fast programming error"]
+pub type FASTERR_R = crate::BitReader<FASTERRR_A>;
 #[doc = "Fast programming error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FASTERR_A {
+pub enum FASTERRR_A {
     #[doc = "0: No fast programming error happened"]
     NoError = 0,
     #[doc = "1: Fast programming error happened"]
     Error = 1,
 }
-impl From<FASTERR_A> for bool {
+impl From<FASTERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: FASTERR_A) -> Self {
+    fn from(variant: FASTERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FASTERR` reader - Fast programming error"]
-pub type FASTERR_R = crate::BitReader<FASTERR_A>;
 impl FASTERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FASTERR_A {
+    pub fn variant(&self) -> FASTERRR_A {
         match self.bits {
-            false => FASTERR_A::NoError,
-            true => FASTERR_A::Error,
+            false => FASTERRR_A::NoError,
+            true => FASTERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == FASTERR_A::NoError
+        *self == FASTERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == FASTERR_A::Error
+        *self == FASTERRR_A::Error
     }
 }
 #[doc = "Fast programming error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FASTERR_AW {
+pub enum FASTERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<FASTERR_AW> for bool {
+impl From<FASTERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: FASTERR_AW) -> Self {
+    fn from(variant: FASTERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FASTERR` writer - Fast programming error"]
-pub type FASTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, FASTERR_AW, O>;
+pub type FASTERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, FASTERRW_AW, O>;
 impl<'a, const O: u8> FASTERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(FASTERR_AW::Clear)
+        self.variant(FASTERRW_AW::Clear)
     }
 }
+#[doc = "Field `OPTNV` reader - User Option OPTIVAL indication"]
+pub type OPTNV_R = crate::BitReader<OPTNV_A>;
 #[doc = "User Option OPTIVAL indication\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OPTNV_A {
@@ -561,8 +563,6 @@ impl From<OPTNV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OPTNV` reader - User Option OPTIVAL indication"]
-pub type OPTNV_R = crate::BitReader<OPTNV_A>;
 impl OPTNV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -583,120 +583,122 @@ impl OPTNV_R {
         *self == OPTNV_A::Invalid
     }
 }
+#[doc = "Field `RDERR` reader - PCROP read error"]
+pub type RDERR_R = crate::BitReader<RDERRR_A>;
 #[doc = "PCROP read error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDERR_A {
+pub enum RDERRR_A {
     #[doc = "0: No read-only error happened"]
     NoError = 0,
     #[doc = "1: Read-only error happened"]
     Error = 1,
 }
-impl From<RDERR_A> for bool {
+impl From<RDERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: RDERR_A) -> Self {
+    fn from(variant: RDERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RDERR` reader - PCROP read error"]
-pub type RDERR_R = crate::BitReader<RDERR_A>;
 impl RDERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDERR_A {
+    pub fn variant(&self) -> RDERRR_A {
         match self.bits {
-            false => RDERR_A::NoError,
-            true => RDERR_A::Error,
+            false => RDERRR_A::NoError,
+            true => RDERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == RDERR_A::NoError
+        *self == RDERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == RDERR_A::Error
+        *self == RDERRR_A::Error
     }
 }
 #[doc = "PCROP read error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDERR_AW {
+pub enum RDERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<RDERR_AW> for bool {
+impl From<RDERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: RDERR_AW) -> Self {
+    fn from(variant: RDERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RDERR` writer - PCROP read error"]
-pub type RDERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, RDERR_AW, O>;
+pub type RDERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, RDERRW_AW, O>;
 impl<'a, const O: u8> RDERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RDERR_AW::Clear)
+        self.variant(RDERRW_AW::Clear)
     }
 }
+#[doc = "Field `OPTVERR` reader - Option validity error"]
+pub type OPTVERR_R = crate::BitReader<OPTVERRR_A>;
 #[doc = "Option validity error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPTVERR_A {
+pub enum OPTVERRR_A {
     #[doc = "0: No error in option and engineering bits"]
     NoError = 0,
     #[doc = "1: Error in option and engineering bits"]
     Error = 1,
 }
-impl From<OPTVERR_A> for bool {
+impl From<OPTVERRR_A> for bool {
     #[inline(always)]
-    fn from(variant: OPTVERR_A) -> Self {
+    fn from(variant: OPTVERRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OPTVERR` reader - Option validity error"]
-pub type OPTVERR_R = crate::BitReader<OPTVERR_A>;
 impl OPTVERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OPTVERR_A {
+    pub fn variant(&self) -> OPTVERRR_A {
         match self.bits {
-            false => OPTVERR_A::NoError,
-            true => OPTVERR_A::Error,
+            false => OPTVERRR_A::NoError,
+            true => OPTVERRR_A::Error,
         }
     }
     #[doc = "Checks if the value of the field is `NoError`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == OPTVERR_A::NoError
+        *self == OPTVERRR_A::NoError
     }
     #[doc = "Checks if the value of the field is `Error`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == OPTVERR_A::Error
+        *self == OPTVERRR_A::Error
     }
 }
 #[doc = "Option validity error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPTVERR_AW {
+pub enum OPTVERRW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<OPTVERR_AW> for bool {
+impl From<OPTVERRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: OPTVERR_AW) -> Self {
+    fn from(variant: OPTVERRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OPTVERR` writer - Option validity error"]
-pub type OPTVERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, OPTVERR_AW, O>;
+pub type OPTVERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, OPTVERRW_AW, O>;
 impl<'a, const O: u8> OPTVERR_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(OPTVERR_AW::Clear)
+        self.variant(OPTVERRW_AW::Clear)
     }
 }
+#[doc = "Field `BSY` reader - Busy"]
+pub type BSY_R = crate::BitReader<BSY_A>;
 #[doc = "Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BSY_A {
@@ -711,8 +713,6 @@ impl From<BSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BSY` reader - Busy"]
-pub type BSY_R = crate::BitReader<BSY_A>;
 impl BSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -733,6 +733,8 @@ impl BSY_R {
         *self == BSY_A::Active
     }
 }
+#[doc = "Field `CFGBSY` reader - Programming or erase configuration busy"]
+pub type CFGBSY_R = crate::BitReader<CFGBSY_A>;
 #[doc = "Programming or erase configuration busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CFGBSY_A {
@@ -747,8 +749,6 @@ impl From<CFGBSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CFGBSY` reader - Programming or erase configuration busy"]
-pub type CFGBSY_R = crate::BitReader<CFGBSY_A>;
 impl CFGBSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -769,6 +769,8 @@ impl CFGBSY_R {
         *self == CFGBSY_A::Busy
     }
 }
+#[doc = "Field `PESD` reader - Programming / erase operation suspended"]
+pub type PESD_R = crate::BitReader<PESD_A>;
 #[doc = "Programming / erase operation suspended\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PESD_A {
@@ -783,8 +785,6 @@ impl From<PESD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PESD` reader - Programming / erase operation suspended"]
-pub type PESD_R = crate::BitReader<PESD_A>;
 impl PESD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

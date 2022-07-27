@@ -39,6 +39,8 @@ pub type TIMEOUTA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIMEOUTA` writer - Bus timeout A"]
 pub type TIMEOUTA_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, TIMEOUTR_SPEC, u16, u16, 12, O>;
+#[doc = "Field `TIDLE` reader - Idle clock timeout detection"]
+pub type TIDLE_R = crate::BitReader<TIDLE_A>;
 #[doc = "Idle clock timeout detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIDLE_A {
@@ -53,8 +55,6 @@ impl From<TIDLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIDLE` reader - Idle clock timeout detection"]
-pub type TIDLE_R = crate::BitReader<TIDLE_A>;
 impl TIDLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,6 +89,8 @@ impl<'a, const O: u8> TIDLE_W<'a, O> {
         self.variant(TIDLE_A::Enabled)
     }
 }
+#[doc = "Field `TIMOUTEN` reader - Clock timeout enable"]
+pub type TIMOUTEN_R = crate::BitReader<TIMOUTEN_A>;
 #[doc = "Clock timeout enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMOUTEN_A {
@@ -103,8 +105,6 @@ impl From<TIMOUTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIMOUTEN` reader - Clock timeout enable"]
-pub type TIMOUTEN_R = crate::BitReader<TIMOUTEN_A>;
 impl TIMOUTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -144,6 +144,8 @@ pub type TIMEOUTB_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIMEOUTB` writer - Bus timeout B"]
 pub type TIMEOUTB_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, TIMEOUTR_SPEC, u16, u16, 12, O>;
+#[doc = "Field `TEXTEN` reader - Extended clock timeout enable"]
+pub type TEXTEN_R = crate::BitReader<TEXTEN_A>;
 #[doc = "Extended clock timeout enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEXTEN_A {
@@ -158,8 +160,6 @@ impl From<TEXTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TEXTEN` reader - Extended clock timeout enable"]
-pub type TEXTEN_R = crate::BitReader<TEXTEN_A>;
 impl TEXTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

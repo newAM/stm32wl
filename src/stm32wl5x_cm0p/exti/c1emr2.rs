@@ -34,6 +34,8 @@ impl From<crate::W<C1EMR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EM40` reader - Wakeup with event generation Mask on Event input"]
+pub type EM40_R = crate::BitReader<EM40_A>;
 #[doc = "Wakeup with event generation Mask on Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EM40_A {
@@ -48,8 +50,6 @@ impl From<EM40_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM40` reader - Wakeup with event generation Mask on Event input"]
-pub type EM40_R = crate::BitReader<EM40_A>;
 impl EM40_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,8 +84,6 @@ impl<'a, const O: u8> EM40_W<'a, O> {
         self.variant(EM40_A::Unmasked)
     }
 }
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM40_A as EM41_A;
 #[doc = "Field `EM41` reader - Wakeup with event generation Mask on Event input"]
 pub use EM40_R as EM41_R;
 #[doc = "Field `EM41` writer - Wakeup with event generation Mask on Event input"]

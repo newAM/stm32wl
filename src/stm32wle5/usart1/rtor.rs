@@ -34,36 +34,36 @@ impl From<crate::W<RTOR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BLEN` reader - Block Length"]
-pub type BLEN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `BLEN` writer - Block Length"]
-pub type BLEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RTOR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `RTO` reader - Receiver timeout value"]
 pub type RTO_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RTO` writer - Receiver timeout value"]
 pub type RTO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RTOR_SPEC, u32, u32, 24, O>;
+#[doc = "Field `BLEN` reader - Block Length"]
+pub type BLEN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `BLEN` writer - Block Length"]
+pub type BLEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RTOR_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 24:31 - Block Length"]
-    #[inline(always)]
-    pub fn blen(&self) -> BLEN_R {
-        BLEN_R::new(((self.bits >> 24) & 0xff) as u8)
-    }
     #[doc = "Bits 0:23 - Receiver timeout value"]
     #[inline(always)]
     pub fn rto(&self) -> RTO_R {
         RTO_R::new((self.bits & 0x00ff_ffff) as u32)
     }
-}
-impl W {
     #[doc = "Bits 24:31 - Block Length"]
     #[inline(always)]
-    pub fn blen(&mut self) -> BLEN_W<24> {
-        BLEN_W::new(self)
+    pub fn blen(&self) -> BLEN_R {
+        BLEN_R::new(((self.bits >> 24) & 0xff) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:23 - Receiver timeout value"]
     #[inline(always)]
     pub fn rto(&mut self) -> RTO_W<0> {
         RTO_W::new(self)
+    }
+    #[doc = "Bits 24:31 - Block Length"]
+    #[inline(always)]
+    pub fn blen(&mut self) -> BLEN_W<24> {
+        BLEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

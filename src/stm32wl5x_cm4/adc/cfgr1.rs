@@ -34,6 +34,8 @@ impl From<crate::W<CFGR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DMAEN` reader - DMAEN"]
+pub type DMAEN_R = crate::BitReader<DMAEN_A>;
 #[doc = "DMAEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAEN_A {
@@ -48,8 +50,6 @@ impl From<DMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAEN` reader - DMAEN"]
-pub type DMAEN_R = crate::BitReader<DMAEN_A>;
 impl DMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> DMAEN_W<'a, O> {
         self.variant(DMAEN_A::Enabled)
     }
 }
+#[doc = "Field `DMACFG` reader - DMACFG"]
+pub type DMACFG_R = crate::BitReader<DMACFG_A>;
 #[doc = "DMACFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMACFG_A {
@@ -98,8 +100,6 @@ impl From<DMACFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMACFG` reader - DMACFG"]
-pub type DMACFG_R = crate::BitReader<DMACFG_A>;
 impl DMACFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> DMACFG_W<'a, O> {
         self.variant(DMACFG_A::Circular)
     }
 }
+#[doc = "Field `SCANDIR` reader - SCANDIR"]
+pub type SCANDIR_R = crate::BitReader<SCANDIR_A>;
 #[doc = "SCANDIR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCANDIR_A {
@@ -148,8 +150,6 @@ impl From<SCANDIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCANDIR` reader - SCANDIR"]
-pub type SCANDIR_R = crate::BitReader<SCANDIR_A>;
 impl SCANDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> SCANDIR_W<'a, O> {
         self.variant(SCANDIR_A::Backward)
     }
 }
+#[doc = "Field `RES` reader - RES"]
+pub type RES_R = crate::FieldReader<u8, RES_A>;
 #[doc = "RES\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -203,8 +205,6 @@ impl From<RES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RES` reader - RES"]
-pub type RES_R = crate::FieldReader<u8, RES_A>;
 impl RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -262,6 +262,8 @@ impl<'a, const O: u8> RES_W<'a, O> {
         self.variant(RES_A::Bits6)
     }
 }
+#[doc = "Field `ALIGN` reader - ALIGN"]
+pub type ALIGN_R = crate::BitReader<ALIGN_A>;
 #[doc = "ALIGN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIGN_A {
@@ -276,8 +278,6 @@ impl From<ALIGN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALIGN` reader - ALIGN"]
-pub type ALIGN_R = crate::BitReader<ALIGN_A>;
 impl ALIGN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -312,6 +312,8 @@ impl<'a, const O: u8> ALIGN_W<'a, O> {
         self.variant(ALIGN_A::Left)
     }
 }
+#[doc = "Field `EXTSEL` reader - EXTSEL"]
+pub type EXTSEL_R = crate::FieldReader<u8, EXTSEL_A>;
 #[doc = "EXTSEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -335,8 +337,6 @@ impl From<EXTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXTSEL` reader - EXTSEL"]
-pub type EXTSEL_R = crate::FieldReader<u8, EXTSEL_A>;
 impl EXTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -416,6 +416,8 @@ impl<'a, const O: u8> EXTSEL_W<'a, O> {
         self.variant(EXTSEL_A::ExtiLine11)
     }
 }
+#[doc = "Field `EXTEN` reader - EXTEN"]
+pub type EXTEN_R = crate::FieldReader<u8, EXTEN_A>;
 #[doc = "EXTEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -435,8 +437,6 @@ impl From<EXTEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXTEN` reader - EXTEN"]
-pub type EXTEN_R = crate::FieldReader<u8, EXTEN_A>;
 impl EXTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -494,6 +494,8 @@ impl<'a, const O: u8> EXTEN_W<'a, O> {
         self.variant(EXTEN_A::BothEdges)
     }
 }
+#[doc = "Field `OVRMOD` reader - OVRMOD"]
+pub type OVRMOD_R = crate::BitReader<OVRMOD_A>;
 #[doc = "OVRMOD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVRMOD_A {
@@ -508,8 +510,6 @@ impl From<OVRMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVRMOD` reader - OVRMOD"]
-pub type OVRMOD_R = crate::BitReader<OVRMOD_A>;
 impl OVRMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -544,6 +544,8 @@ impl<'a, const O: u8> OVRMOD_W<'a, O> {
         self.variant(OVRMOD_A::Overwrite)
     }
 }
+#[doc = "Field `CONT` reader - CONT"]
+pub type CONT_R = crate::BitReader<CONT_A>;
 #[doc = "CONT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONT_A {
@@ -558,8 +560,6 @@ impl From<CONT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONT` reader - CONT"]
-pub type CONT_R = crate::BitReader<CONT_A>;
 impl CONT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -594,6 +594,8 @@ impl<'a, const O: u8> CONT_W<'a, O> {
         self.variant(CONT_A::Continuous)
     }
 }
+#[doc = "Field `WAIT` reader - WAIT"]
+pub type WAIT_R = crate::BitReader<WAIT_A>;
 #[doc = "WAIT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAIT_A {
@@ -608,8 +610,6 @@ impl From<WAIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAIT` reader - WAIT"]
-pub type WAIT_R = crate::BitReader<WAIT_A>;
 impl WAIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -644,6 +644,8 @@ impl<'a, const O: u8> WAIT_W<'a, O> {
         self.variant(WAIT_A::Enabled)
     }
 }
+#[doc = "Field `AUTOFF` reader - AUTOFF"]
+pub type AUTOFF_R = crate::BitReader<AUTOFF_A>;
 #[doc = "AUTOFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOFF_A {
@@ -658,8 +660,6 @@ impl From<AUTOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AUTOFF` reader - AUTOFF"]
-pub type AUTOFF_R = crate::BitReader<AUTOFF_A>;
 impl AUTOFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -694,6 +694,8 @@ impl<'a, const O: u8> AUTOFF_W<'a, O> {
         self.variant(AUTOFF_A::Enabled)
     }
 }
+#[doc = "Field `DISCEN` reader - DISCEN"]
+pub type DISCEN_R = crate::BitReader<DISCEN_A>;
 #[doc = "DISCEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISCEN_A {
@@ -708,8 +710,6 @@ impl From<DISCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISCEN` reader - DISCEN"]
-pub type DISCEN_R = crate::BitReader<DISCEN_A>;
 impl DISCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -744,6 +744,8 @@ impl<'a, const O: u8> DISCEN_W<'a, O> {
         self.variant(DISCEN_A::Enabled)
     }
 }
+#[doc = "Field `CHSELRMOD` reader - CHSELRMOD"]
+pub type CHSELRMOD_R = crate::BitReader<CHSELRMOD_A>;
 #[doc = "CHSELRMOD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSELRMOD_A {
@@ -758,8 +760,6 @@ impl From<CHSELRMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELRMOD` reader - CHSELRMOD"]
-pub type CHSELRMOD_R = crate::BitReader<CHSELRMOD_A>;
 impl CHSELRMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -794,6 +794,8 @@ impl<'a, const O: u8> CHSELRMOD_W<'a, O> {
         self.variant(CHSELRMOD_A::Sequence)
     }
 }
+#[doc = "Field `AWD1SGL` reader - AWD1SGL"]
+pub type AWD1SGL_R = crate::BitReader<AWD1SGL_A>;
 #[doc = "AWD1SGL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AWD1SGL_A {
@@ -808,8 +810,6 @@ impl From<AWD1SGL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD1SGL` reader - AWD1SGL"]
-pub type AWD1SGL_R = crate::BitReader<AWD1SGL_A>;
 impl AWD1SGL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -844,6 +844,8 @@ impl<'a, const O: u8> AWD1SGL_W<'a, O> {
         self.variant(AWD1SGL_A::SingleChannel)
     }
 }
+#[doc = "Field `AWD1EN` reader - AWD1EN"]
+pub type AWD1EN_R = crate::BitReader<AWD1EN_A>;
 #[doc = "AWD1EN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AWD1EN_A {
@@ -858,8 +860,6 @@ impl From<AWD1EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD1EN` reader - AWD1EN"]
-pub type AWD1EN_R = crate::BitReader<AWD1EN_A>;
 impl AWD1EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

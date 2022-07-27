@@ -34,142 +34,187 @@ impl From<crate::W<CCMR2_OUTPUT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Output Compare 4 mode - bit 3"]
-pub use OC3M_3_A as OC4M_3_A;
-#[doc = "Field `OC4M_3` reader - Output Compare 4 mode - bit 3"]
-pub use OC3M_3_R as OC4M_3_R;
-#[doc = "Field `OC4M_3` writer - Output Compare 4 mode - bit 3"]
-pub use OC3M_3_W as OC4M_3_W;
-#[doc = "Output Compare 3 mode - bit 3\n\nValue on reset: 0"]
+#[doc = "Field `CC3S` reader - Capture/Compare 3 selection"]
+pub type CC3S_R = crate::FieldReader<u8, CC3S_A>;
+#[doc = "Capture/Compare 3 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC3M_3_A {
-    #[doc = "0: Normal output compare mode (modes 0-7)"]
-    Normal = 0,
-    #[doc = "1: Extended output compare mode (modes 7-15)"]
-    Extended = 1,
+#[repr(u8)]
+pub enum CC3S_A {
+    #[doc = "0: CCx channel is configured as output"]
+    Output = 0,
+    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
+    Ti1 = 1,
+    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
+    Ti2 = 2,
+    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
+    Trc = 3,
 }
-impl From<OC3M_3_A> for bool {
+impl From<CC3S_A> for u8 {
     #[inline(always)]
-    fn from(variant: OC3M_3_A) -> Self {
-        variant as u8 != 0
+    fn from(variant: CC3S_A) -> Self {
+        variant as _
     }
 }
-#[doc = "Field `OC3M_3` reader - Output Compare 3 mode - bit 3"]
-pub type OC3M_3_R = crate::BitReader<OC3M_3_A>;
-impl OC3M_3_R {
+impl CC3S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC3M_3_A {
+    pub fn variant(&self) -> CC3S_A {
         match self.bits {
-            false => OC3M_3_A::Normal,
-            true => OC3M_3_A::Extended,
+            0 => CC3S_A::Output,
+            1 => CC3S_A::Ti1,
+            2 => CC3S_A::Ti2,
+            3 => CC3S_A::Trc,
+            _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `Normal`"]
+    #[doc = "Checks if the value of the field is `Output`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == OC3M_3_A::Normal
+    pub fn is_output(&self) -> bool {
+        *self == CC3S_A::Output
     }
-    #[doc = "Checks if the value of the field is `Extended`"]
+    #[doc = "Checks if the value of the field is `Ti1`"]
     #[inline(always)]
-    pub fn is_extended(&self) -> bool {
-        *self == OC3M_3_A::Extended
+    pub fn is_ti1(&self) -> bool {
+        *self == CC3S_A::Ti1
     }
-}
-#[doc = "Field `OC3M_3` writer - Output Compare 3 mode - bit 3"]
-pub type OC3M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3M_3_A, O>;
-impl<'a, const O: u8> OC3M_3_W<'a, O> {
-    #[doc = "Normal output compare mode (modes 0-7)"]
+    #[doc = "Checks if the value of the field is `Ti2`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(OC3M_3_A::Normal)
+    pub fn is_ti2(&self) -> bool {
+        *self == CC3S_A::Ti2
     }
-    #[doc = "Extended output compare mode (modes 7-15)"]
+    #[doc = "Checks if the value of the field is `Trc`"]
     #[inline(always)]
-    pub fn extended(self) -> &'a mut W {
-        self.variant(OC3M_3_A::Extended)
+    pub fn is_trc(&self) -> bool {
+        *self == CC3S_A::Trc
     }
 }
-#[doc = "Capture/Compare 4 selection"]
-pub use CC3S_A as CC4S_A;
-#[doc = "Field `CC4S` reader - Capture/Compare 4 selection"]
-pub use CC3S_R as CC4S_R;
-#[doc = "Field `CC4S` writer - Capture/Compare 4 selection"]
-pub use CC3S_W as CC4S_W;
-#[doc = "Output compare 4 clear enable"]
-pub use OC3CE_A as OC4CE_A;
-#[doc = "Field `OC4CE` reader - Output compare 4 clear enable"]
-pub use OC3CE_R as OC4CE_R;
-#[doc = "Field `OC4CE` writer - Output compare 4 clear enable"]
-pub use OC3CE_W as OC4CE_W;
-#[doc = "Output compare 4 fast enable"]
-pub use OC3FE_A as OC4FE_A;
-#[doc = "Field `OC4FE` reader - Output compare 4 fast enable"]
-pub use OC3FE_R as OC4FE_R;
-#[doc = "Field `OC4FE` writer - Output compare 4 fast enable"]
-pub use OC3FE_W as OC4FE_W;
-#[doc = "Output compare 4 mode"]
-pub use OC3M_A as OC4M_A;
-#[doc = "Field `OC4M` reader - Output compare 4 mode"]
-pub use OC3M_R as OC4M_R;
-#[doc = "Field `OC4M` writer - Output compare 4 mode"]
-pub use OC3M_W as OC4M_W;
-#[doc = "Output compare 4 preload enable"]
-pub use OC3PE_A as OC4PE_A;
-#[doc = "Field `OC4PE` reader - Output compare 4 preload enable"]
-pub use OC3PE_R as OC4PE_R;
-#[doc = "Field `OC4PE` writer - Output compare 4 preload enable"]
-pub use OC3PE_W as OC4PE_W;
-#[doc = "Output compare 3 clear enable\n\nValue on reset: 0"]
+#[doc = "Field `CC3S` writer - Capture/Compare 3 selection"]
+pub type CC3S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CCMR2_OUTPUT_SPEC, u8, CC3S_A, 2, O>;
+impl<'a, const O: u8> CC3S_W<'a, O> {
+    #[doc = "CCx channel is configured as output"]
+    #[inline(always)]
+    pub fn output(self) -> &'a mut W {
+        self.variant(CC3S_A::Output)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
+    #[inline(always)]
+    pub fn ti1(self) -> &'a mut W {
+        self.variant(CC3S_A::Ti1)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
+    #[inline(always)]
+    pub fn ti2(self) -> &'a mut W {
+        self.variant(CC3S_A::Ti2)
+    }
+    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
+    #[inline(always)]
+    pub fn trc(self) -> &'a mut W {
+        self.variant(CC3S_A::Trc)
+    }
+}
+#[doc = "Field `OC3FE` reader - Output compare 3 fast enable"]
+pub type OC3FE_R = crate::BitReader<OC3FE_A>;
+#[doc = "Output compare 3 fast enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC3CE_A {
-    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
+pub enum OC3FE_A {
+    #[doc = "0: Fast output disabled"]
     Disabled = 0,
-    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "1: Fast output enabled"]
     Enabled = 1,
 }
-impl From<OC3CE_A> for bool {
+impl From<OC3FE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC3CE_A) -> Self {
+    fn from(variant: OC3FE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC3CE` reader - Output compare 3 clear enable"]
-pub type OC3CE_R = crate::BitReader<OC3CE_A>;
-impl OC3CE_R {
+impl OC3FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC3CE_A {
+    pub fn variant(&self) -> OC3FE_A {
         match self.bits {
-            false => OC3CE_A::Disabled,
-            true => OC3CE_A::Enabled,
+            false => OC3FE_A::Disabled,
+            true => OC3FE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC3CE_A::Disabled
+        *self == OC3FE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC3CE_A::Enabled
+        *self == OC3FE_A::Enabled
     }
 }
-#[doc = "Field `OC3CE` writer - Output compare 3 clear enable"]
-pub type OC3CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3CE_A, O>;
-impl<'a, const O: u8> OC3CE_W<'a, O> {
-    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
+#[doc = "Field `OC3FE` writer - Output compare 3 fast enable"]
+pub type OC3FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3FE_A, O>;
+impl<'a, const O: u8> OC3FE_W<'a, O> {
+    #[doc = "Fast output disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC3CE_A::Disabled)
+        self.variant(OC3FE_A::Disabled)
     }
-    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
+    #[doc = "Fast output enabled"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC3CE_A::Enabled)
+        self.variant(OC3FE_A::Enabled)
     }
 }
+#[doc = "Field `OC3PE` reader - Output compare 3 preload enable"]
+pub type OC3PE_R = crate::BitReader<OC3PE_A>;
+#[doc = "Output compare 3 preload enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OC3PE_A {
+    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    Disabled = 0,
+    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    Enabled = 1,
+}
+impl From<OC3PE_A> for bool {
+    #[inline(always)]
+    fn from(variant: OC3PE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OC3PE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OC3PE_A {
+        match self.bits {
+            false => OC3PE_A::Disabled,
+            true => OC3PE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == OC3PE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == OC3PE_A::Enabled
+    }
+}
+#[doc = "Field `OC3PE` writer - Output compare 3 preload enable"]
+pub type OC3PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3PE_A, O>;
+impl<'a, const O: u8> OC3PE_W<'a, O> {
+    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(OC3PE_A::Disabled)
+    }
+    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(OC3PE_A::Enabled)
+    }
+}
+#[doc = "Field `OC3M` reader - Output compare 3 mode"]
+pub type OC3M_R = crate::FieldReader<u8, OC3M_A>;
 #[doc = "Output compare 3 mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -197,8 +242,6 @@ impl From<OC3M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OC3M` reader - Output compare 3 mode"]
-pub type OC3M_R = crate::FieldReader<u8, OC3M_A>;
 impl OC3M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -301,307 +344,252 @@ impl<'a, const O: u8> OC3M_W<'a, O> {
         self.variant(OC3M_A::PwmMode2)
     }
 }
-#[doc = "Output compare 3 preload enable\n\nValue on reset: 0"]
+#[doc = "Field `OC3CE` reader - Output compare 3 clear enable"]
+pub type OC3CE_R = crate::BitReader<OC3CE_A>;
+#[doc = "Output compare 3 clear enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC3PE_A {
-    #[doc = "0: Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+pub enum OC3CE_A {
+    #[doc = "0: OCxRef is not affected by the ocref_clr_int signal"]
     Disabled = 0,
-    #[doc = "1: Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "1: OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     Enabled = 1,
 }
-impl From<OC3PE_A> for bool {
+impl From<OC3CE_A> for bool {
     #[inline(always)]
-    fn from(variant: OC3PE_A) -> Self {
+    fn from(variant: OC3CE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC3PE` reader - Output compare 3 preload enable"]
-pub type OC3PE_R = crate::BitReader<OC3PE_A>;
-impl OC3PE_R {
+impl OC3CE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC3PE_A {
+    pub fn variant(&self) -> OC3CE_A {
         match self.bits {
-            false => OC3PE_A::Disabled,
-            true => OC3PE_A::Enabled,
+            false => OC3CE_A::Disabled,
+            true => OC3CE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == OC3PE_A::Disabled
+        *self == OC3CE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == OC3PE_A::Enabled
+        *self == OC3CE_A::Enabled
     }
 }
-#[doc = "Field `OC3PE` writer - Output compare 3 preload enable"]
-pub type OC3PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3PE_A, O>;
-impl<'a, const O: u8> OC3PE_W<'a, O> {
-    #[doc = "Preload register on CCRx disabled. New values written to CCRx are taken into account immediately"]
+#[doc = "Field `OC3CE` writer - Output compare 3 clear enable"]
+pub type OC3CE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3CE_A, O>;
+impl<'a, const O: u8> OC3CE_W<'a, O> {
+    #[doc = "OCxRef is not affected by the ocref_clr_int signal"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OC3PE_A::Disabled)
+        self.variant(OC3CE_A::Disabled)
     }
-    #[doc = "Preload register on CCRx enabled. Preload value is loaded into active register on each update event"]
+    #[doc = "OCxRef is cleared as soon as a High level is detected on ocref_clr_int signal"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OC3PE_A::Enabled)
+        self.variant(OC3CE_A::Enabled)
     }
 }
-#[doc = "Output compare 3 fast enable\n\nValue on reset: 0"]
+#[doc = "Field `CC4S` reader - Capture/Compare 4 selection"]
+pub use CC3S_R as CC4S_R;
+#[doc = "Field `CC4S` writer - Capture/Compare 4 selection"]
+pub use CC3S_W as CC4S_W;
+#[doc = "Field `OC4CE` reader - Output compare 4 clear enable"]
+pub use OC3CE_R as OC4CE_R;
+#[doc = "Field `OC4CE` writer - Output compare 4 clear enable"]
+pub use OC3CE_W as OC4CE_W;
+#[doc = "Field `OC4FE` reader - Output compare 4 fast enable"]
+pub use OC3FE_R as OC4FE_R;
+#[doc = "Field `OC4FE` writer - Output compare 4 fast enable"]
+pub use OC3FE_W as OC4FE_W;
+#[doc = "Field `OC4M` reader - Output compare 4 mode"]
+pub use OC3M_R as OC4M_R;
+#[doc = "Field `OC4M` writer - Output compare 4 mode"]
+pub use OC3M_W as OC4M_W;
+#[doc = "Field `OC4PE` reader - Output compare 4 preload enable"]
+pub use OC3PE_R as OC4PE_R;
+#[doc = "Field `OC4PE` writer - Output compare 4 preload enable"]
+pub use OC3PE_W as OC4PE_W;
+#[doc = "Field `OC3M_3` reader - Output Compare 3 mode - bit 3"]
+pub type OC3M_3_R = crate::BitReader<OC3M_3_A>;
+#[doc = "Output Compare 3 mode - bit 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OC3FE_A {
-    #[doc = "0: Fast output disabled"]
-    Disabled = 0,
-    #[doc = "1: Fast output enabled"]
-    Enabled = 1,
+pub enum OC3M_3_A {
+    #[doc = "0: Normal output compare mode (modes 0-7)"]
+    Normal = 0,
+    #[doc = "1: Extended output compare mode (modes 7-15)"]
+    Extended = 1,
 }
-impl From<OC3FE_A> for bool {
+impl From<OC3M_3_A> for bool {
     #[inline(always)]
-    fn from(variant: OC3FE_A) -> Self {
+    fn from(variant: OC3M_3_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OC3FE` reader - Output compare 3 fast enable"]
-pub type OC3FE_R = crate::BitReader<OC3FE_A>;
-impl OC3FE_R {
+impl OC3M_3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OC3FE_A {
+    pub fn variant(&self) -> OC3M_3_A {
         match self.bits {
-            false => OC3FE_A::Disabled,
-            true => OC3FE_A::Enabled,
+            false => OC3M_3_A::Normal,
+            true => OC3M_3_A::Extended,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Checks if the value of the field is `Normal`"]
     #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == OC3FE_A::Disabled
+    pub fn is_normal(&self) -> bool {
+        *self == OC3M_3_A::Normal
     }
-    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[doc = "Checks if the value of the field is `Extended`"]
     #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == OC3FE_A::Enabled
-    }
-}
-#[doc = "Field `OC3FE` writer - Output compare 3 fast enable"]
-pub type OC3FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3FE_A, O>;
-impl<'a, const O: u8> OC3FE_W<'a, O> {
-    #[doc = "Fast output disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(OC3FE_A::Disabled)
-    }
-    #[doc = "Fast output enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(OC3FE_A::Enabled)
+    pub fn is_extended(&self) -> bool {
+        *self == OC3M_3_A::Extended
     }
 }
-#[doc = "Capture/Compare 3 selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum CC3S_A {
-    #[doc = "0: CCx channel is configured as output"]
-    Output = 0,
-    #[doc = "1: CCx channel is configured as input, ICx is mapped on TI1"]
-    Ti1 = 1,
-    #[doc = "2: CCx channel is configured as input, ICx is mapped on TI2"]
-    Ti2 = 2,
-    #[doc = "3: CCx channel is configured as input, ICx is mapped on TRC"]
-    Trc = 3,
-}
-impl From<CC3S_A> for u8 {
+#[doc = "Field `OC3M_3` writer - Output Compare 3 mode - bit 3"]
+pub type OC3M_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCMR2_OUTPUT_SPEC, OC3M_3_A, O>;
+impl<'a, const O: u8> OC3M_3_W<'a, O> {
+    #[doc = "Normal output compare mode (modes 0-7)"]
     #[inline(always)]
-    fn from(variant: CC3S_A) -> Self {
-        variant as _
+    pub fn normal(self) -> &'a mut W {
+        self.variant(OC3M_3_A::Normal)
+    }
+    #[doc = "Extended output compare mode (modes 7-15)"]
+    #[inline(always)]
+    pub fn extended(self) -> &'a mut W {
+        self.variant(OC3M_3_A::Extended)
     }
 }
-#[doc = "Field `CC3S` reader - Capture/Compare 3 selection"]
-pub type CC3S_R = crate::FieldReader<u8, CC3S_A>;
-impl CC3S_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CC3S_A {
-        match self.bits {
-            0 => CC3S_A::Output,
-            1 => CC3S_A::Ti1,
-            2 => CC3S_A::Ti2,
-            3 => CC3S_A::Trc,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `Output`"]
-    #[inline(always)]
-    pub fn is_output(&self) -> bool {
-        *self == CC3S_A::Output
-    }
-    #[doc = "Checks if the value of the field is `Ti1`"]
-    #[inline(always)]
-    pub fn is_ti1(&self) -> bool {
-        *self == CC3S_A::Ti1
-    }
-    #[doc = "Checks if the value of the field is `Ti2`"]
-    #[inline(always)]
-    pub fn is_ti2(&self) -> bool {
-        *self == CC3S_A::Ti2
-    }
-    #[doc = "Checks if the value of the field is `Trc`"]
-    #[inline(always)]
-    pub fn is_trc(&self) -> bool {
-        *self == CC3S_A::Trc
-    }
-}
-#[doc = "Field `CC3S` writer - Capture/Compare 3 selection"]
-pub type CC3S_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, CCMR2_OUTPUT_SPEC, u8, CC3S_A, 2, O>;
-impl<'a, const O: u8> CC3S_W<'a, O> {
-    #[doc = "CCx channel is configured as output"]
-    #[inline(always)]
-    pub fn output(self) -> &'a mut W {
-        self.variant(CC3S_A::Output)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI1"]
-    #[inline(always)]
-    pub fn ti1(self) -> &'a mut W {
-        self.variant(CC3S_A::Ti1)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TI2"]
-    #[inline(always)]
-    pub fn ti2(self) -> &'a mut W {
-        self.variant(CC3S_A::Ti2)
-    }
-    #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
-    #[inline(always)]
-    pub fn trc(self) -> &'a mut W {
-        self.variant(CC3S_A::Trc)
-    }
-}
+#[doc = "Field `OC4M_3` reader - Output Compare 4 mode - bit 3"]
+pub use OC3M_3_R as OC4M_3_R;
+#[doc = "Field `OC4M_3` writer - Output Compare 4 mode - bit 3"]
+pub use OC3M_3_W as OC4M_3_W;
 impl R {
-    #[doc = "Bit 24 - Output Compare 4 mode - bit 3"]
+    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
     #[inline(always)]
-    pub fn oc4m_3(&self) -> OC4M_3_R {
-        OC4M_3_R::new(((self.bits >> 24) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Output Compare 3 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc3m_3(&self) -> OC3M_3_R {
-        OC3M_3_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 15 - Output compare 4 clear enable"]
-    #[inline(always)]
-    pub fn oc4ce(&self) -> OC4CE_R {
-        OC4CE_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bits 12:14 - Output compare 4 mode"]
-    #[inline(always)]
-    pub fn oc4m(&self) -> OC4M_R {
-        OC4M_R::new(((self.bits >> 12) & 7) as u8)
-    }
-    #[doc = "Bit 11 - Output compare 4 preload enable"]
-    #[inline(always)]
-    pub fn oc4pe(&self) -> OC4PE_R {
-        OC4PE_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - Output compare 4 fast enable"]
-    #[inline(always)]
-    pub fn oc4fe(&self) -> OC4FE_R {
-        OC4FE_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
-    #[inline(always)]
-    pub fn cc4s(&self) -> CC4S_R {
-        CC4S_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bit 7 - Output compare 3 clear enable"]
-    #[inline(always)]
-    pub fn oc3ce(&self) -> OC3CE_R {
-        OC3CE_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 4:6 - Output compare 3 mode"]
-    #[inline(always)]
-    pub fn oc3m(&self) -> OC3M_R {
-        OC3M_R::new(((self.bits >> 4) & 7) as u8)
-    }
-    #[doc = "Bit 3 - Output compare 3 preload enable"]
-    #[inline(always)]
-    pub fn oc3pe(&self) -> OC3PE_R {
-        OC3PE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn cc3s(&self) -> CC3S_R {
+        CC3S_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Output compare 3 fast enable"]
     #[inline(always)]
     pub fn oc3fe(&self) -> OC3FE_R {
         OC3FE_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[doc = "Bit 3 - Output compare 3 preload enable"]
     #[inline(always)]
-    pub fn cc3s(&self) -> CC3S_R {
-        CC3S_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
-    #[doc = "Bit 24 - Output Compare 4 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc4m_3(&mut self) -> OC4M_3_W<24> {
-        OC4M_3_W::new(self)
-    }
-    #[doc = "Bit 16 - Output Compare 3 mode - bit 3"]
-    #[inline(always)]
-    pub fn oc3m_3(&mut self) -> OC3M_3_W<16> {
-        OC3M_3_W::new(self)
-    }
-    #[doc = "Bit 15 - Output compare 4 clear enable"]
-    #[inline(always)]
-    pub fn oc4ce(&mut self) -> OC4CE_W<15> {
-        OC4CE_W::new(self)
-    }
-    #[doc = "Bits 12:14 - Output compare 4 mode"]
-    #[inline(always)]
-    pub fn oc4m(&mut self) -> OC4M_W<12> {
-        OC4M_W::new(self)
-    }
-    #[doc = "Bit 11 - Output compare 4 preload enable"]
-    #[inline(always)]
-    pub fn oc4pe(&mut self) -> OC4PE_W<11> {
-        OC4PE_W::new(self)
-    }
-    #[doc = "Bit 10 - Output compare 4 fast enable"]
-    #[inline(always)]
-    pub fn oc4fe(&mut self) -> OC4FE_W<10> {
-        OC4FE_W::new(self)
-    }
-    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
-    #[inline(always)]
-    pub fn cc4s(&mut self) -> CC4S_W<8> {
-        CC4S_W::new(self)
-    }
-    #[doc = "Bit 7 - Output compare 3 clear enable"]
-    #[inline(always)]
-    pub fn oc3ce(&mut self) -> OC3CE_W<7> {
-        OC3CE_W::new(self)
+    pub fn oc3pe(&self) -> OC3PE_R {
+        OC3PE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Output compare 3 mode"]
     #[inline(always)]
-    pub fn oc3m(&mut self) -> OC3M_W<4> {
-        OC3M_W::new(self)
+    pub fn oc3m(&self) -> OC3M_R {
+        OC3M_R::new(((self.bits >> 4) & 7) as u8)
     }
-    #[doc = "Bit 3 - Output compare 3 preload enable"]
+    #[doc = "Bit 7 - Output compare 3 clear enable"]
     #[inline(always)]
-    pub fn oc3pe(&mut self) -> OC3PE_W<3> {
-        OC3PE_W::new(self)
+    pub fn oc3ce(&self) -> OC3CE_R {
+        OC3CE_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
+    #[inline(always)]
+    pub fn cc4s(&self) -> CC4S_R {
+        CC4S_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    #[doc = "Bit 10 - Output compare 4 fast enable"]
+    #[inline(always)]
+    pub fn oc4fe(&self) -> OC4FE_R {
+        OC4FE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - Output compare 4 preload enable"]
+    #[inline(always)]
+    pub fn oc4pe(&self) -> OC4PE_R {
+        OC4PE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bits 12:14 - Output compare 4 mode"]
+    #[inline(always)]
+    pub fn oc4m(&self) -> OC4M_R {
+        OC4M_R::new(((self.bits >> 12) & 7) as u8)
+    }
+    #[doc = "Bit 15 - Output compare 4 clear enable"]
+    #[inline(always)]
+    pub fn oc4ce(&self) -> OC4CE_R {
+        OC4CE_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bit 16 - Output Compare 3 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc3m_3(&self) -> OC3M_3_R {
+        OC3M_3_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 24 - Output Compare 4 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc4m_3(&self) -> OC4M_3_R {
+        OC4M_3_R::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[inline(always)]
+    pub fn cc3s(&mut self) -> CC3S_W<0> {
+        CC3S_W::new(self)
     }
     #[doc = "Bit 2 - Output compare 3 fast enable"]
     #[inline(always)]
     pub fn oc3fe(&mut self) -> OC3FE_W<2> {
         OC3FE_W::new(self)
     }
-    #[doc = "Bits 0:1 - Capture/Compare 3 selection"]
+    #[doc = "Bit 3 - Output compare 3 preload enable"]
     #[inline(always)]
-    pub fn cc3s(&mut self) -> CC3S_W<0> {
-        CC3S_W::new(self)
+    pub fn oc3pe(&mut self) -> OC3PE_W<3> {
+        OC3PE_W::new(self)
+    }
+    #[doc = "Bits 4:6 - Output compare 3 mode"]
+    #[inline(always)]
+    pub fn oc3m(&mut self) -> OC3M_W<4> {
+        OC3M_W::new(self)
+    }
+    #[doc = "Bit 7 - Output compare 3 clear enable"]
+    #[inline(always)]
+    pub fn oc3ce(&mut self) -> OC3CE_W<7> {
+        OC3CE_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Capture/Compare 4 selection"]
+    #[inline(always)]
+    pub fn cc4s(&mut self) -> CC4S_W<8> {
+        CC4S_W::new(self)
+    }
+    #[doc = "Bit 10 - Output compare 4 fast enable"]
+    #[inline(always)]
+    pub fn oc4fe(&mut self) -> OC4FE_W<10> {
+        OC4FE_W::new(self)
+    }
+    #[doc = "Bit 11 - Output compare 4 preload enable"]
+    #[inline(always)]
+    pub fn oc4pe(&mut self) -> OC4PE_W<11> {
+        OC4PE_W::new(self)
+    }
+    #[doc = "Bits 12:14 - Output compare 4 mode"]
+    #[inline(always)]
+    pub fn oc4m(&mut self) -> OC4M_W<12> {
+        OC4M_W::new(self)
+    }
+    #[doc = "Bit 15 - Output compare 4 clear enable"]
+    #[inline(always)]
+    pub fn oc4ce(&mut self) -> OC4CE_W<15> {
+        OC4CE_W::new(self)
+    }
+    #[doc = "Bit 16 - Output Compare 3 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc3m_3(&mut self) -> OC3M_3_W<16> {
+        OC3M_3_W::new(self)
+    }
+    #[doc = "Bit 24 - Output Compare 4 mode - bit 3"]
+    #[inline(always)]
+    pub fn oc4m_3(&mut self) -> OC4M_3_W<24> {
+        OC4M_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

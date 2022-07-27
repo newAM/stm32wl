@@ -34,24 +34,8 @@ impl From<crate::W<AHB2RSTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "IO port H reset"]
-pub use GPIOARST_A as GPIOHRST_A;
-#[doc = "IO port C reset"]
-pub use GPIOARST_A as GPIOCRST_A;
-#[doc = "IO port B reset"]
-pub use GPIOARST_A as GPIOBRST_A;
-#[doc = "Field `GPIOHRST` reader - IO port H reset"]
-pub use GPIOARST_R as GPIOHRST_R;
-#[doc = "Field `GPIOCRST` reader - IO port C reset"]
-pub use GPIOARST_R as GPIOCRST_R;
-#[doc = "Field `GPIOBRST` reader - IO port B reset"]
-pub use GPIOARST_R as GPIOBRST_R;
-#[doc = "Field `GPIOHRST` writer - IO port H reset"]
-pub use GPIOARST_W as GPIOHRST_W;
-#[doc = "Field `GPIOCRST` writer - IO port C reset"]
-pub use GPIOARST_W as GPIOCRST_W;
-#[doc = "Field `GPIOBRST` writer - IO port B reset"]
-pub use GPIOARST_W as GPIOBRST_W;
+#[doc = "Field `GPIOARST` reader - IO port A reset"]
+pub type GPIOARST_R = crate::BitReader<GPIOARST_A>;
 #[doc = "IO port A reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIOARST_A {
@@ -66,8 +50,6 @@ impl From<GPIOARST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GPIOARST` reader - IO port A reset"]
-pub type GPIOARST_R = crate::BitReader<GPIOARST_A>;
 impl GPIOARST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -102,48 +84,60 @@ impl<'a, const O: u8> GPIOARST_W<'a, O> {
         self.variant(GPIOARST_A::Reset)
     }
 }
+#[doc = "Field `GPIOBRST` reader - IO port B reset"]
+pub use GPIOARST_R as GPIOBRST_R;
+#[doc = "Field `GPIOCRST` reader - IO port C reset"]
+pub use GPIOARST_R as GPIOCRST_R;
+#[doc = "Field `GPIOHRST` reader - IO port H reset"]
+pub use GPIOARST_R as GPIOHRST_R;
+#[doc = "Field `GPIOBRST` writer - IO port B reset"]
+pub use GPIOARST_W as GPIOBRST_W;
+#[doc = "Field `GPIOCRST` writer - IO port C reset"]
+pub use GPIOARST_W as GPIOCRST_W;
+#[doc = "Field `GPIOHRST` writer - IO port H reset"]
+pub use GPIOARST_W as GPIOHRST_W;
 impl R {
-    #[doc = "Bit 7 - IO port H reset"]
+    #[doc = "Bit 0 - IO port A reset"]
     #[inline(always)]
-    pub fn gpiohrst(&self) -> GPIOHRST_R {
-        GPIOHRST_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 2 - IO port C reset"]
-    #[inline(always)]
-    pub fn gpiocrst(&self) -> GPIOCRST_R {
-        GPIOCRST_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn gpioarst(&self) -> GPIOARST_R {
+        GPIOARST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - IO port B reset"]
     #[inline(always)]
     pub fn gpiobrst(&self) -> GPIOBRST_R {
         GPIOBRST_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - IO port A reset"]
+    #[doc = "Bit 2 - IO port C reset"]
     #[inline(always)]
-    pub fn gpioarst(&self) -> GPIOARST_R {
-        GPIOARST_R::new((self.bits & 1) != 0)
+    pub fn gpiocrst(&self) -> GPIOCRST_R {
+        GPIOCRST_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 7 - IO port H reset"]
+    #[inline(always)]
+    pub fn gpiohrst(&self) -> GPIOHRST_R {
+        GPIOHRST_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - IO port H reset"]
+    #[doc = "Bit 0 - IO port A reset"]
     #[inline(always)]
-    pub fn gpiohrst(&mut self) -> GPIOHRST_W<7> {
-        GPIOHRST_W::new(self)
-    }
-    #[doc = "Bit 2 - IO port C reset"]
-    #[inline(always)]
-    pub fn gpiocrst(&mut self) -> GPIOCRST_W<2> {
-        GPIOCRST_W::new(self)
+    pub fn gpioarst(&mut self) -> GPIOARST_W<0> {
+        GPIOARST_W::new(self)
     }
     #[doc = "Bit 1 - IO port B reset"]
     #[inline(always)]
     pub fn gpiobrst(&mut self) -> GPIOBRST_W<1> {
         GPIOBRST_W::new(self)
     }
-    #[doc = "Bit 0 - IO port A reset"]
+    #[doc = "Bit 2 - IO port C reset"]
     #[inline(always)]
-    pub fn gpioarst(&mut self) -> GPIOARST_W<0> {
-        GPIOARST_W::new(self)
+    pub fn gpiocrst(&mut self) -> GPIOCRST_W<2> {
+        GPIOCRST_W::new(self)
+    }
+    #[doc = "Bit 7 - IO port H reset"]
+    #[inline(always)]
+    pub fn gpiohrst(&mut self) -> GPIOHRST_W<7> {
+        GPIOHRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

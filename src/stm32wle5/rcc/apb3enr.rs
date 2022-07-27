@@ -34,6 +34,8 @@ impl From<crate::W<APB3ENR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SUBGHZSPIEN` reader - sub-GHz radio SPI clock enable"]
+pub type SUBGHZSPIEN_R = crate::BitReader<SUBGHZSPIEN_A>;
 #[doc = "sub-GHz radio SPI clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUBGHZSPIEN_A {
@@ -48,8 +50,6 @@ impl From<SUBGHZSPIEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SUBGHZSPIEN` reader - sub-GHz radio SPI clock enable"]
-pub type SUBGHZSPIEN_R = crate::BitReader<SUBGHZSPIEN_A>;
 impl SUBGHZSPIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

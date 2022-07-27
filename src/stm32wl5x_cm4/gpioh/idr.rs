@@ -13,6 +13,8 @@ impl From<crate::R<IDR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `IDR3` reader - Port input data (y = 0..15)"]
+pub type IDR3_R = crate::BitReader<IDR3_A>;
 #[doc = "Port input data (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDR3_A {
@@ -27,8 +29,6 @@ impl From<IDR3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IDR3` reader - Port input data (y = 0..15)"]
-pub type IDR3_R = crate::BitReader<IDR3_A>;
 impl IDR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

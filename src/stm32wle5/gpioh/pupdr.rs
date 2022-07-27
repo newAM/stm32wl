@@ -34,6 +34,8 @@ impl From<crate::W<PUPDR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PUPDR3` reader - Port x configuration bits (y = 0..15)"]
+pub type PUPDR3_R = crate::FieldReader<u8, PUPDR3_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<PUPDR3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PUPDR3` reader - Port x configuration bits (y = 0..15)"]
-pub type PUPDR3_R = crate::FieldReader<u8, PUPDR3_A>;
 impl PUPDR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

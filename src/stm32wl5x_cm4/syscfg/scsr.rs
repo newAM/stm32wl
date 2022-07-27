@@ -34,42 +34,46 @@ impl From<crate::W<SCSR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "PKA SRAM busy by erase operation\n\nValue on reset: 0"]
+#[doc = "Field `SRAM2ER` reader - SRAM2 erase"]
+pub type SRAM2ER_R = crate::BitReader<SRAM2ERW_A>;
+#[doc = "SRAM2 erase\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PKASRAMBSY_A {
-    #[doc = "0: No PKA SRAM erase operation is ongoing"]
-    Idle = 0,
-    #[doc = "1: PKA SRAM erase operation is ongoing"]
-    Busy = 1,
+pub enum SRAM2ERW_A {
+    #[doc = "1: Start SRAM2 erase operation"]
+    Erase = 1,
 }
-impl From<PKASRAMBSY_A> for bool {
+impl From<SRAM2ERW_A> for bool {
     #[inline(always)]
-    fn from(variant: PKASRAMBSY_A) -> Self {
+    fn from(variant: SRAM2ERW_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PKASRAMBSY` reader - PKA SRAM busy by erase operation"]
-pub type PKASRAMBSY_R = crate::BitReader<PKASRAMBSY_A>;
-impl PKASRAMBSY_R {
+impl SRAM2ER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PKASRAMBSY_A {
+    pub fn variant(&self) -> Option<SRAM2ERW_A> {
         match self.bits {
-            false => PKASRAMBSY_A::Idle,
-            true => PKASRAMBSY_A::Busy,
+            true => Some(SRAM2ERW_A::Erase),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Idle`"]
+    #[doc = "Checks if the value of the field is `Erase`"]
     #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == PKASRAMBSY_A::Idle
-    }
-    #[doc = "Checks if the value of the field is `Busy`"]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == PKASRAMBSY_A::Busy
+    pub fn is_erase(&self) -> bool {
+        *self == SRAM2ERW_A::Erase
     }
 }
+#[doc = "Field `SRAM2ER` writer - SRAM2 erase"]
+pub type SRAM2ER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCSR_SPEC, SRAM2ERW_A, O>;
+impl<'a, const O: u8> SRAM2ER_W<'a, O> {
+    #[doc = "Start SRAM2 erase operation"]
+    #[inline(always)]
+    pub fn erase(self) -> &'a mut W {
+        self.variant(SRAM2ERW_A::Erase)
+    }
+}
+#[doc = "Field `SRAMBSY` reader - SRAM1, SRAM2 and PKA SRAM busy by erase operation"]
+pub type SRAMBSY_R = crate::BitReader<SRAMBSY_A>;
 #[doc = "SRAM1, SRAM2 and PKA SRAM busy by erase operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAMBSY_A {
@@ -84,8 +88,6 @@ impl From<SRAMBSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRAMBSY` reader - SRAM1, SRAM2 and PKA SRAM busy by erase operation"]
-pub type SRAMBSY_R = crate::BitReader<SRAMBSY_A>;
 impl SRAMBSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -106,59 +108,57 @@ impl SRAMBSY_R {
         *self == SRAMBSY_A::Busy
     }
 }
-#[doc = "SRAM2 erase\n\nValue on reset: 0"]
+#[doc = "Field `PKASRAMBSY` reader - PKA SRAM busy by erase operation"]
+pub type PKASRAMBSY_R = crate::BitReader<PKASRAMBSY_A>;
+#[doc = "PKA SRAM busy by erase operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRAM2ER_A {
-    #[doc = "1: Start SRAM2 erase operation"]
-    Erase = 1,
+pub enum PKASRAMBSY_A {
+    #[doc = "0: No PKA SRAM erase operation is ongoing"]
+    Idle = 0,
+    #[doc = "1: PKA SRAM erase operation is ongoing"]
+    Busy = 1,
 }
-impl From<SRAM2ER_A> for bool {
+impl From<PKASRAMBSY_A> for bool {
     #[inline(always)]
-    fn from(variant: SRAM2ER_A) -> Self {
+    fn from(variant: PKASRAMBSY_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRAM2ER` reader - SRAM2 erase"]
-pub type SRAM2ER_R = crate::BitReader<SRAM2ER_A>;
-impl SRAM2ER_R {
+impl PKASRAMBSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRAM2ER_A> {
+    pub fn variant(&self) -> PKASRAMBSY_A {
         match self.bits {
-            true => Some(SRAM2ER_A::Erase),
-            _ => None,
+            false => PKASRAMBSY_A::Idle,
+            true => PKASRAMBSY_A::Busy,
         }
     }
-    #[doc = "Checks if the value of the field is `Erase`"]
+    #[doc = "Checks if the value of the field is `Idle`"]
     #[inline(always)]
-    pub fn is_erase(&self) -> bool {
-        *self == SRAM2ER_A::Erase
+    pub fn is_idle(&self) -> bool {
+        *self == PKASRAMBSY_A::Idle
     }
-}
-#[doc = "Field `SRAM2ER` writer - SRAM2 erase"]
-pub type SRAM2ER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCSR_SPEC, SRAM2ER_A, O>;
-impl<'a, const O: u8> SRAM2ER_W<'a, O> {
-    #[doc = "Start SRAM2 erase operation"]
+    #[doc = "Checks if the value of the field is `Busy`"]
     #[inline(always)]
-    pub fn erase(self) -> &'a mut W {
-        self.variant(SRAM2ER_A::Erase)
+    pub fn is_busy(&self) -> bool {
+        *self == PKASRAMBSY_A::Busy
     }
 }
 impl R {
-    #[doc = "Bit 8 - PKA SRAM busy by erase operation"]
+    #[doc = "Bit 0 - SRAM2 erase"]
     #[inline(always)]
-    pub fn pkasrambsy(&self) -> PKASRAMBSY_R {
-        PKASRAMBSY_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn sram2er(&self) -> SRAM2ER_R {
+        SRAM2ER_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SRAM1, SRAM2 and PKA SRAM busy by erase operation"]
     #[inline(always)]
     pub fn srambsy(&self) -> SRAMBSY_R {
         SRAMBSY_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - SRAM2 erase"]
+    #[doc = "Bit 8 - PKA SRAM busy by erase operation"]
     #[inline(always)]
-    pub fn sram2er(&self) -> SRAM2ER_R {
-        SRAM2ER_R::new((self.bits & 1) != 0)
+    pub fn pkasrambsy(&self) -> PKASRAMBSY_R {
+        PKASRAMBSY_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {

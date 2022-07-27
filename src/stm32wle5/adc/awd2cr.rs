@@ -34,6 +34,8 @@ impl From<crate::W<AWD2CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AWD2CH0` reader - AWD2CH"]
+pub type AWD2CH0_R = crate::BitReader<AWD2CH0_A>;
 #[doc = "AWD2CH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AWD2CH0_A {
@@ -48,8 +50,6 @@ impl From<AWD2CH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD2CH0` reader - AWD2CH"]
-pub type AWD2CH0_R = crate::BitReader<AWD2CH0_A>;
 impl AWD2CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,40 +84,6 @@ impl<'a, const O: u8> AWD2CH0_W<'a, O> {
         self.variant(AWD2CH0_A::Monitored)
     }
 }
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH1_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH2_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH3_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH4_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH5_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH6_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH7_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH8_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH9_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH10_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH11_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH12_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH13_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH14_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH15_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH16_A;
-#[doc = "AWD2CH"]
-pub use AWD2CH0_A as AWD2CH17_A;
 #[doc = "Field `AWD2CH1` reader - AWD2CH"]
 pub use AWD2CH0_R as AWD2CH1_R;
 #[doc = "Field `AWD2CH2` reader - AWD2CH"]

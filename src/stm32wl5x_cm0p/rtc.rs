@@ -2,61 +2,61 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Time register"]
-    pub tr: crate::Reg<tr::TR_SPEC>,
+    pub tr: TR,
     #[doc = "0x04 - Date register"]
-    pub dr: crate::Reg<dr::DR_SPEC>,
+    pub dr: DR,
     #[doc = "0x08 - Sub second register"]
-    pub ssr: crate::Reg<ssr::SSR_SPEC>,
+    pub ssr: SSR,
     #[doc = "0x0c - Initialization control and status register"]
-    pub icsr: crate::Reg<icsr::ICSR_SPEC>,
+    pub icsr: ICSR,
     #[doc = "0x10 - Pre-scaler register"]
-    pub prer: crate::Reg<prer::PRER_SPEC>,
+    pub prer: PRER,
     #[doc = "0x14 - Wakeup timer register"]
-    pub wutr: crate::Reg<wutr::WUTR_SPEC>,
+    pub wutr: WUTR,
     #[doc = "0x18 - Control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     _reserved7: [u8; 0x08],
     #[doc = "0x24 - Write protection register"]
-    pub wpr: crate::Reg<wpr::WPR_SPEC>,
+    pub wpr: WPR,
     #[doc = "0x28 - Calibration register"]
-    pub calr: crate::Reg<calr::CALR_SPEC>,
+    pub calr: CALR,
     #[doc = "0x2c - Shift control register"]
-    pub shiftr: crate::Reg<shiftr::SHIFTR_SPEC>,
+    pub shiftr: SHIFTR,
     #[doc = "0x30 - Timestamp time register"]
-    pub tstr: crate::Reg<tstr::TSTR_SPEC>,
+    pub tstr: TSTR,
     #[doc = "0x34 - Timestamp date register"]
-    pub tsdr: crate::Reg<tsdr::TSDR_SPEC>,
+    pub tsdr: TSDR,
     #[doc = "0x38 - Timestamp sub second register"]
-    pub tsssr: crate::Reg<tsssr::TSSSR_SPEC>,
+    pub tsssr: TSSSR,
     _reserved13: [u8; 0x04],
     #[doc = "0x40 - Alarm register"]
-    pub alrmar: crate::Reg<alrmr::ALRMR_SPEC>,
+    pub alrmar: ALRMR,
     #[doc = "0x44 - Alarm sub-second register"]
-    pub alrmassr: crate::Reg<alrmssr::ALRMSSR_SPEC>,
+    pub alrmassr: ALRMSSR,
     #[doc = "0x48 - Alarm register"]
-    pub alrmbr: crate::Reg<alrmr::ALRMR_SPEC>,
+    pub alrmbr: ALRMR,
     #[doc = "0x4c - Alarm sub-second register"]
-    pub alrmbssr: crate::Reg<alrmssr::ALRMSSR_SPEC>,
+    pub alrmbssr: ALRMSSR,
     #[doc = "0x50 - Status register (interrupts)"]
-    pub sr: crate::Reg<sr::SR_SPEC>,
+    pub sr: SR,
     #[doc = "0x54 - Masked interrupt status register"]
-    pub misr: crate::Reg<misr::MISR_SPEC>,
+    pub misr: MISR,
     _reserved19: [u8; 0x04],
     #[doc = "0x5c - Status clear register (interrupts)"]
-    pub scr: crate::Reg<scr::SCR_SPEC>,
+    pub scr: SCR,
     _reserved20: [u8; 0x10],
     #[doc = "0x70..0x78 - RTC alarm A binary mode register"]
-    pub alrbinr: [crate::Reg<alrbinr::ALRBINR_SPEC>; 2],
+    pub alrbinr: [ALRBINR; 2],
 }
 impl RegisterBlock {
     #[doc = "0x70 - RTC alarm A binary mode register"]
     #[inline(always)]
-    pub fn alrabinr(&self) -> &crate::Reg<alrbinr::ALRBINR_SPEC> {
+    pub fn alrabinr(&self) -> &ALRBINR {
         &self.alrbinr[0]
     }
     #[doc = "0x74 - RTC alarm A binary mode register"]
     #[inline(always)]
-    pub fn alrbbinr(&self) -> &crate::Reg<alrbinr::ALRBINR_SPEC> {
+    pub fn alrbbinr(&self) -> &ALRBINR {
         &self.alrbinr[1]
     }
 }

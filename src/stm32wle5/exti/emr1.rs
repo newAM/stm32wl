@@ -34,6 +34,8 @@ impl From<crate::W<EMR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EM0` reader - Wakeup with event generation Mask on Event input"]
+pub type EM0_R = crate::BitReader<EM0_A>;
 #[doc = "Wakeup with event generation Mask on Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EM0_A {
@@ -48,8 +50,6 @@ impl From<EM0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EM0` reader - Wakeup with event generation Mask on Event input"]
-pub type EM0_R = crate::BitReader<EM0_A>;
 impl EM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,48 +84,6 @@ impl<'a, const O: u8> EM0_W<'a, O> {
         self.variant(EM0_A::Unmasked)
     }
 }
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM1_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM2_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM3_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM4_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM5_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM6_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM7_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM8_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM9_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM10_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM11_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM12_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM13_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM14_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM15_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM17_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM18_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM19_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM20_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM21_A;
-#[doc = "Wakeup with event generation Mask on Event input"]
-pub use EM0_A as EM22_A;
 #[doc = "Field `EM1` reader - Wakeup with event generation Mask on Event input"]
 pub use EM0_R as EM1_R;
 #[doc = "Field `EM2` reader - Wakeup with event generation Mask on Event input"]

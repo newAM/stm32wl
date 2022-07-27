@@ -2,24 +2,24 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00..0x40 - HSEM register HSEM_R%s HSEM_R31"]
-    pub r: [crate::Reg<r::R_SPEC>; 16],
+    pub r: [R; 16],
     _reserved1: [u8; 0x40],
     #[doc = "0x80..0xc0 - HSEM Read lock register"]
-    pub rlr: [crate::Reg<rlr::RLR_SPEC>; 16],
+    pub rlr: [RLR; 16],
     _reserved2: [u8; 0x40],
     #[doc = "0x100 - HSEM Interrupt enable register"]
-    pub c1ier: crate::Reg<c1ier::C1IER_SPEC>,
+    pub c1ier: C1IER,
     #[doc = "0x104 - HSEM Interrupt clear register"]
-    pub c1icr: crate::Reg<c1icr::C1ICR_SPEC>,
+    pub c1icr: C1ICR,
     #[doc = "0x108 - HSEM Interrupt status register"]
-    pub c1isr: crate::Reg<c1isr::C1ISR_SPEC>,
+    pub c1isr: C1ISR,
     #[doc = "0x10c - HSEM Masked interrupt status register"]
-    pub c1misr: crate::Reg<c1misr::C1MISR_SPEC>,
+    pub c1misr: C1MISR,
     _reserved6: [u8; 0x30],
     #[doc = "0x140 - HSEM Clear register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     #[doc = "0x144 - HSEM Interrupt clear register"]
-    pub keyr: crate::Reg<keyr::KEYR_SPEC>,
+    pub keyr: KEYR,
 }
 #[doc = "R register accessor: an alias for `Reg<R_SPEC>`"]
 pub type R = crate::Reg<r::R_SPEC>;

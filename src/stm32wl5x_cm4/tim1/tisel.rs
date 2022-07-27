@@ -34,42 +34,10 @@ impl From<crate::W<TISEL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "selects TI4\\[0\\]
-to TI4\\[15\\]
+#[doc = "Field `TI1SEL` reader - selects TI1\\[0\\]
+to TI1\\[15\\]
 input"]
-pub use TI1SEL_A as TI4SEL_A;
-#[doc = "selects TI3\\[0\\]
-to TI3\\[15\\]
-input"]
-pub use TI1SEL_A as TI3SEL_A;
-#[doc = "selects TI2\\[0\\]
-to TI2\\[15\\]
-input"]
-pub use TI1SEL_A as TI2SEL_A;
-#[doc = "Field `TI4SEL` reader - selects TI4\\[0\\]
-to TI4\\[15\\]
-input"]
-pub use TI1SEL_R as TI4SEL_R;
-#[doc = "Field `TI3SEL` reader - selects TI3\\[0\\]
-to TI3\\[15\\]
-input"]
-pub use TI1SEL_R as TI3SEL_R;
-#[doc = "Field `TI2SEL` reader - selects TI2\\[0\\]
-to TI2\\[15\\]
-input"]
-pub use TI1SEL_R as TI2SEL_R;
-#[doc = "Field `TI4SEL` writer - selects TI4\\[0\\]
-to TI4\\[15\\]
-input"]
-pub use TI1SEL_W as TI4SEL_W;
-#[doc = "Field `TI3SEL` writer - selects TI3\\[0\\]
-to TI3\\[15\\]
-input"]
-pub use TI1SEL_W as TI3SEL_W;
-#[doc = "Field `TI2SEL` writer - selects TI2\\[0\\]
-to TI2\\[15\\]
-input"]
-pub use TI1SEL_W as TI2SEL_W;
+pub type TI1SEL_R = crate::FieldReader<u8, TI1SEL_A>;
 #[doc = "selects TI1\\[0\\]
 to TI1\\[15\\]
 input\n\nValue on reset: 0"]
@@ -85,10 +53,6 @@ impl From<TI1SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TI1SEL` reader - selects TI1\\[0\\]
-to TI1\\[15\\]
-input"]
-pub type TI1SEL_R = crate::FieldReader<u8, TI1SEL_A>;
 impl TI1SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -115,20 +79,37 @@ impl<'a, const O: u8> TI1SEL_W<'a, O> {
         self.variant(TI1SEL_A::Selected)
     }
 }
-impl R {
-    #[doc = "Bits 24:27 - selects TI4\\[0\\]
-to TI4\\[15\\]
+#[doc = "Field `TI2SEL` reader - selects TI2\\[0\\]
+to TI2\\[15\\]
 input"]
-    #[inline(always)]
-    pub fn ti4sel(&self) -> TI4SEL_R {
-        TI4SEL_R::new(((self.bits >> 24) & 0x0f) as u8)
-    }
-    #[doc = "Bits 16:19 - selects TI3\\[0\\]
+pub use TI1SEL_R as TI2SEL_R;
+#[doc = "Field `TI3SEL` reader - selects TI3\\[0\\]
 to TI3\\[15\\]
 input"]
+pub use TI1SEL_R as TI3SEL_R;
+#[doc = "Field `TI4SEL` reader - selects TI4\\[0\\]
+to TI4\\[15\\]
+input"]
+pub use TI1SEL_R as TI4SEL_R;
+#[doc = "Field `TI2SEL` writer - selects TI2\\[0\\]
+to TI2\\[15\\]
+input"]
+pub use TI1SEL_W as TI2SEL_W;
+#[doc = "Field `TI3SEL` writer - selects TI3\\[0\\]
+to TI3\\[15\\]
+input"]
+pub use TI1SEL_W as TI3SEL_W;
+#[doc = "Field `TI4SEL` writer - selects TI4\\[0\\]
+to TI4\\[15\\]
+input"]
+pub use TI1SEL_W as TI4SEL_W;
+impl R {
+    #[doc = "Bits 0:3 - selects TI1\\[0\\]
+to TI1\\[15\\]
+input"]
     #[inline(always)]
-    pub fn ti3sel(&self) -> TI3SEL_R {
-        TI3SEL_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn ti1sel(&self) -> TI1SEL_R {
+        TI1SEL_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - selects TI2\\[0\\]
 to TI2\\[15\\]
@@ -137,28 +118,28 @@ input"]
     pub fn ti2sel(&self) -> TI2SEL_R {
         TI2SEL_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:3 - selects TI1\\[0\\]
-to TI1\\[15\\]
-input"]
-    #[inline(always)]
-    pub fn ti1sel(&self) -> TI1SEL_R {
-        TI1SEL_R::new((self.bits & 0x0f) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 24:27 - selects TI4\\[0\\]
-to TI4\\[15\\]
-input"]
-    #[inline(always)]
-    pub fn ti4sel(&mut self) -> TI4SEL_W<24> {
-        TI4SEL_W::new(self)
-    }
     #[doc = "Bits 16:19 - selects TI3\\[0\\]
 to TI3\\[15\\]
 input"]
     #[inline(always)]
-    pub fn ti3sel(&mut self) -> TI3SEL_W<16> {
-        TI3SEL_W::new(self)
+    pub fn ti3sel(&self) -> TI3SEL_R {
+        TI3SEL_R::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+    #[doc = "Bits 24:27 - selects TI4\\[0\\]
+to TI4\\[15\\]
+input"]
+    #[inline(always)]
+    pub fn ti4sel(&self) -> TI4SEL_R {
+        TI4SEL_R::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:3 - selects TI1\\[0\\]
+to TI1\\[15\\]
+input"]
+    #[inline(always)]
+    pub fn ti1sel(&mut self) -> TI1SEL_W<0> {
+        TI1SEL_W::new(self)
     }
     #[doc = "Bits 8:11 - selects TI2\\[0\\]
 to TI2\\[15\\]
@@ -167,12 +148,19 @@ input"]
     pub fn ti2sel(&mut self) -> TI2SEL_W<8> {
         TI2SEL_W::new(self)
     }
-    #[doc = "Bits 0:3 - selects TI1\\[0\\]
-to TI1\\[15\\]
+    #[doc = "Bits 16:19 - selects TI3\\[0\\]
+to TI3\\[15\\]
 input"]
     #[inline(always)]
-    pub fn ti1sel(&mut self) -> TI1SEL_W<0> {
-        TI1SEL_W::new(self)
+    pub fn ti3sel(&mut self) -> TI3SEL_W<16> {
+        TI3SEL_W::new(self)
+    }
+    #[doc = "Bits 24:27 - selects TI4\\[0\\]
+to TI4\\[15\\]
+input"]
+    #[inline(always)]
+    pub fn ti4sel(&mut self) -> TI4SEL_W<24> {
+        TI4SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

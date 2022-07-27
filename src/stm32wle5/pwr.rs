@@ -2,44 +2,44 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Power control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - Power control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     #[doc = "0x08 - Power control register 3"]
-    pub cr3: crate::Reg<cr3::CR3_SPEC>,
+    pub cr3: CR3,
     #[doc = "0x0c - Power control register 4"]
-    pub cr4: crate::Reg<cr4::CR4_SPEC>,
+    pub cr4: CR4,
     #[doc = "0x10 - Power status register 1"]
-    pub sr1: crate::Reg<sr1::SR1_SPEC>,
+    pub sr1: SR1,
     #[doc = "0x14 - Power status register 2"]
-    pub sr2: crate::Reg<sr2::SR2_SPEC>,
+    pub sr2: SR2,
     #[doc = "0x18 - Power status clear register"]
-    pub scr: crate::Reg<scr::SCR_SPEC>,
+    pub scr: SCR,
     #[doc = "0x1c - Power control register 5"]
-    pub cr5: crate::Reg<cr5::CR5_SPEC>,
+    pub cr5: CR5,
     #[doc = "0x20 - Power Port A pull-up control register"]
-    pub pucra: crate::Reg<pucra::PUCRA_SPEC>,
+    pub pucra: PUCRA,
     #[doc = "0x24 - Power Port A pull-down control register"]
-    pub pdcra: crate::Reg<pdcra::PDCRA_SPEC>,
+    pub pdcra: PDCRA,
     #[doc = "0x28 - Power Port B pull-up control register"]
-    pub pucrb: crate::Reg<pucrb::PUCRB_SPEC>,
+    pub pucrb: PUCRB,
     #[doc = "0x2c - Power Port B pull-down control register"]
-    pub pdcrb: crate::Reg<pdcrb::PDCRB_SPEC>,
+    pub pdcrb: PDCRB,
     #[doc = "0x30 - Power Port C pull-up control register"]
-    pub pucrc: crate::Reg<pucrc::PUCRC_SPEC>,
+    pub pucrc: PUCRC,
     #[doc = "0x34 - Power Port C pull-down control register"]
-    pub pdcrc: crate::Reg<pdcrc::PDCRC_SPEC>,
+    pub pdcrc: PDCRC,
     _reserved14: [u8; 0x20],
     #[doc = "0x58 - Power Port H pull-up control register"]
-    pub pucrh: crate::Reg<pucrh::PUCRH_SPEC>,
+    pub pucrh: PUCRH,
     #[doc = "0x5c - Power Port H pull-down control register"]
-    pub pdcrh: crate::Reg<pdcrh::PDCRH_SPEC>,
+    pub pdcrh: PDCRH,
     _reserved16: [u8; 0x28],
     #[doc = "0x88 - Power extended status and status clear register"]
-    pub extscr: crate::Reg<extscr::EXTSCR_SPEC>,
+    pub extscr: EXTSCR,
     _reserved17: [u8; 0x04],
     #[doc = "0x90 - Power SPI3 control register"]
-    pub subghzspicr: crate::Reg<subghzspicr::SUBGHZSPICR_SPEC>,
+    pub subghzspicr: SUBGHZSPICR,
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]
 pub type CR1 = crate::Reg<cr1::CR1_SPEC>;

@@ -34,6 +34,8 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RNGEN` reader - True random number generator enable"]
+pub type RNGEN_R = crate::BitReader<RNGEN_A>;
 #[doc = "True random number generator enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RNGEN_A {
@@ -48,8 +50,6 @@ impl From<RNGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RNGEN` reader - True random number generator enable"]
-pub type RNGEN_R = crate::BitReader<RNGEN_A>;
 impl RNGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> RNGEN_W<'a, O> {
         self.variant(RNGEN_A::Enabled)
     }
 }
+#[doc = "Field `IE` reader - Interrupt Enable"]
+pub type IE_R = crate::BitReader<IE_A>;
 #[doc = "Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IE_A {
@@ -98,8 +100,6 @@ impl From<IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IE` reader - Interrupt Enable"]
-pub type IE_R = crate::BitReader<IE_A>;
 impl IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> IE_W<'a, O> {
         self.variant(IE_A::Enabled)
     }
 }
+#[doc = "Field `CED` reader - Interrupt Enable"]
+pub type CED_R = crate::BitReader<CED_A>;
 #[doc = "Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CED_A {
@@ -148,8 +150,6 @@ impl From<CED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CED` reader - Interrupt Enable"]
-pub type CED_R = crate::BitReader<CED_A>;
 impl CED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> CED_W<'a, O> {
         self.variant(CED_A::Disabled)
     }
 }
+#[doc = "Field `RNG_CONFIG3` reader - RNG_CONFIG3"]
+pub type RNG_CONFIG3_R = crate::FieldReader<u8, RNG_CONFIG3_A>;
 #[doc = "RNG_CONFIG3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -199,8 +201,6 @@ impl From<RNG_CONFIG3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RNG_CONFIG3` reader - RNG_CONFIG3"]
-pub type RNG_CONFIG3_R = crate::FieldReader<u8, RNG_CONFIG3_A>;
 impl RNG_CONFIG3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -237,6 +237,8 @@ impl<'a, const O: u8> RNG_CONFIG3_W<'a, O> {
         self.variant(RNG_CONFIG3_A::ConfigA)
     }
 }
+#[doc = "Field `NISTC` reader - NISTC"]
+pub type NISTC_R = crate::BitReader<NISTC_A>;
 #[doc = "NISTC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NISTC_A {
@@ -251,8 +253,6 @@ impl From<NISTC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NISTC` reader - NISTC"]
-pub type NISTC_R = crate::BitReader<NISTC_A>;
 impl NISTC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -287,6 +287,8 @@ impl<'a, const O: u8> NISTC_W<'a, O> {
         self.variant(NISTC_A::Custom)
     }
 }
+#[doc = "Field `RNG_CONFIG2` reader - RNG_CONFIG2"]
+pub type RNG_CONFIG2_R = crate::FieldReader<u8, RNG_CONFIG2_A>;
 #[doc = "RNG_CONFIG2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -300,8 +302,6 @@ impl From<RNG_CONFIG2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RNG_CONFIG2` reader - RNG_CONFIG2"]
-pub type RNG_CONFIG2_R = crate::FieldReader<u8, RNG_CONFIG2_A>;
 impl RNG_CONFIG2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -327,6 +327,8 @@ impl<'a, const O: u8> RNG_CONFIG2_W<'a, O> {
         self.variant(RNG_CONFIG2_A::ConfigAB)
     }
 }
+#[doc = "Field `CLKDIV` reader - CLKDIV"]
+pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 #[doc = "CLKDIV\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -370,8 +372,6 @@ impl From<CLKDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKDIV` reader - CLKDIV"]
-pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 impl CLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -561,6 +561,8 @@ impl<'a, const O: u8> CLKDIV_W<'a, O> {
         self.variant(CLKDIV_A::Div215)
     }
 }
+#[doc = "Field `RNG_CONFIG1` reader - RNG_CONFIG1"]
+pub type RNG_CONFIG1_R = crate::FieldReader<u8, RNG_CONFIG1_A>;
 #[doc = "RNG_CONFIG1\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -576,8 +578,6 @@ impl From<RNG_CONFIG1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RNG_CONFIG1` reader - RNG_CONFIG1"]
-pub type RNG_CONFIG1_R = crate::FieldReader<u8, RNG_CONFIG1_A>;
 impl RNG_CONFIG1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -618,6 +618,8 @@ impl<'a, const O: u8> RNG_CONFIG1_W<'a, O> {
 pub type CONDRST_R = crate::BitReader<bool>;
 #[doc = "Field `CONDRST` writer - Conditioning soft reset"]
 pub type CONDRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
+#[doc = "Field `CONFIGLOCK` reader - CONFIGLOCK"]
+pub type CONFIGLOCK_R = crate::BitReader<CONFIGLOCK_A>;
 #[doc = "CONFIGLOCK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONFIGLOCK_A {
@@ -634,8 +636,6 @@ impl From<CONFIGLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CONFIGLOCK` reader - CONFIGLOCK"]
-pub type CONFIGLOCK_R = crate::BitReader<CONFIGLOCK_A>;
 impl CONFIGLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

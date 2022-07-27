@@ -19,58 +19,58 @@ impl From<crate::W<BSRR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Port x reset bit y (y = 0..15)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BR3_AW {
-    #[doc = "1: Resets the corresponding ODRx bit"]
-    Reset = 1,
-}
-impl From<BR3_AW> for bool {
-    #[inline(always)]
-    fn from(variant: BR3_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BR3` writer - Port x reset bit y (y = 0..15)"]
-pub type BR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BSRR_SPEC, BR3_AW, O>;
-impl<'a, const O: u8> BR3_W<'a, O> {
-    #[doc = "Resets the corresponding ODRx bit"]
-    #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(BR3_AW::Reset)
-    }
-}
 #[doc = "Port x set bit y (y= 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BS3_AW {
+pub enum BS3W_AW {
     #[doc = "1: Sets the corresponding ODRx bit"]
     Set = 1,
 }
-impl From<BS3_AW> for bool {
+impl From<BS3W_AW> for bool {
     #[inline(always)]
-    fn from(variant: BS3_AW) -> Self {
+    fn from(variant: BS3W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BS3` writer - Port x set bit y (y= 0..15)"]
-pub type BS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BSRR_SPEC, BS3_AW, O>;
+pub type BS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BSRR_SPEC, BS3W_AW, O>;
 impl<'a, const O: u8> BS3_W<'a, O> {
     #[doc = "Sets the corresponding ODRx bit"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(BS3_AW::Set)
+        self.variant(BS3W_AW::Set)
+    }
+}
+#[doc = "Port x reset bit y (y = 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BR3W_AW {
+    #[doc = "1: Resets the corresponding ODRx bit"]
+    Reset = 1,
+}
+impl From<BR3W_AW> for bool {
+    #[inline(always)]
+    fn from(variant: BR3W_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `BR3` writer - Port x reset bit y (y = 0..15)"]
+pub type BR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BSRR_SPEC, BR3W_AW, O>;
+impl<'a, const O: u8> BR3_W<'a, O> {
+    #[doc = "Resets the corresponding ODRx bit"]
+    #[inline(always)]
+    pub fn reset(self) -> &'a mut W {
+        self.variant(BR3W_AW::Reset)
     }
 }
 impl W {
-    #[doc = "Bit 19 - Port x reset bit y (y = 0..15)"]
-    #[inline(always)]
-    pub fn br3(&mut self) -> BR3_W<19> {
-        BR3_W::new(self)
-    }
     #[doc = "Bit 3 - Port x set bit y (y= 0..15)"]
     #[inline(always)]
     pub fn bs3(&mut self) -> BS3_W<3> {
         BS3_W::new(self)
+    }
+    #[doc = "Bit 19 - Port x reset bit y (y = 0..15)"]
+    #[inline(always)]
+    pub fn br3(&mut self) -> BR3_W<19> {
+        BR3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<PRESC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRESCALER` reader - Clock prescaler"]
+pub type PRESCALER_R = crate::FieldReader<u8, PRESCALER_A>;
 #[doc = "Clock prescaler\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -69,8 +71,6 @@ impl From<PRESCALER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESCALER` reader - Clock prescaler"]
-pub type PRESCALER_R = crate::FieldReader<u8, PRESCALER_A>;
 impl PRESCALER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

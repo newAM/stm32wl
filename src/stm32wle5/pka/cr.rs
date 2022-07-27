@@ -34,156 +34,96 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Address error interrupt enable\n\nValue on reset: 0"]
+#[doc = "Field `EN` reader - PKA enable."]
+pub type EN_R = crate::BitReader<EN_A>;
+#[doc = "PKA enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDRERRIE_A {
-    #[doc = "0: No interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+pub enum EN_A {
+    #[doc = "0: Disable PKA"]
     Disabled = 0,
-    #[doc = "1: An interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    #[doc = "1: Enable PKA"]
     Enabled = 1,
 }
-impl From<ADDRERRIE_A> for bool {
+impl From<EN_A> for bool {
     #[inline(always)]
-    fn from(variant: ADDRERRIE_A) -> Self {
+    fn from(variant: EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDRERRIE` reader - Address error interrupt enable"]
-pub type ADDRERRIE_R = crate::BitReader<ADDRERRIE_A>;
-impl ADDRERRIE_R {
+impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDRERRIE_A {
+    pub fn variant(&self) -> EN_A {
         match self.bits {
-            false => ADDRERRIE_A::Disabled,
-            true => ADDRERRIE_A::Enabled,
+            false => EN_A::Disabled,
+            true => EN_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDRERRIE_A::Disabled
+        *self == EN_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDRERRIE_A::Enabled
+        *self == EN_A::Enabled
     }
 }
-#[doc = "Field `ADDRERRIE` writer - Address error interrupt enable"]
-pub type ADDRERRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADDRERRIE_A, O>;
-impl<'a, const O: u8> ADDRERRIE_W<'a, O> {
-    #[doc = "No interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+#[doc = "Field `EN` writer - PKA enable."]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
+    #[doc = "Disable PKA"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDRERRIE_A::Disabled)
+        self.variant(EN_A::Disabled)
     }
-    #[doc = "An interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    #[doc = "Enable PKA"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDRERRIE_A::Enabled)
+        self.variant(EN_A::Enabled)
     }
 }
-#[doc = "RAM error interrupt enable\n\nValue on reset: 0"]
+#[doc = "Field `START` reader - start the operation"]
+pub type START_R = crate::BitReader<STARTW_A>;
+#[doc = "start the operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAMERRIE_A {
-    #[doc = "0: No interrupt is generated when RAMERRF flag is set in PKA_SR"]
-    Disabled = 0,
-    #[doc = "1: An interrupt is generated when RAMERRF flag is set in PKA_SR"]
-    Enabled = 1,
+pub enum STARTW_A {
+    #[doc = "1: Writing 1 to this bit starts the operation which is selected by MODE\\[5:0\\], using the operands and data already written to the PKA RAM - This bit is always read as 0"]
+    Start = 1,
 }
-impl From<RAMERRIE_A> for bool {
+impl From<STARTW_A> for bool {
     #[inline(always)]
-    fn from(variant: RAMERRIE_A) -> Self {
+    fn from(variant: STARTW_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAMERRIE` reader - RAM error interrupt enable"]
-pub type RAMERRIE_R = crate::BitReader<RAMERRIE_A>;
-impl RAMERRIE_R {
+impl START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMERRIE_A {
+    pub fn variant(&self) -> Option<STARTW_A> {
         match self.bits {
-            false => RAMERRIE_A::Disabled,
-            true => RAMERRIE_A::Enabled,
+            true => Some(STARTW_A::Start),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[doc = "Checks if the value of the field is `Start`"]
     #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == RAMERRIE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == RAMERRIE_A::Enabled
+    pub fn is_start(&self) -> bool {
+        *self == STARTW_A::Start
     }
 }
-#[doc = "Field `RAMERRIE` writer - RAM error interrupt enable"]
-pub type RAMERRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, RAMERRIE_A, O>;
-impl<'a, const O: u8> RAMERRIE_W<'a, O> {
-    #[doc = "No interrupt is generated when RAMERRF flag is set in PKA_SR"]
+#[doc = "Field `START` writer - start the operation"]
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, STARTW_A, O>;
+impl<'a, const O: u8> START_W<'a, O> {
+    #[doc = "Writing 1 to this bit starts the operation which is selected by MODE\\[5:0\\], using the operands and data already written to the PKA RAM - This bit is always read as 0"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RAMERRIE_A::Disabled)
-    }
-    #[doc = "An interrupt is generated when RAMERRF flag is set in PKA_SR"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RAMERRIE_A::Enabled)
+    pub fn start(self) -> &'a mut W {
+        self.variant(STARTW_A::Start)
     }
 }
-#[doc = "PROCENDIE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROCENDIE_A {
-    #[doc = "0: No interrupt is generated when PROCENDF flag is set in PKA_SR"]
-    Disabled = 0,
-    #[doc = "1: An interrupt is generated when PROCENDF flag is set in PKA_SR"]
-    Enabled = 1,
-}
-impl From<PROCENDIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: PROCENDIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `PROCENDIE` reader - PROCENDIE"]
-pub type PROCENDIE_R = crate::BitReader<PROCENDIE_A>;
-impl PROCENDIE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PROCENDIE_A {
-        match self.bits {
-            false => PROCENDIE_A::Disabled,
-            true => PROCENDIE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == PROCENDIE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == PROCENDIE_A::Enabled
-    }
-}
-#[doc = "Field `PROCENDIE` writer - PROCENDIE"]
-pub type PROCENDIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, PROCENDIE_A, O>;
-impl<'a, const O: u8> PROCENDIE_W<'a, O> {
-    #[doc = "No interrupt is generated when PROCENDF flag is set in PKA_SR"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PROCENDIE_A::Disabled)
-    }
-    #[doc = "An interrupt is generated when PROCENDF flag is set in PKA_SR"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(PROCENDIE_A::Enabled)
-    }
-}
+#[doc = "Field `MODE` reader - PKA operation code"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "PKA operation code\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -231,8 +171,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - PKA operation code"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -444,156 +382,218 @@ impl<'a, const O: u8> MODE_W<'a, O> {
         self.variant(MODE_A::Elliptic)
     }
 }
-#[doc = "start the operation\n\nValue on reset: 0"]
+#[doc = "Field `PROCENDIE` reader - PROCENDIE"]
+pub type PROCENDIE_R = crate::BitReader<PROCENDIE_A>;
+#[doc = "PROCENDIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum START_A {
-    #[doc = "1: Writing 1 to this bit starts the operation which is selected by MODE\\[5:0\\], using the operands and data already written to the PKA RAM - This bit is always read as 0"]
-    Start = 1,
-}
-impl From<START_A> for bool {
-    #[inline(always)]
-    fn from(variant: START_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `START` reader - start the operation"]
-pub type START_R = crate::BitReader<START_A>;
-impl START_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<START_A> {
-        match self.bits {
-            true => Some(START_A::Start),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Start`"]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == START_A::Start
-    }
-}
-#[doc = "Field `START` writer - start the operation"]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, START_A, O>;
-impl<'a, const O: u8> START_W<'a, O> {
-    #[doc = "Writing 1 to this bit starts the operation which is selected by MODE\\[5:0\\], using the operands and data already written to the PKA RAM - This bit is always read as 0"]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut W {
-        self.variant(START_A::Start)
-    }
-}
-#[doc = "PKA enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_A {
-    #[doc = "0: Disable PKA"]
+pub enum PROCENDIE_A {
+    #[doc = "0: No interrupt is generated when PROCENDF flag is set in PKA_SR"]
     Disabled = 0,
-    #[doc = "1: Enable PKA"]
+    #[doc = "1: An interrupt is generated when PROCENDF flag is set in PKA_SR"]
     Enabled = 1,
 }
-impl From<EN_A> for bool {
+impl From<PROCENDIE_A> for bool {
     #[inline(always)]
-    fn from(variant: EN_A) -> Self {
+    fn from(variant: PROCENDIE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - PKA enable."]
-pub type EN_R = crate::BitReader<EN_A>;
-impl EN_R {
+impl PROCENDIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub fn variant(&self) -> PROCENDIE_A {
         match self.bits {
-            false => EN_A::Disabled,
-            true => EN_A::Enabled,
+            false => PROCENDIE_A::Disabled,
+            true => PROCENDIE_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == EN_A::Disabled
+        *self == PROCENDIE_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == EN_A::Enabled
+        *self == PROCENDIE_A::Enabled
     }
 }
-#[doc = "Field `EN` writer - PKA enable."]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, EN_A, O>;
-impl<'a, const O: u8> EN_W<'a, O> {
-    #[doc = "Disable PKA"]
+#[doc = "Field `PROCENDIE` writer - PROCENDIE"]
+pub type PROCENDIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, PROCENDIE_A, O>;
+impl<'a, const O: u8> PROCENDIE_W<'a, O> {
+    #[doc = "No interrupt is generated when PROCENDF flag is set in PKA_SR"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(EN_A::Disabled)
+        self.variant(PROCENDIE_A::Disabled)
     }
-    #[doc = "Enable PKA"]
+    #[doc = "An interrupt is generated when PROCENDF flag is set in PKA_SR"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(EN_A::Enabled)
+        self.variant(PROCENDIE_A::Enabled)
+    }
+}
+#[doc = "Field `RAMERRIE` reader - RAM error interrupt enable"]
+pub type RAMERRIE_R = crate::BitReader<RAMERRIE_A>;
+#[doc = "RAM error interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RAMERRIE_A {
+    #[doc = "0: No interrupt is generated when RAMERRF flag is set in PKA_SR"]
+    Disabled = 0,
+    #[doc = "1: An interrupt is generated when RAMERRF flag is set in PKA_SR"]
+    Enabled = 1,
+}
+impl From<RAMERRIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAMERRIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RAMERRIE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAMERRIE_A {
+        match self.bits {
+            false => RAMERRIE_A::Disabled,
+            true => RAMERRIE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RAMERRIE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RAMERRIE_A::Enabled
+    }
+}
+#[doc = "Field `RAMERRIE` writer - RAM error interrupt enable"]
+pub type RAMERRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, RAMERRIE_A, O>;
+impl<'a, const O: u8> RAMERRIE_W<'a, O> {
+    #[doc = "No interrupt is generated when RAMERRF flag is set in PKA_SR"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(RAMERRIE_A::Disabled)
+    }
+    #[doc = "An interrupt is generated when RAMERRF flag is set in PKA_SR"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(RAMERRIE_A::Enabled)
+    }
+}
+#[doc = "Field `ADDRERRIE` reader - Address error interrupt enable"]
+pub type ADDRERRIE_R = crate::BitReader<ADDRERRIE_A>;
+#[doc = "Address error interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDRERRIE_A {
+    #[doc = "0: No interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    Disabled = 0,
+    #[doc = "1: An interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    Enabled = 1,
+}
+impl From<ADDRERRIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDRERRIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADDRERRIE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDRERRIE_A {
+        match self.bits {
+            false => ADDRERRIE_A::Disabled,
+            true => ADDRERRIE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDRERRIE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDRERRIE_A::Enabled
+    }
+}
+#[doc = "Field `ADDRERRIE` writer - Address error interrupt enable"]
+pub type ADDRERRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADDRERRIE_A, O>;
+impl<'a, const O: u8> ADDRERRIE_W<'a, O> {
+    #[doc = "No interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADDRERRIE_A::Disabled)
+    }
+    #[doc = "An interrupt is generated when ADDRERRF flag is set in PKA_SR"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADDRERRIE_A::Enabled)
     }
 }
 impl R {
-    #[doc = "Bit 20 - Address error interrupt enable"]
+    #[doc = "Bit 0 - PKA enable."]
     #[inline(always)]
-    pub fn addrerrie(&self) -> ADDRERRIE_R {
-        ADDRERRIE_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 19 - RAM error interrupt enable"]
-    #[inline(always)]
-    pub fn ramerrie(&self) -> RAMERRIE_R {
-        RAMERRIE_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 17 - PROCENDIE"]
-    #[inline(always)]
-    pub fn procendie(&self) -> PROCENDIE_R {
-        PROCENDIE_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bits 8:13 - PKA operation code"]
-    #[inline(always)]
-    pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn en(&self) -> EN_R {
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - start the operation"]
     #[inline(always)]
     pub fn start(&self) -> START_R {
         START_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - PKA enable."]
+    #[doc = "Bits 8:13 - PKA operation code"]
     #[inline(always)]
-    pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 20 - Address error interrupt enable"]
-    #[inline(always)]
-    pub fn addrerrie(&mut self) -> ADDRERRIE_W<20> {
-        ADDRERRIE_W::new(self)
-    }
-    #[doc = "Bit 19 - RAM error interrupt enable"]
-    #[inline(always)]
-    pub fn ramerrie(&mut self) -> RAMERRIE_W<19> {
-        RAMERRIE_W::new(self)
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bit 17 - PROCENDIE"]
     #[inline(always)]
-    pub fn procendie(&mut self) -> PROCENDIE_W<17> {
-        PROCENDIE_W::new(self)
+    pub fn procendie(&self) -> PROCENDIE_R {
+        PROCENDIE_R::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bits 8:13 - PKA operation code"]
+    #[doc = "Bit 19 - RAM error interrupt enable"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<8> {
-        MODE_W::new(self)
+    pub fn ramerrie(&self) -> RAMERRIE_R {
+        RAMERRIE_R::new(((self.bits >> 19) & 1) != 0)
+    }
+    #[doc = "Bit 20 - Address error interrupt enable"]
+    #[inline(always)]
+    pub fn addrerrie(&self) -> ADDRERRIE_R {
+        ADDRERRIE_R::new(((self.bits >> 20) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - PKA enable."]
+    #[inline(always)]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - start the operation"]
     #[inline(always)]
     pub fn start(&mut self) -> START_W<1> {
         START_W::new(self)
     }
-    #[doc = "Bit 0 - PKA enable."]
+    #[doc = "Bits 8:13 - PKA operation code"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W<0> {
-        EN_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<8> {
+        MODE_W::new(self)
+    }
+    #[doc = "Bit 17 - PROCENDIE"]
+    #[inline(always)]
+    pub fn procendie(&mut self) -> PROCENDIE_W<17> {
+        PROCENDIE_W::new(self)
+    }
+    #[doc = "Bit 19 - RAM error interrupt enable"]
+    #[inline(always)]
+    pub fn ramerrie(&mut self) -> RAMERRIE_W<19> {
+        RAMERRIE_W::new(self)
+    }
+    #[doc = "Bit 20 - Address error interrupt enable"]
+    #[inline(always)]
+    pub fn addrerrie(&mut self) -> ADDRERRIE_W<20> {
+        ADDRERRIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

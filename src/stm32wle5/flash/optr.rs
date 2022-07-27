@@ -34,6 +34,8 @@ impl From<crate::W<OPTR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RDP` reader - Read protection level"]
+pub type RDP_R = crate::FieldReader<u8, RDP_A>;
 #[doc = "Read protection level\n\nValue on reset: 170"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<RDP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RDP` reader - Read protection level"]
-pub type RDP_R = crate::FieldReader<u8, RDP_A>;
 impl RDP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,6 +99,8 @@ impl<'a, const O: u8> RDP_W<'a, O> {
         self.variant(RDP_A::Level2)
     }
 }
+#[doc = "Field `ESE` reader - System security enabled flag"]
+pub type ESE_R = crate::BitReader<ESE_A>;
 #[doc = "System security enabled flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESE_A {
@@ -113,8 +115,6 @@ impl From<ESE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ESE` reader - System security enabled flag"]
-pub type ESE_R = crate::BitReader<ESE_A>;
 impl ESE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,6 +149,8 @@ impl<'a, const O: u8> ESE_W<'a, O> {
         self.variant(ESE_A::Enabled)
     }
 }
+#[doc = "Field `BOR_LEV` reader - BOR reset Level"]
+pub type BOR_LEV_R = crate::FieldReader<u8, BOR_LEV_A>;
 #[doc = "BOR reset Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -170,8 +172,6 @@ impl From<BOR_LEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BOR_LEV` reader - BOR reset Level"]
-pub type BOR_LEV_R = crate::FieldReader<u8, BOR_LEV_A>;
 impl BOR_LEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -240,156 +240,158 @@ impl<'a, const O: u8> BOR_LEV_W<'a, O> {
         self.variant(BOR_LEV_A::Level4)
     }
 }
+#[doc = "Field `nRST_STOP` reader - nRST_STOP"]
+pub type N_RST_STOP_R = crate::BitReader<N_RST_STOP_A>;
 #[doc = "nRST_STOP\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NRST_STOP_A {
+pub enum N_RST_STOP_A {
     #[doc = "0: Reset generated when entering the Standby mode"]
     Enabled = 0,
     #[doc = "1: No reset generated when entering the Standby mode"]
     Disabled = 1,
 }
-impl From<NRST_STOP_A> for bool {
+impl From<N_RST_STOP_A> for bool {
     #[inline(always)]
-    fn from(variant: NRST_STOP_A) -> Self {
+    fn from(variant: N_RST_STOP_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nRST_STOP` reader - nRST_STOP"]
-pub type NRST_STOP_R = crate::BitReader<NRST_STOP_A>;
-impl NRST_STOP_R {
+impl N_RST_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NRST_STOP_A {
+    pub fn variant(&self) -> N_RST_STOP_A {
         match self.bits {
-            false => NRST_STOP_A::Enabled,
-            true => NRST_STOP_A::Disabled,
+            false => N_RST_STOP_A::Enabled,
+            true => N_RST_STOP_A::Disabled,
         }
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == NRST_STOP_A::Enabled
+        *self == N_RST_STOP_A::Enabled
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == NRST_STOP_A::Disabled
+        *self == N_RST_STOP_A::Disabled
     }
 }
 #[doc = "Field `nRST_STOP` writer - nRST_STOP"]
-pub type NRST_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NRST_STOP_A, O>;
-impl<'a, const O: u8> NRST_STOP_W<'a, O> {
+pub type N_RST_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_RST_STOP_A, O>;
+impl<'a, const O: u8> N_RST_STOP_W<'a, O> {
     #[doc = "Reset generated when entering the Standby mode"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(NRST_STOP_A::Enabled)
+        self.variant(N_RST_STOP_A::Enabled)
     }
     #[doc = "No reset generated when entering the Standby mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(NRST_STOP_A::Disabled)
+        self.variant(N_RST_STOP_A::Disabled)
     }
 }
+#[doc = "Field `nRST_STDBY` reader - nRST_STDBY"]
+pub type N_RST_STDBY_R = crate::BitReader<N_RST_STDBY_A>;
 #[doc = "nRST_STDBY\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NRST_STDBY_A {
+pub enum N_RST_STDBY_A {
     #[doc = "0: Reset generated when entering the Standby mode"]
     Enabled = 0,
     #[doc = "1: No reset generated when entering the Standby mode"]
     Disabled = 1,
 }
-impl From<NRST_STDBY_A> for bool {
+impl From<N_RST_STDBY_A> for bool {
     #[inline(always)]
-    fn from(variant: NRST_STDBY_A) -> Self {
+    fn from(variant: N_RST_STDBY_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nRST_STDBY` reader - nRST_STDBY"]
-pub type NRST_STDBY_R = crate::BitReader<NRST_STDBY_A>;
-impl NRST_STDBY_R {
+impl N_RST_STDBY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NRST_STDBY_A {
+    pub fn variant(&self) -> N_RST_STDBY_A {
         match self.bits {
-            false => NRST_STDBY_A::Enabled,
-            true => NRST_STDBY_A::Disabled,
+            false => N_RST_STDBY_A::Enabled,
+            true => N_RST_STDBY_A::Disabled,
         }
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == NRST_STDBY_A::Enabled
+        *self == N_RST_STDBY_A::Enabled
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == NRST_STDBY_A::Disabled
+        *self == N_RST_STDBY_A::Disabled
     }
 }
 #[doc = "Field `nRST_STDBY` writer - nRST_STDBY"]
-pub type NRST_STDBY_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NRST_STDBY_A, O>;
-impl<'a, const O: u8> NRST_STDBY_W<'a, O> {
+pub type N_RST_STDBY_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_RST_STDBY_A, O>;
+impl<'a, const O: u8> N_RST_STDBY_W<'a, O> {
     #[doc = "Reset generated when entering the Standby mode"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(NRST_STDBY_A::Enabled)
+        self.variant(N_RST_STDBY_A::Enabled)
     }
     #[doc = "No reset generated when entering the Standby mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(NRST_STDBY_A::Disabled)
+        self.variant(N_RST_STDBY_A::Disabled)
     }
 }
+#[doc = "Field `nRST_SHDW` reader - nRSTSHDW"]
+pub type N_RST_SHDW_R = crate::BitReader<N_RST_SHDW_A>;
 #[doc = "nRSTSHDW\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NRST_SHDW_A {
+pub enum N_RST_SHDW_A {
     #[doc = "0: Reset generated when entering the Shutdown mode"]
     Enabled = 0,
     #[doc = "1: No reset generated when entering the Shutdown mode"]
     Disabled = 1,
 }
-impl From<NRST_SHDW_A> for bool {
+impl From<N_RST_SHDW_A> for bool {
     #[inline(always)]
-    fn from(variant: NRST_SHDW_A) -> Self {
+    fn from(variant: N_RST_SHDW_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nRST_SHDW` reader - nRSTSHDW"]
-pub type NRST_SHDW_R = crate::BitReader<NRST_SHDW_A>;
-impl NRST_SHDW_R {
+impl N_RST_SHDW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NRST_SHDW_A {
+    pub fn variant(&self) -> N_RST_SHDW_A {
         match self.bits {
-            false => NRST_SHDW_A::Enabled,
-            true => NRST_SHDW_A::Disabled,
+            false => N_RST_SHDW_A::Enabled,
+            true => N_RST_SHDW_A::Disabled,
         }
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == NRST_SHDW_A::Enabled
+        *self == N_RST_SHDW_A::Enabled
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == NRST_SHDW_A::Disabled
+        *self == N_RST_SHDW_A::Disabled
     }
 }
 #[doc = "Field `nRST_SHDW` writer - nRSTSHDW"]
-pub type NRST_SHDW_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NRST_SHDW_A, O>;
-impl<'a, const O: u8> NRST_SHDW_W<'a, O> {
+pub type N_RST_SHDW_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_RST_SHDW_A, O>;
+impl<'a, const O: u8> N_RST_SHDW_W<'a, O> {
     #[doc = "Reset generated when entering the Shutdown mode"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(NRST_SHDW_A::Enabled)
+        self.variant(N_RST_SHDW_A::Enabled)
     }
     #[doc = "No reset generated when entering the Shutdown mode"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(NRST_SHDW_A::Disabled)
+        self.variant(N_RST_SHDW_A::Disabled)
     }
 }
+#[doc = "Field `IWDG_SW` reader - Independent watchdog selection"]
+pub type IWDG_SW_R = crate::BitReader<IWDG_SW_A>;
 #[doc = "Independent watchdog selection\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IWDG_SW_A {
@@ -404,8 +406,6 @@ impl From<IWDG_SW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IWDG_SW` reader - Independent watchdog selection"]
-pub type IWDG_SW_R = crate::BitReader<IWDG_SW_A>;
 impl IWDG_SW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -440,6 +440,8 @@ impl<'a, const O: u8> IWDG_SW_W<'a, O> {
         self.variant(IWDG_SW_A::Software)
     }
 }
+#[doc = "Field `IWDG_STOP` reader - Independent watchdog counter freeze in Stop mode"]
+pub type IWDG_STOP_R = crate::BitReader<IWDG_STOP_A>;
 #[doc = "Independent watchdog counter freeze in Stop mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IWDG_STOP_A {
@@ -454,8 +456,6 @@ impl From<IWDG_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IWDG_STOP` reader - Independent watchdog counter freeze in Stop mode"]
-pub type IWDG_STOP_R = crate::BitReader<IWDG_STOP_A>;
 impl IWDG_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -490,6 +490,8 @@ impl<'a, const O: u8> IWDG_STOP_W<'a, O> {
         self.variant(IWDG_STOP_A::Running)
     }
 }
+#[doc = "Field `IWDG_STDBY` reader - Independent watchdog counter freeze in Standby mode"]
+pub type IWDG_STDBY_R = crate::BitReader<IWDG_STDBY_A>;
 #[doc = "Independent watchdog counter freeze in Standby mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IWDG_STDBY_A {
@@ -504,8 +506,6 @@ impl From<IWDG_STDBY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IWDG_STDBY` reader - Independent watchdog counter freeze in Standby mode"]
-pub type IWDG_STDBY_R = crate::BitReader<IWDG_STDBY_A>;
 impl IWDG_STDBY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -540,6 +540,8 @@ impl<'a, const O: u8> IWDG_STDBY_W<'a, O> {
         self.variant(IWDG_STDBY_A::Running)
     }
 }
+#[doc = "Field `WWDG_SW` reader - Window watchdog selection"]
+pub type WWDG_SW_R = crate::BitReader<WWDG_SW_A>;
 #[doc = "Window watchdog selection\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WWDG_SW_A {
@@ -554,8 +556,6 @@ impl From<WWDG_SW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WWDG_SW` reader - Window watchdog selection"]
-pub type WWDG_SW_R = crate::BitReader<WWDG_SW_A>;
 impl WWDG_SW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -590,56 +590,58 @@ impl<'a, const O: u8> WWDG_SW_W<'a, O> {
         self.variant(WWDG_SW_A::Software)
     }
 }
+#[doc = "Field `nBOOT1` reader - Boot configuration"]
+pub type N_BOOT1_R = crate::BitReader<N_BOOT1_A>;
 #[doc = "Boot configuration\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NBOOT1_A {
+pub enum N_BOOT1_A {
     #[doc = "0: When nSWBOOT0 is cleared, select boot mode together with nBOOT0"]
     Clear = 0,
     #[doc = "1: When nSWBOOT0 is cleared, select boot mode together with nBOOT0"]
     Set = 1,
 }
-impl From<NBOOT1_A> for bool {
+impl From<N_BOOT1_A> for bool {
     #[inline(always)]
-    fn from(variant: NBOOT1_A) -> Self {
+    fn from(variant: N_BOOT1_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nBOOT1` reader - Boot configuration"]
-pub type NBOOT1_R = crate::BitReader<NBOOT1_A>;
-impl NBOOT1_R {
+impl N_BOOT1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NBOOT1_A {
+    pub fn variant(&self) -> N_BOOT1_A {
         match self.bits {
-            false => NBOOT1_A::Clear,
-            true => NBOOT1_A::Set,
+            false => N_BOOT1_A::Clear,
+            true => N_BOOT1_A::Set,
         }
     }
     #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == NBOOT1_A::Clear
+        *self == N_BOOT1_A::Clear
     }
     #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == NBOOT1_A::Set
+        *self == N_BOOT1_A::Set
     }
 }
 #[doc = "Field `nBOOT1` writer - Boot configuration"]
-pub type NBOOT1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NBOOT1_A, O>;
-impl<'a, const O: u8> NBOOT1_W<'a, O> {
+pub type N_BOOT1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_BOOT1_A, O>;
+impl<'a, const O: u8> N_BOOT1_W<'a, O> {
     #[doc = "When nSWBOOT0 is cleared, select boot mode together with nBOOT0"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(NBOOT1_A::Clear)
+        self.variant(N_BOOT1_A::Clear)
     }
     #[doc = "When nSWBOOT0 is cleared, select boot mode together with nBOOT0"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(NBOOT1_A::Set)
+        self.variant(N_BOOT1_A::Set)
     }
 }
+#[doc = "Field `SRAM2_PE` reader - SRAM2 parity check enable"]
+pub type SRAM2_PE_R = crate::BitReader<SRAM2_PE_A>;
 #[doc = "SRAM2 parity check enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM2_PE_A {
@@ -654,8 +656,6 @@ impl From<SRAM2_PE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRAM2_PE` reader - SRAM2 parity check enable"]
-pub type SRAM2_PE_R = crate::BitReader<SRAM2_PE_A>;
 impl SRAM2_PE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -690,6 +690,8 @@ impl<'a, const O: u8> SRAM2_PE_W<'a, O> {
         self.variant(SRAM2_PE_A::Disabled)
     }
 }
+#[doc = "Field `SRAM_RST` reader - SRAM2 Erase when system reset"]
+pub type SRAM_RST_R = crate::BitReader<SRAM_RST_A>;
 #[doc = "SRAM2 Erase when system reset\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_RST_A {
@@ -704,8 +706,6 @@ impl From<SRAM_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRAM_RST` reader - SRAM2 Erase when system reset"]
-pub type SRAM_RST_R = crate::BitReader<SRAM_RST_A>;
 impl SRAM_RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -740,106 +740,108 @@ impl<'a, const O: u8> SRAM_RST_W<'a, O> {
         self.variant(SRAM_RST_A::NotReset)
     }
 }
+#[doc = "Field `nSWBOOT0` reader - Software BOOT0 selection"]
+pub type N_SWBOOT0_R = crate::BitReader<N_SWBOOT0_A>;
 #[doc = "Software BOOT0 selection\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NSWBOOT0_A {
+pub enum N_SWBOOT0_A {
     #[doc = "0: BOOT0 taken from nBOOT0 in this register"]
     Bit = 0,
     #[doc = "1: BOOT0 taken from GPIO PH3/BOOT0"]
     Pin = 1,
 }
-impl From<NSWBOOT0_A> for bool {
+impl From<N_SWBOOT0_A> for bool {
     #[inline(always)]
-    fn from(variant: NSWBOOT0_A) -> Self {
+    fn from(variant: N_SWBOOT0_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nSWBOOT0` reader - Software BOOT0 selection"]
-pub type NSWBOOT0_R = crate::BitReader<NSWBOOT0_A>;
-impl NSWBOOT0_R {
+impl N_SWBOOT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NSWBOOT0_A {
+    pub fn variant(&self) -> N_SWBOOT0_A {
         match self.bits {
-            false => NSWBOOT0_A::Bit,
-            true => NSWBOOT0_A::Pin,
+            false => N_SWBOOT0_A::Bit,
+            true => N_SWBOOT0_A::Pin,
         }
     }
     #[doc = "Checks if the value of the field is `Bit`"]
     #[inline(always)]
     pub fn is_bit_(&self) -> bool {
-        *self == NSWBOOT0_A::Bit
+        *self == N_SWBOOT0_A::Bit
     }
     #[doc = "Checks if the value of the field is `Pin`"]
     #[inline(always)]
     pub fn is_pin(&self) -> bool {
-        *self == NSWBOOT0_A::Pin
+        *self == N_SWBOOT0_A::Pin
     }
 }
 #[doc = "Field `nSWBOOT0` writer - Software BOOT0 selection"]
-pub type NSWBOOT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NSWBOOT0_A, O>;
-impl<'a, const O: u8> NSWBOOT0_W<'a, O> {
+pub type N_SWBOOT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_SWBOOT0_A, O>;
+impl<'a, const O: u8> N_SWBOOT0_W<'a, O> {
     #[doc = "BOOT0 taken from nBOOT0 in this register"]
     #[inline(always)]
     pub fn bit_(self) -> &'a mut W {
-        self.variant(NSWBOOT0_A::Bit)
+        self.variant(N_SWBOOT0_A::Bit)
     }
     #[doc = "BOOT0 taken from GPIO PH3/BOOT0"]
     #[inline(always)]
     pub fn pin(self) -> &'a mut W {
-        self.variant(NSWBOOT0_A::Pin)
+        self.variant(N_SWBOOT0_A::Pin)
     }
 }
+#[doc = "Field `nBOOT0` reader - nBOOT0 option bit"]
+pub type N_BOOT0_R = crate::BitReader<N_BOOT0_A>;
 #[doc = "nBOOT0 option bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NBOOT0_A {
+pub enum N_BOOT0_A {
     #[doc = "0: When nSWBOOT0 is cleared, select boot mode together with nBOOT1"]
     Clear = 0,
     #[doc = "1: When nSWBOOT0 is cleared, select boot mode together with nBOOT1"]
     Set = 1,
 }
-impl From<NBOOT0_A> for bool {
+impl From<N_BOOT0_A> for bool {
     #[inline(always)]
-    fn from(variant: NBOOT0_A) -> Self {
+    fn from(variant: N_BOOT0_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `nBOOT0` reader - nBOOT0 option bit"]
-pub type NBOOT0_R = crate::BitReader<NBOOT0_A>;
-impl NBOOT0_R {
+impl N_BOOT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NBOOT0_A {
+    pub fn variant(&self) -> N_BOOT0_A {
         match self.bits {
-            false => NBOOT0_A::Clear,
-            true => NBOOT0_A::Set,
+            false => N_BOOT0_A::Clear,
+            true => N_BOOT0_A::Set,
         }
     }
     #[doc = "Checks if the value of the field is `Clear`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == NBOOT0_A::Clear
+        *self == N_BOOT0_A::Clear
     }
     #[doc = "Checks if the value of the field is `Set`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == NBOOT0_A::Set
+        *self == N_BOOT0_A::Set
     }
 }
 #[doc = "Field `nBOOT0` writer - nBOOT0 option bit"]
-pub type NBOOT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, NBOOT0_A, O>;
-impl<'a, const O: u8> NBOOT0_W<'a, O> {
+pub type N_BOOT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPTR_SPEC, N_BOOT0_A, O>;
+impl<'a, const O: u8> N_BOOT0_W<'a, O> {
     #[doc = "When nSWBOOT0 is cleared, select boot mode together with nBOOT1"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(NBOOT0_A::Clear)
+        self.variant(N_BOOT0_A::Clear)
     }
     #[doc = "When nSWBOOT0 is cleared, select boot mode together with nBOOT1"]
     #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(NBOOT0_A::Set)
+        self.variant(N_BOOT0_A::Set)
     }
 }
+#[doc = "Field `BOOT_LOCK` reader - CPU1 CM4 Unique Boot entry enable option bit"]
+pub type BOOT_LOCK_R = crate::BitReader<BOOT_LOCK_A>;
 #[doc = "CPU1 CM4 Unique Boot entry enable option bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOOT_LOCK_A {
@@ -854,8 +856,6 @@ impl From<BOOT_LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BOOT_LOCK` reader - CPU1 CM4 Unique Boot entry enable option bit"]
-pub type BOOT_LOCK_R = crate::BitReader<BOOT_LOCK_A>;
 impl BOOT_LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -908,18 +908,18 @@ impl R {
     }
     #[doc = "Bit 12 - nRST_STOP"]
     #[inline(always)]
-    pub fn n_rst_stop(&self) -> NRST_STOP_R {
-        NRST_STOP_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn n_rst_stop(&self) -> N_RST_STOP_R {
+        N_RST_STOP_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - nRST_STDBY"]
     #[inline(always)]
-    pub fn n_rst_stdby(&self) -> NRST_STDBY_R {
-        NRST_STDBY_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn n_rst_stdby(&self) -> N_RST_STDBY_R {
+        N_RST_STDBY_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - nRSTSHDW"]
     #[inline(always)]
-    pub fn n_rst_shdw(&self) -> NRST_SHDW_R {
-        NRST_SHDW_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn n_rst_shdw(&self) -> N_RST_SHDW_R {
+        N_RST_SHDW_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Independent watchdog selection"]
     #[inline(always)]
@@ -943,8 +943,8 @@ impl R {
     }
     #[doc = "Bit 23 - Boot configuration"]
     #[inline(always)]
-    pub fn n_boot1(&self) -> NBOOT1_R {
-        NBOOT1_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn n_boot1(&self) -> N_BOOT1_R {
+        N_BOOT1_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - SRAM2 parity check enable"]
     #[inline(always)]
@@ -958,13 +958,13 @@ impl R {
     }
     #[doc = "Bit 26 - Software BOOT0 selection"]
     #[inline(always)]
-    pub fn n_swboot0(&self) -> NSWBOOT0_R {
-        NSWBOOT0_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn n_swboot0(&self) -> N_SWBOOT0_R {
+        N_SWBOOT0_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - nBOOT0 option bit"]
     #[inline(always)]
-    pub fn n_boot0(&self) -> NBOOT0_R {
-        NBOOT0_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn n_boot0(&self) -> N_BOOT0_R {
+        N_BOOT0_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 30 - CPU1 CM4 Unique Boot entry enable option bit"]
     #[inline(always)]
@@ -990,18 +990,18 @@ impl W {
     }
     #[doc = "Bit 12 - nRST_STOP"]
     #[inline(always)]
-    pub fn n_rst_stop(&mut self) -> NRST_STOP_W<12> {
-        NRST_STOP_W::new(self)
+    pub fn n_rst_stop(&mut self) -> N_RST_STOP_W<12> {
+        N_RST_STOP_W::new(self)
     }
     #[doc = "Bit 13 - nRST_STDBY"]
     #[inline(always)]
-    pub fn n_rst_stdby(&mut self) -> NRST_STDBY_W<13> {
-        NRST_STDBY_W::new(self)
+    pub fn n_rst_stdby(&mut self) -> N_RST_STDBY_W<13> {
+        N_RST_STDBY_W::new(self)
     }
     #[doc = "Bit 14 - nRSTSHDW"]
     #[inline(always)]
-    pub fn n_rst_shdw(&mut self) -> NRST_SHDW_W<14> {
-        NRST_SHDW_W::new(self)
+    pub fn n_rst_shdw(&mut self) -> N_RST_SHDW_W<14> {
+        N_RST_SHDW_W::new(self)
     }
     #[doc = "Bit 16 - Independent watchdog selection"]
     #[inline(always)]
@@ -1025,8 +1025,8 @@ impl W {
     }
     #[doc = "Bit 23 - Boot configuration"]
     #[inline(always)]
-    pub fn n_boot1(&mut self) -> NBOOT1_W<23> {
-        NBOOT1_W::new(self)
+    pub fn n_boot1(&mut self) -> N_BOOT1_W<23> {
+        N_BOOT1_W::new(self)
     }
     #[doc = "Bit 24 - SRAM2 parity check enable"]
     #[inline(always)]
@@ -1040,13 +1040,13 @@ impl W {
     }
     #[doc = "Bit 26 - Software BOOT0 selection"]
     #[inline(always)]
-    pub fn n_swboot0(&mut self) -> NSWBOOT0_W<26> {
-        NSWBOOT0_W::new(self)
+    pub fn n_swboot0(&mut self) -> N_SWBOOT0_W<26> {
+        N_SWBOOT0_W::new(self)
     }
     #[doc = "Bit 27 - nBOOT0 option bit"]
     #[inline(always)]
-    pub fn n_boot0(&mut self) -> NBOOT0_W<27> {
-        NBOOT0_W::new(self)
+    pub fn n_boot0(&mut self) -> N_BOOT0_W<27> {
+        N_BOOT0_W::new(self)
     }
     #[doc = "Bit 30 - CPU1 CM4 Unique Boot entry enable option bit"]
     #[inline(always)]

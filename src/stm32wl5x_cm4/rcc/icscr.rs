@@ -34,50 +34,50 @@ impl From<crate::W<ICSCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `HSITRIM` reader - HSI16 clock trimming"]
-pub type HSITRIM_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `HSITRIM` writer - HSI16 clock trimming"]
-pub type HSITRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICSCR_SPEC, u8, u8, 7, O>;
-#[doc = "Field `HSICAL` reader - HSI16 clock calibration"]
-pub type HSICAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `MSICAL` reader - MSI clock calibration"]
+pub type MSICAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MSITRIM` reader - MSI clock trimming"]
 pub type MSITRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MSITRIM` writer - MSI clock trimming"]
 pub type MSITRIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ICSCR_SPEC, u8, u8, 8, O>;
-#[doc = "Field `MSICAL` reader - MSI clock calibration"]
-pub type MSICAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HSICAL` reader - HSI16 clock calibration"]
+pub type HSICAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HSITRIM` reader - HSI16 clock trimming"]
+pub type HSITRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HSITRIM` writer - HSI16 clock trimming"]
+pub type HSITRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ICSCR_SPEC, u8, u8, 7, O>;
 impl R {
-    #[doc = "Bits 24:30 - HSI16 clock trimming"]
+    #[doc = "Bits 0:7 - MSI clock calibration"]
     #[inline(always)]
-    pub fn hsitrim(&self) -> HSITRIM_R {
-        HSITRIM_R::new(((self.bits >> 24) & 0x7f) as u8)
-    }
-    #[doc = "Bits 16:23 - HSI16 clock calibration"]
-    #[inline(always)]
-    pub fn hsical(&self) -> HSICAL_R {
-        HSICAL_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn msical(&self) -> MSICAL_R {
+        MSICAL_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - MSI clock trimming"]
     #[inline(always)]
     pub fn msitrim(&self) -> MSITRIM_R {
         MSITRIM_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 0:7 - MSI clock calibration"]
+    #[doc = "Bits 16:23 - HSI16 clock calibration"]
     #[inline(always)]
-    pub fn msical(&self) -> MSICAL_R {
-        MSICAL_R::new((self.bits & 0xff) as u8)
+    pub fn hsical(&self) -> HSICAL_R {
+        HSICAL_R::new(((self.bits >> 16) & 0xff) as u8)
+    }
+    #[doc = "Bits 24:30 - HSI16 clock trimming"]
+    #[inline(always)]
+    pub fn hsitrim(&self) -> HSITRIM_R {
+        HSITRIM_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 24:30 - HSI16 clock trimming"]
-    #[inline(always)]
-    pub fn hsitrim(&mut self) -> HSITRIM_W<24> {
-        HSITRIM_W::new(self)
-    }
     #[doc = "Bits 8:15 - MSI clock trimming"]
     #[inline(always)]
     pub fn msitrim(&mut self) -> MSITRIM_W<8> {
         MSITRIM_W::new(self)
+    }
+    #[doc = "Bits 24:30 - HSI16 clock trimming"]
+    #[inline(always)]
+    pub fn hsitrim(&mut self) -> HSITRIM_W<24> {
+        HSITRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

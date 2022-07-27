@@ -14,12 +14,12 @@ impl From<crate::R<TXCRCR_SPEC>> for R {
     }
 }
 #[doc = "Field `TxCRC` reader - Tx CRC register"]
-pub type TXCRC_R = crate::FieldReader<u16, u16>;
+pub type TX_CRC_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Tx CRC register"]
     #[inline(always)]
-    pub fn tx_crc(&self) -> TXCRC_R {
-        TXCRC_R::new((self.bits & 0xffff) as u16)
+    pub fn tx_crc(&self) -> TX_CRC_R {
+        TX_CRC_R::new((self.bits & 0xffff) as u16)
     }
 }
 #[doc = "TX CRC register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [txcrcr](index.html) module"]

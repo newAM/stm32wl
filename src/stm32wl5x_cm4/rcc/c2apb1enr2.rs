@@ -34,18 +34,8 @@ impl From<crate::W<C2APB1ENR2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU2 Low power timer 3 clocks enable"]
-pub use LPUART1EN_A as LPTIM3EN_A;
-#[doc = "CPU2 Low power timer 2 clocks enable"]
-pub use LPUART1EN_A as LPTIM2EN_A;
-#[doc = "Field `LPTIM3EN` reader - CPU2 Low power timer 3 clocks enable"]
-pub use LPUART1EN_R as LPTIM3EN_R;
-#[doc = "Field `LPTIM2EN` reader - CPU2 Low power timer 2 clocks enable"]
-pub use LPUART1EN_R as LPTIM2EN_R;
-#[doc = "Field `LPTIM3EN` writer - CPU2 Low power timer 3 clocks enable"]
-pub use LPUART1EN_W as LPTIM3EN_W;
-#[doc = "Field `LPTIM2EN` writer - CPU2 Low power timer 2 clocks enable"]
-pub use LPUART1EN_W as LPTIM2EN_W;
+#[doc = "Field `LPUART1EN` reader - CPU2 Low power UART 1 clocks enable"]
+pub type LPUART1EN_R = crate::BitReader<LPUART1EN_A>;
 #[doc = "CPU2 Low power UART 1 clocks enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPUART1EN_A {
@@ -60,8 +50,6 @@ impl From<LPUART1EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LPUART1EN` reader - CPU2 Low power UART 1 clocks enable"]
-pub type LPUART1EN_R = crate::BitReader<LPUART1EN_A>;
 impl LPUART1EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -96,38 +84,46 @@ impl<'a, const O: u8> LPUART1EN_W<'a, O> {
         self.variant(LPUART1EN_A::Enabled)
     }
 }
+#[doc = "Field `LPTIM2EN` reader - CPU2 Low power timer 2 clocks enable"]
+pub use LPUART1EN_R as LPTIM2EN_R;
+#[doc = "Field `LPTIM3EN` reader - CPU2 Low power timer 3 clocks enable"]
+pub use LPUART1EN_R as LPTIM3EN_R;
+#[doc = "Field `LPTIM2EN` writer - CPU2 Low power timer 2 clocks enable"]
+pub use LPUART1EN_W as LPTIM2EN_W;
+#[doc = "Field `LPTIM3EN` writer - CPU2 Low power timer 3 clocks enable"]
+pub use LPUART1EN_W as LPTIM3EN_W;
 impl R {
-    #[doc = "Bit 6 - CPU2 Low power timer 3 clocks enable"]
+    #[doc = "Bit 0 - CPU2 Low power UART 1 clocks enable"]
     #[inline(always)]
-    pub fn lptim3en(&self) -> LPTIM3EN_R {
-        LPTIM3EN_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn lpuart1en(&self) -> LPUART1EN_R {
+        LPUART1EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 5 - CPU2 Low power timer 2 clocks enable"]
     #[inline(always)]
     pub fn lptim2en(&self) -> LPTIM2EN_R {
         LPTIM2EN_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 0 - CPU2 Low power UART 1 clocks enable"]
+    #[doc = "Bit 6 - CPU2 Low power timer 3 clocks enable"]
     #[inline(always)]
-    pub fn lpuart1en(&self) -> LPUART1EN_R {
-        LPUART1EN_R::new((self.bits & 1) != 0)
+    pub fn lptim3en(&self) -> LPTIM3EN_R {
+        LPTIM3EN_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 6 - CPU2 Low power timer 3 clocks enable"]
+    #[doc = "Bit 0 - CPU2 Low power UART 1 clocks enable"]
     #[inline(always)]
-    pub fn lptim3en(&mut self) -> LPTIM3EN_W<6> {
-        LPTIM3EN_W::new(self)
+    pub fn lpuart1en(&mut self) -> LPUART1EN_W<0> {
+        LPUART1EN_W::new(self)
     }
     #[doc = "Bit 5 - CPU2 Low power timer 2 clocks enable"]
     #[inline(always)]
     pub fn lptim2en(&mut self) -> LPTIM2EN_W<5> {
         LPTIM2EN_W::new(self)
     }
-    #[doc = "Bit 0 - CPU2 Low power UART 1 clocks enable"]
+    #[doc = "Bit 6 - CPU2 Low power timer 3 clocks enable"]
     #[inline(always)]
-    pub fn lpuart1en(&mut self) -> LPUART1EN_W<0> {
-        LPUART1EN_W::new(self)
+    pub fn lptim3en(&mut self) -> LPTIM3EN_W<6> {
+        LPTIM3EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

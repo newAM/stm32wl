@@ -34,36 +34,8 @@ impl From<crate::W<AHB3ENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU1 Flash interface clock enable"]
-pub use PKAEN_A as FLASHEN_A;
-#[doc = "IPCCEN"]
-pub use PKAEN_A as IPCCEN_A;
-#[doc = "HSEMEN"]
-pub use PKAEN_A as HSEMEN_A;
-#[doc = "RNGEN"]
-pub use PKAEN_A as RNGEN_A;
-#[doc = "AESEN"]
-pub use PKAEN_A as AESEN_A;
-#[doc = "Field `FLASHEN` reader - CPU1 Flash interface clock enable"]
-pub use PKAEN_R as FLASHEN_R;
-#[doc = "Field `IPCCEN` reader - IPCCEN"]
-pub use PKAEN_R as IPCCEN_R;
-#[doc = "Field `HSEMEN` reader - HSEMEN"]
-pub use PKAEN_R as HSEMEN_R;
-#[doc = "Field `RNGEN` reader - RNGEN"]
-pub use PKAEN_R as RNGEN_R;
-#[doc = "Field `AESEN` reader - AESEN"]
-pub use PKAEN_R as AESEN_R;
-#[doc = "Field `FLASHEN` writer - CPU1 Flash interface clock enable"]
-pub use PKAEN_W as FLASHEN_W;
-#[doc = "Field `IPCCEN` writer - IPCCEN"]
-pub use PKAEN_W as IPCCEN_W;
-#[doc = "Field `HSEMEN` writer - HSEMEN"]
-pub use PKAEN_W as HSEMEN_W;
-#[doc = "Field `RNGEN` writer - RNGEN"]
-pub use PKAEN_W as RNGEN_W;
-#[doc = "Field `AESEN` writer - AESEN"]
-pub use PKAEN_W as AESEN_W;
+#[doc = "Field `PKAEN` reader - PKAEN"]
+pub type PKAEN_R = crate::BitReader<PKAEN_A>;
 #[doc = "PKAEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PKAEN_A {
@@ -78,8 +50,6 @@ impl From<PKAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PKAEN` reader - PKAEN"]
-pub type PKAEN_R = crate::BitReader<PKAEN_A>;
 impl PKAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -114,68 +84,88 @@ impl<'a, const O: u8> PKAEN_W<'a, O> {
         self.variant(PKAEN_A::Enabled)
     }
 }
+#[doc = "Field `AESEN` reader - AESEN"]
+pub use PKAEN_R as AESEN_R;
+#[doc = "Field `RNGEN` reader - RNGEN"]
+pub use PKAEN_R as RNGEN_R;
+#[doc = "Field `HSEMEN` reader - HSEMEN"]
+pub use PKAEN_R as HSEMEN_R;
+#[doc = "Field `IPCCEN` reader - IPCCEN"]
+pub use PKAEN_R as IPCCEN_R;
+#[doc = "Field `FLASHEN` reader - CPU1 Flash interface clock enable"]
+pub use PKAEN_R as FLASHEN_R;
+#[doc = "Field `AESEN` writer - AESEN"]
+pub use PKAEN_W as AESEN_W;
+#[doc = "Field `RNGEN` writer - RNGEN"]
+pub use PKAEN_W as RNGEN_W;
+#[doc = "Field `HSEMEN` writer - HSEMEN"]
+pub use PKAEN_W as HSEMEN_W;
+#[doc = "Field `IPCCEN` writer - IPCCEN"]
+pub use PKAEN_W as IPCCEN_W;
+#[doc = "Field `FLASHEN` writer - CPU1 Flash interface clock enable"]
+pub use PKAEN_W as FLASHEN_W;
 impl R {
-    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
+    #[doc = "Bit 16 - PKAEN"]
     #[inline(always)]
-    pub fn flashen(&self) -> FLASHEN_R {
-        FLASHEN_R::new(((self.bits >> 25) & 1) != 0)
-    }
-    #[doc = "Bit 20 - IPCCEN"]
-    #[inline(always)]
-    pub fn ipccen(&self) -> IPCCEN_R {
-        IPCCEN_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 19 - HSEMEN"]
-    #[inline(always)]
-    pub fn hsemen(&self) -> HSEMEN_R {
-        HSEMEN_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 18 - RNGEN"]
-    #[inline(always)]
-    pub fn rngen(&self) -> RNGEN_R {
-        RNGEN_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn pkaen(&self) -> PKAEN_R {
+        PKAEN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - AESEN"]
     #[inline(always)]
     pub fn aesen(&self) -> AESEN_R {
         AESEN_R::new(((self.bits >> 17) & 1) != 0)
     }
-    #[doc = "Bit 16 - PKAEN"]
+    #[doc = "Bit 18 - RNGEN"]
     #[inline(always)]
-    pub fn pkaen(&self) -> PKAEN_R {
-        PKAEN_R::new(((self.bits >> 16) & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
-    #[inline(always)]
-    pub fn flashen(&mut self) -> FLASHEN_W<25> {
-        FLASHEN_W::new(self)
-    }
-    #[doc = "Bit 20 - IPCCEN"]
-    #[inline(always)]
-    pub fn ipccen(&mut self) -> IPCCEN_W<20> {
-        IPCCEN_W::new(self)
+    pub fn rngen(&self) -> RNGEN_R {
+        RNGEN_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - HSEMEN"]
     #[inline(always)]
-    pub fn hsemen(&mut self) -> HSEMEN_W<19> {
-        HSEMEN_W::new(self)
+    pub fn hsemen(&self) -> HSEMEN_R {
+        HSEMEN_R::new(((self.bits >> 19) & 1) != 0)
     }
-    #[doc = "Bit 18 - RNGEN"]
+    #[doc = "Bit 20 - IPCCEN"]
     #[inline(always)]
-    pub fn rngen(&mut self) -> RNGEN_W<18> {
-        RNGEN_W::new(self)
+    pub fn ipccen(&self) -> IPCCEN_R {
+        IPCCEN_R::new(((self.bits >> 20) & 1) != 0)
+    }
+    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
+    #[inline(always)]
+    pub fn flashen(&self) -> FLASHEN_R {
+        FLASHEN_R::new(((self.bits >> 25) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 16 - PKAEN"]
+    #[inline(always)]
+    pub fn pkaen(&mut self) -> PKAEN_W<16> {
+        PKAEN_W::new(self)
     }
     #[doc = "Bit 17 - AESEN"]
     #[inline(always)]
     pub fn aesen(&mut self) -> AESEN_W<17> {
         AESEN_W::new(self)
     }
-    #[doc = "Bit 16 - PKAEN"]
+    #[doc = "Bit 18 - RNGEN"]
     #[inline(always)]
-    pub fn pkaen(&mut self) -> PKAEN_W<16> {
-        PKAEN_W::new(self)
+    pub fn rngen(&mut self) -> RNGEN_W<18> {
+        RNGEN_W::new(self)
+    }
+    #[doc = "Bit 19 - HSEMEN"]
+    #[inline(always)]
+    pub fn hsemen(&mut self) -> HSEMEN_W<19> {
+        HSEMEN_W::new(self)
+    }
+    #[doc = "Bit 20 - IPCCEN"]
+    #[inline(always)]
+    pub fn ipccen(&mut self) -> IPCCEN_W<20> {
+        IPCCEN_W::new(self)
+    }
+    #[doc = "Bit 25 - CPU1 Flash interface clock enable"]
+    #[inline(always)]
+    pub fn flashen(&mut self) -> FLASHEN_W<25> {
+        FLASHEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

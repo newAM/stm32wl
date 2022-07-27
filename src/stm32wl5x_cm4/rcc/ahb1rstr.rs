@@ -34,24 +34,8 @@ impl From<crate::W<AHB1RSTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CRC reset"]
-pub use DMA1RST_A as CRCRST_A;
-#[doc = "DMAMUX1 reset"]
-pub use DMA1RST_A as DMAMUX1RST_A;
-#[doc = "DMA2 reset"]
-pub use DMA1RST_A as DMA2RST_A;
-#[doc = "Field `CRCRST` reader - CRC reset"]
-pub use DMA1RST_R as CRCRST_R;
-#[doc = "Field `DMAMUX1RST` reader - DMAMUX1 reset"]
-pub use DMA1RST_R as DMAMUX1RST_R;
-#[doc = "Field `DMA2RST` reader - DMA2 reset"]
-pub use DMA1RST_R as DMA2RST_R;
-#[doc = "Field `CRCRST` writer - CRC reset"]
-pub use DMA1RST_W as CRCRST_W;
-#[doc = "Field `DMAMUX1RST` writer - DMAMUX1 reset"]
-pub use DMA1RST_W as DMAMUX1RST_W;
-#[doc = "Field `DMA2RST` writer - DMA2 reset"]
-pub use DMA1RST_W as DMA2RST_W;
+#[doc = "Field `DMA1RST` reader - DMA1 reset"]
+pub type DMA1RST_R = crate::BitReader<DMA1RST_A>;
 #[doc = "DMA1 reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA1RST_A {
@@ -66,8 +50,6 @@ impl From<DMA1RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA1RST` reader - DMA1 reset"]
-pub type DMA1RST_R = crate::BitReader<DMA1RST_A>;
 impl DMA1RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -102,48 +84,60 @@ impl<'a, const O: u8> DMA1RST_W<'a, O> {
         self.variant(DMA1RST_A::Reset)
     }
 }
+#[doc = "Field `DMA2RST` reader - DMA2 reset"]
+pub use DMA1RST_R as DMA2RST_R;
+#[doc = "Field `DMAMUX1RST` reader - DMAMUX1 reset"]
+pub use DMA1RST_R as DMAMUX1RST_R;
+#[doc = "Field `CRCRST` reader - CRC reset"]
+pub use DMA1RST_R as CRCRST_R;
+#[doc = "Field `DMA2RST` writer - DMA2 reset"]
+pub use DMA1RST_W as DMA2RST_W;
+#[doc = "Field `DMAMUX1RST` writer - DMAMUX1 reset"]
+pub use DMA1RST_W as DMAMUX1RST_W;
+#[doc = "Field `CRCRST` writer - CRC reset"]
+pub use DMA1RST_W as CRCRST_W;
 impl R {
-    #[doc = "Bit 12 - CRC reset"]
+    #[doc = "Bit 0 - DMA1 reset"]
     #[inline(always)]
-    pub fn crcrst(&self) -> CRCRST_R {
-        CRCRST_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 2 - DMAMUX1 reset"]
-    #[inline(always)]
-    pub fn dmamux1rst(&self) -> DMAMUX1RST_R {
-        DMAMUX1RST_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dma1rst(&self) -> DMA1RST_R {
+        DMA1RST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DMA2 reset"]
     #[inline(always)]
     pub fn dma2rst(&self) -> DMA2RST_R {
         DMA2RST_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - DMA1 reset"]
+    #[doc = "Bit 2 - DMAMUX1 reset"]
     #[inline(always)]
-    pub fn dma1rst(&self) -> DMA1RST_R {
-        DMA1RST_R::new((self.bits & 1) != 0)
+    pub fn dmamux1rst(&self) -> DMAMUX1RST_R {
+        DMAMUX1RST_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 12 - CRC reset"]
+    #[inline(always)]
+    pub fn crcrst(&self) -> CRCRST_R {
+        CRCRST_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 12 - CRC reset"]
+    #[doc = "Bit 0 - DMA1 reset"]
     #[inline(always)]
-    pub fn crcrst(&mut self) -> CRCRST_W<12> {
-        CRCRST_W::new(self)
-    }
-    #[doc = "Bit 2 - DMAMUX1 reset"]
-    #[inline(always)]
-    pub fn dmamux1rst(&mut self) -> DMAMUX1RST_W<2> {
-        DMAMUX1RST_W::new(self)
+    pub fn dma1rst(&mut self) -> DMA1RST_W<0> {
+        DMA1RST_W::new(self)
     }
     #[doc = "Bit 1 - DMA2 reset"]
     #[inline(always)]
     pub fn dma2rst(&mut self) -> DMA2RST_W<1> {
         DMA2RST_W::new(self)
     }
-    #[doc = "Bit 0 - DMA1 reset"]
+    #[doc = "Bit 2 - DMAMUX1 reset"]
     #[inline(always)]
-    pub fn dma1rst(&mut self) -> DMA1RST_W<0> {
-        DMA1RST_W::new(self)
+    pub fn dmamux1rst(&mut self) -> DMAMUX1RST_W<2> {
+        DMAMUX1RST_W::new(self)
+    }
+    #[doc = "Bit 12 - CRC reset"]
+    #[inline(always)]
+    pub fn crcrst(&mut self) -> CRCRST_W<12> {
+        CRCRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

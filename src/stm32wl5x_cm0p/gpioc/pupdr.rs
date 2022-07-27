@@ -34,60 +34,8 @@ impl From<crate::W<PUPDR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR15_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR14_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR13_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR6_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR5_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR4_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR3_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR2_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_A as PUPDR1_A;
-#[doc = "Field `PUPDR15` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR15_R;
-#[doc = "Field `PUPDR14` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR14_R;
-#[doc = "Field `PUPDR13` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR13_R;
-#[doc = "Field `PUPDR6` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR6_R;
-#[doc = "Field `PUPDR5` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR5_R;
-#[doc = "Field `PUPDR4` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR4_R;
-#[doc = "Field `PUPDR3` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR3_R;
-#[doc = "Field `PUPDR2` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR2_R;
-#[doc = "Field `PUPDR1` reader - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_R as PUPDR1_R;
-#[doc = "Field `PUPDR15` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR15_W;
-#[doc = "Field `PUPDR14` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR14_W;
-#[doc = "Field `PUPDR13` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR13_W;
-#[doc = "Field `PUPDR6` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR6_W;
-#[doc = "Field `PUPDR5` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR5_W;
-#[doc = "Field `PUPDR4` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR4_W;
-#[doc = "Field `PUPDR3` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR3_W;
-#[doc = "Field `PUPDR2` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR2_W;
-#[doc = "Field `PUPDR1` writer - Port x configuration bits (y = 0..15)"]
-pub use PUPDR0_W as PUPDR1_W;
+#[doc = "Field `PUPDR0` reader - Port x configuration bits (y = 0..15)"]
+pub type PUPDR0_R = crate::FieldReader<u8, PUPDR0_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -105,8 +53,6 @@ impl From<PUPDR0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PUPDR0` reader - Port x configuration bits (y = 0..15)"]
-pub type PUPDR0_R = crate::FieldReader<u8, PUPDR0_A>;
 impl PUPDR0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -153,108 +99,144 @@ impl<'a, const O: u8> PUPDR0_W<'a, O> {
         self.variant(PUPDR0_A::PullDown)
     }
 }
+#[doc = "Field `PUPDR1` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR1_R;
+#[doc = "Field `PUPDR2` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR2_R;
+#[doc = "Field `PUPDR3` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR3_R;
+#[doc = "Field `PUPDR4` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR4_R;
+#[doc = "Field `PUPDR5` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR5_R;
+#[doc = "Field `PUPDR6` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR6_R;
+#[doc = "Field `PUPDR13` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR13_R;
+#[doc = "Field `PUPDR14` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR14_R;
+#[doc = "Field `PUPDR15` reader - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_R as PUPDR15_R;
+#[doc = "Field `PUPDR1` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR1_W;
+#[doc = "Field `PUPDR2` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR2_W;
+#[doc = "Field `PUPDR3` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR3_W;
+#[doc = "Field `PUPDR4` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR4_W;
+#[doc = "Field `PUPDR5` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR5_W;
+#[doc = "Field `PUPDR6` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR6_W;
+#[doc = "Field `PUPDR13` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR13_W;
+#[doc = "Field `PUPDR14` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR14_W;
+#[doc = "Field `PUPDR15` writer - Port x configuration bits (y = 0..15)"]
+pub use PUPDR0_W as PUPDR15_W;
 impl R {
-    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn pupdr15(&self) -> PUPDR15_R {
-        PUPDR15_R::new(((self.bits >> 30) & 3) as u8)
-    }
-    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr14(&self) -> PUPDR14_R {
-        PUPDR14_R::new(((self.bits >> 28) & 3) as u8)
-    }
-    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr13(&self) -> PUPDR13_R {
-        PUPDR13_R::new(((self.bits >> 26) & 3) as u8)
-    }
-    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr6(&self) -> PUPDR6_R {
-        PUPDR6_R::new(((self.bits >> 12) & 3) as u8)
-    }
-    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr5(&self) -> PUPDR5_R {
-        PUPDR5_R::new(((self.bits >> 10) & 3) as u8)
-    }
-    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr4(&self) -> PUPDR4_R {
-        PUPDR4_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr3(&self) -> PUPDR3_R {
-        PUPDR3_R::new(((self.bits >> 6) & 3) as u8)
-    }
-    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr2(&self) -> PUPDR2_R {
-        PUPDR2_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn pupdr0(&self) -> PUPDR0_R {
+        PUPDR0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn pupdr1(&self) -> PUPDR1_R {
         PUPDR1_R::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn pupdr0(&self) -> PUPDR0_R {
-        PUPDR0_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr15(&mut self) -> PUPDR15_W<30> {
-        PUPDR15_W::new(self)
-    }
-    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr14(&mut self) -> PUPDR14_W<28> {
-        PUPDR14_W::new(self)
-    }
-    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr13(&mut self) -> PUPDR13_W<26> {
-        PUPDR13_W::new(self)
-    }
-    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr6(&mut self) -> PUPDR6_W<12> {
-        PUPDR6_W::new(self)
-    }
-    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr5(&mut self) -> PUPDR5_W<10> {
-        PUPDR5_W::new(self)
-    }
-    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn pupdr4(&mut self) -> PUPDR4_W<8> {
-        PUPDR4_W::new(self)
+    pub fn pupdr2(&self) -> PUPDR2_R {
+        PUPDR2_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn pupdr3(&mut self) -> PUPDR3_W<6> {
-        PUPDR3_W::new(self)
+    pub fn pupdr3(&self) -> PUPDR3_R {
+        PUPDR3_R::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn pupdr2(&mut self) -> PUPDR2_W<4> {
-        PUPDR2_W::new(self)
+    pub fn pupdr4(&self) -> PUPDR4_R {
+        PUPDR4_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr5(&self) -> PUPDR5_R {
+        PUPDR5_R::new(((self.bits >> 10) & 3) as u8)
+    }
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr6(&self) -> PUPDR6_R {
+        PUPDR6_R::new(((self.bits >> 12) & 3) as u8)
+    }
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr13(&self) -> PUPDR13_R {
+        PUPDR13_R::new(((self.bits >> 26) & 3) as u8)
+    }
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr14(&self) -> PUPDR14_R {
+        PUPDR14_R::new(((self.bits >> 28) & 3) as u8)
+    }
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr15(&self) -> PUPDR15_R {
+        PUPDR15_R::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr0(&mut self) -> PUPDR0_W<0> {
+        PUPDR0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn pupdr1(&mut self) -> PUPDR1_W<2> {
         PUPDR1_W::new(self)
     }
-    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn pupdr0(&mut self) -> PUPDR0_W<0> {
-        PUPDR0_W::new(self)
+    pub fn pupdr2(&mut self) -> PUPDR2_W<4> {
+        PUPDR2_W::new(self)
+    }
+    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr3(&mut self) -> PUPDR3_W<6> {
+        PUPDR3_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr4(&mut self) -> PUPDR4_W<8> {
+        PUPDR4_W::new(self)
+    }
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr5(&mut self) -> PUPDR5_W<10> {
+        PUPDR5_W::new(self)
+    }
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr6(&mut self) -> PUPDR6_W<12> {
+        PUPDR6_W::new(self)
+    }
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr13(&mut self) -> PUPDR13_W<26> {
+        PUPDR13_W::new(self)
+    }
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr14(&mut self) -> PUPDR14_W<28> {
+        PUPDR14_W::new(self)
+    }
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn pupdr15(&mut self) -> PUPDR15_W<30> {
+        PUPDR15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

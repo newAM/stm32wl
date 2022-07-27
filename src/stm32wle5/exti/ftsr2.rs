@@ -34,6 +34,8 @@ impl From<crate::W<FTSR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FT34` reader - Falling trigger event configuration bit of Configurable Event input"]
+pub type FT34_R = crate::BitReader<FT34_A>;
 #[doc = "Falling trigger event configuration bit of Configurable Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FT34_A {
@@ -48,8 +50,6 @@ impl From<FT34_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FT34` reader - Falling trigger event configuration bit of Configurable Event input"]
-pub type FT34_R = crate::BitReader<FT34_A>;
 impl FT34_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,8 +84,6 @@ impl<'a, const O: u8> FT34_W<'a, O> {
         self.variant(FT34_A::Enabled)
     }
 }
-#[doc = "Falling trigger event configuration bit of Configurable Event input"]
-pub use FT34_A as FT45_A;
 #[doc = "Field `FT45` reader - Falling trigger event configuration bit of Configurable Event input"]
 pub use FT34_R as FT45_R;
 #[doc = "Field `FT45` writer - Falling trigger event configuration bit of Configurable Event input"]

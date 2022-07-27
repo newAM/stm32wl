@@ -34,6 +34,12 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `T` reader - 7-bit counter (MSB to LSB)"]
+pub type T_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `T` writer - 7-bit counter (MSB to LSB)"]
+pub type T_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `WDGA` reader - Activation bit"]
+pub type WDGA_R = crate::BitReader<WDGA_A>;
 #[doc = "Activation bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDGA_A {
@@ -48,8 +54,6 @@ impl From<WDGA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDGA` reader - Activation bit"]
-pub type WDGA_R = crate::BitReader<WDGA_A>;
 impl WDGA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,32 +88,28 @@ impl<'a, const O: u8> WDGA_W<'a, O> {
         self.variant(WDGA_A::Enabled)
     }
 }
-#[doc = "Field `T` reader - 7-bit counter (MSB to LSB)"]
-pub type T_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `T` writer - 7-bit counter (MSB to LSB)"]
-pub type T_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CR_SPEC, u8, u8, 7, O>;
 impl R {
-    #[doc = "Bit 7 - Activation bit"]
-    #[inline(always)]
-    pub fn wdga(&self) -> WDGA_R {
-        WDGA_R::new(((self.bits >> 7) & 1) != 0)
-    }
     #[doc = "Bits 0:6 - 7-bit counter (MSB to LSB)"]
     #[inline(always)]
     pub fn t(&self) -> T_R {
         T_R::new((self.bits & 0x7f) as u8)
     }
-}
-impl W {
     #[doc = "Bit 7 - Activation bit"]
     #[inline(always)]
-    pub fn wdga(&mut self) -> WDGA_W<7> {
-        WDGA_W::new(self)
+    pub fn wdga(&self) -> WDGA_R {
+        WDGA_R::new(((self.bits >> 7) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:6 - 7-bit counter (MSB to LSB)"]
     #[inline(always)]
     pub fn t(&mut self) -> T_W<0> {
         T_W::new(self)
+    }
+    #[doc = "Bit 7 - Activation bit"]
+    #[inline(always)]
+    pub fn wdga(&mut self) -> WDGA_W<7> {
+        WDGA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

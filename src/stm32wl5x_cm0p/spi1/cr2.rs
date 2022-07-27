@@ -34,6 +34,8 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RXDMAEN` reader - Rx buffer DMA enable"]
+pub type RXDMAEN_R = crate::BitReader<RXDMAEN_A>;
 #[doc = "Rx buffer DMA enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDMAEN_A {
@@ -48,8 +50,6 @@ impl From<RXDMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXDMAEN` reader - Rx buffer DMA enable"]
-pub type RXDMAEN_R = crate::BitReader<RXDMAEN_A>;
 impl RXDMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> RXDMAEN_W<'a, O> {
         self.variant(RXDMAEN_A::Enabled)
     }
 }
+#[doc = "Field `TXDMAEN` reader - Tx buffer DMA enable"]
+pub type TXDMAEN_R = crate::BitReader<TXDMAEN_A>;
 #[doc = "Tx buffer DMA enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDMAEN_A {
@@ -98,8 +100,6 @@ impl From<TXDMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXDMAEN` reader - Tx buffer DMA enable"]
-pub type TXDMAEN_R = crate::BitReader<TXDMAEN_A>;
 impl TXDMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> TXDMAEN_W<'a, O> {
         self.variant(TXDMAEN_A::Enabled)
     }
 }
+#[doc = "Field `SSOE` reader - SS output enable"]
+pub type SSOE_R = crate::BitReader<SSOE_A>;
 #[doc = "SS output enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSOE_A {
@@ -148,8 +150,6 @@ impl From<SSOE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SSOE` reader - SS output enable"]
-pub type SSOE_R = crate::BitReader<SSOE_A>;
 impl SSOE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> SSOE_W<'a, O> {
         self.variant(SSOE_A::Enabled)
     }
 }
+#[doc = "Field `NSSP` reader - NSS pulse management"]
+pub type NSSP_R = crate::BitReader<NSSP_A>;
 #[doc = "NSS pulse management\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NSSP_A {
@@ -198,8 +200,6 @@ impl From<NSSP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NSSP` reader - NSS pulse management"]
-pub type NSSP_R = crate::BitReader<NSSP_A>;
 impl NSSP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -234,6 +234,8 @@ impl<'a, const O: u8> NSSP_W<'a, O> {
         self.variant(NSSP_A::PulseGenerated)
     }
 }
+#[doc = "Field `FRF` reader - Frame format"]
+pub type FRF_R = crate::BitReader<FRF_A>;
 #[doc = "Frame format\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRF_A {
@@ -248,8 +250,6 @@ impl From<FRF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRF` reader - Frame format"]
-pub type FRF_R = crate::BitReader<FRF_A>;
 impl FRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -284,6 +284,8 @@ impl<'a, const O: u8> FRF_W<'a, O> {
         self.variant(FRF_A::Ti)
     }
 }
+#[doc = "Field `ERRIE` reader - Error interrupt enable"]
+pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 #[doc = "Error interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRIE_A {
@@ -298,8 +300,6 @@ impl From<ERRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERRIE` reader - Error interrupt enable"]
-pub type ERRIE_R = crate::BitReader<ERRIE_A>;
 impl ERRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -334,6 +334,8 @@ impl<'a, const O: u8> ERRIE_W<'a, O> {
         self.variant(ERRIE_A::NotMasked)
     }
 }
+#[doc = "Field `RXNEIE` reader - RX buffer not empty interrupt enable"]
+pub type RXNEIE_R = crate::BitReader<RXNEIE_A>;
 #[doc = "RX buffer not empty interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXNEIE_A {
@@ -348,8 +350,6 @@ impl From<RXNEIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXNEIE` reader - RX buffer not empty interrupt enable"]
-pub type RXNEIE_R = crate::BitReader<RXNEIE_A>;
 impl RXNEIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -384,6 +384,8 @@ impl<'a, const O: u8> RXNEIE_W<'a, O> {
         self.variant(RXNEIE_A::NotMasked)
     }
 }
+#[doc = "Field `TXEIE` reader - Tx buffer empty interrupt enable"]
+pub type TXEIE_R = crate::BitReader<TXEIE_A>;
 #[doc = "Tx buffer empty interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEIE_A {
@@ -398,8 +400,6 @@ impl From<TXEIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXEIE` reader - Tx buffer empty interrupt enable"]
-pub type TXEIE_R = crate::BitReader<TXEIE_A>;
 impl TXEIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -434,6 +434,8 @@ impl<'a, const O: u8> TXEIE_W<'a, O> {
         self.variant(TXEIE_A::NotMasked)
     }
 }
+#[doc = "Field `DS` reader - Data size"]
+pub type DS_R = crate::FieldReader<u8, DS_A>;
 #[doc = "Data size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -471,8 +473,6 @@ impl From<DS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DS` reader - Data size"]
-pub type DS_R = crate::FieldReader<u8, DS_A>;
 impl DS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -629,6 +629,8 @@ impl<'a, const O: u8> DS_W<'a, O> {
         self.variant(DS_A::SixteenBit)
     }
 }
+#[doc = "Field `FRXTH` reader - FIFO reception threshold"]
+pub type FRXTH_R = crate::BitReader<FRXTH_A>;
 #[doc = "FIFO reception threshold\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRXTH_A {
@@ -643,8 +645,6 @@ impl From<FRXTH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRXTH` reader - FIFO reception threshold"]
-pub type FRXTH_R = crate::BitReader<FRXTH_A>;
 impl FRXTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -679,6 +679,8 @@ impl<'a, const O: u8> FRXTH_W<'a, O> {
         self.variant(FRXTH_A::Quarter)
     }
 }
+#[doc = "Field `LDMA_RX` reader - Last DMA transfer for reception"]
+pub type LDMA_RX_R = crate::BitReader<LDMA_RX_A>;
 #[doc = "Last DMA transfer for reception\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDMA_RX_A {
@@ -693,8 +695,6 @@ impl From<LDMA_RX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LDMA_RX` reader - Last DMA transfer for reception"]
-pub type LDMA_RX_R = crate::BitReader<LDMA_RX_A>;
 impl LDMA_RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -729,6 +729,8 @@ impl<'a, const O: u8> LDMA_RX_W<'a, O> {
         self.variant(LDMA_RX_A::Odd)
     }
 }
+#[doc = "Field `LDMA_TX` reader - Last DMA transfer for transmission"]
+pub type LDMA_TX_R = crate::BitReader<LDMA_TX_A>;
 #[doc = "Last DMA transfer for transmission\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDMA_TX_A {
@@ -743,8 +745,6 @@ impl From<LDMA_TX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LDMA_TX` reader - Last DMA transfer for transmission"]
-pub type LDMA_TX_R = crate::BitReader<LDMA_TX_A>;
 impl LDMA_TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<MODER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODER3` reader - Port x configuration bits (y = 0..15)"]
+pub type MODER3_R = crate::FieldReader<u8, MODER3_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<MODER3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODER3` reader - Port x configuration bits (y = 0..15)"]
-pub type MODER3_R = crate::FieldReader<u8, MODER3_A>;
 impl MODER3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

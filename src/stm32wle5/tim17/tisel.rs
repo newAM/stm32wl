@@ -34,6 +34,8 @@ impl From<crate::W<TISEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TISEL` reader - TISEL"]
+pub type TISEL_R = crate::FieldReader<u8, TISEL_A>;
 #[doc = "TISEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -47,8 +49,6 @@ impl From<TISEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TISEL` reader - TISEL"]
-pub type TISEL_R = crate::FieldReader<u8, TISEL_A>;
 impl TISEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

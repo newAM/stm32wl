@@ -34,60 +34,8 @@ impl From<crate::W<MODER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER15_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER14_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER13_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER6_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER5_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER4_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER3_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER2_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use MODER0_A as MODER1_A;
-#[doc = "Field `MODER15` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER15_R;
-#[doc = "Field `MODER14` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER14_R;
-#[doc = "Field `MODER13` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER13_R;
-#[doc = "Field `MODER6` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER6_R;
-#[doc = "Field `MODER5` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER5_R;
-#[doc = "Field `MODER4` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER4_R;
-#[doc = "Field `MODER3` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER3_R;
-#[doc = "Field `MODER2` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER2_R;
-#[doc = "Field `MODER1` reader - Port x configuration bits (y = 0..15)"]
-pub use MODER0_R as MODER1_R;
-#[doc = "Field `MODER15` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER15_W;
-#[doc = "Field `MODER14` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER14_W;
-#[doc = "Field `MODER13` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER13_W;
-#[doc = "Field `MODER6` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER6_W;
-#[doc = "Field `MODER5` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER5_W;
-#[doc = "Field `MODER4` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER4_W;
-#[doc = "Field `MODER3` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER3_W;
-#[doc = "Field `MODER2` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER2_W;
-#[doc = "Field `MODER1` writer - Port x configuration bits (y = 0..15)"]
-pub use MODER0_W as MODER1_W;
+#[doc = "Field `MODER0` reader - Port x configuration bits (y = 0..15)"]
+pub type MODER0_R = crate::FieldReader<u8, MODER0_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -107,8 +55,6 @@ impl From<MODER0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODER0` reader - Port x configuration bits (y = 0..15)"]
-pub type MODER0_R = crate::FieldReader<u8, MODER0_A>;
 impl MODER0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,108 +113,144 @@ impl<'a, const O: u8> MODER0_W<'a, O> {
         self.variant(MODER0_A::Analog)
     }
 }
+#[doc = "Field `MODER1` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER1_R;
+#[doc = "Field `MODER2` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER2_R;
+#[doc = "Field `MODER3` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER3_R;
+#[doc = "Field `MODER4` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER4_R;
+#[doc = "Field `MODER5` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER5_R;
+#[doc = "Field `MODER6` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER6_R;
+#[doc = "Field `MODER13` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER13_R;
+#[doc = "Field `MODER14` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER14_R;
+#[doc = "Field `MODER15` reader - Port x configuration bits (y = 0..15)"]
+pub use MODER0_R as MODER15_R;
+#[doc = "Field `MODER1` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER1_W;
+#[doc = "Field `MODER2` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER2_W;
+#[doc = "Field `MODER3` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER3_W;
+#[doc = "Field `MODER4` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER4_W;
+#[doc = "Field `MODER5` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER5_W;
+#[doc = "Field `MODER6` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER6_W;
+#[doc = "Field `MODER13` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER13_W;
+#[doc = "Field `MODER14` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER14_W;
+#[doc = "Field `MODER15` writer - Port x configuration bits (y = 0..15)"]
+pub use MODER0_W as MODER15_W;
 impl R {
-    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder15(&self) -> MODER15_R {
-        MODER15_R::new(((self.bits >> 30) & 3) as u8)
-    }
-    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder14(&self) -> MODER14_R {
-        MODER14_R::new(((self.bits >> 28) & 3) as u8)
-    }
-    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder13(&self) -> MODER13_R {
-        MODER13_R::new(((self.bits >> 26) & 3) as u8)
-    }
-    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder6(&self) -> MODER6_R {
-        MODER6_R::new(((self.bits >> 12) & 3) as u8)
-    }
-    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder5(&self) -> MODER5_R {
-        MODER5_R::new(((self.bits >> 10) & 3) as u8)
-    }
-    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder4(&self) -> MODER4_R {
-        MODER4_R::new(((self.bits >> 8) & 3) as u8)
-    }
-    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder3(&self) -> MODER3_R {
-        MODER3_R::new(((self.bits >> 6) & 3) as u8)
-    }
-    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder2(&self) -> MODER2_R {
-        MODER2_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn moder0(&self) -> MODER0_R {
+        MODER0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn moder1(&self) -> MODER1_R {
         MODER1_R::new(((self.bits >> 2) & 3) as u8)
     }
-    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder0(&self) -> MODER0_R {
-        MODER0_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder15(&mut self) -> MODER15_W<30> {
-        MODER15_W::new(self)
-    }
-    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder14(&mut self) -> MODER14_W<28> {
-        MODER14_W::new(self)
-    }
-    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder13(&mut self) -> MODER13_W<26> {
-        MODER13_W::new(self)
-    }
-    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder6(&mut self) -> MODER6_W<12> {
-        MODER6_W::new(self)
-    }
-    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder5(&mut self) -> MODER5_W<10> {
-        MODER5_W::new(self)
-    }
-    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn moder4(&mut self) -> MODER4_W<8> {
-        MODER4_W::new(self)
+    pub fn moder2(&self) -> MODER2_R {
+        MODER2_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder3(&mut self) -> MODER3_W<6> {
-        MODER3_W::new(self)
+    pub fn moder3(&self) -> MODER3_R {
+        MODER3_R::new(((self.bits >> 6) & 3) as u8)
     }
-    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder2(&mut self) -> MODER2_W<4> {
-        MODER2_W::new(self)
+    pub fn moder4(&self) -> MODER4_R {
+        MODER4_R::new(((self.bits >> 8) & 3) as u8)
+    }
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder5(&self) -> MODER5_R {
+        MODER5_R::new(((self.bits >> 10) & 3) as u8)
+    }
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder6(&self) -> MODER6_R {
+        MODER6_R::new(((self.bits >> 12) & 3) as u8)
+    }
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder13(&self) -> MODER13_R {
+        MODER13_R::new(((self.bits >> 26) & 3) as u8)
+    }
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder14(&self) -> MODER14_R {
+        MODER14_R::new(((self.bits >> 28) & 3) as u8)
+    }
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder15(&self) -> MODER15_R {
+        MODER15_R::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder0(&mut self) -> MODER0_W<0> {
+        MODER0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn moder1(&mut self) -> MODER1_W<2> {
         MODER1_W::new(self)
     }
-    #[doc = "Bits 0:1 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bits 4:5 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn moder0(&mut self) -> MODER0_W<0> {
-        MODER0_W::new(self)
+    pub fn moder2(&mut self) -> MODER2_W<4> {
+        MODER2_W::new(self)
+    }
+    #[doc = "Bits 6:7 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder3(&mut self) -> MODER3_W<6> {
+        MODER3_W::new(self)
+    }
+    #[doc = "Bits 8:9 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder4(&mut self) -> MODER4_W<8> {
+        MODER4_W::new(self)
+    }
+    #[doc = "Bits 10:11 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder5(&mut self) -> MODER5_W<10> {
+        MODER5_W::new(self)
+    }
+    #[doc = "Bits 12:13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder6(&mut self) -> MODER6_W<12> {
+        MODER6_W::new(self)
+    }
+    #[doc = "Bits 26:27 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder13(&mut self) -> MODER13_W<26> {
+        MODER13_W::new(self)
+    }
+    #[doc = "Bits 28:29 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder14(&mut self) -> MODER14_W<28> {
+        MODER14_W::new(self)
+    }
+    #[doc = "Bits 30:31 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn moder15(&mut self) -> MODER15_W<30> {
+        MODER15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

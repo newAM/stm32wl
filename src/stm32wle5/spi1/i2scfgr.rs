@@ -34,6 +34,8 @@ impl From<crate::W<I2SCFGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CHLEN` reader - CHLEN"]
+pub type CHLEN_R = crate::BitReader<CHLEN_A>;
 #[doc = "CHLEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHLEN_A {
@@ -48,8 +50,6 @@ impl From<CHLEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHLEN` reader - CHLEN"]
-pub type CHLEN_R = crate::BitReader<CHLEN_A>;
 impl CHLEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> CHLEN_W<'a, O> {
         self.variant(CHLEN_A::ThirtyTwoBit)
     }
 }
+#[doc = "Field `DATLEN` reader - DATLEN"]
+pub type DATLEN_R = crate::FieldReader<u8, DATLEN_A>;
 #[doc = "DATLEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -101,8 +103,6 @@ impl From<DATLEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DATLEN` reader - DATLEN"]
-pub type DATLEN_R = crate::FieldReader<u8, DATLEN_A>;
 impl DATLEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,6 +149,8 @@ impl<'a, const O: u8> DATLEN_W<'a, O> {
         self.variant(DATLEN_A::ThirtyTwoBit)
     }
 }
+#[doc = "Field `CKPOL` reader - CKPOL"]
+pub type CKPOL_R = crate::BitReader<CKPOL_A>;
 #[doc = "CKPOL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CKPOL_A {
@@ -163,8 +165,6 @@ impl From<CKPOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CKPOL` reader - CKPOL"]
-pub type CKPOL_R = crate::BitReader<CKPOL_A>;
 impl CKPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -199,6 +199,8 @@ impl<'a, const O: u8> CKPOL_W<'a, O> {
         self.variant(CKPOL_A::IdleHigh)
     }
 }
+#[doc = "Field `I2SSTD` reader - I2SSTD"]
+pub type I2SSTD_R = crate::FieldReader<u8, I2SSTD_A>;
 #[doc = "I2SSTD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -218,8 +220,6 @@ impl From<I2SSTD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `I2SSTD` reader - I2SSTD"]
-pub type I2SSTD_R = crate::FieldReader<u8, I2SSTD_A>;
 impl I2SSTD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -278,6 +278,8 @@ impl<'a, const O: u8> I2SSTD_W<'a, O> {
         self.variant(I2SSTD_A::Pcm)
     }
 }
+#[doc = "Field `PCMSYNC` reader - PCMSYNC"]
+pub type PCMSYNC_R = crate::BitReader<PCMSYNC_A>;
 #[doc = "PCMSYNC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCMSYNC_A {
@@ -292,8 +294,6 @@ impl From<PCMSYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PCMSYNC` reader - PCMSYNC"]
-pub type PCMSYNC_R = crate::BitReader<PCMSYNC_A>;
 impl PCMSYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -328,6 +328,8 @@ impl<'a, const O: u8> PCMSYNC_W<'a, O> {
         self.variant(PCMSYNC_A::Long)
     }
 }
+#[doc = "Field `I2SCFG` reader - I2SCFG"]
+pub type I2SCFG_R = crate::FieldReader<u8, I2SCFG_A>;
 #[doc = "I2SCFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -347,8 +349,6 @@ impl From<I2SCFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `I2SCFG` reader - I2SCFG"]
-pub type I2SCFG_R = crate::FieldReader<u8, I2SCFG_A>;
 impl I2SCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -407,6 +407,8 @@ impl<'a, const O: u8> I2SCFG_W<'a, O> {
         self.variant(I2SCFG_A::MasterRx)
     }
 }
+#[doc = "Field `I2SE` reader - I2SE"]
+pub type I2SE_R = crate::BitReader<I2SE_A>;
 #[doc = "I2SE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SE_A {
@@ -421,8 +423,6 @@ impl From<I2SE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `I2SE` reader - I2SE"]
-pub type I2SE_R = crate::BitReader<I2SE_A>;
 impl I2SE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -457,6 +457,8 @@ impl<'a, const O: u8> I2SE_W<'a, O> {
         self.variant(I2SE_A::Enabled)
     }
 }
+#[doc = "Field `I2SMOD` reader - I2SMOD"]
+pub type I2SMOD_R = crate::BitReader<I2SMOD_A>;
 #[doc = "I2SMOD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SMOD_A {
@@ -471,8 +473,6 @@ impl From<I2SMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `I2SMOD` reader - I2SMOD"]
-pub type I2SMOD_R = crate::BitReader<I2SMOD_A>;
 impl I2SMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

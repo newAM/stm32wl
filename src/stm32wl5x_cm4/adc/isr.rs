@@ -34,356 +34,348 @@ impl From<crate::W<ISR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADRDY` reader - ADRDY"]
+pub type ADRDY_R = crate::BitReader<ADRDYR_A>;
 #[doc = "ADRDY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADRDY_A {
+pub enum ADRDYR_A {
     #[doc = "0: ADC not yet ready to start conversion"]
     NotReady = 0,
     #[doc = "1: ADC ready to start conversion"]
     Ready = 1,
 }
-impl From<ADRDY_A> for bool {
+impl From<ADRDYR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADRDY_A) -> Self {
+    fn from(variant: ADRDYR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADRDY` reader - ADRDY"]
-pub type ADRDY_R = crate::BitReader<ADRDY_A>;
 impl ADRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADRDY_A {
+    pub fn variant(&self) -> ADRDYR_A {
         match self.bits {
-            false => ADRDY_A::NotReady,
-            true => ADRDY_A::Ready,
+            false => ADRDYR_A::NotReady,
+            true => ADRDYR_A::Ready,
         }
     }
     #[doc = "Checks if the value of the field is `NotReady`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        *self == ADRDY_A::NotReady
+        *self == ADRDYR_A::NotReady
     }
     #[doc = "Checks if the value of the field is `Ready`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == ADRDY_A::Ready
+        *self == ADRDYR_A::Ready
     }
 }
 #[doc = "ADRDY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADRDY_AW {
+pub enum ADRDYW_AW {
     #[doc = "1: Clear the ADC ready flag"]
     Clear = 1,
 }
-impl From<ADRDY_AW> for bool {
+impl From<ADRDYW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADRDY_AW) -> Self {
+    fn from(variant: ADRDYW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADRDY` writer - ADRDY"]
-pub type ADRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, ADRDY_AW, O>;
+pub type ADRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, ADRDYW_AW, O>;
 impl<'a, const O: u8> ADRDY_W<'a, O> {
     #[doc = "Clear the ADC ready flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ADRDY_AW::Clear)
+        self.variant(ADRDYW_AW::Clear)
     }
 }
+#[doc = "Field `EOSMP` reader - EOSMP"]
+pub type EOSMP_R = crate::BitReader<EOSMPR_A>;
 #[doc = "EOSMP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOSMP_A {
+pub enum EOSMPR_A {
     #[doc = "0: Not at the end of the samplings phase"]
     NotAtEnd = 0,
     #[doc = "1: End of sampling phase reached"]
     AtEnd = 1,
 }
-impl From<EOSMP_A> for bool {
+impl From<EOSMPR_A> for bool {
     #[inline(always)]
-    fn from(variant: EOSMP_A) -> Self {
+    fn from(variant: EOSMPR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOSMP` reader - EOSMP"]
-pub type EOSMP_R = crate::BitReader<EOSMP_A>;
 impl EOSMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOSMP_A {
+    pub fn variant(&self) -> EOSMPR_A {
         match self.bits {
-            false => EOSMP_A::NotAtEnd,
-            true => EOSMP_A::AtEnd,
+            false => EOSMPR_A::NotAtEnd,
+            true => EOSMPR_A::AtEnd,
         }
     }
     #[doc = "Checks if the value of the field is `NotAtEnd`"]
     #[inline(always)]
     pub fn is_not_at_end(&self) -> bool {
-        *self == EOSMP_A::NotAtEnd
+        *self == EOSMPR_A::NotAtEnd
     }
     #[doc = "Checks if the value of the field is `AtEnd`"]
     #[inline(always)]
     pub fn is_at_end(&self) -> bool {
-        *self == EOSMP_A::AtEnd
+        *self == EOSMPR_A::AtEnd
     }
 }
 #[doc = "EOSMP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOSMP_AW {
+pub enum EOSMPW_AW {
     #[doc = "1: Clear the sampling phase flag"]
     Clear = 1,
 }
-impl From<EOSMP_AW> for bool {
+impl From<EOSMPW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EOSMP_AW) -> Self {
+    fn from(variant: EOSMPW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EOSMP` writer - EOSMP"]
-pub type EOSMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOSMP_AW, O>;
+pub type EOSMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOSMPW_AW, O>;
 impl<'a, const O: u8> EOSMP_W<'a, O> {
     #[doc = "Clear the sampling phase flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(EOSMP_AW::Clear)
+        self.variant(EOSMPW_AW::Clear)
     }
 }
+#[doc = "Field `EOC` reader - EOC"]
+pub type EOC_R = crate::BitReader<EOCR_A>;
 #[doc = "EOC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOC_A {
+pub enum EOCR_A {
     #[doc = "0: Channel conversion is not complete"]
     NotComplete = 0,
     #[doc = "1: Channel conversion complete"]
     Complete = 1,
 }
-impl From<EOC_A> for bool {
+impl From<EOCR_A> for bool {
     #[inline(always)]
-    fn from(variant: EOC_A) -> Self {
+    fn from(variant: EOCR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOC` reader - EOC"]
-pub type EOC_R = crate::BitReader<EOC_A>;
 impl EOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOC_A {
+    pub fn variant(&self) -> EOCR_A {
         match self.bits {
-            false => EOC_A::NotComplete,
-            true => EOC_A::Complete,
+            false => EOCR_A::NotComplete,
+            true => EOCR_A::Complete,
         }
     }
     #[doc = "Checks if the value of the field is `NotComplete`"]
     #[inline(always)]
     pub fn is_not_complete(&self) -> bool {
-        *self == EOC_A::NotComplete
+        *self == EOCR_A::NotComplete
     }
     #[doc = "Checks if the value of the field is `Complete`"]
     #[inline(always)]
     pub fn is_complete(&self) -> bool {
-        *self == EOC_A::Complete
+        *self == EOCR_A::Complete
     }
 }
 #[doc = "EOC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOC_AW {
+pub enum EOCW_AW {
     #[doc = "1: Clear the channel conversion flag"]
     Clear = 1,
 }
-impl From<EOC_AW> for bool {
+impl From<EOCW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EOC_AW) -> Self {
+    fn from(variant: EOCW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EOC` writer - EOC"]
-pub type EOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOC_AW, O>;
+pub type EOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOCW_AW, O>;
 impl<'a, const O: u8> EOC_W<'a, O> {
     #[doc = "Clear the channel conversion flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(EOC_AW::Clear)
+        self.variant(EOCW_AW::Clear)
     }
 }
+#[doc = "Field `EOS` reader - EOS"]
+pub type EOS_R = crate::BitReader<EOSR_A>;
 #[doc = "EOS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOS_A {
+pub enum EOSR_A {
     #[doc = "0: Conversion sequence is not complete"]
     NotComplete = 0,
     #[doc = "1: Conversion sequence complete"]
     Complete = 1,
 }
-impl From<EOS_A> for bool {
+impl From<EOSR_A> for bool {
     #[inline(always)]
-    fn from(variant: EOS_A) -> Self {
+    fn from(variant: EOSR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOS` reader - EOS"]
-pub type EOS_R = crate::BitReader<EOS_A>;
 impl EOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOS_A {
+    pub fn variant(&self) -> EOSR_A {
         match self.bits {
-            false => EOS_A::NotComplete,
-            true => EOS_A::Complete,
+            false => EOSR_A::NotComplete,
+            true => EOSR_A::Complete,
         }
     }
     #[doc = "Checks if the value of the field is `NotComplete`"]
     #[inline(always)]
     pub fn is_not_complete(&self) -> bool {
-        *self == EOS_A::NotComplete
+        *self == EOSR_A::NotComplete
     }
     #[doc = "Checks if the value of the field is `Complete`"]
     #[inline(always)]
     pub fn is_complete(&self) -> bool {
-        *self == EOS_A::Complete
+        *self == EOSR_A::Complete
     }
 }
 #[doc = "EOS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOS_AW {
+pub enum EOSW_AW {
     #[doc = "1: Clear the conversion sequence flag"]
     Clear = 1,
 }
-impl From<EOS_AW> for bool {
+impl From<EOSW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EOS_AW) -> Self {
+    fn from(variant: EOSW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EOS` writer - EOS"]
-pub type EOS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOS_AW, O>;
+pub type EOS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOSW_AW, O>;
 impl<'a, const O: u8> EOS_W<'a, O> {
     #[doc = "Clear the conversion sequence flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(EOS_AW::Clear)
+        self.variant(EOSW_AW::Clear)
     }
 }
+#[doc = "Field `OVR` reader - OVR"]
+pub type OVR_R = crate::BitReader<OVRR_A>;
 #[doc = "OVR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVR_A {
+pub enum OVRR_A {
     #[doc = "0: No overrun occurred"]
     NoOverrun = 0,
     #[doc = "1: Overrun occurred"]
     Overrun = 1,
 }
-impl From<OVR_A> for bool {
+impl From<OVRR_A> for bool {
     #[inline(always)]
-    fn from(variant: OVR_A) -> Self {
+    fn from(variant: OVRR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVR` reader - OVR"]
-pub type OVR_R = crate::BitReader<OVR_A>;
 impl OVR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OVR_A {
+    pub fn variant(&self) -> OVRR_A {
         match self.bits {
-            false => OVR_A::NoOverrun,
-            true => OVR_A::Overrun,
+            false => OVRR_A::NoOverrun,
+            true => OVRR_A::Overrun,
         }
     }
     #[doc = "Checks if the value of the field is `NoOverrun`"]
     #[inline(always)]
     pub fn is_no_overrun(&self) -> bool {
-        *self == OVR_A::NoOverrun
+        *self == OVRR_A::NoOverrun
     }
     #[doc = "Checks if the value of the field is `Overrun`"]
     #[inline(always)]
     pub fn is_overrun(&self) -> bool {
-        *self == OVR_A::Overrun
+        *self == OVRR_A::Overrun
     }
 }
 #[doc = "OVR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVR_AW {
+pub enum OVRW_AW {
     #[doc = "1: Clear the overrun flag"]
     Clear = 1,
 }
-impl From<OVR_AW> for bool {
+impl From<OVRW_AW> for bool {
     #[inline(always)]
-    fn from(variant: OVR_AW) -> Self {
+    fn from(variant: OVRW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OVR` writer - OVR"]
-pub type OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, OVR_AW, O>;
+pub type OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, OVRW_AW, O>;
 impl<'a, const O: u8> OVR_W<'a, O> {
     #[doc = "Clear the overrun flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(OVR_AW::Clear)
+        self.variant(OVRW_AW::Clear)
     }
 }
+#[doc = "Field `AWD1` reader - AWD1"]
+pub type AWD1_R = crate::BitReader<AWD1R_A>;
 #[doc = "AWD1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AWD1_A {
+pub enum AWD1R_A {
     #[doc = "0: No analog watchdog event occurred"]
     NoEvent = 0,
     #[doc = "1: Analog watchdog event occurred"]
     Event = 1,
 }
-impl From<AWD1_A> for bool {
+impl From<AWD1R_A> for bool {
     #[inline(always)]
-    fn from(variant: AWD1_A) -> Self {
+    fn from(variant: AWD1R_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD1` reader - AWD1"]
-pub type AWD1_R = crate::BitReader<AWD1_A>;
 impl AWD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AWD1_A {
+    pub fn variant(&self) -> AWD1R_A {
         match self.bits {
-            false => AWD1_A::NoEvent,
-            true => AWD1_A::Event,
+            false => AWD1R_A::NoEvent,
+            true => AWD1R_A::Event,
         }
     }
     #[doc = "Checks if the value of the field is `NoEvent`"]
     #[inline(always)]
     pub fn is_no_event(&self) -> bool {
-        *self == AWD1_A::NoEvent
+        *self == AWD1R_A::NoEvent
     }
     #[doc = "Checks if the value of the field is `Event`"]
     #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == AWD1_A::Event
+        *self == AWD1R_A::Event
     }
 }
 #[doc = "AWD1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AWD1_AW {
+pub enum AWD1W_AW {
     #[doc = "1: Clear the analog watchdog event flag"]
     Clear = 1,
 }
-impl From<AWD1_AW> for bool {
+impl From<AWD1W_AW> for bool {
     #[inline(always)]
-    fn from(variant: AWD1_AW) -> Self {
+    fn from(variant: AWD1W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `AWD1` writer - AWD1"]
-pub type AWD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, AWD1_AW, O>;
+pub type AWD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, AWD1W_AW, O>;
 impl<'a, const O: u8> AWD1_W<'a, O> {
     #[doc = "Clear the analog watchdog event flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(AWD1_AW::Clear)
+        self.variant(AWD1W_AW::Clear)
     }
 }
-#[doc = "AWD2"]
-pub use AWD1_A as AWD2_A;
-#[doc = "AWD3"]
-pub use AWD1_A as AWD3_A;
-#[doc = "AWD2"]
-pub use AWD1_AW as AWD2_AW;
-#[doc = "AWD3"]
-pub use AWD1_AW as AWD3_AW;
 #[doc = "Field `AWD2` reader - AWD2"]
 pub use AWD1_R as AWD2_R;
 #[doc = "Field `AWD3` reader - AWD3"]
@@ -392,118 +384,118 @@ pub use AWD1_R as AWD3_R;
 pub use AWD1_W as AWD2_W;
 #[doc = "Field `AWD3` writer - AWD3"]
 pub use AWD1_W as AWD3_W;
+#[doc = "Field `EOCAL` reader - EOCAL"]
+pub type EOCAL_R = crate::BitReader<EOCALR_A>;
 #[doc = "EOCAL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOCAL_A {
+pub enum EOCALR_A {
     #[doc = "0: Calibration is not complete"]
     NotComplete = 0,
     #[doc = "1: Calibration complete"]
     Complete = 1,
 }
-impl From<EOCAL_A> for bool {
+impl From<EOCALR_A> for bool {
     #[inline(always)]
-    fn from(variant: EOCAL_A) -> Self {
+    fn from(variant: EOCALR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOCAL` reader - EOCAL"]
-pub type EOCAL_R = crate::BitReader<EOCAL_A>;
 impl EOCAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EOCAL_A {
+    pub fn variant(&self) -> EOCALR_A {
         match self.bits {
-            false => EOCAL_A::NotComplete,
-            true => EOCAL_A::Complete,
+            false => EOCALR_A::NotComplete,
+            true => EOCALR_A::Complete,
         }
     }
     #[doc = "Checks if the value of the field is `NotComplete`"]
     #[inline(always)]
     pub fn is_not_complete(&self) -> bool {
-        *self == EOCAL_A::NotComplete
+        *self == EOCALR_A::NotComplete
     }
     #[doc = "Checks if the value of the field is `Complete`"]
     #[inline(always)]
     pub fn is_complete(&self) -> bool {
-        *self == EOCAL_A::Complete
+        *self == EOCALR_A::Complete
     }
 }
 #[doc = "EOCAL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EOCAL_AW {
+pub enum EOCALW_AW {
     #[doc = "1: Clear the calibration flag"]
     Clear = 1,
 }
-impl From<EOCAL_AW> for bool {
+impl From<EOCALW_AW> for bool {
     #[inline(always)]
-    fn from(variant: EOCAL_AW) -> Self {
+    fn from(variant: EOCALW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EOCAL` writer - EOCAL"]
-pub type EOCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOCAL_AW, O>;
+pub type EOCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, EOCALW_AW, O>;
 impl<'a, const O: u8> EOCAL_W<'a, O> {
     #[doc = "Clear the calibration flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(EOCAL_AW::Clear)
+        self.variant(EOCALW_AW::Clear)
     }
 }
+#[doc = "Field `CCRDY` reader - CCRDY"]
+pub type CCRDY_R = crate::BitReader<CCRDYR_A>;
 #[doc = "CCRDY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCRDY_A {
+pub enum CCRDYR_A {
     #[doc = "0: Channel configuration update not applied"]
     NotComplete = 0,
     #[doc = "1: Channel configuration update is applied"]
     Complete = 1,
 }
-impl From<CCRDY_A> for bool {
+impl From<CCRDYR_A> for bool {
     #[inline(always)]
-    fn from(variant: CCRDY_A) -> Self {
+    fn from(variant: CCRDYR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCRDY` reader - CCRDY"]
-pub type CCRDY_R = crate::BitReader<CCRDY_A>;
 impl CCRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCRDY_A {
+    pub fn variant(&self) -> CCRDYR_A {
         match self.bits {
-            false => CCRDY_A::NotComplete,
-            true => CCRDY_A::Complete,
+            false => CCRDYR_A::NotComplete,
+            true => CCRDYR_A::Complete,
         }
     }
     #[doc = "Checks if the value of the field is `NotComplete`"]
     #[inline(always)]
     pub fn is_not_complete(&self) -> bool {
-        *self == CCRDY_A::NotComplete
+        *self == CCRDYR_A::NotComplete
     }
     #[doc = "Checks if the value of the field is `Complete`"]
     #[inline(always)]
     pub fn is_complete(&self) -> bool {
-        *self == CCRDY_A::Complete
+        *self == CCRDYR_A::Complete
     }
 }
 #[doc = "CCRDY\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCRDY_AW {
+pub enum CCRDYW_AW {
     #[doc = "1: Clear the channel configuration flag"]
     Clear = 1,
 }
-impl From<CCRDY_AW> for bool {
+impl From<CCRDYW_AW> for bool {
     #[inline(always)]
-    fn from(variant: CCRDY_AW) -> Self {
+    fn from(variant: CCRDYW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCRDY` writer - CCRDY"]
-pub type CCRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, CCRDY_AW, O>;
+pub type CCRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ISR_SPEC, CCRDYW_AW, O>;
 impl<'a, const O: u8> CCRDY_W<'a, O> {
     #[doc = "Clear the channel configuration flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CCRDY_AW::Clear)
+        self.variant(CCRDYW_AW::Clear)
     }
 }
 impl R {

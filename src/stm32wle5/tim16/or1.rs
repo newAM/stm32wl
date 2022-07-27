@@ -34,6 +34,8 @@ impl From<crate::W<OR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TI1_RMP` reader - Timer 17 input 1 connection"]
+pub type TI1_RMP_R = crate::FieldReader<u8, TI1_RMP_A>;
 #[doc = "Timer 17 input 1 connection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<TI1_RMP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TI1_RMP` reader - Timer 17 input 1 connection"]
-pub type TI1_RMP_R = crate::FieldReader<u8, TI1_RMP_A>;
 impl TI1_RMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

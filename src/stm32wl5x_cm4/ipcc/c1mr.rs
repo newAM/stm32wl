@@ -34,6 +34,8 @@ impl From<crate::W<C1MR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CH1OM` reader - CH1OM"]
+pub type CH1OM_R = crate::BitReader<CH1OM_A>;
 #[doc = "CH1OM\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1OM_A {
@@ -48,8 +50,6 @@ impl From<CH1OM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1OM` reader - CH1OM"]
-pub type CH1OM_R = crate::BitReader<CH1OM_A>;
 impl CH1OM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,16 +84,6 @@ impl<'a, const O: u8> CH1OM_W<'a, O> {
         self.variant(CH1OM_A::Masked)
     }
 }
-#[doc = "CH2OM"]
-pub use CH1OM_A as CH2OM_A;
-#[doc = "CH3OM"]
-pub use CH1OM_A as CH3OM_A;
-#[doc = "CH4OM"]
-pub use CH1OM_A as CH4OM_A;
-#[doc = "CH5OM"]
-pub use CH1OM_A as CH5OM_A;
-#[doc = "CH6OM"]
-pub use CH1OM_A as CH6OM_A;
 #[doc = "Field `CH2OM` reader - CH2OM"]
 pub use CH1OM_R as CH2OM_R;
 #[doc = "Field `CH3OM` reader - CH3OM"]
@@ -114,6 +104,8 @@ pub use CH1OM_W as CH4OM_W;
 pub use CH1OM_W as CH5OM_W;
 #[doc = "Field `CH6OM` writer - CH6OM"]
 pub use CH1OM_W as CH6OM_W;
+#[doc = "Field `CH1FM` reader - CH1FM"]
+pub type CH1FM_R = crate::BitReader<CH1FM_A>;
 #[doc = "CH1FM\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1FM_A {
@@ -128,8 +120,6 @@ impl From<CH1FM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1FM` reader - CH1FM"]
-pub type CH1FM_R = crate::BitReader<CH1FM_A>;
 impl CH1FM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -164,16 +154,6 @@ impl<'a, const O: u8> CH1FM_W<'a, O> {
         self.variant(CH1FM_A::Masked)
     }
 }
-#[doc = "CH2FM"]
-pub use CH1FM_A as CH2FM_A;
-#[doc = "CH3FM"]
-pub use CH1FM_A as CH3FM_A;
-#[doc = "CH4FM"]
-pub use CH1FM_A as CH4FM_A;
-#[doc = "CH5FM"]
-pub use CH1FM_A as CH5FM_A;
-#[doc = "CH6FM"]
-pub use CH1FM_A as CH6FM_A;
 #[doc = "Field `CH2FM` reader - CH2FM"]
 pub use CH1FM_R as CH2FM_R;
 #[doc = "Field `CH3FM` reader - CH3FM"]

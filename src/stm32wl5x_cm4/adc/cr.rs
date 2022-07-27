@@ -34,234 +34,236 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADEN` reader - ADEN"]
+pub type ADEN_R = crate::BitReader<ADENR_A>;
 #[doc = "ADEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADEN_A {
+pub enum ADENR_A {
     #[doc = "0: ADC disabled"]
     Disabled = 0,
     #[doc = "1: ADC enabled"]
     Enabled = 1,
 }
-impl From<ADEN_A> for bool {
+impl From<ADENR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADEN_A) -> Self {
+    fn from(variant: ADENR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADEN` reader - ADEN"]
-pub type ADEN_R = crate::BitReader<ADEN_A>;
 impl ADEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADEN_A {
+    pub fn variant(&self) -> ADENR_A {
         match self.bits {
-            false => ADEN_A::Disabled,
-            true => ADEN_A::Enabled,
+            false => ADENR_A::Disabled,
+            true => ADENR_A::Enabled,
         }
     }
     #[doc = "Checks if the value of the field is `Disabled`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADEN_A::Disabled
+        *self == ADENR_A::Disabled
     }
     #[doc = "Checks if the value of the field is `Enabled`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADEN_A::Enabled
+        *self == ADENR_A::Enabled
     }
 }
 #[doc = "ADEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADEN_AW {
+pub enum ADENW_AW {
     #[doc = "1: Enable the ADC"]
     Enabled = 1,
 }
-impl From<ADEN_AW> for bool {
+impl From<ADENW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADEN_AW) -> Self {
+    fn from(variant: ADENW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADEN` writer - ADEN"]
-pub type ADEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADEN_AW, O>;
+pub type ADEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADENW_AW, O>;
 impl<'a, const O: u8> ADEN_W<'a, O> {
     #[doc = "Enable the ADC"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADEN_AW::Enabled)
+        self.variant(ADENW_AW::Enabled)
     }
 }
+#[doc = "Field `ADDIS` reader - ADDIS"]
+pub type ADDIS_R = crate::BitReader<ADDISR_A>;
 #[doc = "ADDIS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDIS_A {
+pub enum ADDISR_A {
     #[doc = "0: No disable command active"]
     NotDisabling = 0,
     #[doc = "1: ADC disabling"]
     Disabling = 1,
 }
-impl From<ADDIS_A> for bool {
+impl From<ADDISR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADDIS_A) -> Self {
+    fn from(variant: ADDISR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADDIS` reader - ADDIS"]
-pub type ADDIS_R = crate::BitReader<ADDIS_A>;
 impl ADDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADDIS_A {
+    pub fn variant(&self) -> ADDISR_A {
         match self.bits {
-            false => ADDIS_A::NotDisabling,
-            true => ADDIS_A::Disabling,
+            false => ADDISR_A::NotDisabling,
+            true => ADDISR_A::Disabling,
         }
     }
     #[doc = "Checks if the value of the field is `NotDisabling`"]
     #[inline(always)]
     pub fn is_not_disabling(&self) -> bool {
-        *self == ADDIS_A::NotDisabling
+        *self == ADDISR_A::NotDisabling
     }
     #[doc = "Checks if the value of the field is `Disabling`"]
     #[inline(always)]
     pub fn is_disabling(&self) -> bool {
-        *self == ADDIS_A::Disabling
+        *self == ADDISR_A::Disabling
     }
 }
 #[doc = "ADDIS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDIS_AW {
+pub enum ADDISW_AW {
     #[doc = "1: Disable the ADC"]
     Disable = 1,
 }
-impl From<ADDIS_AW> for bool {
+impl From<ADDISW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADDIS_AW) -> Self {
+    fn from(variant: ADDISW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADDIS` writer - ADDIS"]
-pub type ADDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADDIS_AW, O>;
+pub type ADDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADDISW_AW, O>;
 impl<'a, const O: u8> ADDIS_W<'a, O> {
     #[doc = "Disable the ADC"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(ADDIS_AW::Disable)
+        self.variant(ADDISW_AW::Disable)
     }
 }
+#[doc = "Field `ADSTART` reader - ADSTART"]
+pub type ADSTART_R = crate::BitReader<ADSTARTR_A>;
 #[doc = "ADSTART\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADSTART_A {
+pub enum ADSTARTR_A {
     #[doc = "0: No conversion ongoing"]
     NotActive = 0,
     #[doc = "1: ADC operating and may be converting"]
     Active = 1,
 }
-impl From<ADSTART_A> for bool {
+impl From<ADSTARTR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADSTART_A) -> Self {
+    fn from(variant: ADSTARTR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADSTART` reader - ADSTART"]
-pub type ADSTART_R = crate::BitReader<ADSTART_A>;
 impl ADSTART_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADSTART_A {
+    pub fn variant(&self) -> ADSTARTR_A {
         match self.bits {
-            false => ADSTART_A::NotActive,
-            true => ADSTART_A::Active,
+            false => ADSTARTR_A::NotActive,
+            true => ADSTARTR_A::Active,
         }
     }
     #[doc = "Checks if the value of the field is `NotActive`"]
     #[inline(always)]
     pub fn is_not_active(&self) -> bool {
-        *self == ADSTART_A::NotActive
+        *self == ADSTARTR_A::NotActive
     }
     #[doc = "Checks if the value of the field is `Active`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        *self == ADSTART_A::Active
+        *self == ADSTARTR_A::Active
     }
 }
 #[doc = "ADSTART\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADSTART_AW {
+pub enum ADSTARTW_AW {
     #[doc = "1: Start the ADC conversion (may be delayed for hardware triggers)"]
     StartConversion = 1,
 }
-impl From<ADSTART_AW> for bool {
+impl From<ADSTARTW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADSTART_AW) -> Self {
+    fn from(variant: ADSTARTW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADSTART` writer - ADSTART"]
-pub type ADSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADSTART_AW, O>;
+pub type ADSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADSTARTW_AW, O>;
 impl<'a, const O: u8> ADSTART_W<'a, O> {
     #[doc = "Start the ADC conversion (may be delayed for hardware triggers)"]
     #[inline(always)]
     pub fn start_conversion(self) -> &'a mut W {
-        self.variant(ADSTART_AW::StartConversion)
+        self.variant(ADSTARTW_AW::StartConversion)
     }
 }
+#[doc = "Field `ADSTP` reader - ADSTP"]
+pub type ADSTP_R = crate::BitReader<ADSTPR_A>;
 #[doc = "ADSTP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADSTP_A {
+pub enum ADSTPR_A {
     #[doc = "0: No stop command active"]
     NotStopping = 0,
     #[doc = "1: ADC stopping conversion"]
     Stopping = 1,
 }
-impl From<ADSTP_A> for bool {
+impl From<ADSTPR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADSTP_A) -> Self {
+    fn from(variant: ADSTPR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADSTP` reader - ADSTP"]
-pub type ADSTP_R = crate::BitReader<ADSTP_A>;
 impl ADSTP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADSTP_A {
+    pub fn variant(&self) -> ADSTPR_A {
         match self.bits {
-            false => ADSTP_A::NotStopping,
-            true => ADSTP_A::Stopping,
+            false => ADSTPR_A::NotStopping,
+            true => ADSTPR_A::Stopping,
         }
     }
     #[doc = "Checks if the value of the field is `NotStopping`"]
     #[inline(always)]
     pub fn is_not_stopping(&self) -> bool {
-        *self == ADSTP_A::NotStopping
+        *self == ADSTPR_A::NotStopping
     }
     #[doc = "Checks if the value of the field is `Stopping`"]
     #[inline(always)]
     pub fn is_stopping(&self) -> bool {
-        *self == ADSTP_A::Stopping
+        *self == ADSTPR_A::Stopping
     }
 }
 #[doc = "ADSTP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADSTP_AW {
+pub enum ADSTPW_AW {
     #[doc = "1: Stop the active conversion"]
     StopConversion = 1,
 }
-impl From<ADSTP_AW> for bool {
+impl From<ADSTPW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADSTP_AW) -> Self {
+    fn from(variant: ADSTPW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADSTP` writer - ADSTP"]
-pub type ADSTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADSTP_AW, O>;
+pub type ADSTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADSTPW_AW, O>;
 impl<'a, const O: u8> ADSTP_W<'a, O> {
     #[doc = "Stop the active conversion"]
     #[inline(always)]
     pub fn stop_conversion(self) -> &'a mut W {
-        self.variant(ADSTP_AW::StopConversion)
+        self.variant(ADSTPW_AW::StopConversion)
     }
 }
+#[doc = "Field `ADVREGEN` reader - ADVREGEN"]
+pub type ADVREGEN_R = crate::BitReader<ADVREGEN_A>;
 #[doc = "ADVREGEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADVREGEN_A {
@@ -276,8 +278,6 @@ impl From<ADVREGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADVREGEN` reader - ADVREGEN"]
-pub type ADVREGEN_R = crate::BitReader<ADVREGEN_A>;
 impl ADVREGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -312,61 +312,61 @@ impl<'a, const O: u8> ADVREGEN_W<'a, O> {
         self.variant(ADVREGEN_A::Enabled)
     }
 }
+#[doc = "Field `ADCAL` reader - ADCAL"]
+pub type ADCAL_R = crate::BitReader<ADCALR_A>;
 #[doc = "ADCAL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCAL_A {
+pub enum ADCALR_A {
     #[doc = "0: ADC calibration either not yet performed or completed"]
     NotCalibrating = 0,
     #[doc = "1: ADC calibration in progress"]
     Calibrating = 1,
 }
-impl From<ADCAL_A> for bool {
+impl From<ADCALR_A> for bool {
     #[inline(always)]
-    fn from(variant: ADCAL_A) -> Self {
+    fn from(variant: ADCALR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADCAL` reader - ADCAL"]
-pub type ADCAL_R = crate::BitReader<ADCAL_A>;
 impl ADCAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADCAL_A {
+    pub fn variant(&self) -> ADCALR_A {
         match self.bits {
-            false => ADCAL_A::NotCalibrating,
-            true => ADCAL_A::Calibrating,
+            false => ADCALR_A::NotCalibrating,
+            true => ADCALR_A::Calibrating,
         }
     }
     #[doc = "Checks if the value of the field is `NotCalibrating`"]
     #[inline(always)]
     pub fn is_not_calibrating(&self) -> bool {
-        *self == ADCAL_A::NotCalibrating
+        *self == ADCALR_A::NotCalibrating
     }
     #[doc = "Checks if the value of the field is `Calibrating`"]
     #[inline(always)]
     pub fn is_calibrating(&self) -> bool {
-        *self == ADCAL_A::Calibrating
+        *self == ADCALR_A::Calibrating
     }
 }
 #[doc = "ADCAL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCAL_AW {
+pub enum ADCALW_AW {
     #[doc = "1: Start the ADC calibration sequence"]
     StartCalibration = 1,
 }
-impl From<ADCAL_AW> for bool {
+impl From<ADCALW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ADCAL_AW) -> Self {
+    fn from(variant: ADCALW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ADCAL` writer - ADCAL"]
-pub type ADCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADCAL_AW, O>;
+pub type ADCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, ADCALW_AW, O>;
 impl<'a, const O: u8> ADCAL_W<'a, O> {
     #[doc = "Start the ADC calibration sequence"]
     #[inline(always)]
     pub fn start_calibration(self) -> &'a mut W {
-        self.variant(ADCAL_AW::StartCalibration)
+        self.variant(ADCALW_AW::StartCalibration)
     }
 }
 impl R {

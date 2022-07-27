@@ -34,6 +34,8 @@ impl From<crate::W<IER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADRDYIE` reader - ADRDYIE"]
+pub type ADRDYIE_R = crate::BitReader<ADRDYIE_A>;
 #[doc = "ADRDYIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADRDYIE_A {
@@ -48,8 +50,6 @@ impl From<ADRDYIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADRDYIE` reader - ADRDYIE"]
-pub type ADRDYIE_R = crate::BitReader<ADRDYIE_A>;
 impl ADRDYIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> ADRDYIE_W<'a, O> {
         self.variant(ADRDYIE_A::Enabled)
     }
 }
+#[doc = "Field `EOSMPIE` reader - EOSMPIE"]
+pub type EOSMPIE_R = crate::BitReader<EOSMPIE_A>;
 #[doc = "EOSMPIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOSMPIE_A {
@@ -98,8 +100,6 @@ impl From<EOSMPIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOSMPIE` reader - EOSMPIE"]
-pub type EOSMPIE_R = crate::BitReader<EOSMPIE_A>;
 impl EOSMPIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> EOSMPIE_W<'a, O> {
         self.variant(EOSMPIE_A::Enabled)
     }
 }
+#[doc = "Field `EOCIE` reader - EOCIE"]
+pub type EOCIE_R = crate::BitReader<EOCIE_A>;
 #[doc = "EOCIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOCIE_A {
@@ -148,8 +150,6 @@ impl From<EOCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOCIE` reader - EOCIE"]
-pub type EOCIE_R = crate::BitReader<EOCIE_A>;
 impl EOCIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> EOCIE_W<'a, O> {
         self.variant(EOCIE_A::Enabled)
     }
 }
+#[doc = "Field `EOSIE` reader - EOSIE"]
+pub type EOSIE_R = crate::BitReader<EOSIE_A>;
 #[doc = "EOSIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOSIE_A {
@@ -198,8 +200,6 @@ impl From<EOSIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOSIE` reader - EOSIE"]
-pub type EOSIE_R = crate::BitReader<EOSIE_A>;
 impl EOSIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -234,6 +234,8 @@ impl<'a, const O: u8> EOSIE_W<'a, O> {
         self.variant(EOSIE_A::Enabled)
     }
 }
+#[doc = "Field `OVRIE` reader - OVRIE"]
+pub type OVRIE_R = crate::BitReader<OVRIE_A>;
 #[doc = "OVRIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVRIE_A {
@@ -248,8 +250,6 @@ impl From<OVRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OVRIE` reader - OVRIE"]
-pub type OVRIE_R = crate::BitReader<OVRIE_A>;
 impl OVRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -284,6 +284,8 @@ impl<'a, const O: u8> OVRIE_W<'a, O> {
         self.variant(OVRIE_A::Enabled)
     }
 }
+#[doc = "Field `AWD1IE` reader - AWD1IE"]
+pub type AWD1IE_R = crate::BitReader<AWD1IE_A>;
 #[doc = "AWD1IE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AWD1IE_A {
@@ -298,8 +300,6 @@ impl From<AWD1IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD1IE` reader - AWD1IE"]
-pub type AWD1IE_R = crate::BitReader<AWD1IE_A>;
 impl AWD1IE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -334,10 +334,6 @@ impl<'a, const O: u8> AWD1IE_W<'a, O> {
         self.variant(AWD1IE_A::Enabled)
     }
 }
-#[doc = "AWD2IE"]
-pub use AWD1IE_A as AWD2IE_A;
-#[doc = "AWD3IE"]
-pub use AWD1IE_A as AWD3IE_A;
 #[doc = "Field `AWD2IE` reader - AWD2IE"]
 pub use AWD1IE_R as AWD2IE_R;
 #[doc = "Field `AWD3IE` reader - AWD3IE"]
@@ -346,6 +342,8 @@ pub use AWD1IE_R as AWD3IE_R;
 pub use AWD1IE_W as AWD2IE_W;
 #[doc = "Field `AWD3IE` writer - AWD3IE"]
 pub use AWD1IE_W as AWD3IE_W;
+#[doc = "Field `EOCALIE` reader - EOCALIE"]
+pub type EOCALIE_R = crate::BitReader<EOCALIE_A>;
 #[doc = "EOCALIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOCALIE_A {
@@ -360,8 +358,6 @@ impl From<EOCALIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EOCALIE` reader - EOCALIE"]
-pub type EOCALIE_R = crate::BitReader<EOCALIE_A>;
 impl EOCALIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -396,6 +392,8 @@ impl<'a, const O: u8> EOCALIE_W<'a, O> {
         self.variant(EOCALIE_A::Enabled)
     }
 }
+#[doc = "Field `CCRDYIE` reader - CCRDYIE"]
+pub type CCRDYIE_R = crate::BitReader<CCRDYIE_A>;
 #[doc = "CCRDYIE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCRDYIE_A {
@@ -410,8 +408,6 @@ impl From<CCRDYIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCRDYIE` reader - CCRDYIE"]
-pub type CCRDYIE_R = crate::BitReader<CCRDYIE_A>;
 impl CCRDYIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

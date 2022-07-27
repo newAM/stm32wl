@@ -34,142 +34,8 @@ impl From<crate::W<CSR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Voltage reference buffer ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VRR_A {
-    #[doc = "0: The voltage reference buffer output is not ready"]
-    NotReady = 0,
-    #[doc = "1: The voltage reference buffer output reached the requested level"]
-    Ready = 1,
-}
-impl From<VRR_A> for bool {
-    #[inline(always)]
-    fn from(variant: VRR_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `VRR` reader - Voltage reference buffer ready"]
-pub type VRR_R = crate::BitReader<VRR_A>;
-impl VRR_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VRR_A {
-        match self.bits {
-            false => VRR_A::NotReady,
-            true => VRR_A::Ready,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotReady`"]
-    #[inline(always)]
-    pub fn is_not_ready(&self) -> bool {
-        *self == VRR_A::NotReady
-    }
-    #[doc = "Checks if the value of the field is `Ready`"]
-    #[inline(always)]
-    pub fn is_ready(&self) -> bool {
-        *self == VRR_A::Ready
-    }
-}
-#[doc = "Voltage reference scale\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VRS_A {
-    #[doc = "0: Voltage reference set to VREF_OUT1 (around 2.048 V)"]
-    V2048 = 0,
-    #[doc = "1: Voltage reference set to VREF_OUT2 (around 2.5 V)"]
-    V25 = 1,
-}
-impl From<VRS_A> for bool {
-    #[inline(always)]
-    fn from(variant: VRS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `VRS` reader - Voltage reference scale"]
-pub type VRS_R = crate::BitReader<VRS_A>;
-impl VRS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VRS_A {
-        match self.bits {
-            false => VRS_A::V2048,
-            true => VRS_A::V25,
-        }
-    }
-    #[doc = "Checks if the value of the field is `V2048`"]
-    #[inline(always)]
-    pub fn is_v2_048(&self) -> bool {
-        *self == VRS_A::V2048
-    }
-    #[doc = "Checks if the value of the field is `V25`"]
-    #[inline(always)]
-    pub fn is_v2_5(&self) -> bool {
-        *self == VRS_A::V25
-    }
-}
-#[doc = "Field `VRS` writer - Voltage reference scale"]
-pub type VRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, VRS_A, O>;
-impl<'a, const O: u8> VRS_W<'a, O> {
-    #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)"]
-    #[inline(always)]
-    pub fn v2_048(self) -> &'a mut W {
-        self.variant(VRS_A::V2048)
-    }
-    #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)"]
-    #[inline(always)]
-    pub fn v2_5(self) -> &'a mut W {
-        self.variant(VRS_A::V25)
-    }
-}
-#[doc = "High impedance mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIZ_A {
-    #[doc = "0: VREF+ pin is internally connected to the voltage reference buffer output"]
-    Connected = 0,
-    #[doc = "1: VREF+ pin is high impedance"]
-    HighZ = 1,
-}
-impl From<HIZ_A> for bool {
-    #[inline(always)]
-    fn from(variant: HIZ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `HIZ` reader - High impedance mode"]
-pub type HIZ_R = crate::BitReader<HIZ_A>;
-impl HIZ_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> HIZ_A {
-        match self.bits {
-            false => HIZ_A::Connected,
-            true => HIZ_A::HighZ,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Connected`"]
-    #[inline(always)]
-    pub fn is_connected(&self) -> bool {
-        *self == HIZ_A::Connected
-    }
-    #[doc = "Checks if the value of the field is `HighZ`"]
-    #[inline(always)]
-    pub fn is_high_z(&self) -> bool {
-        *self == HIZ_A::HighZ
-    }
-}
-#[doc = "Field `HIZ` writer - High impedance mode"]
-pub type HIZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, HIZ_A, O>;
-impl<'a, const O: u8> HIZ_W<'a, O> {
-    #[doc = "VREF+ pin is internally connected to the voltage reference buffer output"]
-    #[inline(always)]
-    pub fn connected(self) -> &'a mut W {
-        self.variant(HIZ_A::Connected)
-    }
-    #[doc = "VREF+ pin is high impedance"]
-    #[inline(always)]
-    pub fn high_z(self) -> &'a mut W {
-        self.variant(HIZ_A::HighZ)
-    }
-}
+#[doc = "Field `ENVR` reader - Voltage reference buffer mode enable"]
+pub type ENVR_R = crate::BitReader<ENVR_A>;
 #[doc = "Voltage reference buffer mode enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENVR_A {
@@ -184,8 +50,6 @@ impl From<ENVR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENVR` reader - Voltage reference buffer mode enable"]
-pub type ENVR_R = crate::BitReader<ENVR_A>;
 impl ENVR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -220,43 +84,179 @@ impl<'a, const O: u8> ENVR_W<'a, O> {
         self.variant(ENVR_A::Enabled)
     }
 }
-impl R {
-    #[doc = "Bit 3 - Voltage reference buffer ready"]
+#[doc = "Field `HIZ` reader - High impedance mode"]
+pub type HIZ_R = crate::BitReader<HIZ_A>;
+#[doc = "High impedance mode\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIZ_A {
+    #[doc = "0: VREF+ pin is internally connected to the voltage reference buffer output"]
+    Connected = 0,
+    #[doc = "1: VREF+ pin is high impedance"]
+    HighZ = 1,
+}
+impl From<HIZ_A> for bool {
     #[inline(always)]
-    pub fn vrr(&self) -> VRR_R {
-        VRR_R::new(((self.bits >> 3) & 1) != 0)
+    fn from(variant: HIZ_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 2 - Voltage reference scale"]
+}
+impl HIZ_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn vrs(&self) -> VRS_R {
-        VRS_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn variant(&self) -> HIZ_A {
+        match self.bits {
+            false => HIZ_A::Connected,
+            true => HIZ_A::HighZ,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Connected`"]
+    #[inline(always)]
+    pub fn is_connected(&self) -> bool {
+        *self == HIZ_A::Connected
+    }
+    #[doc = "Checks if the value of the field is `HighZ`"]
+    #[inline(always)]
+    pub fn is_high_z(&self) -> bool {
+        *self == HIZ_A::HighZ
+    }
+}
+#[doc = "Field `HIZ` writer - High impedance mode"]
+pub type HIZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, HIZ_A, O>;
+impl<'a, const O: u8> HIZ_W<'a, O> {
+    #[doc = "VREF+ pin is internally connected to the voltage reference buffer output"]
+    #[inline(always)]
+    pub fn connected(self) -> &'a mut W {
+        self.variant(HIZ_A::Connected)
+    }
+    #[doc = "VREF+ pin is high impedance"]
+    #[inline(always)]
+    pub fn high_z(self) -> &'a mut W {
+        self.variant(HIZ_A::HighZ)
+    }
+}
+#[doc = "Field `VRS` reader - Voltage reference scale"]
+pub type VRS_R = crate::BitReader<VRS_A>;
+#[doc = "Voltage reference scale\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VRS_A {
+    #[doc = "0: Voltage reference set to VREF_OUT1 (around 2.048 V)"]
+    V2048 = 0,
+    #[doc = "1: Voltage reference set to VREF_OUT2 (around 2.5 V)"]
+    V25 = 1,
+}
+impl From<VRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: VRS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VRS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VRS_A {
+        match self.bits {
+            false => VRS_A::V2048,
+            true => VRS_A::V25,
+        }
+    }
+    #[doc = "Checks if the value of the field is `V2048`"]
+    #[inline(always)]
+    pub fn is_v2_048(&self) -> bool {
+        *self == VRS_A::V2048
+    }
+    #[doc = "Checks if the value of the field is `V25`"]
+    #[inline(always)]
+    pub fn is_v2_5(&self) -> bool {
+        *self == VRS_A::V25
+    }
+}
+#[doc = "Field `VRS` writer - Voltage reference scale"]
+pub type VRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSR_SPEC, VRS_A, O>;
+impl<'a, const O: u8> VRS_W<'a, O> {
+    #[doc = "Voltage reference set to VREF_OUT1 (around 2.048 V)"]
+    #[inline(always)]
+    pub fn v2_048(self) -> &'a mut W {
+        self.variant(VRS_A::V2048)
+    }
+    #[doc = "Voltage reference set to VREF_OUT2 (around 2.5 V)"]
+    #[inline(always)]
+    pub fn v2_5(self) -> &'a mut W {
+        self.variant(VRS_A::V25)
+    }
+}
+#[doc = "Field `VRR` reader - Voltage reference buffer ready"]
+pub type VRR_R = crate::BitReader<VRR_A>;
+#[doc = "Voltage reference buffer ready\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VRR_A {
+    #[doc = "0: The voltage reference buffer output is not ready"]
+    NotReady = 0,
+    #[doc = "1: The voltage reference buffer output reached the requested level"]
+    Ready = 1,
+}
+impl From<VRR_A> for bool {
+    #[inline(always)]
+    fn from(variant: VRR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VRR_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VRR_A {
+        match self.bits {
+            false => VRR_A::NotReady,
+            true => VRR_A::Ready,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotReady`"]
+    #[inline(always)]
+    pub fn is_not_ready(&self) -> bool {
+        *self == VRR_A::NotReady
+    }
+    #[doc = "Checks if the value of the field is `Ready`"]
+    #[inline(always)]
+    pub fn is_ready(&self) -> bool {
+        *self == VRR_A::Ready
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
+    #[inline(always)]
+    pub fn envr(&self) -> ENVR_R {
+        ENVR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - High impedance mode"]
     #[inline(always)]
     pub fn hiz(&self) -> HIZ_R {
         HIZ_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
+    #[doc = "Bit 2 - Voltage reference scale"]
     #[inline(always)]
-    pub fn envr(&self) -> ENVR_R {
-        ENVR_R::new((self.bits & 1) != 0)
+    pub fn vrs(&self) -> VRS_R {
+        VRS_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - Voltage reference buffer ready"]
+    #[inline(always)]
+    pub fn vrr(&self) -> VRR_R {
+        VRR_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - Voltage reference scale"]
+    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
     #[inline(always)]
-    pub fn vrs(&mut self) -> VRS_W<2> {
-        VRS_W::new(self)
+    pub fn envr(&mut self) -> ENVR_W<0> {
+        ENVR_W::new(self)
     }
     #[doc = "Bit 1 - High impedance mode"]
     #[inline(always)]
     pub fn hiz(&mut self) -> HIZ_W<1> {
         HIZ_W::new(self)
     }
-    #[doc = "Bit 0 - Voltage reference buffer mode enable"]
+    #[doc = "Bit 2 - Voltage reference scale"]
     #[inline(always)]
-    pub fn envr(&mut self) -> ENVR_W<0> {
-        ENVR_W::new(self)
+    pub fn vrs(&mut self) -> VRS_W<2> {
+        VRS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -2,30 +2,30 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - IPCC Processor 1 control register"]
-    pub c1cr: crate::Reg<c1cr::C1CR_SPEC>,
+    pub c1cr: C1CR,
     #[doc = "0x04 - IPCC Processor 1 mask register"]
-    pub c1mr: crate::Reg<c1mr::C1MR_SPEC>,
+    pub c1mr: C1MR,
     #[doc = "0x08 - Reading this register will always return 0x0000 0000."]
-    pub c1scr: crate::Reg<c1scr::C1SCR_SPEC>,
+    pub c1scr: C1SCR,
     #[doc = "0x0c - IPCC processor 1 to processor 2 status register"]
-    pub ic1toc2sr: crate::Reg<ic1toc2sr::IC1TOC2SR_SPEC>,
+    pub ic1toc2sr: IC1TOC2SR,
     #[doc = "0x10 - IPCC Processor 2 control register"]
-    pub c2cr: crate::Reg<c2cr::C2CR_SPEC>,
+    pub c2cr: C2CR,
     #[doc = "0x14 - IPCC Processor 2 mask register"]
-    pub c2mr: crate::Reg<c2mr::C2MR_SPEC>,
+    pub c2mr: C2MR,
     #[doc = "0x18 - Reading this register will always return 0x0000 0000."]
-    pub c2scr: crate::Reg<c2scr::C2SCR_SPEC>,
+    pub c2scr: C2SCR,
     #[doc = "0x1c - IPCC processor 2 to processor 1 status register"]
-    pub c2toc1sr: crate::Reg<c2toc1sr::C2TOC1SR_SPEC>,
+    pub c2toc1sr: C2TOC1SR,
     _reserved8: [u8; 0x03d0],
     #[doc = "0x3f0 - IPCC Hardware configuration register"]
-    pub hwcfgr: crate::Reg<hwcfgr::HWCFGR_SPEC>,
+    pub hwcfgr: HWCFGR,
     #[doc = "0x3f4 - IPCC IP Version register"]
-    pub verr: crate::Reg<verr::VERR_SPEC>,
+    pub verr: VERR,
     #[doc = "0x3f8 - IPCC IP Identification register"]
-    pub ipidr: crate::Reg<ipidr::IPIDR_SPEC>,
+    pub ipidr: IPIDR,
     #[doc = "0x3fc - IPCC Size ID register"]
-    pub sidr: crate::Reg<sidr::SIDR_SPEC>,
+    pub sidr: SIDR,
 }
 #[doc = "C1CR register accessor: an alias for `Reg<C1CR_SPEC>`"]
 pub type C1CR = crate::Reg<c1cr::C1CR_SPEC>;

@@ -34,86 +34,56 @@ impl From<crate::W<BRR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BR0` reader - Port Reset bit"]
+pub type BR0_R = crate::BitReader<BR0W_A>;
 #[doc = "Port Reset bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BR0_A {
+pub enum BR0W_A {
     #[doc = "0: No action on the corresponding ODx bit"]
     NoAction = 0,
     #[doc = "1: Reset the ODx bit"]
     Reset = 1,
 }
-impl From<BR0_A> for bool {
+impl From<BR0W_A> for bool {
     #[inline(always)]
-    fn from(variant: BR0_A) -> Self {
+    fn from(variant: BR0W_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BR0` reader - Port Reset bit"]
-pub type BR0_R = crate::BitReader<BR0_A>;
 impl BR0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BR0_A {
+    pub fn variant(&self) -> BR0W_A {
         match self.bits {
-            false => BR0_A::NoAction,
-            true => BR0_A::Reset,
+            false => BR0W_A::NoAction,
+            true => BR0W_A::Reset,
         }
     }
     #[doc = "Checks if the value of the field is `NoAction`"]
     #[inline(always)]
     pub fn is_no_action(&self) -> bool {
-        *self == BR0_A::NoAction
+        *self == BR0W_A::NoAction
     }
     #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        *self == BR0_A::Reset
+        *self == BR0W_A::Reset
     }
 }
 #[doc = "Field `BR0` writer - Port Reset bit"]
-pub type BR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRR_SPEC, BR0_A, O>;
+pub type BR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRR_SPEC, BR0W_A, O>;
 impl<'a, const O: u8> BR0_W<'a, O> {
     #[doc = "No action on the corresponding ODx bit"]
     #[inline(always)]
     pub fn no_action(self) -> &'a mut W {
-        self.variant(BR0_A::NoAction)
+        self.variant(BR0W_A::NoAction)
     }
     #[doc = "Reset the ODx bit"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(BR0_A::Reset)
+        self.variant(BR0W_A::Reset)
     }
 }
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR1_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR2_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR3_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR4_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR5_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR6_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR7_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR8_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR9_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR10_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR11_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR12_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR13_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR14_A;
-#[doc = "Port Reset bit"]
-pub use BR0_A as BR15_A;
 #[doc = "Field `BR1` reader - Port Reset bit"]
 pub use BR0_R as BR1_R;
 #[doc = "Field `BR2` reader - Port Reset bit"]

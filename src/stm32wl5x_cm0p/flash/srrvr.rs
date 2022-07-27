@@ -42,6 +42,8 @@ pub type SBRV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRRVR_SPEC, u
 pub type SBRSA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SBRSA` writer - Secure backup SRAM2 start address"]
 pub type SBRSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRRVR_SPEC, u8, u8, 5, O>;
+#[doc = "Field `BRSD` reader - backup SRAM2 security disable"]
+pub type BRSD_R = crate::BitReader<BRSD_A>;
 #[doc = "backup SRAM2 security disable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRSD_A {
@@ -57,8 +59,6 @@ impl From<BRSD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BRSD` reader - backup SRAM2 security disable"]
-pub type BRSD_R = crate::BitReader<BRSD_A>;
 impl BRSD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -98,6 +98,8 @@ contains the start address of the first 1-Kbyte page of the secure backup SRAM2 
 pub type SNBRSA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SNBRSA` writer - Secure non-backup SRAM1 start address"]
 pub type SNBRSA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRRVR_SPEC, u8, u8, 5, O>;
+#[doc = "Field `NBRSD` reader - NBRSD"]
+pub type NBRSD_R = crate::BitReader<NBRSD_A>;
 #[doc = "NBRSD\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NBRSD_A {
@@ -113,8 +115,6 @@ impl From<NBRSD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NBRSD` reader - NBRSD"]
-pub type NBRSD_R = crate::BitReader<NBRSD_A>;
 impl NBRSD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -150,6 +150,8 @@ contains the start address of the first 1-Kbyte page of the secure non-backup SR
         self.variant(NBRSD_A::NonSecure)
     }
 }
+#[doc = "Field `C2OPT` reader - C2OPT"]
+pub type C2OPT_R = crate::BitReader<C2OPT_A>;
 #[doc = "C2OPT\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum C2OPT_A {
@@ -164,8 +166,6 @@ impl From<C2OPT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `C2OPT` reader - C2OPT"]
-pub type C2OPT_R = crate::BitReader<C2OPT_A>;
 impl C2OPT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

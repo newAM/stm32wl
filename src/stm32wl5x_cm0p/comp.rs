@@ -2,9 +2,9 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - COMP1_CSR"]
-    pub comp1_csr: crate::Reg<comp1_csr::COMP1_CSR_SPEC>,
+    pub comp1_csr: COMP1_CSR,
     #[doc = "0x04 - COMP2_CSR"]
-    pub comp2_csr: crate::Reg<comp2_csr::COMP2_CSR_SPEC>,
+    pub comp2_csr: COMP2_CSR,
 }
 #[doc = "COMP1_CSR register accessor: an alias for `Reg<COMP1_CSR_SPEC>`"]
 pub type COMP1_CSR = crate::Reg<comp1_csr::COMP1_CSR_SPEC>;

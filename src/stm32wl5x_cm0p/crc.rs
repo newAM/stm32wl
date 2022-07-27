@@ -3,37 +3,30 @@
 pub struct RegisterBlock {
     _reserved_0_dr: [u8; 0x04],
     #[doc = "0x04 - Independent data register"]
-    pub idr: crate::Reg<idr::IDR_SPEC>,
+    pub idr: IDR,
     #[doc = "0x08 - Control register"]
-    pub cr: crate::Reg<cr::CR_SPEC>,
+    pub cr: CR,
     _reserved3: [u8; 0x04],
     #[doc = "0x10 - Initial CRC value"]
-    pub init: crate::Reg<init::INIT_SPEC>,
+    pub init: INIT,
     #[doc = "0x14 - polynomial"]
-    pub pol: crate::Reg<pol::POL_SPEC>,
+    pub pol: POL,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Data register - half-word sized"]
     #[inline(always)]
-    pub fn dr16(&self) -> &crate::Reg<dr16::DR16_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(0usize)
-                as *const crate::Reg<dr16::DR16_SPEC>)
-        }
+    pub fn dr16(&self) -> &DR16 {
+        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DR16) }
     }
     #[doc = "0x00 - Data register - byte sized"]
     #[inline(always)]
-    pub fn dr8(&self) -> &crate::Reg<dr8::DR8_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(0usize) as *const crate::Reg<dr8::DR8_SPEC>)
-        }
+    pub fn dr8(&self) -> &DR8 {
+        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DR8) }
     }
     #[doc = "0x00 - Data register"]
     #[inline(always)]
-    pub fn dr(&self) -> &crate::Reg<dr::DR_SPEC> {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(0usize) as *const crate::Reg<dr::DR_SPEC>)
-        }
+    pub fn dr(&self) -> &DR {
+        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DR) }
     }
 }
 #[doc = "DR register accessor: an alias for `Reg<DR_SPEC>`"]

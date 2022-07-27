@@ -34,56 +34,8 @@ impl From<crate::W<LCKR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCKK_A {
-    #[doc = "0: Port configuration lock key not active"]
-    NotActive = 0,
-    #[doc = "1: Port configuration lock key active"]
-    Active = 1,
-}
-impl From<LCKK_A> for bool {
-    #[inline(always)]
-    fn from(variant: LCKK_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `LCKK` reader - Port x lock bit y (y= 0..15)"]
-pub type LCKK_R = crate::BitReader<LCKK_A>;
-impl LCKK_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LCKK_A {
-        match self.bits {
-            false => LCKK_A::NotActive,
-            true => LCKK_A::Active,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NotActive`"]
-    #[inline(always)]
-    pub fn is_not_active(&self) -> bool {
-        *self == LCKK_A::NotActive
-    }
-    #[doc = "Checks if the value of the field is `Active`"]
-    #[inline(always)]
-    pub fn is_active(&self) -> bool {
-        *self == LCKK_A::Active
-    }
-}
-#[doc = "Field `LCKK` writer - Port x lock bit y (y= 0..15)"]
-pub type LCKK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCKK_A, O>;
-impl<'a, const O: u8> LCKK_W<'a, O> {
-    #[doc = "Port configuration lock key not active"]
-    #[inline(always)]
-    pub fn not_active(self) -> &'a mut W {
-        self.variant(LCKK_A::NotActive)
-    }
-    #[doc = "Port configuration lock key active"]
-    #[inline(always)]
-    pub fn active(self) -> &'a mut W {
-        self.variant(LCKK_A::Active)
-    }
-}
+#[doc = "Field `LCK3` reader - Port x lock bit y (y= 0..15)"]
+pub type LCK3_R = crate::BitReader<LCK3_A>;
 #[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCK3_A {
@@ -98,8 +50,6 @@ impl From<LCK3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LCK3` reader - Port x lock bit y (y= 0..15)"]
-pub type LCK3_R = crate::BitReader<LCK3_A>;
 impl LCK3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,28 +84,78 @@ impl<'a, const O: u8> LCK3_W<'a, O> {
         self.variant(LCK3_A::Locked)
     }
 }
-impl R {
-    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
+#[doc = "Field `LCKK` reader - Port x lock bit y (y= 0..15)"]
+pub type LCKK_R = crate::BitReader<LCKK_A>;
+#[doc = "Port x lock bit y (y= 0..15)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCKK_A {
+    #[doc = "0: Port configuration lock key not active"]
+    NotActive = 0,
+    #[doc = "1: Port configuration lock key active"]
+    Active = 1,
+}
+impl From<LCKK_A> for bool {
     #[inline(always)]
-    pub fn lckk(&self) -> LCKK_R {
-        LCKK_R::new(((self.bits >> 16) & 1) != 0)
+    fn from(variant: LCKK_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl LCKK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCKK_A {
+        match self.bits {
+            false => LCKK_A::NotActive,
+            true => LCKK_A::Active,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NotActive`"]
+    #[inline(always)]
+    pub fn is_not_active(&self) -> bool {
+        *self == LCKK_A::NotActive
+    }
+    #[doc = "Checks if the value of the field is `Active`"]
+    #[inline(always)]
+    pub fn is_active(&self) -> bool {
+        *self == LCKK_A::Active
+    }
+}
+#[doc = "Field `LCKK` writer - Port x lock bit y (y= 0..15)"]
+pub type LCKK_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCKR_SPEC, LCKK_A, O>;
+impl<'a, const O: u8> LCKK_W<'a, O> {
+    #[doc = "Port configuration lock key not active"]
+    #[inline(always)]
+    pub fn not_active(self) -> &'a mut W {
+        self.variant(LCKK_A::NotActive)
+    }
+    #[doc = "Port configuration lock key active"]
+    #[inline(always)]
+    pub fn active(self) -> &'a mut W {
+        self.variant(LCKK_A::Active)
+    }
+}
+impl R {
     #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck3(&self) -> LCK3_R {
         LCK3_R::new(((self.bits >> 3) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
-    pub fn lckk(&mut self) -> LCKK_W<16> {
-        LCKK_W::new(self)
+    pub fn lckk(&self) -> LCKK_R {
+        LCKK_R::new(((self.bits >> 16) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 3 - Port x lock bit y (y= 0..15)"]
     #[inline(always)]
     pub fn lck3(&mut self) -> LCK3_W<3> {
         LCK3_W::new(self)
+    }
+    #[doc = "Bit 16 - Port x lock bit y (y= 0..15)"]
+    #[inline(always)]
+    pub fn lckk(&mut self) -> LCKK_W<16> {
+        LCKK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -38,6 +38,8 @@ impl From<crate::W<I2SPR_SPEC>> for W {
 pub type I2SDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `I2SDIV` writer - I2SDIV"]
 pub type I2SDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, I2SPR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `ODD` reader - ODD"]
+pub type ODD_R = crate::BitReader<ODD_A>;
 #[doc = "ODD\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODD_A {
@@ -52,8 +54,6 @@ impl From<ODD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ODD` reader - ODD"]
-pub type ODD_R = crate::BitReader<ODD_A>;
 impl ODD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,6 +88,8 @@ impl<'a, const O: u8> ODD_W<'a, O> {
         self.variant(ODD_A::Odd)
     }
 }
+#[doc = "Field `MCKOE` reader - MCKOE"]
+pub type MCKOE_R = crate::BitReader<MCKOE_A>;
 #[doc = "MCKOE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCKOE_A {
@@ -102,8 +104,6 @@ impl From<MCKOE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MCKOE` reader - MCKOE"]
-pub type MCKOE_R = crate::BitReader<MCKOE_A>;
 impl MCKOE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

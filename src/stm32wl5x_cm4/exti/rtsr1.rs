@@ -34,18 +34,8 @@ impl From<crate::W<RTSR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT21_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT22_A;
-#[doc = "Field `RT21` reader - Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_R as RT21_R;
-#[doc = "Field `RT22` reader - Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_R as RT22_R;
-#[doc = "Field `RT21` writer - Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_W as RT21_W;
-#[doc = "Field `RT22` writer - Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_W as RT22_W;
+#[doc = "Field `RT0` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub type RT0_R = crate::BitReader<RT0_A>;
 #[doc = "Rising trigger event configuration bit of Configurable Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RT0_A {
@@ -60,8 +50,6 @@ impl From<RT0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RT0` reader - Rising trigger event configuration bit of Configurable Event input"]
-pub type RT0_R = crate::BitReader<RT0_A>;
 impl RT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -96,38 +84,6 @@ impl<'a, const O: u8> RT0_W<'a, O> {
         self.variant(RT0_A::Enabled)
     }
 }
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT1_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT2_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT3_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT4_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT5_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT6_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT7_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT8_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT9_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT10_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT11_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT12_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT13_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT14_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT15_A;
-#[doc = "Rising trigger event configuration bit of Configurable Event input"]
-pub use RT0_A as RT16_A;
 #[doc = "Field `RT1` reader - Rising trigger event configuration bit of Configurable Event input"]
 pub use RT0_R as RT1_R;
 #[doc = "Field `RT2` reader - Rising trigger event configuration bit of Configurable Event input"]
@@ -160,6 +116,10 @@ pub use RT0_R as RT14_R;
 pub use RT0_R as RT15_R;
 #[doc = "Field `RT16` reader - Rising trigger event configuration bit of Configurable Event input"]
 pub use RT0_R as RT16_R;
+#[doc = "Field `RT21` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT0_R as RT21_R;
+#[doc = "Field `RT22` reader - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT0_R as RT22_R;
 #[doc = "Field `RT1` writer - Rising trigger event configuration bit of Configurable Event input"]
 pub use RT0_W as RT1_W;
 #[doc = "Field `RT2` writer - Rising trigger event configuration bit of Configurable Event input"]
@@ -192,17 +152,11 @@ pub use RT0_W as RT14_W;
 pub use RT0_W as RT15_W;
 #[doc = "Field `RT16` writer - Rising trigger event configuration bit of Configurable Event input"]
 pub use RT0_W as RT16_W;
+#[doc = "Field `RT21` writer - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT0_W as RT21_W;
+#[doc = "Field `RT22` writer - Rising trigger event configuration bit of Configurable Event input"]
+pub use RT0_W as RT22_W;
 impl R {
-    #[doc = "Bit 21 - Rising trigger event configuration bit of Configurable Event input"]
-    #[inline(always)]
-    pub fn rt21(&self) -> RT21_R {
-        RT21_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 22 - Rising trigger event configuration bit of Configurable Event input"]
-    #[inline(always)]
-    pub fn rt22(&self) -> RT22_R {
-        RT22_R::new(((self.bits >> 22) & 1) != 0)
-    }
     #[doc = "Bit 0 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn rt0(&self) -> RT0_R {
@@ -288,18 +242,18 @@ impl R {
     pub fn rt16(&self) -> RT16_R {
         RT16_R::new(((self.bits >> 16) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 21 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn rt21(&mut self) -> RT21_W<21> {
-        RT21_W::new(self)
+    pub fn rt21(&self) -> RT21_R {
+        RT21_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
-    pub fn rt22(&mut self) -> RT22_W<22> {
-        RT22_W::new(self)
+    pub fn rt22(&self) -> RT22_R {
+        RT22_R::new(((self.bits >> 22) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Rising trigger event configuration bit of Configurable Event input"]
     #[inline(always)]
     pub fn rt0(&mut self) -> RT0_W<0> {
@@ -384,6 +338,16 @@ impl W {
     #[inline(always)]
     pub fn rt16(&mut self) -> RT16_W<16> {
         RT16_W::new(self)
+    }
+    #[doc = "Bit 21 - Rising trigger event configuration bit of Configurable Event input"]
+    #[inline(always)]
+    pub fn rt21(&mut self) -> RT21_W<21> {
+        RT21_W::new(self)
+    }
+    #[doc = "Bit 22 - Rising trigger event configuration bit of Configurable Event input"]
+    #[inline(always)]
+    pub fn rt22(&mut self) -> RT22_W<22> {
+        RT22_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

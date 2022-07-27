@@ -34,6 +34,8 @@ impl From<crate::W<C2IMR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IM` reader - wakeup with interrupt Mask on Event input"]
+pub type IM_R = crate::FieldReader<u32, IM_A>;
 #[doc = "wakeup with interrupt Mask on Event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -49,8 +51,6 @@ impl From<IM_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `IM` reader - wakeup with interrupt Mask on Event input"]
-pub type IM_R = crate::FieldReader<u32, IM_A>;
 impl IM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

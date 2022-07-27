@@ -2,52 +2,52 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - request line multiplexer channel x configuration register"]
-    pub c0cr: crate::Reg<c0cr::C0CR_SPEC>,
+    pub c0cr: C0CR,
     #[doc = "0x04 - request line multiplexer channel x configuration register"]
-    pub c1cr: crate::Reg<c1cr::C1CR_SPEC>,
+    pub c1cr: C1CR,
     #[doc = "0x08 - request line multiplexer channel x configuration register"]
-    pub c2cr: crate::Reg<c2cr::C2CR_SPEC>,
+    pub c2cr: C2CR,
     #[doc = "0x0c - request line multiplexer channel x configuration register"]
-    pub c3cr: crate::Reg<c3cr::C3CR_SPEC>,
+    pub c3cr: C3CR,
     #[doc = "0x10 - request line multiplexer channel x configuration register"]
-    pub c4cr: crate::Reg<c4cr::C4CR_SPEC>,
+    pub c4cr: C4CR,
     #[doc = "0x14 - request line multiplexer channel x configuration register"]
-    pub c5cr: crate::Reg<c5cr::C5CR_SPEC>,
+    pub c5cr: C5CR,
     #[doc = "0x18 - request line multiplexer channel x configuration register"]
-    pub c6cr: crate::Reg<c6cr::C6CR_SPEC>,
+    pub c6cr: C6CR,
     #[doc = "0x1c - request line multiplexer channel x configuration register"]
-    pub c7cr: crate::Reg<c7cr::C7CR_SPEC>,
+    pub c7cr: C7CR,
     #[doc = "0x20 - request line multiplexer channel x configuration register"]
-    pub c8cr: crate::Reg<c8cr::C8CR_SPEC>,
+    pub c8cr: C8CR,
     #[doc = "0x24 - request line multiplexer channel x configuration register"]
-    pub c9cr: crate::Reg<c9cr::C9CR_SPEC>,
+    pub c9cr: C9CR,
     #[doc = "0x28 - C10CR"]
-    pub c10cr: crate::Reg<c10cr::C10CR_SPEC>,
+    pub c10cr: C10CR,
     #[doc = "0x2c - C11CR"]
-    pub c11cr: crate::Reg<c11cr::C11CR_SPEC>,
+    pub c11cr: C11CR,
     #[doc = "0x30 - C12CR"]
-    pub c12cr: crate::Reg<c12cr::C12CR_SPEC>,
+    pub c12cr: C12CR,
     #[doc = "0x34 - C13CR"]
-    pub c13cr: crate::Reg<c13cr::C13CR_SPEC>,
+    pub c13cr: C13CR,
     _reserved14: [u8; 0x48],
     #[doc = "0x80 - request line multiplexer interrupt channel status register"]
-    pub csr: crate::Reg<csr::CSR_SPEC>,
+    pub csr: CSR,
     #[doc = "0x84 - request line multiplexer interrupt channel clear flag register"]
-    pub ccfr: crate::Reg<ccfr::CCFR_SPEC>,
+    pub ccfr: CCFR,
     _reserved16: [u8; 0x78],
     #[doc = "0x100 - request generator channel x configuration register"]
-    pub rg0cr: crate::Reg<rg0cr::RG0CR_SPEC>,
+    pub rg0cr: RG0CR,
     #[doc = "0x104 - request generator channel x configuration register"]
-    pub rg1cr: crate::Reg<rg1cr::RG1CR_SPEC>,
+    pub rg1cr: RG1CR,
     #[doc = "0x108 - request generator channel x configuration register"]
-    pub rg2cr: crate::Reg<rg2cr::RG2CR_SPEC>,
+    pub rg2cr: RG2CR,
     #[doc = "0x10c - request generator channel x configuration register"]
-    pub rg3cr: crate::Reg<rg3cr::RG3CR_SPEC>,
+    pub rg3cr: RG3CR,
     _reserved20: [u8; 0x30],
     #[doc = "0x140 - request generator interrupt status register"]
-    pub rgsr: crate::Reg<rgsr::RGSR_SPEC>,
+    pub rgsr: RGSR,
     #[doc = "0x144 - request generator interrupt clear flag register"]
-    pub rgcfr: crate::Reg<rgcfr::RGCFR_SPEC>,
+    pub rgcfr: RGCFR,
 }
 #[doc = "C0CR register accessor: an alias for `Reg<C0CR_SPEC>`"]
 pub type C0CR = crate::Reg<c0cr::C0CR_SPEC>;

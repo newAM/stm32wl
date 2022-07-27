@@ -34,64 +34,64 @@ impl From<crate::W<C2AHB1SMENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CRCSMEN` reader - CRC clock enable during CPU2 CSleep mode."]
-pub type CRCSMEN_R = crate::BitReader<bool>;
-#[doc = "Field `CRCSMEN` writer - CRC clock enable during CPU2 CSleep mode."]
-pub type CRCSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
-#[doc = "Field `DMAMUX1SMEN` reader - DMAMUX1 clock enable during CPU2 CSleep mode."]
-pub type DMAMUX1SMEN_R = crate::BitReader<bool>;
-#[doc = "Field `DMAMUX1SMEN` writer - DMAMUX1 clock enable during CPU2 CSleep mode."]
-pub type DMAMUX1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
-#[doc = "Field `DMA2SMEN` reader - DMA2 clock enable during CPU2 CSleep mode."]
-pub type DMA2SMEN_R = crate::BitReader<bool>;
-#[doc = "Field `DMA2SMEN` writer - DMA2 clock enable during CPU2 CSleep mode."]
-pub type DMA2SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
 #[doc = "Field `DMA1SMEN` reader - DMA1 clock enable during CPU2 CSleep mode."]
 pub type DMA1SMEN_R = crate::BitReader<bool>;
 #[doc = "Field `DMA1SMEN` writer - DMA1 clock enable during CPU2 CSleep mode."]
 pub type DMA1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
+#[doc = "Field `DMA2SMEN` reader - DMA2 clock enable during CPU2 CSleep mode."]
+pub type DMA2SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `DMA2SMEN` writer - DMA2 clock enable during CPU2 CSleep mode."]
+pub type DMA2SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
+#[doc = "Field `DMAMUX1SMEN` reader - DMAMUX1 clock enable during CPU2 CSleep mode."]
+pub type DMAMUX1SMEN_R = crate::BitReader<bool>;
+#[doc = "Field `DMAMUX1SMEN` writer - DMAMUX1 clock enable during CPU2 CSleep mode."]
+pub type DMAMUX1SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
+#[doc = "Field `CRCSMEN` reader - CRC clock enable during CPU2 CSleep mode."]
+pub type CRCSMEN_R = crate::BitReader<bool>;
+#[doc = "Field `CRCSMEN` writer - CRC clock enable during CPU2 CSleep mode."]
+pub type CRCSMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2AHB1SMENR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 12 - CRC clock enable during CPU2 CSleep mode."]
+    #[doc = "Bit 0 - DMA1 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
-    pub fn crcsmen(&self) -> CRCSMEN_R {
-        CRCSMEN_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 2 - DMAMUX1 clock enable during CPU2 CSleep mode."]
-    #[inline(always)]
-    pub fn dmamux1smen(&self) -> DMAMUX1SMEN_R {
-        DMAMUX1SMEN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dma1smen(&self) -> DMA1SMEN_R {
+        DMA1SMEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DMA2 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
     pub fn dma2smen(&self) -> DMA2SMEN_R {
         DMA2SMEN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - DMA1 clock enable during CPU2 CSleep mode."]
+    #[doc = "Bit 2 - DMAMUX1 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
-    pub fn dma1smen(&self) -> DMA1SMEN_R {
-        DMA1SMEN_R::new((self.bits & 1) != 0)
+    pub fn dmamux1smen(&self) -> DMAMUX1SMEN_R {
+        DMAMUX1SMEN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 12 - CRC clock enable during CPU2 CSleep mode."]
+    #[inline(always)]
+    pub fn crcsmen(&self) -> CRCSMEN_R {
+        CRCSMEN_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 12 - CRC clock enable during CPU2 CSleep mode."]
+    #[doc = "Bit 0 - DMA1 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
-    pub fn crcsmen(&mut self) -> CRCSMEN_W<12> {
-        CRCSMEN_W::new(self)
-    }
-    #[doc = "Bit 2 - DMAMUX1 clock enable during CPU2 CSleep mode."]
-    #[inline(always)]
-    pub fn dmamux1smen(&mut self) -> DMAMUX1SMEN_W<2> {
-        DMAMUX1SMEN_W::new(self)
+    pub fn dma1smen(&mut self) -> DMA1SMEN_W<0> {
+        DMA1SMEN_W::new(self)
     }
     #[doc = "Bit 1 - DMA2 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
     pub fn dma2smen(&mut self) -> DMA2SMEN_W<1> {
         DMA2SMEN_W::new(self)
     }
-    #[doc = "Bit 0 - DMA1 clock enable during CPU2 CSleep mode."]
+    #[doc = "Bit 2 - DMAMUX1 clock enable during CPU2 CSleep mode."]
     #[inline(always)]
-    pub fn dma1smen(&mut self) -> DMA1SMEN_W<0> {
-        DMA1SMEN_W::new(self)
+    pub fn dmamux1smen(&mut self) -> DMAMUX1SMEN_W<2> {
+        DMAMUX1SMEN_W::new(self)
+    }
+    #[doc = "Bit 12 - CRC clock enable during CPU2 CSleep mode."]
+    #[inline(always)]
+    pub fn crcsmen(&mut self) -> CRCSMEN_W<12> {
+        CRCSMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

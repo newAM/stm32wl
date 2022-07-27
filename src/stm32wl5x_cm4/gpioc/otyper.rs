@@ -34,60 +34,8 @@ impl From<crate::W<OTYPER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT15_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT14_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT13_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT6_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT5_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT4_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT3_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT2_A;
-#[doc = "Port x configuration bits (y = 0..15)"]
-pub use OT0_A as OT1_A;
-#[doc = "Field `OT15` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT15_R;
-#[doc = "Field `OT14` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT14_R;
-#[doc = "Field `OT13` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT13_R;
-#[doc = "Field `OT6` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT6_R;
-#[doc = "Field `OT5` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT5_R;
-#[doc = "Field `OT4` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT4_R;
-#[doc = "Field `OT3` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT3_R;
-#[doc = "Field `OT2` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT2_R;
-#[doc = "Field `OT1` reader - Port x configuration bits (y = 0..15)"]
-pub use OT0_R as OT1_R;
-#[doc = "Field `OT15` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT15_W;
-#[doc = "Field `OT14` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT14_W;
-#[doc = "Field `OT13` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT13_W;
-#[doc = "Field `OT6` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT6_W;
-#[doc = "Field `OT5` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT5_W;
-#[doc = "Field `OT4` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT4_W;
-#[doc = "Field `OT3` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT3_W;
-#[doc = "Field `OT2` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT2_W;
-#[doc = "Field `OT1` writer - Port x configuration bits (y = 0..15)"]
-pub use OT0_W as OT1_W;
+#[doc = "Field `OT0` reader - Port x configuration bits (y = 0..15)"]
+pub type OT0_R = crate::BitReader<OT0_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OT0_A {
@@ -102,8 +50,6 @@ impl From<OT0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OT0` reader - Port x configuration bits (y = 0..15)"]
-pub type OT0_R = crate::BitReader<OT0_A>;
 impl OT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -138,108 +84,144 @@ impl<'a, const O: u8> OT0_W<'a, O> {
         self.variant(OT0_A::OpenDrain)
     }
 }
+#[doc = "Field `OT1` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT1_R;
+#[doc = "Field `OT2` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT2_R;
+#[doc = "Field `OT3` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT3_R;
+#[doc = "Field `OT4` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT4_R;
+#[doc = "Field `OT5` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT5_R;
+#[doc = "Field `OT6` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT6_R;
+#[doc = "Field `OT13` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT13_R;
+#[doc = "Field `OT14` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT14_R;
+#[doc = "Field `OT15` reader - Port x configuration bits (y = 0..15)"]
+pub use OT0_R as OT15_R;
+#[doc = "Field `OT1` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT1_W;
+#[doc = "Field `OT2` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT2_W;
+#[doc = "Field `OT3` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT3_W;
+#[doc = "Field `OT4` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT4_W;
+#[doc = "Field `OT5` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT5_W;
+#[doc = "Field `OT6` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT6_W;
+#[doc = "Field `OT13` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT13_W;
+#[doc = "Field `OT14` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT14_W;
+#[doc = "Field `OT15` writer - Port x configuration bits (y = 0..15)"]
+pub use OT0_W as OT15_W;
 impl R {
-    #[doc = "Bit 15 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bit 0 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot15(&self) -> OT15_R {
-        OT15_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bit 14 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot14(&self) -> OT14_R {
-        OT14_R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bit 13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot13(&self) -> OT13_R {
-        OT13_R::new(((self.bits >> 13) & 1) != 0)
-    }
-    #[doc = "Bit 6 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot6(&self) -> OT6_R {
-        OT6_R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot5(&self) -> OT5_R {
-        OT5_R::new(((self.bits >> 5) & 1) != 0)
-    }
-    #[doc = "Bit 4 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot4(&self) -> OT4_R {
-        OT4_R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 3 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot3(&self) -> OT3_R {
-        OT3_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot2(&self) -> OT2_R {
-        OT2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ot0(&self) -> OT0_R {
+        OT0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ot1(&self) -> OT1_R {
         OT1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bit 2 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot0(&self) -> OT0_R {
-        OT0_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 15 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot15(&mut self) -> OT15_W<15> {
-        OT15_W::new(self)
-    }
-    #[doc = "Bit 14 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot14(&mut self) -> OT14_W<14> {
-        OT14_W::new(self)
-    }
-    #[doc = "Bit 13 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot13(&mut self) -> OT13_W<13> {
-        OT13_W::new(self)
-    }
-    #[doc = "Bit 6 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot6(&mut self) -> OT6_W<6> {
-        OT6_W::new(self)
-    }
-    #[doc = "Bit 5 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot5(&mut self) -> OT5_W<5> {
-        OT5_W::new(self)
-    }
-    #[doc = "Bit 4 - Port x configuration bits (y = 0..15)"]
-    #[inline(always)]
-    pub fn ot4(&mut self) -> OT4_W<4> {
-        OT4_W::new(self)
+    pub fn ot2(&self) -> OT2_R {
+        OT2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot3(&mut self) -> OT3_W<3> {
-        OT3_W::new(self)
+    pub fn ot3(&self) -> OT3_R {
+        OT3_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bit 4 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot2(&mut self) -> OT2_W<2> {
-        OT2_W::new(self)
+    pub fn ot4(&self) -> OT4_R {
+        OT4_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot5(&self) -> OT5_R {
+        OT5_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot6(&self) -> OT6_R {
+        OT6_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot13(&self) -> OT13_R {
+        OT13_R::new(((self.bits >> 13) & 1) != 0)
+    }
+    #[doc = "Bit 14 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot14(&self) -> OT14_R {
+        OT14_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 15 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot15(&self) -> OT15_R {
+        OT15_R::new(((self.bits >> 15) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot0(&mut self) -> OT0_W<0> {
+        OT0_W::new(self)
     }
     #[doc = "Bit 1 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
     pub fn ot1(&mut self) -> OT1_W<1> {
         OT1_W::new(self)
     }
-    #[doc = "Bit 0 - Port x configuration bits (y = 0..15)"]
+    #[doc = "Bit 2 - Port x configuration bits (y = 0..15)"]
     #[inline(always)]
-    pub fn ot0(&mut self) -> OT0_W<0> {
-        OT0_W::new(self)
+    pub fn ot2(&mut self) -> OT2_W<2> {
+        OT2_W::new(self)
+    }
+    #[doc = "Bit 3 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot3(&mut self) -> OT3_W<3> {
+        OT3_W::new(self)
+    }
+    #[doc = "Bit 4 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot4(&mut self) -> OT4_W<4> {
+        OT4_W::new(self)
+    }
+    #[doc = "Bit 5 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot5(&mut self) -> OT5_W<5> {
+        OT5_W::new(self)
+    }
+    #[doc = "Bit 6 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot6(&mut self) -> OT6_W<6> {
+        OT6_W::new(self)
+    }
+    #[doc = "Bit 13 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot13(&mut self) -> OT13_W<13> {
+        OT13_W::new(self)
+    }
+    #[doc = "Bit 14 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot14(&mut self) -> OT14_W<14> {
+        OT14_W::new(self)
+    }
+    #[doc = "Bit 15 - Port x configuration bits (y = 0..15)"]
+    #[inline(always)]
+    pub fn ot15(&mut self) -> OT15_W<15> {
+        OT15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

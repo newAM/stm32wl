@@ -34,106 +34,8 @@ impl From<crate::W<C2CR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Flash memory power down mode during LPSleep for CPU2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FPDS_A {
-    #[doc = "0: Flash memory in Idle mode when system is in LPSleep mode"]
-    Idle = 0,
-    #[doc = "1: Flash memory in Power-down mode when system is in LPSleep mode"]
-    PowerDown = 1,
-}
-impl From<FPDS_A> for bool {
-    #[inline(always)]
-    fn from(variant: FPDS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `FPDS` reader - Flash memory power down mode during LPSleep for CPU2"]
-pub type FPDS_R = crate::BitReader<FPDS_A>;
-impl FPDS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FPDS_A {
-        match self.bits {
-            false => FPDS_A::Idle,
-            true => FPDS_A::PowerDown,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Idle`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == FPDS_A::Idle
-    }
-    #[doc = "Checks if the value of the field is `PowerDown`"]
-    #[inline(always)]
-    pub fn is_power_down(&self) -> bool {
-        *self == FPDS_A::PowerDown
-    }
-}
-#[doc = "Field `FPDS` writer - Flash memory power down mode during LPSleep for CPU2"]
-pub type FPDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR1_SPEC, FPDS_A, O>;
-impl<'a, const O: u8> FPDS_W<'a, O> {
-    #[doc = "Flash memory in Idle mode when system is in LPSleep mode"]
-    #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
-        self.variant(FPDS_A::Idle)
-    }
-    #[doc = "Flash memory in Power-down mode when system is in LPSleep mode"]
-    #[inline(always)]
-    pub fn power_down(self) -> &'a mut W {
-        self.variant(FPDS_A::PowerDown)
-    }
-}
-#[doc = "Flash memory power down mode during LPRun for CPU2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FPDR_A {
-    #[doc = "0: Flash memory in Idle mode when system is in LPRun mode"]
-    Idle = 0,
-    #[doc = "1: Flash memory in Power-down mode when system is in LPRun mode"]
-    PowerDown = 1,
-}
-impl From<FPDR_A> for bool {
-    #[inline(always)]
-    fn from(variant: FPDR_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `FPDR` reader - Flash memory power down mode during LPRun for CPU2"]
-pub type FPDR_R = crate::BitReader<FPDR_A>;
-impl FPDR_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FPDR_A {
-        match self.bits {
-            false => FPDR_A::Idle,
-            true => FPDR_A::PowerDown,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Idle`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == FPDR_A::Idle
-    }
-    #[doc = "Checks if the value of the field is `PowerDown`"]
-    #[inline(always)]
-    pub fn is_power_down(&self) -> bool {
-        *self == FPDR_A::PowerDown
-    }
-}
-#[doc = "Field `FPDR` writer - Flash memory power down mode during LPRun for CPU2"]
-pub type FPDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR1_SPEC, FPDR_A, O>;
-impl<'a, const O: u8> FPDR_W<'a, O> {
-    #[doc = "Flash memory in Idle mode when system is in LPRun mode"]
-    #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
-        self.variant(FPDR_A::Idle)
-    }
-    #[doc = "Flash memory in Power-down mode when system is in LPRun mode"]
-    #[inline(always)]
-    pub fn power_down(self) -> &'a mut W {
-        self.variant(FPDR_A::PowerDown)
-    }
-}
+#[doc = "Field `LPMS` reader - Low-power mode selection for CPU2"]
+pub type LPMS_R = crate::FieldReader<u8, LPMS_A>;
 #[doc = "Low-power mode selection for CPU2\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -155,8 +57,6 @@ impl From<LPMS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPMS` reader - Low-power mode selection for CPU2"]
-pub type LPMS_R = crate::FieldReader<u8, LPMS_A>;
 impl LPMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -225,38 +125,138 @@ impl<'a, const O: u8> LPMS_W<'a, O> {
         self.variant(LPMS_A::Shutdown)
     }
 }
-impl R {
-    #[doc = "Bit 5 - Flash memory power down mode during LPSleep for CPU2"]
+#[doc = "Field `FPDR` reader - Flash memory power down mode during LPRun for CPU2"]
+pub type FPDR_R = crate::BitReader<FPDR_A>;
+#[doc = "Flash memory power down mode during LPRun for CPU2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FPDR_A {
+    #[doc = "0: Flash memory in Idle mode when system is in LPRun mode"]
+    Idle = 0,
+    #[doc = "1: Flash memory in Power-down mode when system is in LPRun mode"]
+    PowerDown = 1,
+}
+impl From<FPDR_A> for bool {
     #[inline(always)]
-    pub fn fpds(&self) -> FPDS_R {
-        FPDS_R::new(((self.bits >> 5) & 1) != 0)
+    fn from(variant: FPDR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl FPDR_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FPDR_A {
+        match self.bits {
+            false => FPDR_A::Idle,
+            true => FPDR_A::PowerDown,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Idle`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == FPDR_A::Idle
+    }
+    #[doc = "Checks if the value of the field is `PowerDown`"]
+    #[inline(always)]
+    pub fn is_power_down(&self) -> bool {
+        *self == FPDR_A::PowerDown
+    }
+}
+#[doc = "Field `FPDR` writer - Flash memory power down mode during LPRun for CPU2"]
+pub type FPDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR1_SPEC, FPDR_A, O>;
+impl<'a, const O: u8> FPDR_W<'a, O> {
+    #[doc = "Flash memory in Idle mode when system is in LPRun mode"]
+    #[inline(always)]
+    pub fn idle(self) -> &'a mut W {
+        self.variant(FPDR_A::Idle)
+    }
+    #[doc = "Flash memory in Power-down mode when system is in LPRun mode"]
+    #[inline(always)]
+    pub fn power_down(self) -> &'a mut W {
+        self.variant(FPDR_A::PowerDown)
+    }
+}
+#[doc = "Field `FPDS` reader - Flash memory power down mode during LPSleep for CPU2"]
+pub type FPDS_R = crate::BitReader<FPDS_A>;
+#[doc = "Flash memory power down mode during LPSleep for CPU2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FPDS_A {
+    #[doc = "0: Flash memory in Idle mode when system is in LPSleep mode"]
+    Idle = 0,
+    #[doc = "1: Flash memory in Power-down mode when system is in LPSleep mode"]
+    PowerDown = 1,
+}
+impl From<FPDS_A> for bool {
+    #[inline(always)]
+    fn from(variant: FPDS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl FPDS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FPDS_A {
+        match self.bits {
+            false => FPDS_A::Idle,
+            true => FPDS_A::PowerDown,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Idle`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == FPDS_A::Idle
+    }
+    #[doc = "Checks if the value of the field is `PowerDown`"]
+    #[inline(always)]
+    pub fn is_power_down(&self) -> bool {
+        *self == FPDS_A::PowerDown
+    }
+}
+#[doc = "Field `FPDS` writer - Flash memory power down mode during LPSleep for CPU2"]
+pub type FPDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, C2CR1_SPEC, FPDS_A, O>;
+impl<'a, const O: u8> FPDS_W<'a, O> {
+    #[doc = "Flash memory in Idle mode when system is in LPSleep mode"]
+    #[inline(always)]
+    pub fn idle(self) -> &'a mut W {
+        self.variant(FPDS_A::Idle)
+    }
+    #[doc = "Flash memory in Power-down mode when system is in LPSleep mode"]
+    #[inline(always)]
+    pub fn power_down(self) -> &'a mut W {
+        self.variant(FPDS_A::PowerDown)
+    }
+}
+impl R {
+    #[doc = "Bits 0:2 - Low-power mode selection for CPU2"]
+    #[inline(always)]
+    pub fn lpms(&self) -> LPMS_R {
+        LPMS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 4 - Flash memory power down mode during LPRun for CPU2"]
     #[inline(always)]
     pub fn fpdr(&self) -> FPDR_R {
         FPDR_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 0:2 - Low-power mode selection for CPU2"]
+    #[doc = "Bit 5 - Flash memory power down mode during LPSleep for CPU2"]
     #[inline(always)]
-    pub fn lpms(&self) -> LPMS_R {
-        LPMS_R::new((self.bits & 7) as u8)
+    pub fn fpds(&self) -> FPDS_R {
+        FPDS_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 5 - Flash memory power down mode during LPSleep for CPU2"]
+    #[doc = "Bits 0:2 - Low-power mode selection for CPU2"]
     #[inline(always)]
-    pub fn fpds(&mut self) -> FPDS_W<5> {
-        FPDS_W::new(self)
+    pub fn lpms(&mut self) -> LPMS_W<0> {
+        LPMS_W::new(self)
     }
     #[doc = "Bit 4 - Flash memory power down mode during LPRun for CPU2"]
     #[inline(always)]
     pub fn fpdr(&mut self) -> FPDR_W<4> {
         FPDR_W::new(self)
     }
-    #[doc = "Bits 0:2 - Low-power mode selection for CPU2"]
+    #[doc = "Bit 5 - Flash memory power down mode during LPSleep for CPU2"]
     #[inline(always)]
-    pub fn lpms(&mut self) -> LPMS_W<0> {
-        LPMS_W::new(self)
+    pub fn fpds(&mut self) -> FPDS_W<5> {
+        FPDS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

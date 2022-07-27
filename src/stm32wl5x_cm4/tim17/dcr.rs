@@ -34,36 +34,36 @@ impl From<crate::W<DCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DBL` reader - DMA burst length"]
-pub type DBL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DBL` writer - DMA burst length"]
-pub type DBL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCR_SPEC, u8, u8, 5, O>;
 #[doc = "Field `DBA` reader - DMA base address"]
 pub type DBA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DBA` writer - DMA base address"]
 pub type DBA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DCR_SPEC, u8, u8, 5, O>;
+#[doc = "Field `DBL` reader - DMA burst length"]
+pub type DBL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DBL` writer - DMA burst length"]
+pub type DBL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCR_SPEC, u8, u8, 5, O>;
 impl R {
-    #[doc = "Bits 8:12 - DMA burst length"]
-    #[inline(always)]
-    pub fn dbl(&self) -> DBL_R {
-        DBL_R::new(((self.bits >> 8) & 0x1f) as u8)
-    }
     #[doc = "Bits 0:4 - DMA base address"]
     #[inline(always)]
     pub fn dba(&self) -> DBA_R {
         DBA_R::new((self.bits & 0x1f) as u8)
     }
-}
-impl W {
     #[doc = "Bits 8:12 - DMA burst length"]
     #[inline(always)]
-    pub fn dbl(&mut self) -> DBL_W<8> {
-        DBL_W::new(self)
+    pub fn dbl(&self) -> DBL_R {
+        DBL_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:4 - DMA base address"]
     #[inline(always)]
     pub fn dba(&mut self) -> DBA_W<0> {
         DBA_W::new(self)
+    }
+    #[doc = "Bits 8:12 - DMA burst length"]
+    #[inline(always)]
+    pub fn dbl(&mut self) -> DBL_W<8> {
+        DBL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

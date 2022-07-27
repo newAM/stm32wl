@@ -34,6 +34,8 @@ impl From<crate::W<PDCRH_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PD3` reader - pull-down"]
+pub type PD3_R = crate::BitReader<PD3_A>;
 #[doc = "pull-down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PD3_A {
@@ -50,8 +52,6 @@ impl From<PD3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PD3` reader - pull-down"]
-pub type PD3_R = crate::BitReader<PD3_A>;
 impl PD3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

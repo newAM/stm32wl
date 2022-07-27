@@ -13,6 +13,8 @@ impl From<crate::R<C1ISR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `ISF0` reader - Interrupt(N) semaphore n status bit before enable (mask)"]
+pub type ISF0_R = crate::BitReader<ISF0_A>;
 #[doc = "Interrupt(N) semaphore n status bit before enable (mask)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISF0_A {
@@ -27,8 +29,6 @@ impl From<ISF0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISF0` reader - Interrupt(N) semaphore n status bit before enable (mask)"]
-pub type ISF0_R = crate::BitReader<ISF0_A>;
 impl ISF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,36 +49,6 @@ impl ISF0_R {
         *self == ISF0_A::Pending
     }
 }
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF1_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF2_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF3_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF4_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF5_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF6_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF7_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF8_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF9_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF10_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF11_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF12_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF13_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF14_A;
-#[doc = "Interrupt(N) semaphore n status bit before enable (mask)"]
-pub use ISF0_A as ISF15_A;
 #[doc = "Field `ISF1` reader - Interrupt(N) semaphore n status bit before enable (mask)"]
 pub use ISF0_R as ISF1_R;
 #[doc = "Field `ISF2` reader - Interrupt(N) semaphore n status bit before enable (mask)"]

@@ -19,58 +19,6 @@ impl From<crate::W<CCFR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CSOF13"]
-pub use CSOF0_AW as CSOF13_AW;
-#[doc = "CSOF12"]
-pub use CSOF0_AW as CSOF12_AW;
-#[doc = "CSOF11"]
-pub use CSOF0_AW as CSOF11_AW;
-#[doc = "CSOF10"]
-pub use CSOF0_AW as CSOF10_AW;
-#[doc = "CSOF9"]
-pub use CSOF0_AW as CSOF9_AW;
-#[doc = "CSOF8"]
-pub use CSOF0_AW as CSOF8_AW;
-#[doc = "CSOF7"]
-pub use CSOF0_AW as CSOF7_AW;
-#[doc = "CSOF6"]
-pub use CSOF0_AW as CSOF6_AW;
-#[doc = "CSOF5"]
-pub use CSOF0_AW as CSOF5_AW;
-#[doc = "CSOF4"]
-pub use CSOF0_AW as CSOF4_AW;
-#[doc = "CSOF3"]
-pub use CSOF0_AW as CSOF3_AW;
-#[doc = "CSOF2"]
-pub use CSOF0_AW as CSOF2_AW;
-#[doc = "CSOF1"]
-pub use CSOF0_AW as CSOF1_AW;
-#[doc = "Field `CSOF13` writer - CSOF13"]
-pub use CSOF0_W as CSOF13_W;
-#[doc = "Field `CSOF12` writer - CSOF12"]
-pub use CSOF0_W as CSOF12_W;
-#[doc = "Field `CSOF11` writer - CSOF11"]
-pub use CSOF0_W as CSOF11_W;
-#[doc = "Field `CSOF10` writer - CSOF10"]
-pub use CSOF0_W as CSOF10_W;
-#[doc = "Field `CSOF9` writer - CSOF9"]
-pub use CSOF0_W as CSOF9_W;
-#[doc = "Field `CSOF8` writer - CSOF8"]
-pub use CSOF0_W as CSOF8_W;
-#[doc = "Field `CSOF7` writer - CSOF7"]
-pub use CSOF0_W as CSOF7_W;
-#[doc = "Field `CSOF6` writer - CSOF6"]
-pub use CSOF0_W as CSOF6_W;
-#[doc = "Field `CSOF5` writer - CSOF5"]
-pub use CSOF0_W as CSOF5_W;
-#[doc = "Field `CSOF4` writer - CSOF4"]
-pub use CSOF0_W as CSOF4_W;
-#[doc = "Field `CSOF3` writer - CSOF3"]
-pub use CSOF0_W as CSOF3_W;
-#[doc = "Field `CSOF2` writer - CSOF2"]
-pub use CSOF0_W as CSOF2_W;
-#[doc = "Field `CSOF1` writer - CSOF1"]
-pub use CSOF0_W as CSOF1_W;
 #[doc = "CSOF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSOF0_AW {
@@ -92,76 +40,102 @@ impl<'a, const O: u8> CSOF0_W<'a, O> {
         self.variant(CSOF0_AW::Clear)
     }
 }
+#[doc = "Field `CSOF1` writer - CSOF1"]
+pub use CSOF0_W as CSOF1_W;
+#[doc = "Field `CSOF2` writer - CSOF2"]
+pub use CSOF0_W as CSOF2_W;
+#[doc = "Field `CSOF3` writer - CSOF3"]
+pub use CSOF0_W as CSOF3_W;
+#[doc = "Field `CSOF4` writer - CSOF4"]
+pub use CSOF0_W as CSOF4_W;
+#[doc = "Field `CSOF5` writer - CSOF5"]
+pub use CSOF0_W as CSOF5_W;
+#[doc = "Field `CSOF6` writer - CSOF6"]
+pub use CSOF0_W as CSOF6_W;
+#[doc = "Field `CSOF7` writer - CSOF7"]
+pub use CSOF0_W as CSOF7_W;
+#[doc = "Field `CSOF8` writer - CSOF8"]
+pub use CSOF0_W as CSOF8_W;
+#[doc = "Field `CSOF9` writer - CSOF9"]
+pub use CSOF0_W as CSOF9_W;
+#[doc = "Field `CSOF10` writer - CSOF10"]
+pub use CSOF0_W as CSOF10_W;
+#[doc = "Field `CSOF11` writer - CSOF11"]
+pub use CSOF0_W as CSOF11_W;
+#[doc = "Field `CSOF12` writer - CSOF12"]
+pub use CSOF0_W as CSOF12_W;
+#[doc = "Field `CSOF13` writer - CSOF13"]
+pub use CSOF0_W as CSOF13_W;
 impl W {
-    #[doc = "Bit 13 - CSOF13"]
+    #[doc = "Bit 0 - CSOF0"]
     #[inline(always)]
-    pub fn csof13(&mut self) -> CSOF13_W<13> {
-        CSOF13_W::new(self)
-    }
-    #[doc = "Bit 12 - CSOF12"]
-    #[inline(always)]
-    pub fn csof12(&mut self) -> CSOF12_W<12> {
-        CSOF12_W::new(self)
-    }
-    #[doc = "Bit 11 - CSOF11"]
-    #[inline(always)]
-    pub fn csof11(&mut self) -> CSOF11_W<11> {
-        CSOF11_W::new(self)
-    }
-    #[doc = "Bit 10 - CSOF10"]
-    #[inline(always)]
-    pub fn csof10(&mut self) -> CSOF10_W<10> {
-        CSOF10_W::new(self)
-    }
-    #[doc = "Bit 9 - CSOF9"]
-    #[inline(always)]
-    pub fn csof9(&mut self) -> CSOF9_W<9> {
-        CSOF9_W::new(self)
-    }
-    #[doc = "Bit 8 - CSOF8"]
-    #[inline(always)]
-    pub fn csof8(&mut self) -> CSOF8_W<8> {
-        CSOF8_W::new(self)
-    }
-    #[doc = "Bit 7 - CSOF7"]
-    #[inline(always)]
-    pub fn csof7(&mut self) -> CSOF7_W<7> {
-        CSOF7_W::new(self)
-    }
-    #[doc = "Bit 6 - CSOF6"]
-    #[inline(always)]
-    pub fn csof6(&mut self) -> CSOF6_W<6> {
-        CSOF6_W::new(self)
-    }
-    #[doc = "Bit 5 - CSOF5"]
-    #[inline(always)]
-    pub fn csof5(&mut self) -> CSOF5_W<5> {
-        CSOF5_W::new(self)
-    }
-    #[doc = "Bit 4 - CSOF4"]
-    #[inline(always)]
-    pub fn csof4(&mut self) -> CSOF4_W<4> {
-        CSOF4_W::new(self)
-    }
-    #[doc = "Bit 3 - CSOF3"]
-    #[inline(always)]
-    pub fn csof3(&mut self) -> CSOF3_W<3> {
-        CSOF3_W::new(self)
-    }
-    #[doc = "Bit 2 - CSOF2"]
-    #[inline(always)]
-    pub fn csof2(&mut self) -> CSOF2_W<2> {
-        CSOF2_W::new(self)
+    pub fn csof0(&mut self) -> CSOF0_W<0> {
+        CSOF0_W::new(self)
     }
     #[doc = "Bit 1 - CSOF1"]
     #[inline(always)]
     pub fn csof1(&mut self) -> CSOF1_W<1> {
         CSOF1_W::new(self)
     }
-    #[doc = "Bit 0 - CSOF0"]
+    #[doc = "Bit 2 - CSOF2"]
     #[inline(always)]
-    pub fn csof0(&mut self) -> CSOF0_W<0> {
-        CSOF0_W::new(self)
+    pub fn csof2(&mut self) -> CSOF2_W<2> {
+        CSOF2_W::new(self)
+    }
+    #[doc = "Bit 3 - CSOF3"]
+    #[inline(always)]
+    pub fn csof3(&mut self) -> CSOF3_W<3> {
+        CSOF3_W::new(self)
+    }
+    #[doc = "Bit 4 - CSOF4"]
+    #[inline(always)]
+    pub fn csof4(&mut self) -> CSOF4_W<4> {
+        CSOF4_W::new(self)
+    }
+    #[doc = "Bit 5 - CSOF5"]
+    #[inline(always)]
+    pub fn csof5(&mut self) -> CSOF5_W<5> {
+        CSOF5_W::new(self)
+    }
+    #[doc = "Bit 6 - CSOF6"]
+    #[inline(always)]
+    pub fn csof6(&mut self) -> CSOF6_W<6> {
+        CSOF6_W::new(self)
+    }
+    #[doc = "Bit 7 - CSOF7"]
+    #[inline(always)]
+    pub fn csof7(&mut self) -> CSOF7_W<7> {
+        CSOF7_W::new(self)
+    }
+    #[doc = "Bit 8 - CSOF8"]
+    #[inline(always)]
+    pub fn csof8(&mut self) -> CSOF8_W<8> {
+        CSOF8_W::new(self)
+    }
+    #[doc = "Bit 9 - CSOF9"]
+    #[inline(always)]
+    pub fn csof9(&mut self) -> CSOF9_W<9> {
+        CSOF9_W::new(self)
+    }
+    #[doc = "Bit 10 - CSOF10"]
+    #[inline(always)]
+    pub fn csof10(&mut self) -> CSOF10_W<10> {
+        CSOF10_W::new(self)
+    }
+    #[doc = "Bit 11 - CSOF11"]
+    #[inline(always)]
+    pub fn csof11(&mut self) -> CSOF11_W<11> {
+        CSOF11_W::new(self)
+    }
+    #[doc = "Bit 12 - CSOF12"]
+    #[inline(always)]
+    pub fn csof12(&mut self) -> CSOF12_W<12> {
+        CSOF12_W::new(self)
+    }
+    #[doc = "Bit 13 - CSOF13"]
+    #[inline(always)]
+    pub fn csof13(&mut self) -> CSOF13_W<13> {
+        CSOF13_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

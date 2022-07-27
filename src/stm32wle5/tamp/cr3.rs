@@ -34,6 +34,8 @@ impl From<crate::W<CR3_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ITAMP3NOER` reader - ITAMP3NOER"]
+pub type ITAMP3NOER_R = crate::BitReader<ITAMP3NOER_A>;
 #[doc = "ITAMP3NOER\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITAMP3NOER_A {
@@ -48,8 +50,6 @@ impl From<ITAMP3NOER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ITAMP3NOER` reader - ITAMP3NOER"]
-pub type ITAMP3NOER_R = crate::BitReader<ITAMP3NOER_A>;
 impl ITAMP3NOER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,12 +84,6 @@ impl<'a, const O: u8> ITAMP3NOER_W<'a, O> {
         self.variant(ITAMP3NOER_A::NotErase)
     }
 }
-#[doc = "ITAMP5NOER"]
-pub use ITAMP3NOER_A as ITAMP5NOER_A;
-#[doc = "ITAMP6NOER"]
-pub use ITAMP3NOER_A as ITAMP6NOER_A;
-#[doc = "ITAMP8NOER"]
-pub use ITAMP3NOER_A as ITAMP8NOER_A;
 #[doc = "Field `ITAMP5NOER` reader - ITAMP5NOER"]
 pub use ITAMP3NOER_R as ITAMP5NOER_R;
 #[doc = "Field `ITAMP6NOER` reader - ITAMP6NOER"]

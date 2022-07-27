@@ -13,58 +13,8 @@ impl From<crate::R<CSR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Synchronization overrun event flag"]
-pub use SOF0_A as SOF13_A;
-#[doc = "SOF12"]
-pub use SOF0_A as SOF12_A;
-#[doc = "SOF11"]
-pub use SOF0_A as SOF11_A;
-#[doc = "SOF10"]
-pub use SOF0_A as SOF10_A;
-#[doc = "SOF9"]
-pub use SOF0_A as SOF9_A;
-#[doc = "SOF8"]
-pub use SOF0_A as SOF8_A;
-#[doc = "SOF7"]
-pub use SOF0_A as SOF7_A;
-#[doc = "SOF6"]
-pub use SOF0_A as SOF6_A;
-#[doc = "SOF5"]
-pub use SOF0_A as SOF5_A;
-#[doc = "SOF4"]
-pub use SOF0_A as SOF4_A;
-#[doc = "SOF3"]
-pub use SOF0_A as SOF3_A;
-#[doc = "SOF2"]
-pub use SOF0_A as SOF2_A;
-#[doc = "SOF1"]
-pub use SOF0_A as SOF1_A;
-#[doc = "Field `SOF13` reader - Synchronization overrun event flag"]
-pub use SOF0_R as SOF13_R;
-#[doc = "Field `SOF12` reader - SOF12"]
-pub use SOF0_R as SOF12_R;
-#[doc = "Field `SOF11` reader - SOF11"]
-pub use SOF0_R as SOF11_R;
-#[doc = "Field `SOF10` reader - SOF10"]
-pub use SOF0_R as SOF10_R;
-#[doc = "Field `SOF9` reader - SOF9"]
-pub use SOF0_R as SOF9_R;
-#[doc = "Field `SOF8` reader - SOF8"]
-pub use SOF0_R as SOF8_R;
-#[doc = "Field `SOF7` reader - SOF7"]
-pub use SOF0_R as SOF7_R;
-#[doc = "Field `SOF6` reader - SOF6"]
-pub use SOF0_R as SOF6_R;
-#[doc = "Field `SOF5` reader - SOF5"]
-pub use SOF0_R as SOF5_R;
-#[doc = "Field `SOF4` reader - SOF4"]
-pub use SOF0_R as SOF4_R;
-#[doc = "Field `SOF3` reader - SOF3"]
-pub use SOF0_R as SOF3_R;
-#[doc = "Field `SOF2` reader - SOF2"]
-pub use SOF0_R as SOF2_R;
-#[doc = "Field `SOF1` reader - SOF1"]
-pub use SOF0_R as SOF1_R;
+#[doc = "Field `SOF0` reader - SOF0"]
+pub type SOF0_R = crate::BitReader<SOF0_A>;
 #[doc = "SOF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOF0_A {
@@ -79,8 +29,6 @@ impl From<SOF0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOF0` reader - SOF0"]
-pub type SOF0_R = crate::BitReader<SOF0_A>;
 impl SOF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,76 +49,102 @@ impl SOF0_R {
         *self == SOF0_A::SyncEvent
     }
 }
+#[doc = "Field `SOF1` reader - SOF1"]
+pub use SOF0_R as SOF1_R;
+#[doc = "Field `SOF2` reader - SOF2"]
+pub use SOF0_R as SOF2_R;
+#[doc = "Field `SOF3` reader - SOF3"]
+pub use SOF0_R as SOF3_R;
+#[doc = "Field `SOF4` reader - SOF4"]
+pub use SOF0_R as SOF4_R;
+#[doc = "Field `SOF5` reader - SOF5"]
+pub use SOF0_R as SOF5_R;
+#[doc = "Field `SOF6` reader - SOF6"]
+pub use SOF0_R as SOF6_R;
+#[doc = "Field `SOF7` reader - SOF7"]
+pub use SOF0_R as SOF7_R;
+#[doc = "Field `SOF8` reader - SOF8"]
+pub use SOF0_R as SOF8_R;
+#[doc = "Field `SOF9` reader - SOF9"]
+pub use SOF0_R as SOF9_R;
+#[doc = "Field `SOF10` reader - SOF10"]
+pub use SOF0_R as SOF10_R;
+#[doc = "Field `SOF11` reader - SOF11"]
+pub use SOF0_R as SOF11_R;
+#[doc = "Field `SOF12` reader - SOF12"]
+pub use SOF0_R as SOF12_R;
+#[doc = "Field `SOF13` reader - Synchronization overrun event flag"]
+pub use SOF0_R as SOF13_R;
 impl R {
-    #[doc = "Bit 13 - Synchronization overrun event flag"]
+    #[doc = "Bit 0 - SOF0"]
     #[inline(always)]
-    pub fn sof13(&self) -> SOF13_R {
-        SOF13_R::new(((self.bits >> 13) & 1) != 0)
-    }
-    #[doc = "Bit 12 - SOF12"]
-    #[inline(always)]
-    pub fn sof12(&self) -> SOF12_R {
-        SOF12_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 11 - SOF11"]
-    #[inline(always)]
-    pub fn sof11(&self) -> SOF11_R {
-        SOF11_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - SOF10"]
-    #[inline(always)]
-    pub fn sof10(&self) -> SOF10_R {
-        SOF10_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 9 - SOF9"]
-    #[inline(always)]
-    pub fn sof9(&self) -> SOF9_R {
-        SOF9_R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 8 - SOF8"]
-    #[inline(always)]
-    pub fn sof8(&self) -> SOF8_R {
-        SOF8_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 7 - SOF7"]
-    #[inline(always)]
-    pub fn sof7(&self) -> SOF7_R {
-        SOF7_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 6 - SOF6"]
-    #[inline(always)]
-    pub fn sof6(&self) -> SOF6_R {
-        SOF6_R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 5 - SOF5"]
-    #[inline(always)]
-    pub fn sof5(&self) -> SOF5_R {
-        SOF5_R::new(((self.bits >> 5) & 1) != 0)
-    }
-    #[doc = "Bit 4 - SOF4"]
-    #[inline(always)]
-    pub fn sof4(&self) -> SOF4_R {
-        SOF4_R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 3 - SOF3"]
-    #[inline(always)]
-    pub fn sof3(&self) -> SOF3_R {
-        SOF3_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - SOF2"]
-    #[inline(always)]
-    pub fn sof2(&self) -> SOF2_R {
-        SOF2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sof0(&self) -> SOF0_R {
+        SOF0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SOF1"]
     #[inline(always)]
     pub fn sof1(&self) -> SOF1_R {
         SOF1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - SOF0"]
+    #[doc = "Bit 2 - SOF2"]
     #[inline(always)]
-    pub fn sof0(&self) -> SOF0_R {
-        SOF0_R::new((self.bits & 1) != 0)
+    pub fn sof2(&self) -> SOF2_R {
+        SOF2_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - SOF3"]
+    #[inline(always)]
+    pub fn sof3(&self) -> SOF3_R {
+        SOF3_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - SOF4"]
+    #[inline(always)]
+    pub fn sof4(&self) -> SOF4_R {
+        SOF4_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - SOF5"]
+    #[inline(always)]
+    pub fn sof5(&self) -> SOF5_R {
+        SOF5_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - SOF6"]
+    #[inline(always)]
+    pub fn sof6(&self) -> SOF6_R {
+        SOF6_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - SOF7"]
+    #[inline(always)]
+    pub fn sof7(&self) -> SOF7_R {
+        SOF7_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bit 8 - SOF8"]
+    #[inline(always)]
+    pub fn sof8(&self) -> SOF8_R {
+        SOF8_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bit 9 - SOF9"]
+    #[inline(always)]
+    pub fn sof9(&self) -> SOF9_R {
+        SOF9_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    #[doc = "Bit 10 - SOF10"]
+    #[inline(always)]
+    pub fn sof10(&self) -> SOF10_R {
+        SOF10_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - SOF11"]
+    #[inline(always)]
+    pub fn sof11(&self) -> SOF11_R {
+        SOF11_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bit 12 - SOF12"]
+    #[inline(always)]
+    pub fn sof12(&self) -> SOF12_R {
+        SOF12_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Bit 13 - Synchronization overrun event flag"]
+    #[inline(always)]
+    pub fn sof13(&self) -> SOF13_R {
+        SOF13_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 #[doc = "request line multiplexer interrupt channel status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr](index.html) module"]

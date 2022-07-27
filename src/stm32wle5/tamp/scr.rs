@@ -21,60 +21,50 @@ impl From<crate::W<SCR_SPEC>> for W {
 }
 #[doc = "CTAMP1F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTAMP1F_AW {
+pub enum CTAMP1FW_AW {
     #[doc = "1: Clear tamper flag"]
     Clear = 1,
 }
-impl From<CTAMP1F_AW> for bool {
+impl From<CTAMP1FW_AW> for bool {
     #[inline(always)]
-    fn from(variant: CTAMP1F_AW) -> Self {
+    fn from(variant: CTAMP1FW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CTAMP1F` writer - CTAMP1F"]
-pub type CTAMP1F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CTAMP1F_AW, O>;
+pub type CTAMP1F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CTAMP1FW_AW, O>;
 impl<'a, const O: u8> CTAMP1F_W<'a, O> {
     #[doc = "Clear tamper flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CTAMP1F_AW::Clear)
+        self.variant(CTAMP1FW_AW::Clear)
     }
 }
-#[doc = "CTAMP2F"]
-pub use CTAMP1F_AW as CTAMP2F_AW;
-#[doc = "CTAMP3F"]
-pub use CTAMP1F_AW as CTAMP3F_AW;
 #[doc = "Field `CTAMP2F` writer - CTAMP2F"]
 pub use CTAMP1F_W as CTAMP2F_W;
 #[doc = "Field `CTAMP3F` writer - CTAMP3F"]
 pub use CTAMP1F_W as CTAMP3F_W;
 #[doc = "CITAMP3F\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CITAMP3F_AW {
+pub enum CITAMP3FW_AW {
     #[doc = "1: Clear tamper flag"]
     Clear = 1,
 }
-impl From<CITAMP3F_AW> for bool {
+impl From<CITAMP3FW_AW> for bool {
     #[inline(always)]
-    fn from(variant: CITAMP3F_AW) -> Self {
+    fn from(variant: CITAMP3FW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CITAMP3F` writer - CITAMP3F"]
-pub type CITAMP3F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CITAMP3F_AW, O>;
+pub type CITAMP3F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CITAMP3FW_AW, O>;
 impl<'a, const O: u8> CITAMP3F_W<'a, O> {
     #[doc = "Clear tamper flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CITAMP3F_AW::Clear)
+        self.variant(CITAMP3FW_AW::Clear)
     }
 }
-#[doc = "CITAMP5F"]
-pub use CITAMP3F_AW as CITAMP5F_AW;
-#[doc = "CITAMP6F"]
-pub use CITAMP3F_AW as CITAMP6F_AW;
-#[doc = "CITAMP8F"]
-pub use CITAMP3F_AW as CITAMP8F_AW;
 #[doc = "Field `CITAMP5F` writer - CITAMP5F"]
 pub use CITAMP3F_W as CITAMP5F_W;
 #[doc = "Field `CITAMP6F` writer - CITAMP6F"]

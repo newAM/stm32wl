@@ -34,6 +34,8 @@ impl From<crate::W<C1SCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CH1C` reader - CH1C"]
+pub type CH1C_R = crate::BitReader<CH1C_A>;
 #[doc = "CH1C\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1C_A {
@@ -48,8 +50,6 @@ impl From<CH1C_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1C` reader - CH1C"]
-pub type CH1C_R = crate::BitReader<CH1C_A>;
 impl CH1C_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,16 +84,6 @@ impl<'a, const O: u8> CH1C_W<'a, O> {
         self.variant(CH1C_A::Clear)
     }
 }
-#[doc = "CH2C"]
-pub use CH1C_A as CH2C_A;
-#[doc = "CH3C"]
-pub use CH1C_A as CH3C_A;
-#[doc = "CH4C"]
-pub use CH1C_A as CH4C_A;
-#[doc = "CH5C"]
-pub use CH1C_A as CH5C_A;
-#[doc = "CH6C"]
-pub use CH1C_A as CH6C_A;
 #[doc = "Field `CH2C` reader - CH2C"]
 pub use CH1C_R as CH2C_R;
 #[doc = "Field `CH3C` reader - CH3C"]
@@ -114,6 +104,8 @@ pub use CH1C_W as CH4C_W;
 pub use CH1C_W as CH5C_W;
 #[doc = "Field `CH6C` writer - CH6C"]
 pub use CH1C_W as CH6C_W;
+#[doc = "Field `CH1S` reader - CH1S"]
+pub type CH1S_R = crate::BitReader<CH1S_A>;
 #[doc = "CH1S\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1S_A {
@@ -128,8 +120,6 @@ impl From<CH1S_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CH1S` reader - CH1S"]
-pub type CH1S_R = crate::BitReader<CH1S_A>;
 impl CH1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -164,16 +154,6 @@ impl<'a, const O: u8> CH1S_W<'a, O> {
         self.variant(CH1S_A::Set)
     }
 }
-#[doc = "CH2S"]
-pub use CH1S_A as CH2S_A;
-#[doc = "CH3S"]
-pub use CH1S_A as CH3S_A;
-#[doc = "CH4S"]
-pub use CH1S_A as CH4S_A;
-#[doc = "CH5S"]
-pub use CH1S_A as CH5S_A;
-#[doc = "CH6S"]
-pub use CH1S_A as CH6S_A;
 #[doc = "Field `CH2S` reader - CH2S"]
 pub use CH1S_R as CH2S_R;
 #[doc = "Field `CH3S` reader - CH3S"]

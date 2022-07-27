@@ -34,6 +34,8 @@ impl From<crate::W<AFRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AFRL3` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub type AFRL3_R = crate::FieldReader<u8, AFRL3_A>;
 #[doc = "Alternate function selection for port x bit y (y = 0..7)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -77,8 +79,6 @@ impl From<AFRL3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AFRL3` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub type AFRL3_R = crate::FieldReader<u8, AFRL3_A>;
 impl AFRL3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

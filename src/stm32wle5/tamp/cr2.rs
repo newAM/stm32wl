@@ -34,6 +34,8 @@ impl From<crate::W<CR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAMP1NOER` reader - TAMP1NOER"]
+pub type TAMP1NOER_R = crate::BitReader<TAMP1NOER_A>;
 #[doc = "TAMP1NOER\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1NOER_A {
@@ -48,8 +50,6 @@ impl From<TAMP1NOER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMP1NOER` reader - TAMP1NOER"]
-pub type TAMP1NOER_R = crate::BitReader<TAMP1NOER_A>;
 impl TAMP1NOER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,10 +84,6 @@ impl<'a, const O: u8> TAMP1NOER_W<'a, O> {
         self.variant(TAMP1NOER_A::NotErase)
     }
 }
-#[doc = "TAMP2NOER"]
-pub use TAMP1NOER_A as TAMP2NOER_A;
-#[doc = "TAMP3NOER"]
-pub use TAMP1NOER_A as TAMP3NOER_A;
 #[doc = "Field `TAMP2NOER` reader - TAMP2NOER"]
 pub use TAMP1NOER_R as TAMP2NOER_R;
 #[doc = "Field `TAMP3NOER` reader - TAMP3NOER"]
@@ -96,6 +92,8 @@ pub use TAMP1NOER_R as TAMP3NOER_R;
 pub use TAMP1NOER_W as TAMP2NOER_W;
 #[doc = "Field `TAMP3NOER` writer - TAMP3NOER"]
 pub use TAMP1NOER_W as TAMP3NOER_W;
+#[doc = "Field `TAMP1MSK` reader - TAMP1MSK"]
+pub type TAMP1MSK_R = crate::BitReader<TAMP1MSK_A>;
 #[doc = "TAMP1MSK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1MSK_A {
@@ -110,8 +108,6 @@ impl From<TAMP1MSK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMP1MSK` reader - TAMP1MSK"]
-pub type TAMP1MSK_R = crate::BitReader<TAMP1MSK_A>;
 impl TAMP1MSK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -146,10 +142,6 @@ impl<'a, const O: u8> TAMP1MSK_W<'a, O> {
         self.variant(TAMP1MSK_A::ResetByHardware)
     }
 }
-#[doc = "TAMP2MSK"]
-pub use TAMP1MSK_A as TAMP2MSK_A;
-#[doc = "TAMP3MSK"]
-pub use TAMP1MSK_A as TAMP3MSK_A;
 #[doc = "Field `TAMP2MSK` reader - TAMP2MSK"]
 pub use TAMP1MSK_R as TAMP2MSK_R;
 #[doc = "Field `TAMP3MSK` reader - TAMP3MSK"]
@@ -158,44 +150,46 @@ pub use TAMP1MSK_R as TAMP3MSK_R;
 pub use TAMP1MSK_W as TAMP2MSK_W;
 #[doc = "Field `TAMP3MSK` writer - TAMP3MSK"]
 pub use TAMP1MSK_W as TAMP3MSK_W;
+#[doc = "Field `BKERASE` reader - Backup registerserase"]
+pub type BKERASE_R = crate::BitReader<BKERASEW_A>;
 #[doc = "Backup registerserase\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BKERASE_A {
+pub enum BKERASEW_A {
     #[doc = "1: Reset backup registers"]
     Reset = 1,
 }
-impl From<BKERASE_A> for bool {
+impl From<BKERASEW_A> for bool {
     #[inline(always)]
-    fn from(variant: BKERASE_A) -> Self {
+    fn from(variant: BKERASEW_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BKERASE` reader - Backup registerserase"]
-pub type BKERASE_R = crate::BitReader<BKERASE_A>;
 impl BKERASE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BKERASE_A> {
+    pub fn variant(&self) -> Option<BKERASEW_A> {
         match self.bits {
-            true => Some(BKERASE_A::Reset),
+            true => Some(BKERASEW_A::Reset),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `Reset`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        *self == BKERASE_A::Reset
+        *self == BKERASEW_A::Reset
     }
 }
 #[doc = "Field `BKERASE` writer - Backup registerserase"]
-pub type BKERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, BKERASE_A, O>;
+pub type BKERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR2_SPEC, BKERASEW_A, O>;
 impl<'a, const O: u8> BKERASE_W<'a, O> {
     #[doc = "Reset backup registers"]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(BKERASE_A::Reset)
+        self.variant(BKERASEW_A::Reset)
     }
 }
+#[doc = "Field `TAMP1TRG` reader - TAMP1TRG"]
+pub type TAMP1TRG_R = crate::BitReader<TAMP1TRG_A>;
 #[doc = "TAMP1TRG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAMP1TRG_A {
@@ -210,8 +204,6 @@ impl From<TAMP1TRG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAMP1TRG` reader - TAMP1TRG"]
-pub type TAMP1TRG_R = crate::BitReader<TAMP1TRG_A>;
 impl TAMP1TRG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -246,10 +238,6 @@ impl<'a, const O: u8> TAMP1TRG_W<'a, O> {
         self.variant(TAMP1TRG_A::FilteredHighOrUnfilteredLow)
     }
 }
-#[doc = "TAMP2TRG"]
-pub use TAMP1TRG_A as TAMP2TRG_A;
-#[doc = "TAMP3TRG"]
-pub use TAMP1TRG_A as TAMP3TRG_A;
 #[doc = "Field `TAMP2TRG` reader - TAMP2TRG"]
 pub use TAMP1TRG_R as TAMP2TRG_R;
 #[doc = "Field `TAMP3TRG` reader - TAMP3TRG"]

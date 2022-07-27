@@ -34,18 +34,8 @@ impl From<crate::W<C2APB1SMENR2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_A as LPTIM3SMEN_A;
-#[doc = "Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_A as LPTIM2SMEN_A;
-#[doc = "Field `LPTIM3SMEN` reader - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_R as LPTIM3SMEN_R;
-#[doc = "Field `LPTIM2SMEN` reader - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_R as LPTIM2SMEN_R;
-#[doc = "Field `LPTIM3SMEN` writer - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_W as LPTIM3SMEN_W;
-#[doc = "Field `LPTIM2SMEN` writer - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
-pub use LPUART1SMEN_W as LPTIM2SMEN_W;
+#[doc = "Field `LPUART1SMEN` reader - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
+pub type LPUART1SMEN_R = crate::BitReader<LPUART1SMEN_A>;
 #[doc = "Low power UART 1 clock enable during CPU2 CSleep and CStop mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPUART1SMEN_A {
@@ -60,8 +50,6 @@ impl From<LPUART1SMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LPUART1SMEN` reader - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
-pub type LPUART1SMEN_R = crate::BitReader<LPUART1SMEN_A>;
 impl LPUART1SMEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,38 +85,46 @@ impl<'a, const O: u8> LPUART1SMEN_W<'a, O> {
         self.variant(LPUART1SMEN_A::Enabled)
     }
 }
+#[doc = "Field `LPTIM2SMEN` reader - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
+pub use LPUART1SMEN_R as LPTIM2SMEN_R;
+#[doc = "Field `LPTIM3SMEN` reader - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
+pub use LPUART1SMEN_R as LPTIM3SMEN_R;
+#[doc = "Field `LPTIM2SMEN` writer - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
+pub use LPUART1SMEN_W as LPTIM2SMEN_W;
+#[doc = "Field `LPTIM3SMEN` writer - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
+pub use LPUART1SMEN_W as LPTIM3SMEN_W;
 impl R {
-    #[doc = "Bit 6 - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
+    #[doc = "Bit 0 - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
     #[inline(always)]
-    pub fn lptim3smen(&self) -> LPTIM3SMEN_R {
-        LPTIM3SMEN_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn lpuart1smen(&self) -> LPUART1SMEN_R {
+        LPUART1SMEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 5 - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
     #[inline(always)]
     pub fn lptim2smen(&self) -> LPTIM2SMEN_R {
         LPTIM2SMEN_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 0 - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
+    #[doc = "Bit 6 - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
     #[inline(always)]
-    pub fn lpuart1smen(&self) -> LPUART1SMEN_R {
-        LPUART1SMEN_R::new((self.bits & 1) != 0)
+    pub fn lptim3smen(&self) -> LPTIM3SMEN_R {
+        LPTIM3SMEN_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 6 - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
+    #[doc = "Bit 0 - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
     #[inline(always)]
-    pub fn lptim3smen(&mut self) -> LPTIM3SMEN_W<6> {
-        LPTIM3SMEN_W::new(self)
+    pub fn lpuart1smen(&mut self) -> LPUART1SMEN_W<0> {
+        LPUART1SMEN_W::new(self)
     }
     #[doc = "Bit 5 - Low power timer 2 clocks enable during CPU2 CSleep and CStop modes."]
     #[inline(always)]
     pub fn lptim2smen(&mut self) -> LPTIM2SMEN_W<5> {
         LPTIM2SMEN_W::new(self)
     }
-    #[doc = "Bit 0 - Low power UART 1 clock enable during CPU2 CSleep and CStop mode"]
+    #[doc = "Bit 6 - Low power timer 3 clocks enable during CPU2 CSleep and CStop modes."]
     #[inline(always)]
-    pub fn lpuart1smen(&mut self) -> LPUART1SMEN_W<0> {
-        LPUART1SMEN_W::new(self)
+    pub fn lptim3smen(&mut self) -> LPTIM3SMEN_W<6> {
+        LPTIM3SMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

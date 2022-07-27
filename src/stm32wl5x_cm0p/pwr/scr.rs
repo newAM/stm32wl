@@ -19,143 +19,143 @@ impl From<crate::W<SCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CC2HF` writer - lear CPU2 Hold interrupt flag"]
-pub type CC2HF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
-#[doc = "Clear wakeup Radio BUSY flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CWRFBUSYF_AW {
-    #[doc = "1: Setting this bit clears the WRFBUSYF flag in the PWR_SR1. This bit is always read 0."]
-    Clear = 1,
-}
-impl From<CWRFBUSYF_AW> for bool {
-    #[inline(always)]
-    fn from(variant: CWRFBUSYF_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CWRFBUSYF` writer - Clear wakeup Radio BUSY flag"]
-pub type CWRFBUSYF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWRFBUSYF_AW, O>;
-impl<'a, const O: u8> CWRFBUSYF_W<'a, O> {
-    #[doc = "Setting this bit clears the WRFBUSYF flag in the PWR_SR1. This bit is always read 0."]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CWRFBUSYF_AW::Clear)
-    }
-}
-#[doc = "Clear wakeup PVD interrupt flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CWPVDF_AW {
-    #[doc = "1: Setting this bit clears the WPVDF flag in the PWR_SR1. This bit is always read as 0."]
-    Clear = 1,
-}
-impl From<CWPVDF_AW> for bool {
-    #[inline(always)]
-    fn from(variant: CWPVDF_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CWPVDF` writer - Clear wakeup PVD interrupt flag"]
-pub type CWPVDF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWPVDF_AW, O>;
-impl<'a, const O: u8> CWPVDF_W<'a, O> {
-    #[doc = "Setting this bit clears the WPVDF flag in the PWR_SR1. This bit is always read as 0."]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CWPVDF_AW::Clear)
-    }
-}
-#[doc = "Clear wakeup flag 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CWUF3_AW {
-    #[doc = "1: Setting this bit clears the WUF3 flag in the PWR_SR1 register. This bit is always read as 0."]
-    Clear = 1,
-}
-impl From<CWUF3_AW> for bool {
-    #[inline(always)]
-    fn from(variant: CWUF3_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CWUF3` writer - Clear wakeup flag 3"]
-pub type CWUF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF3_AW, O>;
-impl<'a, const O: u8> CWUF3_W<'a, O> {
-    #[doc = "Setting this bit clears the WUF3 flag in the PWR_SR1 register. This bit is always read as 0."]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CWUF3_AW::Clear)
-    }
-}
-#[doc = "Clear wakeup flag 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CWUF2_AW {
-    #[doc = "1: Setting this bit clears the WUF2 flag in the PWR_SR1 register. This bit is always read as 0."]
-    Clear = 1,
-}
-impl From<CWUF2_AW> for bool {
-    #[inline(always)]
-    fn from(variant: CWUF2_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CWUF2` writer - Clear wakeup flag 2"]
-pub type CWUF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF2_AW, O>;
-impl<'a, const O: u8> CWUF2_W<'a, O> {
-    #[doc = "Setting this bit clears the WUF2 flag in the PWR_SR1 register. This bit is always read as 0."]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(CWUF2_AW::Clear)
-    }
-}
 #[doc = "Clear wakeup flag 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CWUF1_AW {
+pub enum CWUF1W_AW {
     #[doc = "1: Setting this bit clears the WUF1 flag in the PWR_SR1 register. This bit is always read as 0."]
     Clear = 1,
 }
-impl From<CWUF1_AW> for bool {
+impl From<CWUF1W_AW> for bool {
     #[inline(always)]
-    fn from(variant: CWUF1_AW) -> Self {
+    fn from(variant: CWUF1W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CWUF1` writer - Clear wakeup flag 1"]
-pub type CWUF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF1_AW, O>;
+pub type CWUF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF1W_AW, O>;
 impl<'a, const O: u8> CWUF1_W<'a, O> {
     #[doc = "Setting this bit clears the WUF1 flag in the PWR_SR1 register. This bit is always read as 0."]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(CWUF1_AW::Clear)
+        self.variant(CWUF1W_AW::Clear)
     }
 }
+#[doc = "Clear wakeup flag 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CWUF2W_AW {
+    #[doc = "1: Setting this bit clears the WUF2 flag in the PWR_SR1 register. This bit is always read as 0."]
+    Clear = 1,
+}
+impl From<CWUF2W_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CWUF2W_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `CWUF2` writer - Clear wakeup flag 2"]
+pub type CWUF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF2W_AW, O>;
+impl<'a, const O: u8> CWUF2_W<'a, O> {
+    #[doc = "Setting this bit clears the WUF2 flag in the PWR_SR1 register. This bit is always read as 0."]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(CWUF2W_AW::Clear)
+    }
+}
+#[doc = "Clear wakeup flag 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CWUF3W_AW {
+    #[doc = "1: Setting this bit clears the WUF3 flag in the PWR_SR1 register. This bit is always read as 0."]
+    Clear = 1,
+}
+impl From<CWUF3W_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CWUF3W_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `CWUF3` writer - Clear wakeup flag 3"]
+pub type CWUF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWUF3W_AW, O>;
+impl<'a, const O: u8> CWUF3_W<'a, O> {
+    #[doc = "Setting this bit clears the WUF3 flag in the PWR_SR1 register. This bit is always read as 0."]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(CWUF3W_AW::Clear)
+    }
+}
+#[doc = "Clear wakeup PVD interrupt flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CWPVDFW_AW {
+    #[doc = "1: Setting this bit clears the WPVDF flag in the PWR_SR1. This bit is always read as 0."]
+    Clear = 1,
+}
+impl From<CWPVDFW_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CWPVDFW_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `CWPVDF` writer - Clear wakeup PVD interrupt flag"]
+pub type CWPVDF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWPVDFW_AW, O>;
+impl<'a, const O: u8> CWPVDF_W<'a, O> {
+    #[doc = "Setting this bit clears the WPVDF flag in the PWR_SR1. This bit is always read as 0."]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(CWPVDFW_AW::Clear)
+    }
+}
+#[doc = "Clear wakeup Radio BUSY flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CWRFBUSYFW_AW {
+    #[doc = "1: Setting this bit clears the WRFBUSYF flag in the PWR_SR1. This bit is always read 0."]
+    Clear = 1,
+}
+impl From<CWRFBUSYFW_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CWRFBUSYFW_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `CWRFBUSYF` writer - Clear wakeup Radio BUSY flag"]
+pub type CWRFBUSYF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, CWRFBUSYFW_AW, O>;
+impl<'a, const O: u8> CWRFBUSYF_W<'a, O> {
+    #[doc = "Setting this bit clears the WRFBUSYF flag in the PWR_SR1. This bit is always read 0."]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(CWRFBUSYFW_AW::Clear)
+    }
+}
+#[doc = "Field `CC2HF` writer - lear CPU2 Hold interrupt flag"]
+pub type CC2HF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 impl W {
-    #[doc = "Bit 14 - lear CPU2 Hold interrupt flag"]
+    #[doc = "Bit 0 - Clear wakeup flag 1"]
     #[inline(always)]
-    pub fn cc2hf(&mut self) -> CC2HF_W<14> {
-        CC2HF_W::new(self)
-    }
-    #[doc = "Bit 11 - Clear wakeup Radio BUSY flag"]
-    #[inline(always)]
-    pub fn cwrfbusyf(&mut self) -> CWRFBUSYF_W<11> {
-        CWRFBUSYF_W::new(self)
-    }
-    #[doc = "Bit 8 - Clear wakeup PVD interrupt flag"]
-    #[inline(always)]
-    pub fn cwpvdf(&mut self) -> CWPVDF_W<8> {
-        CWPVDF_W::new(self)
-    }
-    #[doc = "Bit 2 - Clear wakeup flag 3"]
-    #[inline(always)]
-    pub fn cwuf3(&mut self) -> CWUF3_W<2> {
-        CWUF3_W::new(self)
+    pub fn cwuf1(&mut self) -> CWUF1_W<0> {
+        CWUF1_W::new(self)
     }
     #[doc = "Bit 1 - Clear wakeup flag 2"]
     #[inline(always)]
     pub fn cwuf2(&mut self) -> CWUF2_W<1> {
         CWUF2_W::new(self)
     }
-    #[doc = "Bit 0 - Clear wakeup flag 1"]
+    #[doc = "Bit 2 - Clear wakeup flag 3"]
     #[inline(always)]
-    pub fn cwuf1(&mut self) -> CWUF1_W<0> {
-        CWUF1_W::new(self)
+    pub fn cwuf3(&mut self) -> CWUF3_W<2> {
+        CWUF3_W::new(self)
+    }
+    #[doc = "Bit 8 - Clear wakeup PVD interrupt flag"]
+    #[inline(always)]
+    pub fn cwpvdf(&mut self) -> CWPVDF_W<8> {
+        CWPVDF_W::new(self)
+    }
+    #[doc = "Bit 11 - Clear wakeup Radio BUSY flag"]
+    #[inline(always)]
+    pub fn cwrfbusyf(&mut self) -> CWRFBUSYF_W<11> {
+        CWRFBUSYF_W::new(self)
+    }
+    #[doc = "Bit 14 - lear CPU2 Hold interrupt flag"]
+    #[inline(always)]
+    pub fn cc2hf(&mut self) -> CC2HF_W<14> {
+        CC2HF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

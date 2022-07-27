@@ -13,18 +13,8 @@ impl From<crate::R<RGSR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Trigger overrun event flag"]
-pub use OF0_A as OF3_A;
-#[doc = "OF2"]
-pub use OF0_A as OF2_A;
-#[doc = "OF1"]
-pub use OF0_A as OF1_A;
-#[doc = "Field `OF3` reader - Trigger overrun event flag"]
-pub use OF0_R as OF3_R;
-#[doc = "Field `OF2` reader - OF2"]
-pub use OF0_R as OF2_R;
-#[doc = "Field `OF1` reader - OF1"]
-pub use OF0_R as OF1_R;
+#[doc = "Field `OF0` reader - OF0"]
+pub type OF0_R = crate::BitReader<OF0_A>;
 #[doc = "OF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OF0_A {
@@ -39,8 +29,6 @@ impl From<OF0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OF0` reader - OF0"]
-pub type OF0_R = crate::BitReader<OF0_A>;
 impl OF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -61,26 +49,32 @@ impl OF0_R {
         *self == OF0_A::Trigger
     }
 }
+#[doc = "Field `OF1` reader - OF1"]
+pub use OF0_R as OF1_R;
+#[doc = "Field `OF2` reader - OF2"]
+pub use OF0_R as OF2_R;
+#[doc = "Field `OF3` reader - Trigger overrun event flag"]
+pub use OF0_R as OF3_R;
 impl R {
-    #[doc = "Bit 3 - Trigger overrun event flag"]
+    #[doc = "Bit 0 - OF0"]
     #[inline(always)]
-    pub fn of3(&self) -> OF3_R {
-        OF3_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - OF2"]
-    #[inline(always)]
-    pub fn of2(&self) -> OF2_R {
-        OF2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn of0(&self) -> OF0_R {
+        OF0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - OF1"]
     #[inline(always)]
     pub fn of1(&self) -> OF1_R {
         OF1_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - OF0"]
+    #[doc = "Bit 2 - OF2"]
     #[inline(always)]
-    pub fn of0(&self) -> OF0_R {
-        OF0_R::new((self.bits & 1) != 0)
+    pub fn of2(&self) -> OF2_R {
+        OF2_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - Trigger overrun event flag"]
+    #[inline(always)]
+    pub fn of3(&self) -> OF3_R {
+        OF3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "request generator interrupt status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rgsr](index.html) module"]

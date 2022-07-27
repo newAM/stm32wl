@@ -2,29 +2,29 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - control register 1"]
-    pub cr1: crate::Reg<cr1::CR1_SPEC>,
+    pub cr1: CR1,
     #[doc = "0x04 - control register 2"]
-    pub cr2: crate::Reg<cr2::CR2_SPEC>,
+    pub cr2: CR2,
     #[doc = "0x08 - control register 3"]
-    pub cr3: crate::Reg<cr3::CR3_SPEC>,
+    pub cr3: CR3,
     #[doc = "0x0c - baud rate register"]
-    pub brr: crate::Reg<brr::BRR_SPEC>,
+    pub brr: BRR,
     #[doc = "0x10 - guard time and prescaler register"]
-    pub gtpr: crate::Reg<gtpr::GTPR_SPEC>,
+    pub gtpr: GTPR,
     #[doc = "0x14 - receiver timeout register"]
-    pub rtor: crate::Reg<rtor::RTOR_SPEC>,
+    pub rtor: RTOR,
     #[doc = "0x18 - request register"]
-    pub rqr: crate::Reg<rqr::RQR_SPEC>,
+    pub rqr: RQR,
     #[doc = "0x1c - interrupt and status register"]
-    pub isr: crate::Reg<isr::ISR_SPEC>,
+    pub isr: ISR,
     #[doc = "0x20 - interrupt flag clear register"]
-    pub icr: crate::Reg<icr::ICR_SPEC>,
+    pub icr: ICR,
     #[doc = "0x24 - receive data register"]
-    pub rdr: crate::Reg<rdr::RDR_SPEC>,
+    pub rdr: RDR,
     #[doc = "0x28 - transmit data register"]
-    pub tdr: crate::Reg<tdr::TDR_SPEC>,
+    pub tdr: TDR,
     #[doc = "0x2c - prescaler register"]
-    pub presc: crate::Reg<presc::PRESC_SPEC>,
+    pub presc: PRESC,
 }
 #[doc = "CR1 register accessor: an alias for `Reg<CR1_SPEC>`"]
 pub type CR1 = crate::Reg<cr1::CR1_SPEC>;

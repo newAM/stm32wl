@@ -34,156 +34,8 @@ impl From<crate::W<CCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "VREFEN\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VREFEN_A {
-    #[doc = "0: VREFINT disabled"]
-    Disabled = 0,
-    #[doc = "1: VREFINT enabled"]
-    Enabled = 1,
-}
-impl From<VREFEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: VREFEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `VREFEN` reader - VREFEN"]
-pub type VREFEN_R = crate::BitReader<VREFEN_A>;
-impl VREFEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VREFEN_A {
-        match self.bits {
-            false => VREFEN_A::Disabled,
-            true => VREFEN_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == VREFEN_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == VREFEN_A::Enabled
-    }
-}
-#[doc = "Field `VREFEN` writer - VREFEN"]
-pub type VREFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VREFEN_A, O>;
-impl<'a, const O: u8> VREFEN_W<'a, O> {
-    #[doc = "VREFINT disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(VREFEN_A::Disabled)
-    }
-    #[doc = "VREFINT enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(VREFEN_A::Enabled)
-    }
-}
-#[doc = "TSEN\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSEN_A {
-    #[doc = "0: Temperature sensor disabled"]
-    Disabled = 0,
-    #[doc = "1: Temperature sensor enabled"]
-    Enabled = 1,
-}
-impl From<TSEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TSEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `TSEN` reader - TSEN"]
-pub type TSEN_R = crate::BitReader<TSEN_A>;
-impl TSEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TSEN_A {
-        match self.bits {
-            false => TSEN_A::Disabled,
-            true => TSEN_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == TSEN_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == TSEN_A::Enabled
-    }
-}
-#[doc = "Field `TSEN` writer - TSEN"]
-pub type TSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, TSEN_A, O>;
-impl<'a, const O: u8> TSEN_W<'a, O> {
-    #[doc = "Temperature sensor disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TSEN_A::Disabled)
-    }
-    #[doc = "Temperature sensor enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TSEN_A::Enabled)
-    }
-}
-#[doc = "VBATEN\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VBATEN_A {
-    #[doc = "0: VBAT channel disabled"]
-    Disabled = 0,
-    #[doc = "1: VBAT channel enabled"]
-    Enabled = 1,
-}
-impl From<VBATEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: VBATEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `VBATEN` reader - VBATEN"]
-pub type VBATEN_R = crate::BitReader<VBATEN_A>;
-impl VBATEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VBATEN_A {
-        match self.bits {
-            false => VBATEN_A::Disabled,
-            true => VBATEN_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == VBATEN_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == VBATEN_A::Enabled
-    }
-}
-#[doc = "Field `VBATEN` writer - VBATEN"]
-pub type VBATEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VBATEN_A, O>;
-impl<'a, const O: u8> VBATEN_W<'a, O> {
-    #[doc = "VBAT channel disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(VBATEN_A::Disabled)
-    }
-    #[doc = "VBAT channel enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(VBATEN_A::Enabled)
-    }
-}
+#[doc = "Field `PRESC` reader - PRESC0"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "PRESC0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -219,8 +71,6 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - PRESC0"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -366,7 +216,162 @@ impl<'a, const O: u8> PRESC_W<'a, O> {
         self.variant(PRESC_A::Div256)
     }
 }
+#[doc = "Field `VREFEN` reader - VREFEN"]
+pub type VREFEN_R = crate::BitReader<VREFEN_A>;
+#[doc = "VREFEN\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VREFEN_A {
+    #[doc = "0: VREFINT disabled"]
+    Disabled = 0,
+    #[doc = "1: VREFINT enabled"]
+    Enabled = 1,
+}
+impl From<VREFEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: VREFEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VREFEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VREFEN_A {
+        match self.bits {
+            false => VREFEN_A::Disabled,
+            true => VREFEN_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == VREFEN_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == VREFEN_A::Enabled
+    }
+}
+#[doc = "Field `VREFEN` writer - VREFEN"]
+pub type VREFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VREFEN_A, O>;
+impl<'a, const O: u8> VREFEN_W<'a, O> {
+    #[doc = "VREFINT disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(VREFEN_A::Disabled)
+    }
+    #[doc = "VREFINT enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(VREFEN_A::Enabled)
+    }
+}
+#[doc = "Field `TSEN` reader - TSEN"]
+pub type TSEN_R = crate::BitReader<TSEN_A>;
+#[doc = "TSEN\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TSEN_A {
+    #[doc = "0: Temperature sensor disabled"]
+    Disabled = 0,
+    #[doc = "1: Temperature sensor enabled"]
+    Enabled = 1,
+}
+impl From<TSEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TSEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TSEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TSEN_A {
+        match self.bits {
+            false => TSEN_A::Disabled,
+            true => TSEN_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TSEN_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TSEN_A::Enabled
+    }
+}
+#[doc = "Field `TSEN` writer - TSEN"]
+pub type TSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, TSEN_A, O>;
+impl<'a, const O: u8> TSEN_W<'a, O> {
+    #[doc = "Temperature sensor disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(TSEN_A::Disabled)
+    }
+    #[doc = "Temperature sensor enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(TSEN_A::Enabled)
+    }
+}
+#[doc = "Field `VBATEN` reader - VBATEN"]
+pub type VBATEN_R = crate::BitReader<VBATEN_A>;
+#[doc = "VBATEN\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VBATEN_A {
+    #[doc = "0: VBAT channel disabled"]
+    Disabled = 0,
+    #[doc = "1: VBAT channel enabled"]
+    Enabled = 1,
+}
+impl From<VBATEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: VBATEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VBATEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VBATEN_A {
+        match self.bits {
+            false => VBATEN_A::Disabled,
+            true => VBATEN_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == VBATEN_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == VBATEN_A::Enabled
+    }
+}
+#[doc = "Field `VBATEN` writer - VBATEN"]
+pub type VBATEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, VBATEN_A, O>;
+impl<'a, const O: u8> VBATEN_W<'a, O> {
+    #[doc = "VBAT channel disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(VBATEN_A::Disabled)
+    }
+    #[doc = "VBAT channel enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(VBATEN_A::Enabled)
+    }
+}
 impl R {
+    #[doc = "Bits 18:21 - PRESC0"]
+    #[inline(always)]
+    pub fn presc(&self) -> PRESC_R {
+        PRESC_R::new(((self.bits >> 18) & 0x0f) as u8)
+    }
     #[doc = "Bit 22 - VREFEN"]
     #[inline(always)]
     pub fn vrefen(&self) -> VREFEN_R {
@@ -382,13 +387,13 @@ impl R {
     pub fn vbaten(&self) -> VBATEN_R {
         VBATEN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bits 18:21 - PRESC0"]
-    #[inline(always)]
-    pub fn presc(&self) -> PRESC_R {
-        PRESC_R::new(((self.bits >> 18) & 0x0f) as u8)
-    }
 }
 impl W {
+    #[doc = "Bits 18:21 - PRESC0"]
+    #[inline(always)]
+    pub fn presc(&mut self) -> PRESC_W<18> {
+        PRESC_W::new(self)
+    }
     #[doc = "Bit 22 - VREFEN"]
     #[inline(always)]
     pub fn vrefen(&mut self) -> VREFEN_W<22> {
@@ -403,11 +408,6 @@ impl W {
     #[inline(always)]
     pub fn vbaten(&mut self) -> VBATEN_W<24> {
         VBATEN_W::new(self)
-    }
-    #[doc = "Bits 18:21 - PRESC0"]
-    #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W<18> {
-        PRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

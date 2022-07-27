@@ -34,36 +34,8 @@ impl From<crate::W<APB2ENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU1 TIM17 timer clock enable"]
-pub use ADCEN_A as TIM17EN_A;
-#[doc = "CPU1 TIM16 timer clock enable"]
-pub use ADCEN_A as TIM16EN_A;
-#[doc = "CPU1 USART1clocks enable"]
-pub use ADCEN_A as USART1EN_A;
-#[doc = "CPU1 SPI1 clock enable"]
-pub use ADCEN_A as SPI1EN_A;
-#[doc = "CPU1 TIM1 timer clock enable"]
-pub use ADCEN_A as TIM1EN_A;
-#[doc = "Field `TIM17EN` reader - CPU1 TIM17 timer clock enable"]
-pub use ADCEN_R as TIM17EN_R;
-#[doc = "Field `TIM16EN` reader - CPU1 TIM16 timer clock enable"]
-pub use ADCEN_R as TIM16EN_R;
-#[doc = "Field `USART1EN` reader - CPU1 USART1clocks enable"]
-pub use ADCEN_R as USART1EN_R;
-#[doc = "Field `SPI1EN` reader - CPU1 SPI1 clock enable"]
-pub use ADCEN_R as SPI1EN_R;
-#[doc = "Field `TIM1EN` reader - CPU1 TIM1 timer clock enable"]
-pub use ADCEN_R as TIM1EN_R;
-#[doc = "Field `TIM17EN` writer - CPU1 TIM17 timer clock enable"]
-pub use ADCEN_W as TIM17EN_W;
-#[doc = "Field `TIM16EN` writer - CPU1 TIM16 timer clock enable"]
-pub use ADCEN_W as TIM16EN_W;
-#[doc = "Field `USART1EN` writer - CPU1 USART1clocks enable"]
-pub use ADCEN_W as USART1EN_W;
-#[doc = "Field `SPI1EN` writer - CPU1 SPI1 clock enable"]
-pub use ADCEN_W as SPI1EN_W;
-#[doc = "Field `TIM1EN` writer - CPU1 TIM1 timer clock enable"]
-pub use ADCEN_W as TIM1EN_W;
+#[doc = "Field `ADCEN` reader - CPU1 ADC clocks enable"]
+pub type ADCEN_R = crate::BitReader<ADCEN_A>;
 #[doc = "CPU1 ADC clocks enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCEN_A {
@@ -78,8 +50,6 @@ impl From<ADCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADCEN` reader - CPU1 ADC clocks enable"]
-pub type ADCEN_R = crate::BitReader<ADCEN_A>;
 impl ADCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -114,68 +84,88 @@ impl<'a, const O: u8> ADCEN_W<'a, O> {
         self.variant(ADCEN_A::Enabled)
     }
 }
+#[doc = "Field `TIM1EN` reader - CPU1 TIM1 timer clock enable"]
+pub use ADCEN_R as TIM1EN_R;
+#[doc = "Field `SPI1EN` reader - CPU1 SPI1 clock enable"]
+pub use ADCEN_R as SPI1EN_R;
+#[doc = "Field `USART1EN` reader - CPU1 USART1clocks enable"]
+pub use ADCEN_R as USART1EN_R;
+#[doc = "Field `TIM16EN` reader - CPU1 TIM16 timer clock enable"]
+pub use ADCEN_R as TIM16EN_R;
+#[doc = "Field `TIM17EN` reader - CPU1 TIM17 timer clock enable"]
+pub use ADCEN_R as TIM17EN_R;
+#[doc = "Field `TIM1EN` writer - CPU1 TIM1 timer clock enable"]
+pub use ADCEN_W as TIM1EN_W;
+#[doc = "Field `SPI1EN` writer - CPU1 SPI1 clock enable"]
+pub use ADCEN_W as SPI1EN_W;
+#[doc = "Field `USART1EN` writer - CPU1 USART1clocks enable"]
+pub use ADCEN_W as USART1EN_W;
+#[doc = "Field `TIM16EN` writer - CPU1 TIM16 timer clock enable"]
+pub use ADCEN_W as TIM16EN_W;
+#[doc = "Field `TIM17EN` writer - CPU1 TIM17 timer clock enable"]
+pub use ADCEN_W as TIM17EN_W;
 impl R {
-    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
+    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
     #[inline(always)]
-    pub fn tim17en(&self) -> TIM17EN_R {
-        TIM17EN_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
-    #[inline(always)]
-    pub fn tim16en(&self) -> TIM16EN_R {
-        TIM16EN_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 14 - CPU1 USART1clocks enable"]
-    #[inline(always)]
-    pub fn usart1en(&self) -> USART1EN_R {
-        USART1EN_R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
-    #[inline(always)]
-    pub fn spi1en(&self) -> SPI1EN_R {
-        SPI1EN_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn adcen(&self) -> ADCEN_R {
+        ADCEN_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 11 - CPU1 TIM1 timer clock enable"]
     #[inline(always)]
     pub fn tim1en(&self) -> TIM1EN_R {
         TIM1EN_R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
+    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
     #[inline(always)]
-    pub fn adcen(&self) -> ADCEN_R {
-        ADCEN_R::new(((self.bits >> 9) & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
-    #[inline(always)]
-    pub fn tim17en(&mut self) -> TIM17EN_W<18> {
-        TIM17EN_W::new(self)
-    }
-    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
-    #[inline(always)]
-    pub fn tim16en(&mut self) -> TIM16EN_W<17> {
-        TIM16EN_W::new(self)
+    pub fn spi1en(&self) -> SPI1EN_R {
+        SPI1EN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 14 - CPU1 USART1clocks enable"]
     #[inline(always)]
-    pub fn usart1en(&mut self) -> USART1EN_W<14> {
-        USART1EN_W::new(self)
+    pub fn usart1en(&self) -> USART1EN_R {
+        USART1EN_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
+    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
     #[inline(always)]
-    pub fn spi1en(&mut self) -> SPI1EN_W<12> {
-        SPI1EN_W::new(self)
+    pub fn tim16en(&self) -> TIM16EN_R {
+        TIM16EN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
+    #[inline(always)]
+    pub fn tim17en(&self) -> TIM17EN_R {
+        TIM17EN_R::new(((self.bits >> 18) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
+    #[inline(always)]
+    pub fn adcen(&mut self) -> ADCEN_W<9> {
+        ADCEN_W::new(self)
     }
     #[doc = "Bit 11 - CPU1 TIM1 timer clock enable"]
     #[inline(always)]
     pub fn tim1en(&mut self) -> TIM1EN_W<11> {
         TIM1EN_W::new(self)
     }
-    #[doc = "Bit 9 - CPU1 ADC clocks enable"]
+    #[doc = "Bit 12 - CPU1 SPI1 clock enable"]
     #[inline(always)]
-    pub fn adcen(&mut self) -> ADCEN_W<9> {
-        ADCEN_W::new(self)
+    pub fn spi1en(&mut self) -> SPI1EN_W<12> {
+        SPI1EN_W::new(self)
+    }
+    #[doc = "Bit 14 - CPU1 USART1clocks enable"]
+    #[inline(always)]
+    pub fn usart1en(&mut self) -> USART1EN_W<14> {
+        USART1EN_W::new(self)
+    }
+    #[doc = "Bit 17 - CPU1 TIM16 timer clock enable"]
+    #[inline(always)]
+    pub fn tim16en(&mut self) -> TIM16EN_W<17> {
+        TIM16EN_W::new(self)
+    }
+    #[doc = "Bit 18 - CPU1 TIM17 timer clock enable"]
+    #[inline(always)]
+    pub fn tim17en(&mut self) -> TIM17EN_W<18> {
+        TIM17EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

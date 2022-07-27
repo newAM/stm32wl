@@ -34,6 +34,8 @@ impl From<crate::W<C2ACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRFTEN` reader - CPU2 Prefetch enable"]
+pub type PRFTEN_R = crate::BitReader<PRFTEN_A>;
 #[doc = "CPU2 Prefetch enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRFTEN_A {
@@ -48,8 +50,6 @@ impl From<PRFTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRFTEN` reader - CPU2 Prefetch enable"]
-pub type PRFTEN_R = crate::BitReader<PRFTEN_A>;
 impl PRFTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> PRFTEN_W<'a, O> {
         self.variant(PRFTEN_A::Enabled)
     }
 }
+#[doc = "Field `ICEN` reader - CPU2 Instruction cache enable"]
+pub type ICEN_R = crate::BitReader<ICEN_A>;
 #[doc = "CPU2 Instruction cache enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICEN_A {
@@ -98,8 +100,6 @@ impl From<ICEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ICEN` reader - CPU2 Instruction cache enable"]
-pub type ICEN_R = crate::BitReader<ICEN_A>;
 impl ICEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> ICEN_W<'a, O> {
         self.variant(ICEN_A::Enabled)
     }
 }
+#[doc = "Field `ICRST` reader - CPU2 Instruction cache reset"]
+pub type ICRST_R = crate::BitReader<ICRST_A>;
 #[doc = "CPU2 Instruction cache reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICRST_A {
@@ -148,8 +150,6 @@ impl From<ICRST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ICRST` reader - CPU2 Instruction cache reset"]
-pub type ICRST_R = crate::BitReader<ICRST_A>;
 impl ICRST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -184,6 +184,8 @@ impl<'a, const O: u8> ICRST_W<'a, O> {
         self.variant(ICRST_A::Reset)
     }
 }
+#[doc = "Field `PES` reader - CPU2 program / erase suspend request"]
+pub type PES_R = crate::BitReader<PES_A>;
 #[doc = "CPU2 program / erase suspend request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PES_A {
@@ -198,8 +200,6 @@ impl From<PES_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PES` reader - CPU2 program / erase suspend request"]
-pub type PES_R = crate::BitReader<PES_A>;
 impl PES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

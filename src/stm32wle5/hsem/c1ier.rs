@@ -34,6 +34,8 @@ impl From<crate::W<C1IER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISE0` reader - Interrupt semaphore n enable bit"]
+pub type ISE0_R = crate::BitReader<ISE0_A>;
 #[doc = "Interrupt semaphore n enable bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISE0_A {
@@ -48,8 +50,6 @@ impl From<ISE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISE0` reader - Interrupt semaphore n enable bit"]
-pub type ISE0_R = crate::BitReader<ISE0_A>;
 impl ISE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,36 +84,6 @@ impl<'a, const O: u8> ISE0_W<'a, O> {
         self.variant(ISE0_A::Enabled)
     }
 }
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE1_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE2_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE3_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE4_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE5_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE6_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE7_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE8_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE9_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE10_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE11_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE12_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE13_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE14_A;
-#[doc = "Interrupt semaphore n enable bit"]
-pub use ISE0_A as ISE15_A;
 #[doc = "Field `ISE1` reader - Interrupt semaphore n enable bit"]
 pub use ISE0_R as ISE1_R;
 #[doc = "Field `ISE2` reader - Interrupt semaphore n enable bit"]

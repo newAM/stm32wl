@@ -34,123 +34,63 @@ impl From<crate::W<C1ICR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISC0` reader - Interrupt(N) semaphore n clear bit"]
+pub type ISC0_R = crate::BitReader<ISC0R_A>;
 #[doc = "Interrupt(N) semaphore n clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISC0_A {
+pub enum ISC0R_A {
     #[doc = "0: Always reads 0"]
     NoEffect = 0,
 }
-impl From<ISC0_A> for bool {
+impl From<ISC0R_A> for bool {
     #[inline(always)]
-    fn from(variant: ISC0_A) -> Self {
+    fn from(variant: ISC0R_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISC0` reader - Interrupt(N) semaphore n clear bit"]
-pub type ISC0_R = crate::BitReader<ISC0_A>;
 impl ISC0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ISC0_A> {
+    pub fn variant(&self) -> Option<ISC0R_A> {
         match self.bits {
-            false => Some(ISC0_A::NoEffect),
+            false => Some(ISC0R_A::NoEffect),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NoEffect`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        *self == ISC0_A::NoEffect
+        *self == ISC0R_A::NoEffect
     }
 }
 #[doc = "Interrupt(N) semaphore n clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISC0_AW {
+pub enum ISC0W_AW {
     #[doc = "0: Interrupt semaphore x status ISFx and masked status MISFx not affected"]
     NoEffect = 0,
     #[doc = "1: Interrupt semaphore x status ISFx and masked status MISFx cleared"]
     Clear = 1,
 }
-impl From<ISC0_AW> for bool {
+impl From<ISC0W_AW> for bool {
     #[inline(always)]
-    fn from(variant: ISC0_AW) -> Self {
+    fn from(variant: ISC0W_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ISC0` writer - Interrupt(N) semaphore n clear bit"]
-pub type ISC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1ICR_SPEC, ISC0_AW, O>;
+pub type ISC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1ICR_SPEC, ISC0W_AW, O>;
 impl<'a, const O: u8> ISC0_W<'a, O> {
     #[doc = "Interrupt semaphore x status ISFx and masked status MISFx not affected"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
-        self.variant(ISC0_AW::NoEffect)
+        self.variant(ISC0W_AW::NoEffect)
     }
     #[doc = "Interrupt semaphore x status ISFx and masked status MISFx cleared"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ISC0_AW::Clear)
+        self.variant(ISC0W_AW::Clear)
     }
 }
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC1_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC2_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC3_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC4_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC5_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC6_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC7_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC8_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC9_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC10_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC11_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC12_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC13_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC14_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_A as ISC15_A;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC1_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC2_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC3_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC4_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC5_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC6_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC7_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC8_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC9_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC10_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC11_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC12_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC13_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC14_AW;
-#[doc = "Interrupt(N) semaphore n clear bit"]
-pub use ISC0_AW as ISC15_AW;
 #[doc = "Field `ISC1` reader - Interrupt(N) semaphore n clear bit"]
 pub use ISC0_R as ISC1_R;
 #[doc = "Field `ISC2` reader - Interrupt(N) semaphore n clear bit"]

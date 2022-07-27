@@ -34,6 +34,8 @@ impl From<crate::W<PR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PR` reader - Prescaler divider"]
+pub type PR_R = crate::FieldReader<u8, PR_A>;
 #[doc = "Prescaler divider\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,8 +63,6 @@ impl From<PR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PR` reader - Prescaler divider"]
-pub type PR_R = crate::FieldReader<u8, PR_A>;
 impl PR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

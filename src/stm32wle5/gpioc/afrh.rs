@@ -34,48 +34,8 @@ impl From<crate::W<AFRH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH15_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH14_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH13_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH12_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH11_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH10_A;
-#[doc = "Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_A as AFRH9_A;
-#[doc = "Field `AFRH15` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH15_R;
-#[doc = "Field `AFRH14` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH14_R;
-#[doc = "Field `AFRH13` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH13_R;
-#[doc = "Field `AFRH12` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH12_R;
-#[doc = "Field `AFRH11` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH11_R;
-#[doc = "Field `AFRH10` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH10_R;
-#[doc = "Field `AFRH9` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_R as AFRH9_R;
-#[doc = "Field `AFRH15` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH15_W;
-#[doc = "Field `AFRH14` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH14_W;
-#[doc = "Field `AFRH13` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH13_W;
-#[doc = "Field `AFRH12` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH12_W;
-#[doc = "Field `AFRH11` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH11_W;
-#[doc = "Field `AFRH10` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH10_W;
-#[doc = "Field `AFRH9` writer - Alternate function selection for port x bit y (y = 8..15)"]
-pub use AFRH8_W as AFRH9_W;
+#[doc = "Field `AFRH8` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub type AFRH8_R = crate::FieldReader<u8, AFRH8_A>;
 #[doc = "Alternate function selection for port x bit y (y = 8..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -119,8 +79,6 @@ impl From<AFRH8_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AFRH8` reader - Alternate function selection for port x bit y (y = 8..15)"]
-pub type AFRH8_R = crate::FieldReader<u8, AFRH8_A>;
 impl AFRH8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -310,88 +268,116 @@ impl<'a, const O: u8> AFRH8_W<'a, O> {
         self.variant(AFRH8_A::Af15)
     }
 }
+#[doc = "Field `AFRH9` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH9_R;
+#[doc = "Field `AFRH10` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH10_R;
+#[doc = "Field `AFRH11` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH11_R;
+#[doc = "Field `AFRH12` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH12_R;
+#[doc = "Field `AFRH13` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH13_R;
+#[doc = "Field `AFRH14` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH14_R;
+#[doc = "Field `AFRH15` reader - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_R as AFRH15_R;
+#[doc = "Field `AFRH9` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH9_W;
+#[doc = "Field `AFRH10` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH10_W;
+#[doc = "Field `AFRH11` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH11_W;
+#[doc = "Field `AFRH12` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH12_W;
+#[doc = "Field `AFRH13` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH13_W;
+#[doc = "Field `AFRH14` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH14_W;
+#[doc = "Field `AFRH15` writer - Alternate function selection for port x bit y (y = 8..15)"]
+pub use AFRH8_W as AFRH15_W;
 impl R {
-    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    pub fn afrh15(&self) -> AFRH15_R {
-        AFRH15_R::new(((self.bits >> 28) & 0x0f) as u8)
-    }
-    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh14(&self) -> AFRH14_R {
-        AFRH14_R::new(((self.bits >> 24) & 0x0f) as u8)
-    }
-    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh13(&self) -> AFRH13_R {
-        AFRH13_R::new(((self.bits >> 20) & 0x0f) as u8)
-    }
-    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh12(&self) -> AFRH12_R {
-        AFRH12_R::new(((self.bits >> 16) & 0x0f) as u8)
-    }
-    #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh11(&self) -> AFRH11_R {
-        AFRH11_R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
-    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh10(&self) -> AFRH10_R {
-        AFRH10_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn afrh8(&self) -> AFRH8_R {
+        AFRH8_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
     pub fn afrh9(&self) -> AFRH9_R {
         AFRH9_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    pub fn afrh8(&self) -> AFRH8_R {
-        AFRH8_R::new((self.bits & 0x0f) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh15(&mut self) -> AFRH15_W<28> {
-        AFRH15_W::new(self)
-    }
-    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh14(&mut self) -> AFRH14_W<24> {
-        AFRH14_W::new(self)
-    }
-    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh13(&mut self) -> AFRH13_W<20> {
-        AFRH13_W::new(self)
-    }
-    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 8..15)"]
-    #[inline(always)]
-    pub fn afrh12(&mut self) -> AFRH12_W<16> {
-        AFRH12_W::new(self)
+    pub fn afrh10(&self) -> AFRH10_R {
+        AFRH10_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    pub fn afrh11(&mut self) -> AFRH11_W<12> {
-        AFRH11_W::new(self)
+    pub fn afrh11(&self) -> AFRH11_R {
+        AFRH11_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    pub fn afrh10(&mut self) -> AFRH10_W<8> {
-        AFRH10_W::new(self)
+    pub fn afrh12(&self) -> AFRH12_R {
+        AFRH12_R::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh13(&self) -> AFRH13_R {
+        AFRH13_R::new(((self.bits >> 20) & 0x0f) as u8)
+    }
+    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh14(&self) -> AFRH14_R {
+        AFRH14_R::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh15(&self) -> AFRH15_R {
+        AFRH15_R::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh8(&mut self) -> AFRH8_W<0> {
+        AFRH8_W::new(self)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
     pub fn afrh9(&mut self) -> AFRH9_W<4> {
         AFRH9_W::new(self)
     }
-    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 8..15)"]
     #[inline(always)]
-    pub fn afrh8(&mut self) -> AFRH8_W<0> {
-        AFRH8_W::new(self)
+    pub fn afrh10(&mut self) -> AFRH10_W<8> {
+        AFRH10_W::new(self)
+    }
+    #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh11(&mut self) -> AFRH11_W<12> {
+        AFRH11_W::new(self)
+    }
+    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh12(&mut self) -> AFRH12_W<16> {
+        AFRH12_W::new(self)
+    }
+    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh13(&mut self) -> AFRH13_W<20> {
+        AFRH13_W::new(self)
+    }
+    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh14(&mut self) -> AFRH14_W<24> {
+        AFRH14_W::new(self)
+    }
+    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 8..15)"]
+    #[inline(always)]
+    pub fn afrh15(&mut self) -> AFRH15_W<28> {
+        AFRH15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

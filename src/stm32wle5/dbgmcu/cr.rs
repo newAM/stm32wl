@@ -34,6 +34,8 @@ impl From<crate::W<CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBG_SLEEP` reader - Allow debug in SLEEP mode"]
+pub type DBG_SLEEP_R = crate::BitReader<DBG_SLEEP_A>;
 #[doc = "Allow debug in SLEEP mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_SLEEP_A {
@@ -48,8 +50,6 @@ impl From<DBG_SLEEP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_SLEEP` reader - Allow debug in SLEEP mode"]
-pub type DBG_SLEEP_R = crate::BitReader<DBG_SLEEP_A>;
 impl DBG_SLEEP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,6 +84,8 @@ impl<'a, const O: u8> DBG_SLEEP_W<'a, O> {
         self.variant(DBG_SLEEP_A::Enabled)
     }
 }
+#[doc = "Field `DBG_STOP` reader - Allow debug in STOP mode"]
+pub type DBG_STOP_R = crate::BitReader<DBG_STOP_A>;
 #[doc = "Allow debug in STOP mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_STOP_A {
@@ -98,8 +100,6 @@ impl From<DBG_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_STOP` reader - Allow debug in STOP mode"]
-pub type DBG_STOP_R = crate::BitReader<DBG_STOP_A>;
 impl DBG_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,6 +134,8 @@ impl<'a, const O: u8> DBG_STOP_W<'a, O> {
         self.variant(DBG_STOP_A::Enabled)
     }
 }
+#[doc = "Field `DBG_STANDBY` reader - Allow debug in STANDBY mode"]
+pub type DBG_STANDBY_R = crate::BitReader<DBG_STANDBY_A>;
 #[doc = "Allow debug in STANDBY mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_STANDBY_A {
@@ -148,8 +150,6 @@ impl From<DBG_STANDBY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_STANDBY` reader - Allow debug in STANDBY mode"]
-pub type DBG_STANDBY_R = crate::BitReader<DBG_STANDBY_A>;
 impl DBG_STANDBY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

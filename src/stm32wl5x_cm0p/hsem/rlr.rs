@@ -17,40 +17,40 @@ impl From<crate::R<RLR_SPEC>> for R {
 pub type PROCID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COREID` reader - COREID"]
 pub type COREID_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LOCK` reader - Lock indication"]
+pub type LOCK_R = crate::BitReader<LOCKR_A>;
 #[doc = "Lock indication\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_A {
+pub enum LOCKR_A {
     #[doc = "0: Semaphore is free"]
     Free = 0,
     #[doc = "1: Semaphore is locked"]
     Locked = 1,
 }
-impl From<LOCK_A> for bool {
+impl From<LOCKR_A> for bool {
     #[inline(always)]
-    fn from(variant: LOCK_A) -> Self {
+    fn from(variant: LOCKR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - Lock indication"]
-pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_A {
+    pub fn variant(&self) -> LOCKR_A {
         match self.bits {
-            false => LOCK_A::Free,
-            true => LOCK_A::Locked,
+            false => LOCKR_A::Free,
+            true => LOCKR_A::Locked,
         }
     }
     #[doc = "Checks if the value of the field is `Free`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
-        *self == LOCK_A::Free
+        *self == LOCKR_A::Free
     }
     #[doc = "Checks if the value of the field is `Locked`"]
     #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCK_A::Locked
+        *self == LOCKR_A::Locked
     }
 }
 impl R {

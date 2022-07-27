@@ -34,92 +34,92 @@ impl From<crate::W<APB2RSTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TIM17RST` reader - TIM17 timer reset"]
-pub type TIM17RST_R = crate::BitReader<bool>;
-#[doc = "Field `TIM17RST` writer - TIM17 timer reset"]
-pub type TIM17RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
-#[doc = "Field `TIM16RST` reader - TIM16 timer reset"]
-pub type TIM16RST_R = crate::BitReader<bool>;
-#[doc = "Field `TIM16RST` writer - TIM16 timer reset"]
-pub type TIM16RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
-#[doc = "Field `USART1RST` reader - USART1 reset"]
-pub type USART1RST_R = crate::BitReader<bool>;
-#[doc = "Field `USART1RST` writer - USART1 reset"]
-pub type USART1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
-#[doc = "Field `SPI1RST` reader - SPI1 reset"]
-pub type SPI1RST_R = crate::BitReader<bool>;
-#[doc = "Field `SPI1RST` writer - SPI1 reset"]
-pub type SPI1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
-#[doc = "Field `TIM1RST` reader - TIM1 timer reset"]
-pub type TIM1RST_R = crate::BitReader<bool>;
-#[doc = "Field `TIM1RST` writer - TIM1 timer reset"]
-pub type TIM1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
 #[doc = "Field `ADCRST` reader - ADC reset"]
 pub type ADCRST_R = crate::BitReader<bool>;
 #[doc = "Field `ADCRST` writer - ADC reset"]
 pub type ADCRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
+#[doc = "Field `TIM1RST` reader - TIM1 timer reset"]
+pub type TIM1RST_R = crate::BitReader<bool>;
+#[doc = "Field `TIM1RST` writer - TIM1 timer reset"]
+pub type TIM1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
+#[doc = "Field `SPI1RST` reader - SPI1 reset"]
+pub type SPI1RST_R = crate::BitReader<bool>;
+#[doc = "Field `SPI1RST` writer - SPI1 reset"]
+pub type SPI1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
+#[doc = "Field `USART1RST` reader - USART1 reset"]
+pub type USART1RST_R = crate::BitReader<bool>;
+#[doc = "Field `USART1RST` writer - USART1 reset"]
+pub type USART1RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
+#[doc = "Field `TIM16RST` reader - TIM16 timer reset"]
+pub type TIM16RST_R = crate::BitReader<bool>;
+#[doc = "Field `TIM16RST` writer - TIM16 timer reset"]
+pub type TIM16RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
+#[doc = "Field `TIM17RST` reader - TIM17 timer reset"]
+pub type TIM17RST_R = crate::BitReader<bool>;
+#[doc = "Field `TIM17RST` writer - TIM17 timer reset"]
+pub type TIM17RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, APB2RSTR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 18 - TIM17 timer reset"]
+    #[doc = "Bit 9 - ADC reset"]
     #[inline(always)]
-    pub fn tim17rst(&self) -> TIM17RST_R {
-        TIM17RST_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 17 - TIM16 timer reset"]
-    #[inline(always)]
-    pub fn tim16rst(&self) -> TIM16RST_R {
-        TIM16RST_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 14 - USART1 reset"]
-    #[inline(always)]
-    pub fn usart1rst(&self) -> USART1RST_R {
-        USART1RST_R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bit 12 - SPI1 reset"]
-    #[inline(always)]
-    pub fn spi1rst(&self) -> SPI1RST_R {
-        SPI1RST_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn adcrst(&self) -> ADCRST_R {
+        ADCRST_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 11 - TIM1 timer reset"]
     #[inline(always)]
     pub fn tim1rst(&self) -> TIM1RST_R {
         TIM1RST_R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 9 - ADC reset"]
+    #[doc = "Bit 12 - SPI1 reset"]
     #[inline(always)]
-    pub fn adcrst(&self) -> ADCRST_R {
-        ADCRST_R::new(((self.bits >> 9) & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 18 - TIM17 timer reset"]
-    #[inline(always)]
-    pub fn tim17rst(&mut self) -> TIM17RST_W<18> {
-        TIM17RST_W::new(self)
-    }
-    #[doc = "Bit 17 - TIM16 timer reset"]
-    #[inline(always)]
-    pub fn tim16rst(&mut self) -> TIM16RST_W<17> {
-        TIM16RST_W::new(self)
+    pub fn spi1rst(&self) -> SPI1RST_R {
+        SPI1RST_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 14 - USART1 reset"]
     #[inline(always)]
-    pub fn usart1rst(&mut self) -> USART1RST_W<14> {
-        USART1RST_W::new(self)
+    pub fn usart1rst(&self) -> USART1RST_R {
+        USART1RST_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 12 - SPI1 reset"]
+    #[doc = "Bit 17 - TIM16 timer reset"]
     #[inline(always)]
-    pub fn spi1rst(&mut self) -> SPI1RST_W<12> {
-        SPI1RST_W::new(self)
+    pub fn tim16rst(&self) -> TIM16RST_R {
+        TIM16RST_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Bit 18 - TIM17 timer reset"]
+    #[inline(always)]
+    pub fn tim17rst(&self) -> TIM17RST_R {
+        TIM17RST_R::new(((self.bits >> 18) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 9 - ADC reset"]
+    #[inline(always)]
+    pub fn adcrst(&mut self) -> ADCRST_W<9> {
+        ADCRST_W::new(self)
     }
     #[doc = "Bit 11 - TIM1 timer reset"]
     #[inline(always)]
     pub fn tim1rst(&mut self) -> TIM1RST_W<11> {
         TIM1RST_W::new(self)
     }
-    #[doc = "Bit 9 - ADC reset"]
+    #[doc = "Bit 12 - SPI1 reset"]
     #[inline(always)]
-    pub fn adcrst(&mut self) -> ADCRST_W<9> {
-        ADCRST_W::new(self)
+    pub fn spi1rst(&mut self) -> SPI1RST_W<12> {
+        SPI1RST_W::new(self)
+    }
+    #[doc = "Bit 14 - USART1 reset"]
+    #[inline(always)]
+    pub fn usart1rst(&mut self) -> USART1RST_W<14> {
+        USART1RST_W::new(self)
+    }
+    #[doc = "Bit 17 - TIM16 timer reset"]
+    #[inline(always)]
+    pub fn tim16rst(&mut self) -> TIM16RST_W<17> {
+        TIM16RST_W::new(self)
+    }
+    #[doc = "Bit 18 - TIM17 timer reset"]
+    #[inline(always)]
+    pub fn tim17rst(&mut self) -> TIM17RST_W<18> {
+        TIM17RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

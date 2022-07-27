@@ -34,6 +34,8 @@ impl From<crate::W<C2IMR2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IM34` reader - wakeup with interrupt mask on event input"]
+pub type IM34_R = crate::BitReader<IM34_A>;
 #[doc = "wakeup with interrupt mask on event input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IM34_A {
@@ -48,8 +50,6 @@ impl From<IM34_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IM34` reader - wakeup with interrupt mask on event input"]
-pub type IM34_R = crate::BitReader<IM34_A>;
 impl IM34_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,28 +84,6 @@ impl<'a, const O: u8> IM34_W<'a, O> {
         self.variant(IM34_A::Unmasked)
     }
 }
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM36_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM37_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM38_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM39_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM40_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM41_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM42_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM43_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM44_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM45_A;
-#[doc = "wakeup with interrupt mask on event input"]
-pub use IM34_A as IM46_A;
 #[doc = "Field `IM36` reader - wakeup with interrupt mask on event input"]
 pub use IM34_R as IM36_R;
 #[doc = "Field `IM37` reader - wakeup with interrupt mask on event input"]

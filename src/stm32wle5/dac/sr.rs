@@ -34,78 +34,8 @@ impl From<crate::W<SR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "DAC Channel 1 busy writing sample time flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BWST1_A {
-    #[doc = "0: There is no write operation of DAC_SHSR1 ongoing: DAC_SHSR1 can be written"]
-    Idle = 0,
-    #[doc = "1: There is a write operation of DAC_SHSR1 ongoing: DAC_SHSR1 cannot be written"]
-    Busy = 1,
-}
-impl From<BWST1_A> for bool {
-    #[inline(always)]
-    fn from(variant: BWST1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `BWST1` reader - DAC Channel 1 busy writing sample time flag"]
-pub type BWST1_R = crate::BitReader<BWST1_A>;
-impl BWST1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BWST1_A {
-        match self.bits {
-            false => BWST1_A::Idle,
-            true => BWST1_A::Busy,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Idle`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == BWST1_A::Idle
-    }
-    #[doc = "Checks if the value of the field is `Busy`"]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == BWST1_A::Busy
-    }
-}
-#[doc = "DAC Channel 1 calibration offset status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAL_FLAG1_A {
-    #[doc = "0: Calibration trimming value is lower than the offset correction value"]
-    Lower = 0,
-    #[doc = "1: Calibration trimming value is equal or greater than the offset correction value"]
-    EqualHigher = 1,
-}
-impl From<CAL_FLAG1_A> for bool {
-    #[inline(always)]
-    fn from(variant: CAL_FLAG1_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `CAL_FLAG1` reader - DAC Channel 1 calibration offset status"]
-pub type CAL_FLAG1_R = crate::BitReader<CAL_FLAG1_A>;
-impl CAL_FLAG1_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CAL_FLAG1_A {
-        match self.bits {
-            false => CAL_FLAG1_A::Lower,
-            true => CAL_FLAG1_A::EqualHigher,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Lower`"]
-    #[inline(always)]
-    pub fn is_lower(&self) -> bool {
-        *self == CAL_FLAG1_A::Lower
-    }
-    #[doc = "Checks if the value of the field is `EqualHigher`"]
-    #[inline(always)]
-    pub fn is_equal_higher(&self) -> bool {
-        *self == CAL_FLAG1_A::EqualHigher
-    }
-}
+#[doc = "Field `DMAUDR1` reader - DAC channel1 DMA underrun flag"]
+pub type DMAUDR1_R = crate::BitReader<DMAUDR1_A>;
 #[doc = "DAC channel1 DMA underrun flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAUDR1_A {
@@ -120,8 +50,6 @@ impl From<DMAUDR1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAUDR1` reader - DAC channel1 DMA underrun flag"]
-pub type DMAUDR1_R = crate::BitReader<DMAUDR1_A>;
 impl DMAUDR1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -156,21 +84,93 @@ impl<'a, const O: u8> DMAUDR1_W<'a, O> {
         self.variant(DMAUDR1_A::Error)
     }
 }
-impl R {
-    #[doc = "Bit 15 - DAC Channel 1 busy writing sample time flag"]
+#[doc = "Field `CAL_FLAG1` reader - DAC Channel 1 calibration offset status"]
+pub type CAL_FLAG1_R = crate::BitReader<CAL_FLAG1_A>;
+#[doc = "DAC Channel 1 calibration offset status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CAL_FLAG1_A {
+    #[doc = "0: Calibration trimming value is lower than the offset correction value"]
+    Lower = 0,
+    #[doc = "1: Calibration trimming value is equal or greater than the offset correction value"]
+    EqualHigher = 1,
+}
+impl From<CAL_FLAG1_A> for bool {
     #[inline(always)]
-    pub fn bwst1(&self) -> BWST1_R {
-        BWST1_R::new(((self.bits >> 15) & 1) != 0)
+    fn from(variant: CAL_FLAG1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CAL_FLAG1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAL_FLAG1_A {
+        match self.bits {
+            false => CAL_FLAG1_A::Lower,
+            true => CAL_FLAG1_A::EqualHigher,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Lower`"]
+    #[inline(always)]
+    pub fn is_lower(&self) -> bool {
+        *self == CAL_FLAG1_A::Lower
+    }
+    #[doc = "Checks if the value of the field is `EqualHigher`"]
+    #[inline(always)]
+    pub fn is_equal_higher(&self) -> bool {
+        *self == CAL_FLAG1_A::EqualHigher
+    }
+}
+#[doc = "Field `BWST1` reader - DAC Channel 1 busy writing sample time flag"]
+pub type BWST1_R = crate::BitReader<BWST1_A>;
+#[doc = "DAC Channel 1 busy writing sample time flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BWST1_A {
+    #[doc = "0: There is no write operation of DAC_SHSR1 ongoing: DAC_SHSR1 can be written"]
+    Idle = 0,
+    #[doc = "1: There is a write operation of DAC_SHSR1 ongoing: DAC_SHSR1 cannot be written"]
+    Busy = 1,
+}
+impl From<BWST1_A> for bool {
+    #[inline(always)]
+    fn from(variant: BWST1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BWST1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BWST1_A {
+        match self.bits {
+            false => BWST1_A::Idle,
+            true => BWST1_A::Busy,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Idle`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == BWST1_A::Idle
+    }
+    #[doc = "Checks if the value of the field is `Busy`"]
+    #[inline(always)]
+    pub fn is_busy(&self) -> bool {
+        *self == BWST1_A::Busy
+    }
+}
+impl R {
+    #[doc = "Bit 13 - DAC channel1 DMA underrun flag"]
+    #[inline(always)]
+    pub fn dmaudr1(&self) -> DMAUDR1_R {
+        DMAUDR1_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - DAC Channel 1 calibration offset status"]
     #[inline(always)]
     pub fn cal_flag1(&self) -> CAL_FLAG1_R {
         CAL_FLAG1_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 13 - DAC channel1 DMA underrun flag"]
+    #[doc = "Bit 15 - DAC Channel 1 busy writing sample time flag"]
     #[inline(always)]
-    pub fn dmaudr1(&self) -> DMAUDR1_R {
-        DMAUDR1_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn bwst1(&self) -> BWST1_R {
+        BWST1_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {

@@ -34,24 +34,8 @@ impl From<crate::W<AHB2ENR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU1 IO port H clock enable"]
-pub use GPIOAEN_A as GPIOHEN_A;
-#[doc = "CPU1 IO port C clock enable"]
-pub use GPIOAEN_A as GPIOCEN_A;
-#[doc = "CPU1 IO port B clock enable"]
-pub use GPIOAEN_A as GPIOBEN_A;
-#[doc = "Field `GPIOHEN` reader - CPU1 IO port H clock enable"]
-pub use GPIOAEN_R as GPIOHEN_R;
-#[doc = "Field `GPIOCEN` reader - CPU1 IO port C clock enable"]
-pub use GPIOAEN_R as GPIOCEN_R;
-#[doc = "Field `GPIOBEN` reader - CPU1 IO port B clock enable"]
-pub use GPIOAEN_R as GPIOBEN_R;
-#[doc = "Field `GPIOHEN` writer - CPU1 IO port H clock enable"]
-pub use GPIOAEN_W as GPIOHEN_W;
-#[doc = "Field `GPIOCEN` writer - CPU1 IO port C clock enable"]
-pub use GPIOAEN_W as GPIOCEN_W;
-#[doc = "Field `GPIOBEN` writer - CPU1 IO port B clock enable"]
-pub use GPIOAEN_W as GPIOBEN_W;
+#[doc = "Field `GPIOAEN` reader - CPU1 IO port A clock enable"]
+pub type GPIOAEN_R = crate::BitReader<GPIOAEN_A>;
 #[doc = "CPU1 IO port A clock enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIOAEN_A {
@@ -66,8 +50,6 @@ impl From<GPIOAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GPIOAEN` reader - CPU1 IO port A clock enable"]
-pub type GPIOAEN_R = crate::BitReader<GPIOAEN_A>;
 impl GPIOAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -102,48 +84,60 @@ impl<'a, const O: u8> GPIOAEN_W<'a, O> {
         self.variant(GPIOAEN_A::Enabled)
     }
 }
+#[doc = "Field `GPIOBEN` reader - CPU1 IO port B clock enable"]
+pub use GPIOAEN_R as GPIOBEN_R;
+#[doc = "Field `GPIOCEN` reader - CPU1 IO port C clock enable"]
+pub use GPIOAEN_R as GPIOCEN_R;
+#[doc = "Field `GPIOHEN` reader - CPU1 IO port H clock enable"]
+pub use GPIOAEN_R as GPIOHEN_R;
+#[doc = "Field `GPIOBEN` writer - CPU1 IO port B clock enable"]
+pub use GPIOAEN_W as GPIOBEN_W;
+#[doc = "Field `GPIOCEN` writer - CPU1 IO port C clock enable"]
+pub use GPIOAEN_W as GPIOCEN_W;
+#[doc = "Field `GPIOHEN` writer - CPU1 IO port H clock enable"]
+pub use GPIOAEN_W as GPIOHEN_W;
 impl R {
-    #[doc = "Bit 7 - CPU1 IO port H clock enable"]
+    #[doc = "Bit 0 - CPU1 IO port A clock enable"]
     #[inline(always)]
-    pub fn gpiohen(&self) -> GPIOHEN_R {
-        GPIOHEN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 2 - CPU1 IO port C clock enable"]
-    #[inline(always)]
-    pub fn gpiocen(&self) -> GPIOCEN_R {
-        GPIOCEN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn gpioaen(&self) -> GPIOAEN_R {
+        GPIOAEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CPU1 IO port B clock enable"]
     #[inline(always)]
     pub fn gpioben(&self) -> GPIOBEN_R {
         GPIOBEN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - CPU1 IO port A clock enable"]
+    #[doc = "Bit 2 - CPU1 IO port C clock enable"]
     #[inline(always)]
-    pub fn gpioaen(&self) -> GPIOAEN_R {
-        GPIOAEN_R::new((self.bits & 1) != 0)
+    pub fn gpiocen(&self) -> GPIOCEN_R {
+        GPIOCEN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 7 - CPU1 IO port H clock enable"]
+    #[inline(always)]
+    pub fn gpiohen(&self) -> GPIOHEN_R {
+        GPIOHEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - CPU1 IO port H clock enable"]
+    #[doc = "Bit 0 - CPU1 IO port A clock enable"]
     #[inline(always)]
-    pub fn gpiohen(&mut self) -> GPIOHEN_W<7> {
-        GPIOHEN_W::new(self)
-    }
-    #[doc = "Bit 2 - CPU1 IO port C clock enable"]
-    #[inline(always)]
-    pub fn gpiocen(&mut self) -> GPIOCEN_W<2> {
-        GPIOCEN_W::new(self)
+    pub fn gpioaen(&mut self) -> GPIOAEN_W<0> {
+        GPIOAEN_W::new(self)
     }
     #[doc = "Bit 1 - CPU1 IO port B clock enable"]
     #[inline(always)]
     pub fn gpioben(&mut self) -> GPIOBEN_W<1> {
         GPIOBEN_W::new(self)
     }
-    #[doc = "Bit 0 - CPU1 IO port A clock enable"]
+    #[doc = "Bit 2 - CPU1 IO port C clock enable"]
     #[inline(always)]
-    pub fn gpioaen(&mut self) -> GPIOAEN_W<0> {
-        GPIOAEN_W::new(self)
+    pub fn gpiocen(&mut self) -> GPIOCEN_W<2> {
+        GPIOCEN_W::new(self)
+    }
+    #[doc = "Bit 7 - CPU1 IO port H clock enable"]
+    #[inline(always)]
+    pub fn gpiohen(&mut self) -> GPIOHEN_W<7> {
+        GPIOHEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

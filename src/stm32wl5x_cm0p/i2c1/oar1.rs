@@ -38,6 +38,8 @@ impl From<crate::W<OAR1_SPEC>> for W {
 pub type OA1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `OA1` writer - Interface address"]
 pub type OA1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OAR1_SPEC, u16, u16, 10, O>;
+#[doc = "Field `OA1MODE` reader - Own Address 1 10-bit mode"]
+pub type OA1MODE_R = crate::BitReader<OA1MODE_A>;
 #[doc = "Own Address 1 10-bit mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OA1MODE_A {
@@ -52,8 +54,6 @@ impl From<OA1MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OA1MODE` reader - Own Address 1 10-bit mode"]
-pub type OA1MODE_R = crate::BitReader<OA1MODE_A>;
 impl OA1MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,6 +88,8 @@ impl<'a, const O: u8> OA1MODE_W<'a, O> {
         self.variant(OA1MODE_A::Bit10)
     }
 }
+#[doc = "Field `OA1EN` reader - Own Address 1 enable"]
+pub type OA1EN_R = crate::BitReader<OA1EN_A>;
 #[doc = "Own Address 1 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OA1EN_A {
@@ -102,8 +104,6 @@ impl From<OA1EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OA1EN` reader - Own Address 1 enable"]
-pub type OA1EN_R = crate::BitReader<OA1EN_A>;
 impl OA1EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

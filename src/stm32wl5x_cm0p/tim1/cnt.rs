@@ -34,22 +34,22 @@ impl From<crate::W<CNT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `UIFCPY` reader - UIF copy"]
-pub type UIFCPY_R = crate::BitReader<bool>;
 #[doc = "Field `CNT` reader - CNT"]
 pub type CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CNT` writer - CNT"]
 pub type CNT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CNT_SPEC, u16, u16, 16, O>;
+#[doc = "Field `UIFCPY` reader - UIF copy"]
+pub type UIFCPY_R = crate::BitReader<bool>;
 impl R {
-    #[doc = "Bit 31 - UIF copy"]
-    #[inline(always)]
-    pub fn uifcpy(&self) -> UIFCPY_R {
-        UIFCPY_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:15 - CNT"]
     #[inline(always)]
     pub fn cnt(&self) -> CNT_R {
         CNT_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bit 31 - UIF copy"]
+    #[inline(always)]
+    pub fn uifcpy(&self) -> UIFCPY_R {
+        UIFCPY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {

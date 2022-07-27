@@ -34,6 +34,8 @@ impl From<crate::W<APB1FZR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBG_TIM2_STOP` reader - TIM2 stop in CPU1 debug"]
+pub type DBG_TIM2_STOP_R = crate::BitReader<DBG_TIM2_STOP_A>;
 #[doc = "TIM2 stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_TIM2_STOP_A {
@@ -48,8 +50,6 @@ impl From<DBG_TIM2_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_TIM2_STOP` reader - TIM2 stop in CPU1 debug"]
-pub type DBG_TIM2_STOP_R = crate::BitReader<DBG_TIM2_STOP_A>;
 impl DBG_TIM2_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,6 +85,8 @@ impl<'a, const O: u8> DBG_TIM2_STOP_W<'a, O> {
         self.variant(DBG_TIM2_STOP_A::Stop)
     }
 }
+#[doc = "Field `DBG_RTC_STOP` reader - RTC stop in CPU1 debug"]
+pub type DBG_RTC_STOP_R = crate::BitReader<DBG_RTC_STOP_A>;
 #[doc = "RTC stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_RTC_STOP_A {
@@ -99,8 +101,6 @@ impl From<DBG_RTC_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_RTC_STOP` reader - RTC stop in CPU1 debug"]
-pub type DBG_RTC_STOP_R = crate::BitReader<DBG_RTC_STOP_A>;
 impl DBG_RTC_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,6 +136,8 @@ impl<'a, const O: u8> DBG_RTC_STOP_W<'a, O> {
         self.variant(DBG_RTC_STOP_A::Stop)
     }
 }
+#[doc = "Field `DBG_WWDG_STOP` reader - WWDG stop in CPU1 debug"]
+pub type DBG_WWDG_STOP_R = crate::BitReader<DBG_WWDG_STOP_A>;
 #[doc = "WWDG stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_WWDG_STOP_A {
@@ -150,8 +152,6 @@ impl From<DBG_WWDG_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_WWDG_STOP` reader - WWDG stop in CPU1 debug"]
-pub type DBG_WWDG_STOP_R = crate::BitReader<DBG_WWDG_STOP_A>;
 impl DBG_WWDG_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -187,6 +187,8 @@ impl<'a, const O: u8> DBG_WWDG_STOP_W<'a, O> {
         self.variant(DBG_WWDG_STOP_A::Stop)
     }
 }
+#[doc = "Field `DBG_IWDG_STOP` reader - IWDG stop in CPU1 debug"]
+pub type DBG_IWDG_STOP_R = crate::BitReader<DBG_IWDG_STOP_A>;
 #[doc = "IWDG stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_IWDG_STOP_A {
@@ -201,8 +203,6 @@ impl From<DBG_IWDG_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_IWDG_STOP` reader - IWDG stop in CPU1 debug"]
-pub type DBG_IWDG_STOP_R = crate::BitReader<DBG_IWDG_STOP_A>;
 impl DBG_IWDG_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -238,6 +238,8 @@ impl<'a, const O: u8> DBG_IWDG_STOP_W<'a, O> {
         self.variant(DBG_IWDG_STOP_A::Stop)
     }
 }
+#[doc = "Field `DBG_I2C1_STOP` reader - I2C1 SMBUS timeout stop in CPU1 debug"]
+pub type DBG_I2C1_STOP_R = crate::BitReader<DBG_I2C1_STOP_A>;
 #[doc = "I2C1 SMBUS timeout stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_I2C1_STOP_A {
@@ -252,8 +254,6 @@ impl From<DBG_I2C1_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_I2C1_STOP` reader - I2C1 SMBUS timeout stop in CPU1 debug"]
-pub type DBG_I2C1_STOP_R = crate::BitReader<DBG_I2C1_STOP_A>;
 impl DBG_I2C1_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -289,10 +289,6 @@ impl<'a, const O: u8> DBG_I2C1_STOP_W<'a, O> {
         self.variant(DBG_I2C1_STOP_A::SmbusTimeoutFrozen)
     }
 }
-#[doc = "I2C2 SMBUS timeout stop in CPU1 debug"]
-pub use DBG_I2C1_STOP_A as DBG_I2C2_STOP_A;
-#[doc = "I2C3 SMBUS timeout stop in CPU1 debug"]
-pub use DBG_I2C1_STOP_A as DBG_I2C3_STOP_A;
 #[doc = "Field `DBG_I2C2_STOP` reader - I2C2 SMBUS timeout stop in CPU1 debug"]
 pub use DBG_I2C1_STOP_R as DBG_I2C2_STOP_R;
 #[doc = "Field `DBG_I2C3_STOP` reader - I2C3 SMBUS timeout stop in CPU1 debug"]
@@ -301,6 +297,8 @@ pub use DBG_I2C1_STOP_R as DBG_I2C3_STOP_R;
 pub use DBG_I2C1_STOP_W as DBG_I2C2_STOP_W;
 #[doc = "Field `DBG_I2C3_STOP` writer - I2C3 SMBUS timeout stop in CPU1 debug"]
 pub use DBG_I2C1_STOP_W as DBG_I2C3_STOP_W;
+#[doc = "Field `DBG_LPTIM1_STOP` reader - LPTIM1 stop in CPU1 debug"]
+pub type DBG_LPTIM1_STOP_R = crate::BitReader<DBG_LPTIM1_STOP_A>;
 #[doc = "LPTIM1 stop in CPU1 debug\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_LPTIM1_STOP_A {
@@ -315,8 +313,6 @@ impl From<DBG_LPTIM1_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_LPTIM1_STOP` reader - LPTIM1 stop in CPU1 debug"]
-pub type DBG_LPTIM1_STOP_R = crate::BitReader<DBG_LPTIM1_STOP_A>;
 impl DBG_LPTIM1_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

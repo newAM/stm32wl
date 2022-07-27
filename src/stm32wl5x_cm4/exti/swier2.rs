@@ -34,50 +34,44 @@ impl From<crate::W<SWIER2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SWI34` reader - Software interrupt on event"]
+pub type SWI34_R = crate::BitReader<SWI34W_A>;
 #[doc = "Software interrupt on event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWI34_A {
+pub enum SWI34W_A {
     #[doc = "1: Generates an interrupt request"]
     Pend = 1,
 }
-impl From<SWI34_A> for bool {
+impl From<SWI34W_A> for bool {
     #[inline(always)]
-    fn from(variant: SWI34_A) -> Self {
+    fn from(variant: SWI34W_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SWI34` reader - Software interrupt on event"]
-pub type SWI34_R = crate::BitReader<SWI34_A>;
 impl SWI34_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SWI34_A> {
+    pub fn variant(&self) -> Option<SWI34W_A> {
         match self.bits {
-            true => Some(SWI34_A::Pend),
+            true => Some(SWI34W_A::Pend),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `Pend`"]
     #[inline(always)]
     pub fn is_pend(&self) -> bool {
-        *self == SWI34_A::Pend
+        *self == SWI34W_A::Pend
     }
 }
 #[doc = "Field `SWI34` writer - Software interrupt on event"]
-pub type SWI34_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWIER2_SPEC, SWI34_A, O>;
+pub type SWI34_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWIER2_SPEC, SWI34W_A, O>;
 impl<'a, const O: u8> SWI34_W<'a, O> {
     #[doc = "Generates an interrupt request"]
     #[inline(always)]
     pub fn pend(self) -> &'a mut W {
-        self.variant(SWI34_A::Pend)
+        self.variant(SWI34W_A::Pend)
     }
 }
-#[doc = "Software interrupt on event"]
-pub use SWI34_A as SWI40_A;
-#[doc = "Software interrupt on event"]
-pub use SWI34_A as SWI41_A;
-#[doc = "Software interrupt on event 45"]
-pub use SWI34_A as SWI45_A;
 #[doc = "Field `SWI40` reader - Software interrupt on event"]
 pub use SWI34_R as SWI40_R;
 #[doc = "Field `SWI41` reader - Software interrupt on event"]

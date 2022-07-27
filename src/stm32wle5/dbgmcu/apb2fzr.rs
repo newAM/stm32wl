@@ -34,6 +34,8 @@ impl From<crate::W<APB2FZR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBG_TIM1_STOP` reader - DBG_TIM1_STOP"]
+pub type DBG_TIM1_STOP_R = crate::BitReader<DBG_TIM1_STOP_A>;
 #[doc = "DBG_TIM1_STOP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_TIM1_STOP_A {
@@ -48,8 +50,6 @@ impl From<DBG_TIM1_STOP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_TIM1_STOP` reader - DBG_TIM1_STOP"]
-pub type DBG_TIM1_STOP_R = crate::BitReader<DBG_TIM1_STOP_A>;
 impl DBG_TIM1_STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,10 +85,6 @@ impl<'a, const O: u8> DBG_TIM1_STOP_W<'a, O> {
         self.variant(DBG_TIM1_STOP_A::Stop)
     }
 }
-#[doc = "DBG_TIM16_STOP"]
-pub use DBG_TIM1_STOP_A as DBG_TIM16_STOP_A;
-#[doc = "DBG_TIM17_STOP"]
-pub use DBG_TIM1_STOP_A as DBG_TIM17_STOP_A;
 #[doc = "Field `DBG_TIM16_STOP` reader - DBG_TIM16_STOP"]
 pub use DBG_TIM1_STOP_R as DBG_TIM16_STOP_R;
 #[doc = "Field `DBG_TIM17_STOP` reader - DBG_TIM17_STOP"]

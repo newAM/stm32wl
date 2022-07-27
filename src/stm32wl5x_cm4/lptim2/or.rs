@@ -34,6 +34,8 @@ impl From<crate::W<OR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OR_` reader - Option register bit 1"]
+pub type OR__R = crate::FieldReader<u8, OR__A>;
 #[doc = "Option register bit 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<OR__A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OR_` reader - Option register bit 1"]
-pub type OR__R = crate::FieldReader<u8, OR__A>;
 impl OR__R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

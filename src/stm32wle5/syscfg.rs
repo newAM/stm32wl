@@ -2,28 +2,28 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - memory remap register"]
-    pub memrmp: crate::Reg<memrmp::MEMRMP_SPEC>,
+    pub memrmp: MEMRMP,
     #[doc = "0x04 - configuration register 1"]
-    pub cfgr1: crate::Reg<cfgr1::CFGR1_SPEC>,
+    pub cfgr1: CFGR1,
     #[doc = "0x08 - external interrupt configuration register 1"]
-    pub exticr1: crate::Reg<exticr1::EXTICR1_SPEC>,
+    pub exticr1: EXTICR1,
     #[doc = "0x0c - external interrupt configuration register 2"]
-    pub exticr2: crate::Reg<exticr2::EXTICR2_SPEC>,
+    pub exticr2: EXTICR2,
     #[doc = "0x10 - external interrupt configuration register 3"]
-    pub exticr3: crate::Reg<exticr3::EXTICR3_SPEC>,
+    pub exticr3: EXTICR3,
     #[doc = "0x14 - external interrupt configuration register 4"]
-    pub exticr4: crate::Reg<exticr4::EXTICR4_SPEC>,
+    pub exticr4: EXTICR4,
     #[doc = "0x18 - SCSR"]
-    pub scsr: crate::Reg<scsr::SCSR_SPEC>,
+    pub scsr: SCSR,
     #[doc = "0x1c - CFGR2"]
-    pub cfgr2: crate::Reg<cfgr2::CFGR2_SPEC>,
+    pub cfgr2: CFGR2,
     #[doc = "0x20 - SWPR"]
-    pub swpr: crate::Reg<swpr::SWPR_SPEC>,
+    pub swpr: SWPR,
     #[doc = "0x24 - SKR"]
-    pub skr: crate::Reg<skr::SKR_SPEC>,
+    pub skr: SKR,
     _reserved10: [u8; 0x01e0],
     #[doc = "0x208 - radio debug control register"]
-    pub rfdcr: crate::Reg<rfdcr::RFDCR_SPEC>,
+    pub rfdcr: RFDCR,
 }
 #[doc = "MEMRMP register accessor: an alias for `Reg<MEMRMP_SPEC>`"]
 pub type MEMRMP = crate::Reg<memrmp::MEMRMP_SPEC>;

@@ -34,537 +34,8 @@ impl From<crate::W<C1CR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Synchronization identification\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum SYNC_ID_A {
-    #[doc = "0: Signal `EXTIx` selected as synchronization input"]
-    Exti0 = 0,
-    #[doc = "1: Signal `EXTIx` selected as synchronization input"]
-    Exti1 = 1,
-    #[doc = "2: Signal `EXTIx` selected as synchronization input"]
-    Exti2 = 2,
-    #[doc = "3: Signal `EXTIx` selected as synchronization input"]
-    Exti3 = 3,
-    #[doc = "4: Signal `EXTIx` selected as synchronization input"]
-    Exti4 = 4,
-    #[doc = "5: Signal `EXTIx` selected as synchronization input"]
-    Exti5 = 5,
-    #[doc = "6: Signal `EXTIx` selected as synchronization input"]
-    Exti6 = 6,
-    #[doc = "7: Signal `EXTIx` selected as synchronization input"]
-    Exti7 = 7,
-    #[doc = "8: Signal `EXTIx` selected as synchronization input"]
-    Exti8 = 8,
-    #[doc = "9: Signal `EXTIx` selected as synchronization input"]
-    Exti9 = 9,
-    #[doc = "10: Signal `EXTIx` selected as synchronization input"]
-    Exti10 = 10,
-    #[doc = "11: Signal `EXTIx` selected as synchronization input"]
-    Exti11 = 11,
-    #[doc = "12: Signal `EXTIx` selected as synchronization input"]
-    Exti12 = 12,
-    #[doc = "13: Signal `EXTIx` selected as synchronization input"]
-    Exti13 = 13,
-    #[doc = "14: Signal `EXTIx` selected as synchronization input"]
-    Exti14 = 14,
-    #[doc = "15: Signal `EXTIx` selected as synchronization input"]
-    Exti15 = 15,
-    #[doc = "16: Signal `dmamux1_evt0` selected as synchronization input"]
-    Dmamux1Evt0 = 16,
-    #[doc = "17: Signal `dmamux1_evt1` selected as synchronization input"]
-    Dmamux1Evt1 = 17,
-    #[doc = "18: Signal `lptim1_out` selected as synchronization input"]
-    Lptim1Out = 18,
-    #[doc = "19: Signal `lptim2_out` selected as synchronization input"]
-    Lptim2Out = 19,
-    #[doc = "20: Signal `lptim3_out` selected as synchronization input"]
-    Lptim3Out = 20,
-}
-impl From<SYNC_ID_A> for u8 {
-    #[inline(always)]
-    fn from(variant: SYNC_ID_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `SYNC_ID` reader - Synchronization identification"]
-pub type SYNC_ID_R = crate::FieldReader<u8, SYNC_ID_A>;
-impl SYNC_ID_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<SYNC_ID_A> {
-        match self.bits {
-            0 => Some(SYNC_ID_A::Exti0),
-            1 => Some(SYNC_ID_A::Exti1),
-            2 => Some(SYNC_ID_A::Exti2),
-            3 => Some(SYNC_ID_A::Exti3),
-            4 => Some(SYNC_ID_A::Exti4),
-            5 => Some(SYNC_ID_A::Exti5),
-            6 => Some(SYNC_ID_A::Exti6),
-            7 => Some(SYNC_ID_A::Exti7),
-            8 => Some(SYNC_ID_A::Exti8),
-            9 => Some(SYNC_ID_A::Exti9),
-            10 => Some(SYNC_ID_A::Exti10),
-            11 => Some(SYNC_ID_A::Exti11),
-            12 => Some(SYNC_ID_A::Exti12),
-            13 => Some(SYNC_ID_A::Exti13),
-            14 => Some(SYNC_ID_A::Exti14),
-            15 => Some(SYNC_ID_A::Exti15),
-            16 => Some(SYNC_ID_A::Dmamux1Evt0),
-            17 => Some(SYNC_ID_A::Dmamux1Evt1),
-            18 => Some(SYNC_ID_A::Lptim1Out),
-            19 => Some(SYNC_ID_A::Lptim2Out),
-            20 => Some(SYNC_ID_A::Lptim3Out),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Exti0`"]
-    #[inline(always)]
-    pub fn is_exti0(&self) -> bool {
-        *self == SYNC_ID_A::Exti0
-    }
-    #[doc = "Checks if the value of the field is `Exti1`"]
-    #[inline(always)]
-    pub fn is_exti1(&self) -> bool {
-        *self == SYNC_ID_A::Exti1
-    }
-    #[doc = "Checks if the value of the field is `Exti2`"]
-    #[inline(always)]
-    pub fn is_exti2(&self) -> bool {
-        *self == SYNC_ID_A::Exti2
-    }
-    #[doc = "Checks if the value of the field is `Exti3`"]
-    #[inline(always)]
-    pub fn is_exti3(&self) -> bool {
-        *self == SYNC_ID_A::Exti3
-    }
-    #[doc = "Checks if the value of the field is `Exti4`"]
-    #[inline(always)]
-    pub fn is_exti4(&self) -> bool {
-        *self == SYNC_ID_A::Exti4
-    }
-    #[doc = "Checks if the value of the field is `Exti5`"]
-    #[inline(always)]
-    pub fn is_exti5(&self) -> bool {
-        *self == SYNC_ID_A::Exti5
-    }
-    #[doc = "Checks if the value of the field is `Exti6`"]
-    #[inline(always)]
-    pub fn is_exti6(&self) -> bool {
-        *self == SYNC_ID_A::Exti6
-    }
-    #[doc = "Checks if the value of the field is `Exti7`"]
-    #[inline(always)]
-    pub fn is_exti7(&self) -> bool {
-        *self == SYNC_ID_A::Exti7
-    }
-    #[doc = "Checks if the value of the field is `Exti8`"]
-    #[inline(always)]
-    pub fn is_exti8(&self) -> bool {
-        *self == SYNC_ID_A::Exti8
-    }
-    #[doc = "Checks if the value of the field is `Exti9`"]
-    #[inline(always)]
-    pub fn is_exti9(&self) -> bool {
-        *self == SYNC_ID_A::Exti9
-    }
-    #[doc = "Checks if the value of the field is `Exti10`"]
-    #[inline(always)]
-    pub fn is_exti10(&self) -> bool {
-        *self == SYNC_ID_A::Exti10
-    }
-    #[doc = "Checks if the value of the field is `Exti11`"]
-    #[inline(always)]
-    pub fn is_exti11(&self) -> bool {
-        *self == SYNC_ID_A::Exti11
-    }
-    #[doc = "Checks if the value of the field is `Exti12`"]
-    #[inline(always)]
-    pub fn is_exti12(&self) -> bool {
-        *self == SYNC_ID_A::Exti12
-    }
-    #[doc = "Checks if the value of the field is `Exti13`"]
-    #[inline(always)]
-    pub fn is_exti13(&self) -> bool {
-        *self == SYNC_ID_A::Exti13
-    }
-    #[doc = "Checks if the value of the field is `Exti14`"]
-    #[inline(always)]
-    pub fn is_exti14(&self) -> bool {
-        *self == SYNC_ID_A::Exti14
-    }
-    #[doc = "Checks if the value of the field is `Exti15`"]
-    #[inline(always)]
-    pub fn is_exti15(&self) -> bool {
-        *self == SYNC_ID_A::Exti15
-    }
-    #[doc = "Checks if the value of the field is `Dmamux1Evt0`"]
-    #[inline(always)]
-    pub fn is_dmamux1_evt0(&self) -> bool {
-        *self == SYNC_ID_A::Dmamux1Evt0
-    }
-    #[doc = "Checks if the value of the field is `Dmamux1Evt1`"]
-    #[inline(always)]
-    pub fn is_dmamux1_evt1(&self) -> bool {
-        *self == SYNC_ID_A::Dmamux1Evt1
-    }
-    #[doc = "Checks if the value of the field is `Lptim1Out`"]
-    #[inline(always)]
-    pub fn is_lptim1_out(&self) -> bool {
-        *self == SYNC_ID_A::Lptim1Out
-    }
-    #[doc = "Checks if the value of the field is `Lptim2Out`"]
-    #[inline(always)]
-    pub fn is_lptim2_out(&self) -> bool {
-        *self == SYNC_ID_A::Lptim2Out
-    }
-    #[doc = "Checks if the value of the field is `Lptim3Out`"]
-    #[inline(always)]
-    pub fn is_lptim3_out(&self) -> bool {
-        *self == SYNC_ID_A::Lptim3Out
-    }
-}
-#[doc = "Field `SYNC_ID` writer - Synchronization identification"]
-pub type SYNC_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, C1CR_SPEC, u8, SYNC_ID_A, 5, O>;
-impl<'a, const O: u8> SYNC_ID_W<'a, O> {
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti0(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti0)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti1(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti1)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti2(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti2)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti3(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti3)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti4(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti4)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti5(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti5)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti6(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti6)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti7(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti7)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti8(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti8)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti9(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti9)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti10(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti10)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti11(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti11)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti12(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti12)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti13(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti13)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti14(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti14)
-    }
-    #[doc = "Signal `EXTIx` selected as synchronization input"]
-    #[inline(always)]
-    pub fn exti15(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Exti15)
-    }
-    #[doc = "Signal `dmamux1_evt0` selected as synchronization input"]
-    #[inline(always)]
-    pub fn dmamux1_evt0(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Dmamux1Evt0)
-    }
-    #[doc = "Signal `dmamux1_evt1` selected as synchronization input"]
-    #[inline(always)]
-    pub fn dmamux1_evt1(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Dmamux1Evt1)
-    }
-    #[doc = "Signal `lptim1_out` selected as synchronization input"]
-    #[inline(always)]
-    pub fn lptim1_out(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Lptim1Out)
-    }
-    #[doc = "Signal `lptim2_out` selected as synchronization input"]
-    #[inline(always)]
-    pub fn lptim2_out(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Lptim2Out)
-    }
-    #[doc = "Signal `lptim3_out` selected as synchronization input"]
-    #[inline(always)]
-    pub fn lptim3_out(self) -> &'a mut W {
-        self.variant(SYNC_ID_A::Lptim3Out)
-    }
-}
-#[doc = "Field `NBREQ` reader - Number of DMA requests minus 1 to forward"]
-pub type NBREQ_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `NBREQ` writer - Number of DMA requests minus 1 to forward"]
-pub type NBREQ_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, C1CR_SPEC, u8, u8, 5, O>;
-#[doc = "Synchronization polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum SPOL_A {
-    #[doc = "0: No event, i.e. no synchronization nor detection"]
-    NoEdge = 0,
-    #[doc = "1: Rising edge"]
-    RisingEdge = 1,
-    #[doc = "2: Falling edge"]
-    FallingEdge = 2,
-    #[doc = "3: Rising and falling edges"]
-    BothEdges = 3,
-}
-impl From<SPOL_A> for u8 {
-    #[inline(always)]
-    fn from(variant: SPOL_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `SPOL` reader - Synchronization polarity"]
-pub type SPOL_R = crate::FieldReader<u8, SPOL_A>;
-impl SPOL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SPOL_A {
-        match self.bits {
-            0 => SPOL_A::NoEdge,
-            1 => SPOL_A::RisingEdge,
-            2 => SPOL_A::FallingEdge,
-            3 => SPOL_A::BothEdges,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `NoEdge`"]
-    #[inline(always)]
-    pub fn is_no_edge(&self) -> bool {
-        *self == SPOL_A::NoEdge
-    }
-    #[doc = "Checks if the value of the field is `RisingEdge`"]
-    #[inline(always)]
-    pub fn is_rising_edge(&self) -> bool {
-        *self == SPOL_A::RisingEdge
-    }
-    #[doc = "Checks if the value of the field is `FallingEdge`"]
-    #[inline(always)]
-    pub fn is_falling_edge(&self) -> bool {
-        *self == SPOL_A::FallingEdge
-    }
-    #[doc = "Checks if the value of the field is `BothEdges`"]
-    #[inline(always)]
-    pub fn is_both_edges(&self) -> bool {
-        *self == SPOL_A::BothEdges
-    }
-}
-#[doc = "Field `SPOL` writer - Synchronization polarity"]
-pub type SPOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, C1CR_SPEC, u8, SPOL_A, 2, O>;
-impl<'a, const O: u8> SPOL_W<'a, O> {
-    #[doc = "No event, i.e. no synchronization nor detection"]
-    #[inline(always)]
-    pub fn no_edge(self) -> &'a mut W {
-        self.variant(SPOL_A::NoEdge)
-    }
-    #[doc = "Rising edge"]
-    #[inline(always)]
-    pub fn rising_edge(self) -> &'a mut W {
-        self.variant(SPOL_A::RisingEdge)
-    }
-    #[doc = "Falling edge"]
-    #[inline(always)]
-    pub fn falling_edge(self) -> &'a mut W {
-        self.variant(SPOL_A::FallingEdge)
-    }
-    #[doc = "Rising and falling edges"]
-    #[inline(always)]
-    pub fn both_edges(self) -> &'a mut W {
-        self.variant(SPOL_A::BothEdges)
-    }
-}
-#[doc = "Synchronization enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SE_A {
-    #[doc = "0: Synchronization disabled"]
-    Disabled = 0,
-    #[doc = "1: Synchronization enabled"]
-    Enabled = 1,
-}
-impl From<SE_A> for bool {
-    #[inline(always)]
-    fn from(variant: SE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `SE` reader - Synchronization enable"]
-pub type SE_R = crate::BitReader<SE_A>;
-impl SE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SE_A {
-        match self.bits {
-            false => SE_A::Disabled,
-            true => SE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == SE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == SE_A::Enabled
-    }
-}
-#[doc = "Field `SE` writer - Synchronization enable"]
-pub type SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, SE_A, O>;
-impl<'a, const O: u8> SE_W<'a, O> {
-    #[doc = "Synchronization disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SE_A::Disabled)
-    }
-    #[doc = "Synchronization enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SE_A::Enabled)
-    }
-}
-#[doc = "Event generation enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EGE_A {
-    #[doc = "0: Event generation disabled"]
-    Disabled = 0,
-    #[doc = "1: Event generation enabled"]
-    Enabled = 1,
-}
-impl From<EGE_A> for bool {
-    #[inline(always)]
-    fn from(variant: EGE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `EGE` reader - Event generation enable"]
-pub type EGE_R = crate::BitReader<EGE_A>;
-impl EGE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EGE_A {
-        match self.bits {
-            false => EGE_A::Disabled,
-            true => EGE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == EGE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == EGE_A::Enabled
-    }
-}
-#[doc = "Field `EGE` writer - Event generation enable"]
-pub type EGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, EGE_A, O>;
-impl<'a, const O: u8> EGE_W<'a, O> {
-    #[doc = "Event generation disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(EGE_A::Disabled)
-    }
-    #[doc = "Event generation enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(EGE_A::Enabled)
-    }
-}
-#[doc = "Synchronization overrun interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOIE_A {
-    #[doc = "0: Synchronization overrun interrupt disabled"]
-    Disabled = 0,
-    #[doc = "1: Synchronization overrun interrupt enabled"]
-    Enabled = 1,
-}
-impl From<SOIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: SOIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `SOIE` reader - Synchronization overrun interrupt enable"]
-pub type SOIE_R = crate::BitReader<SOIE_A>;
-impl SOIE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SOIE_A {
-        match self.bits {
-            false => SOIE_A::Disabled,
-            true => SOIE_A::Enabled,
-        }
-    }
-    #[doc = "Checks if the value of the field is `Disabled`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == SOIE_A::Disabled
-    }
-    #[doc = "Checks if the value of the field is `Enabled`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == SOIE_A::Enabled
-    }
-}
-#[doc = "Field `SOIE` writer - Synchronization overrun interrupt enable"]
-pub type SOIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, SOIE_A, O>;
-impl<'a, const O: u8> SOIE_W<'a, O> {
-    #[doc = "Synchronization overrun interrupt disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SOIE_A::Disabled)
-    }
-    #[doc = "Synchronization overrun interrupt enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SOIE_A::Enabled)
-    }
-}
+#[doc = "Field `DMAREQ_ID` reader - DMA request identification"]
+pub type DMAREQ_ID_R = crate::FieldReader<u8, DMAREQ_ID_A>;
 #[doc = "DMA request identification\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -662,8 +133,6 @@ impl From<DMAREQ_ID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMAREQ_ID` reader - DMA request identification"]
-pub type DMAREQ_ID_R = crate::FieldReader<u8, DMAREQ_ID_A>;
 impl DMAREQ_ID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -1151,78 +620,609 @@ impl<'a, const O: u8> DMAREQ_ID_W<'a, O> {
         self.variant(DMAREQ_ID_A::SubghzspiTx)
     }
 }
+#[doc = "Field `SOIE` reader - Synchronization overrun interrupt enable"]
+pub type SOIE_R = crate::BitReader<SOIE_A>;
+#[doc = "Synchronization overrun interrupt enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SOIE_A {
+    #[doc = "0: Synchronization overrun interrupt disabled"]
+    Disabled = 0,
+    #[doc = "1: Synchronization overrun interrupt enabled"]
+    Enabled = 1,
+}
+impl From<SOIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SOIE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOIE_A {
+        match self.bits {
+            false => SOIE_A::Disabled,
+            true => SOIE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SOIE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SOIE_A::Enabled
+    }
+}
+#[doc = "Field `SOIE` writer - Synchronization overrun interrupt enable"]
+pub type SOIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, SOIE_A, O>;
+impl<'a, const O: u8> SOIE_W<'a, O> {
+    #[doc = "Synchronization overrun interrupt disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SOIE_A::Disabled)
+    }
+    #[doc = "Synchronization overrun interrupt enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SOIE_A::Enabled)
+    }
+}
+#[doc = "Field `EGE` reader - Event generation enable"]
+pub type EGE_R = crate::BitReader<EGE_A>;
+#[doc = "Event generation enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EGE_A {
+    #[doc = "0: Event generation disabled"]
+    Disabled = 0,
+    #[doc = "1: Event generation enabled"]
+    Enabled = 1,
+}
+impl From<EGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: EGE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EGE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EGE_A {
+        match self.bits {
+            false => EGE_A::Disabled,
+            true => EGE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == EGE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == EGE_A::Enabled
+    }
+}
+#[doc = "Field `EGE` writer - Event generation enable"]
+pub type EGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, EGE_A, O>;
+impl<'a, const O: u8> EGE_W<'a, O> {
+    #[doc = "Event generation disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(EGE_A::Disabled)
+    }
+    #[doc = "Event generation enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(EGE_A::Enabled)
+    }
+}
+#[doc = "Field `SE` reader - Synchronization enable"]
+pub type SE_R = crate::BitReader<SE_A>;
+#[doc = "Synchronization enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SE_A {
+    #[doc = "0: Synchronization disabled"]
+    Disabled = 0,
+    #[doc = "1: Synchronization enabled"]
+    Enabled = 1,
+}
+impl From<SE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SE_A {
+        match self.bits {
+            false => SE_A::Disabled,
+            true => SE_A::Enabled,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Disabled`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SE_A::Disabled
+    }
+    #[doc = "Checks if the value of the field is `Enabled`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SE_A::Enabled
+    }
+}
+#[doc = "Field `SE` writer - Synchronization enable"]
+pub type SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, C1CR_SPEC, SE_A, O>;
+impl<'a, const O: u8> SE_W<'a, O> {
+    #[doc = "Synchronization disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SE_A::Disabled)
+    }
+    #[doc = "Synchronization enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SE_A::Enabled)
+    }
+}
+#[doc = "Field `SPOL` reader - Synchronization polarity"]
+pub type SPOL_R = crate::FieldReader<u8, SPOL_A>;
+#[doc = "Synchronization polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum SPOL_A {
+    #[doc = "0: No event, i.e. no synchronization nor detection"]
+    NoEdge = 0,
+    #[doc = "1: Rising edge"]
+    RisingEdge = 1,
+    #[doc = "2: Falling edge"]
+    FallingEdge = 2,
+    #[doc = "3: Rising and falling edges"]
+    BothEdges = 3,
+}
+impl From<SPOL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SPOL_A) -> Self {
+        variant as _
+    }
+}
+impl SPOL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SPOL_A {
+        match self.bits {
+            0 => SPOL_A::NoEdge,
+            1 => SPOL_A::RisingEdge,
+            2 => SPOL_A::FallingEdge,
+            3 => SPOL_A::BothEdges,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `NoEdge`"]
+    #[inline(always)]
+    pub fn is_no_edge(&self) -> bool {
+        *self == SPOL_A::NoEdge
+    }
+    #[doc = "Checks if the value of the field is `RisingEdge`"]
+    #[inline(always)]
+    pub fn is_rising_edge(&self) -> bool {
+        *self == SPOL_A::RisingEdge
+    }
+    #[doc = "Checks if the value of the field is `FallingEdge`"]
+    #[inline(always)]
+    pub fn is_falling_edge(&self) -> bool {
+        *self == SPOL_A::FallingEdge
+    }
+    #[doc = "Checks if the value of the field is `BothEdges`"]
+    #[inline(always)]
+    pub fn is_both_edges(&self) -> bool {
+        *self == SPOL_A::BothEdges
+    }
+}
+#[doc = "Field `SPOL` writer - Synchronization polarity"]
+pub type SPOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, C1CR_SPEC, u8, SPOL_A, 2, O>;
+impl<'a, const O: u8> SPOL_W<'a, O> {
+    #[doc = "No event, i.e. no synchronization nor detection"]
+    #[inline(always)]
+    pub fn no_edge(self) -> &'a mut W {
+        self.variant(SPOL_A::NoEdge)
+    }
+    #[doc = "Rising edge"]
+    #[inline(always)]
+    pub fn rising_edge(self) -> &'a mut W {
+        self.variant(SPOL_A::RisingEdge)
+    }
+    #[doc = "Falling edge"]
+    #[inline(always)]
+    pub fn falling_edge(self) -> &'a mut W {
+        self.variant(SPOL_A::FallingEdge)
+    }
+    #[doc = "Rising and falling edges"]
+    #[inline(always)]
+    pub fn both_edges(self) -> &'a mut W {
+        self.variant(SPOL_A::BothEdges)
+    }
+}
+#[doc = "Field `NBREQ` reader - Number of DMA requests minus 1 to forward"]
+pub type NBREQ_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `NBREQ` writer - Number of DMA requests minus 1 to forward"]
+pub type NBREQ_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, C1CR_SPEC, u8, u8, 5, O>;
+#[doc = "Field `SYNC_ID` reader - Synchronization identification"]
+pub type SYNC_ID_R = crate::FieldReader<u8, SYNC_ID_A>;
+#[doc = "Synchronization identification\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum SYNC_ID_A {
+    #[doc = "0: Signal `EXTIx` selected as synchronization input"]
+    Exti0 = 0,
+    #[doc = "1: Signal `EXTIx` selected as synchronization input"]
+    Exti1 = 1,
+    #[doc = "2: Signal `EXTIx` selected as synchronization input"]
+    Exti2 = 2,
+    #[doc = "3: Signal `EXTIx` selected as synchronization input"]
+    Exti3 = 3,
+    #[doc = "4: Signal `EXTIx` selected as synchronization input"]
+    Exti4 = 4,
+    #[doc = "5: Signal `EXTIx` selected as synchronization input"]
+    Exti5 = 5,
+    #[doc = "6: Signal `EXTIx` selected as synchronization input"]
+    Exti6 = 6,
+    #[doc = "7: Signal `EXTIx` selected as synchronization input"]
+    Exti7 = 7,
+    #[doc = "8: Signal `EXTIx` selected as synchronization input"]
+    Exti8 = 8,
+    #[doc = "9: Signal `EXTIx` selected as synchronization input"]
+    Exti9 = 9,
+    #[doc = "10: Signal `EXTIx` selected as synchronization input"]
+    Exti10 = 10,
+    #[doc = "11: Signal `EXTIx` selected as synchronization input"]
+    Exti11 = 11,
+    #[doc = "12: Signal `EXTIx` selected as synchronization input"]
+    Exti12 = 12,
+    #[doc = "13: Signal `EXTIx` selected as synchronization input"]
+    Exti13 = 13,
+    #[doc = "14: Signal `EXTIx` selected as synchronization input"]
+    Exti14 = 14,
+    #[doc = "15: Signal `EXTIx` selected as synchronization input"]
+    Exti15 = 15,
+    #[doc = "16: Signal `dmamux1_evt0` selected as synchronization input"]
+    Dmamux1Evt0 = 16,
+    #[doc = "17: Signal `dmamux1_evt1` selected as synchronization input"]
+    Dmamux1Evt1 = 17,
+    #[doc = "18: Signal `lptim1_out` selected as synchronization input"]
+    Lptim1Out = 18,
+    #[doc = "19: Signal `lptim2_out` selected as synchronization input"]
+    Lptim2Out = 19,
+    #[doc = "20: Signal `lptim3_out` selected as synchronization input"]
+    Lptim3Out = 20,
+}
+impl From<SYNC_ID_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SYNC_ID_A) -> Self {
+        variant as _
+    }
+}
+impl SYNC_ID_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<SYNC_ID_A> {
+        match self.bits {
+            0 => Some(SYNC_ID_A::Exti0),
+            1 => Some(SYNC_ID_A::Exti1),
+            2 => Some(SYNC_ID_A::Exti2),
+            3 => Some(SYNC_ID_A::Exti3),
+            4 => Some(SYNC_ID_A::Exti4),
+            5 => Some(SYNC_ID_A::Exti5),
+            6 => Some(SYNC_ID_A::Exti6),
+            7 => Some(SYNC_ID_A::Exti7),
+            8 => Some(SYNC_ID_A::Exti8),
+            9 => Some(SYNC_ID_A::Exti9),
+            10 => Some(SYNC_ID_A::Exti10),
+            11 => Some(SYNC_ID_A::Exti11),
+            12 => Some(SYNC_ID_A::Exti12),
+            13 => Some(SYNC_ID_A::Exti13),
+            14 => Some(SYNC_ID_A::Exti14),
+            15 => Some(SYNC_ID_A::Exti15),
+            16 => Some(SYNC_ID_A::Dmamux1Evt0),
+            17 => Some(SYNC_ID_A::Dmamux1Evt1),
+            18 => Some(SYNC_ID_A::Lptim1Out),
+            19 => Some(SYNC_ID_A::Lptim2Out),
+            20 => Some(SYNC_ID_A::Lptim3Out),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `Exti0`"]
+    #[inline(always)]
+    pub fn is_exti0(&self) -> bool {
+        *self == SYNC_ID_A::Exti0
+    }
+    #[doc = "Checks if the value of the field is `Exti1`"]
+    #[inline(always)]
+    pub fn is_exti1(&self) -> bool {
+        *self == SYNC_ID_A::Exti1
+    }
+    #[doc = "Checks if the value of the field is `Exti2`"]
+    #[inline(always)]
+    pub fn is_exti2(&self) -> bool {
+        *self == SYNC_ID_A::Exti2
+    }
+    #[doc = "Checks if the value of the field is `Exti3`"]
+    #[inline(always)]
+    pub fn is_exti3(&self) -> bool {
+        *self == SYNC_ID_A::Exti3
+    }
+    #[doc = "Checks if the value of the field is `Exti4`"]
+    #[inline(always)]
+    pub fn is_exti4(&self) -> bool {
+        *self == SYNC_ID_A::Exti4
+    }
+    #[doc = "Checks if the value of the field is `Exti5`"]
+    #[inline(always)]
+    pub fn is_exti5(&self) -> bool {
+        *self == SYNC_ID_A::Exti5
+    }
+    #[doc = "Checks if the value of the field is `Exti6`"]
+    #[inline(always)]
+    pub fn is_exti6(&self) -> bool {
+        *self == SYNC_ID_A::Exti6
+    }
+    #[doc = "Checks if the value of the field is `Exti7`"]
+    #[inline(always)]
+    pub fn is_exti7(&self) -> bool {
+        *self == SYNC_ID_A::Exti7
+    }
+    #[doc = "Checks if the value of the field is `Exti8`"]
+    #[inline(always)]
+    pub fn is_exti8(&self) -> bool {
+        *self == SYNC_ID_A::Exti8
+    }
+    #[doc = "Checks if the value of the field is `Exti9`"]
+    #[inline(always)]
+    pub fn is_exti9(&self) -> bool {
+        *self == SYNC_ID_A::Exti9
+    }
+    #[doc = "Checks if the value of the field is `Exti10`"]
+    #[inline(always)]
+    pub fn is_exti10(&self) -> bool {
+        *self == SYNC_ID_A::Exti10
+    }
+    #[doc = "Checks if the value of the field is `Exti11`"]
+    #[inline(always)]
+    pub fn is_exti11(&self) -> bool {
+        *self == SYNC_ID_A::Exti11
+    }
+    #[doc = "Checks if the value of the field is `Exti12`"]
+    #[inline(always)]
+    pub fn is_exti12(&self) -> bool {
+        *self == SYNC_ID_A::Exti12
+    }
+    #[doc = "Checks if the value of the field is `Exti13`"]
+    #[inline(always)]
+    pub fn is_exti13(&self) -> bool {
+        *self == SYNC_ID_A::Exti13
+    }
+    #[doc = "Checks if the value of the field is `Exti14`"]
+    #[inline(always)]
+    pub fn is_exti14(&self) -> bool {
+        *self == SYNC_ID_A::Exti14
+    }
+    #[doc = "Checks if the value of the field is `Exti15`"]
+    #[inline(always)]
+    pub fn is_exti15(&self) -> bool {
+        *self == SYNC_ID_A::Exti15
+    }
+    #[doc = "Checks if the value of the field is `Dmamux1Evt0`"]
+    #[inline(always)]
+    pub fn is_dmamux1_evt0(&self) -> bool {
+        *self == SYNC_ID_A::Dmamux1Evt0
+    }
+    #[doc = "Checks if the value of the field is `Dmamux1Evt1`"]
+    #[inline(always)]
+    pub fn is_dmamux1_evt1(&self) -> bool {
+        *self == SYNC_ID_A::Dmamux1Evt1
+    }
+    #[doc = "Checks if the value of the field is `Lptim1Out`"]
+    #[inline(always)]
+    pub fn is_lptim1_out(&self) -> bool {
+        *self == SYNC_ID_A::Lptim1Out
+    }
+    #[doc = "Checks if the value of the field is `Lptim2Out`"]
+    #[inline(always)]
+    pub fn is_lptim2_out(&self) -> bool {
+        *self == SYNC_ID_A::Lptim2Out
+    }
+    #[doc = "Checks if the value of the field is `Lptim3Out`"]
+    #[inline(always)]
+    pub fn is_lptim3_out(&self) -> bool {
+        *self == SYNC_ID_A::Lptim3Out
+    }
+}
+#[doc = "Field `SYNC_ID` writer - Synchronization identification"]
+pub type SYNC_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, C1CR_SPEC, u8, SYNC_ID_A, 5, O>;
+impl<'a, const O: u8> SYNC_ID_W<'a, O> {
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti0(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti0)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti1(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti1)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti2(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti2)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti3(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti3)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti4(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti4)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti5(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti5)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti6(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti6)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti7(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti7)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti8(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti8)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti9(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti9)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti10(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti10)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti11(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti11)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti12(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti12)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti13(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti13)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti14(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti14)
+    }
+    #[doc = "Signal `EXTIx` selected as synchronization input"]
+    #[inline(always)]
+    pub fn exti15(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Exti15)
+    }
+    #[doc = "Signal `dmamux1_evt0` selected as synchronization input"]
+    #[inline(always)]
+    pub fn dmamux1_evt0(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Dmamux1Evt0)
+    }
+    #[doc = "Signal `dmamux1_evt1` selected as synchronization input"]
+    #[inline(always)]
+    pub fn dmamux1_evt1(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Dmamux1Evt1)
+    }
+    #[doc = "Signal `lptim1_out` selected as synchronization input"]
+    #[inline(always)]
+    pub fn lptim1_out(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Lptim1Out)
+    }
+    #[doc = "Signal `lptim2_out` selected as synchronization input"]
+    #[inline(always)]
+    pub fn lptim2_out(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Lptim2Out)
+    }
+    #[doc = "Signal `lptim3_out` selected as synchronization input"]
+    #[inline(always)]
+    pub fn lptim3_out(self) -> &'a mut W {
+        self.variant(SYNC_ID_A::Lptim3Out)
+    }
+}
 impl R {
-    #[doc = "Bits 24:28 - Synchronization identification"]
+    #[doc = "Bits 0:7 - DMA request identification"]
     #[inline(always)]
-    pub fn sync_id(&self) -> SYNC_ID_R {
-        SYNC_ID_R::new(((self.bits >> 24) & 0x1f) as u8)
-    }
-    #[doc = "Bits 19:23 - Number of DMA requests minus 1 to forward"]
-    #[inline(always)]
-    pub fn nbreq(&self) -> NBREQ_R {
-        NBREQ_R::new(((self.bits >> 19) & 0x1f) as u8)
-    }
-    #[doc = "Bits 17:18 - Synchronization polarity"]
-    #[inline(always)]
-    pub fn spol(&self) -> SPOL_R {
-        SPOL_R::new(((self.bits >> 17) & 3) as u8)
-    }
-    #[doc = "Bit 16 - Synchronization enable"]
-    #[inline(always)]
-    pub fn se(&self) -> SE_R {
-        SE_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 9 - Event generation enable"]
-    #[inline(always)]
-    pub fn ege(&self) -> EGE_R {
-        EGE_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn dmareq_id(&self) -> DMAREQ_ID_R {
+        DMAREQ_ID_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 8 - Synchronization overrun interrupt enable"]
     #[inline(always)]
     pub fn soie(&self) -> SOIE_R {
         SOIE_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 0:7 - DMA request identification"]
+    #[doc = "Bit 9 - Event generation enable"]
     #[inline(always)]
-    pub fn dmareq_id(&self) -> DMAREQ_ID_R {
-        DMAREQ_ID_R::new((self.bits & 0xff) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 24:28 - Synchronization identification"]
-    #[inline(always)]
-    pub fn sync_id(&mut self) -> SYNC_ID_W<24> {
-        SYNC_ID_W::new(self)
-    }
-    #[doc = "Bits 19:23 - Number of DMA requests minus 1 to forward"]
-    #[inline(always)]
-    pub fn nbreq(&mut self) -> NBREQ_W<19> {
-        NBREQ_W::new(self)
-    }
-    #[doc = "Bits 17:18 - Synchronization polarity"]
-    #[inline(always)]
-    pub fn spol(&mut self) -> SPOL_W<17> {
-        SPOL_W::new(self)
+    pub fn ege(&self) -> EGE_R {
+        EGE_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 16 - Synchronization enable"]
     #[inline(always)]
-    pub fn se(&mut self) -> SE_W<16> {
-        SE_W::new(self)
+    pub fn se(&self) -> SE_R {
+        SE_R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 9 - Event generation enable"]
+    #[doc = "Bits 17:18 - Synchronization polarity"]
     #[inline(always)]
-    pub fn ege(&mut self) -> EGE_W<9> {
-        EGE_W::new(self)
+    pub fn spol(&self) -> SPOL_R {
+        SPOL_R::new(((self.bits >> 17) & 3) as u8)
+    }
+    #[doc = "Bits 19:23 - Number of DMA requests minus 1 to forward"]
+    #[inline(always)]
+    pub fn nbreq(&self) -> NBREQ_R {
+        NBREQ_R::new(((self.bits >> 19) & 0x1f) as u8)
+    }
+    #[doc = "Bits 24:28 - Synchronization identification"]
+    #[inline(always)]
+    pub fn sync_id(&self) -> SYNC_ID_R {
+        SYNC_ID_R::new(((self.bits >> 24) & 0x1f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:7 - DMA request identification"]
+    #[inline(always)]
+    pub fn dmareq_id(&mut self) -> DMAREQ_ID_W<0> {
+        DMAREQ_ID_W::new(self)
     }
     #[doc = "Bit 8 - Synchronization overrun interrupt enable"]
     #[inline(always)]
     pub fn soie(&mut self) -> SOIE_W<8> {
         SOIE_W::new(self)
     }
-    #[doc = "Bits 0:7 - DMA request identification"]
+    #[doc = "Bit 9 - Event generation enable"]
     #[inline(always)]
-    pub fn dmareq_id(&mut self) -> DMAREQ_ID_W<0> {
-        DMAREQ_ID_W::new(self)
+    pub fn ege(&mut self) -> EGE_W<9> {
+        EGE_W::new(self)
+    }
+    #[doc = "Bit 16 - Synchronization enable"]
+    #[inline(always)]
+    pub fn se(&mut self) -> SE_W<16> {
+        SE_W::new(self)
+    }
+    #[doc = "Bits 17:18 - Synchronization polarity"]
+    #[inline(always)]
+    pub fn spol(&mut self) -> SPOL_W<17> {
+        SPOL_W::new(self)
+    }
+    #[doc = "Bits 19:23 - Number of DMA requests minus 1 to forward"]
+    #[inline(always)]
+    pub fn nbreq(&mut self) -> NBREQ_W<19> {
+        NBREQ_W::new(self)
+    }
+    #[doc = "Bits 24:28 - Synchronization identification"]
+    #[inline(always)]
+    pub fn sync_id(&mut self) -> SYNC_ID_W<24> {
+        SYNC_ID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

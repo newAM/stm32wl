@@ -34,6 +34,8 @@ impl From<crate::W<AWD3CR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AWD3CH0` reader - AWD3CH"]
+pub type AWD3CH0_R = crate::BitReader<AWD3CH0_A>;
 #[doc = "AWD3CH\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AWD3CH0_A {
@@ -48,8 +50,6 @@ impl From<AWD3CH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AWD3CH0` reader - AWD3CH"]
-pub type AWD3CH0_R = crate::BitReader<AWD3CH0_A>;
 impl AWD3CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,40 +84,6 @@ impl<'a, const O: u8> AWD3CH0_W<'a, O> {
         self.variant(AWD3CH0_A::Monitored)
     }
 }
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH1_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH2_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH3_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH4_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH5_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH6_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH7_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH8_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH9_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH10_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH11_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH12_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH13_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH14_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH15_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH16_A;
-#[doc = "AWD3CH"]
-pub use AWD3CH0_A as AWD3CH17_A;
 #[doc = "Field `AWD3CH1` reader - AWD3CH"]
 pub use AWD3CH0_R as AWD3CH1_R;
 #[doc = "Field `AWD3CH2` reader - AWD3CH"]

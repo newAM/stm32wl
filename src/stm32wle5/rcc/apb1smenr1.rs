@@ -34,60 +34,8 @@ impl From<crate::W<APB1SMENR1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
-pub use TIM2SMEN_A as LPTIM1SMEN_A;
-#[doc = "DAC clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_A as DACSMEN_A;
-#[doc = "I2C3 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_A as I2C3SMEN_A;
-#[doc = "I2C2 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_A as I2C2SMEN_A;
-#[doc = "I2C1 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_A as I2C1SMEN_A;
-#[doc = "USART2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_A as USART2SMEN_A;
-#[doc = "SPI2S2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_A as SPI2S2SMEN_A;
-#[doc = "Window watchdog clocks enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_A as WWDGSMEN_A;
-#[doc = "RTC bus clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_A as RTCAPBSMEN_A;
-#[doc = "Field `LPTIM1SMEN` reader - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
-pub use TIM2SMEN_R as LPTIM1SMEN_R;
-#[doc = "Field `DACSMEN` reader - DAC clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_R as DACSMEN_R;
-#[doc = "Field `I2C3SMEN` reader - I2C3 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_R as I2C3SMEN_R;
-#[doc = "Field `I2C2SMEN` reader - I2C2 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_R as I2C2SMEN_R;
-#[doc = "Field `I2C1SMEN` reader - I2C1 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_R as I2C1SMEN_R;
-#[doc = "Field `USART2SMEN` reader - USART2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_R as USART2SMEN_R;
-#[doc = "Field `SPI2S2SMEN` reader - SPI2S2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_R as SPI2S2SMEN_R;
-#[doc = "Field `WWDGSMEN` reader - Window watchdog clocks enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_R as WWDGSMEN_R;
-#[doc = "Field `RTCAPBSMEN` reader - RTC bus clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_R as RTCAPBSMEN_R;
-#[doc = "Field `LPTIM1SMEN` writer - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
-pub use TIM2SMEN_W as LPTIM1SMEN_W;
-#[doc = "Field `DACSMEN` writer - DAC clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_W as DACSMEN_W;
-#[doc = "Field `I2C3SMEN` writer - I2C3 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_W as I2C3SMEN_W;
-#[doc = "Field `I2C2SMEN` writer - I2C2 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_W as I2C2SMEN_W;
-#[doc = "Field `I2C1SMEN` writer - I2C1 clock enable during CPU1 Csleep and CStop modes"]
-pub use TIM2SMEN_W as I2C1SMEN_W;
-#[doc = "Field `USART2SMEN` writer - USART2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_W as USART2SMEN_W;
-#[doc = "Field `SPI2S2SMEN` writer - SPI2S2 clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_W as SPI2S2SMEN_W;
-#[doc = "Field `WWDGSMEN` writer - Window watchdog clocks enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_W as WWDGSMEN_W;
-#[doc = "Field `RTCAPBSMEN` writer - RTC bus clock enable during CPU1 CSleep mode."]
-pub use TIM2SMEN_W as RTCAPBSMEN_W;
+#[doc = "Field `TIM2SMEN` reader - TIM2 timer clock enable during CPU1 CSleep mode."]
+pub type TIM2SMEN_R = crate::BitReader<TIM2SMEN_A>;
 #[doc = "TIM2 timer clock enable during CPU1 CSleep mode.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIM2SMEN_A {
@@ -102,8 +50,6 @@ impl From<TIM2SMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIM2SMEN` reader - TIM2 timer clock enable during CPU1 CSleep mode."]
-pub type TIM2SMEN_R = crate::BitReader<TIM2SMEN_A>;
 impl TIM2SMEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -138,108 +84,144 @@ impl<'a, const O: u8> TIM2SMEN_W<'a, O> {
         self.variant(TIM2SMEN_A::Enabled)
     }
 }
+#[doc = "Field `RTCAPBSMEN` reader - RTC bus clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_R as RTCAPBSMEN_R;
+#[doc = "Field `WWDGSMEN` reader - Window watchdog clocks enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_R as WWDGSMEN_R;
+#[doc = "Field `SPI2S2SMEN` reader - SPI2S2 clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_R as SPI2S2SMEN_R;
+#[doc = "Field `USART2SMEN` reader - USART2 clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_R as USART2SMEN_R;
+#[doc = "Field `I2C1SMEN` reader - I2C1 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_R as I2C1SMEN_R;
+#[doc = "Field `I2C2SMEN` reader - I2C2 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_R as I2C2SMEN_R;
+#[doc = "Field `I2C3SMEN` reader - I2C3 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_R as I2C3SMEN_R;
+#[doc = "Field `DACSMEN` reader - DAC clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_R as DACSMEN_R;
+#[doc = "Field `LPTIM1SMEN` reader - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
+pub use TIM2SMEN_R as LPTIM1SMEN_R;
+#[doc = "Field `RTCAPBSMEN` writer - RTC bus clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_W as RTCAPBSMEN_W;
+#[doc = "Field `WWDGSMEN` writer - Window watchdog clocks enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_W as WWDGSMEN_W;
+#[doc = "Field `SPI2S2SMEN` writer - SPI2S2 clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_W as SPI2S2SMEN_W;
+#[doc = "Field `USART2SMEN` writer - USART2 clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_W as USART2SMEN_W;
+#[doc = "Field `I2C1SMEN` writer - I2C1 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_W as I2C1SMEN_W;
+#[doc = "Field `I2C2SMEN` writer - I2C2 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_W as I2C2SMEN_W;
+#[doc = "Field `I2C3SMEN` writer - I2C3 clock enable during CPU1 Csleep and CStop modes"]
+pub use TIM2SMEN_W as I2C3SMEN_W;
+#[doc = "Field `DACSMEN` writer - DAC clock enable during CPU1 CSleep mode."]
+pub use TIM2SMEN_W as DACSMEN_W;
+#[doc = "Field `LPTIM1SMEN` writer - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
+pub use TIM2SMEN_W as LPTIM1SMEN_W;
 impl R {
-    #[doc = "Bit 31 - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
+    #[doc = "Bit 0 - TIM2 timer clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn lptim1smen(&self) -> LPTIM1SMEN_R {
-        LPTIM1SMEN_R::new(((self.bits >> 31) & 1) != 0)
-    }
-    #[doc = "Bit 29 - DAC clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn dacsmen(&self) -> DACSMEN_R {
-        DACSMEN_R::new(((self.bits >> 29) & 1) != 0)
-    }
-    #[doc = "Bit 23 - I2C3 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c3smen(&self) -> I2C3SMEN_R {
-        I2C3SMEN_R::new(((self.bits >> 23) & 1) != 0)
-    }
-    #[doc = "Bit 22 - I2C2 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c2smen(&self) -> I2C2SMEN_R {
-        I2C2SMEN_R::new(((self.bits >> 22) & 1) != 0)
-    }
-    #[doc = "Bit 21 - I2C1 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c1smen(&self) -> I2C1SMEN_R {
-        I2C1SMEN_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 17 - USART2 clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn usart2smen(&self) -> USART2SMEN_R {
-        USART2SMEN_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 14 - SPI2S2 clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn spi2s2smen(&self) -> SPI2S2SMEN_R {
-        SPI2S2SMEN_R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bit 11 - Window watchdog clocks enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn wwdgsmen(&self) -> WWDGSMEN_R {
-        WWDGSMEN_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn tim2smen(&self) -> TIM2SMEN_R {
+        TIM2SMEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 10 - RTC bus clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn rtcapbsmen(&self) -> RTCAPBSMEN_R {
         RTCAPBSMEN_R::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 0 - TIM2 timer clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 11 - Window watchdog clocks enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn tim2smen(&self) -> TIM2SMEN_R {
-        TIM2SMEN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 31 - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
-    #[inline(always)]
-    pub fn lptim1smen(&mut self) -> LPTIM1SMEN_W<31> {
-        LPTIM1SMEN_W::new(self)
-    }
-    #[doc = "Bit 29 - DAC clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn dacsmen(&mut self) -> DACSMEN_W<29> {
-        DACSMEN_W::new(self)
-    }
-    #[doc = "Bit 23 - I2C3 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c3smen(&mut self) -> I2C3SMEN_W<23> {
-        I2C3SMEN_W::new(self)
-    }
-    #[doc = "Bit 22 - I2C2 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c2smen(&mut self) -> I2C2SMEN_W<22> {
-        I2C2SMEN_W::new(self)
-    }
-    #[doc = "Bit 21 - I2C1 clock enable during CPU1 Csleep and CStop modes"]
-    #[inline(always)]
-    pub fn i2c1smen(&mut self) -> I2C1SMEN_W<21> {
-        I2C1SMEN_W::new(self)
-    }
-    #[doc = "Bit 17 - USART2 clock enable during CPU1 CSleep mode."]
-    #[inline(always)]
-    pub fn usart2smen(&mut self) -> USART2SMEN_W<17> {
-        USART2SMEN_W::new(self)
+    pub fn wwdgsmen(&self) -> WWDGSMEN_R {
+        WWDGSMEN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 14 - SPI2S2 clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn spi2s2smen(&mut self) -> SPI2S2SMEN_W<14> {
-        SPI2S2SMEN_W::new(self)
+    pub fn spi2s2smen(&self) -> SPI2S2SMEN_R {
+        SPI2S2SMEN_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 11 - Window watchdog clocks enable during CPU1 CSleep mode."]
+    #[doc = "Bit 17 - USART2 clock enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn wwdgsmen(&mut self) -> WWDGSMEN_W<11> {
-        WWDGSMEN_W::new(self)
+    pub fn usart2smen(&self) -> USART2SMEN_R {
+        USART2SMEN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Bit 21 - I2C1 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c1smen(&self) -> I2C1SMEN_R {
+        I2C1SMEN_R::new(((self.bits >> 21) & 1) != 0)
+    }
+    #[doc = "Bit 22 - I2C2 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c2smen(&self) -> I2C2SMEN_R {
+        I2C2SMEN_R::new(((self.bits >> 22) & 1) != 0)
+    }
+    #[doc = "Bit 23 - I2C3 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c3smen(&self) -> I2C3SMEN_R {
+        I2C3SMEN_R::new(((self.bits >> 23) & 1) != 0)
+    }
+    #[doc = "Bit 29 - DAC clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn dacsmen(&self) -> DACSMEN_R {
+        DACSMEN_R::new(((self.bits >> 29) & 1) != 0)
+    }
+    #[doc = "Bit 31 - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
+    #[inline(always)]
+    pub fn lptim1smen(&self) -> LPTIM1SMEN_R {
+        LPTIM1SMEN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - TIM2 timer clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn tim2smen(&mut self) -> TIM2SMEN_W<0> {
+        TIM2SMEN_W::new(self)
     }
     #[doc = "Bit 10 - RTC bus clock enable during CPU1 CSleep mode."]
     #[inline(always)]
     pub fn rtcapbsmen(&mut self) -> RTCAPBSMEN_W<10> {
         RTCAPBSMEN_W::new(self)
     }
-    #[doc = "Bit 0 - TIM2 timer clock enable during CPU1 CSleep mode."]
+    #[doc = "Bit 11 - Window watchdog clocks enable during CPU1 CSleep mode."]
     #[inline(always)]
-    pub fn tim2smen(&mut self) -> TIM2SMEN_W<0> {
-        TIM2SMEN_W::new(self)
+    pub fn wwdgsmen(&mut self) -> WWDGSMEN_W<11> {
+        WWDGSMEN_W::new(self)
+    }
+    #[doc = "Bit 14 - SPI2S2 clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn spi2s2smen(&mut self) -> SPI2S2SMEN_W<14> {
+        SPI2S2SMEN_W::new(self)
+    }
+    #[doc = "Bit 17 - USART2 clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn usart2smen(&mut self) -> USART2SMEN_W<17> {
+        USART2SMEN_W::new(self)
+    }
+    #[doc = "Bit 21 - I2C1 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c1smen(&mut self) -> I2C1SMEN_W<21> {
+        I2C1SMEN_W::new(self)
+    }
+    #[doc = "Bit 22 - I2C2 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c2smen(&mut self) -> I2C2SMEN_W<22> {
+        I2C2SMEN_W::new(self)
+    }
+    #[doc = "Bit 23 - I2C3 clock enable during CPU1 Csleep and CStop modes"]
+    #[inline(always)]
+    pub fn i2c3smen(&mut self) -> I2C3SMEN_W<23> {
+        I2C3SMEN_W::new(self)
+    }
+    #[doc = "Bit 29 - DAC clock enable during CPU1 CSleep mode."]
+    #[inline(always)]
+    pub fn dacsmen(&mut self) -> DACSMEN_W<29> {
+        DACSMEN_W::new(self)
+    }
+    #[doc = "Bit 31 - Low power timer 1 clock enable during CPU1 Csleep and CStop mode"]
+    #[inline(always)]
+    pub fn lptim1smen(&mut self) -> LPTIM1SMEN_W<31> {
+        LPTIM1SMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

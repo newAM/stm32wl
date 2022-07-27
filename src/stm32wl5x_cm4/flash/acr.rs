@@ -34,6 +34,8 @@ impl From<crate::W<ACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LATENCY` reader - Latency"]
+pub type LATENCY_R = crate::FieldReader<u8, LATENCY_A>;
 #[doc = "Latency\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<LATENCY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LATENCY` reader - Latency"]
-pub type LATENCY_R = crate::FieldReader<u8, LATENCY_A>;
 impl LATENCY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,6 +99,8 @@ impl<'a, const O: u8> LATENCY_W<'a, O> {
         self.variant(LATENCY_A::Ws2)
     }
 }
+#[doc = "Field `PRFTEN` reader - Prefetch enable"]
+pub type PRFTEN_R = crate::BitReader<PRFTEN_A>;
 #[doc = "Prefetch enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRFTEN_A {
@@ -113,8 +115,6 @@ impl From<PRFTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRFTEN` reader - Prefetch enable"]
-pub type PRFTEN_R = crate::BitReader<PRFTEN_A>;
 impl PRFTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -149,6 +149,8 @@ impl<'a, const O: u8> PRFTEN_W<'a, O> {
         self.variant(PRFTEN_A::Enabled)
     }
 }
+#[doc = "Field `ICEN` reader - Instruction cache enable"]
+pub type ICEN_R = crate::BitReader<ICEN_A>;
 #[doc = "Instruction cache enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICEN_A {
@@ -163,8 +165,6 @@ impl From<ICEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ICEN` reader - Instruction cache enable"]
-pub type ICEN_R = crate::BitReader<ICEN_A>;
 impl ICEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -199,6 +199,8 @@ impl<'a, const O: u8> ICEN_W<'a, O> {
         self.variant(ICEN_A::Enabled)
     }
 }
+#[doc = "Field `DCEN` reader - Data cache enable"]
+pub type DCEN_R = crate::BitReader<DCEN_A>;
 #[doc = "Data cache enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN_A {
@@ -213,8 +215,6 @@ impl From<DCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCEN` reader - Data cache enable"]
-pub type DCEN_R = crate::BitReader<DCEN_A>;
 impl DCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -249,6 +249,8 @@ impl<'a, const O: u8> DCEN_W<'a, O> {
         self.variant(DCEN_A::Enabled)
     }
 }
+#[doc = "Field `ICRST` reader - Instruction cache reset"]
+pub type ICRST_R = crate::BitReader<ICRST_A>;
 #[doc = "Instruction cache reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ICRST_A {
@@ -263,8 +265,6 @@ impl From<ICRST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ICRST` reader - Instruction cache reset"]
-pub type ICRST_R = crate::BitReader<ICRST_A>;
 impl ICRST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -299,6 +299,8 @@ impl<'a, const O: u8> ICRST_W<'a, O> {
         self.variant(ICRST_A::Reset)
     }
 }
+#[doc = "Field `DCRST` reader - Data cache reset"]
+pub type DCRST_R = crate::BitReader<DCRST_A>;
 #[doc = "Data cache reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCRST_A {
@@ -313,8 +315,6 @@ impl From<DCRST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCRST` reader - Data cache reset"]
-pub type DCRST_R = crate::BitReader<DCRST_A>;
 impl DCRST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -349,6 +349,8 @@ impl<'a, const O: u8> DCRST_W<'a, O> {
         self.variant(DCRST_A::Reset)
     }
 }
+#[doc = "Field `PES` reader - CPU1 programm erase suspend request"]
+pub type PES_R = crate::BitReader<PES_A>;
 #[doc = "CPU1 programm erase suspend request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PES_A {
@@ -363,8 +365,6 @@ impl From<PES_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PES` reader - CPU1 programm erase suspend request"]
-pub type PES_R = crate::BitReader<PES_A>;
 impl PES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -399,6 +399,8 @@ impl<'a, const O: u8> PES_W<'a, O> {
         self.variant(PES_A::Suspended)
     }
 }
+#[doc = "Field `EMPTY` reader - Flash User area empty"]
+pub type EMPTY_R = crate::BitReader<EMPTY_A>;
 #[doc = "Flash User area empty\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMPTY_A {
@@ -413,8 +415,6 @@ impl From<EMPTY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EMPTY` reader - Flash User area empty"]
-pub type EMPTY_R = crate::BitReader<EMPTY_A>;
 impl EMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<OTYPER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OT3` reader - Port x configuration bits (y = 0..15)"]
+pub type OT3_R = crate::BitReader<OT3_A>;
 #[doc = "Port x configuration bits (y = 0..15)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OT3_A {
@@ -48,8 +50,6 @@ impl From<OT3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OT3` reader - Port x configuration bits (y = 0..15)"]
-pub type OT3_R = crate::BitReader<OT3_A>;
 impl OT3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

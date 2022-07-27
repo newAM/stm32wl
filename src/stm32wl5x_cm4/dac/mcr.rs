@@ -34,6 +34,8 @@ impl From<crate::W<MCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE1` reader - DAC Channel 1 mode"]
+pub type MODE1_R = crate::FieldReader<u8, MODE1_A>;
 #[doc = "DAC Channel 1 mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -61,8 +63,6 @@ impl From<MODE1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE1` reader - DAC Channel 1 mode"]
-pub type MODE1_R = crate::FieldReader<u8, MODE1_A>;
 impl MODE1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,48 +34,8 @@ impl From<crate::W<AFRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL7_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL6_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL5_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL4_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL3_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL2_A;
-#[doc = "Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_A as AFRL1_A;
-#[doc = "Field `AFRL7` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL7_R;
-#[doc = "Field `AFRL6` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL6_R;
-#[doc = "Field `AFRL5` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL5_R;
-#[doc = "Field `AFRL4` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL4_R;
-#[doc = "Field `AFRL3` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL3_R;
-#[doc = "Field `AFRL2` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL2_R;
-#[doc = "Field `AFRL1` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_R as AFRL1_R;
-#[doc = "Field `AFRL7` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL7_W;
-#[doc = "Field `AFRL6` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL6_W;
-#[doc = "Field `AFRL5` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL5_W;
-#[doc = "Field `AFRL4` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL4_W;
-#[doc = "Field `AFRL3` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL3_W;
-#[doc = "Field `AFRL2` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL2_W;
-#[doc = "Field `AFRL1` writer - Alternate function selection for port x bit y (y = 0..7)"]
-pub use AFRL0_W as AFRL1_W;
+#[doc = "Field `AFRL0` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub type AFRL0_R = crate::FieldReader<u8, AFRL0_A>;
 #[doc = "Alternate function selection for port x bit y (y = 0..7)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -119,8 +79,6 @@ impl From<AFRL0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AFRL0` reader - Alternate function selection for port x bit y (y = 0..7)"]
-pub type AFRL0_R = crate::FieldReader<u8, AFRL0_A>;
 impl AFRL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -310,88 +268,116 @@ impl<'a, const O: u8> AFRL0_W<'a, O> {
         self.variant(AFRL0_A::Af15)
     }
 }
+#[doc = "Field `AFRL1` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL1_R;
+#[doc = "Field `AFRL2` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL2_R;
+#[doc = "Field `AFRL3` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL3_R;
+#[doc = "Field `AFRL4` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL4_R;
+#[doc = "Field `AFRL5` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL5_R;
+#[doc = "Field `AFRL6` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL6_R;
+#[doc = "Field `AFRL7` reader - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_R as AFRL7_R;
+#[doc = "Field `AFRL1` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL1_W;
+#[doc = "Field `AFRL2` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL2_W;
+#[doc = "Field `AFRL3` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL3_W;
+#[doc = "Field `AFRL4` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL4_W;
+#[doc = "Field `AFRL5` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL5_W;
+#[doc = "Field `AFRL6` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL6_W;
+#[doc = "Field `AFRL7` writer - Alternate function selection for port x bit y (y = 0..7)"]
+pub use AFRL0_W as AFRL7_W;
 impl R {
-    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl7(&self) -> AFRL7_R {
-        AFRL7_R::new(((self.bits >> 28) & 0x0f) as u8)
-    }
-    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl6(&self) -> AFRL6_R {
-        AFRL6_R::new(((self.bits >> 24) & 0x0f) as u8)
-    }
-    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl5(&self) -> AFRL5_R {
-        AFRL5_R::new(((self.bits >> 20) & 0x0f) as u8)
-    }
-    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl4(&self) -> AFRL4_R {
-        AFRL4_R::new(((self.bits >> 16) & 0x0f) as u8)
-    }
-    #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl3(&self) -> AFRL3_R {
-        AFRL3_R::new(((self.bits >> 12) & 0x0f) as u8)
-    }
-    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl2(&self) -> AFRL2_R {
-        AFRL2_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn afrl0(&self) -> AFRL0_R {
+        AFRL0_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
     pub fn afrl1(&self) -> AFRL1_R {
         AFRL1_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl0(&self) -> AFRL0_R {
-        AFRL0_R::new((self.bits & 0x0f) as u8)
-    }
-}
-impl W {
-    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl7(&mut self) -> AFRL7_W<28> {
-        AFRL7_W::new(self)
-    }
-    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl6(&mut self) -> AFRL6_W<24> {
-        AFRL6_W::new(self)
-    }
-    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl5(&mut self) -> AFRL5_W<20> {
-        AFRL5_W::new(self)
-    }
-    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 0..7)"]
-    #[inline(always)]
-    pub fn afrl4(&mut self) -> AFRL4_W<16> {
-        AFRL4_W::new(self)
+    pub fn afrl2(&self) -> AFRL2_R {
+        AFRL2_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl3(&mut self) -> AFRL3_W<12> {
-        AFRL3_W::new(self)
+    pub fn afrl3(&self) -> AFRL3_R {
+        AFRL3_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl2(&mut self) -> AFRL2_W<8> {
-        AFRL2_W::new(self)
+    pub fn afrl4(&self) -> AFRL4_R {
+        AFRL4_R::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl5(&self) -> AFRL5_R {
+        AFRL5_R::new(((self.bits >> 20) & 0x0f) as u8)
+    }
+    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl6(&self) -> AFRL6_R {
+        AFRL6_R::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl7(&self) -> AFRL7_R {
+        AFRL7_R::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl0(&mut self) -> AFRL0_W<0> {
+        AFRL0_W::new(self)
     }
     #[doc = "Bits 4:7 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
     pub fn afrl1(&mut self) -> AFRL1_W<4> {
         AFRL1_W::new(self)
     }
-    #[doc = "Bits 0:3 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[doc = "Bits 8:11 - Alternate function selection for port x bit y (y = 0..7)"]
     #[inline(always)]
-    pub fn afrl0(&mut self) -> AFRL0_W<0> {
-        AFRL0_W::new(self)
+    pub fn afrl2(&mut self) -> AFRL2_W<8> {
+        AFRL2_W::new(self)
+    }
+    #[doc = "Bits 12:15 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl3(&mut self) -> AFRL3_W<12> {
+        AFRL3_W::new(self)
+    }
+    #[doc = "Bits 16:19 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl4(&mut self) -> AFRL4_W<16> {
+        AFRL4_W::new(self)
+    }
+    #[doc = "Bits 20:23 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl5(&mut self) -> AFRL5_W<20> {
+        AFRL5_W::new(self)
+    }
+    #[doc = "Bits 24:27 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl6(&mut self) -> AFRL6_W<24> {
+        AFRL6_W::new(self)
+    }
+    #[doc = "Bits 28:31 - Alternate function selection for port x bit y (y = 0..7)"]
+    #[inline(always)]
+    pub fn afrl7(&mut self) -> AFRL7_W<28> {
+        AFRL7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

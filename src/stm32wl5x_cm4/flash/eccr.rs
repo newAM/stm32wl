@@ -36,6 +36,8 @@ impl From<crate::W<ECCR_SPEC>> for W {
 }
 #[doc = "Field `ADDR_ECC` reader - ECC fail address"]
 pub type ADDR_ECC_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `SYSF_ECC` reader - System Flash ECC fail"]
+pub type SYSF_ECC_R = crate::BitReader<SYSF_ECC_A>;
 #[doc = "System Flash ECC fail\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSF_ECC_A {
@@ -50,8 +52,6 @@ impl From<SYSF_ECC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYSF_ECC` reader - System Flash ECC fail"]
-pub type SYSF_ECC_R = crate::BitReader<SYSF_ECC_A>;
 impl SYSF_ECC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,6 +72,8 @@ impl SYSF_ECC_R {
         *self == SYSF_ECC_A::InFlash
     }
 }
+#[doc = "Field `ECCCIE` reader - ECC correction interrupt enable"]
+pub type ECCCIE_R = crate::BitReader<ECCCIE_A>;
 #[doc = "ECC correction interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECCCIE_A {
@@ -86,8 +88,6 @@ impl From<ECCCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ECCCIE` reader - ECC correction interrupt enable"]
-pub type ECCCIE_R = crate::BitReader<ECCCIE_A>;
 impl ECCCIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -124,118 +124,118 @@ impl<'a, const O: u8> ECCCIE_W<'a, O> {
 }
 #[doc = "Field `CPUID` reader - CPU identification"]
 pub type CPUID_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ECCC` reader - ECC correction"]
+pub type ECCC_R = crate::BitReader<ECCCR_A>;
 #[doc = "ECC correction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECCC_A {
+pub enum ECCCR_A {
     #[doc = "0: ECC error corrected"]
     NoEvent = 0,
     #[doc = "1: No ECC error corrected"]
     Event = 1,
 }
-impl From<ECCC_A> for bool {
+impl From<ECCCR_A> for bool {
     #[inline(always)]
-    fn from(variant: ECCC_A) -> Self {
+    fn from(variant: ECCCR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ECCC` reader - ECC correction"]
-pub type ECCC_R = crate::BitReader<ECCC_A>;
 impl ECCC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECCC_A {
+    pub fn variant(&self) -> ECCCR_A {
         match self.bits {
-            false => ECCC_A::NoEvent,
-            true => ECCC_A::Event,
+            false => ECCCR_A::NoEvent,
+            true => ECCCR_A::Event,
         }
     }
     #[doc = "Checks if the value of the field is `NoEvent`"]
     #[inline(always)]
     pub fn is_no_event(&self) -> bool {
-        *self == ECCC_A::NoEvent
+        *self == ECCCR_A::NoEvent
     }
     #[doc = "Checks if the value of the field is `Event`"]
     #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == ECCC_A::Event
+        *self == ECCCR_A::Event
     }
 }
 #[doc = "ECC correction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECCC_AW {
+pub enum ECCCW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<ECCC_AW> for bool {
+impl From<ECCCW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ECCC_AW) -> Self {
+    fn from(variant: ECCCW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECCC` writer - ECC correction"]
-pub type ECCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECCR_SPEC, ECCC_AW, O>;
+pub type ECCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECCR_SPEC, ECCCW_AW, O>;
 impl<'a, const O: u8> ECCC_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ECCC_AW::Clear)
+        self.variant(ECCCW_AW::Clear)
     }
 }
+#[doc = "Field `ECCD` reader - ECC detection"]
+pub type ECCD_R = crate::BitReader<ECCDR_A>;
 #[doc = "ECC detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECCD_A {
+pub enum ECCDR_A {
     #[doc = "0: Two ECC errors detected"]
     NoEvent = 0,
     #[doc = "1: No two ECC errors detected"]
     Event = 1,
 }
-impl From<ECCD_A> for bool {
+impl From<ECCDR_A> for bool {
     #[inline(always)]
-    fn from(variant: ECCD_A) -> Self {
+    fn from(variant: ECCDR_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ECCD` reader - ECC detection"]
-pub type ECCD_R = crate::BitReader<ECCD_A>;
 impl ECCD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECCD_A {
+    pub fn variant(&self) -> ECCDR_A {
         match self.bits {
-            false => ECCD_A::NoEvent,
-            true => ECCD_A::Event,
+            false => ECCDR_A::NoEvent,
+            true => ECCDR_A::Event,
         }
     }
     #[doc = "Checks if the value of the field is `NoEvent`"]
     #[inline(always)]
     pub fn is_no_event(&self) -> bool {
-        *self == ECCD_A::NoEvent
+        *self == ECCDR_A::NoEvent
     }
     #[doc = "Checks if the value of the field is `Event`"]
     #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == ECCD_A::Event
+        *self == ECCDR_A::Event
     }
 }
 #[doc = "ECC detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECCD_AW {
+pub enum ECCDW_AW {
     #[doc = "1: Clear the flag"]
     Clear = 1,
 }
-impl From<ECCD_AW> for bool {
+impl From<ECCDW_AW> for bool {
     #[inline(always)]
-    fn from(variant: ECCD_AW) -> Self {
+    fn from(variant: ECCDW_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECCD` writer - ECC detection"]
-pub type ECCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECCR_SPEC, ECCD_AW, O>;
+pub type ECCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECCR_SPEC, ECCDW_AW, O>;
 impl<'a, const O: u8> ECCD_W<'a, O> {
     #[doc = "Clear the flag"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(ECCD_AW::Clear)
+        self.variant(ECCDW_AW::Clear)
     }
 }
 impl R {
